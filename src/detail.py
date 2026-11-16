@@ -13,7 +13,7 @@ DOC_PATTERN = re.compile(r"(?i)\b(bando|avviso|faq|frequently asked|allegat|modu
 BENEFICIARY_LABEL = re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammissibili|chi può partecipare|eligible applicants)\s*[:–-]?")
 MAX_DETAIL_LINKS = 8
 MAX_HTML_BYTES = 1_000_000
-DETAIL_SCHEMA_VERSION = 2
+DETAIL_SCHEMA_VERSION = 3
 
 def safe_same_origin(link, origin):
     u = urlparse(link)
@@ -79,7 +79,7 @@ def enrich(item, source, session, eligible_to_fetch):
         if structured["deadline"]:
             parsed["deadline"] = structured["deadline"]
             parsed["deadline_source"] = structured["deadline_source"]
-        for key in ("opening_date","opening_evidence","source_open_confirmed","closure_confirmed","status_evidence","application_windows"):
+        for key in ("opening_date","opening_evidence","source_open_confirmed","closure_confirmed","status_evidence","application_windows","summary"):
             if structured.get(key) is not None:
                 item[key] = structured[key]
         if structured.get("beneficiaries_excerpt") and not parsed["beneficiaries_excerpt"]:

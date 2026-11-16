@@ -1,52 +1,86 @@
 <!doctype html>
-<html lang="it"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Opera+ Funding: opportunità e bandi per progetti culturali.">
-<title>Opera+ Funding · Osservatorio bandi</title>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f3">
+<meta name="description" content="Opera+ Funding: trova bandi e opportunità culturali, con scadenze e pertinenza a colpo d'occhio.">
+<title>Opera+ Funding · Opportunità per la cultura</title>
 <link rel="stylesheet" href="styles.css">
-</head><body><div class="shell">
-<header class="topbar">
-  <a class="identity" href="https://opera.plus/" target="_blank" rel="noopener noreferrer" aria-label="Opera+ — sito dell'associazione">
-    <img class="brandlogo" src="https://opera.plus/assets/operaplus-logo.png" alt="Opera+" width="104" height="38">
-  </a>
-  <span class="identity-divider" aria-hidden="true"></span>
-  <div class="identity-text"><strong>Funding</strong><span>Osservatorio bandi</span></div>
-  <div class="topbar-right"><a class="repo" href="https://github.com/jeckodevelopment/opera-funding" target="_blank" rel="noopener noreferrer">Progetto GitHub ↗</a><a class="health-control" href="#source-health" aria-label="Stato aggiornamento fonti"><span id="health-dot" class="health-dot neutral" aria-hidden="true"></span><span id="health-label">Fonti: caricamento…</span></a></div>
-</header>
-<main id="main">
-  <div class="intro">
-    <div><h1>Opportunità di finanziamento</h1><p>Trova rapidamente bandi e contributi per Opera+: scadenze, stato della candidatura e possibili progetti.</p></div>
-    <div class="data-controls"><div class="lastscan" id="scan" role="status">Caricamento dei dati…</div><button id="refresh" class="refresh" type="button" aria-label="Aggiorna i dati dei bandi da GitHub">Aggiorna dati ↻</button></div>
-  </div>
-  <section class="summary" aria-label="Riepilogo archivio">
-    <div><strong id="total">—</strong><span>APERTE con evidenza</span></div>
-    <div><strong id="potential">—</strong><span>Finanziamenti e call potenziali</span></div>
-    <div><strong id="high">—</strong><span>Opportunità in approfondimento</span></div>
-    <div><strong id="sources">—</strong><span>CHIUSE (nello storico)</span></div>
-  </section>
-  <section class="workspace" aria-labelledby="results-title">
-    <div class="workspace-title"><div><h2 id="results-title">Esplora le opportunità</h2><p>Consulta prima le candidature aperte con scadenza ufficiale. Le altre opportunità restano accessibili dal filtro dedicato.</p></div><button id="reset" type="button" class="text-button">Azzera filtri</button></div>
-    <div class="quick-tabs" role="group" aria-label="Filtra opportunità per stato">
-<button class="quick-tab active" type="button" data-value="active" aria-pressed="true">In evidenza</button>
-<button class="quick-tab" type="button" data-value="aperto" aria-pressed="false">APERTO</button>
-<button class="quick-tab" type="button" data-value="non verificato" aria-pressed="false">Altre opportunità</button>
-<button class="quick-tab" type="button" data-value="in arrivo" aria-pressed="false">IN ARRIVO</button>
-<button class="quick-tab" type="button" data-value="chiuso" aria-pressed="false">CHIUSO</button>
-<button class="quick-tab" type="button" data-value="" aria-pressed="false">Tutti</button>
-</div><input type="hidden" id="status" value="active">
-<div class="filters">
-      <label class="filter-search"><span>Cerca</span><input id="search" type="search" placeholder="Titolo, tema o ente…" autocomplete="off"></label>
-      
-      <label><span>Tipologia</span><select id="kind"><option value="funding" selected>Finanziamenti e call</option><option value="">Tutte, inclusi altri avvisi</option><option value="finanziamento potenziale">Finanziamenti potenziali</option><option value="call progettuale da verificare">Call progettuali</option><option value="altro avviso">Altri avvisi</option><option value="non classificato">Non classificati</option></select></label>
-      <label><span>Ente</span><select id="issuer"><option value="">Tutti</option></select></label>
-      <label><span>Pertinenza</span><select id="level"><option value="0">Tutte</option><option value="60">Da 60/100</option><option value="80">Da 80/100</option></select></label>
-      <label><span>Ordina per</span><select id="sort"><option value="priority">Aperti per scadenza, poi altre</option><option value="relevance">Pertinenza più alta</option><option value="deadline">Scadenza più vicina</option><option value="recent">Rilevazione più recente</option></select></label>
-    </div>
-    <div class="resultbar"><span id="count" aria-live="polite">Caricamento…</span><span class="result-note">I punteggi sono preliminari, non previsioni di finanziamento</span></div>
-    <div id="items" class="results"></div>
-    <div class="pagination"><button type="button" id="more" class="more" hidden>Mostra altri risultati</button></div>
-  </section>
-  <section class="source-health" id="source-health" aria-labelledby="source-health-title"><div class="source-health-head"><div><h2 id="source-health-title">Stato delle fonti</h2><p>Esiti dell’ultimo aggiornamento dei portali monitorati.</p></div><span id="health-count" class="health-count"></span></div><div id="source-incidents" class="source-incidents" aria-live="polite">Caricamento stato fonti…</div></section>
-</main>
-<footer>Fonte e documenti: collegamenti esterni agli enti. Le informazioni sono preliminari; verifica sempre bandi, requisiti e scadenze ufficiali. Le opportunità con requisiti non soddisfatti rimangono visibili.</footer>
-</div><script src="app.js"></script></body></html>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="https://opera.plus/" target="_blank" rel="noopener noreferrer" aria-label="Opera+ – sito dell'associazione">
+      <img src="assets/operaplus-logo.png" alt="Opera+" width="155" height="70">
+    </a>
+    <span class="brand-divider" aria-hidden="true"></span>
+    <div class="brand-name"><strong>Funding</strong><span>Osservatorio opportunità</span></div>
+    <a class="health-indicator" href="#source-health" aria-label="Consulta lo stato delle fonti">
+      <span id="health-dot" class="health-dot neutral" aria-hidden="true"></span><span id="health-label">Controllo fonti…</span>
+    </a>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">OPERA+ <span aria-hidden="true">/</span> FINANZIAMENTI</p>
+        <h1 id="hero-title">Le opportunità da non perdere.</h1>
+        <p>Finanziamenti, call e iniziative culturali: le candidature aperte prima di tutto, con le scadenze e l'affinità con Opera+ sempre in evidenza.</p>
+      </div>
+      <div class="data-controls">
+        <div id="scan" class="lastscan" role="status">Caricamento dati…</div>
+        <button id="refresh" class="refresh" type="button" aria-label="Aggiorna i dati">Aggiorna <span aria-hidden="true">↻</span></button>
+      </div>
+    </section>
+    <section class="overview" aria-label="Riepilogo bandi">
+      <div class="metric metric-primary"><span class="metric-value" id="total">—</span><span class="metric-caption">Candidature aperte</span></div>
+      <div class="metric"><span class="metric-value" id="potential">—</span><span class="metric-caption">Opportunità in catalogo</span></div>
+      <div class="metric"><span class="metric-value" id="high">—</span><span class="metric-caption">Affinità alta, da 60/100</span></div>
+      <div class="metric"><span class="metric-value" id="sources">—</span><span class="metric-caption">Fonti monitorate</span></div>
+    </section>
+    <section class="explore" aria-labelledby="results-title">
+      <div class="section-head">
+        <div><p class="eyebrow">SCOPRI I BANDI</p><h2 id="results-title">Opportunità di finanziamento</h2></div>
+        <button id="reset" class="clear-button" type="button">Azzera filtri</button>
+      </div>
+      <div class="quick-tabs" role="group" aria-label="Filtra per stato della candidatura">
+        <button class="quick-tab active" type="button" data-value="aperto" aria-pressed="true">Aperti</button>
+        <button class="quick-tab" type="button" data-value="in arrivo" aria-pressed="false">In arrivo</button>
+        <button class="quick-tab" type="button" data-value="non verificato" aria-pressed="false">Da approfondire</button>
+        <button class="quick-tab" type="button" data-value="chiuso" aria-pressed="false">Chiusi</button>
+        <button class="quick-tab" type="button" data-value="" aria-pressed="false">Tutti</button>
+      </div>
+      <input id="status" type="hidden" value="aperto">
+      <div class="filter-panel">
+        <label class="search-label"><span>Cerca un'opportunità</span><span class="input-wrap"><span aria-hidden="true" class="search-icon">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Titolo, ente, tema…"></span></label>
+        <label><span>Ente finanziatore</span><select id="issuer"><option value="">Tutti gli enti</option></select></label>
+        <label><span>Tipologia</span><select id="kind"><option value="funding">Finanziamenti e call</option><option value="">Tutte le tipologie</option><option value="finanziamento potenziale">Finanziamenti</option><option value="call progettuale da verificare">Call progettuali</option><option value="altro avviso">Altri avvisi</option></select></label>
+        <label><span>Affinità minima</span><select id="level"><option value="0">Tutte</option><option value="60">60/100</option><option value="80">80/100</option></select></label>
+      </div>
+      <div class="results-toolbar">
+        <div><strong id="count" aria-live="polite">Caricamento…</strong><span class="toolbar-helper">Bandi in ordine di utilità per Opera+</span></div>
+        <div class="sort-group">
+          <span>Ordina per</span>
+          <div class="sort-buttons" role="group" aria-label="Ordina risultati">
+            <button type="button" class="sort-button active" data-sort="deadline" aria-pressed="true">Scadenza <span aria-hidden="true">↑</span></button>
+            <button type="button" class="sort-button" data-sort="score" aria-pressed="false">Punteggio <span aria-hidden="true">↓</span></button>
+          </div>
+        </div>
+      </div>
+      <select id="sort" hidden aria-label="Ordinamento"><option value="deadline">Scadenza crescente</option><option value="score">Punteggio decrescente</option></select>
+      <div id="items" class="results" aria-live="polite"></div>
+      <div class="pagination"><button id="more" class="more" type="button" hidden>Mostra altre opportunità</button></div>
+    </section>
+    <section class="source-health" id="source-health" aria-labelledby="source-health-title">
+      <div class="source-head">
+        <div><p class="eyebrow">MONITORAGGIO</p><h2 id="source-health-title">Stato delle fonti</h2><p>Eventuali problemi di accesso o elaborazione dei portali monitorati.</p></div>
+        <span id="health-count" class="health-count">—</span>
+      </div>
+      <div id="source-incidents" class="source-incidents" aria-live="polite">Caricamento…</div>
+    </section>
+  </main>
+  <footer><span>Opera+ Funding</span><span>Informazioni ricavate dalle fonti ufficiali. L'apertura di un bando non conferma automaticamente l'ammissibilità dell'associazione.</span><a href="https://github.com/jeckodevelopment/opera-funding" target="_blank" rel="noopener noreferrer">Repository</a></footer>
+</div>
+</body>
+</html>

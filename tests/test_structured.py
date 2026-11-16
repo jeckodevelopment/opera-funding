@@ -17,6 +17,11 @@ PAGE="""<html><main>
 URL="https://bandi.regione.piemonte.it/contributi-finanziamenti/manifestazioni"
 
 class StructuredTests(unittest.TestCase):
+    def test_official_description_for_card(self):
+        html='<html><head><meta name="description" content="Sostegno a progetti culturali che coinvolgono giovani e comunità locali del Piemonte."></head><body><main>Stato: Aperto</main></body></html>'
+        facts=structured_facts(html,"https://bandi.regione.piemonte.it/contributi-finanziamenti/progetti")
+        self.assertIn("progetti culturali", facts["summary"])
+
     def test_crt_multiple_windows_select_latest(self):
         html="<main><p>1° scadenza chiusa il 27 febbraio 2026</p><p>2° scadenza: 15 settembre 2026</p></main>"
         facts=structured_facts(html,"https://www.fondazionecrt.it/bandi-progetti/note-sipari/")

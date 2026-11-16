@@ -119,8 +119,8 @@ def run():
                             item["closure_confirmed"] = previous.get("closure_confirmed",False)
                             item["status_evidence"] = previous["status_evidence"]
                         # preserve data verified by future, dedicated detail-page extractors
-                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "detail_attempted_at", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "application_windows", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
-                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "application_windows", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed")) or key in ("detail_attempted_at", "link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "detail_attempted_at", "beneficiaries_excerpt", "summary", "deadline_source", "deadline_verified_at", "application_windows", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
+                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "beneficiaries_excerpt", "summary", "deadline_source", "deadline_verified_at", "application_windows", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed")) or key in ("detail_attempted_at", "link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
                                 item[key] = previous[key]
                     if "source_open_confirmed" not in item:
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
@@ -138,7 +138,7 @@ def run():
                     key=target["url"].lower().rstrip("/")
                     verified=check_priority(target,source,session,eligible_to_fetch,now,indexed.get(key))
                     if verified is not None:indexed[key]=verified
-                statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":True,"discovered":len(found),"checked_at":now,**({"warning":"Pagina raggiungibile, nessuna opportunità riconosciuta"} if not found else {})})
+                statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":True,"discovered":len(found),"checked_at":now})
             except (requests.RequestException, RuntimeError, ValueError) as exc:
                 statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]})
     # Reconcile retained historical links too; do not keep outdated open flags.
