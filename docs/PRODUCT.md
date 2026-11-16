@@ -29,3 +29,9 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 3. Classificazione approfondita e spiegabile; valutazione ammissibilità e potenziale progetto ad hoc.
 4. Filtri completi, storico e notifiche email.
 5. Pubblicazione tramite jeckodevsite già integrata, da monitorare.
+
+## Enrichment HTML e identità grafica (novembre 2026)
+- Su un massimo iniziale di tre opportunità per fonte e scansione, il motore può visitare schede HTML della stessa origine, rispettando robots.txt e imponendo timeout e limite dimensionale. Non segue documenti PDF e non archivia copie di pagine o documenti.
+- Dalle schede vengono estratte solo scadenze esplicite, importi indicativi etichettati e collegamenti a bando, FAQ e allegati. I dati estratti non equivalgono a una verifica legale del bando; le altre informazioni rimangono da verificare.
+- Le fonti esterne agli aggregatori e i portali dinamici richiedono connettori dedicati. Conservare sempre visibili le opportunità non arricchite.
+- La grafica richiama il template Opera+ in `jeckodevelopment/tpl_operaplus`: dark `#101419`, pannelli `#1b2228`, oro `#c7a676` e serif Georgia. Il wordmark testuale Opera+ replica il fallback del template; per utilizzare l'immagine grafica ufficiale occorre acquisire il relativo asset pubblicabile e aggiornare whitelist del publisher.
