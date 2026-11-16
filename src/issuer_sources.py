@@ -35,7 +35,7 @@ def parse_issuer_window(html,parser):
         start,end=_date(m),_date(m,4)
     elif parser=="cepell":
         m=CEPELL_FILING_END.search(txt)
-        if not m or not re.search(r"(?i)\\b(?:proposte|domande|candidature)\\b",txt):return None
+        if not m or not re.search(r"(?i)\b(?:proposte|domande|candidature)\b",txt):return None
         start=None
         end=_date(m)
     else:return None
