@@ -2,7 +2,7 @@
 from datetime import datetime, timezone, timedelta
 
 PROJECT_TYPES={"finanziamento potenziale","call progettuale da verificare"}
-SCHEMA_VERSION=3
+SCHEMA_VERSION=4
 
 def _when(raw):
     try:
