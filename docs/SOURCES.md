@@ -29,3 +29,9 @@ La pagina ufficiale [Aiuti allo spettacolo dal vivo](https://bandi.regione.piemo
 - **Città di Torino:** interpretazione delle finestre ufficiali `Attivo dal DD/MM/YYYY al DD/MM/YYYY`, esclusivamente su pagine del portale bandi comunale; priorità agli avvisi per iniziative culturali della Circoscrizione 7.
 - **Fondazione CRT:** resta fonte ad alta priorità, ma lo stato degli avvisi e le scadenze si considerano provati solo se individuati nelle pagine o documenti ufficiali; non vengono dedotti dall'appartenenza al registro delle fonti.
 - Le opportunità vengono sottoposte a controlli effettivi a ogni scansione mediante link ufficiale e robots.txt. L'inclusione nella lista di priorità non equivale ad apertura o ammissibilità accertata.
+
+## Verifica dei bandi europei in inglese
+- L'adattatore per le schede della Commissione europea riconosce `Opportunity status: open/closed`, `Opening date` e `Deadline` con mesi inglesi, mantenendo i collegamenti ufficiali come prova.
+- Sono state aggiunte al controllo diretto le schede `Culture Moves Europe – Call for residency hosts 2026–2027` e `Circulation of European literary works 2027` (portale Cultura UE), e `European Literacy Coalition consortium` (Erasmus+). Gli accessi dipendono dal rispetto di robots.txt e dalla disponibilità delle pagine.
+- Alcune call sono rivolte prevalentemente a editori, consorzi, professionisti o soggetti con caratteristiche specifiche. L'apertura della call non determina automaticamente l'ammissibilità di Opera+.
+- La copertura dell'intero catalogo di Funding & Tenders e dei risultati caricati dinamicamente resta un incremento successivo: il registro delle fonti è approvato, ma non equivalente a copertura totale.
