@@ -14,6 +14,7 @@ function render(){
   const tags=textNode("div","","tags");
   const fields=["Tipologia: "+(o.opportunity_type||"da classificare"),"Stato: "+(o.status||"non verificato"),"Scadenza: "+(o.deadline?new Date(o.deadline+"T12:00:00").toLocaleDateString("it-IT"):"da verificare"),"Ammissibilità: "+(o.eligibility||"da verificare"),...(o.amount?["Importo: "+o.amount]:[]),...(o.themes||[])];
   for(const tag of fields)tags.append(textNode("span",tag,"tag"));card.append(tags);
+  if(o.beneficiaries_excerpt)card.append(textNode("p","Beneficiari (estratto dalla fonte): "+o.beneficiaries_excerpt,"warn"));
   card.append(textNode("p",(o.type_reason||"Tipologia da verificare")+" · Pertinenza preliminare, non probabilità di finanziamento","warn"));
   const broken=o.link_status==="non disponibile";
   const url=!broken&&safeUrl(o.resolved_url||o.url);
