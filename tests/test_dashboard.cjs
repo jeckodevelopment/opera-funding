@@ -21,7 +21,7 @@ assert.equal(state({opportunity_type:"call progettuale da verificare",title:"Cal
 assert.equal(dateLabel("2027-04-05"),"Scade il 05/04/2027");
 assert.equal(state({deadline:"2025-10-05",source_open_confirmed:true,link_status:"raggiungibile"}),"chiuso");
 assert.equal(state({deadline:"2027-01-03",source_open_confirmed:true,link_status:"raggiungibile"}),"aperto");
-assert.equal(state({deadline:"2027-01-03",source_open_confirmed:false,link_status:"raggiungibile"}),"non verificato");
+assert.equal(state({opportunity_type:"finanziamento potenziale",deadline:"2027-01-03",source_open_confirmed:false,link_status:"raggiungibile"}),"non verificato");
 assert.equal(state({opening_date:"2027-02-01",opening_evidence:"https://example.org/call"}),"in arrivo");
 const rows=[
  {title:"Tardi",relevance:97,deadline:"2027-06-01",source_open_confirmed:true,link_status:"raggiungibile"},
