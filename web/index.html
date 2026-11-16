@@ -15,7 +15,7 @@
 </header>
 <main id="main">
   <div class="intro">
-    <div><h1>Opportunità di finanziamento</h1><p>Bandi, call e contributi per i progetti culturali di Opera+. Pertinenza e ammissibilità sono valutazioni distinte.</p></div>
+    <div><h1>Opportunità di finanziamento</h1><p>Trova rapidamente bandi e contributi per Opera+: scadenze, stato della candidatura e possibili progetti.</p></div>
     <div class="lastscan" id="scan" role="status">Caricamento dei dati…</div>
   </div>
   <section class="summary" aria-label="Riepilogo archivio">
@@ -25,10 +25,18 @@
     <div><strong id="sources">—</strong><span>CHIUSE (nello storico)</span></div>
   </section>
   <section class="workspace" aria-labelledby="results-title">
-    <div class="workspace-title"><div><h2 id="results-title">Esplora le opportunità</h2><p>Prima le candidature aperte per scadenza, poi le opportunità da verificare. Lo storico resta nel filtro.</p></div><button id="reset" type="button" class="text-button">Azzera filtri</button></div>
-    <div class="filters">
+    <div class="workspace-title"><div><h2 id="results-title">Esplora le opportunità</h2><p>Prima le candidature aperte per scadenza, poi quelle da verificare. Passa ai bandi chiusi con un clic.</p></div><button id="reset" type="button" class="text-button">Azzera filtri</button></div>
+    <div class="quick-tabs" role="group" aria-label="Filtra opportunità per stato">
+<button class="quick-tab active" type="button" data-value="active" aria-pressed="true">In evidenza</button>
+<button class="quick-tab" type="button" data-value="aperto" aria-pressed="false">APERTO</button>
+<button class="quick-tab" type="button" data-value="non verificato" aria-pressed="false">DA VERIFICARE</button>
+<button class="quick-tab" type="button" data-value="in arrivo" aria-pressed="false">IN ARRIVO</button>
+<button class="quick-tab" type="button" data-value="chiuso" aria-pressed="false">CHIUSO</button>
+<button class="quick-tab" type="button" data-value="" aria-pressed="false">Tutti</button>
+</div><input type="hidden" id="status" value="active">
+<div class="filters">
       <label class="filter-search"><span>Cerca</span><input id="search" type="search" placeholder="Titolo, tema o ente…" autocomplete="off"></label>
-      <label><span>Stato</span><select id="status"><option value="active" selected>Aperte e da verificare</option><option value="">Tutti, anche chiusi</option><option value="aperto">APERTO</option><option value="non verificato">DA VERIFICARE</option><option value="in arrivo">IN ARRIVO</option><option value="chiuso">CHIUSO</option></select></label>
+      
       <label><span>Tipologia</span><select id="kind"><option value="funding" selected>Finanziamenti e call</option><option value="">Tutte, inclusi altri avvisi</option><option value="finanziamento potenziale">Finanziamenti potenziali</option><option value="call progettuale da verificare">Call progettuali</option><option value="altro avviso">Altri avvisi</option><option value="non classificato">Non classificati</option></select></label>
       <label><span>Ente</span><select id="issuer"><option value="">Tutti</option></select></label>
       <label><span>Pertinenza</span><select id="level"><option value="0">Tutte</option><option value="60">Da 60/100</option><option value="80">Da 80/100</option></select></label>

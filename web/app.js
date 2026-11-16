@@ -46,12 +46,12 @@ function filteredRows(){
 function chip(label,type){return el("span",label,"chip "+(type||""));}
 function renderItem(o){
  const item=el("article",undefined,"item");const main=el("div",undefined,"item-main"),left=el("div");
- const meta=el("div",undefined,"item-meta");meta.append(el("span",o.issuer||"Ente non specificato"));left.append(meta,el("h3",o.title||"Senza titolo"));
+ const meta=el("div",undefined,"item-meta");meta.append(el("span",o.issuer||"Ente non specificato"));
  const badges=el("div",undefined,"item-badges");const st=state(o);
- badges.append(chip(st==="chiuso"?"CHIUSO":st==="aperto"?"APERTO":st==="in arrivo"?"IN ARRIVO":"DA VERIFICARE",st==="chiuso"?"closed":st==="aperto"?"open":"unknown"));
- badges.append(chip(dateLabel(o.deadline)));
+ badges.append(chip(st==="chiuso"?"CHIUSO":st==="aperto"?"APERTO":st==="in arrivo"?"IN ARRIVO":"DA VERIFICARE","status "+(st==="chiuso"?"closed":st==="aperto"?"open":st==="in arrivo"?"upcoming":"unknown")));
+ badges.append(chip(dateLabel(o.deadline),"deadline"));
  badges.append(chip(o.opportunity_type||"Tipologia da verificare"));
- left.append(badges);
+ left.append(badges,el("h3",o.title||"Senza titolo"),meta);
  const score=el("div",undefined,"item-score");score.append(el("strong",String(o.relevance??0)+"/100"),el("span","Pertinenza"));
  main.append(left,score);item.append(main);
  const actions=el("div",undefined,"item-actions");const broken=o.link_status==="non disponibile";
@@ -85,6 +85,7 @@ function render(){
  $("count").textContent=rows.length+" risultati"+(rows.length>PAGE_SIZE?" · visualizzati "+displayed.length:"");
  $("more").hidden=visibleCount>=rows.length;
 }
+function syncTabs(){const value=$("status").value;for(const tab of document.querySelectorAll(".quick-tab")){const active=tab.dataset.value===value;tab.classList.toggle("active",active);tab.setAttribute("aria-pressed",String(active));}}
 function resetPagination(){visibleCount=PAGE_SIZE;render();}
 async function init(){
  try{
@@ -96,10 +97,11 @@ async function init(){
   $("sources").textContent=all.filter(o=>state(o)==="chiuso").length;
   $("scan").textContent=status.checked_at?"Aggiornato il "+new Date(status.checked_at).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"})+" · "+(status.sources||[]).filter(o=>!o.ok).length+" fonti con anomalie":"Prima scansione non ancora effettuata";
   for(const name of [...new Set(all.map(o=>o.issuer).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"it"))){const option=el("option",name);option.value=name;$("issuer").append(option);}
-  render();
+  syncTabs();render();
  }catch(err){$("scan").textContent="Dati non disponibili";$("items").replaceChildren(el("p",err.message,"empty"));}
 }
 for(const id of ["search","status","kind","issuer","level","sort"])$(id).addEventListener(id==="search"?"input":"change",resetPagination);
-$("reset").addEventListener("click",()=>{$("search").value="";$("status").value="active";$("kind").value="funding";$("issuer").value="";$("level").value="0";$("sort").value="priority";resetPagination();});
+$("reset").addEventListener("click",()=>{$("search").value="";$("status").value="active";$("kind").value="funding";$("issuer").value="";$("level").value="0";$("sort").value="priority";syncTabs();resetPagination();});
+for(const tab of document.querySelectorAll(".quick-tab"))tab.addEventListener("click",()=>{$("status").value=tab.dataset.value;syncTabs();resetPagination();});
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
 init();

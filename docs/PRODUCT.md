@@ -66,3 +66,11 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - Il punteggio originale `relevance` resta invariato per non attribuire precisione a informazioni mancanti. È esplicitamente contrassegnato come **preliminare / confidenza bassa** finché non saranno disponibili requisiti e importi verificati.
 - Controlli candidabilità: natura giuridica dei beneficiari, eventuale partenariato, cofinanziamenti e vincoli. La presenza della parola «partner» attiva un invito alla verifica, **non una dichiarazione** che sia obbligatorio.
 - I requisiti mancanti non occultano né penalizzano automaticamente l'opportunità. Lo stato di apertura della call resta indipendente dalla suitability e dall'idoneità dell'associazione.
+
+## Revisione UX ad alto contrasto (novembre 2026)
+- **Tema chiaro caldo:** sfondo avorio tenue, schede bianche e testo scuro, mantenendo il richiamo all'identità Opera+ (logo ufficiale compatto, serif nei titoli e accento oro). Il logo ufficiale conserva un piccolo supporto scuro per garantirne il contrasto.
+- **Stati immediatamente leggibili:** badge APERTO verde scuro su verde pallido, DA VERIFICARE ambra su crema, IN ARRIVO blu su azzurro pallido, CHIUSO grigio su grigio chiaro. Il testo dello stato è sempre visibile e non dipende solo dal colore.
+- **Navigazione rapida:** pulsanti di filtro in primo piano per “In evidenza”, APERTO, DA VERIFICARE, IN ARRIVO, CHIUSO e Tutti; stato attivo evidente tramite colore e `aria-pressed`. La ricerca e gli altri filtri restano nella stessa sezione.
+- **Schede operative:** badge di stato e scadenza **prima** del titolo, ente subito dopo, pertinenza in secondo piano e link alla fonte immediato; requisiti, documenti e idee progettuali nei dettagli espandibili.
+- **Regole invarianti:** nessun bando chiuso nella vista iniziale; APERTO richiede evidenze, ordinamento per scadenza; da verificare subito dopo; storico accessibile con un clic. Nessuna esclusione automatica per requisiti di ammissibilità.
+- **Accessibilità e responsività:** controlli ben distinguibili, focus visibile, testo scuro ad alto contrasto, impaginazione adattiva mobile, test automatici su badge, filtri e date.
