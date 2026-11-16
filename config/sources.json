@@ -78,5 +78,29 @@
     "tier": "medium",
     "region": "Europa",
     "type": "europeo"
+  },
+  {
+    "id": "creativeitalia",
+    "name": "Europa Creativa Desk Italia",
+    "url": "https://europacreativa.cultura.gov.it/",
+    "tier": "high",
+    "region": "Europa/Italia",
+    "type": "europeo"
+  },
+  {
+    "id": "alcotra",
+    "name": "Interreg ALCOTRA",
+    "url": "https://interreg-alcotra.eu/it/bandi-0",
+    "tier": "medium",
+    "region": "Piemonte/Francia",
+    "type": "europeo"
+  },
+  {
+    "id": "erasmusitalia",
+    "name": "Erasmus+ Agenzia nazionale Italia",
+    "url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
+    "tier": "medium",
+    "region": "Europa/Italia",
+    "type": "europeo"
   }
 ]
