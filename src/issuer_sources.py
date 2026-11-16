@@ -13,6 +13,9 @@ MONTHS={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,
 DAY=r"(\d{1,2})\s+("+"|".join(MONTHS)+r")\s+(20\d{2})"
 SPORT_START=re.compile(r"(?i)\bApertura\s+Piattaforma\s*:\s*"+DAY)
 SPORT_END=re.compile(r"(?i)\bChiusura\s+Piattaforma\s*:\s*"+DAY)
+CEPELL_FILING_END=re.compile(
+    r"(?i)\\bentro\\s+e\\s+non\\s+oltre\\s+(?:le\\s+ore\\s+\\d{1,2}(?:[:.]\\d{2})?\\s+)?(?:del\\s+giorno\\s+|il\\s+)?"+DAY
+)
 CATTOLICA=re.compile(r"(?i)\bdal\s+"+DAY+r"\s+al\s+"+DAY+r"\s+gli\s+Enti\s+interessati\s+potranno\s+candidare")
 def _date(match,at=1):
     try:return date(int(match.group(at+2)),MONTHS[match.group(at+1).lower()],int(match.group(at))).isoformat()
@@ -30,8 +33,13 @@ def parse_issuer_window(html,parser):
         m=CATTOLICA.search(txt)
         if not m:return None
         start,end=_date(m),_date(m,4)
+    elif parser=="cepell":
+        m=CEPELL_FILING_END.search(txt)
+        if not m or not re.search(r"(?i)\\b(?:proposte|domande|candidature)\\b",txt):return None
+        start=None
+        end=_date(m)
     else:return None
-    if not start or not end or start>end:return None
+    if not end or (start and start>end):return None
     return {"opening_date":start,"deadline":end}
 
 def apply_issuer_evidence(row,source,checks,session,eligible_to_fetch,now):
@@ -62,9 +70,9 @@ def apply_issuer_evidence(row,source,checks,session,eligible_to_fetch,now):
         today=date.fromisoformat(now[:10])
         row.update(window)
         row["deadline_source"]=response.url
-        row["opening_evidence"]=response.url
+        if window["opening_date"]:row["opening_evidence"]=response.url
         row["status_evidence"]=response.url
-        row["source_open_confirmed"]=window["opening_date"]<=today.isoformat()<=window["deadline"]
+        row["source_open_confirmed"]=bool(window["opening_date"] and window["opening_date"]<=today.isoformat()<=window["deadline"])
         row["closure_confirmed"]=window["deadline"]<today.isoformat()
         row["status_basis"]="Finestra di candidatura verificata presso l'ente erogatore"
         row["issuer_verified_at"]=now
