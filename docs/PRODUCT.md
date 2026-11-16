@@ -50,3 +50,13 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - Solo 20 risultati inizialmente, con “Mostra altri risultati”; scheda riassuntiva con titolo, ente, stato, scadenza, tipologia e punteggio. I dettagli secondari, collegamenti documentali, beneficiari ed evidenze sono espandibili.
 - Gli stati con data trascorsa sono calcolati anche nel browser, per evitare badge “aperto” non aggiornati prima della successiva scansione.
 - Compatibilità con schema dati esistente e collegamenti esterni con protocollo HTTPS.
+
+## UX operativa, stati affidabili e PDF (16 novembre 2026)
+- **Vista iniziale:** solo finanziamenti potenziali e call progettuali, escludendo soltanto lo storico chiuso. Per vedere selezioni/appalti, usare "Tutte, inclusi altri avvisi". Tutte le opportunità possono essere ritrovate con i filtri.
+- **Ordinamento iniziale:** APERTO per scadenza crescente; poi DA VERIFICARE per pertinenza decrescente; poi IN ARRIVO per data di apertura, se confermata. CHIUSO solo con filtro apposito o "Tutti, anche chiusi". Le altre opzioni di ordinamento sono esplicite.
+- **Stati in maiuscolo:** APERTO, DA VERIFICARE, IN ARRIVO, CHIUSO. Una scadenza passata o una chiusura esplicita prevalgono sempre.
+- **Condizione APERTO:** l'indice deve confermare l'apertura, il link deve essere raggiungibile e deve esistere una scadenza futura oppure un bando a sportello esplicitamente verificato. La sola data futura non basta, e un punteggio di pertinenza alto non certifica la candidabilità.
+- **DA VERIFICARE** significa informazioni incomplete sullo stato della call, non inidoneità dell'associazione. La suitability/pertinenza resta separata dai requisiti obbligatori; non nascondere opportunità per partner o requisiti mancanti.
+- **Scadenze:** se non rilevate nell'HTML, il motore può leggere un PDF ufficiale dello stesso dominio (un documento per scheda, max 2 MB e prime 8 pagine testuali). Le date vengono estratte solo da etichette esplicite, con URL di origine e timestamp. Nessuna copia del documento viene persistita.
+- PDF scansiti o senza testo estraibile richiederanno connettori/analisi specifici; **una data non trovata rimane mancante** e lo stato non viene inventato.
+- Il default mostra solo call/finanziamenti e una metrica delle opportunità confermate APERTE. La fonte della scadenza è disponibile nei dettagli della scheda.
