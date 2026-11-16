@@ -113,3 +113,17 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - La pagina ufficiale Compagnia di San Paolo prevede una prima finestra al **03/12/2026** (festival da aprile ad agosto 2027) e una seconda al **05/04/2027** (festival da settembre 2027 a marzo 2028).
 - Il parser legge dinamicamente entrambe le date dalle frasi di candidatura della pagina e imposta in `deadline` quella futura più vicina, conservando `application_windows` con entrambe. Le date non vengono precaricate come informazioni statiche.
 - La dashboard visualizza le finestre complete nel dettaglio e ricorda che la data applicabile dipende dal periodo del festival. Questo evita di far perdere la prima scadenza ordinando soltanto per il termine generale.
+
+## Dashboard operativa — interfaccia attuale (novembre 2026)
+
+Questa sezione descrive la **UI corrente**, sostituendo le indicazioni grafiche precedenti (tema scuro, KPI grandi e filtri a sei colonne) che rimangono solo come cronologia delle iterazioni.
+
+- **Logo:** usa la variante nera e oro fornita da Opera+, con trasparenza ritagliata, ottimizzata e conservata localmente in `web/assets/operaplus-logo.png`. Niente dipendenza da un'immagine esterna.
+- **Stile:** sfondo chiaro avorio, schede bianche, titoli editoriali serif, dettagli neri/grigi e oro come accento. Contrasto esplicito degli stati. Desktop e smartphone sono entrambi supportati.
+- **Vista iniziale:** candidature APERTE supportate da evidenze ufficiali. Schede da approfondire e storico CHIUSO sono accessibili tramite tab, ma non confusi con i bandi candidabili.
+- **Scheda:** stato e ente immediati; titolo e **sintesi di massimo due righe**; fonte primaria; calendario laterale con giorno, mese e anno; affinità numerica e barra visuale; dettagli espandibili solo per contributo, destinatari, finestre multiple e documenti. Nessuna checklist tecnica o commento ripetitivo nella scheda.
+- **Sintesi:** preferisce la descrizione HTML ufficiale della scheda quando disponibile; altrimenti una frase prudente basata esclusivamente sulla tipologia e sui temi già rilevati. Le descrizioni non sono inventate come condizioni di finanziamento.
+- **Ordinamento:** due controlli in vista, **Scadenza** crescente (default) e **Punteggio** decrescente. Con i filtri multi-stato, il sistema mantiene prima APERTO, poi IN ARRIVO, poi gli altri e infine CHIUSO; all'interno di ogni gruppo applica la scelta. Affinità non equivale ad ammissibilità.
+- **Semaforo tecnico:** verde se tutte le fonti sono state elaborate senza errori, giallo se poche fonti falliscono, rosso quando almeno tre falliscono o almeno il 25% è in errore, o se il report manca. **Zero opportunità trovate non è un errore tecnico**: non cambia il colore. A fondo pagina si elencano solo gli errori effettivi d'accesso/elaborazione.
+- **Aggiornamento:** opportunità e report arrivano dai JSON pubblici GitHub con fallback locale e pulsante manuale. Il publisher di `jeckodevsite` carica a richiesta HTML, JS, CSS, PNG del logo e un'istantanea JSON di riserva; non ha bisogno di cron SFTP.
+- **Schema dati:** il parser ufficiale registra anche `summary` quando la pagina fornisce una descrizione adatta, con `detail_version=3` per rianalizzare progressivamente le schede esistenti.
