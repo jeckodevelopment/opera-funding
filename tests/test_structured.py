@@ -49,6 +49,14 @@ class StructuredTests(unittest.TestCase):
         facts=structured_facts(html,"https://interreg-alcotra.eu/it/quarto-bando-progetti-singoli-finestra-1-progetti-maturi")
         self.assertEqual(facts["opening_date"],"2025-07-01")
         self.assertEqual(facts["deadline"],"2025-10-31")
+    def test_torino_youth_climate_official_submission_deadline(self):
+        html="<main><h1>Torino Youth Climate Action Fund</h1><p>Termine di presentazione delle proposte progettuali: ore 12.00 del 8 ottobre 2026</p></main>"
+        result=structured_facts(html,"https://bandi.comune.torino.it/avviso/avviso-pubblico-torino-youth-climate-action-fund-lassegnazione-contributi-sostegno-della")
+        self.assertEqual(result["deadline"],"2026-10-08")
+        self.assertFalse(result["source_open_confirmed"])
+    def test_torino_official_submission_but_no_date(self):
+        html="<main>Termine di presentazione delle proposte progettuali da definire</main>"
+        self.assertIsNone(structured_facts(html,"https://bandi.comune.torino.it/avviso/clima")["deadline"])
     def test_torino_application_range_textual_dates(self):
         html="<main><p>Dal 15 ottobre 2026 al 2 novembre 2026 entro le ore 18:00 è possibile presentare la richiesta.</p></main>"
         facts=structured_facts(html,"https://bandi.comune.torino.it/avviso/3deg-avviso-pubblico-concessione-contributi-ordinari-altri-benefici-economici")

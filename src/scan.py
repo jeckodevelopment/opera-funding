@@ -19,6 +19,7 @@ from verification import pick_for_review, coverage, backlog_candidates, classify
 from crt_windows import guidance_for_window
 from source_alternatives import delegated_source_status
 from eu_api import fetch_creative_europe
+from catalog import deduplicate_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -198,10 +199,11 @@ def run():
     # Reconcile retained historical links too; do not keep outdated open flags.
     for entry in indexed.values():
         explain(annotate(reconcile_status(entry)))
+    rows=deduplicate_catalog(list(indexed.values()))
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(sorted(indexed.values(), key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
-    Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(list(indexed.values()),statuses)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(f"Saved {len(indexed)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
+    output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
 
 if __name__ == "__main__":
     run()
