@@ -97,7 +97,7 @@ def structured_facts(html,url):
     if "bandi.comune.torino.it" in url and not deadline:
         # Date range explicitly associated with filing requests, not generic project periods.
         match=TORINO_APPLICATION_END.search(txt)
-        if match and re.search(r"(?i)(presentares+las+richiesta|presentares+(?:les+)?domande|presentaziones+(?:dis+)?progetti)",txt[max(0,match.start()-70):match.end()+100]):
+        if match and re.search(r"(?i)(presentare\s+la\s+richiesta|presentare\s+(?:le\s+)?domande|presentazione\s+(?:di\s+)?progetti)",txt[max(0,match.start()-70):match.end()+100]):
             deadline=_italian_date(match,4)
             if not opening:opening=_italian_date(match,1)
         if not deadline:deadline=_date(TORINO_NUMERIC_END.search(txt))
