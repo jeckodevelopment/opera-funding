@@ -22,6 +22,19 @@ def _english_date(match):
     try:return date(int(match.group(3)),MONTHS[match.group(2).lower()],int(match.group(1))).isoformat()
     except (ValueError,KeyError):return None
 
+IT_MONTHS={"gennaio":1,"febbraio":2,"marzo":3,"aprile":4,"maggio":5,"giugno":6,"luglio":7,"agosto":8,"settembre":9,"ottobre":10,"novembre":11,"dicembre":12}
+CRT_TEXT_DEADLINE=re.compile(r"(?i)(?:\d+[°ªa]?\s+|prima\s+|seconda\s+|unica\s+)?scadenza\b.{0,35}?\b(\d{1,2})\s+(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\s+(20\d{2})")
+CRT_WINDOW_DEADLINE=re.compile(r"(?i)scadenza\s*[:–-]?\s*tra il\s*\d{1,2}[./-]\d{1,2}[./-]20\d{2}\s+e il\s*(\d{1,2})[./-](\d{1,2})[./-](20\d{2})")
+def _crt_dates(text):
+    dates=[]
+    for match in CRT_TEXT_DEADLINE.finditer(text):
+        try:dates.append(date(int(match.group(3)),IT_MONTHS[match.group(2).lower()],int(match.group(1))).isoformat())
+        except (ValueError,KeyError):pass
+    for match in CRT_WINDOW_DEADLINE.finditer(text):
+        datestr=_date(match)
+        if datestr:dates.append(datestr)
+    return max(dates) if dates else None
+
 def _date(match):
     if not match:return None
     try:return date(int(match.group(3)),int(match.group(2)),int(match.group(1))).isoformat()
@@ -40,6 +53,9 @@ def structured_facts(html,url):
     opening=_date(OPENING.search(txt))
     if not deadline:deadline=_english_date(EN_DEADLINE.search(txt))
     if not opening:opening=_english_date(EN_OPENING.search(txt))
+    if "www.fondazionecrt.it" in url:
+        crt_deadline=_crt_dates(txt)
+        if crt_deadline:deadline=crt_deadline
     window=TURIN_WINDOW.search(txt) if "bandi.comune.torino.it" in url else None
     if window:
         opening=_date(window)
