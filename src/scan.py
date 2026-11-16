@@ -100,6 +100,34 @@ def run():
     with requests.Session() as session:
         session.headers.update({"User-Agent":AGENT, "Accept":"text/html"})
         for source in sources:
+            # Desk Italia does not permit reliable automated crawling. Treat
+            # its official European Commission coverage as a delegated channel,
+            # not as a successful request to the inaccessible Italian website.
+            alternative_id=source.get("official_alternative_source_id")
+            if alternative_id:
+                upstream=next((entry for entry in statuses if entry["source_id"]==alternative_id),None)
+                if upstream is None:
+                    statuses.append({
+                        "source_id":source["id"],"source_name":source["name"],
+                        "source_url":source["url"],"ok":False,"discovered":0,
+                        "checked_at":now,
+                        "error":"Catalogo europeo alternativo non ancora disponibile",
+                        "coverage_mode":"official_alternative",
+                        "alternative_source_id":alternative_id
+                    })
+                else:
+                    delegated=bool(upstream.get("ok"))
+                    statuses.append({
+                        "source_id":source["id"],"source_name":source["name"],
+                        "source_url":source["url"],"ok":delegated,
+                        "discovered":upstream.get("discovered",0) if delegated else 0,
+                        "checked_at":now,"coverage_mode":"official_alternative",
+                        "alternative_source_id":alternative_id,
+                        "alternative_url":upstream["source_url"],
+                        "coverage_note":source.get("official_alternative_note"),
+                        **({} if delegated else {"error":"Catalogo ufficiale della Commissione europea non raggiungibile"})
+                    })
+                continue
             try:
                 found = discover(source, session, now)
                 # Prioritize candidate funding calls over general archive entries.
