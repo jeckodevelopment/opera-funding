@@ -8,6 +8,7 @@ from structured import structured_facts
 from classify import classify
 from status import annotate
 from fit import explain
+from crt_windows import extract_ordinarie_windows
 
 def check_priority(item, source, session, eligible, now, previous=None):
     url=item["url"]
@@ -25,6 +26,7 @@ def check_priority(item, source, session, eligible, now, previous=None):
             if len(content)>1200000:return None
         response._content=bytes(content)
         facts=structured_facts(response.text,response.url)
+        period_windows=extract_ordinarie_windows(response.text,response.url)
         base=classify(item["title"],"")
         result={
          "id":url.lower().rstrip("/"),**base,"title":item["title"],
@@ -39,6 +41,7 @@ def check_priority(item, source, session, eligible, now, previous=None):
         for k,v in facts.items():
             if v is not None:
                 result[k]=v
+        if period_windows:result["individual_windows"]=period_windows
         if facts["deadline"]:result["deadline_verified_at"]=now
         if facts["source_open_confirmed"]:
             result["status"]="aperto (pagina ufficiale)"
