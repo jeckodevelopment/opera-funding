@@ -85,7 +85,7 @@ function renderItem(o){
  
 
  if(o.deadline_source)addLink(detail,"Fonte della scadenza ↗",o.deadline_source);
- if(o.amount)detail.append(el("p","Importo indicativo: "+String(o.amount).replace(/\\s*\\(da verificare\\)/i,"")));
+ if(o.amount)detail.append(el("p","Importo indicativo: "+String(o.amount).split(" (da verificare)")[0]));
  if(o.beneficiaries_excerpt)detail.append(el("p","Destinatari: "+o.beneficiaries_excerpt));
 
 
