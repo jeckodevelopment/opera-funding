@@ -33,7 +33,10 @@
     "source_id": "eucreative",
     "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
     "title": "Call for residency hosts 2026–2027 – Culture Moves Europe",
-    "note": "Finanziamento per enti culturali che ospitano artisti e professionisti internazionali; richiede progetto di residenza e mentor."
+    "note": "Finanziamento per enti culturali che ospitano artisti e professionisti internazionali; richiede progetto di residenza e mentor.",
+    "official_alternative_urls": [
+      "https://culture.ec.europa.eu/mt/culture-moves-europe/call-for-residency-hosts"
+    ]
   },
   {
     "source_id": "eucreative",
@@ -45,7 +48,10 @@
     "source_id": "erasmus",
     "url": "https://erasmus-plus.ec.europa.eu/funding-opportunities/european-literacy-coalition-consortium-fpa-sga",
     "title": "Call for proposals: European Literacy Coalition consortium",
-    "note": "Richiede la costituzione di un consorzio europeo; candidatura di Opera+ non presunta."
+    "note": "Richiede la costituzione di un consorzio europeo; candidatura di Opera+ non presunta.",
+    "official_alternative_urls": [
+      "https://erasmus-plus.ec.europa.eu/el/funding-opportunities/european-literacy-coalition-consortium-fpa-sga"
+    ]
   },
   {
     "source_id": "crt",
