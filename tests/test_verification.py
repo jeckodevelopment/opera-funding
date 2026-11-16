@@ -3,7 +3,7 @@ from datetime import datetime, timezone, timedelta
 import sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-from verification import pick_for_review,coverage,needs_review
+from verification import pick_for_review,coverage,needs_review,backlog_candidates,classify_crt_information
 
 NOW=datetime(2026,11,16,21,0,tzinfo=timezone.utc)
 def row(key, **props):
@@ -25,11 +25,25 @@ class VerificationTests(unittest.TestCase):
                   detail_checked_at=NOW.isoformat())}
         self.assertEqual(pick_for_review([row("a")],previous,1,NOW),{"a"})
     def test_three_day_revisit(self):
-        old=row("a",detail_checked=True,detail_version=3,
+        old=row("a",detail_checked=True,detail_version=4,
                 detail_checked_at=(NOW-timedelta(days=4)).isoformat())
         fresh={**old,"detail_checked_at":NOW.isoformat()}
         self.assertTrue(needs_review(old,NOW))
         self.assertFalse(needs_review(fresh,NOW))
+    def test_revisit_not_in_current_index(self):
+        old={"one":row("one",source_id="volto",funding_status="DA VERIFICARE"),
+             "expired":row("expired",source_id="volto",funding_status="CHIUSO"),
+             "other":row("other",source_id="crt",funding_status="DA VERIFICARE")}
+        pending=backlog_candidates(old,"volto",set())
+        self.assertEqual([x["id"] for x in pending],["one"])
+        self.assertEqual(backlog_candidates(old,"volto",{"one"}),[])
+    def test_crt_news_is_not_an_application(self):
+        old=row("press",source_id="crt",url="https://www.fondazionecrt.it/fondazione-crt-per-la-scuola/")
+        result=classify_crt_information(old)
+        self.assertEqual(result["opportunity_type"],"altro avviso")
+        self.assertNotEqual(result.get("funding_status"),"CHIUSO")
+        grant=row("grant",source_id="crt",url="https://www.fondazionecrt.it/bandi-progetti/note-sipari/")
+        self.assertEqual(classify_crt_information(grant)["opportunity_type"],"finanziamento potenziale")
     def test_count_evidences_without_inventing(self):
         rows=[row("a",source_id="piemonte",funding_status="APERTO",deadline="2026-12-02",
                   deadline_source="https://example.org/bando",detail_checked_at=NOW.isoformat(),
