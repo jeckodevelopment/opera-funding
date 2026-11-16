@@ -104,8 +104,8 @@ def run():
                         previous = indexed[item["id"]]
                         item["first_seen"] = previous.get("first_seen", now)
                         # preserve data verified by future, dedicated detail-page extractors
-                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
-                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
+                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
                                 item[key] = previous[key]
                     if not item.get("detail_checked") and enriched_count < 3 and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
                         item = enrich(item, source, session, eligible_to_fetch)
