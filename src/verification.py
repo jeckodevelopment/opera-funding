@@ -35,6 +35,15 @@ def queue_key(item, now=None):
         item.get("id") or item.get("url") or ""
     )
 
+def classify_crt_information(record):
+    """Exclude CRT press articles from grant candidates, without falsifying status."""
+    from urllib.parse import urlparse
+    if (record.get("source_id")=="crt"
+            and not urlparse(record.get("url") or "").path.startswith("/bandi-progetti/")):
+        record["opportunity_type"]="altro avviso"
+        record["type_reason"]="Articolo informativo CRT, non una scheda di candidatura"
+    return record
+
 def backlog_candidates(existing, source_id, discovered_ids):
     """Revisit persisted opportunities no longer linked from the current index.
 
