@@ -1,6 +1,43 @@
 <!doctype html>
-<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Opera+ Funding: opportunità di finanziamento per cultura e formazione."><title>Opera+ Funding</title><link rel="stylesheet" href="styles.css"></head>
-<body><main class="wrap"><header><div class="brandrow"><a class="brand" href="https://opera.plus/" target="_blank" rel="noopener noreferrer" aria-label="Visita Opera Plus"><img class="brandlogo" src="https://opera.plus/assets/operaplus-logo.png" alt="Opera+" loading="eager" referrerpolicy="no-referrer"></a><span class="brandrule"></span><div class="brandmeta">Osservatorio<br>finanziamenti</div></div><p class="eyebrow">CULTURA · FORMAZIONE · PROGETTI</p><h1>Funding <em>Radar.</em></h1><p class="sub">Le opportunità per dare forma a nuove idee. Bandi, finanziamenti e call per i progetti di Opera+, anche quando richiedono nuove partnership.</p></div><a class="repo" href="https://github.com/jeckodevelopment/opera-funding" target="_blank" rel="noopener noreferrer">Codice sorgente ↗</a></header>
-<section class="stats"><div><strong id="total">—</strong><span>Opportunità individuate</span></div><div><strong id="high">—</strong><span>Pertinenza ≥ 60</span></div><div><strong id="sources">—</strong><span>Fonti controllate</span></div></section>
-<section class="panel"><div class="toolbar"><label>Cerca <input id="search" type="search" placeholder="Titolo, ente, tema…"></label><label>Pertinenza <select id="level"><option value="0">Tutte</option><option value="60">≥ 60</option><option value="80">≥ 80</option></select></label><label>Ente <select id="issuer"><option value="">Tutti</option></select></label><label>Tipologia <select id="kind"><option value="">Tutte</option><option value="finanziamento potenziale">Finanziamenti potenziali</option><option value="call progettuale da verificare">Call progettuali</option><option value="altro avviso">Altri avvisi</option><option value="non classificato">Da classificare</option></select></label><label>Stato <select id="status"><option value="">Tutti (anche storico)</option><option value="aperto">Segnalati aperti</option><option value="chiuso">Chiusi</option><option value="non verificato">Da verificare</option></select></label></div><p id="scan" class="hint">Caricamento…</p><div id="items" class="items" aria-live="polite"></div></section>
-<footer>Le valutazioni iniziali derivano dai titoli e dagli indici delle fonti e non attestano l'ammissibilità. Scadenze e requisiti vanno verificati sui siti ufficiali. Nessuna opportunità viene nascosta per requisiti mancanti.</footer></main><script src="app.js"></script></body></html>
+<html lang="it"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Opera+ Funding: opportunità e bandi per progetti culturali.">
+<title>Opera+ Funding · Osservatorio bandi</title>
+<link rel="stylesheet" href="styles.css">
+</head><body><div class="shell">
+<header class="topbar">
+  <a class="identity" href="https://opera.plus/" target="_blank" rel="noopener noreferrer" aria-label="Opera+ — sito dell'associazione">
+    <img class="brandlogo" src="https://opera.plus/assets/operaplus-logo.png" alt="Opera+" width="104" height="38">
+  </a>
+  <span class="identity-divider" aria-hidden="true"></span>
+  <div class="identity-text"><strong>Funding</strong><span>Osservatorio bandi</span></div>
+  <a class="repo" href="https://github.com/jeckodevelopment/opera-funding" target="_blank" rel="noopener noreferrer">Progetto GitHub ↗</a>
+</header>
+<main id="main">
+  <div class="intro">
+    <div><h1>Opportunità di finanziamento</h1><p>Bandi, call e contributi per i progetti culturali di Opera+. Pertinenza e ammissibilità sono valutazioni distinte.</p></div>
+    <div class="lastscan" id="scan" role="status">Caricamento dei dati…</div>
+  </div>
+  <section class="summary" aria-label="Riepilogo archivio">
+    <div><strong id="total">—</strong><span>Opportunità raccolte</span></div>
+    <div><strong id="potential">—</strong><span>Finanziamenti e call potenziali</span></div>
+    <div><strong id="high">—</strong><span>Pertinenza ≥ 60</span></div>
+    <div><strong id="sources">—</strong><span>Fonti raggiunte</span></div>
+  </section>
+  <section class="workspace" aria-labelledby="results-title">
+    <div class="workspace-title"><div><h2 id="results-title">Esplora le opportunità</h2><p>Parti dalle opportunità non chiuse; i bandi storici restano sempre consultabili.</p></div><button id="reset" type="button" class="text-button">Azzera filtri</button></div>
+    <div class="filters">
+      <label class="filter-search"><span>Cerca</span><input id="search" type="search" placeholder="Titolo, tema o ente…" autocomplete="off"></label>
+      <label><span>Stato</span><select id="status"><option value="active" selected>Non chiusi e da verificare</option><option value="">Tutti, anche chiusi</option><option value="aperto">Segnalati aperti</option><option value="non verificato">Da verificare</option><option value="chiuso">Chiusi / scaduti</option></select></label>
+      <label><span>Tipologia</span><select id="kind"><option value="">Tutte</option><option value="finanziamento potenziale">Finanziamenti potenziali</option><option value="call progettuale da verificare">Call progettuali</option><option value="altro avviso">Altri avvisi</option><option value="non classificato">Non classificati</option></select></label>
+      <label><span>Ente</span><select id="issuer"><option value="">Tutti</option></select></label>
+      <label><span>Pertinenza</span><select id="level"><option value="0">Tutte</option><option value="60">Da 60/100</option><option value="80">Da 80/100</option></select></label>
+      <label><span>Ordina per</span><select id="sort"><option value="priority">Priorità e pertinenza</option><option value="relevance">Pertinenza più alta</option><option value="deadline">Scadenza più vicina</option><option value="recent">Rilevazione più recente</option></select></label>
+    </div>
+    <div class="resultbar"><span id="count" aria-live="polite">Caricamento…</span><span class="result-note">I punteggi sono preliminari, non previsioni di finanziamento</span></div>
+    <div id="items" class="results"></div>
+    <div class="pagination"><button type="button" id="more" class="more" hidden>Mostra altri risultati</button></div>
+  </section>
+</main>
+<footer>Fonte e documenti: collegamenti esterni agli enti. Le informazioni sono preliminari; verifica sempre bandi, requisiti e scadenze ufficiali. Le opportunità con requisiti non soddisfatti rimangono visibili.</footer>
+</div><script src="app.js"></script></body></html>
