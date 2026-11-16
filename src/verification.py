@@ -70,6 +70,16 @@ def classify_informational_page(record):
             "contributi-extra-fus" in path or
             "progetti-speciali" in path or
             path.strip("/") in ("contributi-extra-fus","contributi-fus"))
+    if source=="erasmusitalia":
+        # The national agency index mixes application calls with guides, forms,
+        # historical allocation decisions and navigation pages.
+        is_information=(
+            path.endswith((".pdf", ".doc", ".docx")) or
+            any(fragment in path for fragment in ("/esiti/", "/come-fare-domanda/", "/opportunita-erasmus/")) or
+            any(term in title for term in ("linee guida", "disposizioni nazionali",
+                                           "assegnazione del budget", "moduli di candidatura",
+                                           "fondi comunitari destinati", "nota congiunta"))
+        )
     if source=="volto":
         is_information=(path.rstrip("/") in ("/progetti-volto","/progetti-servizio-civile"))
     if source=="torino":
@@ -112,16 +122,27 @@ def pick_for_review(found, existing, limit, now=None):
 
 def coverage(rows, sources):
     totals={"all":len(rows),"open":0,"closed":0,"upcoming":0,"unverified":0,
-            "dated":0,"dated_with_source":0,"detail_checked":0,"reachable":0}
+            "dated":0,"dated_with_source":0,"detail_checked":0,"reachable":0,
+            "candidate_unverified":0,"informational_unverified":0,
+            "candidate_missing_deadline":0}
     by_source={}
     for row in rows:
         sid=row.get("source_id","unknown")
-        entry=by_source.setdefault(sid,{"total":0,"open":0,"unverified":0,"dated":0,"dated_with_source":0,"detail_checked":0})
+        entry=by_source.setdefault(sid,{"total":0,"open":0,"unverified":0,"dated":0,"dated_with_source":0,"detail_checked":0,
+                                        "candidate_unverified":0,"informational_unverified":0,"candidate_missing_deadline":0})
         entry["total"]+=1
         state=row.get("funding_status","DA VERIFICARE")
         bucket={"APERTO":"open","CHIUSO":"closed","IN ARRIVO":"upcoming"}.get(state,"unverified")
         totals[bucket]+=1
         if bucket in ("open","unverified"):entry[bucket]+=1
+        candidate=row.get("opportunity_type") in PROJECT_TYPES
+        if bucket=="unverified":
+            key="candidate_unverified" if candidate else "informational_unverified"
+            totals[key]+=1
+            entry[key]+=1
+        if candidate and not row.get("deadline"):
+            totals["candidate_missing_deadline"]+=1
+            entry["candidate_missing_deadline"]+=1
         for key,yes in (("dated",bool(row.get("deadline"))),
                         ("dated_with_source",bool(row.get("deadline") and row.get("deadline_source"))),
                         ("detail_checked",bool(row.get("detail_checked_at"))),
