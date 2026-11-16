@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'src/scan.py'
+      - 'src/catalog.py'
       - 'src/source_alternatives.py'
       - 'src/eu_api.py'
       - 'src/verification.py'
