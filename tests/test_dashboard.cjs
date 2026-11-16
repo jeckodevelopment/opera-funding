@@ -3,7 +3,7 @@ const vm = require("node:vm");
 const assert = require("node:assert/strict");
 const src = fs.readFileSync("web/app.js","utf8");
 const context = {
-  document: {getElementById:()=>({addEventListener(){}})},
+  document: {getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
   URL, Date, console
 };
 vm.runInNewContext(src.replace(/\ninit\(\);\s*$/, "\n") + "\nglobalThis.exposed = {state, dateLabel, sortRows, safeUrl, PAGE_SIZE};", context);
@@ -32,5 +32,13 @@ for (const key of ["search","status","kind","issuer","level","sort","reset","mor
   assert.match(html,new RegExp('id="'+key+'"'));
 }
 assert.match(html,/operaplus-logo\.png/);
-assert.match(css,/max-width:104px!important/);
+assert.match(css,/color-scheme:light/);
+assert.match(css,/\.chip\.status\.open\{/);
+assert.match(css,/\.chip\.status\.closed\{/);
+assert.match(css,/\.chip\.status\.unknown\{/);
+assert.match(css,/\.chip\.status\.upcoming\{/);
+assert.match(css,/max-width:102px!important/);
+assert.match(html,/data-value="aperto"/);
+assert.match(html,/data-value="chiuso"/);
+assert.match(html,/aria-pressed="true"/);
 console.log("Dashboard UX regression checks passed");
