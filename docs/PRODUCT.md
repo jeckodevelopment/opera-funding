@@ -184,3 +184,6 @@ I controlli reali sulla PR #33 hanno ridotto da 42 a 20 le possibili candidature
 - L'evidenza di un'apertura storica è conservata; `effective_status` usa la data corrente e la scadenza per evitare di mostrare APERTA una finestra già terminata.
 
 I nuovi controlli mantengono il limite sulla scansione, i collegamenti ufficiali e la separazione fra fonte, deadline, stato e ammissibilità.
+
+### Parser version 6: revisione obbligatoria dopo nuovi formati ufficiali
+L'integrazione dei formati Vol.To, MiC e ALCOTRA della PR #34 richiede un bump di versione del lettore dettagli. Senza questo, le schede con `detail_checked_at` recente e `detail_version=5` verrebbero saltate, anche se il codice ora riconosce le loro scadenze. La versione **6** forza la revisione progressiva degli elementi candidabili secondo la coda equa e il budget per fonte; la scansione produce nuovi valori di `deadline`, `deadline_source` e stato soltanto quando la fonte realmente letta contiene evidenze.
