@@ -29,6 +29,17 @@ class CatalogTests(unittest.TestCase):
         b={"source_id":"volto","url":B,"title":TITLE,"deadline":"2027-06-16"}
         c={"source_id":"torino","url":"https://bandi.comune.torino.it/avviso/x","title":TITLE,"deadline":"2027-02-16"}
         self.assertEqual(len(deduplicate_catalog([a,b,c])),3)
+    def test_culture_moves_volto_syndication_reconciled_with_verified_official_call(self):
+        official={"source_id":"eucreative","url":"https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
+                  "deadline":"2027-04-30","funding_status":"APERTO","first_seen":"2026-10-01"}
+        synd={"source_id":"volto","url":"https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss",
+              "deadline":"2027-04-30","funding_status":"DA VERIFICARE","first_seen":"2026-11-01"}
+        rows=reconcile_official_equivalents([synd,official])
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]["source_id"],"eucreative")
+        self.assertEqual(rows[0]["funding_status"],"APERTO")
+        self.assertIn(synd["url"],rows[0]["alternative_urls"])
+
     def test_circoscrizione_7_synced_notice_is_same_official_call(self):
         official={"source_id":"torino","url":"https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
                   "deadline":"2026-11-26","funding_status":"APERTO","first_seen":"2026-10-12"}
