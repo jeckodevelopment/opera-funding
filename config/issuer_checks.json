@@ -1,0 +1,23 @@
+[
+  {
+    "source_id": "volto",
+    "match_path": "/bando-fabbrica-spazi-civici-per-la-gioventu",
+    "official_url": "https://www.sportesalute.eu/fabbrica",
+    "parser": "sport",
+    "label": "Fabbrica – Spazi Civici per la Gioventù"
+  },
+  {
+    "source_id": "volto",
+    "match_path": "/bando-lo-sport-e-vita",
+    "official_url": "https://www.sportesalute.eu/lo-sport-e-vita.html",
+    "parser": "sport",
+    "label": "Lo Sport è vita"
+  },
+  {
+    "source_id": "volto",
+    "match_path": "/bando-una-mano-a-chi-sostiene",
+    "official_url": "https://www.unamanoachisostiene.it/",
+    "parser": "cattolica",
+    "label": "Una mano a chi sostiene 2026/27"
+  }
+]

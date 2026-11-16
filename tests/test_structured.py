@@ -34,6 +34,16 @@ class StructuredTests(unittest.TestCase):
         facts=structured_facts(html,"https://spettacolo.cultura.gov.it/festival/")
         self.assertIsNone(facts["deadline"])
         self.assertFalse(facts["source_open_confirmed"])
+    def test_piter_three_documented_submission_windows(self):
+        html="<main><h1>PITER+ 2021-2027</h1><p>Questo bando prevede la possibilità di presentare progressivamente le candidature nel rispetto di 3 date predefinite: 02 luglio 2024 ; 03 settembre 2024 ; 03 dicembre 2024.</p><p>Progetti selezionati il 12 marzo 2025.</p></main>"
+        facts=structured_facts(html,"https://interreg-alcotra.eu/it/bando-la-selezione-dei-progetti-singoli-dei-piani-territoriali-integrati-piter-2021-2027")
+        self.assertEqual(facts["application_windows"],["2024-07-02","2024-09-03","2024-12-03"])
+        self.assertEqual(facts["deadline"],"2024-12-03")
+        self.assertFalse(facts["source_open_confirmed"])
+    def test_piter_does_not_use_unlabelled_dates(self):
+        html="<main>Progetti selezionati il 12 marzo 2025. Ultime notizie del 15 novembre 2026.</main>"
+        facts=structured_facts(html,"https://interreg-alcotra.eu/it/bando-la-selezione-dei-progetti-singoli-dei-piani-territoriali-integrati-piter-2021-2027")
+        self.assertIsNone(facts["deadline"])
     def test_alcotra_closed_written_month(self):
         html="<main><h1>Terzo bando</h1><h2>Bando chiuso il 31 gennaio 2025 alle ore 12:00</h2></main>"
         facts=structured_facts(html,"https://interreg-alcotra.eu/it/terzo-bando-progetti-singoli")
