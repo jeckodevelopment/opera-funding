@@ -14,6 +14,7 @@ on:
       - 'src/pdf_dates.py'
       - 'src/structured.py'
       - 'src/priority.py'
+      - 'src/crt_windows.py'
       - 'config/priority_pages.json'
       - 'config/sources.json'
       - '.github/workflows/scan.yml'
