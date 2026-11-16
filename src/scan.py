@@ -20,6 +20,7 @@ from crt_windows import guidance_for_window
 from source_alternatives import delegated_source_status
 from eu_api import fetch_creative_europe
 from catalog import deduplicate_catalog
+from issuer_sources import apply_issuer_evidence
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -98,6 +99,7 @@ def run():
     existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else []
     indexed = {row["id"]: classify_informational_page(row) for row in existing}
     priority_pages = json.loads((ROOT / "config/priority_pages.json").read_text(encoding="utf-8"))
+    issuer_checks = json.loads((ROOT / "config/issuer_checks.json").read_text(encoding="utf-8"))
     statuses = []
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     with requests.Session() as session:
@@ -200,6 +202,15 @@ def run():
     for entry in indexed.values():
         explain(annotate(reconcile_status(entry)))
     rows=deduplicate_catalog(list(indexed.values()))
+    # Independent primary-source checks for a few recurring aggregator grants.
+    # This cannot assume the aggregator listing itself confirms a live application.
+    with requests.Session() as issuer_session:
+        issuer_session.headers.update({"User-Agent":AGENT,"Accept":"text/html"})
+        for row in rows:
+            if row.get("source_id")=="volto":
+                apply_issuer_evidence(row,None,issuer_checks,issuer_session,eligible_to_fetch,now)
+                explain(annotate(reconcile_status(row)))
+
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
