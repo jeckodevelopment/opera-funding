@@ -17,6 +17,7 @@ from fit import explain
 from priority import check_priority
 from verification import pick_for_review, coverage
 from crt_windows import guidance_for_window
+from source_alternatives import delegated_source_status
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -103,30 +104,8 @@ def run():
             # Desk Italia does not permit reliable automated crawling. Treat
             # its official European Commission coverage as a delegated channel,
             # not as a successful request to the inaccessible Italian website.
-            alternative_id=source.get("official_alternative_source_id")
-            if alternative_id:
-                upstream=next((entry for entry in statuses if entry["source_id"]==alternative_id),None)
-                if upstream is None:
-                    statuses.append({
-                        "source_id":source["id"],"source_name":source["name"],
-                        "source_url":source["url"],"ok":False,"discovered":0,
-                        "checked_at":now,
-                        "error":"Catalogo europeo alternativo non ancora disponibile",
-                        "coverage_mode":"official_alternative",
-                        "alternative_source_id":alternative_id
-                    })
-                else:
-                    delegated=bool(upstream.get("ok"))
-                    statuses.append({
-                        "source_id":source["id"],"source_name":source["name"],
-                        "source_url":source["url"],"ok":delegated,
-                        "discovered":upstream.get("discovered",0) if delegated else 0,
-                        "checked_at":now,"coverage_mode":"official_alternative",
-                        "alternative_source_id":alternative_id,
-                        "alternative_url":upstream["source_url"],
-                        "coverage_note":source.get("official_alternative_note"),
-                        **({} if delegated else {"error":"Catalogo ufficiale della Commissione europea non raggiungibile"})
-                    })
+            if source.get("official_alternative_source_id"):
+                statuses.append(delegated_source_status(source,statuses,now))
                 continue
             try:
                 found = discover(source, session, now)
