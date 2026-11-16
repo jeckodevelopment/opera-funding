@@ -8,6 +8,7 @@ from classify import parse_deadline
 DEADLINE_PATTERN = re.compile(r"(?i)(?:scadenza|termine (?:di |per (?:la )?)?(?:presentazione|candidatur|domand)|deadline|apply by)\s*[:–-]?\s*(\d{1,2}[./-]\d{1,2}[./-]20\d{2})")
 EUR_PATTERN = re.compile(r"(?i)(?:contributo massimo|finanziamento massimo|importo massimo|dotazione finanziaria|budget complessivo)\s*[:–-]?\s*(?:€|euro|eur)?\s*([\d.]+(?:,\d{2})?)\s*(?:€|euro|eur)?")
 DOC_PATTERN = re.compile(r"(?i)\b(bando|avviso|faq|frequently asked|allegat|modulistic|domanda|regolamento|linee guida|document|application)\b")
+BENEFICIARY_LABEL = re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammissibili|chi può partecipare|eligible applicants)\\s*[:–-]?")
 MAX_DETAIL_LINKS = 8
 MAX_HTML_BYTES = 1_000_000
 
@@ -28,6 +29,12 @@ def extract(html, page_url):
     match = EUR_PATTERN.search(text)
     if match:
         amount = "€ " + match.group(1) + " (da verificare)"
+    beneficiaries = None
+    for node in main.select("p, li"):
+        candidate = " ".join(node.stripped_strings)[:450]
+        if BENEFICIARY_LABEL.search(candidate) and len(candidate) > 20:
+            beneficiaries = candidate
+            break
     documents = [{"label":"Pagina del bando", "url":page_url}]
     seen = {page_url}
     for a in main.select("a[href]"):
@@ -41,7 +48,7 @@ def extract(html, page_url):
         seen.add(link)
         if len(documents) >= MAX_DETAIL_LINKS:
             break
-    return {"deadline":deadline,"amount":amount,"documents":documents,"detail_checked":True,
+    return {"deadline":deadline,"amount":amount,"beneficiaries_excerpt":beneficiaries,"documents":documents,"detail_checked":True,
             "detail_basis":"HTML della scheda; non include verifica di PDF o FAQ"}
 
 def enrich(item, source, session, eligible_to_fetch):
@@ -65,7 +72,7 @@ def enrich(item, source, session, eligible_to_fetch):
                 return item
         response._content = bytes(content)
         parsed = extract(response.text, response.url)
-        for key in ("amount","documents","detail_checked","detail_basis"):
+        for key in ("amount","beneficiaries_excerpt","documents","detail_checked","detail_basis"):
             item[key] = parsed[key]
         if parsed["deadline"] and not item.get("deadline"):
             item["deadline"] = parsed["deadline"]
