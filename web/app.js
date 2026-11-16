@@ -109,18 +109,24 @@ function render(){
 function syncTabs(){const value=$("status").value;for(const tab of document.querySelectorAll(".quick-tab")){const active=tab.dataset.value===value;tab.classList.toggle("active",active);tab.setAttribute("aria-pressed",String(active));}}
 function sourceHealth(status,opportunities){
  const sources=status.sources||[];
- const failures=sources.filter(x=>x.ok!==true);
- const ratio=sources.length?failures.length/sources.length:1;
- const level=!sources.length?"red":!failures.length?"green":failures.length>=3||ratio>=.25?"red":"yellow";
+ const failed=sources.filter(x=>x.ok!==true);
+ const empty=sources.filter(x=>x.ok===true&&(x.warning||x.discovered===0));
+ const affected=failed.length+empty.length;
+ const ratio=sources.length?affected/sources.length:1;
+ const level=!sources.length?"red":!affected?"green":failed.length>=3||affected>=4||ratio>=.25?"red":"yellow";
  const map=new Map(opportunities.map(o=>[o.source_id,o.issuer]));
- const incidents=failures.map(x=>({name:x.source_name||map.get(x.source_id)||x.source_id,reason:x.error||"Il portale non ha restituito risultati utilizzabili",id:x.source_id,url:x.source_url||""}));
- return {level,incidents,ok:sources.length-failures.length,total:sources.length};
+ const incidents=[...failed,...empty].map(x=>({
+  name:x.source_name||map.get(x.source_id)||x.source_id,
+  reason:x.ok===true?(x.warning||"Nessuna opportunità riconosciuta"):(x.error||"Fonte non raggiungibile"),
+  id:x.source_id,url:x.source_url||""
+ }));
+ return {level,incidents,ok:sources.length-failed.length,total:sources.length};
 }
 function renderSourceHealth(status,opportunities){
  const health=sourceHealth(status,opportunities);
  const dot=$("health-dot"),label=$("health-label"),count=$("health-count"),list=$("source-incidents");
  dot.className="health-dot "+health.level;
- const headline=health.level==="green"?"Tutte le fonti raggiunte":health.level==="yellow"?"Alcune fonti non raggiungibili":"Aggiornamento incompleto";
+ const headline=health.level==="green"?"Tutte le fonti analizzate":health.level==="yellow"?"Copertura parziale":"Aggiornamento incompleto";
  label.textContent=headline;
  count.textContent=health.ok+"/"+health.total+" fonti";
  list.replaceChildren();

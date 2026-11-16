@@ -138,7 +138,7 @@ def run():
                     key=target["url"].lower().rstrip("/")
                     verified=check_priority(target,source,session,eligible_to_fetch,now,indexed.get(key))
                     if verified is not None:indexed[key]=verified
-                statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":True,"discovered":len(found),"checked_at":now})
+                statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":True,"discovered":len(found),"checked_at":now,**({"warning":"Pagina raggiungibile, nessuna opportunità riconosciuta"} if not found else {})})
             except (requests.RequestException, RuntimeError, ValueError) as exc:
                 statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]})
     # Reconcile retained historical links too; do not keep outdated open flags.
