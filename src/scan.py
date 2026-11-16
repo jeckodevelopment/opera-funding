@@ -163,7 +163,9 @@ def run():
                                 previous=indexed.get(row["id"],{})
                                 row["first_seen"]=previous.get("first_seen",now)
                                 row=explain(annotate(row))
-                                row.update(guidance_for_window(period["application_type"]))
+                                hints=guidance_for_window(period["application_type"])
+                                row.update(hints)
+                                row["curated_project_ideas"]=hints["project_ideas"]
                                 indexed[row["id"]]=row
                         else:
                             indexed[key]=verified
