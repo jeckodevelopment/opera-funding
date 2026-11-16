@@ -100,6 +100,19 @@ class VerificationTests(unittest.TestCase):
             with self.subTest(grant=url):
                 self.assertEqual(classify_informational_page(row("call",source_id=sid,url=url,title="Call for proposals 2027"))["opportunity_type"],"finanziamento potenziale")
 
+    def test_guidance_and_preinformation_are_not_active_applications(self):
+        cases=[
+            ("torino","https://bandi.comune.torino.it/avviso/linee-guida-concessione-lerogazione-contributi-ordinari-altri-benefici-economici-lanno-2027","Linee Guida per contributi 2027"),
+            ("piemonte","https://bandi.regione.piemonte.it/pre-informazione-fondi-ue/sistema-regionale-standard-formativi-contributo-funzionamento-commissioni-tecniche","Pre informazione contributi")
+        ]
+        for sid,url,title in cases:
+            with self.subTest(source=sid):
+                result=classify_informational_page(row("info",source_id=sid,url=url,title=title))
+                self.assertEqual(result["opportunity_type"],"altro avviso")
+                self.assertNotEqual(result.get("funding_status"),"CHIUSO")
+        live=row("live",source_id="torino",url="https://bandi.comune.torino.it/avviso/circ-4-secondo-avviso-concessione-contributi-ordinari-2026",title="Secondo avviso contributi 2026")
+        self.assertEqual(classify_informational_page(live)["opportunity_type"],"finanziamento potenziale")
+
     def test_revisit_not_in_current_index(self):
         old={"one":row("one",source_id="volto",funding_status="DA VERIFICARE"),
              "expired":row("expired",source_id="volto",funding_status="CHIUSO"),
