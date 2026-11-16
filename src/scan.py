@@ -18,6 +18,7 @@ from priority import check_priority
 from verification import pick_for_review, coverage
 from crt_windows import guidance_for_window
 from source_alternatives import delegated_source_status
+from eu_api import fetch_creative_europe
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -108,7 +109,9 @@ def run():
                 statuses.append(delegated_source_status(source,statuses,now))
                 continue
             try:
-                found = discover(source, session, now)
+                found = (fetch_creative_europe(session,source,now)
+                         if source.get("discovery_mode")=="creative_europe_sedia_api"
+                         else discover(source,session,now))
                 # Prioritize candidate funding calls over general archive entries.
                 checked_count = 0
                 review_limit = 6 if source.get("tier")=="high" else 3
