@@ -130,6 +130,26 @@ class StructuredTests(unittest.TestCase):
         html="<main>2° scadenza: 15 settembre 2026</main>"
         facts=structured_facts(html,"https://other.example/bando")
         self.assertIsNone(facts["deadline"])
+    def test_official_culture_moves_news_declares_open_until(self):
+        cases=[
+            ("https://culture.ec.europa.eu/culture-moves-europe/whats-new/news/culture-moves-europe-new-call-for-residency-hosts-2026-2027-open","18 January 2027","2027-01-18"),
+            ("https://culture.ec.europa.eu/culture-moves-europe/whats-new/news/culture-moves-europe-new-call-for-individual-mobility-2026-2027-open","30 April 2027","2027-04-30"),
+        ]
+        for url,date_string,expected in cases:
+            with self.subTest(url=url):
+                html="<main><h1>Culture Moves Europe: new call open</h1><p>The call is open until "+date_string+".</p></main>"
+                facts=structured_facts(html,url)
+                self.assertEqual(facts["deadline"],expected)
+                self.assertTrue(facts["source_open_confirmed"])
+                self.assertEqual(facts["status_evidence"],url)
+                self.assertEqual(facts["deadline_source"],url)
+    def test_official_news_phrase_not_trusted_on_other_hosts_or_old_editions(self):
+        html="<main><p>The call is open until 18 January 2027.</p></main>"
+        for url in ("https://example.com/news/open", "https://culture.ec.europa.eu/culture-moves-europe/whats-new/news/call-2025"):
+            facts=structured_facts(html,url)
+            self.assertFalse(facts["source_open_confirmed"])
+            self.assertIsNone(facts["deadline"])
+
     def test_eu_english_status_dates(self):
         page="<html><main><p>Opportunity status: open</p><h1>Residency hosts</h1><p>Opening date: 15 October 2026, 9:00 CEST</p><p>Deadline: 18 January 2027, 23:59 CET</p></main></html>"
         facts=structured_facts(page,"https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts")

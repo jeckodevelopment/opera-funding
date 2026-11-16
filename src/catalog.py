@@ -40,6 +40,8 @@ def deduplicate_catalog(rows):
 # Explicitly checked identity: the syndication notice and the municipal
 # application page describe the same Circoscrizione 7 / 2027 call, not two calls.
 OFFICIAL_EQUIVALENTS={
+    "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2":
+    "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
     "https://volontariatotorino.it/bandi/circoscrizione-7-invito-a-presentare-progetti-per-iniziative-varie-anno-2027":
     "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7"
 }
@@ -57,7 +59,7 @@ def reconcile_official_equivalents(rows):
         official=by_url.get(_path(official_url))
         if not syndicated or not official or syndicated is official:
             continue
-        if syndicated.get("source_id")!="volto" or official.get("source_id")!="torino":
+        if syndicated.get("source_id")!="volto" or official.get("source_id") not in ("torino","eucreative"):
             continue
         if not syndicated.get("deadline") or syndicated["deadline"]!=official.get("deadline"):
             continue
