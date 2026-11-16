@@ -96,7 +96,9 @@
     "tier": "high",
     "region": "Europa/Italia",
     "type": "europeo",
-    "approved": true
+    "approved": true,
+    "official_alternative_source_id": "eucreative",
+    "official_alternative_note": "Le call sono consultate sul catalogo ufficiale della Commissione europea; il portale italiano non è interrogato automaticamente."
   },
   {
     "id": "alcotra",

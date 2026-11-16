@@ -17,6 +17,7 @@ from fit import explain
 from priority import check_priority
 from verification import pick_for_review, coverage
 from crt_windows import guidance_for_window
+from source_alternatives import delegated_source_status
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -100,6 +101,12 @@ def run():
     with requests.Session() as session:
         session.headers.update({"User-Agent":AGENT, "Accept":"text/html"})
         for source in sources:
+            # Desk Italia does not permit reliable automated crawling. Treat
+            # its official European Commission coverage as a delegated channel,
+            # not as a successful request to the inaccessible Italian website.
+            if source.get("official_alternative_source_id"):
+                statuses.append(delegated_source_status(source,statuses,now))
+                continue
             try:
                 found = discover(source, session, now)
                 # Prioritize candidate funding calls over general archive entries.
