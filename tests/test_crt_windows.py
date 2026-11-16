@@ -2,7 +2,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-from crt_windows import extract_ordinarie_windows
+from crt_windows import extract_ordinarie_windows, guidance_for_window
 
 URL="https://www.fondazionecrt.it/bandi-progetti/arte-cultura-ordinarie/"
 HTML="""<html><body><main>
@@ -15,6 +15,12 @@ HTML="""<html><body><main>
 </main></body></html>"""
 
 class CRTEditionTests(unittest.TestCase):
+    def test_guidance_is_non_live_and_non_binding(self):
+        proposal=guidance_for_window("Progetto")
+        self.assertTrue(any("videolezioni" in x for x in proposal["project_ideas"]))
+        self.assertIn("esclude",proposal["funding_scope_note"])
+        ongoing=guidance_for_window("Sostegno attività")
+        self.assertTrue(any("continuative" in x for x in ongoing["project_ideas"]))
     def test_three_distinct_2026_deadlines(self):
         rows=extract_ordinarie_windows(HTML,URL)
         self.assertEqual(len(rows),3)
