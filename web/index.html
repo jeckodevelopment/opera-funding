@@ -45,14 +45,14 @@
         <button id="reset" class="clear-button" type="button">Azzera filtri</button>
       </div>
       <div class="quick-tabs" role="group" aria-label="Filtra per stato della candidatura">
-        <button class="quick-tab" type="button" data-value="aperto" aria-pressed="false">Aperte</button>
+        <button class="quick-tab active" type="button" data-value="aperto" aria-pressed="true">Aperte</button>
         <button class="quick-tab" type="button" data-value="in arrivo" aria-pressed="false">In arrivo</button>
         <button class="quick-tab" type="button" data-value="non verificato" aria-pressed="false">Da approfondire</button>
         <button class="quick-tab" type="button" data-value="chiuso" aria-pressed="false">Scadute</button>
         <button class="quick-tab" type="button" data-value="altro contenuto" aria-pressed="false">Altri contenuti</button>
-        <button class="quick-tab active" type="button" data-value="" aria-pressed="true">Tutti</button>
+        <button class="quick-tab" type="button" data-value="" aria-pressed="false">Tutti</button>
       </div>
-      <input id="status" type="hidden" value="">
+      <input id="status" type="hidden" value="aperto">
       <div class="filter-panel">
         <label class="search-label"><span>Cerca un'opportunità</span><span class="input-wrap"><span aria-hidden="true" class="search-icon">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Titolo, ente, tema…"></span></label>
         <label><span>Ente finanziatore</span><select id="issuer"><option value="">Tutti gli enti</option></select></label>
