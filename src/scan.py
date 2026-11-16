@@ -154,7 +154,7 @@ def run():
                                 )
                                 row["closure_confirmed"]=False
                                 row["source_open_confirmed"]=bool(
-                                    verified.get("source_open_confirmed") and
+                                    (verified.get("source_open_confirmed") or period.pop("official_in_progress",False)) and
                                     period["opening_date"]<=now[:10]<=period["deadline"]
                                 )
                                 row["status"]="aperto (finestra ufficiale)" if row["source_open_confirmed"] else "non verificato"
