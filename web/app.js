@@ -1,179 +1,206 @@
 const $ = id => document.getElementById(id);
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 12;
 const DATA_ORIGIN = "https://raw.githubusercontent.com/jeckodevelopment/opera-funding/main/data/";
 const FALLBACK_ORIGIN = "data/";
-async function fetchDataset(origin) {
- const [opportunitiesResponse,statusResponse]=await Promise.all([
+let all=[], visibleCount=PAGE_SIZE;
+const el=(tag,text,className)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;};
+const safeUrl=value=>{try{const u=new URL(value);return u.protocol==="https:"?u.href:null;}catch{return null;}};
+function addLink(parent,label,url,className){
+ const href=safeUrl(url);if(!href)return;
+ const a=el("a",label,className);a.href=href;a.target="_blank";a.rel="noopener noreferrer";parent.append(a);
+}
+async function fetchDataset(origin){
+ const [opResponse,scanResponse]=await Promise.all([
   fetch(origin+"opportunities.json",{cache:"no-store",credentials:"omit"}),
   fetch(origin+"scan-status.json",{cache:"no-store",credentials:"omit"})
  ]);
- if(!opportunitiesResponse.ok||!statusResponse.ok)throw Error("HTTP error loading dataset");
- const [opportunities,status]=await Promise.all([opportunitiesResponse.json(),statusResponse.json()]);
- if(!Array.isArray(opportunities)||!status||typeof status!=="object"||!Array.isArray(status.sources))
-  throw Error("Invalid funding JSON schema");
+ if(!opResponse.ok||!scanResponse.ok)throw Error("Could not load funding data");
+ const [opportunities,status]=await Promise.all([opResponse.json(),scanResponse.json()]);
+ if(!Array.isArray(opportunities)||!status||!Array.isArray(status.sources))throw Error("Invalid funding data");
  return {opportunities,status};
 }
-async function loadDataset() {
- try {return {...await fetchDataset(DATA_ORIGIN),origin:"github"};}
- catch(error) {
-  const fallback=await fetchDataset(FALLBACK_ORIGIN);
-  return {...fallback,origin:"local",reason:error.message};
- }
+async function loadDataset(){
+ try{return {...await fetchDataset(DATA_ORIGIN),origin:"github"};}
+ catch(e){return {...await fetchDataset(FALLBACK_ORIGIN),origin:"local"};}
 }
-
-let all = [], visibleCount = PAGE_SIZE;
-const safeUrl = value => { try { const u = new URL(value); return u.protocol === "https:" ? u.href : null; } catch { return null; } };
-const el = (tag, value, className) => { const e=document.createElement(tag); if(value!==undefined)e.textContent=value; if(className)e.className=className; return e; };
-function addLink(parent,label,url) { const safe=safeUrl(url); if(!safe)return; const a=el("a",label); a.href=safe;a.target="_blank";a.rel="noopener noreferrer";parent.append(a); }
-function isExpired(o) { if(!/^\d{4}-\d{2}-\d{2}$/.test(o.deadline||""))return false; return o.deadline < new Date().toISOString().slice(0,10); }
-function state(o) {
- if(isExpired(o)||o.closure_confirmed||((o.status==="chiuso"||o.status==="scaduto")&&!o.reopened_confirmed))return "chiuso";
- const now=new Date().toISOString().slice(0,10), end=o.deadline, start=o.opening_date;
- if(start&&start>now&&o.opening_evidence)return "in arrivo";
- const openEvidence=o.source_open_confirmed===true && o.link_status==="raggiungibile";
- const validWindow=(end&&/^\d{4}-\d{2}-\d{2}$/.test(end)&&end>=now)||(o.rolling_confirmed===true&&!!o.rolling_evidence);
- if(openEvidence&&validWindow&&(!start||start<=now))return "aperto";
+const validDate=value=>typeof value==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&!Number.isNaN(Date.parse(value+"T12:00:00Z"));
+const today=()=>new Date().toISOString().slice(0,10);
+const daysLeft=date=>Math.ceil((Date.parse(date+"T00:00:00Z")-Date.parse(today()+"T00:00:00Z"))/86400000);
+function state(o){
+ const end=o.deadline,start=o.opening_date;
+ if((validDate(end)&&end<today())||o.closure_confirmed||(["chiuso","scaduto"].includes(o.status)&&!o.reopened_confirmed))return "chiuso";
+ if(validDate(start)&&start>today()&&o.opening_evidence)return "in arrivo";
+ const window=(validDate(end)&&end>=today())||(o.rolling_confirmed===true&&!!o.rolling_evidence);
+ if(o.source_open_confirmed===true&&o.link_status==="raggiungibile"&&window&&(!validDate(start)||start<=today()))return "aperto";
  return "non verificato";
 }
-function dateLabel(value) { if(!/^\d{4}-\d{2}-\d{2}$/.test(value||""))return "Scadenza non disponibile"; const [y,m,d]=value.split("-");return "Scade il "+d+"/"+m+"/"+y; }
-function priority(o) {const st=state(o);return st==="aperto"?0:st==="non verificato"?1:st==="in arrivo"?2:3;}
-function deadlineKey(o) {return o.deadline||"9999-12-31";}
-function sortRows(rows,order) {
- const relevance=(a,b)=>Number(b.relevance||0)-Number(a.relevance||0);
+function dateLabel(value){
+ if(!validDate(value))return "Scadenza non indicata";
+ const [y,m,d]=value.split("-");return "Scade il "+d+"/"+m+"/"+y;
+}
+function score(o){return Math.max(0,Math.min(100,Number(o.relevance)||0));}
+function groupOrder(o){return {aperto:0,"in arrivo":1,"non verificato":2,chiuso:3}[state(o)];}
+function sortRows(rows,order){
+ const difference=(a,b)=>score(b)-score(a);
  rows.sort((a,b)=>{
-   if(order==="relevance")return relevance(a,b);
-   if(order==="deadline")return deadlineKey(a).localeCompare(deadlineKey(b))||relevance(a,b);
-   if(order==="recent")return String(b.first_seen||"").localeCompare(a.first_seen||"")||relevance(a,b);
-   const group=priority(a)-priority(b);
-   if(group)return group;
-   if(priority(a)===0)return deadlineKey(a).localeCompare(deadlineKey(b))||relevance(a,b);
-   if(priority(a)===2)return String(a.opening_date||"9999").localeCompare(String(b.opening_date||"9999"))||relevance(a,b);
-   return relevance(a,b);
- });return rows;
+  const group=groupOrder(a)-groupOrder(b);if(group)return group;
+  if(order==="score")return difference(a,b)||String(a.deadline||"9999").localeCompare(String(b.deadline||"9999"));
+  if(state(a)==="chiuso")return String(b.deadline||"0000").localeCompare(String(a.deadline||"0000"))||difference(a,b);
+  return String(a.deadline||"9999").localeCompare(String(b.deadline||"9999"))||difference(a,b);
+ });
+ return rows;
 }
 function filteredRows(){
- const q=$("search").value.toLocaleLowerCase("it").trim(),status=$("status").value,kind=$("kind").value,issuer=$("issuer").value,min=Number($("level").value);
- const rows=all.filter(o=>{
-   const s=state(o);
-   if(status==="active"&&!(s==="aperto"||s==="in arrivo") )return false;
-   if(status&&status!=="active"&&s!==status)return false;
-   if(kind==="funding"&&!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return false;
-   if(kind&&kind!=="funding"&&(o.opportunity_type||"non classificato")!==kind)return false;
-   if(issuer&&o.issuer!==issuer)return false;
-   if(Number(o.relevance||0)<min)return false;
-   return !q||[o.title,o.issuer,...(o.themes||[])].join(" ").toLocaleLowerCase("it").includes(q);
- });return sortRows(rows,$("sort").value);
+ const term=$("search").value.trim().toLocaleLowerCase("it"),stateFilter=$("status").value,issuer=$("issuer").value,kind=$("kind").value,minimum=Number($("level").value);
+ return sortRows(all.filter(o=>{
+  const actual=state(o);
+  if(stateFilter&&actual!==stateFilter)return false;
+  if(kind==="funding"&&!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return false;
+  if(kind&&kind!=="funding"&&kind!==o.opportunity_type)return false;
+  if(issuer&&issuer!==o.issuer)return false;
+  if(score(o)<minimum)return false;
+  if(!term)return true;
+  return [o.title,o.issuer,o.beneficiaries_excerpt,...(o.themes||[])].filter(Boolean).join(" ").toLocaleLowerCase("it").includes(term);
+ }),$("sort").value);
 }
-function chip(label,type){return el("span",label,"chip "+(type||""));}
-function renderItem(o){
- const item=el("article",undefined,"item");const main=el("div",undefined,"item-main"),left=el("div");
- const meta=el("div",undefined,"item-meta");meta.append(el("span",o.issuer||"Ente non specificato"));
- const badges=el("div",undefined,"item-badges");const st=state(o);
- badges.append(chip(st==="chiuso"?"CHIUSO":st==="aperto"?"APERTO":st==="in arrivo"?"IN ARRIVO":"STATO NON CONFERMATO","status "+(st==="chiuso"?"closed":st==="aperto"?"open":st==="in arrivo"?"upcoming":"unknown")));
- badges.append(chip(dateLabel(o.deadline),"deadline"));
- badges.append(chip(o.opportunity_type==="call progettuale da verificare"?"Call progettuale":o.opportunity_type==="finanziamento potenziale"?"Finanziamento potenziale":(o.opportunity_type||"Tipologia da definire")));
- left.append(badges,el("h3",o.title||"Senza titolo"),meta);
- const score=el("div",undefined,"item-score");score.append(el("strong",String(o.relevance??0)+"/100"),el("span","Pertinenza"));
- main.append(left,score);item.append(main);
- const actions=el("div",undefined,"item-actions");const broken=o.link_status==="non disponibile";
- if(!broken)addLink(actions,"Consulta la fonte ↗",o.resolved_url||o.url);
- else addLink(actions,"Pagina bandi dell'ente ↗",o.source_url);
- const detail=el("div",undefined,"item-details");detail.hidden=true;
- const detailsButton=el("button","Dettagli +","details-toggle");detailsButton.type="button";detailsButton.setAttribute("aria-expanded","false");
- detailsButton.addEventListener("click",()=>{detail.hidden=!detail.hidden;detailsButton.setAttribute("aria-expanded",String(!detail.hidden));detailsButton.textContent=detail.hidden?"Dettagli +":"Nascondi dettagli −";});
- actions.append(detailsButton);item.append(actions);
- 
-
- if(o.deadline_source)addLink(detail,"Fonte della scadenza ↗",o.deadline_source);
- if(Array.isArray(o.application_windows)&&o.application_windows.length>1){
-  detail.append(el("p","Finestre di candidatura: "+o.application_windows.map(x=>dateLabel(x).replace("Scade il ","")).join(" · ")+". La finestra applicabile dipende dal periodo del progetto."));
+function opportunitySummary(o){
+ if(o.summary&&typeof o.summary==="string")return o.summary;
+ const themes=(o.themes||[]).slice(0,2);
+ if(themes.length){
+  const kind=o.opportunity_type==="finanziamento potenziale"?"Finanziamento":"Call progettuale";
+  return kind+" con temi legati a "+themes.join(" e ")+". Consulta la scheda ufficiale per destinatari e condizioni.";
  }
- if(o.amount)detail.append(el("p","Importo indicativo: "+String(o.amount).split(" (da verificare)")[0]));
- if(o.beneficiaries_excerpt)detail.append(el("p","Destinatari: "+o.beneficiaries_excerpt));
-
-
- if(Array.isArray(o.project_ideas)&&o.project_ideas.length)detail.append(el("p","Possibili progetti per Opera+: "+o.project_ideas.join("; ")));
-
-
- if(broken)detail.append(el("p","Il collegamento diretto risulta non disponibile (404/410).","linkwarn"));
-
+ if(o.opportunity_type==="finanziamento potenziale")return "Opportunità di sostegno economico: requisiti, destinatari e modalità di partecipazione sono nella scheda ufficiale.";
+ if(o.opportunity_type==="call progettuale da verificare")return "Invito a presentare progetti. Consulta la fonte per approfondire obiettivi, finanziamento e destinatari.";
+ return "Avviso pubblicato dall’ente promotore. Consulta la fonte originale per conoscere il contenuto.";
+}
+function statusLabel(s){return {aperto:"APERTO","in arrivo":"IN ARRIVO","non verificato":"STATO NON CONFERMATO",chiuso:"CHIUSO"}[s];}
+function makeCalendar(o){
+ const date=o.deadline;const calendar=el("div",undefined,"calendar"+(!validDate(date)?" unknown-date":""));
+ calendar.setAttribute("role","img");
+ calendar.setAttribute("aria-label",dateLabel(date));
+ if(!validDate(date)){calendar.append(el("span","DATA","calendar-month"),el("span","—","calendar-day"),el("span","Non indicata","calendar-year"));return calendar;}
+ const [year,month,day]=date.split("-");
+ const monthName=["GEN","FEB","MAR","APR","MAG","GIU","LUG","AGO","SET","OTT","NOV","DIC"][Number(month)-1];
+ if(state(o)==="aperto"&&daysLeft(date)<=10)calendar.classList.add("urgent");
+ calendar.append(el("span",monthName,"calendar-month"),el("span",String(Number(day)),"calendar-day"),el("span",year,"calendar-year"));
+ return calendar;
+}
+function makeScore(o){
+ const container=el("div",undefined,"score-wrap");const value=score(o);
+ const num=el("span",String(value),"score-value"+(value>=80?" high-score":""));num.append(el("small","/100"));
+ const track=el("div",undefined,"score-track");const fill=el("div",undefined,"score-fill");fill.style.width=value+"%";track.append(fill);
+ container.append(num,el("span","Affinità","score-label"),track);return container;
+}
+function makeCard(o){
+ const article=el("article",undefined,"item");
+ const left=el("div",undefined,"item-main"),right=el("aside",undefined,"item-side");
+ const tags=el("div",undefined,"item-badges");const st=state(o);
+ tags.append(el("span",statusLabel(st),"chip status "+(st==="aperto"?"open":st==="chiuso"?"closed":st==="in arrivo"?"upcoming":"unknown")));
+ if(o.amount)tags.append(el("span","Contributo disponibile","chip"));
+ left.append(tags);
+ left.append(el("h3",o.title||"Opportunità senza titolo","item-title"));
+ left.append(el("p",opportunitySummary(o),"item-summary"));
+ const meta=el("div",undefined,"item-meta");
+ meta.append(el("span",o.issuer||"Ente non indicato","issuer-name"));
+ if(o.themes?.length)meta.append(el("span",o.themes[0]));
+ left.append(meta);
+ const actions=el("div",undefined,"item-actions");
+ if(o.link_status==="non disponibile")addLink(actions,"Visita il sito dell’ente ↗",o.source_url,"source-link");
+ else addLink(actions,"Apri il bando ↗",o.resolved_url||o.url,"source-link");
+ const details=el("div",undefined,"item-details");details.hidden=true;
+ const hasDetails=Boolean(o.amount||o.beneficiaries_excerpt||(o.application_windows?.length>1)||o.project_ideas?.length||o.documents?.length>1);
+ if(hasDetails){
+  const toggle=el("button","Altre informazioni +","details-toggle");toggle.type="button";toggle.setAttribute("aria-expanded","false");
+  toggle.addEventListener("click",()=>{details.hidden=!details.hidden;toggle.textContent=details.hidden?"Altre informazioni +":"Nascondi informazioni −";toggle.setAttribute("aria-expanded",String(!details.hidden));});
+  actions.append(toggle);
+ }
+ left.append(actions);
+ if(o.amount)details.append(el("p","Contributo: "+String(o.amount).replace(" (da verificare)","")));
+ if(o.beneficiaries_excerpt)details.append(el("p","Destinatari: "+o.beneficiaries_excerpt));
+ if(Array.isArray(o.application_windows)&&o.application_windows.length>1)details.append(el("p","Finestre di candidatura: "+o.application_windows.filter(validDate).map(date=>dateLabel(date).slice(9)).join(" · ")+". La finestra applicabile dipende dal progetto."));
+ if(Array.isArray(o.project_ideas)&&o.project_ideas.length)details.append(el("p","Idee per Opera+: "+o.project_ideas.slice(0,2).join("; ")));
+ if(o.deadline_source)addLink(details,"Fonte della scadenza ↗",o.deadline_source);
  const docs=el("div",undefined,"documents");
- if(Array.isArray(o.documents)){for(const d of o.documents.slice(1,8))addLink(docs,(d.label||"Documento")+" ↗",d.url);}
- if(docs.childNodes.length)detail.append(docs);
- item.append(detail);return item;
+ for(const d of (o.documents||[]).slice(1,6))addLink(docs,(d.label||"Documento")+" ↗",d.url);
+ if(docs.childNodes.length)details.append(docs);
+ left.append(details);
+ right.append(makeCalendar(o),makeScore(o));article.append(left,right);
+ return article;
 }
 function render(){
- const rows=filteredRows(),displayed=rows.slice(0,visibleCount);
- $("items").replaceChildren(...displayed.map(renderItem));
- if(!rows.length)$("items").append(el("p",all.length?"Nessun risultato: prova a modificare i filtri.":"Non ci sono ancora opportunità disponibili.","empty"));
- $("count").textContent=rows.length+" risultati"+(rows.length>PAGE_SIZE?" · visualizzati "+displayed.length:"");
- $("more").hidden=visibleCount>=rows.length;
+ const items=filteredRows(),batch=items.slice(0,visibleCount);
+ $("items").replaceChildren(...batch.map(makeCard));
+ if(!items.length){
+  const empty=$("status").value==="aperto"?"Nessuna candidatura aperta confermata con i filtri selezionati. Esplora le altre opportunità.":"Nessuna opportunità corrisponde ai filtri selezionati.";
+  $("items").append(el("p",empty,"empty"));
+ }
+ $("count").textContent=items.length+" opportunità"+(items.length>PAGE_SIZE?" · "+batch.length+" visualizzate":"");
+ $("more").hidden=visibleCount>=items.length;
 }
-function syncTabs(){const value=$("status").value;for(const tab of document.querySelectorAll(".quick-tab")){const active=tab.dataset.value===value;tab.classList.toggle("active",active);tab.setAttribute("aria-pressed",String(active));}}
 function sourceHealth(status,opportunities){
- const sources=status.sources||[];
- const failed=sources.filter(x=>x.ok!==true);
- const empty=sources.filter(x=>x.ok===true&&(x.warning||x.discovered===0));
- const affected=failed.length+empty.length;
- const ratio=sources.length?affected/sources.length:1;
- const level=!sources.length?"red":!affected?"green":failed.length>=3||affected>=4||ratio>=.25?"red":"yellow";
- const map=new Map(opportunities.map(o=>[o.source_id,o.issuer]));
- const incidents=[...failed,...empty].map(x=>({
-  name:x.source_name||map.get(x.source_id)||x.source_id,
-  reason:x.ok===true?(x.warning||"Nessuna opportunità riconosciuta"):(x.error||"Fonte non raggiungibile"),
-  id:x.source_id,url:x.source_url||""
- }));
- return {level,incidents,ok:sources.length-failed.length,total:sources.length};
+ const sources=status.sources||[],failed=sources.filter(o=>o.ok!==true),ratio=sources.length?failed.length/sources.length:1;
+ const level=!sources.length?"red":!failed.length?"green":failed.length>=3||ratio>=.25?"red":"yellow";
+ const names=new Map(opportunities.map(x=>[x.source_id,x.issuer]));
+ return {level,ok:sources.length-failed.length,total:sources.length,
+  incidents:failed.map(x=>({name:x.source_name||names.get(x.source_id)||x.source_id,reason:x.error||"Impossibile completare la lettura della fonte",url:x.source_url||""}))};
 }
 function renderSourceHealth(status,opportunities){
- const health=sourceHealth(status,opportunities);
- const dot=$("health-dot"),label=$("health-label"),count=$("health-count"),list=$("source-incidents");
- dot.className="health-dot "+health.level;
- const headline=health.level==="green"?"Tutte le fonti analizzate":health.level==="yellow"?"Copertura parziale":"Aggiornamento incompleto";
- label.textContent=headline;
- count.textContent=health.ok+"/"+health.total+" fonti";
- list.replaceChildren();
- if(!health.incidents.length){list.append(el("p","Nessuna anomalia segnalata nell’ultimo aggiornamento.","health-ok"));return;}
- for(const issue of health.incidents){
+ const h=sourceHealth(status,opportunities);
+ $("health-dot").className="health-dot "+h.level;
+ $("health-label").textContent=h.level==="green"?"Fonti operative":h.level==="yellow"?"Anomalie sulle fonti":"Problemi di aggiornamento";
+ $("health-count").textContent=h.ok+" / "+h.total+" fonti raggiunte";
+ const list=$("source-incidents");list.replaceChildren();
+ if(!h.incidents.length){list.append(el("p","Nessuna anomalia tecnica riscontrata nell’ultima scansione.","health-ok"));return;}
+ for(const issue of h.incidents){
   const row=el("div",undefined,"source-incident");
-  const head=el("strong",issue.name);
-  if(issue.url)addLink(row,issue.name+" ↗",issue.url);
-  else row.append(head);
+  if(issue.url)addLink(row,issue.name,issue.url);else row.append(el("strong",issue.name));
   row.append(el("span",issue.reason));
   list.append(row);
  }
 }
+function syncControls(){
+ for(const node of document.querySelectorAll(".quick-tab")){
+  const active=node.dataset.value===$("status").value;
+  node.classList.toggle("active",active);node.setAttribute("aria-pressed",String(active));
+ }
+ for(const node of document.querySelectorAll(".sort-button")){
+  const active=node.dataset.sort===$("sort").value;
+  node.classList.toggle("active",active);node.setAttribute("aria-pressed",String(active));
+ }
+}
 function resetPagination(){visibleCount=PAGE_SIZE;render();}
 async function init(){
- const button=$("refresh");if(button){button.disabled=true;button.textContent="Aggiornamento…";}
+ const button=$("refresh");button.disabled=true;button.textContent="Aggiornamento…";
  try{
   const dataset=await loadDataset();all=dataset.opportunities;const status=dataset.status;
   $("total").textContent=all.filter(o=>state(o)==="aperto").length;
   $("potential").textContent=all.filter(o=>["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type)).length;
-  $("high").textContent=all.filter(o=>state(o)==="non verificato").length;
-  $("sources").textContent=all.filter(o=>state(o)==="chiuso").length;
-  const timestamp=status.checked_at?new Date(status.checked_at).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"}):"non disponibile";
-  const failures=(status.sources||[]).filter(o=>!o.ok).length;
-  const source=dataset.origin==="github"?"Dati live da GitHub":"Copia locale di riserva (GitHub non raggiungibile)";
-  $("scan").textContent=source+" · Ultima scansione: "+timestamp+" · "+failures+" fonti con anomalie";
+  $("high").textContent=all.filter(o=>state(o)==="aperto"&&score(o)>=60).length;
+  $("sources").textContent=status.sources.length;
+  const stamp=status.checked_at?new Date(status.checked_at).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"}):"non disponibile";
+  $("scan").textContent=(dataset.origin==="github"?"Ultima scansione: ":"Copia locale · Ultima scansione: ")+stamp;
   $("scan").classList.toggle("fallback-data",dataset.origin==="local");
-  const issuer=$("issuer");const oldIssuer=issuer.value;issuer.replaceChildren(el("option","Tutti"));
-  issuer.firstChild.value="";
+  const selector=$("issuer"),oldValue=selector.value;selector.replaceChildren();
+  const allOption=el("option","Tutti gli enti");allOption.value="";selector.append(allOption);
   for(const name of [...new Set(all.map(o=>o.issuer).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"it"))){
-   const option=el("option",name);option.value=name;issuer.append(option);
+   const option=el("option",name);option.value=name;selector.append(option);
   }
-  issuer.value=Array.from(issuer.options).some(x=>x.value===oldIssuer)?oldIssuer:"";
-  renderSourceHealth(status,all);syncTabs();render();
- }catch(err){
-  $("scan").textContent="Impossibile caricare i dati da GitHub o dalla copia locale";
+  selector.value=[...selector.options].some(x=>x.value===oldValue)?oldValue:"";
+  renderSourceHealth(status,all);syncControls();render();
+ }catch(e){
+  $("scan").textContent="Dati non disponibili";$("items").replaceChildren(el("p","Impossibile caricare le opportunità. Riprova con Aggiorna.","empty"));
   $("health-dot").className="health-dot red";$("health-label").textContent="Dati non disponibili";
-  $("source-incidents").textContent="Non è stato possibile consultare il report delle fonti.";
-  $("items").replaceChildren(el("p","Dati temporaneamente non disponibili. Riprova con Aggiorna.","empty"));
- }finally{if(button){button.disabled=false;button.textContent="Aggiorna dati ↻";}}
+  $("source-incidents").textContent="Il report dell’ultima scansione non è disponibile.";
+ }finally{button.disabled=false;button.textContent="Aggiorna ↻";}
 }
-for(const id of ["search","status","kind","issuer","level","sort"])$(id).addEventListener(id==="search"?"input":"change",resetPagination);
-$("reset").addEventListener("click",()=>{$("search").value="";$("status").value="active";$("kind").value="funding";$("issuer").value="";$("level").value="0";$("sort").value="priority";syncTabs();resetPagination();});
-for(const tab of document.querySelectorAll(".quick-tab"))tab.addEventListener("click",()=>{$("status").value=tab.dataset.value;syncTabs();resetPagination();});
-$("refresh").addEventListener("click",init);
+for(const id of ["search","issuer","kind","level"])$(id).addEventListener(id==="search"?"input":"change",resetPagination);
+for(const node of document.querySelectorAll(".quick-tab"))node.addEventListener("click",()=>{$("status").value=node.dataset.value;syncControls();resetPagination();});
+for(const node of document.querySelectorAll(".sort-button"))node.addEventListener("click",()=>{$("sort").value=node.dataset.sort;syncControls();resetPagination();});
+$("reset").addEventListener("click",()=>{
+ $("search").value="";$("issuer").value="";$("kind").value="funding";$("level").value="0";$("status").value="aperto";$("sort").value="deadline";
+ syncControls();resetPagination();
+});
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
+$("refresh").addEventListener("click",init);
 init();
