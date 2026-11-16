@@ -43,6 +43,26 @@ def _festival_windows(text):
         except (ValueError,KeyError):pass
     return sorted(set(dates))
 
+
+# Source-specific official application date labels. These are not publication dates.
+ITALIAN_DATE=r"(\d{1,2})\s+(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\s+(20\d{2})"
+ALCOTRA_CLOSING=re.compile(r"(?i)\b(?:data\s+di\s+chiusura|chiusura)\s*[:–-]?\s*"+DATE_TOKEN)
+ALCOTRA_OPENING=re.compile(r"(?i)\bdata\s+di\s+apertura\s*[:–-]?\s*"+DATE_TOKEN)
+CSVNET_CLOSING=re.compile(r"(?i)\bscadenza\s*[:–-]?\s*(?:"+DATE_TOKEN+r"|"+ITALIAN_DATE+r")")
+TORINO_APPLICATION_END=re.compile(r"(?i)\b(?:dal|dalle)\s+"+ITALIAN_DATE+r".{0,35}?\bal\s+"+ITALIAN_DATE+r"(?=\s|[.,;:]|$)")
+TORINO_NUMERIC_END=re.compile(r"(?i)\b(?:richiest[ae]|domand[ae]|candidatur[ae]|propost[ae]).{0,100}?\b(?:entro|al)\s*(?:il\s+)?"+DATE_TOKEN)
+def _italian_date(match,start=1):
+    if not match:return None
+    try:return date(int(match.group(start+2)),IT_MONTHS[match.group(start+1).lower()],int(match.group(start))).isoformat()
+    except (ValueError,KeyError,TypeError):return None
+def _csvnet_deadline(txt):
+    match=CSVNET_CLOSING.search(txt)
+    if not match:return None
+    if match.group(1):
+        try:return date(int(match.group(3)),int(match.group(2)),int(match.group(1))).isoformat()
+        except ValueError:return None
+    return _italian_date(match,4)
+
 def _date(match):
     if not match:return None
     try:return date(int(match.group(3)),int(match.group(2)),int(match.group(1))).isoformat()
@@ -69,6 +89,18 @@ def structured_facts(html,url):
     if windows:deadline=next((x for x in windows if x>=date.today().isoformat()),windows[-1])
     if not deadline:deadline=_english_date(EN_DEADLINE.search(txt))
     if not opening:opening=_english_date(EN_OPENING.search(txt))
+    if "infobandi.csvnet.it" in url and not deadline:
+        deadline=_csvnet_deadline(txt)
+    if "interreg-alcotra.eu" in url:
+        if not deadline:deadline=_date(ALCOTRA_CLOSING.search(txt))
+        if not opening:opening=_date(ALCOTRA_OPENING.search(txt))
+    if "bandi.comune.torino.it" in url and not deadline:
+        # Date range explicitly associated with filing requests, not generic project periods.
+        match=TORINO_APPLICATION_END.search(txt)
+        if match and re.search(r"(?i)(presentares+las+richiesta|presentares+(?:les+)?domande|presentaziones+(?:dis+)?progetti)",txt[max(0,match.start()-70):match.end()+100]):
+            deadline=_italian_date(match,4)
+            if not opening:opening=_italian_date(match,1)
+        if not deadline:deadline=_date(TORINO_NUMERIC_END.search(txt))
     if "www.fondazionecrt.it" in url:
         crt_deadline=_crt_dates(txt)
         if crt_deadline:deadline=crt_deadline
