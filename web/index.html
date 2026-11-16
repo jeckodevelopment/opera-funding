@@ -19,20 +19,20 @@
     <div class="lastscan" id="scan" role="status">Caricamento dei dati…</div>
   </div>
   <section class="summary" aria-label="Riepilogo archivio">
-    <div><strong id="total">—</strong><span>Opportunità raccolte</span></div>
+    <div><strong id="total">—</strong><span>APERTE con evidenza</span></div>
     <div><strong id="potential">—</strong><span>Finanziamenti e call potenziali</span></div>
-    <div><strong id="high">—</strong><span>Pertinenza ≥ 60</span></div>
-    <div><strong id="sources">—</strong><span>Fonti raggiunte</span></div>
+    <div><strong id="high">—</strong><span>DA VERIFICARE</span></div>
+    <div><strong id="sources">—</strong><span>CHIUSE (nello storico)</span></div>
   </section>
   <section class="workspace" aria-labelledby="results-title">
-    <div class="workspace-title"><div><h2 id="results-title">Esplora le opportunità</h2><p>Parti dalle opportunità non chiuse; i bandi storici restano sempre consultabili.</p></div><button id="reset" type="button" class="text-button">Azzera filtri</button></div>
+    <div class="workspace-title"><div><h2 id="results-title">Esplora le opportunità</h2><p>Prima le candidature aperte per scadenza, poi le opportunità da verificare. Lo storico resta nel filtro.</p></div><button id="reset" type="button" class="text-button">Azzera filtri</button></div>
     <div class="filters">
       <label class="filter-search"><span>Cerca</span><input id="search" type="search" placeholder="Titolo, tema o ente…" autocomplete="off"></label>
-      <label><span>Stato</span><select id="status"><option value="active" selected>Non chiusi e da verificare</option><option value="">Tutti, anche chiusi</option><option value="aperto">Segnalati aperti</option><option value="non verificato">Da verificare</option><option value="chiuso">Chiusi / scaduti</option></select></label>
-      <label><span>Tipologia</span><select id="kind"><option value="">Tutte</option><option value="finanziamento potenziale">Finanziamenti potenziali</option><option value="call progettuale da verificare">Call progettuali</option><option value="altro avviso">Altri avvisi</option><option value="non classificato">Non classificati</option></select></label>
+      <label><span>Stato</span><select id="status"><option value="active" selected>Aperte e da verificare</option><option value="">Tutti, anche chiusi</option><option value="aperto">APERTO</option><option value="non verificato">DA VERIFICARE</option><option value="in arrivo">IN ARRIVO</option><option value="chiuso">CHIUSO</option></select></label>
+      <label><span>Tipologia</span><select id="kind"><option value="funding" selected>Finanziamenti e call</option><option value="">Tutte, inclusi altri avvisi</option><option value="finanziamento potenziale">Finanziamenti potenziali</option><option value="call progettuale da verificare">Call progettuali</option><option value="altro avviso">Altri avvisi</option><option value="non classificato">Non classificati</option></select></label>
       <label><span>Ente</span><select id="issuer"><option value="">Tutti</option></select></label>
       <label><span>Pertinenza</span><select id="level"><option value="0">Tutte</option><option value="60">Da 60/100</option><option value="80">Da 80/100</option></select></label>
-      <label><span>Ordina per</span><select id="sort"><option value="priority">Priorità e pertinenza</option><option value="relevance">Pertinenza più alta</option><option value="deadline">Scadenza più vicina</option><option value="recent">Rilevazione più recente</option></select></label>
+      <label><span>Ordina per</span><select id="sort"><option value="priority">Aperti per scadenza, poi da verificare</option><option value="relevance">Pertinenza più alta</option><option value="deadline">Scadenza più vicina</option><option value="recent">Rilevazione più recente</option></select></label>
     </div>
     <div class="resultbar"><span id="count" aria-live="polite">Caricamento…</span><span class="result-note">I punteggi sono preliminari, non previsioni di finanziamento</span></div>
     <div id="items" class="results"></div>
