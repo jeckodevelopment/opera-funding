@@ -35,3 +35,9 @@ La pagina ufficiale [Aiuti allo spettacolo dal vivo](https://bandi.regione.piemo
 - Sono state aggiunte al controllo diretto le schede `Culture Moves Europe – Call for residency hosts 2026–2027` e `Circulation of European literary works 2027` (portale Cultura UE), e `European Literacy Coalition consortium` (Erasmus+). Gli accessi dipendono dal rispetto di robots.txt e dalla disponibilità delle pagine.
 - Alcune call sono rivolte prevalentemente a editori, consorzi, professionisti o soggetti con caratteristiche specifiche. L'apertura della call non determina automaticamente l'ammissibilità di Opera+.
 - La copertura dell'intero catalogo di Funding & Tenders e dei risultati caricati dinamicamente resta un incremento successivo: il registro delle fonti è approvato, ma non equivalente a copertura totale.
+
+## Fondazione CRT — catalogo ufficiale e scadenze
+- La fonte primaria passa dalla sezione di **notizie** `/category/progetti-e-bandi/` al **catalogo ufficiale** `/progetti-e-bandi/`. Questo riduce la discovery di articoli sulle iniziative già finanziate come se fossero bandi candidabili.
+- Monitoraggio ricorrente delle tre pagine ufficiali `NoteSipari`, `Orizzonti L.I.V.E.` e `Ordinarie – Arte e Cultura`. Le pagine dell'edizione 2026 mostrano finestre multiple e, al 16/11/2026, scadenze trascorse. Lo scanner usa l'ultima scadenza identificata, senza classificare come aperto ciò che è chiuso.
+- Il registro `config/sources.json` marca tutte le 13 fonti come `approved: true` secondo la decisione dell'associazione. Tale approvazione riguarda **la scelta delle fonti**, non l'affidabilità a priori dei dati raccolti, lo stato di disponibilità di ogni singola scansione o la candidabilità delle opportunità.
+- Lo storico dei collegamenti già importati dalle notizie CRT viene mantenuto nel dataset; eventuale pulizia o esclusione permanente richiede una politica di archiviazione distinta.

@@ -5,15 +5,17 @@
     "url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
     "tier": "high",
     "region": "Piemonte",
-    "type": "fondazione"
+    "type": "fondazione",
+    "approved": true
   },
   {
     "id": "crt",
     "name": "Fondazione CRT",
-    "url": "https://www.fondazionecrt.it/category/progetti-e-bandi/",
+    "url": "https://www.fondazionecrt.it/progetti-e-bandi/",
     "tier": "high",
     "region": "Piemonte",
-    "type": "fondazione"
+    "type": "fondazione",
+    "approved": true
   },
   {
     "id": "piemonte",
@@ -21,7 +23,8 @@
     "url": "https://bandi.regione.piemonte.it/",
     "tier": "high",
     "region": "Piemonte",
-    "type": "pubblico"
+    "type": "pubblico",
+    "approved": true
   },
   {
     "id": "torino",
@@ -29,7 +32,8 @@
     "url": "https://bandi.comune.torino.it/avvisi/contributi",
     "tier": "high",
     "region": "Torino",
-    "type": "pubblico"
+    "type": "pubblico",
+    "approved": true
   },
   {
     "id": "culturatorino",
@@ -37,7 +41,8 @@
     "url": "https://fpct.it/bandi-avvisi/",
     "tier": "high",
     "region": "Torino",
-    "type": "fondazione"
+    "type": "fondazione",
+    "approved": true
   },
   {
     "id": "volto",
@@ -45,7 +50,8 @@
     "url": "https://volontariatotorino.it/bandi/",
     "tier": "medium",
     "region": "Piemonte",
-    "type": "aggregatore"
+    "type": "aggregatore",
+    "approved": true
   },
   {
     "id": "mic",
@@ -53,7 +59,8 @@
     "url": "https://spettacolo.cultura.gov.it/",
     "tier": "medium",
     "region": "Italia",
-    "type": "pubblico"
+    "type": "pubblico",
+    "approved": true
   },
   {
     "id": "eucreative",
@@ -61,7 +68,8 @@
     "url": "https://culture.ec.europa.eu/funding/calls",
     "tier": "medium",
     "region": "Europa",
-    "type": "europeo"
+    "type": "europeo",
+    "approved": true
   },
   {
     "id": "erasmus",
@@ -69,7 +77,8 @@
     "url": "https://erasmus-plus.ec.europa.eu/funding",
     "tier": "medium",
     "region": "Europa",
-    "type": "europeo"
+    "type": "europeo",
+    "approved": true
   },
   {
     "id": "eufunding",
@@ -77,7 +86,8 @@
     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
     "tier": "medium",
     "region": "Europa",
-    "type": "europeo"
+    "type": "europeo",
+    "approved": true
   },
   {
     "id": "creativeitalia",
@@ -85,7 +95,8 @@
     "url": "https://europacreativa.cultura.gov.it/",
     "tier": "high",
     "region": "Europa/Italia",
-    "type": "europeo"
+    "type": "europeo",
+    "approved": true
   },
   {
     "id": "alcotra",
@@ -93,7 +104,8 @@
     "url": "https://interreg-alcotra.eu/it/bandi-0",
     "tier": "medium",
     "region": "Piemonte/Francia",
-    "type": "europeo"
+    "type": "europeo",
+    "approved": true
   },
   {
     "id": "erasmusitalia",
@@ -101,6 +113,7 @@
     "url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
     "tier": "medium",
     "region": "Europa/Italia",
-    "type": "europeo"
+    "type": "europeo",
+    "approved": true
   }
 ]

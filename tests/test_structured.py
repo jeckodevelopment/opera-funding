@@ -17,6 +17,18 @@ PAGE="""<html><main>
 URL="https://bandi.regione.piemonte.it/contributi-finanziamenti/manifestazioni"
 
 class StructuredTests(unittest.TestCase):
+    def test_crt_multiple_windows_select_latest(self):
+        html="<main><p>1° scadenza chiusa il 27 febbraio 2026</p><p>2° scadenza: 15 settembre 2026</p></main>"
+        facts=structured_facts(html,"https://www.fondazionecrt.it/bandi-progetti/note-sipari/")
+        self.assertEqual(facts["deadline"],"2026-09-15")
+    def test_crt_date_range_uses_closing_date(self):
+        html="<main><p>Seconda scadenza: tra il 01/07/2026 e il 15/10/2026</p></main>"
+        facts=structured_facts(html,"https://www.fondazionecrt.it/bandi-progetti/arte-cultura-ordinarie/")
+        self.assertEqual(facts["deadline"],"2026-10-15")
+    def test_crt_special_rule_not_applied_to_unrelated_domain(self):
+        html="<main>2° scadenza: 15 settembre 2026</main>"
+        facts=structured_facts(html,"https://other.example/bando")
+        self.assertIsNone(facts["deadline"])
     def test_eu_english_status_dates(self):
         page="<html><main><p>Opportunity status: open</p><h1>Residency hosts</h1><p>Opening date: 15 October 2026, 9:00 CEST</p><p>Deadline: 18 January 2027, 23:59 CET</p></main></html>"
         facts=structured_facts(page,"https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts")
