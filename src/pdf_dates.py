@@ -27,7 +27,7 @@ LABEL = (
     r"|deadline|apply\s+by"
     r"|(?:domande|candidature|istanze|proposte)\s+(?:devono\s+)?(?:essere\s+)?"
     r"(?:presentate|inviate|pervenire|trasmesse)\s+entro"
-    r"|entro\s+(?:e\s+non\s+oltre\s+)?(?:il\s+)?(?:termine\s+del\s+)?)"
+    r")"
 )
 # Allow a short phrase such as "alle ore 12:00 del" between the label and date,
 # but no intervening date or another independent section.
