@@ -1,6 +1,13 @@
 name: Scan funding sources
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/scan.py'
+      - 'src/classify.py'
+      - 'config/sources.json'
+      - '.github/workflows/scan.yml'
   schedule:
     - cron: '0 6 * * 1,3,5'
 permissions:
