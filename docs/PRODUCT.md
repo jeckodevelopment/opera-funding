@@ -35,3 +35,10 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - Dalle schede vengono estratte solo scadenze esplicite, importi indicativi etichettati e collegamenti a bando, FAQ e allegati. I dati estratti non equivalgono a una verifica legale del bando; le altre informazioni rimangono da verificare.
 - Le fonti esterne agli aggregatori e i portali dinamici richiedono connettori dedicati. Conservare sempre visibili le opportunità non arricchite.
 - La grafica richiama il template Opera+ in `jeckodevelopment/tpl_operaplus`: dark `#101419`, pannelli `#1b2228`, oro `#c7a676` e serif Georgia. Il wordmark testuale Opera+ replica il fallback del template; per utilizzare l'immagine grafica ufficiale occorre acquisire il relativo asset pubblicabile e aggiornare whitelist del publisher.
+
+## Affidabilità link, stati e beneficiari (novembre 2026)
+- Il link primario viene verificato progressivamente con richieste HTTPS senza scaricare file; 404/410 sono marcati **non disponibile** e la dashboard mostra come alternativa l'indice dell'ente. Errori di rete o 403 non equivalgono a link inesistente. Al massimo otto nuovi link per fonte/scansione; la copertura non è istantanea.
+- Ogni scansione ricalcola lo stato dei bandi storici: una scadenza trascorsa prevale sulle etichette «aperto» dell'indice. Una dicitura «aperto» senza scadenza affidabile resta «non verificato», mai candidatura confermata.
+- Estrazione di un breve **estratto dei beneficiari** esclusivamente quando una scheda HTML ha un'etichetta esplicita. Non equivale a verifica dell'ammissibilità.
+- Il logo ufficiale è caricato dall'asset pubblico https://opera.plus/assets/operaplus-logo.png indicato dall'associazione, senza duplicare il file nel repository; serve accessibilità del dominio esterno.
+- La dashboard conserva bandi non verificati, chiusi e con requisiti mancanti; il link diretto non viene mostrato se la fonte risponde esplicitamente 404/410.
