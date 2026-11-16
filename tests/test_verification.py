@@ -29,11 +29,16 @@ class VerificationTests(unittest.TestCase):
                   detail_checked_at=NOW.isoformat())}
         self.assertEqual(pick_for_review([row("a")],previous,1,NOW),{"a"})
     def test_three_day_revisit(self):
-        old=row("a",detail_checked=True,detail_version=6,
+        old=row("a",detail_checked=True,detail_version=7,
                 detail_checked_at=(NOW-timedelta(days=4)).isoformat())
         fresh={**old,"detail_checked_at":NOW.isoformat()}
         self.assertTrue(needs_review(old,NOW))
         self.assertFalse(needs_review(fresh,NOW))
+    def test_previous_detail_parser_version_is_rechecked_after_new_format(self):
+        previous={"torino":row("torino",source_id="torino",detail_checked=True,detail_version=6,
+                                  detail_checked_at=NOW.isoformat())}
+        self.assertEqual(pick_for_review([row("torino",source_id="torino")],previous,1,NOW),{"torino"})
+
     def test_mic_consuntivi_and_volto_navigation_are_not_grants(self):
         cases=[
           ("mic","https://spettacolo.cultura.gov.it/bando-jazz-attivazione-dei-consuntivi-2026/","Bando per la PROMOZIONE DELLA MUSICA JAZZ – Attivazione della..."),
