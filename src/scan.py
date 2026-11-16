@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+"""Conservative index-page discovery; no invented award details."""
+import argparse
+import json
+import re
+from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import urljoin, urlparse, urldefrag
+from urllib.robotparser import RobotFileParser
+import requests
+from bs4 import BeautifulSoup
+
+ROOT = Path(__file__).resolve().parents[1]
+AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
+INCLUDE = re.compile(r"bando|bandi|call|contribut|finanziament|avvis|grant|funding|progett|candidatur|partnership|opportunit", re.I)
+IGNORE = re.compile(r"privacy|cookie|login|accesso|newsletter|contatt|instagram|facebook|linkedin|youtube|lavora con|whatsapp", re.I)
+TOPICS = [
+    (re.compile(r"cultur|cultural|musica|music|opera|liric|spettacol|artist|festival|theatr", re.I), 35, "cultura e spettacolo"),
+    (re.compile(r"formazion|education|educazion|learning|student|scuol|giovan|youth", re.I), 25, "formazione e giovani"),
+    (re.compile(r"digit|innova|video|audiovis|media|podcast", re.I), 20, "innovazione e contenuti digitali"),
+    (re.compile(r"accessibil|inclusio|partecip|comunit|pubblic|audience", re.I), 20, "accessibilità e partecipazione")
+]
+
+def eligible_to_fetch(url, session):
+    parts = urlparse(url)
+    robots_url = f"{parts.scheme}://{parts.netloc}/robots.txt"
+    try:
+        response = session.get(robots_url, timeout=12)
+        if response.status_code == 404:
+            return True
+        if response.status_code != 200:
+            return False  # conservative
+        robot = RobotFileParser()
+        robot.parse(response.text.splitlines())
+        return robot.can_fetch(AGENT, url)
+    except requests.RequestException:
+        return False
+
+def score(title):
+    themes = [name for pattern, _, name in TOPICS if pattern.search(title)]
+    value = 20 + sum(weight for pattern, weight, name in TOPICS if name in themes)
+    # Page-index snippet only: this is an initial relevance hint, not confirmed suitability.
+    return min(100, value), themes
+
+def discover(source, session, now):
+    url = source["url"]
+    if not eligible_to_fetch(url, session):
+        raise RuntimeError("robots.txt unavailable/disallows access")
+    response = session.get(url, timeout=20)
+    response.raise_for_status()
+    if "text/html" not in response.headers.get("Content-Type", ""):
+        raise RuntimeError("source does not return HTML")
+    soup = BeautifulSoup(response.text, "html.parser")
+    rows = []
+    for a in soup.select("a[href]"):
+        title = " ".join(a.get_text(" ", strip=True).split())[:200]
+        if len(title) < 12 or not INCLUDE.search(title) or IGNORE.search(title):
+            continue
+        target, _ = urldefrag(urljoin(response.url, a["href"]))
+        parsed = urlparse(target)
+        if parsed.scheme != "https" or not parsed.netloc:
+            continue
+        if target.rstrip("/") == response.url.rstrip("/"):
+            continue
+        relevance, themes = score(title)
+        rows.append({
+            "id": target.lower().rstrip("/"), "title": title,
+            "issuer": source["name"], "source_id": source["id"],
+            "source_url": url, "url": target,
+            "documents": [{"label":"Pagina o documento ufficiale da verificare", "url":target}],
+            "deadline": None, "amount": None,
+            "relevance": relevance, "relevance_basis": "euristica sul titolo",
+            "themes": themes, "eligibility":"da verificare",
+            "project_potential":"da valutare", "first_seen":now, "last_seen":now,
+            "verified": False
+        })
+    return rows
+
+def run():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--sources", default=str(ROOT / "config/sources.json"))
+    parser.add_argument("--output", default=str(ROOT / "data/opportunities.json"))
+    parser.add_argument("--report", default=str(ROOT / "data/scan-status.json"))
+    args = parser.parse_args()
+    sources = json.loads(Path(args.sources).read_text(encoding="utf-8"))
+    output = Path(args.output)
+    existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else []
+    indexed = {row["id"]: row for row in existing}
+    statuses = []
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    with requests.Session() as session:
+        session.headers.update({"User-Agent":AGENT, "Accept":"text/html"})
+        for source in sources:
+            try:
+                found = discover(source, session, now)
+                for item in found:
+                    if item["id"] in indexed:
+                        previous = indexed[item["id"]]
+                        item["first_seen"] = previous.get("first_seen", now)
+                        # preserve data verified by future, dedicated detail-page extractors
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified"):
+                            if previous.get("verified") and key in previous:
+                                item[key] = previous[key]
+                    indexed[item["id"]] = item
+                statuses.append({"source_id":source["id"],"ok":True,"discovered":len(found),"checked_at":now})
+            except (requests.RequestException, RuntimeError, ValueError) as exc:
+                statuses.append({"source_id":source["id"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]})
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(sorted(indexed.values(), key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print(f"Saved {len(indexed)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
+
+if __name__ == "__main__":
+    run()
