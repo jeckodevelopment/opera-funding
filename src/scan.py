@@ -15,6 +15,7 @@ from quality import check_link, reconcile_status
 from status import annotate
 from fit import explain
 from priority import check_priority
+from verification import pick_for_review, coverage
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -101,8 +102,9 @@ def run():
             try:
                 found = discover(source, session, now)
                 # Prioritize candidate funding calls over general archive entries.
-                enriched_count = 0
                 checked_count = 0
+                review_limit = 6 if source.get("tier")=="high" else 3
+                review_ids = pick_for_review(found,indexed,review_limit)
                 found.sort(key=lambda x: (x.get("opportunity_type") not in ("finanziamento potenziale","call progettuale da verificare"),
                                           "2026" not in x.get("title","") and "2027" not in x.get("title",""),
                                           -x.get("relevance",0)))
@@ -117,21 +119,16 @@ def run():
                             item["closure_confirmed"] = previous.get("closure_confirmed",False)
                             item["status_evidence"] = previous["status_evidence"]
                         # preserve data verified by future, dedicated detail-page extractors
-                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
-                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "detail_attempted_at", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
+                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed")) or key in ("detail_attempted_at", "link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
                                 item[key] = previous[key]
                     if "source_open_confirmed" not in item:
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
-                    checked=item.get("detail_checked_at")
-                    try:
-                        stale=not checked or datetime.fromisoformat(checked) < datetime.now(timezone.utc)-timedelta(days=3)
-                    except (ValueError, TypeError):
-                        stale=True
-                    needs_detail=(not item.get("detail_checked") or
-                                  item.get("detail_version") != DETAIL_SCHEMA_VERSION or stale)
-                    if needs_detail and enriched_count < (6 if source.get("tier")=="high" else 3) and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
+                    if item["id"] in review_ids:
                         item = enrich(item, source, session, eligible_to_fetch)
-                        enriched_count += 1
+                        # Record every attempt, even when access is blocked, to avoid
+                        # starving the rest of the queue on subsequent scans.
+                        item["detail_attempted_at"] = now
                     if not item.get("link_checked_at") and checked_count < 8:
                         item = check_link(item, session, now)
                         checked_count += 1
@@ -149,7 +146,7 @@ def run():
         explain(annotate(reconcile_status(entry)))
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(sorted(indexed.values(), key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
-    Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(list(indexed.values()),statuses)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(indexed)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
 
 if __name__ == "__main__":
