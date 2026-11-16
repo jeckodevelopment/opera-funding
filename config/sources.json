@@ -87,7 +87,8 @@
     "tier": "medium",
     "region": "Europa",
     "type": "europeo",
-    "approved": true
+    "approved": true,
+    "discovery_mode": "creative_europe_sedia_api"
   },
   {
     "id": "creativeitalia",
@@ -97,8 +98,8 @@
     "region": "Europa/Italia",
     "type": "europeo",
     "approved": true,
-    "official_alternative_source_id": "eucreative",
-    "official_alternative_note": "Le call sono consultate sul catalogo ufficiale della Commissione europea; il portale italiano non è interrogato automaticamente."
+    "official_alternative_source_id": "eufunding",
+    "official_alternative_note": "Bandi dal servizio pubblico ufficiale Funding & Tenders della Commissione europea, anziché dal sito Desk Italia."
   },
   {
     "id": "alcotra",
