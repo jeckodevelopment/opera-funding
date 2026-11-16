@@ -29,11 +29,16 @@ class VerificationTests(unittest.TestCase):
                   detail_checked_at=NOW.isoformat())}
         self.assertEqual(pick_for_review([row("a")],previous,1,NOW),{"a"})
     def test_three_day_revisit(self):
-        old=row("a",detail_checked=True,detail_version=6,
+        old=row("a",detail_checked=True,detail_version=7,
                 detail_checked_at=(NOW-timedelta(days=4)).isoformat())
         fresh={**old,"detail_checked_at":NOW.isoformat()}
         self.assertTrue(needs_review(old,NOW))
         self.assertFalse(needs_review(fresh,NOW))
+    def test_previous_detail_parser_version_is_rechecked_after_new_format(self):
+        previous={"torino":row("torino",source_id="torino",detail_checked=True,detail_version=6,
+                                  detail_checked_at=NOW.isoformat())}
+        self.assertEqual(pick_for_review([row("torino",source_id="torino")],previous,1,NOW),{"torino"})
+
     def test_mic_consuntivi_and_volto_navigation_are_not_grants(self):
         cases=[
           ("mic","https://spettacolo.cultura.gov.it/bando-jazz-attivazione-dei-consuntivi-2026/","Bando per la PROMOZIONE DELLA MUSICA JAZZ – Attivazione della..."),
@@ -99,6 +104,19 @@ class VerificationTests(unittest.TestCase):
         ]:
             with self.subTest(grant=url):
                 self.assertEqual(classify_informational_page(row("call",source_id=sid,url=url,title="Call for proposals 2027"))["opportunity_type"],"finanziamento potenziale")
+
+    def test_guidance_and_preinformation_are_not_active_applications(self):
+        cases=[
+            ("torino","https://bandi.comune.torino.it/avviso/linee-guida-concessione-lerogazione-contributi-ordinari-altri-benefici-economici-lanno-2027","Linee Guida per contributi 2027"),
+            ("piemonte","https://bandi.regione.piemonte.it/pre-informazione-fondi-ue/sistema-regionale-standard-formativi-contributo-funzionamento-commissioni-tecniche","Pre informazione contributi")
+        ]
+        for sid,url,title in cases:
+            with self.subTest(source=sid):
+                result=classify_informational_page(row("info",source_id=sid,url=url,title=title))
+                self.assertEqual(result["opportunity_type"],"altro avviso")
+                self.assertNotEqual(result.get("funding_status"),"CHIUSO")
+        live=row("live",source_id="torino",url="https://bandi.comune.torino.it/avviso/circ-4-secondo-avviso-concessione-contributi-ordinari-2026",title="Secondo avviso contributi 2026")
+        self.assertEqual(classify_informational_page(live)["opportunity_type"],"finanziamento potenziale")
 
     def test_revisit_not_in_current_index(self):
         old={"one":row("one",source_id="volto",funding_status="DA VERIFICARE"),

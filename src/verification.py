@@ -2,7 +2,7 @@
 from datetime import datetime, timezone, timedelta
 
 PROJECT_TYPES={"finanziamento potenziale","call progettuale da verificare"}
-SCHEMA_VERSION=6
+SCHEMA_VERSION=7
 
 def _when(raw):
     try:
@@ -84,8 +84,9 @@ def classify_informational_page(record):
         # Institutional project showcases do not accept new applications.
         is_information=path.startswith("/it/i-progetti/")
     if source=="piemonte":
-        # General directories and crowdfunding navigation are not grant calls.
-        is_information=path.rstrip("/") in ("/contributi-finanziamenti", "/crowdfunding")
+        # Pre-information is an announcement, not an application that can be submitted.
+        is_information=(path.rstrip("/") in ("/contributi-finanziamenti", "/crowdfunding")
+                        or path.startswith("/pre-informazione-fondi-ue/"))
     if source=="eucreative":
         # Thematic funding overview is a guide, not a specific call for proposals.
         is_information=path.rstrip("/") in ("/cultural-heritage/funding-opportunities-for-cultural-heritage",)
@@ -94,7 +95,8 @@ def classify_informational_page(record):
     if source=="volto":
         is_information=(path.rstrip("/") in ("/progetti-volto","/progetti-servizio-civile"))
     if source=="torino":
-        is_information=("approvazione contributo" in title or
+        is_information=("linee-guida-concessione-lerogazione-contributi-ordinari-altri-benefici-economici-lanno-2027" in path or
+                        "approvazione contributo" in title or
                         "contributo in servizi all" in title or
                         path.lower().endswith((".pdf",".docx")))
     if is_information:
