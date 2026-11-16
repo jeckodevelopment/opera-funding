@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-16T21:56:03+00:00",
+  "checked_at": "2026-11-16T22:13:50+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 14,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "torino",
@@ -31,23 +31,23 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "culturatorino",
       "source_name": "Fondazione per la Cultura Torino",
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "discovered": 21,
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "volto",
       "source_name": "Vol.To",
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "discovered": 16,
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 20,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-16T21:56:03+00:00",
+      "checked_at": "2026-11-16T22:13:50+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     },
     {
       "source_id": "erasmusitalia",
@@ -107,20 +107,20 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-16T21:56:03+00:00"
+      "checked_at": "2026-11-16T22:13:50+00:00"
     }
   ],
   "coverage": {
     "totals": {
-      "all": 215,
+      "all": 248,
       "open": 8,
-      "closed": 79,
+      "closed": 110,
       "upcoming": 1,
-      "unverified": 127,
-      "dated": 89,
-      "dated_with_source": 69,
-      "detail_checked": 79,
-      "reachable": 170
+      "unverified": 129,
+      "dated": 123,
+      "dated_with_source": 110,
+      "detail_checked": 83,
+      "reachable": 178
     },
     "by_source": {
       "volto": {
@@ -129,14 +129,14 @@
         "unverified": 15,
         "dated": 0,
         "dated_with_source": 0,
-        "detail_checked": 5
+        "detail_checked": 6
       },
       "culturatorino": {
         "total": 20,
         "open": 0,
         "unverified": 2,
         "dated": 17,
-        "dated_with_source": 0,
+        "dated_with_source": 6,
         "detail_checked": 7
       },
       "sanpaolo": {
@@ -144,7 +144,7 @@
         "open": 3,
         "unverified": 8,
         "dated": 6,
-        "dated_with_source": 3,
+        "dated_with_source": 4,
         "detail_checked": 6
       },
       "piemonte": {
@@ -155,12 +155,20 @@
         "dated_with_source": 5,
         "detail_checked": 6
       },
+      "eufunding": {
+        "total": 85,
+        "open": 1,
+        "unverified": 5,
+        "dated": 85,
+        "dated_with_source": 85,
+        "detail_checked": 6
+      },
       "torino": {
         "total": 13,
         "open": 1,
-        "unverified": 11,
-        "dated": 2,
-        "dated_with_source": 2,
+        "unverified": 10,
+        "dated": 3,
+        "dated_with_source": 3,
         "detail_checked": 9
       },
       "crt": {
@@ -210,14 +218,6 @@
         "dated": 0,
         "dated_with_source": 0,
         "detail_checked": 9
-      },
-      "eufunding": {
-        "total": 52,
-        "open": 1,
-        "unverified": 2,
-        "dated": 52,
-        "dated_with_source": 52,
-        "detail_checked": 3
       }
     },
     "sources_ok": 13,
