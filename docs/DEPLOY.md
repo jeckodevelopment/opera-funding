@@ -1,18 +1,28 @@
 # Pubblicazione Opera+ Funding
 
-La dashboard è destinata a https://jeckodevelopment.com/dev/funding/.
+La dashboard è ospitata su https://jeckodevelopment.com/dev/funding/, mentre **i dati aggiornati provengono direttamente da GitHub**.
 
-## Responsabilità delle repository
+## Flusso dati e rilascio applicazione
 
-- **opera-funding** (pubblica): mantiene i sorgenti `web/`, i metadati `data/*.json`, il motore di scansione e il workflow di aggiornamento programmato lunedì, mercoledì e venerdì alle 06:00 UTC.
-- **jeckodevsite** (privata): tramite `.github/workflows/publish-opera-funding.yml`, importa il contenuto di `web/` e i JSON da `opera-funding/main`, poi pubblica **soltanto** `/dev/funding/` con il publisher SFTP esistente, rollback e verifica HTTPS. Programmazione lunedì, mercoledì e venerdì alle 07:40 UTC e avvio manuale tramite GitHub Actions.
+1. **opera-funding** (repository pubblica): lo scanner aggiorna `data/opportunities.json` e `data/scan-status.json` sul ramo `main` tramite GitHub Actions, ogni lunedì/mercoledì/venerdì alle **06:00 UTC**, e dopo modifiche al motore di scansione. La pubblicazione del commit JSON non necessita SFTP.
+2. Il browser della dashboard legge entrambi i file da:
+   - `https://raw.githubusercontent.com/jeckodevelopment/opera-funding/main/data/opportunities.json`
+   - `https://raw.githubusercontent.com/jeckodevelopment/opera-funding/main/data/scan-status.json`
+3. Il browser richiede i JSON a ogni apertura (e tramite **Aggiorna dati**), con `cache: no-store` e senza credenziali. GitHub può applicare una cache CDN per alcuni minuti; **non è un feed istantaneo garantito**.
+4. Se GitHub non è raggiungibile, entrambi i file vengono letti dal percorso locale `/dev/funding/data/`, cioè dalla copia di sicurezza pubblicata con l'ultima versione della dashboard. La pagina mostra esplicitamente **Copia locale di riserva** e la data della scansione: non spaccia la copia come aggiornata.
+5. **jeckodevsite** (repository privata): il publisher esistente aggiorna soltanto i file HTML/CSS/JS e la copia di sicurezza dei JSON su `/dev/funding/` con SFTP, rollback e verifica HTTPS. **Il workflow è solo manuale**, da avviare dopo modifiche alla UI; non serve per ogni scansione.
 
-Non servono credenziali SFTP in questa repository pubblica. Il deploy usa i secret già configurati in jeckodevsite.
+## Costi e dipendenze
 
-## Verifica manuale
+Non servono GitHub Pages, servizi esterni, token nel browser o nuove credenziali SFTP. L'accesso diretto ai file del repository pubblico è adatto al traffico limitato atteso. Le cache e la disponibilità di GitHub restano dipendenze note, mitigate dalla copia locale.
 
-1. Eseguire `Scan funding sources` in opera-funding e controllare `data/scan-status.json`.
-2. Eseguire `Pubblica Opera+ Funding via SFTP` in jeckodevsite.
-3. Verificare https://jeckodevelopment.com/dev/funding/ e che gli altri percorsi del sito non siano stati modificati.
+## Collaudo post-rilascio
 
-Gli orari sono UTC: GitHub Actions può ritardare l'avvio; il publisher recupera l'ultimo snapshot disponibile. Il motore di ricerca iniziale scopre solo link delle pagine indice e non attesta ancora i requisiti di ammissibilità.
+1. Controllare l'ultima scansione in `data/scan-status.json` della repository pubblica.
+2. Avviare una sola volta **Pubblica Opera+ Funding via SFTP** da jeckodevsite per rilasciare il nuovo `web/app.js`.
+3. Aprire la pagina e verificare il testo **Dati live da GitHub** e l'ora della scansione.
+4. Eseguire una nuova scansione, **senza** rilanciare il publisher SFTP, e verificare che la dashboard legga il timestamp aggiornato (tenendo conto della cache CDN di GitHub).
+5. Simulare un errore del dominio raw GitHub nel browser; verificare che i dati locali siano ancora visibili, con avviso **Copia locale di riserva**.
+6. Verificare che altri percorsi di jeckodevelopment.com non siano cambiati.
+
+La qualità dei contenuti è indipendente dal canale di consegna: stati, scadenze, link e ammissibilità restano da validare secondo le regole in `docs/PRODUCT.md`.
