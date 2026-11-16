@@ -56,6 +56,28 @@ class VerificationTests(unittest.TestCase):
                 self.assertEqual(classify_informational_page(row_in)["opportunity_type"],"altro avviso")
         actual=row("y",source_id="alcotra",url="https://interreg-alcotra.eu/it/terzo-bando-progetti-singoli",title="Terzo bando progetti singoli")
         self.assertEqual(classify_informational_page(actual)["opportunity_type"],"finanziamento potenziale")
+    def test_erasmus_documentation_is_not_an_open_call(self):
+        cases=[
+            ("https://www.erasmusplus.it/wp-content/uploads/2024/05/CORRIGENDUM-Disposizioni-nazionali-HE_2024.pdf", "Corrigendum Disposizioni Nazionali 2024"),
+            ("https://www.erasmusplus.it/educazione_adulti/esiti/", "Esiti e candidature"),
+            ("https://www.erasmusplus.it/programma/per-partecipare/come-fare-domanda/", "Moduli di candidatura"),
+        ]
+        for url,title in cases:
+            with self.subTest(url=url):
+                self.assertEqual(classify_informational_page(row("doc",source_id="erasmusitalia",url=url,title=title))["opportunity_type"],"altro avviso")
+        real=row("call",source_id="erasmusitalia",url="https://www.erasmusplus.it/educazione_adulti/bando-2027/",title="Bando Erasmus+ 2027")
+        self.assertEqual(classify_informational_page(real)["opportunity_type"],"finanziamento potenziale")
+    def test_quality_report_separates_candidate_backlog_from_information(self):
+        rows=[row("candidate",source_id="erasmusitalia",funding_status="DA VERIFICARE"),
+              row("guide",source_id="erasmusitalia",opportunity_type="altro avviso",funding_status="DA VERIFICARE"),
+              row("open",source_id="crt",funding_status="APERTO",deadline="2026-12-01")]
+        report=coverage(rows,[{"source_id":"erasmusitalia","ok":True},{"source_id":"crt","ok":True}])
+        self.assertEqual(report["totals"]["unverified"],2)
+        self.assertEqual(report["totals"]["candidate_unverified"],1)
+        self.assertEqual(report["totals"]["informational_unverified"],1)
+        self.assertEqual(report["totals"]["candidate_missing_deadline"],1)
+        self.assertEqual(report["by_source"]["erasmusitalia"]["informational_unverified"],1)
+
     def test_revisit_not_in_current_index(self):
         old={"one":row("one",source_id="volto",funding_status="DA VERIFICARE"),
              "expired":row("expired",source_id="volto",funding_status="CHIUSO"),
