@@ -19,5 +19,12 @@
     "official_url": "https://www.unamanoachisostiene.it/",
     "parser": "cattolica",
     "label": "Una mano a chi sostiene 2026/27"
+  },
+  {
+    "source_id": "volto",
+    "match_path": "/bando-educare-alla-lettura-2026",
+    "official_url": "https://centroperillibro.cultura.gov.it/educare-alla-lettura-online-la-9a-edizione-del-bando-scadenza-13-novembre/",
+    "parser": "cepell",
+    "label": "Educare alla lettura 2026 – Centro per il libro e la lettura"
   }
 ]
