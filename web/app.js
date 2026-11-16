@@ -32,6 +32,7 @@ function state(o){
  if(validDate(start)&&start>today()&&o.opening_evidence)return "in arrivo";
  const window=(validDate(end)&&end>=today())||(o.rolling_confirmed===true&&!!o.rolling_evidence);
  if(o.source_open_confirmed===true&&o.link_status==="raggiungibile"&&window&&(!validDate(start)||start<=today()))return "aperto";
+ if(!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return "altro contenuto";
  return "non verificato";
 }
 function dateLabel(value){
@@ -39,7 +40,7 @@ function dateLabel(value){
  const [y,m,d]=value.split("-");return "Scade il "+d+"/"+m+"/"+y;
 }
 function score(o){return Math.max(0,Math.min(100,Number(o.relevance)||0));}
-function groupOrder(o){return {aperto:0,"in arrivo":1,"non verificato":2,chiuso:3}[state(o)];}
+function groupOrder(o){return {aperto:0,"in arrivo":1,"non verificato":2,chiuso:3,"altro contenuto":4}[state(o)];}
 function sortRows(rows,order){
  const difference=(a,b)=>score(b)-score(a);
  rows.sort((a,b)=>{
@@ -74,7 +75,7 @@ function opportunitySummary(o){
  if(o.opportunity_type==="call progettuale da verificare")return "Invito a presentare progetti. Consulta la fonte per approfondire obiettivi, finanziamento e destinatari.";
  return "Avviso pubblicato dall’ente promotore. Consulta la fonte originale per conoscere il contenuto.";
 }
-function statusLabel(s){return {aperto:"APERTA","in arrivo":"IN ARRIVO","non verificato":"STATO NON CONFERMATO",chiuso:"SCADUTA"}[s];}
+function statusLabel(s){return {aperto:"APERTA","in arrivo":"IN ARRIVO","non verificato":"STATO NON CONFERMATO",chiuso:"SCADUTA","altro contenuto":"ALTRO CONTENUTO"}[s];}
 function makeCalendar(o){
  const date=o.deadline;const calendar=el("div",undefined,"calendar"+(!validDate(date)?" unknown-date":""));
  calendar.setAttribute("role","img");
@@ -178,6 +179,16 @@ function makeCard(o){
  article.append(left,right,makeAdequacy(o));
  return article;
 }
+function updateStateCounts(){
+ for(const tab of document.querySelectorAll(".quick-tab")){
+  const key=tab.dataset.value;
+  if(!key)continue;
+  const title=tab.dataset.label||tab.textContent.replace(/\\s*\\(\\d+\\)$/,"").trim();
+  tab.dataset.label=title;
+  const number=all.filter(o=>state(o)===key).length;
+  tab.textContent=title+" ("+number+")";
+ }
+}
 function render(){
  const items=filteredRows(),batch=items.slice(0,visibleCount);
  $("items").replaceChildren(...batch.map(makeCard));
@@ -237,7 +248,7 @@ async function init(){
    const option=el("option",name);option.value=name;selector.append(option);
   }
   selector.value=[...selector.options].some(x=>x.value===oldValue)?oldValue:"";
-  renderSourceHealth(status,all);syncControls();render();
+  renderSourceHealth(status,all);updateStateCounts();syncControls();render();
  }catch(e){
   $("scan").textContent="Dati non disponibili";$("items").replaceChildren(el("p","Impossibile caricare le opportunità. Riprova con Aggiorna.","empty"));
   $("health-dot").className="health-dot red";$("health-label").textContent="Dati non disponibili";
@@ -248,7 +259,7 @@ for(const id of ["search","issuer","kind","level"])$(id).addEventListener(id==="
 for(const node of document.querySelectorAll(".quick-tab"))node.addEventListener("click",()=>{$("status").value=node.dataset.value;syncControls();resetPagination();});
 for(const node of document.querySelectorAll(".sort-button"))node.addEventListener("click",()=>{$("sort").value=node.dataset.sort;syncControls();resetPagination();});
 $("reset").addEventListener("click",()=>{
- $("search").value="";$("issuer").value="";$("kind").value="";$("level").value="0";$("status").value="aperto";$("sort").value="deadline";
+ $("search").value="";$("issuer").value="";$("kind").value="";$("level").value="0";$("status").value="";$("sort").value="deadline";
  syncControls();resetPagination();
 });
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});

@@ -6,16 +6,22 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts}=context.exposed;
 assert.equal(PAGE_SIZE,12);
 assert.equal(statusLabel("aperto"),"APERTA");
 assert.equal(statusLabel("chiuso"),"SCADUTA");
 assert.equal(statusLabel("in arrivo"),"IN ARRIVO");
+assert.equal(statusLabel("altro contenuto"),"ALTRO CONTENUTO");
+assert.equal(state({opportunity_type:"altro avviso",title:"Archived news"}),"altro contenuto");
+assert.equal(state({opportunity_type:"non classificato",title:"Guidance"}),"altro contenuto");
+assert.equal(state({opportunity_type:"finanziamento potenziale",title:"Grant"}),"non verificato");
+assert.equal(state({opportunity_type:"call progettuale da verificare",title:"Call"}),"non verificato");
+
 assert.equal(dateLabel("2027-04-05"),"Scade il 05/04/2027");
 assert.equal(state({deadline:"2025-10-05",source_open_confirmed:true,link_status:"raggiungibile"}),"chiuso");
 assert.equal(state({deadline:"2027-01-03",source_open_confirmed:true,link_status:"raggiungibile"}),"aperto");
-assert.equal(state({deadline:"2027-01-03",source_open_confirmed:false,link_status:"raggiungibile"}),"non verificato");
+assert.equal(state({opportunity_type:"finanziamento potenziale",deadline:"2027-01-03",source_open_confirmed:false,link_status:"raggiungibile"}),"non verificato");
 assert.equal(state({opening_date:"2027-02-01",opening_evidence:"https://example.org/call"}),"in arrivo");
 const rows=[
  {title:"Tardi",relevance:97,deadline:"2027-06-01",source_open_confirmed:true,link_status:"raggiungibile"},
@@ -36,6 +42,11 @@ for(const id of ["status","search","issuer","kind","level","sort","reset","more"
 assert.match(html,/assets\/operaplus-logo\.png/);
 assert.match(html,/>Aperte<\/button>/);
 assert.match(html,/>Scadute<\/button>/);
+assert.match(html,/data-value="altro contenuto"/);
+assert.match(html,/<input id="status" type="hidden" value="">/);
+assert.match(src,/updateStateCounts\(\)/);
+assert.match(src,/\$\("status"\)\.value="";\$\("sort"\)\.value="deadline";/);
+
 assert.match(html,/data-sort="deadline"/);
 assert.match(html,/data-sort="score"/);
 assert.match(html,/<option value="">Tutte le tipologie<\/option>/);
