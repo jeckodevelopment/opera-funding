@@ -79,7 +79,7 @@ def enrich(item, source, session, eligible_to_fetch):
         if structured["deadline"]:
             parsed["deadline"] = structured["deadline"]
             parsed["deadline_source"] = structured["deadline_source"]
-        for key in ("opening_date","opening_evidence","source_open_confirmed","closure_confirmed","status_evidence"):
+        for key in ("opening_date","opening_evidence","source_open_confirmed","closure_confirmed","status_evidence","application_windows"):
             if structured.get(key) is not None:
                 item[key] = structured[key]
         if structured.get("beneficiaries_excerpt") and not parsed["beneficiaries_excerpt"]:
