@@ -53,7 +53,7 @@ MIC_FORM_WINDOW=re.compile(
     r"(?i)\bdalle?\s+ore\s+\d{1,2}(?:[:.]\d{2})?\s+del\s+"+ITALIAN_DATE+
     r".{0,110}?\bfino\s+alle?\s+ore\s+\d{1,2}(?:[:.]\d{2})?\s+del\s+"+ITALIAN_DATE
 )
-PITER_LIST_CONTEXT=re.compile(r"(?i)possibilit[àa]\s+di\s+presentare\s+progressivamente\s+le\s+candidature\s+nel\s+rispetto\s+di\s+3\s+date\s+predefinite\s*:")
+PITER_LIST_CONTEXT=re.compile(r"(?i)candidature\s+nel\s+rispetto\s+di\s+3\s+date\s+predefinite\s*:")
 def _piter_windows(text):
     marker=PITER_LIST_CONTEXT.search(text)
     if not marker:return []
