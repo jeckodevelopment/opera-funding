@@ -103,3 +103,8 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - Nelle schede vengono mostrate soltanto informazioni utili alla scelta: ente, titolo, stato confermato, data quando disponibile, contributo quando disponibile, beneficiari, possibili idee e collegamenti a fonte/documenti. Sono rimossi motivazioni tecniche, checklist standard e messaggi ripetitivi.
 - Indicatore nell'intestazione: VERDE con 0 fonti fallite; GIALLO con 1–2 fonti fallite e quota inferiore al 25%; ROSSO se almeno 3 fonti fallite o quota almeno 25%, o report delle fonti mancante. Indica salute dell'accesso alle fonti, non automaticamente completezza/qualità delle singole schede.
 - A fondo pagina elenco delle anomalie, con nome fonte, motivo del fallimento e link alla pagina ufficiale quando disponibile. Il registro delle 13 fonti è **approvato** dall'associazione: non significa che tutte le opportunità siano già state validate o che un sito sia sempre raggiungibile.
+
+## Qualità delle letture e risultati vuoti
+- Una fonte con pagina raggiungibile ma zero opportunità individuate riceve `warning` nel report: è una **copertura non accertata**, non equivale a un errore HTTP e non significa necessariamente assenza di bandi.
+- L'indicatore verde richiede zero errori e zero avvisi; giallo da una a poche anomalie, rosso con almeno tre fonti fallite o quattro fonti problematiche, oppure almeno il 25% delle fonti. La lista a fondo pagina distingue la ragione: fonte irraggiungibile, blocco robots.txt, oppure nessuna opportunità riconosciuta.
+- Questa soglia segnala la qualità della raccolta, non la candidabilità di Opera+ né garantisce che tutti i bandi della fonte siano stati acquisiti.
