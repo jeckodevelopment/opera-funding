@@ -1,0 +1,82 @@
+[
+  {
+    "id": "sanpaolo",
+    "name": "Fondazione Compagnia di San Paolo",
+    "url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
+    "tier": "high",
+    "region": "Piemonte",
+    "type": "fondazione"
+  },
+  {
+    "id": "crt",
+    "name": "Fondazione CRT",
+    "url": "https://www.fondazionecrt.it/category/progetti-e-bandi/",
+    "tier": "high",
+    "region": "Piemonte",
+    "type": "fondazione"
+  },
+  {
+    "id": "piemonte",
+    "name": "Regione Piemonte",
+    "url": "https://bandi.regione.piemonte.it/",
+    "tier": "high",
+    "region": "Piemonte",
+    "type": "pubblico"
+  },
+  {
+    "id": "torino",
+    "name": "Città di Torino",
+    "url": "https://bandi.comune.torino.it/avvisi/contributi",
+    "tier": "high",
+    "region": "Torino",
+    "type": "pubblico"
+  },
+  {
+    "id": "culturatorino",
+    "name": "Fondazione per la Cultura Torino",
+    "url": "https://fpct.it/bandi-avvisi/",
+    "tier": "high",
+    "region": "Torino",
+    "type": "fondazione"
+  },
+  {
+    "id": "volto",
+    "name": "Vol.To",
+    "url": "https://volontariatotorino.it/bandi/",
+    "tier": "medium",
+    "region": "Piemonte",
+    "type": "aggregatore"
+  },
+  {
+    "id": "mic",
+    "name": "Ministero della Cultura",
+    "url": "https://spettacolo.cultura.gov.it/",
+    "tier": "medium",
+    "region": "Italia",
+    "type": "pubblico"
+  },
+  {
+    "id": "eucreative",
+    "name": "Creative Europe",
+    "url": "https://culture.ec.europa.eu/funding/calls",
+    "tier": "medium",
+    "region": "Europa",
+    "type": "europeo"
+  },
+  {
+    "id": "erasmus",
+    "name": "Erasmus+",
+    "url": "https://erasmus-plus.ec.europa.eu/funding",
+    "tier": "medium",
+    "region": "Europa",
+    "type": "europeo"
+  },
+  {
+    "id": "eufunding",
+    "name": "EU Funding & Tenders",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
+    "tier": "medium",
+    "region": "Europa",
+    "type": "europeo"
+  }
+]
