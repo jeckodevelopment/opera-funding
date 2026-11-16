@@ -35,6 +35,19 @@ def queue_key(item, now=None):
         item.get("id") or item.get("url") or ""
     )
 
+def backlog_candidates(existing, source_id, discovered_ids):
+    """Revisit persisted opportunities no longer linked from the current index.
+
+    Do not waste the document budget on confirmed closed calls, parent records
+    superseded by individual funding windows, or informational notices.
+    """
+    return [dict(item) for item in existing.values()
+            if item.get("source_id")==source_id
+            and item.get("id") not in discovered_ids
+            and not item.get("parent_id")
+            and item.get("funding_status")!="CHIUSO"
+            and item.get("opportunity_type") in PROJECT_TYPES]
+
 def pick_for_review(found, existing, limit, now=None):
     now=now or datetime.now(timezone.utc)
     eligible=[]
