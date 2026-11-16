@@ -13,6 +13,7 @@ from classify import classify
 from detail import enrich
 from quality import check_link, reconcile_status
 from status import annotate
+from fit import explain
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -117,13 +118,13 @@ def run():
                     if not item.get("link_checked_at") and checked_count < 8:
                         item = check_link(item, session, now)
                         checked_count += 1
-                    indexed[item["id"]] = annotate(reconcile_status(item))
+                    indexed[item["id"]] = explain(annotate(reconcile_status(item)))
                 statuses.append({"source_id":source["id"],"ok":True,"discovered":len(found),"checked_at":now})
             except (requests.RequestException, RuntimeError, ValueError) as exc:
                 statuses.append({"source_id":source["id"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]})
     # Reconcile retained historical links too; do not keep outdated open flags.
     for entry in indexed.values():
-        annotate(reconcile_status(entry))
+        explain(annotate(reconcile_status(entry)))
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(sorted(indexed.values(), key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")

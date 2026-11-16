@@ -67,6 +67,9 @@ function renderItem(o){
  if(o.amount)detail.append(el("p","Importo indicativo: "+o.amount));
  if(o.beneficiaries_excerpt)detail.append(el("p","Beneficiari (estratto): "+o.beneficiaries_excerpt));
  if(o.type_reason)detail.append(el("p",o.type_reason));
+ if(o.score_explanation)detail.append(el("p","Perché questo punteggio: "+o.score_explanation+" ("+(o.score_confidence||"valutazione preliminare")+")"));
+ if(Array.isArray(o.project_ideas)&&o.project_ideas.length)detail.append(el("p","Possibili idee progettuali (non requisiti del bando): "+o.project_ideas.join("; ")));
+ if(Array.isArray(o.eligibility_checks)&&o.eligibility_checks.length)detail.append(el("p","Controlli prima della candidatura: "+o.eligibility_checks.join("; ")));
  if(o.themes?.length)detail.append(el("p","Temi: "+o.themes.join(", ")));
  if(broken)detail.append(el("p","Il collegamento diretto risulta non disponibile (404/410).","linkwarn"));
  if(o.link_status!=="raggiungibile"&&!broken)detail.append(el("p","Collegamento non ancora verificato."));
