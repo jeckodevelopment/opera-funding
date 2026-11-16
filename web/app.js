@@ -5,16 +5,29 @@ const safeUrl = value => { try { const u = new URL(value); return u.protocol ===
 const el = (tag, value, className) => { const e=document.createElement(tag); if(value!==undefined)e.textContent=value; if(className)e.className=className; return e; };
 function addLink(parent,label,url) { const safe=safeUrl(url); if(!safe)return; const a=el("a",label); a.href=safe;a.target="_blank";a.rel="noopener noreferrer";parent.append(a); }
 function isExpired(o) { if(!/^\d{4}-\d{2}-\d{2}$/.test(o.deadline||""))return false; return o.deadline < new Date().toISOString().slice(0,10); }
-function state(o) { if(isExpired(o))return "chiuso"; if(o.status==="chiuso")return "chiuso"; if((o.status||"").startsWith("aperto"))return "aperto"; return "non verificato"; }
+function state(o) {
+ if(isExpired(o)||o.closure_confirmed||((o.status==="chiuso"||o.status==="scaduto")&&!o.reopened_confirmed))return "chiuso";
+ const now=new Date().toISOString().slice(0,10), end=o.deadline, start=o.opening_date;
+ if(start&&start>now&&o.opening_evidence)return "in arrivo";
+ const openEvidence=o.source_open_confirmed===true && o.link_status==="raggiungibile";
+ const validWindow=(end&&/^\d{4}-\d{2}-\d{2}$/.test(end)&&end>=now)||(o.rolling_confirmed===true&&!!o.rolling_evidence);
+ if(openEvidence&&validWindow&&(!start||start<=now))return "aperto";
+ return "non verificato";
+}
 function dateLabel(value) { if(!/^\d{4}-\d{2}-\d{2}$/.test(value||""))return "Scadenza da verificare"; const [y,m,d]=value.split("-");return "Scade il "+d+"/"+m+"/"+y; }
-function priority(o) { const s=state(o);return s==="aperto"?0:s==="non verificato"?1:2; }
+function priority(o) {const st=state(o);return st==="aperto"?0:st==="non verificato"?1:st==="in arrivo"?2:3;}
+function deadlineKey(o) {return o.deadline||"9999-12-31";}
 function sortRows(rows,order) {
- const cmp=(a,b)=>Number(b.relevance||0)-Number(a.relevance||0);
+ const relevance=(a,b)=>Number(b.relevance||0)-Number(a.relevance||0);
  rows.sort((a,b)=>{
-   if(order==="relevance")return cmp(a,b);
-   if(order==="deadline"){const ad=a.deadline||"9999",bd=b.deadline||"9999";return ad.localeCompare(bd)||cmp(a,b);}
-   if(order==="recent")return String(b.first_seen||"").localeCompare(a.first_seen||"")||cmp(a,b);
-   return priority(a)-priority(b)||cmp(a,b);
+   if(order==="relevance")return relevance(a,b);
+   if(order==="deadline")return deadlineKey(a).localeCompare(deadlineKey(b))||relevance(a,b);
+   if(order==="recent")return String(b.first_seen||"").localeCompare(a.first_seen||"")||relevance(a,b);
+   const group=priority(a)-priority(b);
+   if(group)return group;
+   if(priority(a)===0)return deadlineKey(a).localeCompare(deadlineKey(b))||relevance(a,b);
+   if(priority(a)===2)return String(a.opening_date||"9999").localeCompare(String(b.opening_date||"9999"))||relevance(a,b);
+   return relevance(a,b);
  });return rows;
 }
 function filteredRows(){
@@ -34,7 +47,7 @@ function renderItem(o){
  const item=el("article",undefined,"item");const main=el("div",undefined,"item-main"),left=el("div");
  const meta=el("div",undefined,"item-meta");meta.append(el("span",o.issuer||"Ente non specificato"));left.append(meta,el("h3",o.title||"Senza titolo"));
  const badges=el("div",undefined,"item-badges");const st=state(o);
- badges.append(chip(st==="chiuso"?"Chiuso / scaduto":st==="aperto"?"Segnalato aperto":"Stato da verificare",st==="chiuso"?"closed":st==="aperto"?"open":"unknown"));
+ badges.append(chip(st==="chiuso"?"CHIUSO":st==="aperto"?"APERTO":st==="in arrivo"?"IN ARRIVO":"DA VERIFICARE",st==="chiuso"?"closed":st==="aperto"?"open":"unknown"));
  badges.append(chip(dateLabel(o.deadline)));
  badges.append(chip(o.opportunity_type||"Tipologia da verificare"));
  left.append(badges);
@@ -48,6 +61,7 @@ function renderItem(o){
  detailsButton.addEventListener("click",()=>{detail.hidden=!detail.hidden;detailsButton.setAttribute("aria-expanded",String(!detail.hidden));detailsButton.textContent=detail.hidden?"Dettagli +":"Nascondi dettagli −";});
  actions.append(detailsButton);item.append(actions);
  detail.append(el("p","Ammissibilità: "+(o.eligibility||"da verificare")+" · Potenziale progettuale: "+(o.project_potential||"da valutare")));
+ if(o.status_basis)detail.append(el("p","Stato dalla fonte: "+o.status_basis));
  if(o.amount)detail.append(el("p","Importo indicativo: "+o.amount));
  if(o.beneficiaries_excerpt)detail.append(el("p","Beneficiari (estratto): "+o.beneficiaries_excerpt));
  if(o.type_reason)detail.append(el("p",o.type_reason));
@@ -72,9 +86,9 @@ async function init(){
   const [resp,report]=await Promise.all([fetch("data/opportunities.json",{cache:"no-store"}),fetch("data/scan-status.json",{cache:"no-store"})]);
   if(!resp.ok||!report.ok)throw Error("Impossibile caricare i dati");
   all=await resp.json();const status=await report.json();
-  $("total").textContent=all.length;$("potential").textContent=all.filter(o=>["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type)).length;
-  $("high").textContent=all.filter(o=>Number(o.relevance)>=60).length;
-  $("sources").textContent=(status.sources||[]).filter(o=>o.ok).length+"/"+(status.sources||[]).length;
+  $("total").textContent=all.filter(o=>state(o)==="aperto").length;$("potential").textContent=all.filter(o=>["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type)).length;
+  $("high").textContent=all.filter(o=>state(o)==="non verificato").length;
+  $("sources").textContent=all.filter(o=>state(o)==="chiuso").length;
   $("scan").textContent=status.checked_at?"Aggiornato il "+new Date(status.checked_at).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"})+" · "+(status.sources||[]).filter(o=>!o.ok).length+" fonti con anomalie":"Prima scansione non ancora effettuata";
   for(const name of [...new Set(all.map(o=>o.issuer).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"it"))){const option=el("option",name);option.value=name;$("issuer").append(option);}
   render();
