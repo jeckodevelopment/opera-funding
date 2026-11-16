@@ -35,6 +35,14 @@ def _crt_dates(text):
         if datestr:dates.append(datestr)
     return max(dates) if dates else None
 
+CSP_FESTIVAL_PHASE=re.compile(r"(?i)le proposte dovranno pervenire entro il\s*(\d{1,2})\s+(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\s+(20\d{2})")
+def _festival_windows(text):
+    dates=[]
+    for match in CSP_FESTIVAL_PHASE.finditer(text):
+        try:dates.append(date(int(match.group(3)),IT_MONTHS[match.group(2).lower()],int(match.group(1))).isoformat())
+        except (ValueError,KeyError):pass
+    return sorted(set(dates))
+
 def _date(match):
     if not match:return None
     try:return date(int(match.group(3)),int(match.group(2)),int(match.group(1))).isoformat()
@@ -51,6 +59,8 @@ def structured_facts(html,url):
     # Avoid matching 'Scadenza' in an unrelated phrase by requiring the date nearby.
     deadline=_date(DEADLINE.search(txt))
     opening=_date(OPENING.search(txt))
+    windows=_festival_windows(txt) if "festival-partecipativi-2027" in url and "compagniadisanpaolo.it" in url else []
+    if windows:deadline=next((x for x in windows if x>=date.today().isoformat()),windows[-1])
     if not deadline:deadline=_english_date(EN_DEADLINE.search(txt))
     if not opening:opening=_english_date(EN_OPENING.search(txt))
     if "www.fondazionecrt.it" in url:
@@ -68,7 +78,7 @@ def structured_facts(html,url):
     source_closed=bool(state and state.group(1).lower() in ("chiuso","chiusa","scaduto","scaduta","closed"))
     beneficiaries=BENEFICIARIES.search(txt)
     return {
-      "deadline":deadline,"opening_date":opening,"source_open_confirmed":source_open,
+      "deadline":deadline,"opening_date":opening,"application_windows":windows,"source_open_confirmed":source_open,
       "closure_confirmed":source_closed,
       "opening_evidence":url if opening else None,
       "deadline_source":url if deadline else None,

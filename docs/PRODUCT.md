@@ -108,3 +108,8 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - Una fonte con pagina raggiungibile ma zero opportunità individuate riceve `warning` nel report: è una **copertura non accertata**, non equivale a un errore HTTP e non significa necessariamente assenza di bandi.
 - L'indicatore verde richiede zero errori e zero avvisi; giallo da una a poche anomalie, rosso con almeno tre fonti fallite o quattro fonti problematiche, oppure almeno il 25% delle fonti. La lista a fondo pagina distingue la ragione: fonte irraggiungibile, blocco robots.txt, oppure nessuna opportunità riconosciuta.
 - Questa soglia segnala la qualità della raccolta, non la candidabilità di Opera+ né garantisce che tutti i bandi della fonte siano stati acquisiti.
+
+## Scadenze per più finestre di candidatura (Festival partecipativi 2027)
+- La pagina ufficiale Compagnia di San Paolo prevede una prima finestra al **03/12/2026** (festival da aprile ad agosto 2027) e una seconda al **05/04/2027** (festival da settembre 2027 a marzo 2028).
+- Il parser legge dinamicamente entrambe le date dalle frasi di candidatura della pagina e imposta in `deadline` quella futura più vicina, conservando `application_windows` con entrambe. Le date non vengono precaricate come informazioni statiche.
+- La dashboard visualizza le finestre complete nel dettaglio e ricorda che la data applicabile dipende dal periodo del festival. Questo evita di far perdere la prima scadenza ordinando soltanto per il termine generale.
