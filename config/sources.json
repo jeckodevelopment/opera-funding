@@ -51,7 +51,10 @@
     "tier": "medium",
     "region": "Piemonte",
     "type": "aggregatore",
-    "approved": true
+    "approved": true,
+    "approved_detail_hosts": [
+      "infobandi.csvnet.it"
+    ]
   },
   {
     "id": "mic",
