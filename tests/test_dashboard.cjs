@@ -48,6 +48,9 @@ assert.equal(sourceHealth({sources:[{ok:false,source_id:"a",error:"HTTP 500"},{o
 assert.equal(sourceHealth({sources:[{ok:false,source_id:"a",error:"HTTP 500"},...Array(5).fill({ok:true})]},[]).level,"yellow");
 assert.equal(sourceHealth({sources:[{ok:false},{ok:false},{ok:false},{ok:true}]},[]).level,"red");
 assert.equal(sourceHealth({sources:[{ok:false,source_id:"piemonte",source_name:"Regione Piemonte",error:"Errore"}]},[]).incidents[0].name,"Regione Piemonte");
+assert.equal(sourceHealth({sources:[{ok:true,source_id:"eufunding",discovered:0},{ok:true,discovered:3},{ok:true,discovered:7},{ok:true,discovered:2},{ok:true,discovered:6}]},[]).level,"yellow");
+assert.equal(sourceHealth({sources:[{ok:true,source_id:"eufunding",discovered:0},{ok:true,discovered:0},{ok:true,discovered:0},{ok:true,discovered:0},{ok:true,discovered:2}]},[]).level,"red");
+assert.match(sourceHealth({sources:[{ok:true,source_id:"eufunding",discovered:0}]},[]).incidents[0].reason,/Nessuna opportunità/);
 assert.doesNotMatch(src,/Controlli prima della candidatura:/);
 assert.doesNotMatch(html,/DA VERIFICARE/);
 console.log("Dashboard UX regression checks passed");
