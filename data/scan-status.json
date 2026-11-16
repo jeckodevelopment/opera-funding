@@ -1,84 +1,189 @@
 {
-  "checked_at": "2026-11-16T20:02:22+00:00",
+  "checked_at": "2026-11-16T20:21:18+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "crt",
       "ok": true,
       "discovered": 37,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "piemonte",
       "ok": true,
       "discovered": 14,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "torino",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "culturatorino",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "discovered": 21,
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "volto",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "discovered": 16,
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "mic",
       "ok": true,
       "discovered": 20,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "eucreative",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "erasmus",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "eufunding",
       "ok": true,
       "discovered": 0,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "creativeitalia",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-16T20:02:22+00:00",
+      "checked_at": "2026-11-16T20:21:18+00:00",
       "error": "robots.txt unavailable/disallows access"
     },
     {
       "source_id": "alcotra",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     },
     {
       "source_id": "erasmusitalia",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-16T20:02:22+00:00"
+      "checked_at": "2026-11-16T20:21:18+00:00"
     }
-  ]
+  ],
+  "coverage": {
+    "totals": {
+      "all": 151,
+      "open": 2,
+      "closed": 24,
+      "upcoming": 0,
+      "unverified": 125,
+      "dated": 27,
+      "dated_with_source": 6,
+      "detail_checked": 55,
+      "reachable": 150
+    },
+    "by_source": {
+      "volto": {
+        "total": 15,
+        "open": 0,
+        "unverified": 15,
+        "dated": 0,
+        "dated_with_source": 0,
+        "detail_checked": 0
+      },
+      "culturatorino": {
+        "total": 20,
+        "open": 0,
+        "unverified": 2,
+        "dated": 17,
+        "dated_with_source": 0,
+        "detail_checked": 6
+      },
+      "piemonte": {
+        "total": 13,
+        "open": 2,
+        "unverified": 9,
+        "dated": 4,
+        "dated_with_source": 4,
+        "detail_checked": 6
+      },
+      "torino": {
+        "total": 13,
+        "open": 0,
+        "unverified": 13,
+        "dated": 0,
+        "dated_with_source": 0,
+        "detail_checked": 10
+      },
+      "crt": {
+        "total": 30,
+        "open": 0,
+        "unverified": 29,
+        "dated": 1,
+        "dated_with_source": 1,
+        "detail_checked": 12
+      },
+      "erasmusitalia": {
+        "total": 20,
+        "open": 0,
+        "unverified": 20,
+        "dated": 0,
+        "dated_with_source": 0,
+        "detail_checked": 1
+      },
+      "mic": {
+        "total": 13,
+        "open": 0,
+        "unverified": 13,
+        "dated": 0,
+        "dated_with_source": 0,
+        "detail_checked": 6
+      },
+      "sanpaolo": {
+        "total": 14,
+        "open": 0,
+        "unverified": 11,
+        "dated": 5,
+        "dated_with_source": 1,
+        "detail_checked": 7
+      },
+      "eucreative": {
+        "total": 1,
+        "open": 0,
+        "unverified": 1,
+        "dated": 0,
+        "dated_with_source": 0,
+        "detail_checked": 1
+      },
+      "alcotra": {
+        "total": 11,
+        "open": 0,
+        "unverified": 11,
+        "dated": 0,
+        "dated_with_source": 0,
+        "detail_checked": 6
+      },
+      "erasmus": {
+        "total": 1,
+        "open": 0,
+        "unverified": 1,
+        "dated": 0,
+        "dated_with_source": 0,
+        "detail_checked": 0
+      }
+    },
+    "sources_ok": 12,
+    "sources_total": 13
+  }
 }
