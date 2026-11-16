@@ -161,3 +161,15 @@ La scheda di dettaglio mostra ora suggerimenti separati per «Progetto» e «Sos
 - Il backlog dei bandi già importati viene ricontrollato progressivamente **anche se scomparso dall'indice corrente**, con lo stesso limite per fonte e la coda equa; non è necessario reinserire manualmente il collegamento.
 - Le notizie di Fondazione CRT pubblicate fuori dalla sezione ufficiale `/bandi-progetti/` restano nell'archivio come **altro avviso**, non come potenziali finanziamenti da candidare. Non si inventa uno stato «SCADUTA» in assenza di una scadenza documentata.
 - L'estrazione rimane limitata a PDF con testo accessibile, alle prime pagine ed agli allegati selezionati. Non risolve PDF scansionati senza testo, documenti Word, portali che richiedono login né calendari che prevedono più finestre non etichettate. In questi casi lo stato non viene dichiarato APERTA senza prove.
+
+## 16 novembre 2026 — tutte le tipologie per impostazione predefinita
+Il filtro Tipologia ora parte da **Tutte le tipologie**, e «Azzera filtri» ripristina tale scelta. Non sono esclusi preventivamente avvisi, call o altre categorie. Il filtro sullo **stato APERTA** resta quello approvato per la vista iniziale: non mostriamo automaticamente le opportunità scadute o prive di prova, consultabili tramite i tab dedicati. L'ordinamento rimane Scadenza crescente, con alternativa Punteggio decrescente.
+
+## Fonti residue: parser etichettato e selezione dei bandi
+La nuova estrazione `structured_facts` è limitata a tre formati **documentati nelle pagine ufficiali**:
+- **CSVnet/Vol.To:** l'etichetta `SCADENZA` seguita da data italiana testuale (es. 13 novembre 2026) è riconosciuta; una data di pubblicazione non costituisce termine di candidatura.
+- **ALCOTRA:** i campi `Data di apertura` e `Data di chiusura` (es. prima finestra del quarto bando, 01/07/2025–31/10/2025) producono una scadenza con URL ufficiale. I siti «Come depositare», «Progetti finanziati» e le pagine indice rimangono informazioni e non candidature.
+- **Città di Torino:** gli intervalli testuali `Dal ... al ... è possibile presentare la richiesta` vengono interpretati come vere finestre di candidatura; i semplici periodi di svolgimento dei progetti non costituiscono scadenze. Le comunicazioni di concessione già avvenuta non sono nuove candidature.
+- **Ministero della Cultura:** le pagine «assegnazione contributi», «consuntivi», «rendicontazione» e gli indici generici rimangono informazioni disponibili nello storico, ma non bandi a cui Opera+ possa ancora candidarsi. Le nuove opportunità, quando pubblicate, continuano a essere acquisite.
+
+La coda assegna temporaneamente 9 verifiche per esecuzione a Vol.To, MiC, Torino e ALCOTRA, mantenendo il normale controllo robots.txt e i limiti sui PDF. Il parser dettagli è versionato a `detail_version=5` per rianalizzare progressivamente le pagine già consultate. Una fonte funzionante con nessun bando rimane verde e nessuna data viene inventata.

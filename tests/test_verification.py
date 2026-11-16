@@ -3,7 +3,7 @@ from datetime import datetime, timezone, timedelta
 import sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-from verification import pick_for_review,coverage,needs_review,backlog_candidates,classify_crt_information
+from verification import pick_for_review,coverage,needs_review,backlog_candidates,classify_crt_information,classify_informational_page
 
 NOW=datetime(2026,11,16,21,0,tzinfo=timezone.utc)
 def row(key, **props):
@@ -25,11 +25,24 @@ class VerificationTests(unittest.TestCase):
                   detail_checked_at=NOW.isoformat())}
         self.assertEqual(pick_for_review([row("a")],previous,1,NOW),{"a"})
     def test_three_day_revisit(self):
-        old=row("a",detail_checked=True,detail_version=4,
+        old=row("a",detail_checked=True,detail_version=5,
                 detail_checked_at=(NOW-timedelta(days=4)).isoformat())
         fresh={**old,"detail_checked_at":NOW.isoformat()}
         self.assertTrue(needs_review(old,NOW))
         self.assertFalse(needs_review(fresh,NOW))
+    def test_four_source_informational_pages_not_funding(self):
+        cases=[
+          ("mic","https://spettacolo.cultura.gov.it/bando-jazz-2027-assegnazione/","Bando Jazz 2027 – Assegnazione contributi"),
+          ("mic","https://spettacolo.cultura.gov.it/category/contributi-fus/","Contributi extra FNSV"),
+          ("alcotra","https://interreg-alcotra.eu/it/i-progetti-finanziati-2021-2027","I progetti finanziati"),
+          ("torino","https://bandi.comune.torino.it/avviso/contributo-servizi","Approvazione contributo straordinario per museo"),
+        ]
+        for sid,url,title in cases:
+            with self.subTest(sid=sid,title=title):
+                row_in=row("x",source_id=sid,url=url,title=title)
+                self.assertEqual(classify_informational_page(row_in)["opportunity_type"],"altro avviso")
+        actual=row("y",source_id="alcotra",url="https://interreg-alcotra.eu/it/terzo-bando-progetti-singoli",title="Terzo bando progetti singoli")
+        self.assertEqual(classify_informational_page(actual)["opportunity_type"],"finanziamento potenziale")
     def test_revisit_not_in_current_index(self):
         old={"one":row("one",source_id="volto",funding_status="DA VERIFICARE"),
              "expired":row("expired",source_id="volto",funding_status="CHIUSO"),

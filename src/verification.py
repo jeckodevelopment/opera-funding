@@ -2,7 +2,7 @@
 from datetime import datetime, timezone, timedelta
 
 PROJECT_TYPES={"finanziamento potenziale","call progettuale da verificare"}
-SCHEMA_VERSION=4
+SCHEMA_VERSION=5
 
 def _when(raw):
     try:
@@ -42,6 +42,38 @@ def classify_crt_information(record):
             and not urlparse(record.get("url") or "").path.startswith("/bandi-progetti/")):
         record["opportunity_type"]="altro avviso"
         record["type_reason"]="Articolo informativo CRT, non una scheda di candidatura"
+    return record
+
+def classify_informational_page(record):
+    """Keep programme guidance and award notices without treating them as grants."""
+    from urllib.parse import urlparse
+    record=classify_crt_information(record)
+    source=record.get("source_id")
+    title=(record.get("title") or "").lower()
+    path=urlparse(record.get("url") or "").path.lower()
+    is_information=False
+    if source=="alcotra":
+        is_information=(path in ("/it/bandi","/it/bandi-0") or
+                        "come-depositare" in path or "prodotti-dei-progetti" in path or
+                        "progetti-finanziati" in path or "ciclo-di-vita" in path or
+                        "presentazione-generale" in path)
+    if source=="mic":
+        is_information=(
+            "assegnazione contribut" in title or
+            "consuntiv" in title or "rendicont" in title or
+            "concessione dei contributi" in title or
+            "news-avvisi" in path or
+            "category/" in path or
+            "contributi-extra-fus" in path or
+            "progetti-speciali" in path or
+            path.strip("/") in ("contributi-extra-fus","contributi-fus"))
+    if source=="torino":
+        is_information=("approvazione contributo" in title or
+                        "contributo in servizi all" in title or
+                        path.lower().endswith((".pdf",".docx")))
+    if is_information:
+        record["opportunity_type"]="altro avviso"
+        record["type_reason"]="Pagina informativa, esito di contributo o documento, non una nuova candidatura"
     return record
 
 def backlog_candidates(existing, source_id, discovered_ids):
