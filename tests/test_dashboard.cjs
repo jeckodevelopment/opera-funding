@@ -6,9 +6,12 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel}=context.exposed;
 assert.equal(PAGE_SIZE,12);
+assert.equal(statusLabel("aperto"),"APERTA");
+assert.equal(statusLabel("chiuso"),"SCADUTA");
+assert.equal(statusLabel("in arrivo"),"IN ARRIVO");
 assert.equal(dateLabel("2027-04-05"),"Scade il 05/04/2027");
 assert.equal(state({deadline:"2025-10-05",source_open_confirmed:true,link_status:"raggiungibile"}),"chiuso");
 assert.equal(state({deadline:"2027-01-03",source_open_confirmed:true,link_status:"raggiungibile"}),"aperto");
@@ -31,6 +34,8 @@ const html=fs.readFileSync("web/index.html","utf8");
 const css=fs.readFileSync("web/styles.css","utf8");
 for(const id of ["status","search","issuer","kind","level","sort","reset","more","items","health-dot","source-incidents","total","potential","high","sources"])assert.match(html,new RegExp('id="'+id+'"'));
 assert.match(html,/assets\/operaplus-logo\.png/);
+assert.match(html,/>Aperte<\/button>/);
+assert.match(html,/>Scadute<\/button>/);
 assert.match(html,/data-sort="deadline"/);
 assert.match(html,/data-sort="score"/);
 assert.match(css,/\.calendar-month/);
