@@ -163,6 +163,39 @@ class StructuredTests(unittest.TestCase):
         self.assertFalse(info["source_open_confirmed"])
         self.assertEqual(info["deadline"],"2026-11-24")
 
+    def test_official_localized_alternative_supplies_missing_call_evidence(self):
+        from priority import official_alternative_facts
+        primary="https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts"
+        localized="https://culture.ec.europa.eu/mt/culture-moves-europe/call-for-residency-hosts"
+        html="<main><p>Opportunity status: open</p><p>Opening date: 15 October 2026, 9:00 CEST</p><p>Deadline: 18 January 2027, 23:59 CET</p></main>"
+        response=Mock(url=localized,headers={"Content-Type":"text/html"},text=html)
+        response.raise_for_status.return_value=None
+        response.iter_content.return_value=[html.encode()]
+        session=Mock()
+        session.get.return_value=response
+        item={"url":primary,"official_alternative_urls":[localized]}
+        facts=official_alternative_facts(item,{"url":"https://culture.ec.europa.eu/funding/calls"},session,lambda u,s:True)
+        self.assertEqual(facts["deadline"],"2027-01-18")
+        self.assertTrue(facts["source_open_confirmed"])
+        self.assertEqual(facts["deadline_source"],localized)
+        session.get.assert_called_once()
+        response.close.assert_called_once()
+
+    def test_official_alternative_rejects_external_hosts_and_no_open_evidence(self):
+        from priority import official_alternative_facts
+        primary="https://erasmus-plus.ec.europa.eu/funding-opportunities/coalition"
+        localized="https://erasmus-plus.ec.europa.eu/el/funding-opportunities/coalition"
+        html="<main><p>Deadline: 23 November 2026</p></main>"
+        response=Mock(url=localized,headers={"Content-Type":"text/html"},text=html)
+        response.raise_for_status.return_value=None
+        response.iter_content.return_value=[html.encode()]
+        session=Mock()
+        session.get.return_value=response
+        item={"url":primary,"official_alternative_urls":["https://example.net/other",localized]}
+        facts=official_alternative_facts(item,{"url":"https://erasmus-plus.ec.europa.eu/funding-calls"},session,lambda u,s:True)
+        self.assertIsNone(facts)
+        session.get.assert_called_once_with(localized,timeout=16,stream=True,allow_redirects=True)
+
     def test_verified_priority_page(self):
         response=Mock(url=URL,status_code=200,headers={"Content-Type":"text/html"},text=PAGE)
         response.iter_content.return_value=[PAGE.encode()]
