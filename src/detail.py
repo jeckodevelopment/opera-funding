@@ -5,6 +5,7 @@ from datetime import date
 from bs4 import BeautifulSoup
 from classify import parse_deadline
 from pdf_dates import pdf_deadline_from_documents
+from structured import structured_facts
 
 DEADLINE_PATTERN = re.compile(r"(?i)(?:scadenza|termine (?:di |per (?:la )?)?(?:presentazione|candidatur|domand)|deadline|apply by)\s*[:–-]?\s*(\d{1,2}[./-]\d{1,2}[./-]20\d{2})")
 EUR_PATTERN = re.compile(r"(?i)(?:contributo massimo|finanziamento massimo|importo massimo|dotazione finanziaria|budget complessivo)\s*[:–-]?\s*(?:€|euro|eur)?\s*([\d.]+(?:,\d{2})?)\s*(?:€|euro|eur)?")
@@ -73,6 +74,15 @@ def enrich(item, source, session, eligible_to_fetch):
                 return item
         response._content = bytes(content)
         parsed = extract(response.text, response.url)
+        structured = structured_facts(response.text, response.url)
+        if structured["deadline"]:
+            parsed["deadline"] = structured["deadline"]
+            parsed["deadline_source"] = structured["deadline_source"]
+        for key in ("opening_date","opening_evidence","source_open_confirmed","closure_confirmed","status_evidence"):
+            if structured.get(key) is not None:
+                item[key] = structured[key]
+        if structured.get("beneficiaries_excerpt") and not parsed["beneficiaries_excerpt"]:
+            parsed["beneficiaries_excerpt"] = structured["beneficiaries_excerpt"]
         if not parsed["deadline"] and parsed["documents"] and not item.get("deadline"):
             deadline, document_url = pdf_deadline_from_documents(parsed["documents"], source["url"], session, eligible_to_fetch)
             if deadline:
@@ -81,6 +91,12 @@ def enrich(item, source, session, eligible_to_fetch):
         for key in ("amount","beneficiaries_excerpt","documents","detail_checked","detail_basis"):
 
             item[key] = parsed[key]
+        if structured.get("source_open_confirmed"):
+            item["status"] = "aperto (pagina ufficiale)"
+            item["status_basis"] = "Stato aperto esplicito nella scheda ufficiale"
+        if structured.get("closure_confirmed"):
+            item["status"] = "chiuso"
+            item["status_basis"] = "Stato chiuso esplicito nella scheda ufficiale"
         if parsed["deadline"] and not item.get("deadline"):
             item["deadline"] = parsed["deadline"]
             item["deadline_source"] = parsed.get("deadline_source") or response.url
