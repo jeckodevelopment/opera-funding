@@ -18,3 +18,5 @@ jobs:
       - run: python -m json.tool config/sources.json > /dev/null
       - run: python -m json.tool data/opportunities.json > /dev/null
       - run: node --check web/app.js
+      - run: python -m py_compile src/build_site.py src/deploy_sftp.py
+      - run: python src/build_site.py
