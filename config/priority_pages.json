@@ -28,5 +28,23 @@
     "url": "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
     "title": "Invito a presentare progetti per iniziative varie nel 2027 – Circoscrizione 7",
     "note": "Include iniziative culturali per il territorio della Circoscrizione 7, con allegati di settore e finestra di candidatura da verificare sulla pagina ufficiale."
+  },
+  {
+    "source_id": "eucreative",
+    "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
+    "title": "Call for residency hosts 2026–2027 – Culture Moves Europe",
+    "note": "Finanziamento per enti culturali che ospitano artisti e professionisti internazionali; richiede progetto di residenza e mentor."
+  },
+  {
+    "source_id": "eucreative",
+    "url": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+    "title": "Call: Circulation of European literary works 2027",
+    "note": "Bando per editori e filiera libraria, non automaticamente accessibile ad associazioni culturali prive di attività editoriale."
+  },
+  {
+    "source_id": "erasmus",
+    "url": "https://erasmus-plus.ec.europa.eu/funding-opportunities/european-literacy-coalition-consortium-fpa-sga",
+    "title": "Call for proposals: European Literacy Coalition consortium",
+    "note": "Richiede la costituzione di un consorzio europeo; candidatura di Opera+ non presunta."
   }
 ]
