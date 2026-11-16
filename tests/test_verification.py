@@ -78,6 +78,28 @@ class VerificationTests(unittest.TestCase):
         self.assertEqual(report["totals"]["candidate_missing_deadline"],1)
         self.assertEqual(report["by_source"]["erasmusitalia"]["informational_unverified"],1)
 
+    def test_navigation_and_project_showcases_are_not_new_funding_calls(self):
+        cases=[
+          ("sanpaolo","https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-sviluppo/","Progetti di sviluppo"),
+          ("piemonte","https://bandi.regione.piemonte.it/contributi-finanziamenti","Contributi e finanziamenti"),
+          ("piemonte","https://bandi.regione.piemonte.it/crowdfunding","Vai alla sezione Crowdfunding"),
+          ("eucreative","https://culture.ec.europa.eu/cultural-heritage/funding-opportunities-for-cultural-heritage","Funding sources for cultural heritage"),
+          ("erasmusitalia","https://www.erasmusplus.it/istruzione_superiore/partenariati-strategici-ka2-3/","Progetti di Cooperazione"),
+        ]
+        for sid,url,title in cases:
+            with self.subTest(url=url):
+                classified=classify_informational_page(row("nav",source_id=sid,url=url,title=title))
+                self.assertEqual(classified["opportunity_type"],"altro avviso")
+                self.assertNotEqual(classified.get("funding_status"),"CHIUSO")
+        for sid,url in [
+          ("sanpaolo","https://www.compagniadisanpaolo.it/it/contributi/festival-partecipativi-2027/"),
+          ("piemonte","https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo"),
+          ("eucreative","https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts"),
+          ("erasmusitalia","https://www.erasmusplus.it/educazione_adulti/bando-2027/"),
+        ]:
+            with self.subTest(grant=url):
+                self.assertEqual(classify_informational_page(row("call",source_id=sid,url=url,title="Call for proposals 2027"))["opportunity_type"],"finanziamento potenziale")
+
     def test_revisit_not_in_current_index(self):
         old={"one":row("one",source_id="volto",funding_status="DA VERIFICARE"),
              "expired":row("expired",source_id="volto",funding_status="CHIUSO"),

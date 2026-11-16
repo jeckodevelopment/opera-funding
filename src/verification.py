@@ -80,6 +80,17 @@ def classify_informational_page(record):
                                            "assegnazione del budget", "moduli di candidatura",
                                            "fondi comunitari destinati", "nota congiunta"))
         )
+    if source=="sanpaolo":
+        # Institutional project showcases do not accept new applications.
+        is_information=path.startswith("/it/i-progetti/")
+    if source=="piemonte":
+        # General directories and crowdfunding navigation are not grant calls.
+        is_information=path.rstrip("/") in ("/contributi-finanziamenti", "/crowdfunding")
+    if source=="eucreative":
+        # Thematic funding overview is a guide, not a specific call for proposals.
+        is_information=path.rstrip("/") in ("/cultural-heritage/funding-opportunities-for-cultural-heritage",)
+    if source=="erasmusitalia" and path.rstrip("/") in ("/istruzione_superiore/partenariati-strategici-ka2-3",):
+        is_information=True
     if source=="volto":
         is_information=(path.rstrip("/") in ("/progetti-volto","/progetti-servizio-civile"))
     if source=="torino":
