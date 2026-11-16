@@ -13,3 +13,10 @@ Priorità media: Vol.To (aggregatore da ricondurre alla fonte originale); MiC sp
 - giurisdizione, destinatari e aree di intervento
 
 Non aggirare sistemi anti-bot e rispettare robots.txt, termini d'uso e limiti di frequenza.
+
+## Nuove fonti europee (16/11/2026)
+- Desk Italia Europa Creativa: https://europacreativa.cultura.gov.it/ — pagina nazionale con notizie e aggiornamenti sulle call.
+- Interreg ALCOTRA: https://interreg-alcotra.eu/it/bandi-0 — progetti transfrontalieri Italia–Francia, potenzialmente utili per collaborazioni culturali e formative.
+- Agenzia nazionale Erasmus+ Italia: https://www.erasmusplus.it/programma/documenti-ufficiali/ — testi ufficiali e guide, non lista strutturata dei singoli bandi.
+
+Attenzione: il crawler generico legge ancora soltanto gli indici HTML; per i portali europei che mostrano bandi via JavaScript o documenti aggregati sono necessari adapter dedicati. L'aggiunta di una fonte non prova che tutte le sue call siano già coperte. Nessuna opportunità viene attribuita a Opera+ senza verifica dei requisiti.
