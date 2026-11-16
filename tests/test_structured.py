@@ -17,6 +17,19 @@ PAGE="""<html><main>
 URL="https://bandi.regione.piemonte.it/contributi-finanziamenti/manifestazioni"
 
 class StructuredTests(unittest.TestCase):
+    def test_eu_english_status_dates(self):
+        page="<html><main><p>Opportunity status: open</p><h1>Residency hosts</h1><p>Opening date: 15 October 2026, 9:00 CEST</p><p>Deadline: 18 January 2027, 23:59 CET</p></main></html>"
+        facts=structured_facts(page,"https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts")
+        self.assertTrue(facts["source_open_confirmed"])
+        self.assertEqual(facts["opening_date"],"2026-10-15")
+        self.assertEqual(facts["deadline"],"2027-01-18")
+        self.assertTrue(facts["status_evidence"])
+    def test_eu_closed_status(self):
+        page="<main><p>Opportunity status: closed</p><p>Deadline: 5 May 2026</p></main>"
+        facts=structured_facts(page,"https://culture.ec.europa.eu/funding/calls/closed")
+        self.assertTrue(facts["closure_confirmed"])
+        self.assertFalse(facts["source_open_confirmed"])
+        self.assertEqual(facts["deadline"],"2026-05-05")
     def test_san_paolo_in_corso_and_data_scadenza(self):
         html="<body><main><p>Stato: IN CORSO</p><p>Data pubblicazione: 21/10/2026</p><p>Data scadenza: 05/04/2027</p></main></body>"
         facts=structured_facts(html,"https://www.compagniadisanpaolo.it/it/contributi/festival")
