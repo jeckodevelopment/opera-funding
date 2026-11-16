@@ -10,7 +10,7 @@ THEMES = [
 ]
 # Category is distinct from relevance: people/job calls can be culturally relevant, yet not fund projects.
 NON_GRANT = re.compile(
-    r"selezion[ei] (?:di |per |pubblica |n[.]? ?\\d|n[.]? ?[0-9])|"
+    r"selezion[ei] (?:di |per |pubblica |n[.]? ?\d|n[.]? ?[0-9])|"
     r"graduatori[ea]|conferimento di incarich|ricerca (?:di |per )personale|"
     r"assunzion|posizion[ei] lavorativ|personale amministrativ|"
     r"avviso (?:di |pubblico per la )?selezione|"
@@ -31,8 +31,8 @@ PROJECT_CALL = re.compile(
     r"partnership|partenariat|cooperazion|avviso pubblico",
     re.I,
 )
-DATE_RE = re.compile(r"(?i)scadenza\\s*[:–-]?\\s*(\\d{1,2})[./-](\\d{1,2})[./-](20\\d{2})(?:\\s+([0-2]?\\d)[:.]([0-5]\\d))?")
-STATUS_RE = re.compile(r"(?i)\\b(attivo|aperto|aperta|chiuso|chiusa|scaduto|scaduta)\\b")
+DATE_RE = re.compile(r"(?i)scadenza\s*[:–-]?\s*(\d{1,2})[./-](\d{1,2})[./-](20\d{2})(?:\s+([0-2]?\d)[:.]([0-5]\d))?")
+STATUS_RE = re.compile(r"(?i)\b(attivo|aperto|aperta|chiuso|chiusa|scaduto|scaduta)\b")
 PUB_RE = re.compile(r"(?i)pubblicat[oa] il")
 
 def parse_deadline(snippet):
@@ -59,8 +59,8 @@ def parse_status(snippet):
 def clean_title(raw):
     raw = " ".join(raw.split())
     # Remove status and metadata usually appended to anchor text in source listings.
-    raw = re.split(r"(?i)\\s+(?:Chiuso|Chiusa|Attivo|Aperto|Aperta)\\s+Pubblicat[oa] il\\b",raw,maxsplit=1)[0]
-    raw = re.split(r"(?i)\\s+Pubblicat[oa] il\\s+\\d{1,2}[./-]\\d{1,2}[./-]20\\d{2}",raw,maxsplit=1)[0]
+    raw = re.split(r"(?i)\s+(?:Chiuso|Chiusa|Attivo|Aperto|Aperta)\s+Pubblicat[oa] il\b",raw,maxsplit=1)[0]
+    raw = re.split(r"(?i)\s+Pubblicat[oa] il\s+\d{1,2}[./-]\d{1,2}[./-]20\d{2}",raw,maxsplit=1)[0]
     return raw[:220].strip(" –-")
 
 def classify(title, snippet=""):
