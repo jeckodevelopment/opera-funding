@@ -90,3 +90,10 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - Quando il parser cambia versione, la prossima scansione riprocessa progressivamente le schede già viste. Dopo tre giorni una scheda viene nuovamente candidata alla verifica, per individuare proroghe e cambiamenti.
 - La rianalisi avviene per piccoli lotti e privilegia i bandi progettuali; può quindi richiedere più esecuzioni per completare il backlog. Le pagine esplicitamente prioritarie continuano a essere ricontrollate ogni volta.
 - Il risultato del controllo non equivale alla conferma dell'ammissibilità di Opera+. Stato APERTO e scadenza richiedono evidenze ufficiali; se mancano, rimane DA VERIFICARE.
+
+## Copertura delle verifiche, non solo numero di link (novembre 2026)
+- Lo scanner utilizza una **coda di revisione equa** per ogni fonte: prima le opportunità progettuali non chiuse, poi le altre. Fra quelle da controllare dà precedenza alle schede mai tentate e a quelle controllate da più tempo, evitando di analizzare sempre gli stessi primi risultati.
+- Ogni tentativo di analisi registra `detail_attempted_at`, anche se il portale impedisce l'accesso. La lettura effettivamente riuscita continua ad avere `detail_checked_at` e `detail_version`. Una nuova versione del parser o un controllo più vecchio di tre giorni rende la scheda ricandidabile.
+- Rimangono limiti moderati per fonte (6 schede ad alta priorità o 3 per le altre per scansione); il backlog si smaltisce progressivamente senza sovraccaricare gli enti. Le pagine curate in `priority_pages.json` continuano a essere controllate a ogni esecuzione.
+- `data/scan-status.json` ora include `coverage` con totali e conteggi per fonte: APERTO, CHIUSO, IN ARRIVO, DA VERIFICARE, scadenze note, scadenze con URL di provenienza, schede lette e link raggiungibili. **Il numero di elementi indicizzati non equivale al numero di bandi verificati.**
+- Il riepilogo è un'evidenza operativa per guidare l'aggiunta di adattatori specifici alle fonti che rimangono opache. Un cambio nel report non attesta automaticamente che Opera+ sia ammessa a candidarsi.
