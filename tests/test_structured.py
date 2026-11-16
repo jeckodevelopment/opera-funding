@@ -42,6 +42,12 @@ class StructuredTests(unittest.TestCase):
         self.assertTrue(facts["closure_confirmed"])
         self.assertFalse(facts["source_open_confirmed"])
         self.assertEqual(facts["deadline"],"2026-05-05")
+    def test_festival_two_windows_earliest_upcoming(self):
+        html="<html><main><p>Stato: IN CORSO</p><p>Data scadenza: 05/04/2027</p><p>Per i festival da aprile ad agosto 2027 le proposte dovranno pervenire entro il 03 dicembre 2026 alle ore 15:00.</p><p>Per i festival da settembre 2027 a marzo 2028 le proposte dovranno pervenire entro il 5 aprile 2027 alle ore 15:00.</p></main></html>"
+        facts=structured_facts(html,"https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027/")
+        self.assertEqual(facts["deadline"],"2026-12-03")
+        self.assertEqual(facts["application_windows"],["2026-12-03","2027-04-05"])
+        self.assertTrue(facts["source_open_confirmed"])
     def test_san_paolo_in_corso_and_data_scadenza(self):
         html="<body><main><p>Stato: IN CORSO</p><p>Data pubblicazione: 21/10/2026</p><p>Data scadenza: 05/04/2027</p></main></body>"
         facts=structured_facts(html,"https://www.compagniadisanpaolo.it/it/contributi/festival")
