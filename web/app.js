@@ -74,7 +74,7 @@ function opportunitySummary(o){
  if(o.opportunity_type==="call progettuale da verificare")return "Invito a presentare progetti. Consulta la fonte per approfondire obiettivi, finanziamento e destinatari.";
  return "Avviso pubblicato dall’ente promotore. Consulta la fonte originale per conoscere il contenuto.";
 }
-function statusLabel(s){return {aperto:"APERTO","in arrivo":"IN ARRIVO","non verificato":"STATO NON CONFERMATO",chiuso:"CHIUSO"}[s];}
+function statusLabel(s){return {aperto:"APERTA","in arrivo":"IN ARRIVO","non verificato":"STATO NON CONFERMATO",chiuso:"SCADUTA"}[s];}
 function makeCalendar(o){
  const date=o.deadline;const calendar=el("div",undefined,"calendar"+(!validDate(date)?" unknown-date":""));
  calendar.setAttribute("role","img");
@@ -182,7 +182,7 @@ function render(){
  const items=filteredRows(),batch=items.slice(0,visibleCount);
  $("items").replaceChildren(...batch.map(makeCard));
  if(!items.length){
-  const empty=$("status").value==="aperto"?"Nessuna candidatura aperta confermata con i filtri selezionati. Esplora le altre opportunità.":"Nessuna opportunità corrisponde ai filtri selezionati.";
+  const empty=$("status").value==="aperto"?"Nessuna opportunità aperta confermata con i filtri selezionati. Esplora le altre opportunità.":"Nessuna opportunità corrisponde ai filtri selezionati.";
   $("items").append(el("p",empty,"empty"));
  }
  $("count").textContent=items.length+" opportunità"+(items.length>PAGE_SIZE?" · "+batch.length+" visualizzate":"");
