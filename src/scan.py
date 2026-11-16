@@ -10,6 +10,7 @@ from urllib.robotparser import RobotFileParser
 import requests
 from bs4 import BeautifulSoup
 from classify import classify
+from detail import enrich
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -73,7 +74,7 @@ def discover(source, session, now):
             "documents": [{"label":"Fonte da verificare", "url":target}],
             "amount": None, "eligibility":"da verificare",
             "project_potential":"da valutare",
-            "first_seen":now, "last_seen":now, "verified":False
+            "first_seen":now, "last_seen":now, "verified":False, "detail_checked":False
         })
     return rows
 
@@ -94,14 +95,19 @@ def run():
         for source in sources:
             try:
                 found = discover(source, session, now)
+                # Avoid overloading sources; improve a small batch on each scan.
+                enriched_count = 0
                 for item in found:
                     if item["id"] in indexed:
                         previous = indexed[item["id"]]
                         item["first_seen"] = previous.get("first_seen", now)
                         # preserve data verified by future, dedicated detail-page extractors
-                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis"):
-                            if previous.get("verified") and key in previous:
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis"):
+                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis"))) and key in previous:
                                 item[key] = previous[key]
+                    if not item.get("detail_checked") and enriched_count < 3 and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
+                        item = enrich(item, source, session, eligible_to_fetch)
+                        enriched_count += 1
                     indexed[item["id"]] = item
                 statuses.append({"source_id":source["id"],"ok":True,"discovered":len(found),"checked_at":now})
             except (requests.RequestException, RuntimeError, ValueError) as exc:
