@@ -50,3 +50,13 @@ Le opportunità sono invece reperite dal catalogo ufficiale gestito dalla Commis
 I bandi hanno link alla **fonte reale della Commissione**, non al sito italiano che non abbiamo consultato. I risultati già importati dalle altre fonti non vengono duplicati sotto il Desk Italia. Il catalogo europeo può non comprendere tutte le notizie e i servizi informativi italiani, per cui la copertura del Desk è indiretta e **non equivale alla sua scansione completa**.
 
 Tra le pagine ufficiali curate per il controllo diretto compare anche `Culture Moves Europe – Call for individual mobility 2026–2027`: riguarda artisti e professionisti, e non rende automaticamente Opera+ soggetto ammissibile. Se il sito europeo non consente una determinata richiesta, il controllo resta conservativo, senza forzature.
+
+## EU Funding & Tenders — API ufficiale delle call Creative Europe
+
+Il monitoraggio europeo adesso usa anche l'API pubblica ufficiale della Commissione europea, `https://api.tech.ec.europa.eu/search-api/prod/rest/search?apiKey=SEDIA`, documentata sul portale Funding & Tenders alla pagina `/screen/support/apis`. È un'**interfaccia prevista per l'integrazione di applicazioni esterne**, non un servizio di scraping né un proxy che elude restrizioni. Non richiede token personali, login o altri servizi di hosting.
+
+Per `eufunding` lo scanner invia una ricerca limitata al programma Creative Europe (codice ufficiale `43251814`), a call e topic pubblici e agli stati open/forthcoming. Legge i risultati JSON, le date ufficiali, gli identificativi di topic e gli URL canonici. La risposta non valida provoca un errore della fonte: non viene scambiata per una scansione conclusa senza bandi. Gli URL dei topic sono verificati separatamente; una scadenza senza prova o un link non verificato **non** produce arbitrariamente uno stato APERTO.
+
+`creativeitalia` conserva l'URL del Desk italiano nel registro e viene coperto indirettamente da `eufunding` grazie a `official_alternative_source_id`. Il report riporta `coverage_mode` e l'URL dell'API/portale che ha fornito realmente i dati. Non vengono forzate richieste al sito italiano bloccato. La copertura riguarda le call Creative Europe presenti nei risultati ufficiali, e non tutte le notizie italiane o tutti i programmi europei.
+
+I dati dell'API sono interpretati in modo conservativo: l'esistenza di un topic non dimostra che Opera+ sia ammissibile e un budget generale non equivale al contributo richiedibile da una singola organizzazione. Il canale resta soggetto a modifiche future dell'API ufficiale; i test coprono schema, errori e assegnazione dello stato.
