@@ -121,12 +121,12 @@ async function init(){
   const source=dataset.origin==="github"?"Dati live da GitHub":"Copia locale di riserva (GitHub non raggiungibile)";
   $("scan").textContent=source+" · Ultima scansione: "+timestamp+" · "+failures+" fonti con anomalie";
   $("scan").classList.toggle("fallback-data",dataset.origin==="local");
-  const issuer=$("issuer");issuer.replaceChildren(el("option","Tutti"));
+  const issuer=$("issuer");const oldIssuer=issuer.value;issuer.replaceChildren(el("option","Tutti"));
   issuer.firstChild.value="";
   for(const name of [...new Set(all.map(o=>o.issuer).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"it"))){
    const option=el("option",name);option.value=name;issuer.append(option);
   }
-  if(!Array.from(issuer.options).some(x=>x.value===issuer.value))issuer.value="";
+  issuer.value=Array.from(issuer.options).some(x=>x.value===oldIssuer)?oldIssuer:"";
   syncTabs();render();
  }catch(err){
   $("scan").textContent="Impossibile caricare i dati da GitHub o dalla copia locale";
