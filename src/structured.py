@@ -13,6 +13,15 @@ TURIN_WINDOW=re.compile(r"(?i)\battivo\b\s*dal\s*[:–-]?\s*"+DATE_TOKEN+
                          r"\s*al\s*[:–-]?\s*"+DATE_TOKEN)
 BENEFICIARIES = re.compile(r"(?i)\b(?:rivolto a|chi può partecipare|soggetti beneficiari|beneficiari)\s*[:–-]?\s*(.{8,260})")
 
+MONTHS={"january":1,"february":2,"march":3,"april":4,"may":5,"june":6,"july":7,"august":8,"september":9,"october":10,"november":11,"december":12}
+EN_DATE=r"(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(20\d{2})"
+EN_DEADLINE=re.compile(r"(?i)\bdeadline\s*[:–-]?\s*"+EN_DATE)
+EN_OPENING=re.compile(r"(?i)\bopening date\s*[:–-]?\s*"+EN_DATE)
+def _english_date(match):
+    if not match:return None
+    try:return date(int(match.group(3)),MONTHS[match.group(2).lower()],int(match.group(1))).isoformat()
+    except (ValueError,KeyError):return None
+
 def _date(match):
     if not match:return None
     try:return date(int(match.group(3)),int(match.group(2)),int(match.group(1))).isoformat()
@@ -29,6 +38,8 @@ def structured_facts(html,url):
     # Avoid matching 'Scadenza' in an unrelated phrase by requiring the date nearby.
     deadline=_date(DEADLINE.search(txt))
     opening=_date(OPENING.search(txt))
+    if not deadline:deadline=_english_date(EN_DEADLINE.search(txt))
+    if not opening:opening=_english_date(EN_OPENING.search(txt))
     window=TURIN_WINDOW.search(txt) if "bandi.comune.torino.it" in url else None
     if window:
         opening=_date(window)
@@ -37,8 +48,8 @@ def structured_facts(html,url):
         except ValueError:
             pass
     state=STATUS.search(txt)
-    source_open=bool((state and state.group(1).lower() in ("in corso","aperto","aperta","attivo","attiva")) or window)
-    source_closed=bool(state and state.group(1).lower() in ("chiuso","chiusa","scaduto","scaduta"))
+    source_open=bool((state and state.group(1).lower() in ("in corso","aperto","aperta","attivo","attiva","open")) or window)
+    source_closed=bool(state and state.group(1).lower() in ("chiuso","chiusa","scaduto","scaduta","closed"))
     beneficiaries=BENEFICIARIES.search(txt)
     return {
       "deadline":deadline,"opening_date":opening,"source_open_confirmed":source_open,
