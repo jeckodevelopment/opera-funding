@@ -16,6 +16,14 @@ class FitTests(unittest.TestCase):
         item=explain({"title":"Bando partnership culturale europea","relevance":75})
         self.assertTrue(any("partenariato" in x for x in item["eligibility_checks"]))
         self.assertEqual(item["eligibility"],"da verificare")
+    def test_curated_ideas_survive_repeated_reconciliation(self):
+        item={"title":"Bando Ordinarie – Arte e Cultura Fondazione CRT",
+              "curated_project_ideas":["Videolezioni sull'opera e cultura musicale"],
+              "relevance":55}
+        explain(item)
+        explain(item)
+        self.assertEqual(item["project_ideas"],["Videolezioni sull'opera e cultura musicale"])
+        self.assertEqual(item["relevance"],55)
     def test_irrelevant_title_has_no_invented_project(self):
         item=explain({"title":"Avviso selezione del personale tecnico","relevance":20})
         self.assertEqual(item["project_ideas"],[])
