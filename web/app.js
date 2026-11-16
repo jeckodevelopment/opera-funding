@@ -12,11 +12,12 @@ function render(){
   left.append(textNode("h2",o.title||"Senza titolo"),textNode("div",o.issuer||"Ente sconosciuto","meta"));
   top.append(left,textNode("span",String(o.relevance??0)+"/100","score"));card.append(top);
   const tags=textNode("div","","tags");
-  const fields=["Tipologia: "+(o.opportunity_type||"da classificare"),"Stato: "+(o.status||"non verificato"),"Scadenza: "+(o.deadline?new Date(o.deadline+"T12:00:00").toLocaleDateString("it-IT"):"da verificare"),"Ammissibilità: "+(o.eligibility||"da verificare"),...(o.themes||[])];
+  const fields=["Tipologia: "+(o.opportunity_type||"da classificare"),"Stato: "+(o.status||"non verificato"),"Scadenza: "+(o.deadline?new Date(o.deadline+"T12:00:00").toLocaleDateString("it-IT"):"da verificare"),"Ammissibilità: "+(o.eligibility||"da verificare"),...(o.amount?["Importo: "+o.amount]:[]),...(o.themes||[])];
   for(const tag of fields)tags.append(textNode("span",tag,"tag"));card.append(tags);
   card.append(textNode("p",(o.type_reason||"Tipologia da verificare")+" · Pertinenza preliminare, non probabilità di finanziamento","warn"));
   const url=safeUrl(o.url);
   if(url){const a=textNode("a","Consulta la fonte ↗");a.href=url;a.target="_blank";a.rel="noopener noreferrer";card.append(a)}
+  if(Array.isArray(o.documents)&&o.documents.length>1){const docs=textNode("div","","docs");for(const d of o.documents.slice(1,8)){const link=safeUrl(d.url);if(!link)continue;const a=textNode("a",(d.label||"Documento")+" ↗");a.href=link;a.target="_blank";a.rel="noopener noreferrer";docs.append(a)}card.append(docs)}
   $("items").append(card);
  }
 }
