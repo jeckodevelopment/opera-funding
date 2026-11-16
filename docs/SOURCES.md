@@ -60,3 +60,11 @@ Per `eufunding` lo scanner invia una ricerca limitata al programma Creative Euro
 `creativeitalia` conserva l'URL del Desk italiano nel registro e viene coperto indirettamente da `eufunding` grazie a `official_alternative_source_id`. Il report riporta `coverage_mode` e l'URL dell'API/portale che ha fornito realmente i dati. Non vengono forzate richieste al sito italiano bloccato. La copertura riguarda le call Creative Europe presenti nei risultati ufficiali, e non tutte le notizie italiane o tutti i programmi europei.
 
 I dati dell'API sono interpretati in modo conservativo: l'esistenza di un topic non dimostra che Opera+ sia ammissibile e un budget generale non equivale al contributo richiedibile da una singola organizzazione. Il canale resta soggetto a modifiche future dell'API ufficiale; i test coprono schema, errori e assegnazione dello stato.
+
+## Verifica delle candidature presso gli erogatori (novembre 2026)
+Vol.To/CSVnet è un ottimo aggregatore ma non deve essere interpretato automaticamente come conferma che una candidatura è aperta. Per tre opportunità identificate direttamente sul loro sito è stato aggiunto un piccolo registro `config/issuer_checks.json`, che punta alle **pagine ufficiali degli erogatori**:
+- **Fabbrica – Spazi Civici per la Gioventù**: Sport e Salute (`https://www.sportesalute.eu/fabbrica`), apertura piattaforma 04/11/2026, scadenza 18/12/2026.
+- **Lo Sport è vita**: Sport e Salute (`https://www.sportesalute.eu/lo-sport-e-vita.html`), apertura 28/10/2026, chiusura 28/11/2026.
+- **Una mano a chi sostiene 2026/27**: Fondazione Cattolica (`https://www.unamanoachisostiene.it/`), iscrizioni 16/11/2026–16/02/2027.
+
+A ogni scansione, **dopo deduplicazione**, il motore può leggere le tre pagine con un controllo robots.txt standard, URL HTTPS e redirect sullo stesso host, massimo 1 MB e timeout. Richiede date di apertura e chiusura esplicite insieme al linguaggio di candidatura; soltanto allora imposta `source_open_confirmed`, `opening_date`, `deadline` e `status_evidence` con la pagina ufficiale dell'erogatore. Se l'accesso viene negato o la pagina non contiene prove, la scheda non viene promossa arbitrariamente. La verifica della finestra non costituisce una certificazione dell'ammissibilità di Opera+ né sostituisce la lettura dei requisiti e dell'eventuale partenariato.
