@@ -1,0 +1,48 @@
+name: Deploy Opera+ Funding dashboard
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - 'data/**'
+      - 'src/build_site.py'
+      - 'src/deploy_sftp.py'
+      - '.github/workflows/deploy.yml'
+permissions:
+  contents: read
+concurrency:
+  group: funding-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    # Deployment remains disabled until the repository owner explicitly
+    # configures the environment variable named FUNDING_DEPLOY_ENABLED.
+    if: vars.FUNDING_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python src/build_site.py
+      - run: pip install 'paramiko>=3.5,<5'
+      - name: Prepare optional private key
+        env:
+          PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
+        shell: bash
+        run: |
+          if [[ -n "$PRIVATE_KEY" ]]; then
+            printf '%s\n' "$PRIVATE_KEY" > "$RUNNER_TEMP/funding_sftp_key"
+            chmod 600 "$RUNNER_TEMP/funding_sftp_key"
+            echo "SFTP_PRIVATE_KEY_FILE=$RUNNER_TEMP/funding_sftp_key" >> "$GITHUB_ENV"
+          fi
+      - name: Upload built dashboard via SFTP
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_PORT: ${{ secrets.SFTP_PORT }}
+          SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_REMOTE_DIR: ${{ secrets.SFTP_REMOTE_DIR }}
+          SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
+        run: python src/deploy_sftp.py
