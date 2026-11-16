@@ -1,5 +1,26 @@
 const $ = id => document.getElementById(id);
 const PAGE_SIZE = 20;
+const DATA_ORIGIN = "https://raw.githubusercontent.com/jeckodevelopment/opera-funding/main/data/";
+const FALLBACK_ORIGIN = "data/";
+async function fetchDataset(origin) {
+ const [opportunitiesResponse,statusResponse]=await Promise.all([
+  fetch(origin+"opportunities.json",{cache:"no-store",credentials:"omit"}),
+  fetch(origin+"scan-status.json",{cache:"no-store",credentials:"omit"})
+ ]);
+ if(!opportunitiesResponse.ok||!statusResponse.ok)throw Error("HTTP error loading dataset");
+ const [opportunities,status]=await Promise.all([opportunitiesResponse.json(),statusResponse.json()]);
+ if(!Array.isArray(opportunities)||!status||typeof status!=="object"||!Array.isArray(status.sources))
+  throw Error("Invalid funding JSON schema");
+ return {opportunities,status};
+}
+async function loadDataset() {
+ try {return {...await fetchDataset(DATA_ORIGIN),origin:"github"};}
+ catch(error) {
+  const fallback=await fetchDataset(FALLBACK_ORIGIN);
+  return {...fallback,origin:"local",reason:error.message};
+ }
+}
+
 let all = [], visibleCount = PAGE_SIZE;
 const safeUrl = value => { try { const u = new URL(value); return u.protocol === "https:" ? u.href : null; } catch { return null; } };
 const el = (tag, value, className) => { const e=document.createElement(tag); if(value!==undefined)e.textContent=value; if(className)e.className=className; return e; };
@@ -88,20 +109,33 @@ function render(){
 function syncTabs(){const value=$("status").value;for(const tab of document.querySelectorAll(".quick-tab")){const active=tab.dataset.value===value;tab.classList.toggle("active",active);tab.setAttribute("aria-pressed",String(active));}}
 function resetPagination(){visibleCount=PAGE_SIZE;render();}
 async function init(){
+ const button=$("refresh");if(button){button.disabled=true;button.textContent="Aggiornamento…";}
  try{
-  const [resp,report]=await Promise.all([fetch("data/opportunities.json",{cache:"no-store"}),fetch("data/scan-status.json",{cache:"no-store"})]);
-  if(!resp.ok||!report.ok)throw Error("Impossibile caricare i dati");
-  all=await resp.json();const status=await report.json();
-  $("total").textContent=all.filter(o=>state(o)==="aperto").length;$("potential").textContent=all.filter(o=>["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type)).length;
+  const dataset=await loadDataset();all=dataset.opportunities;const status=dataset.status;
+  $("total").textContent=all.filter(o=>state(o)==="aperto").length;
+  $("potential").textContent=all.filter(o=>["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type)).length;
   $("high").textContent=all.filter(o=>state(o)==="non verificato").length;
   $("sources").textContent=all.filter(o=>state(o)==="chiuso").length;
-  $("scan").textContent=status.checked_at?"Aggiornato il "+new Date(status.checked_at).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"})+" · "+(status.sources||[]).filter(o=>!o.ok).length+" fonti con anomalie":"Prima scansione non ancora effettuata";
-  for(const name of [...new Set(all.map(o=>o.issuer).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"it"))){const option=el("option",name);option.value=name;$("issuer").append(option);}
+  const timestamp=status.checked_at?new Date(status.checked_at).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"}):"non disponibile";
+  const failures=(status.sources||[]).filter(o=>!o.ok).length;
+  const source=dataset.origin==="github"?"Dati live da GitHub":"Copia locale di riserva (GitHub non raggiungibile)";
+  $("scan").textContent=source+" · Ultima scansione: "+timestamp+" · "+failures+" fonti con anomalie";
+  $("scan").classList.toggle("fallback-data",dataset.origin==="local");
+  const issuer=$("issuer");issuer.replaceChildren(el("option","Tutti"));
+  issuer.firstChild.value="";
+  for(const name of [...new Set(all.map(o=>o.issuer).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"it"))){
+   const option=el("option",name);option.value=name;issuer.append(option);
+  }
+  if(!Array.from(issuer.options).some(x=>x.value===issuer.value))issuer.value="";
   syncTabs();render();
- }catch(err){$("scan").textContent="Dati non disponibili";$("items").replaceChildren(el("p",err.message,"empty"));}
+ }catch(err){
+  $("scan").textContent="Impossibile caricare i dati da GitHub o dalla copia locale";
+  $("items").replaceChildren(el("p","Dati temporaneamente non disponibili. Riprova con Aggiorna.","empty"));
+ }finally{if(button){button.disabled=false;button.textContent="Aggiorna dati ↻";}}
 }
 for(const id of ["search","status","kind","issuer","level","sort"])$(id).addEventListener(id==="search"?"input":"change",resetPagination);
 $("reset").addEventListener("click",()=>{$("search").value="";$("status").value="active";$("kind").value="funding";$("issuer").value="";$("level").value="0";$("sort").value="priority";syncTabs();resetPagination();});
 for(const tab of document.querySelectorAll(".quick-tab"))tab.addEventListener("click",()=>{$("status").value=tab.dataset.value;syncTabs();resetPagination();});
+$("refresh").addEventListener("click",init);
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
 init();
