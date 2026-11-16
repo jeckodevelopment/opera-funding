@@ -36,7 +36,8 @@ function filteredRows(){
    const s=state(o);
    if(status==="active"&&s==="chiuso")return false;
    if(status&&status!=="active"&&s!==status)return false;
-   if(kind&&(o.opportunity_type||"non classificato")!==kind)return false;
+   if(kind==="funding"&&!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return false;
+   if(kind&&kind!=="funding"&&(o.opportunity_type||"non classificato")!==kind)return false;
    if(issuer&&o.issuer!==issuer)return false;
    if(Number(o.relevance||0)<min)return false;
    return !q||[o.title,o.issuer,...(o.themes||[])].join(" ").toLocaleLowerCase("it").includes(q);
@@ -62,6 +63,7 @@ function renderItem(o){
  actions.append(detailsButton);item.append(actions);
  detail.append(el("p","Ammissibilità: "+(o.eligibility||"da verificare")+" · Potenziale progettuale: "+(o.project_potential||"da valutare")));
  if(o.status_basis)detail.append(el("p","Stato dalla fonte: "+o.status_basis));
+ if(o.deadline_source)addLink(detail,"Fonte della scadenza ↗",o.deadline_source);
  if(o.amount)detail.append(el("p","Importo indicativo: "+o.amount));
  if(o.beneficiaries_excerpt)detail.append(el("p","Beneficiari (estratto): "+o.beneficiaries_excerpt));
  if(o.type_reason)detail.append(el("p",o.type_reason));
@@ -95,6 +97,6 @@ async function init(){
  }catch(err){$("scan").textContent="Dati non disponibili";$("items").replaceChildren(el("p",err.message,"empty"));}
 }
 for(const id of ["search","status","kind","issuer","level","sort"])$(id).addEventListener(id==="search"?"input":"change",resetPagination);
-$("reset").addEventListener("click",()=>{$("search").value="";$("status").value="active";$("kind").value="";$("issuer").value="";$("level").value="0";$("sort").value="priority";resetPagination();});
+$("reset").addEventListener("click",()=>{$("search").value="";$("status").value="active";$("kind").value="funding";$("issuer").value="";$("level").value="0";$("sort").value="priority";resetPagination();});
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
 init();
