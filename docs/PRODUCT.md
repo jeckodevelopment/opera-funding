@@ -173,3 +173,14 @@ La nuova estrazione `structured_facts` è limitata a tre formati **documentati n
 - **Ministero della Cultura:** le pagine «assegnazione contributi», «consuntivi», «rendicontazione» e gli indici generici rimangono informazioni disponibili nello storico, ma non bandi a cui Opera+ possa ancora candidarsi. Le nuove opportunità, quando pubblicate, continuano a essere acquisite.
 
 La coda assegna temporaneamente 9 verifiche per esecuzione a Vol.To, MiC, Torino e ALCOTRA, mantenendo il normale controllo robots.txt e i limiti sui PDF. Il parser dettagli è versionato a `detail_version=5` per rianalizzare progressivamente le pagine già consultate. Una fonte funzionante con nessun bando rimane verde e nessuna data viene inventata.
+
+## 16 novembre 2026 — completamento parser Vol.To/MiC/ALCOTRA
+
+I controlli reali sulla PR #33 hanno ridotto da 42 a 20 le possibili candidature non risolte nelle quattro fonti prioritarie, separando correttamente le pagine informative. Restavano formati testuali ufficiali non coperti, ora trattati come segue:
+
+- **Vol.To:** `Scadenza del bando: 20 Novembre 2026` e le varianti con mese in lettere sono lette come date di presentazione, non come date di selezione dei vincitori. Le pagine generiche «Progetti Vol.To» e «Progetti di Servizio Civile» sono informazioni, non bandi.
+- **MiC:** la finestra effettiva delle domande `Dalle ore 16:00 del 3 novembre 2026 fino alle ore 16:00 del 31 gennaio 2027`, presente nel bando Rievocazione Storica 2027, è acquisita solo se associata a parole `piattaforma/modulistica` e `domande/candidature`. Le date di attività di un evento non diventano deadline. Le pagine `consuntivi` e le descrizioni generiche FNSV sono tenute fuori dalle candidature.
+- **ALCOTRA:** il testo `Bando chiuso il 31 gennaio 2025` costituisce prova diretta dello stato chiuso e della scadenza, anche qualora un portale non esponga il campo strutturato in modo leggibile dallo scanner.
+- L'evidenza di un'apertura storica è conservata; `effective_status` usa la data corrente e la scadenza per evitare di mostrare APERTA una finestra già terminata.
+
+I nuovi controlli mantengono il limite sulla scansione, i collegamenti ufficiali e la separazione fra fonte, deadline, stato e ammissibilità.

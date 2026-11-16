@@ -48,7 +48,12 @@ def _festival_windows(text):
 ITALIAN_DATE=r"(\d{1,2})\s+(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\s+(20\d{2})"
 ALCOTRA_CLOSING=re.compile(r"(?i)\b(?:data\s+di\s+chiusura|chiusura)\s*[:–-]?\s*"+DATE_TOKEN)
 ALCOTRA_OPENING=re.compile(r"(?i)\bdata\s+di\s+apertura\s*[:–-]?\s*"+DATE_TOKEN)
-CSVNET_CLOSING=re.compile(r"(?i)\bscadenza\s*[:–-]?\s*(?:"+DATE_TOKEN+r"|"+ITALIAN_DATE+r")")
+CSVNET_CLOSING=re.compile(r"(?i)\bscadenza(?:\s+del\s+bando)?\s*[:–-]?\s*(?:"+DATE_TOKEN+r"|"+ITALIAN_DATE+r")")
+MIC_FORM_WINDOW=re.compile(
+    r"(?i)\bdalle?\s+ore\s+\d{1,2}(?:[:.]\d{2})?\s+del\s+"+ITALIAN_DATE+
+    r".{0,110}?\bfino\s+alle?\s+ore\s+\d{1,2}(?:[:.]\d{2})?\s+del\s+"+ITALIAN_DATE
+)
+ALCOTRA_EXPLICIT_CLOSED=re.compile(r"(?i)\bbando\s+chiuso\s+il\s+"+ITALIAN_DATE)
 TORINO_APPLICATION_END=re.compile(r"(?i)\b(?:dal|dalle)\s+"+ITALIAN_DATE+r".{0,35}?\bal\s+"+ITALIAN_DATE+r"(?=\s|[.,;:]|$)")
 TORINO_NUMERIC_END=re.compile(r"(?i)\b(?:richiest[ae]|domand[ae]|candidatur[ae]|propost[ae]).{0,100}?\b(?:entro|al)\s*(?:il\s+)?"+DATE_TOKEN)
 def _italian_date(match,start=1):
@@ -89,11 +94,27 @@ def structured_facts(html,url):
     if windows:deadline=next((x for x in windows if x>=date.today().isoformat()),windows[-1])
     if not deadline:deadline=_english_date(EN_DEADLINE.search(txt))
     if not opening:opening=_english_date(EN_OPENING.search(txt))
-    if "infobandi.csvnet.it" in url and not deadline:
+    if ("infobandi.csvnet.it" in url or "volontariatotorino.it" in url) and not deadline:
         deadline=_csvnet_deadline(txt)
+    if "spettacolo.cultura.gov.it" in url and not deadline:
+        match=MIC_FORM_WINDOW.search(txt)
+        if match and re.search(r"(?i)(modulistica|piattaforma).{0,220}(domande|candidature)",txt[match.start():match.end()+350]):
+            opening=_italian_date(match,1)
+            deadline=_italian_date(match,4)
+            mic_open_evidence=bool(opening and deadline)  # current validity checked by effective_status
+        else:
+            mic_open_evidence=False
+    else:
+        mic_open_evidence=False
+
     if "interreg-alcotra.eu" in url:
         if not deadline:deadline=_date(ALCOTRA_CLOSING.search(txt))
         if not opening:opening=_date(ALCOTRA_OPENING.search(txt))
+        closed_alcotra=ALCOTRA_EXPLICIT_CLOSED.search(txt)
+        if not deadline and closed_alcotra:
+            deadline=_italian_date(closed_alcotra,1)
+    else:
+        closed_alcotra=None
     if "bandi.comune.torino.it" in url and not deadline:
         # Date range explicitly associated with filing requests, not generic project periods.
         match=TORINO_APPLICATION_END.search(txt)
@@ -112,14 +133,14 @@ def structured_facts(html,url):
         except ValueError:
             pass
     state=STATUS.search(txt)
-    source_open=bool((state and state.group(1).lower() in ("in corso","aperto","aperta","attivo","attiva","open")) or window)
-    source_closed=bool(state and state.group(1).lower() in ("chiuso","chiusa","scaduto","scaduta","closed"))
+    source_open=bool((state and state.group(1).lower() in ("in corso","aperto","aperta","attivo","attiva","open")) or window or mic_open_evidence)
+    source_closed=bool((state and state.group(1).lower() in ("chiuso","chiusa","scaduto","scaduta","closed")) or closed_alcotra)
     beneficiaries=BENEFICIARIES.search(txt)
     return {
       "deadline":deadline,"opening_date":opening,"application_windows":windows,"summary":summary,"source_open_confirmed":source_open,
       "closure_confirmed":source_closed,
       "opening_evidence":url if opening else None,
       "deadline_source":url if deadline else None,
-      "status_evidence":url if state else None,
+      "status_evidence":url if (state or closed_alcotra or mic_open_evidence) else None,
       "beneficiaries_excerpt":beneficiaries.group(0).strip()[:270] if beneficiaries else None
     }

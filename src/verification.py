@@ -62,11 +62,16 @@ def classify_informational_page(record):
             "assegnazione contribut" in title or
             "consuntiv" in title or "rendicont" in title or
             "concessione dei contributi" in title or
+            "consuntiv" in path or
+            "assegnazione-contribut" in path or
+            "contributi-fnsv-fondo-nazionale" in path or
             "news-avvisi" in path or
             "category/" in path or
             "contributi-extra-fus" in path or
             "progetti-speciali" in path or
             path.strip("/") in ("contributi-extra-fus","contributi-fus"))
+    if source=="volto":
+        is_information=(path.rstrip("/") in ("/progetti-volto","/progetti-servizio-civile"))
     if source=="torino":
         is_information=("approvazione contributo" in title or
                         "contributo in servizi all" in title or

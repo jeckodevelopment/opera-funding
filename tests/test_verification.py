@@ -30,6 +30,15 @@ class VerificationTests(unittest.TestCase):
         fresh={**old,"detail_checked_at":NOW.isoformat()}
         self.assertTrue(needs_review(old,NOW))
         self.assertFalse(needs_review(fresh,NOW))
+    def test_mic_consuntivi_and_volto_navigation_are_not_grants(self):
+        cases=[
+          ("mic","https://spettacolo.cultura.gov.it/bando-jazz-attivazione-dei-consuntivi-2026/","Bando per la PROMOZIONE DELLA MUSICA JAZZ – Attivazione della..."),
+          ("mic","https://spettacolo.cultura.gov.it/contributi-fnsv-fondo-nazionale-per-lo-spettacolo-dal-vivo/","Contributi FNSV"),
+          ("volto","https://volontariatotorino.it/progetti-volto/","Progetti Vol.To"),
+          ("volto","https://volontariatotorino.it/progetti-servizio-civile/","Progetti di Servizio Civile")
+        ]
+        for sid,url,title in cases:
+            self.assertEqual(classify_informational_page(row("x",source_id=sid,url=url,title=title))["opportunity_type"],"altro avviso")
     def test_four_source_informational_pages_not_funding(self):
         cases=[
           ("mic","https://spettacolo.cultura.gov.it/bando-jazz-2027-assegnazione/","Bando Jazz 2027 – Assegnazione contributi"),

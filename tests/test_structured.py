@@ -17,6 +17,28 @@ PAGE="""<html><main>
 URL="https://bandi.regione.piemonte.it/contributi-finanziamenti/manifestazioni"
 
 class StructuredTests(unittest.TestCase):
+    def test_volto_explicit_deadline_of_grant(self):
+        html="<main><h1>Dora in Avanti</h1><p>Scadenza del bando: 20 Novembre 2026</p><p>Entro il 7 dicembre la fondazione selezionerà i candidati.</p></main>"
+        facts=structured_facts(html,"https://volontariatotorino.it/bandi/dora-in-avanti/")
+        self.assertEqual(facts["deadline"],"2026-11-20")
+        self.assertFalse(facts["source_open_confirmed"])
+    def test_mic_online_filing_window(self):
+        html="<main><h1>Rievocazione storica 2027</h1><p>Dalle ore 16:00 del 3 novembre 2026 fino alle ore 16:00 del 31 gennaio 2027 è disponibile, sulla piattaforma telematica DOS-Cultura, la modulistica per la compilazione e l’invio delle domande di contributo.</p></main>"
+        facts=structured_facts(html,"https://spettacolo.cultura.gov.it/bando-rievocazione-storica-2027/")
+        self.assertEqual(facts["opening_date"],"2026-11-03")
+        self.assertEqual(facts["deadline"],"2027-01-31")
+        self.assertTrue(facts["source_open_confirmed"])
+        self.assertTrue(facts["status_evidence"])
+    def test_mic_dates_without_filing_not_open(self):
+        html="<main>Dal 3 novembre 2026 fino al 31 gennaio 2027 si svolgerà il festival.</main>"
+        facts=structured_facts(html,"https://spettacolo.cultura.gov.it/festival/")
+        self.assertIsNone(facts["deadline"])
+        self.assertFalse(facts["source_open_confirmed"])
+    def test_alcotra_closed_written_month(self):
+        html="<main><h1>Terzo bando</h1><h2>Bando chiuso il 31 gennaio 2025 alle ore 12:00</h2></main>"
+        facts=structured_facts(html,"https://interreg-alcotra.eu/it/terzo-bando-progetti-singoli")
+        self.assertEqual(facts["deadline"],"2025-01-31")
+        self.assertTrue(facts["closure_confirmed"])
     def test_csvnet_explicit_italian_deadline(self):
         html="<main><h1>Bando lettura</h1><div>SCADENZA</div><div>13 novembre 2026 alle ore 13:00</div><div>Pubblicato il 25 ottobre 2026</div></main>"
         facts=structured_facts(html,"https://infobandi.csvnet.it/bando-educare-alla-lettura-2026/")
