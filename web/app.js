@@ -85,6 +85,9 @@ function renderItem(o){
  
 
  if(o.deadline_source)addLink(detail,"Fonte della scadenza ↗",o.deadline_source);
+ if(Array.isArray(o.application_windows)&&o.application_windows.length>1){
+  detail.append(el("p","Finestre di candidatura: "+o.application_windows.map(x=>dateLabel(x).replace("Scade il ","")).join(" · ")+". La finestra applicabile dipende dal periodo del progetto."));
+ }
  if(o.amount)detail.append(el("p","Importo indicativo: "+String(o.amount).split(" (da verificare)")[0]));
  if(o.beneficiaries_excerpt)detail.append(el("p","Destinatari: "+o.beneficiaries_excerpt));
 
