@@ -40,7 +40,7 @@ def explain(row):
         "Pertinenza preliminare: dal titolo non emergono elementi sufficienti per collegare il bando ai progetti Opera+."
     )
     row["score_confidence"] = "bassa — analisi preliminare del titolo"
-    row["project_ideas"] = projects[:3]
+    row["project_ideas"] = list(row.get("curated_project_ideas") or projects[:3])
     row["eligibility"] = row.get("eligibility") or "da verificare"
     beneficiary=str(row.get("beneficiaries_excerpt") or "")
     checks=["Verificare i beneficiari ammessi e la natura giuridica richiesta"]
