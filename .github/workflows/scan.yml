@@ -9,6 +9,7 @@ on:
       - 'src/detail.py'
       - 'src/quality.py'
       - 'src/status.py'
+      - 'src/pdf_dates.py'
       - 'config/sources.json'
       - '.github/workflows/scan.yml'
   schedule:
