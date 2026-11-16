@@ -11,6 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 from classify import classify
 from detail import enrich
+from quality import check_link, reconcile_status
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -97,21 +98,28 @@ def run():
                 found = discover(source, session, now)
                 # Avoid overloading sources; improve a small batch on each scan.
                 enriched_count = 0
+                checked_count = 0
                 for item in found:
                     if item["id"] in indexed:
                         previous = indexed[item["id"]]
                         item["first_seen"] = previous.get("first_seen", now)
                         # preserve data verified by future, dedicated detail-page extractors
-                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis"):
-                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis"))) and key in previous:
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
+                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
                                 item[key] = previous[key]
                     if not item.get("detail_checked") and enriched_count < 3 and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
                         item = enrich(item, source, session, eligible_to_fetch)
                         enriched_count += 1
-                    indexed[item["id"]] = item
+                    if not item.get("link_checked_at") and checked_count < 8:
+                        item = check_link(item, session, now)
+                        checked_count += 1
+                    indexed[item["id"]] = reconcile_status(item)
                 statuses.append({"source_id":source["id"],"ok":True,"discovered":len(found),"checked_at":now})
             except (requests.RequestException, RuntimeError, ValueError) as exc:
                 statuses.append({"source_id":source["id"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]})
+    # Reconcile retained historical links too; do not keep outdated open flags.
+    for entry in indexed.values():
+        reconcile_status(entry)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(sorted(indexed.values(), key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")

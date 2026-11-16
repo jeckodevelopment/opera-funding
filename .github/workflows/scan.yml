@@ -6,6 +6,8 @@ on:
     paths:
       - 'src/scan.py'
       - 'src/classify.py'
+      - 'src/detail.py'
+      - 'src/quality.py'
       - 'config/sources.json'
       - '.github/workflows/scan.yml'
   schedule:
