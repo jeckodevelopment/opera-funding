@@ -51,6 +51,12 @@ def _date(match):
 def structured_facts(html,url):
     """Only label-adjacent facts. Keep URL for provenance; never assert eligibility."""
     soup=BeautifulSoup(html,"html.parser")
+    summary=None
+    for meta in soup.select('meta[name="description"], meta[property="og:description"]'):
+        content=" ".join((meta.get("content") or "").split())
+        if 45 <= len(content) <= 600:
+            summary=content[:260]
+            break
     for node in soup(["script","style","nav","footer","header"]):node.decompose()
     # Drupal themes may render status and application dates outside <main>/<article>.
     # Read the complete body, after removing navigational noise.
@@ -78,7 +84,7 @@ def structured_facts(html,url):
     source_closed=bool(state and state.group(1).lower() in ("chiuso","chiusa","scaduto","scaduta","closed"))
     beneficiaries=BENEFICIARIES.search(txt)
     return {
-      "deadline":deadline,"opening_date":opening,"application_windows":windows,"source_open_confirmed":source_open,
+      "deadline":deadline,"opening_date":opening,"application_windows":windows,"summary":summary,"source_open_confirmed":source_open,
       "closure_confirmed":source_closed,
       "opening_evidence":url if opening else None,
       "deadline_source":url if deadline else None,
