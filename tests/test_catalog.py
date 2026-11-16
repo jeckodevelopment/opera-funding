@@ -2,7 +2,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-from catalog import deduplicate_catalog
+from catalog import deduplicate_catalog,reconcile_official_equivalents
 
 ROOT="https://infobandi.csvnet.it/"
 A=ROOT+"bando-una-mano-a-chi-sostiene-2026/?utm_source=rss"
@@ -29,6 +29,24 @@ class CatalogTests(unittest.TestCase):
         b={"source_id":"volto","url":B,"title":TITLE,"deadline":"2027-06-16"}
         c={"source_id":"torino","url":"https://bandi.comune.torino.it/avviso/x","title":TITLE,"deadline":"2027-02-16"}
         self.assertEqual(len(deduplicate_catalog([a,b,c])),3)
+    def test_circoscrizione_7_synced_notice_is_same_official_call(self):
+        official={"source_id":"torino","url":"https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
+                  "deadline":"2026-11-26","funding_status":"APERTO","first_seen":"2026-10-12"}
+        synd={"source_id":"volto","url":"https://volontariatotorino.it/bandi/circoscrizione-7-invito-a-presentare-progetti-per-iniziative-varie-anno-2027/",
+              "deadline":"2026-11-26","funding_status":"DA VERIFICARE","first_seen":"2026-11-01"}
+        result=reconcile_official_equivalents([synd,official])
+        self.assertEqual(len(result),1)
+        self.assertEqual(result[0]["source_id"],"torino")
+        self.assertEqual(result[0]["funding_status"],"APERTO")
+        self.assertIn(synd["url"],result[0]["alternative_urls"])
+    def test_do_not_merge_unconfirmed_or_mismatched_synced_notice(self):
+        official={"source_id":"torino","url":"https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
+                  "deadline":"2026-11-26"}
+        syndicated={"source_id":"volto","url":"https://volontariatotorino.it/bandi/circoscrizione-7-invito-a-presentare-progetti-per-iniziative-varie-anno-2027/",
+                    "deadline":"2026-11-27"}
+        self.assertEqual(len(reconcile_official_equivalents([official,syndicated])),2)
+        syndicated["deadline"]=None
+        self.assertEqual(len(reconcile_official_equivalents([official,syndicated])),2)
     def test_does_not_merge_without_verifiable_deadline(self):
         a={"source_id":"volto","url":A,"title":TITLE}
         b={"source_id":"volto","url":B,"title":TITLE}
