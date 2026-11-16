@@ -46,3 +46,24 @@ def extract_ordinarie_windows(html,url):
                         "official_in_progress":active_banner})
     # Avoid duplicated on-page mobile/desktop sections, but don't merge distinct deadlines.
     return list({r["window_key"]:r for r in results}.values())
+
+def guidance_for_window(application_type):
+    """Editorial ideas only, not a statement of eligibility or award conditions."""
+    if application_type=="Sostegno attività":
+        ideas=[
+            "Consolidamento delle attività continuative di divulgazione musicale di Opera+",
+            "Sviluppo di contenuti e strumenti didattici accessibili per il pubblico"
+        ]
+    else:
+        ideas=[
+            "Produzione di videolezioni e contenuti digitali di divulgazione dell'opera",
+            "Laboratori extrascolastici di ascolto e cultura musicale per giovani e adulti"
+        ]
+    return {
+      "project_ideas": ideas,
+      "funding_scope_note": (
+          "Il bando Ordinarie esclude le iniziative di spettacolo dal vivo, "
+          "indirizzate da Fondazione CRT a NoteSipari e Orizzonti L.I.V.E. "
+          "Gli spunti proposti non costituiscono conferma di ammissibilità."
+      )
+    }

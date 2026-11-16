@@ -134,6 +134,11 @@ function openDetails(o){
   section.append(el("h3","Finestre di candidatura"),el("p",o.application_windows.filter(validDate).map(d=>dateLabel(d).replace("Scade il ","")).join(" · ")));
   content.append(section);
  }
+ if(o.funding_scope_note){
+  const section=el("section",undefined,"dialog-section");
+  section.append(el("h3","Ambito del bando"),el("p",o.funding_scope_note));
+  content.append(section);
+ }
  if(o.project_ideas?.length){
   const section=el("section",undefined,"dialog-section");
   section.append(el("h3","Spunti per Opera+"));

@@ -16,6 +16,7 @@ from status import annotate
 from fit import explain
 from priority import check_priority
 from verification import pick_for_review, coverage
+from crt_windows import guidance_for_window
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -161,7 +162,9 @@ def run():
                                 row["status_basis"]="Finestra di candidatura riportata nella pagina ufficiale"
                                 previous=indexed.get(row["id"],{})
                                 row["first_seen"]=previous.get("first_seen",now)
-                                indexed[row["id"]]=explain(annotate(row))
+                                row=explain(annotate(row))
+                                row.update(guidance_for_window(period["application_type"]))
+                                indexed[row["id"]]=row
                         else:
                             indexed[key]=verified
                 statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":True,"discovered":len(found),"checked_at":now})
