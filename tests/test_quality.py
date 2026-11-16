@@ -2,7 +2,7 @@ import sys
 import unittest
 from datetime import date
 from pathlib import Path
-from unittest.mock import Mock
+from unittest.mock import Mock, MagicMock
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
 from quality import reconcile_status, check_link
 
@@ -14,7 +14,7 @@ class QualityTests(unittest.TestCase):
         row={"status":"aperto (fonte indice)","deadline":None}
         self.assertEqual(reconcile_status(row,date(2026,11,16))["status"],"non verificato")
     def test_link_404(self):
-        reply=Mock(status_code=404,url="https://example.org/old-bando")
+        reply=MagicMock(status_code=404,url="https://example.org/old-bando")
         reply.__enter__=Mock(return_value=reply)
         reply.__exit__=Mock(return_value=False)
         session=Mock()
