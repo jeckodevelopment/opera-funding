@@ -86,46 +86,91 @@ function makeCalendar(o){
  calendar.append(el("span",monthName,"calendar-month"),el("span",String(Number(day)),"calendar-day"),el("span",year,"calendar-year"));
  return calendar;
 }
-function makeScore(o){
- const container=el("div",undefined,"score-wrap");const value=score(o);
- const num=el("span",String(value),"score-value"+(value>=80?" high-score":""));num.append(el("small","/100"));
- const track=el("div",undefined,"score-track");const fill=el("div",undefined,"score-fill");fill.style.width=value+"%";track.append(fill);
- container.append(num,el("span","Affinità","score-label"),track);return container;
+function makeAdequacy(o){
+ const value=score(o);
+ const footer=el("div",undefined,"adequacy");
+ const heading=el("div",undefined,"adequacy-heading");
+ heading.append(el("span","Adeguatezza per Opera+","adequacy-label"),el("strong",value+"/100","adequacy-value"));
+ const track=el("div",undefined,"adequacy-track");
+ track.style.setProperty("--fit",value+"%");
+ track.setAttribute("role","progressbar");
+ track.setAttribute("aria-label","Adeguatezza del bando per Opera+");
+ track.setAttribute("aria-valuemin","0");track.setAttribute("aria-valuemax","100");track.setAttribute("aria-valuenow",String(value));
+ track.append(el("span",undefined,"adequacy-mask"),el("span",undefined,"adequacy-marker"));
+ footer.append(heading,track);
+ return footer;
+}
+function dialogField(parent,label,value){
+ if(!value)return;
+ const field=el("div",undefined,"dialog-field");
+ field.append(el("dt",label),el("dd",String(value)));
+ parent.append(field);
+}
+function openDetails(o){
+ const dialog=$("opportunity-dialog"),content=$("dialog-content");
+ content.replaceChildren();
+ content.append(el("h2",o.title||"Opportunità","dialog-title"));
+ content.lastChild.id="dialog-title";
+ const line=el("div",undefined,"dialog-meta");
+ line.append(el("span",statusLabel(state(o)),"chip status "+(state(o)==="aperto"?"open":state(o)==="chiuso"?"closed":state(o)==="in arrivo"?"upcoming":"unknown")));
+ line.append(el("span",o.issuer||"Ente non indicato"));
+ content.append(line);
+ content.append(el("p",opportunitySummary(o),"dialog-summary"));
+ const grid=el("dl",undefined,"dialog-grid");
+ dialogField(grid,"Scadenza",validDate(o.deadline)?dateLabel(o.deadline).replace("Scade il ",""):"Non indicata");
+ dialogField(grid,"Apertura candidature",validDate(o.opening_date)?dateLabel(o.opening_date).replace("Scade il ",""):"");
+ dialogField(grid,"Contributo / dotazione",o.amount?String(o.amount).replace(" (da verificare)",""):"Non indicato nella scheda");
+ dialogField(grid,"Tipologia candidatura",o.application_type||o.opportunity_type||"");
+ dialogField(grid,"Edizione",o.edition_year||"");
+ dialogField(grid,"Finestra",o.window_label||"");
+ content.append(grid);
+ if(o.beneficiaries_excerpt){
+  const section=el("section",undefined,"dialog-section");
+  section.append(el("h3","Destinatari"),el("p",o.beneficiaries_excerpt));
+  content.append(section);
+ }
+ if(o.application_windows?.length>1){
+  const section=el("section",undefined,"dialog-section");
+  section.append(el("h3","Finestre di candidatura"),el("p",o.application_windows.filter(validDate).map(d=>dateLabel(d).replace("Scade il ","")).join(" · ")));
+  content.append(section);
+ }
+ if(o.project_ideas?.length){
+  const section=el("section",undefined,"dialog-section");
+  section.append(el("h3","Spunti per Opera+"));
+  const ideas=el("ul");
+  for(const idea of o.project_ideas.slice(0,4))ideas.append(el("li",idea));
+  section.append(ideas);content.append(section);
+ }
+ const links=el("div",undefined,"dialog-links");
+ addLink(links,"Apri la scheda ufficiale ↗",o.link_status==="non disponibile"?o.source_url:(o.resolved_url||o.url));
+ if(o.deadline_source&&o.deadline_source!==(o.resolved_url||o.url))addLink(links,"Fonte della scadenza ↗",o.deadline_source);
+ const used=new Set([o.url,o.resolved_url,o.deadline_source]);
+ for(const d of o.documents||[]){
+  if(!used.has(d.url)){addLink(links,(d.label||"Documento")+" ↗",d.url);used.add(d.url);}
+ }
+ content.append(links);
+ dialog.showModal();
 }
 function makeCard(o){
  const article=el("article",undefined,"item");
  const left=el("div",undefined,"item-main"),right=el("aside",undefined,"item-side");
- const tags=el("div",undefined,"item-badges");const st=state(o);
+ const tags=el("div",undefined,"item-badges"),st=state(o);
  tags.append(el("span",statusLabel(st),"chip status "+(st==="aperto"?"open":st==="chiuso"?"closed":st==="in arrivo"?"upcoming":"unknown")));
- if(o.amount)tags.append(el("span","Contributo disponibile","chip"));
- left.append(tags);
- left.append(el("h3",o.title||"Opportunità senza titolo","item-title"));
- left.append(el("p",opportunitySummary(o),"item-summary"));
+ if(o.application_type)tags.append(el("span",o.application_type+" · "+(o.window_label||"Candidatura"),"chip"));
+ left.append(tags,el("h3",o.title||"Opportunità senza titolo","item-title"),el("p",opportunitySummary(o),"item-summary"));
  const meta=el("div",undefined,"item-meta");
  meta.append(el("span",o.issuer||"Ente non indicato","issuer-name"));
  if(o.themes?.length)meta.append(el("span",o.themes[0]));
  left.append(meta);
  const actions=el("div",undefined,"item-actions");
- if(o.link_status==="non disponibile")addLink(actions,"Visita il sito dell’ente ↗",o.source_url,"source-link");
- else addLink(actions,"Apri il bando ↗",o.resolved_url||o.url,"source-link");
- const details=el("div",undefined,"item-details");details.hidden=true;
- const hasDetails=Boolean(o.amount||o.beneficiaries_excerpt||(o.application_windows?.length>1)||o.project_ideas?.length||o.documents?.length>1);
- if(hasDetails){
-  const toggle=el("button","Altre informazioni +","details-toggle");toggle.type="button";toggle.setAttribute("aria-expanded","false");
-  toggle.addEventListener("click",()=>{details.hidden=!details.hidden;toggle.textContent=details.hidden?"Altre informazioni +":"Nascondi informazioni −";toggle.setAttribute("aria-expanded",String(!details.hidden));});
-  actions.append(toggle);
- }
+ const button=el("button","Esamina opportunità","details-toggle");button.type="button";
+ button.addEventListener("click",()=>openDetails(o));
+ actions.append(button);
+ if(o.link_status==="non disponibile")addLink(actions,"Sito dell’ente ↗",o.source_url,"source-link");
+ else addLink(actions,"Fonte ufficiale ↗",o.resolved_url||o.url,"source-link");
  left.append(actions);
- if(o.amount)details.append(el("p","Contributo: "+String(o.amount).replace(" (da verificare)","")));
- if(o.beneficiaries_excerpt)details.append(el("p","Destinatari: "+o.beneficiaries_excerpt));
- if(Array.isArray(o.application_windows)&&o.application_windows.length>1)details.append(el("p","Finestre di candidatura: "+o.application_windows.filter(validDate).map(date=>dateLabel(date).slice(9)).join(" · ")+". La finestra applicabile dipende dal progetto."));
- if(Array.isArray(o.project_ideas)&&o.project_ideas.length)details.append(el("p","Idee per Opera+: "+o.project_ideas.slice(0,2).join("; ")));
- if(o.deadline_source)addLink(details,"Fonte della scadenza ↗",o.deadline_source);
- const docs=el("div",undefined,"documents");
- for(const d of (o.documents||[]).slice(1,6))addLink(docs,(d.label||"Documento")+" ↗",d.url);
- if(docs.childNodes.length)details.append(docs);
- left.append(details);
- right.append(makeCalendar(o),makeScore(o));article.append(left,right);
+ right.append(makeCalendar(o));
+ article.append(left,right,makeAdequacy(o));
  return article;
 }
 function render(){
@@ -203,4 +248,6 @@ $("reset").addEventListener("click",()=>{
 });
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
 $("refresh").addEventListener("click",init);
+$("dialog-close").addEventListener("click",()=>$("opportunity-dialog").close());
+$("opportunity-dialog").addEventListener("click",event=>{if(event.target===$("opportunity-dialog"))$("opportunity-dialog").close();});
 init();
