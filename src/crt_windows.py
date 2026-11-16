@@ -25,6 +25,8 @@ def extract_ordinarie_windows(html,url):
     body=soup.select_one("main") or soup.body or soup
     text=" ".join(body.stripped_strings)
     matches=list(TYPE.finditer(text))
+    # CRT exposes its edition as "In corso" beside the call heading.
+    active_banner=bool(re.search(r"(?i)\\bin corso\\b",text[:450]))
     results=[]
     for window in WINDOW.finditer(text):
         nearest=next((m for m in reversed(matches) if m.start()<window.start()),None)
@@ -40,6 +42,7 @@ def extract_ordinarie_windows(html,url):
         key=f"{year}-{kind.lower().replace(' ','-')}-{ordinal}-{closing}"
         results.append({"window_key":key,"window_label":label,"application_type":kind,
                         "edition_year":year,"opening_date":opening,"deadline":closing,
-                        "deadline_source":url,"opening_evidence":url})
+                        "deadline_source":url,"opening_evidence":url,
+                        "official_in_progress":active_banner})
     # Avoid duplicated on-page mobile/desktop sections, but don't merge distinct deadlines.
     return list({r["window_key"]:r for r in results}.values())
