@@ -8,6 +8,7 @@ on:
       - 'src/classify.py'
       - 'src/detail.py'
       - 'src/quality.py'
+      - 'src/status.py'
       - 'config/sources.json'
       - '.github/workflows/scan.yml'
   schedule:
