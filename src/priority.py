@@ -8,6 +8,8 @@ from structured import structured_facts
 from classify import classify
 from status import annotate
 from fit import explain
+from crt_windows import extract_ordinarie_windows
+from detail import extract
 
 def check_priority(item, source, session, eligible, now, previous=None):
     url=item["url"]
@@ -25,20 +27,25 @@ def check_priority(item, source, session, eligible, now, previous=None):
             if len(content)>1200000:return None
         response._content=bytes(content)
         facts=structured_facts(response.text,response.url)
+        details=extract(response.text,response.url)
+        period_windows=extract_ordinarie_windows(response.text,response.url)
         base=classify(item["title"],"")
         result={
          "id":url.lower().rstrip("/"),**base,"title":item["title"],
          "issuer":source["name"],"source_id":source["id"],"source_url":source["url"],"url":url,
-         "documents":[{"label":"Scheda ufficiale","url":response.url}],
-         "amount":None,"eligibility":"da verificare","project_potential":"da valutare",
+         "documents":details["documents"],
+         "amount":details["amount"],"eligibility":"da verificare","project_potential":"da valutare",
          "verified":False,"detail_checked":True,"detail_basis":"Pagina ufficiale verificata con evidenze strutturate",
          "first_seen":(previous or {}).get("first_seen",now),"last_seen":now,
          "link_status":"raggiungibile","resolved_url":response.url,"link_checked_at":now,
          "link_http_status":200
         }
+        if details.get("beneficiaries_excerpt"):
+            result["beneficiaries_excerpt"]=details["beneficiaries_excerpt"]
         for k,v in facts.items():
             if v is not None:
                 result[k]=v
+        if period_windows:result["individual_windows"]=period_windows
         if facts["deadline"]:result["deadline_verified_at"]=now
         if facts["source_open_confirmed"]:
             result["status"]="aperto (pagina ufficiale)"

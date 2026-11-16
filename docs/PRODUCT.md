@@ -127,3 +127,24 @@ Questa sezione descrive la **UI corrente**, sostituendo le indicazioni grafiche 
 - **Semaforo tecnico:** verde se tutte le fonti sono state elaborate senza errori, giallo se poche fonti falliscono, rosso quando almeno tre falliscono o almeno il 25% è in errore, o se il report manca. **Zero opportunità trovate non è un errore tecnico**: non cambia il colore. A fondo pagina si elencano solo gli errori effettivi d'accesso/elaborazione.
 - **Aggiornamento:** opportunità e report arrivano dai JSON pubblici GitHub con fallback locale e pulsante manuale. Il publisher di `jeckodevsite` carica a richiesta HTML, JS, CSS, PNG del logo e un'istantanea JSON di riserva; non ha bisogno di cron SFTP.
 - **Schema dati:** il parser ufficiale registra anche `summary` quando la pagina fornisce una descrizione adatta, con `detail_version=3` per rianalizzare progressivamente le schede esistenti.
+
+## Edizioni annuali, finestre e dettagli operativi (novembre 2026)
+
+### Bando CRT Ordinarie: una scheda per ciascuna scadenza
+La fonte ufficiale `https://www.fondazionecrt.it/bandi-progetti/arte-cultura-ordinarie/` presenta **tre finestre effettive nell'edizione 2026**, da non accorpare in un unico termine:
+
+| Candidatura | Apertura | Scadenza |
+| --- | --- | --- |
+| Progetto, prima scadenza | 02/02/2026 | 30/04/2026 ore 15:00 |
+| Progetto, seconda scadenza | 01/07/2026 | 15/10/2026 ore 15:00 |
+| Sostegno attività, unica scadenza | 02/02/2026 | 04/03/2026 ore 15:00 |
+
+Sono tutte **scadute al 16/11/2026**; sono visibili tramite lo storico CHIUSO, non spacciate per candidature attive. L'URL ufficiale resta invariato, ma ogni riga ha un `id` stabile formato da URL base, anno, tipologia, finestra e data di chiusura. Le nuove edizioni creano nuove righe senza modificare le precedenti. Il crawler le estrae dalla pagina a ogni scansione, non da valori fissati nel codice; nessuna finestra viene inventata.
+
+Il sito ufficiale chiarisce inoltre che **spettacolo dal vivo** deve essere candidato a NoteSipari o Orizzonti L.I.V.E. e non a Ordinarie. Questa distinzione è rilevante per Opera+ quando si valutano progetti lirici, di formazione, comunicazione culturale e videolezioni.
+
+### Interfaccia
+- Il calendario laterale resta la prima indicazione della scadenza. Le schede usano un indicatore **Adeguatezza per Opera+** a tutta larghezza in fondo, con sfumatura tenue da rosso ad ambra a verde, valore numerico 0–100 e cursore accessibile. Si tratta dell'attuale punteggio preliminare di pertinenza; non è una prova dell'ammissibilità.
+- Un pulsante **Esamina opportunità** apre un `<dialog>` nativo modale e navigabile da tastiera, richiudibile con pulsante, Escape o clic sullo sfondo. Include descrizione, stato, ente, date di apertura e scadenza, tipologia, edizione, finestra di candidatura, importo/dotazione se noto, beneficiari se disponibili, documenti ufficiali e spunti progettuali (distinti dai requisiti del bando).
+- Nessun importo, massimale, beneficiario o condizione viene inventato se la fonte non lo comunica; i campi mancanti sono segnalati in modo sobrio.
+- Il logo nell'intestazione è nuovamente derivato dal PNG originale allegato: ritaglio dell'area visibile, trasparenza conservata e immagine locale verificata. Il percorso del publisher SFTP resta `web/assets/operaplus-logo.png`, senza nuove dipendenze esterne.

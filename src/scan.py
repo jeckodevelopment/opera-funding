@@ -137,7 +137,33 @@ def run():
                 for target in (p for p in priority_pages if p["source_id"] == source["id"]):
                     key=target["url"].lower().rstrip("/")
                     verified=check_priority(target,source,session,eligible_to_fetch,now,indexed.get(key))
-                    if verified is not None:indexed[key]=verified
+                    if verified is not None:
+                        periods=verified.pop("individual_windows",[])
+                        if periods:
+                            # One persisted result per distinct official application window.
+                            # The older page-level record is superseded to avoid a duplicate.
+                            indexed.pop(key,None)
+                            for period in periods:
+                                row={**verified,**period}
+                                row["id"]=key+"#window="+period["window_key"]
+                                row["parent_id"]=key
+                                row["title"]=target["title"]+" — "+period["window_label"]+" "+str(period["edition_year"])
+                                row["summary"]=(
+                                    "Contributo per "+("progetti culturali" if period["application_type"]=="Progetto" else "il sostegno delle attività culturali")+
+                                    ". Finestra di candidatura "+period["opening_date"]+" – "+period["deadline"]+"."
+                                )
+                                row["closure_confirmed"]=False
+                                row["source_open_confirmed"]=bool(
+                                    (verified.get("source_open_confirmed") or period.pop("official_in_progress",False)) and
+                                    period["opening_date"]<=now[:10]<=period["deadline"]
+                                )
+                                row["status"]="aperto (finestra ufficiale)" if row["source_open_confirmed"] else "non verificato"
+                                row["status_basis"]="Finestra di candidatura riportata nella pagina ufficiale"
+                                previous=indexed.get(row["id"],{})
+                                row["first_seen"]=previous.get("first_seen",now)
+                                indexed[row["id"]]=explain(annotate(row))
+                        else:
+                            indexed[key]=verified
                 statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":True,"discovered":len(found),"checked_at":now})
             except (requests.RequestException, RuntimeError, ValueError) as exc:
                 statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]})
