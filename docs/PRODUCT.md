@@ -74,3 +74,13 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - **Schede operative:** badge di stato e scadenza **prima** del titolo, ente subito dopo, pertinenza in secondo piano e link alla fonte immediato; requisiti, documenti e idee progettuali nei dettagli espandibili.
 - **Regole invarianti:** nessun bando chiuso nella vista iniziale; APERTO richiede evidenze, ordinamento per scadenza; da verificare subito dopo; storico accessibile con un clic. Nessuna esclusione automatica per requisiti di ammissibilità.
 - **Accessibilità e responsività:** controlli ben distinguibili, focus visibile, testo scuro ad alto contrasto, impaginazione adattiva mobile, test automatici su badge, filtri e date.
+
+## Verifiche effettive e recupero delle opportunità aperte (16/11/2026)
+- La scansione iniziale di 150 link produceva zero schede APERTO: era una carenza del parsing e della verifica, non una prova dell'assenza di bandi aperti.
+- Nuovo parser per schede strutturate con etichette **Stato**, **Domande dal**, **Scadenza**, inclusi i prefissi dei giorni della settimana. Conserva provenienza e data, senza confondere la scadenza con la pubblicazione.
+- Per le fonti ad alta priorità, le schede candidabili sono analizzate prima delle notizie e degli archivi; fino a sei schede per fonte per ciclo, con limitazione delle richieste.
+- File `config/priority_pages.json`: elenco limitato di pagine ufficiali particolarmente importanti, controllate **a ogni scansione** e non solo quando compaiono in cima all'indice. L'inclusione non pre-certifica il bando; lo stato APERTO viene creato soltanto dalla pagina raggiunta con finestra verificata.
+- Prima pagina prioritaria: Regione Piemonte, contributi per comunicazione e promozione di manifestazioni nel 2026, con scadenza riportata ufficialmente al 24/11/2026. Ammissibilità dell'associazione da valutare sui requisiti del bando.
+- La tipologia “call progettuale” viene mostrata separatamente dallo stato “DA VERIFICARE”. I link già confermati 404/410 non sono mostrati nell'elenco predefinito, ma restano nello storico con avviso.
+- I bandi con data o stato non reperibile rimangono DA VERIFICARE. Non vengono creati dati fittizi per rendere i numeri più rassicuranti.
+- Priorità successiva: adapter specifici per portali europei e aggregatori, verifica automatica dei PDF complessi e campo 'suitability' fondato sui requisiti completi.
