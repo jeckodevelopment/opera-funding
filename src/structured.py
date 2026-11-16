@@ -101,7 +101,7 @@ def structured_facts(html,url):
         if match and re.search(r"(?i)(modulistica|piattaforma).{0,220}(domande|candidature)",txt[match.start():match.end()+350]):
             opening=_italian_date(match,1)
             deadline=_italian_date(match,4)
-            mic_open_evidence=bool(opening and deadline and opening<=date.today().isoformat()<=deadline)
+            mic_open_evidence=bool(opening and deadline)  # current validity checked by effective_status
         else:
             mic_open_evidence=False
     else:
