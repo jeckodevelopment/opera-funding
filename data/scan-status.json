@@ -1,97 +1,97 @@
 {
-  "checked_at": "2026-11-16T20:21:18+00:00",
+  "checked_at": "2026-11-16T20:23:16+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "crt",
       "ok": true,
       "discovered": 37,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "piemonte",
       "ok": true,
       "discovered": 14,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "torino",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "culturatorino",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "volto",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "mic",
       "ok": true,
       "discovered": 20,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "eucreative",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "erasmus",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "eufunding",
       "ok": true,
       "discovered": 0,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "creativeitalia",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-16T20:21:18+00:00",
+      "checked_at": "2026-11-16T20:23:16+00:00",
       "error": "robots.txt unavailable/disallows access"
     },
     {
       "source_id": "alcotra",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     },
     {
       "source_id": "erasmusitalia",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-16T20:21:18+00:00"
+      "checked_at": "2026-11-16T20:23:16+00:00"
     }
   ],
   "coverage": {
     "totals": {
-      "all": 151,
-      "open": 2,
+      "all": 152,
+      "open": 3,
       "closed": 24,
       "upcoming": 0,
       "unverified": 125,
-      "dated": 27,
-      "dated_with_source": 6,
-      "detail_checked": 55,
-      "reachable": 150
+      "dated": 28,
+      "dated_with_source": 7,
+      "detail_checked": 66,
+      "reachable": 151
     },
     "by_source": {
       "volto": {
@@ -100,7 +100,7 @@
         "unverified": 15,
         "dated": 0,
         "dated_with_source": 0,
-        "detail_checked": 0
+        "detail_checked": 1
       },
       "culturatorino": {
         "total": 20,
@@ -108,14 +108,14 @@
         "unverified": 2,
         "dated": 17,
         "dated_with_source": 0,
-        "detail_checked": 6
+        "detail_checked": 7
       },
       "piemonte": {
-        "total": 13,
-        "open": 2,
+        "total": 14,
+        "open": 3,
         "unverified": 9,
-        "dated": 4,
-        "dated_with_source": 4,
+        "dated": 5,
+        "dated_with_source": 5,
         "detail_checked": 6
       },
       "torino": {
@@ -132,7 +132,7 @@
         "unverified": 29,
         "dated": 1,
         "dated_with_source": 1,
-        "detail_checked": 12
+        "detail_checked": 18
       },
       "erasmusitalia": {
         "total": 20,
@@ -148,7 +148,7 @@
         "unverified": 13,
         "dated": 0,
         "dated_with_source": 0,
-        "detail_checked": 6
+        "detail_checked": 7
       },
       "sanpaolo": {
         "total": 14,
@@ -172,7 +172,7 @@
         "unverified": 11,
         "dated": 0,
         "dated_with_source": 0,
-        "detail_checked": 6
+        "detail_checked": 8
       },
       "erasmus": {
         "total": 1,
