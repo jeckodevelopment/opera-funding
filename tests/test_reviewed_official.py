@@ -12,7 +12,7 @@ FACTS=json.loads((ROOT/"config"/"reviewed_official_facts.json").read_text(encodi
 
 def row(fact, deadline=None):
     # exact, curated URL path identity; extra query parameters never change it.
-    return {"source_id":fact["source_id"],"url":"https://example.org"+fact["match_path"]+"?utm_source=feed",
+    return {"source_id":fact["source_id"],"url":"https://"+fact["match_host"]+fact["match_path"]+"?utm_source=feed",
             "deadline":deadline,"funding_status":"DA VERIFICARE","link_status":"raggiungibile",
             "opportunity_type":"finanziamento potenziale"}
 
@@ -43,11 +43,13 @@ class VerifiedFactsTests(unittest.TestCase):
 
     def test_does_not_override_conflicting_deadline_or_other_path(self):
         first=row(FACTS[1],"2027-03-05")
+        forged={"source_id":FACTS[1]["source_id"],"url":"https://example.org"+FACTS[1]["match_path"],"link_status":"raggiungibile"}
         other={"source_id":"volto","url":"https://example.org/other-bando","link_status":"raggiungibile"}
-        apply_reviewed_facts([first,other],FACTS,"2026-11-17T09:00:00+00:00")
+        apply_reviewed_facts([first,other,forged],FACTS,"2026-11-17T09:00:00+00:00")
         self.assertEqual(first["deadline"],"2027-03-05")
         self.assertNotIn("status_evidence",first)
         self.assertNotIn("deadline",other)
+        self.assertNotIn("deadline",forged)
 
     def test_rolling_period_ends_without_inventing_next_cycle(self):
         rec=row(FACTS[4])
