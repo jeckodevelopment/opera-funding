@@ -17,6 +17,22 @@ PAGE="""<html><main>
 URL="https://bandi.regione.piemonte.it/contributi-finanziamenti/manifestazioni"
 
 class StructuredTests(unittest.TestCase):
+    def test_san_paolo_in_corso_and_data_scadenza(self):
+        html="<body><main><p>Stato: IN CORSO</p><p>Data pubblicazione: 21/10/2026</p><p>Data scadenza: 05/04/2027</p></main></body>"
+        facts=structured_facts(html,"https://www.compagniadisanpaolo.it/it/contributi/festival")
+        self.assertTrue(facts["source_open_confirmed"])
+        self.assertEqual(facts["deadline"],"2027-04-05")
+    def test_turin_active_dal_al(self):
+        html="<html><main><div>Attivo</div><div>dal:</div><div>12/10/2026</div><div>al:</div><div>26/11/2026</div></main></html>"
+        facts=structured_facts(html,"https://bandi.comune.torino.it/avviso/circoscrizione-7")
+        self.assertTrue(facts["source_open_confirmed"])
+        self.assertEqual(facts["opening_date"],"2026-10-12")
+        self.assertEqual(facts["deadline"],"2026-11-26")
+    def test_turin_window_not_inferred_for_other_host(self):
+        html="<html><main>Attivo dal 12/10/2026 al 26/11/2026</main></html>"
+        facts=structured_facts(html,"https://example.org/notice")
+        self.assertFalse(facts["source_open_confirmed"])
+        self.assertIsNone(facts["deadline"])
     def test_official_page_with_weekdays(self):
         info=structured_facts(PAGE,URL)
         self.assertEqual(info["deadline"],"2026-11-24")
