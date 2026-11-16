@@ -84,3 +84,9 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - La tipologia “call progettuale” viene mostrata separatamente dallo stato “DA VERIFICARE”. I link già confermati 404/410 non sono mostrati nell'elenco predefinito, ma restano nello storico con avviso.
 - I bandi con data o stato non reperibile rimangono DA VERIFICARE. Non vengono creati dati fittizi per rendere i numeri più rassicuranti.
 - Priorità successiva: adapter specifici per portali europei e aggregatori, verifica automatica dei PDF complessi e campo 'suitability' fondato sui requisiti completi.
+
+## Rianalisi periodica delle schede (16 novembre 2026)
+- Il flag `detail_checked` **non** rende il controllo definitivo: l'analisi delle pagine ufficiali è versionata con `detail_version` e datata con `detail_checked_at`.
+- Quando il parser cambia versione, la prossima scansione riprocessa progressivamente le schede già viste. Dopo tre giorni una scheda viene nuovamente candidata alla verifica, per individuare proroghe e cambiamenti.
+- La rianalisi avviene per piccoli lotti e privilegia i bandi progettuali; può quindi richiedere più esecuzioni per completare il backlog. Le pagine esplicitamente prioritarie continuano a essere ricontrollate ogni volta.
+- Il risultato del controllo non equivale alla conferma dell'ammissibilità di Opera+. Stato APERTO e scadenza richiedono evidenze ufficiali; se mancano, rimane DA VERIFICARE.

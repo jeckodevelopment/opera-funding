@@ -1,7 +1,7 @@
 """Bounded same-origin HTML enrichment of opportunities. Never archive page/PDF contents."""
 import re
 from urllib.parse import urlparse, urljoin, urldefrag
-from datetime import date
+from datetime import date, datetime, timezone
 from bs4 import BeautifulSoup
 from classify import parse_deadline
 from pdf_dates import pdf_deadline_from_documents
@@ -13,6 +13,7 @@ DOC_PATTERN = re.compile(r"(?i)\b(bando|avviso|faq|frequently asked|allegat|modu
 BENEFICIARY_LABEL = re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammissibili|chi può partecipare|eligible applicants)\s*[:–-]?")
 MAX_DETAIL_LINKS = 8
 MAX_HTML_BYTES = 1_000_000
+DETAIL_SCHEMA_VERSION = 2
 
 def safe_same_origin(link, origin):
     u = urlparse(link)
@@ -88,7 +89,9 @@ def enrich(item, source, session, eligible_to_fetch):
             if deadline:
                 parsed["deadline"] = deadline
                 parsed["deadline_source"] = document_url
-        for key in ("amount","beneficiaries_excerpt","documents","detail_checked","detail_basis"):
+        parsed["detail_checked_at"]=datetime.now(timezone.utc).isoformat(timespec="seconds")
+        parsed["detail_version"]=DETAIL_SCHEMA_VERSION
+        for key in ("amount","beneficiaries_excerpt","documents","detail_checked","detail_basis","detail_checked_at","detail_version"):
 
             item[key] = parsed[key]
         if structured.get("source_open_confirmed"):

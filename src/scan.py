@@ -3,14 +3,14 @@
 import argparse
 import json
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, urldefrag
 from urllib.robotparser import RobotFileParser
 import requests
 from bs4 import BeautifulSoup
 from classify import classify
-from detail import enrich
+from detail import enrich, DETAIL_SCHEMA_VERSION
 from quality import check_link, reconcile_status
 from status import annotate
 from fit import explain
@@ -117,12 +117,19 @@ def run():
                             item["closure_confirmed"] = previous.get("closure_confirmed",False)
                             item["status_evidence"] = previous["status_evidence"]
                         # preserve data verified by future, dedicated detail-page extractors
-                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
-                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
+                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "detail_checked_at", "detail_version", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
                                 item[key] = previous[key]
                     if "source_open_confirmed" not in item:
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
-                    if not item.get("detail_checked") and enriched_count < (6 if source.get("tier")=="high" else 3) and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
+                    checked=item.get("detail_checked_at")
+                    try:
+                        stale=not checked or datetime.fromisoformat(checked) < datetime.now(timezone.utc)-timedelta(days=3)
+                    except (ValueError, TypeError):
+                        stale=True
+                    needs_detail=(not item.get("detail_checked") or
+                                  item.get("detail_version") != DETAIL_SCHEMA_VERSION or stale)
+                    if needs_detail and enriched_count < (6 if source.get("tier")=="high" else 3) and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
                         item = enrich(item, source, session, eligible_to_fetch)
                         enriched_count += 1
                     if not item.get("link_checked_at") and checked_count < 8:
