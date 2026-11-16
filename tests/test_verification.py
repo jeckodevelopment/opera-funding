@@ -20,12 +20,16 @@ class VerificationTests(unittest.TestCase):
         self.assertEqual(subsequent,{"b"})
         previous["b"]=row("b",detail_attempted_at=NOW.isoformat())
         self.assertEqual(pick_for_review(found,previous,1,NOW),{"c"})
+    def test_previous_source_schema_is_refreshed(self):
+        previous={"old":row("old",detail_checked=True,detail_version=5,
+                              detail_checked_at=NOW.isoformat())}
+        self.assertEqual(pick_for_review([row("old")],previous,1,NOW),{"old"})
     def test_old_parser_version_forces_revisit(self):
         previous={"a":row("a",detail_checked=True,detail_version=1,
                   detail_checked_at=NOW.isoformat())}
         self.assertEqual(pick_for_review([row("a")],previous,1,NOW),{"a"})
     def test_three_day_revisit(self):
-        old=row("a",detail_checked=True,detail_version=5,
+        old=row("a",detail_checked=True,detail_version=6,
                 detail_checked_at=(NOW-timedelta(days=4)).isoformat())
         fresh={**old,"detail_checked_at":NOW.isoformat()}
         self.assertTrue(needs_review(old,NOW))

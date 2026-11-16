@@ -13,7 +13,7 @@ DOC_PATTERN = re.compile(r"(?i)\b(bando|avviso|faq|frequently asked|allegat|modu
 BENEFICIARY_LABEL = re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammissibili|chi può partecipare|eligible applicants)\s*[:–-]?")
 MAX_DETAIL_LINKS = 8
 MAX_HTML_BYTES = 1_000_000
-DETAIL_SCHEMA_VERSION = 5
+DETAIL_SCHEMA_VERSION = 6
 
 def safe_same_origin(link, origin):
     u = urlparse(link)
