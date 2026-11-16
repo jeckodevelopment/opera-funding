@@ -27,8 +27,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/bando-di-selezione-per-formazione-di-graduatorie-finalizzate-al-conferimento-di-incarichi-di-docenza-e-attivita-professionali-presso-il-centro-civico-di-formazione-musicale-della-citta-di-torino",
@@ -58,8 +59,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/manifestazione-di-interesse-per-percorsi-creativi-con-le-scuole-finalizzati-alla-realizzazione-di-un-logo-per-il-dossier-di-candidatura-di-torino-a-capitale-europea-della-cultura-2033",
@@ -89,8 +91,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-pubblico-per-la-selezione-di-n-1-unita-di-personale-per-il-ruolo-di-referente-operativo-a-comunicazione-marketing-e-fundraising-della-fondazione-per-la-cultura-torino",
@@ -120,8 +123,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-pubblico-festival-musicali-2026-2027-finalizzato-allindividuazione-di-idee-progettuali-destinate-allarricchimento-del-programma-musicale",
@@ -151,8 +155,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avvisi-pubblici-progetto-la-cultura-dietro-langolo-2027-e-2028",
@@ -174,16 +179,38 @@
     "url": "https://fpct.it/bandi-avvisi/avvisi-pubblici-progetto-la-cultura-dietro-langolo-2027-e-2028/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://fpct.it/bandi-avvisi/avvisi-pubblici-progetto-la-cultura-dietro-langolo-2027-e-2028/"
+      },
+      {
+        "label": "Avviso pubblico LCDLA 2027-2028_ bando A_Presìdi Territoriali.pdf",
+        "url": "https://fpct.it/wp-content/uploads/2026/04/Avviso-pubblico-LCDLA-2027-2028_-bando-A_Presidi-Territoriali.pdf"
+      },
+      {
+        "label": "Avviso pubblico LCDLA 2027-2028_ bando B_Istituzioni culturali.pdf",
+        "url": "https://fpct.it/wp-content/uploads/2026/04/Avviso-pubblico-LCDLA-2027-2028_-bando-B_Istituzioni-culturali.pdf"
+      },
+      {
+        "label": "FAQ_pubblicate 8 maggio",
+        "url": "https://fpct.it/wp-content/uploads/2026/04/FAQ_pubblicate-8-maggio.pdf"
+      },
+      {
+        "label": "Presìdi territoriali - bando A",
+        "url": "https://fpct.it/wp-content/uploads/2026/04/LCDLA-2027-2028_PRESIDI-TERRITORIALI_GRADUATORIA.pdf"
+      },
+      {
+        "label": "Istituzioni culturali - bando B",
+        "url": "https://fpct.it/wp-content/uploads/2026/04/LCDLA-2027-2028_ISTITUZIONI-CULTURALI_GRADUATORIA.pdf"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-pubblico-todays-2025-finalizzato-allindividuazione-di-idee-progettuali-destinate-ad-arricchire-la-composizione-del-programma-culturale-estivo",
@@ -213,8 +240,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-pubblico-di-indagine-di-mercato-per-laffidamento-del-servizio-di-ideazione-progettazione-produzione-e-gestione-di-exposed-torino-foto-festival-anno-2026",
@@ -244,8 +272,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-pubblico-manifestazione-interesse-utile-allindividuazione-operatori-economici-invitare",
@@ -275,8 +304,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/avviso-pubblico-torino-youth-climate-action-fund-lassegnazione-contributi-sostegno-della",
@@ -306,8 +336,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/fondazione-crt-per-la-scuola",
@@ -337,8 +368,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-di-ricerca-per-il-reperimento-di-sponsorizzazioni-in-materia-di-eventi-culturali-e-musicali-per-lanno-2024-integrazione-di-ottobre-2024",
@@ -367,8 +399,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-di-ricerca-per-il-reperimento-di-sponsorizzazioni-in-materia-di-eventi-culturali-e-musicali-per-lanno-2025",
@@ -397,8 +430,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-di-ricerca-per-il-reperimento-di-sponsorizzazioni-in-materia-di-eventi-culturali-e-musicali-per-lanno-2026",
@@ -427,8 +461,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-di-selezione-per-lindividuazione-di-n-1-risorsa-con-mansioni-di-segreteria-amministrativa-della-fondazione-per-la-cultura-di-torino",
@@ -457,8 +492,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-esplorativo-per-lacquisizione-di-manifestazioni-di-interesse-per-la-stipulazione-di-un-contratto-di-licenza-duso-del-marchio-exposed-torino-foto-festival",
@@ -487,8 +523,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-per-lindividuazione-di-personale-amministrativo-mansione-di-cassiere-per-la-biglietteria-della-fondazione-per-la-cultura-di-torino",
@@ -517,8 +554,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/bando-per-la-promozione-della-musica-jazz-attivazione-della-modulistica-online-per-la-presentazione-dei-consuntivi-2026",
@@ -547,8 +585,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/bando-per-la-promozione-della-musica-jazz-2027-assegnazione-contributi",
@@ -577,8 +616,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/contributi-fnsv-fondo-nazionale-per-lo-spettacolo-dal-vivo",
@@ -599,16 +639,42 @@
     "url": "https://spettacolo.cultura.gov.it/contributi-fnsv-fondo-nazionale-per-lo-spettacolo-dal-vivo/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://spettacolo.cultura.gov.it/contributi-fnsv-fondo-nazionale-per-lo-spettacolo-dal-vivo/"
+      },
+      {
+        "label": "Legge 30 aprile 1985, n. 163",
+        "url": "https://spettacolo.cultura.gov.it/wp-content/uploads/2023/02/Legge-30-aprile-1985.-n.-163___-ATTO-COMPLETO-___.pdf"
+      },
+      {
+        "label": "Decreto Ministeriale 1° luglio 2014",
+        "url": "https://spettacolo.cultura.gov.it/wp-content/uploads/2014/09/DM_1-luglio-2014_FUS.pdf"
+      },
+      {
+        "label": "Documento ufficiale",
+        "url": "https://spettacolo.cultura.gov.it/wp-content/uploads/2018/01/Decreto-Ministeriale-27-luglio-2017-contributi-FUS.pdf"
+      },
+      {
+        "label": "Decreto Ministeriale 30 settembre 2016",
+        "url": "https://spettacolo.cultura.gov.it/wp-content/uploads/2016/10/D.M.-30-settembre-2016.pdf"
+      },
+      {
+        "label": "Decreto Ministeriale 25 ottobre 2021 – Triennio 2022/2024 e modifiche al D.M. 27 luglio 20",
+        "url": "https://spettacolo.cultura.gov.it/wp-content/uploads/2022/02/DM-25-ottobre-2021-FUS-2022-2024-e-modifiche-al-DM-27-luglio-2017.pdf"
+      },
+      {
+        "label": "Decreto Ministeriale 23 dicembre 2024, rep. n. 463 – Triennio 2025/2027",
+        "url": "https://spettacolo.cultura.gov.it/wp-content/uploads/2025/01/D.M.-23-dicembre-2024-n.-463.pdf"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://spettacolo.cultura.gov.it/category/attivita/attivita-musica/contributi-musica",
@@ -637,8 +703,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/covid-fondazione-crt-premia-quattro-progetti-culturali-resilienti-in-europa",
@@ -667,8 +734,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
@@ -697,8 +765,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/culture-of-solidarity-fund-progetti-vincitori",
@@ -727,8 +796,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://culture.ec.europa.eu/cultural-heritage/funding-opportunities-for-cultural-heritage",
@@ -749,7 +819,7 @@
     "url": "https://culture.ec.europa.eu/cultural-heritage/funding-opportunities-for-cultural-heritage",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://culture.ec.europa.eu/cultural-heritage/funding-opportunities-for-cultural-heritage"
       }
     ],
@@ -757,8 +827,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://fpct.it/bandi-avvisi/rdo-5562248-servizio-di-ideazione-progettazione-produzione-e-gestione-exposed-torino-in-qualita-di-centrale-di-committenza-per-fondazione-per-la-cultura",
@@ -787,8 +859,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/europrogettazione-webinar-2022",
@@ -817,8 +890,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-diderot-2024-2025",
@@ -847,8 +921,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/al-via-il-progetto-diderot-2026-2027",
@@ -869,7 +944,7 @@
     "url": "https://www.fondazionecrt.it/al-via-il-progetto-diderot-2026-2027/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://www.fondazionecrt.it/al-via-il-progetto-diderot-2026-2027/"
       }
     ],
@@ -877,8 +952,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-bando-bruno-caccia-promozione-della-legalita-3-edizione-per-la-presentazione-di-progetti-sui-temi-della-promozione-della-legalita-e-delleduc",
@@ -907,8 +984,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://infobandi.csvnet.it/bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia/?utm_source=rss&utm_medium=rss&utm_campaign=bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia",
@@ -937,8 +1015,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026",
@@ -967,8 +1046,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/i-care-for-me-for-you",
@@ -997,8 +1077,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.regione.piemonte.it/pre-informazione-fondi-ue",
@@ -1027,8 +1108,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/3deg-avviso-pubblico-concessione-contributi-ordinari-altri-benefici-economici",
@@ -1057,8 +1139,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/approvazione-contributo-straordinario-euro-3000000-favore-della-federazione-italiana-rugby",
@@ -1079,16 +1162,26 @@
     "url": "https://bandi.comune.torino.it/avviso/approvazione-contributo-straordinario-euro-3000000-favore-della-federazione-italiana-rugby",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://bandi.comune.torino.it/avviso/approvazione-contributo-straordinario-euro-3000000-favore-della-federazione-italiana-rugby"
+      },
+      {
+        "label": "DD 7289/2026",
+        "url": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4756/DD-7289-2026.pdf"
+      },
+      {
+        "label": "DEL 600/2026",
+        "url": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4756/DEL-600-2026.pdf"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://bandi.regione.piemonte.it/avvisi-beni-regionali",
@@ -1117,8 +1210,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4353/avviso_torino_ycaf.pdf",
@@ -1147,8 +1241,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-pubblico-bruno-caccia-2026-promozione-della-legalita-iv-edizione",
@@ -1169,16 +1264,34 @@
     "url": "https://fpct.it/bandi-avvisi/avviso-pubblico-bruno-caccia-2026-promozione-della-legalita-iv-edizione/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://fpct.it/bandi-avvisi/avviso-pubblico-bruno-caccia-2026-promozione-della-legalita-iv-edizione/"
+      },
+      {
+        "label": "Avviso pubblico_BrunoCaccia2026",
+        "url": "https://fpct.it/wp-content/uploads/2026/03/Avviso_BrunoCaccia2026.pdf"
+      },
+      {
+        "label": "Graduatoria_Bruno Caccia 2026",
+        "url": "https://fpct.it/wp-content/uploads/2026/02/Graduatoria_Bruno-Caccia-2026.pdf"
+      },
+      {
+        "label": "Pubblicati gli esiti del bando Bruno Caccia 2026 – Promozione della legalità (IV edizione)",
+        "url": "https://fpct.it/pubblicati-gli-esiti-del-bando-bruno-caccia-2026-promozione-della-legalita-iv-edizione/"
+      },
+      {
+        "label": "Avviso pubblico “Bruno Caccia 2026” –  “Promozione della legalità” – IV edizione",
+        "url": "https://fpct.it/avviso-pubblico-bruno-caccia-2026-promozione-della-legalita-iv-edizione/"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-pubblico-che-bella-estate-2026-2027",
@@ -1199,16 +1312,42 @@
     "url": "https://fpct.it/bandi-avvisi/avviso-pubblico-che-bella-estate-2026-2027/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://fpct.it/bandi-avvisi/avviso-pubblico-che-bella-estate-2026-2027/"
+      },
+      {
+        "label": "Avviso",
+        "url": "https://fpct.it/wp-content/uploads/2026/02/0_Avviso-pubblico-CHE-BELLA-ESTATE2026-2027.pdf"
+      },
+      {
+        "label": "Incontro di presentazione mappatura e avvisi",
+        "url": "https://fpct.it/wp-content/uploads/2026/02/Incontro-di-presentazione-mappatura-e-avvisi.pdf"
+      },
+      {
+        "label": "Bando Che Bella Estate! 2026_2027",
+        "url": "https://fpct.it/wp-content/uploads/2026/02/Bando-Che-Bella-Estate-2026_2027.pdf"
+      },
+      {
+        "label": "FAQ",
+        "url": "https://fpct.it/wp-content/uploads/2026/02/FAQ_chebellaestate26-27-AGG19_03.pdf"
+      },
+      {
+        "label": "Graduatoria_Categoria A",
+        "url": "https://fpct.it/wp-content/uploads/2026/02/Graduatoria_Categoria-A.pdf"
+      },
+      {
+        "label": "Graduatoria_Categoria B",
+        "url": "https://fpct.it/wp-content/uploads/2026/02/Graduatoria_categoria-B.pdf"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://infobandi.csvnet.it/bando-fabbrica-spazi-civici-per-la-gioventu/?utm_source=rss&utm_medium=rss&utm_campaign=bando-fabbrica-spazi-civici-per-la-gioventu",
@@ -1237,8 +1376,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord",
@@ -1259,7 +1399,7 @@
     "url": "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord/"
       }
     ],
@@ -1267,8 +1407,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://www.fondazionecrt.it/europea-guida-europrogettazione-podcast",
@@ -1297,8 +1439,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.regione.piemonte.it/concorsi-incarichi-stage/avviso-selezione-pubblica-un-incarico-dirigenziale",
@@ -1327,8 +1470,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/avviso-pubblico-finanziamento-alle-associazioni-turistiche-pro-loco-piemonte-anno-2026",
@@ -1357,8 +1501,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/patrimonio-linguistico-dialettale-piemonte-avviso-pubblico-finanziamento-invito-alla-presentazione",
@@ -1379,16 +1524,38 @@
     "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/patrimonio-linguistico-dialettale-piemonte-avviso-pubblico-finanziamento-invito-alla-presentazione",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/patrimonio-linguistico-dialettale-piemonte-avviso-pubblico-finanziamento-invito-alla-presentazione"
+      },
+      {
+        "label": "DD 670/A2003D/2026 del 13/11/2026_Beneficiari 2026 Patrimonio linguistico e dialettale - P",
+        "url": "https://bandi.regione.piemonte.it/system/files/2026-A2003D-671-AD_Elenco_Beneficiari_0.pdf"
+      },
+      {
+        "label": "Avviso patrimonio linguistico e dialettale del Piemonte 2026",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD-A20-377-2026-All_1-Allegato_1_Avviso_pubblico_PLC.pdf"
+      },
+      {
+        "label": "DD 377/A2003D/2026 Approvazione Avviso Patrimonio linguistico e dialettale 2026",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD-A20-377-2026.pdf"
+      },
+      {
+        "label": "DD 75/A2000C del 19.02.2026 Disposizioni presentazione dell'istanza, rendiconta…",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD-A20-75-2026_Modalit%C3%A0%20rendicontazione_1.pdf"
+      },
+      {
+        "label": "DD 94/A2000C del 26.02.2026 Riordino delle modalità di svolgimento dei controll…",
+        "url": "https://bandi.regione.piemonte.it/system/files/dda2000000094_11500_Controlli_11.pdf"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://www.fondazionecrt.it/tag/progetto-santuari-e-comunita",
@@ -1417,8 +1584,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/talenti-comunita-1-edizione",
@@ -1447,8 +1615,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/quarto-avviso-pubblico-concessione-lerogazione-contributi-ordinari-altri-benefici-economici",
@@ -1469,16 +1638,30 @@
     "url": "https://bandi.comune.torino.it/avviso/quarto-avviso-pubblico-concessione-lerogazione-contributi-ordinari-altri-benefici-economici",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://bandi.comune.torino.it/avviso/quarto-avviso-pubblico-concessione-lerogazione-contributi-ordinari-altri-benefici-economici"
+      },
+      {
+        "label": "Avviso",
+        "url": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4673/QUARTO_AVVISO_CONTRIBUTI_2026_pubbl-signed.pdf"
+      },
+      {
+        "label": "DD 6690/2026 - Approvazione e pubblicazione",
+        "url": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4673/DD_pubblicazione_IV_Avviso_contributi_2026.pdf"
+      },
+      {
+        "label": "Proroga scadenza",
+        "url": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4673/DD_proroga_IV_Avviso.pdf"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
@@ -1507,8 +1690,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/terzo-avviso-pubblico-concessione-lerogazione-contributi-ordinari-altri-benefici-economici",
@@ -1537,8 +1721,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/vivomeglio-dalla-poesia-alleconomia-circolare-al-via-117-progetti-per-linclusione",
@@ -1567,8 +1752,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/fundraising-donor-day-fondazione-crt",
@@ -1595,8 +1781,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4352/all.2_scheda_progetto_0.docx",
@@ -1623,8 +1810,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/aperta-la-call-del-premio-ernesto-ferrero-fondazione-crt",
@@ -1651,8 +1839,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/al-via-attivita-2026",
@@ -1679,8 +1868,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-di-concessione-gratuita-di-spazi-destinati-alla-vendita-in-occasione-della-ix-edizione-di-biennale-democrazia",
@@ -1707,8 +1897,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it",
@@ -1735,8 +1926,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.regione.piemonte.it/web/bandi-per-enti-locali",
@@ -1763,8 +1955,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/bandi-di-film-commission-torino-piemonte-aperte-le-nuove-call",
@@ -1791,8 +1984,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/index.php/bandi-e-avvisi",
@@ -1819,8 +2013,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo",
@@ -1847,8 +2042,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/bando-ordinarie-2026-online-i-risultati",
@@ -1875,8 +2071,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/bando-teatro-urbano-sociale-e-di-strada-2026-assegnazione-dei-contributi",
@@ -1903,8 +2100,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026",
@@ -1931,8 +2129,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27",
@@ -1959,8 +2158,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://infobandi.csvnet.it/bando-lo-sport-e-vita/?utm_source=rss&utm_medium=rss&utm_campaign=bando-lo-sport-e-vita",
@@ -1987,8 +2187,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-di-ricerca-personale",
@@ -2015,8 +2216,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/circ-4-secondo-avviso-concessione-contributi-ordinari-2026",
@@ -2043,8 +2245,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://volontariatotorino.it/bandi/circoscrizione-7-invito-a-presentare-progetti-per-iniziative-varie-anno-2027",
@@ -2063,7 +2266,7 @@
     "url": "https://volontariatotorino.it/bandi/circoscrizione-7-invito-a-presentare-progetti-per-iniziative-varie-anno-2027/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://volontariatotorino.it/bandi/circoscrizione-7-invito-a-presentare-progetti-per-iniziative-varie-anno-2027/"
       }
     ],
@@ -2071,8 +2274,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti",
@@ -2091,7 +2296,7 @@
     "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti"
       }
     ],
@@ -2099,8 +2304,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://spettacolo.cultura.gov.it/category/contributi-extra-fus",
@@ -2119,16 +2326,46 @@
     "url": "https://spettacolo.cultura.gov.it/category/contributi-extra-fus/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://spettacolo.cultura.gov.it/category/contributi-extra-fus/"
+      },
+      {
+        "label": "Bando FONDO NAZIONALE RIEVOCAZIONE STORICA / 2027 – Attivazione della modulistica online p",
+        "url": "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/"
+      },
+      {
+        "label": "Bando per la PROMOZIONE della MUSICA JAZZ 2027 – Assegnazione contributi",
+        "url": "https://spettacolo.cultura.gov.it/bando-per-la-promozione-della-musica-jazz-2027-assegnazione-contributi/"
+      },
+      {
+        "label": "Bando ACCESSIBILITA’ allo SPETTACOLO dal VIVO di ARTISTE/I con DISABILITA’/ 2026 – Attivaz",
+        "url": "https://spettacolo.cultura.gov.it/bando-accessibilita-allo-spettacolo-dal-vivo-di-artiste-i-con-disabilita-2026-attivazione-della-modulistica-online-per-la-presentazione-dei-consuntivi-2026/"
+      },
+      {
+        "label": "Bando per la valorizzazione delle attività di SPETTACOLO in ISTITUTI e LUOGHI DELLA CULTUR",
+        "url": "https://spettacolo.cultura.gov.it/bando-per-la-valorizzazione-delle-attivita-di-spettacolo-in-istituti-e-luoghi-della-cultura-attivazione-della-modulistica-online-per-la-presentazione-dei-consuntivi-2026/"
+      },
+      {
+        "label": "Bando per la PROMOZIONE DELLA MUSICA JAZZ – Attivazione della modulistica online per la pr",
+        "url": "https://spettacolo.cultura.gov.it/bando-per-la-promozione-della-musica-jazz-attivazione-della-modulistica-online-per-la-presentazione-dei-consuntivi-2026/"
+      },
+      {
+        "label": "Bando FONDO CARNEVALI STORICI / Anno 2026 – D.M. 4 aprile 2025, n. 111, recante “Criteri e",
+        "url": "https://spettacolo.cultura.gov.it/bando-fondo-carnevali-storici-anno-2026-d-m-4-aprile-2025-n-111-recante-criteri-e-modalita-di-accesso-al-fondo-di-cui-allarticolo-1-comma-604-della-legge-30-dicembr/"
+      },
+      {
+        "label": "Bando FESTIVAL, CORI e BANDE / Anno 2026 – D.M. 4 aprile 2025, n. 110, recante “Criteri e ",
+        "url": "https://spettacolo.cultura.gov.it/bando-festival-cori-e-bande-anno-2026-d-m-4-aprile-2025-n-110-recante-criteri-e-modalita-di-accesso-al-fondo-di-cui-allarticolo-1-comma-605-della-legge-30-dicembre-2024/"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://spettacolo.cultura.gov.it/contributi-extra-fus",
@@ -2155,8 +2392,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/contributo-servizi-allassociazione-amici-museo-pietro-micca-dellassedio-torino-1706-odv-ets",
@@ -2183,8 +2421,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/contributo-servizi-allassociazione-ana-associazione-nazionale-alpini-sezione-torino-0",
@@ -2203,16 +2442,26 @@
     "url": "https://bandi.comune.torino.it/avviso/contributo-servizi-allassociazione-ana-associazione-nazionale-alpini-sezione-torino-0",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://bandi.comune.torino.it/avviso/contributo-servizi-allassociazione-ana-associazione-nazionale-alpini-sezione-torino-0"
+      },
+      {
+        "label": "DD 6804 del 2026",
+        "url": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4718/DD-6804-2026.pdf"
+      },
+      {
+        "label": "Programma evento",
+        "url": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4718/alpini_-_3_novembre_2026_programma.pdf"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://www.fondazionecrt.it/cybersecurity-terzo-settore-fondazionecrt",
@@ -2239,8 +2488,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026",
@@ -2267,8 +2517,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/fnsv-triennio-2025-2027-anno-2026-assegnazione-contributi-ambito-teatro",
@@ -2295,8 +2546,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/fnsv-triennio-2025-2027-anno-2026-assegnazione-contributi-danza",
@@ -2323,8 +2575,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/fondazione-crt-un-autunno-di-opportunita-per-i-piccoli-comuni-del-piemonte-e-della-valle-daosta",
@@ -2351,8 +2604,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/guida-alleuroprogettazione-i-risultati-del-sondaggio",
@@ -2379,8 +2633,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-cambiamento-sistemico",
@@ -2399,7 +2654,7 @@
     "url": "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-cambiamento-sistemico/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-cambiamento-sistemico/"
       }
     ],
@@ -2407,8 +2662,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://www.fondazionecrt.it/pause-contro-la-violenza-di-genere",
@@ -2435,8 +2692,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
@@ -2463,8 +2721,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo",
@@ -2483,7 +2742,7 @@
     "url": "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo/"
       }
     ],
@@ -2491,8 +2750,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/linee-guida-concessione-lerogazione-contributi-ordinari-altri-benefici-economici-lanno-2027",
@@ -2519,8 +2780,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/news-avvisi-contributi-fus",
@@ -2547,8 +2809,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/category/contributi-fus/news-avvisi-contributi-fus",
@@ -2575,8 +2838,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/guida-europrogettazione-sito",
@@ -2603,8 +2867,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://erasmus-plus.ec.europa.eu/opportunities",
@@ -2631,8 +2896,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/palazzo-madama-smalti-limoges",
@@ -2659,8 +2925,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-investimenti-produttivi-agricoli-competitivita-aziende-agricole-rivolto-agli",
@@ -2687,8 +2954,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-servizio-civile-regionale-volontario-quarta-edizione-annualita-2027",
@@ -2707,16 +2975,38 @@
     "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-servizio-civile-regionale-volontario-quarta-edizione-annualita-2027",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-servizio-civile-regionale-volontario-quarta-edizione-annualita-2027"
+      },
+      {
+        "label": "Atto di approvazione del bando - D.D. 13 ottobre 2026 n. 1617",
+        "url": "https://bandi.regione.piemonte.it/system/files/dda2200001617_11300.pdf"
+      },
+      {
+        "label": "Allegato A - Testo completo del bando",
+        "url": "https://bandi.regione.piemonte.it/system/files/Bando%20Enti%20-%20All.%20A.pdf"
+      },
+      {
+        "label": "Allegato B - Scheda progetto (editabile)",
+        "url": "https://bandi.regione.piemonte.it/system/files/All.%20B%20editabile.pdf"
+      },
+      {
+        "label": "Allegato C - Facsimile curriculum per il ruolo di OLP (editabile)",
+        "url": "https://bandi.regione.piemonte.it/system/files/All.%20C%20editabile.pdf"
+      },
+      {
+        "label": "Allegato D - Informativa trattamento dati personali",
+        "url": "https://bandi.regione.piemonte.it/system/files/Bando%20Enti%20-%20ALL.%20D.pdf"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://bandi.regione.piemonte.it/pre-informazione-fondi-ue/sistema-regionale-standard-formativi-contributo-funzionamento-commissioni-tecniche",
@@ -2743,8 +3033,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://volontariatotorino.it/progetti-volto",
@@ -2771,8 +3062,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://volontariatotorino.it/progetti-servizio-civile",
@@ -2799,8 +3091,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-sviluppo",
@@ -2819,7 +3112,7 @@
     "url": "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-sviluppo/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-sviluppo/"
       }
     ],
@@ -2827,8 +3120,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://www.fondazionecrt.it/progetti-e-bandi",
@@ -2855,8 +3150,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://spettacolo.cultura.gov.it/progetti-speciali",
@@ -2875,7 +3171,7 @@
     "url": "https://spettacolo.cultura.gov.it/progetti-speciali/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://spettacolo.cultura.gov.it/progetti-speciali/"
       }
     ],
@@ -2883,8 +3179,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://www.fondazionecrt.it/tag/progetto-diderot",
@@ -2903,7 +3201,7 @@
     "url": "https://www.fondazionecrt.it/tag/progetto-diderot/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://www.fondazionecrt.it/tag/progetto-diderot/"
       }
     ],
@@ -2911,8 +3209,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-diderot-click-day-da-record",
@@ -2939,8 +3239,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-lagrange-fondazione-crt-al-via-le-10-ricerche",
@@ -2967,8 +3268,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-lagrange-borse-2025",
@@ -2995,8 +3297,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-lagrange-fondazione-crt-nuovo-bando-per-10-borse-di-ricerca-in-data-science-e-impatto-sociale",
@@ -3015,7 +3318,7 @@
     "url": "https://www.fondazionecrt.it/progetto-lagrange-fondazione-crt-nuovo-bando-per-10-borse-di-ricerca-in-data-science-e-impatto-sociale/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://www.fondazionecrt.it/progetto-lagrange-fondazione-crt-nuovo-bando-per-10-borse-di-ricerca-in-data-science-e-impatto-sociale/"
       }
     ],
@@ -3023,8 +3326,10 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027",
@@ -3051,8 +3356,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale",
@@ -3062,7 +3368,7 @@
     "relevance_basis": "corrispondenza tematica preliminare sul titolo",
     "opportunity_type": "non classificato",
     "type_reason": "Informazioni insufficienti per determinare la tipologia",
-    "deadline": null,
+    "deadline": "2026-12-18",
     "status": "non verificato",
     "status_basis": "stato non confermato",
     "issuer": "Fondazione Compagnia di San Paolo",
@@ -3071,16 +3377,30 @@
     "url": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/",
     "documents": [
       {
-        "label": "Fonte da verificare",
+        "label": "Pagina del bando",
         "url": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/"
+      },
+      {
+        "label": "presente link",
+        "url": "https://www.compagniadisanpaolo.it/wp-content/uploads/Bando-MISSIONE-Accelerare-linnovazione-Bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale-formazione.pdf"
+      },
+      {
+        "label": "Scarica il documento",
+        "url": "https://www.compagniadisanpaolo.it/wp-content/uploads/CSP-Bando-uso-responsabile-e-sicuro-dellAI-nelleconomia-sociale.pdf"
+      },
+      {
+        "label": "Scarica il documento",
+        "url": "https://www.compagniadisanpaolo.it/wp-content/uploads/CSP_SLIDE_Webinar-bando-AI-economia-sociale-30.10.2026-def.pdf"
       }
     ],
     "amount": null,
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ"
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/call-for-partnership-promozione-delliniziativa-scelte-future",
@@ -3107,8 +3427,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-medtech",
@@ -3135,8 +3456,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lattrattivita-e-la-professionalizzazione-di-artisti-e-creativi",
@@ -3163,8 +3485,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-nuovi-spazi-di-partecipazione-attiva",
@@ -3191,8 +3514,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/impulso-trasformare-le-imprese-con-una-filiera-sostenibile",
@@ -3219,8 +3543,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura",
@@ -3247,8 +3572,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/call-for-partnership-_-mobilita-attiva-benessere-fisico-e-sicurezza-stradale",
@@ -3275,8 +3601,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-06-alleanze-ad-alta-intensita-educativa",
@@ -3303,8 +3630,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/la-bella-stagione-2026",
@@ -3331,8 +3659,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-la-promozione-della-salute-mentale-delle-giovani-generazioni",
@@ -3359,8 +3688,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://bandi.regione.piemonte.it/crowdfunding",
@@ -3387,8 +3717,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/tag/europrogettazione",
@@ -3415,8 +3746,9 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   },
   {
     "id": "https://www.fondazionecrt.it/15-maggio-presentazione-percorsi-europei-la-progettazione-dei-comuni-piemontesi-in-europa",
@@ -3443,7 +3775,8 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-16T18:57:28+00:00",
-    "verified": false
+    "last_seen": "2026-11-16T19:03:21+00:00",
+    "verified": false,
+    "detail_checked": false
   }
 ]
