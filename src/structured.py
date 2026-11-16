@@ -53,6 +53,18 @@ MIC_FORM_WINDOW=re.compile(
     r"(?i)\bdalle?\s+ore\s+\d{1,2}(?:[:.]\d{2})?\s+del\s+"+ITALIAN_DATE+
     r".{0,110}?\bfino\s+alle?\s+ore\s+\d{1,2}(?:[:.]\d{2})?\s+del\s+"+ITALIAN_DATE
 )
+PITER_LIST_CONTEXT=re.compile(r"(?i)possibilit[àa]\s+di\s+presentare\s+progressivamente\s+le\s+candidature\s+nel\s+rispetto\s+di\s+3\s+date\s+predefinite\s*:")
+def _piter_windows(text):
+    marker=PITER_LIST_CONTEXT.search(text)
+    if not marker:return []
+    # Only the short list immediately after the official filing-dates label.
+    excerpt=text[marker.end():marker.end()+140]
+    values=[]
+    for m in re.finditer(ITALIAN_DATE,excerpt,re.I):
+        parsed=_italian_date(m)
+        if parsed:values.append(parsed)
+    return sorted(set(values)) if len(set(values))==3 else []
+
 ALCOTRA_EXPLICIT_CLOSED=re.compile(r"(?i)\bbando\s+chiuso\s+il\s+"+ITALIAN_DATE)
 TORINO_APPLICATION_END=re.compile(r"(?i)\b(?:dal|dalle)\s+"+ITALIAN_DATE+r".{0,35}?\bal\s+"+ITALIAN_DATE+r"(?=\s|[.,;:]|$)")
 TORINO_PROPOSAL_CLOSING=re.compile(
@@ -111,6 +123,11 @@ def structured_facts(html,url):
     else:
         mic_open_evidence=False
 
+    if "interreg-alcotra.eu" in url and "bando-la-selezione-dei-progetti-singoli-dei-piani-territoriali-integrati-piter-2021-2027" in url:
+        piter_dates=_piter_windows(txt)
+        if piter_dates:
+            windows=piter_dates
+            deadline=next((d for d in piter_dates if d>=date.today().isoformat()),piter_dates[-1])
     if "interreg-alcotra.eu" in url:
         if not deadline:deadline=_date(ALCOTRA_CLOSING.search(txt))
         if not opening:opening=_date(ALCOTRA_OPENING.search(txt))
