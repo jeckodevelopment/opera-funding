@@ -15,7 +15,7 @@ from quality import check_link, reconcile_status
 from status import annotate
 from fit import explain
 from priority import check_priority
-from verification import pick_for_review, coverage
+from verification import pick_for_review, coverage, backlog_candidates, classify_crt_information
 from crt_windows import guidance_for_window
 from source_alternatives import delegated_source_status
 from eu_api import fetch_creative_europe
@@ -95,7 +95,7 @@ def run():
     sources = json.loads(Path(args.sources).read_text(encoding="utf-8"))
     output = Path(args.output)
     existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else []
-    indexed = {row["id"]: row for row in existing}
+    indexed = {row["id"]: classify_crt_information(row) for row in existing}
     priority_pages = json.loads((ROOT / "config/priority_pages.json").read_text(encoding="utf-8"))
     statuses = []
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -115,7 +115,9 @@ def run():
                 # Prioritize candidate funding calls over general archive entries.
                 checked_count = 0
                 review_limit = 6 if source.get("tier")=="high" else 3
-                review_ids = pick_for_review(found,indexed,review_limit)
+                current_ids={item["id"] for item in found}
+                backlog=backlog_candidates(indexed,source["id"],current_ids)
+                review_ids=pick_for_review(found+backlog,indexed,review_limit)
                 found.sort(key=lambda x: (x.get("opportunity_type") not in ("finanziamento potenziale","call progettuale da verificare"),
                                           "2026" not in x.get("title","") and "2027" not in x.get("title",""),
                                           -x.get("relevance",0)))
@@ -143,7 +145,15 @@ def run():
                     if not item.get("link_checked_at") and checked_count < 8:
                         item = check_link(item, session, now)
                         checked_count += 1
-                    indexed[item["id"]] = explain(annotate(reconcile_status(item)))
+                    indexed[item["id"]] = explain(annotate(reconcile_status(classify_crt_information(item))))
+                # Revisit persisted calls dropped from current index navigation.
+                # These are bounded by the same per-source review quota.
+                for old in backlog:
+                    if old["id"] not in review_ids:
+                        continue
+                    old=enrich(old,source,session,eligible_to_fetch)
+                    old["detail_attempted_at"]=now
+                    indexed[old["id"]]=explain(annotate(reconcile_status(old)))
                 # Small curated set of official call pages, rechecked every run.
                 for target in (p for p in priority_pages if p["source_id"] == source["id"]):
                     key=target["url"].lower().rstrip("/")

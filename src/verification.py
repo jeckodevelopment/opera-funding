@@ -2,7 +2,7 @@
 from datetime import datetime, timezone, timedelta
 
 PROJECT_TYPES={"finanziamento potenziale","call progettuale da verificare"}
-SCHEMA_VERSION=3
+SCHEMA_VERSION=4
 
 def _when(raw):
     try:
@@ -34,6 +34,28 @@ def queue_key(item, now=None):
         -int(item.get("relevance") or 0),
         item.get("id") or item.get("url") or ""
     )
+
+def classify_crt_information(record):
+    """Exclude CRT press articles from grant candidates, without falsifying status."""
+    from urllib.parse import urlparse
+    if (record.get("source_id")=="crt"
+            and not urlparse(record.get("url") or "").path.startswith("/bandi-progetti/")):
+        record["opportunity_type"]="altro avviso"
+        record["type_reason"]="Articolo informativo CRT, non una scheda di candidatura"
+    return record
+
+def backlog_candidates(existing, source_id, discovered_ids):
+    """Revisit persisted opportunities no longer linked from the current index.
+
+    Do not waste the document budget on confirmed closed calls, parent records
+    superseded by individual funding windows, or informational notices.
+    """
+    return [dict(item) for item in existing.values()
+            if item.get("source_id")==source_id
+            and item.get("id") not in discovered_ids
+            and not item.get("parent_id")
+            and item.get("funding_status")!="CHIUSO"
+            and item.get("opportunity_type") in PROJECT_TYPES]
 
 def pick_for_review(found, existing, limit, now=None):
     now=now or datetime.now(timezone.utc)
