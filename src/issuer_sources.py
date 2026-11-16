@@ -14,7 +14,7 @@ DAY=r"(\d{1,2})\s+("+"|".join(MONTHS)+r")\s+(20\d{2})"
 SPORT_START=re.compile(r"(?i)\bApertura\s+Piattaforma\s*:\s*"+DAY)
 SPORT_END=re.compile(r"(?i)\bChiusura\s+Piattaforma\s*:\s*"+DAY)
 CEPELL_FILING_END=re.compile(
-    r"(?i)\\bentro\\s+e\\s+non\\s+oltre\\s+(?:le\\s+ore\\s+\\d{1,2}(?:[:.]\\d{2})?\\s+)?(?:del\\s+giorno\\s+|il\\s+)?"+DAY
+    r"(?i)\bentro\s+e\s+non\s+oltre\s+(?:le\s+ore\s+\d{1,2}(?:[:.]\d{2})?\s+)?(?:del\s+giorno\s+|il\s+)?"+DAY
 )
 CATTOLICA=re.compile(r"(?i)\bdal\s+"+DAY+r"\s+al\s+"+DAY+r"\s+gli\s+Enti\s+interessati\s+potranno\s+candidare")
 def _date(match,at=1):
