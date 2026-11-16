@@ -25,6 +25,15 @@ class StructuredTests(unittest.TestCase):
         self.assertFalse(info["closure_confirmed"])
         self.assertEqual(info["deadline_source"],URL)
 
+    def test_drupal_metadata_outside_main(self):
+        html="""<html><body><main><h1>Bando contributi</h1></main>
+        <aside class="field-list"><div>Stato</div><div>Aperto</div>
+        <div>Domande dal</div><div>Lun, 02/11/2026 - 09:00</div>
+        <div>Scadenza</div><div>Mar, 24/11/2026 - 12:00</div></aside></body></html>"""
+        facts=structured_facts(html,URL)
+        self.assertTrue(facts["source_open_confirmed"])
+        self.assertEqual(facts["deadline"],"2026-11-24")
+
     def test_no_open_without_explicit_label(self):
         info=structured_facts("<main>Scadenza 24/11/2026. Un evento aperto al pubblico.</main>",URL)
         self.assertFalse(info["source_open_confirmed"])

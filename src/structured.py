@@ -19,7 +19,9 @@ def structured_facts(html,url):
     """Only label-adjacent facts. Keep URL for provenance; never assert eligibility."""
     soup=BeautifulSoup(html,"html.parser")
     for node in soup(["script","style","nav","footer","header"]):node.decompose()
-    main=soup.select_one("main, article, .region-content, #main-content") or soup.body or soup
+    # Drupal themes may render status and application dates outside <main>/<article>.
+    # Read the complete body, after removing navigational noise.
+    main=soup.body or soup
     txt=" ".join(main.stripped_strings)[:50000]
     # Avoid matching 'Scadenza' in an unrelated phrase by requiring the date nearby.
     deadline=_date(DEADLINE.search(txt))
