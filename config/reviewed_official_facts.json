@@ -1,0 +1,44 @@
+[
+  {
+    "source_id": "volto",
+    "match_path": "/bando-educare-alla-lettura-2026",
+    "official_url": "https://centroperillibro.cultura.gov.it/educare-alla-lettura-online-la-9a-edizione-del-bando-scadenza-13-novembre/",
+    "deadline": "2026-11-13",
+    "evidence": "official_expired_application_deadline"
+  },
+  {
+    "source_id": "volto",
+    "match_path": "/bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia",
+    "official_url": "https://european-training-platform.e-justice.europa.eu/about-platform",
+    "deadline": "2027-03-04",
+    "opening_date": "2026-10-28",
+    "evidence": "official_active_application_window",
+    "review_valid_until": "2026-11-24"
+  },
+  {
+    "source_id": "volto",
+    "match_path": "/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord",
+    "official_url": "https://it.linkedin.com/posts/fondazione-lavazza_dora-in-avanti-aperta-la-call-per-progetti-activity-7520488906006421504-p9rD",
+    "deadline": "2026-11-20",
+    "evidence": "official_issuer_statement",
+    "review_valid_until": "2026-11-20"
+  },
+  {
+    "source_id": "erasmus",
+    "match_path": "/funding-opportunities/european-literacy-coalition-consortium-fpa-sga",
+    "official_url": "https://erasmus-plus.ec.europa.eu/el/funding-opportunities/european-literacy-coalition-consortium-fpa-sga",
+    "opening_date": "2026-09-22",
+    "deadline": "2026-11-23",
+    "evidence": "official_active_application_window",
+    "review_valid_until": "2026-11-23"
+  },
+  {
+    "source_id": "volto",
+    "match_path": "/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo",
+    "official_url": "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
+    "deadline": "2026-12-31",
+    "rolling": true,
+    "evidence": "official_rolling_application_process",
+    "review_valid_until": "2026-11-24"
+  }
+]
