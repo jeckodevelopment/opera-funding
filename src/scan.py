@@ -69,7 +69,7 @@ def discover(source, session, now):
         if target.rstrip("/") == response.url.rstrip("/"):
             continue
         result = classify(snippet, snippet)
-        if len(result["title"]) < 12:
+        if len(result["title"]) < 12 or result["title"].strip().lower() in ("scopri il bando", "leggi il bando", "consulta il bando"):
             continue
         rows.append({
             "id": target.lower().rstrip("/"), **result,
@@ -100,9 +100,12 @@ def run():
         for source in sources:
             try:
                 found = discover(source, session, now)
-                # Avoid overloading sources; improve a small batch on each scan.
+                # Prioritize candidate funding calls over general archive entries.
                 enriched_count = 0
                 checked_count = 0
+                found.sort(key=lambda x: (x.get("opportunity_type") not in ("finanziamento potenziale","call progettuale da verificare"),
+                                          "2026" not in x.get("title","") and "2027" not in x.get("title",""),
+                                          -x.get("relevance",0)))
                 for item in found:
                     if item["id"] in indexed:
                         previous = indexed[item["id"]]
@@ -119,7 +122,7 @@ def run():
                                 item[key] = previous[key]
                     if "source_open_confirmed" not in item:
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
-                    if not item.get("detail_checked") and enriched_count < 3 and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
+                    if not item.get("detail_checked") and enriched_count < (6 if source.get("tier")=="high" else 3) and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
                         item = enrich(item, source, session, eligible_to_fetch)
                         enriched_count += 1
                     if not item.get("link_checked_at") and checked_count < 8:
