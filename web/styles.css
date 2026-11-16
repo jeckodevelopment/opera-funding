@@ -14,3 +14,12 @@
 
 /* Il logo Opera+ è un'immagine pensata anche per fondi scuri: supporto neutro senza dominare la pagina. */
 .identity{background:#22272c;border-radius:7px;padding:5px;width:112px;height:46px}.brandlogo{max-width:102px!important;max-height:36px!important;width:102px!important;height:36px!important}@media(max-width:700px){.identity{width:87px;height:38px;padding:4px}.brandlogo{max-width:78px!important;max-height:30px!important;width:78px!important;height:30px!important}}
+
+/* Live GitHub data health and manual reload; lightweight and keyboard accessible. */
+.data-controls{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex:none;max-width:360px}
+.data-controls .lastscan{max-width:none}
+.refresh{padding:4px 8px;border:1px solid var(--border);background:var(--paper);color:#245d79;border-radius:6px;font-size:11px;font-weight:650}
+.refresh:hover{background:var(--gold-soft)}
+.refresh:disabled{opacity:.6;cursor:progress}
+.fallback-data{color:#865b0e;font-weight:650}
+@media(max-width:700px){.data-controls{align-items:flex-start;max-width:none;margin-top:8px}.data-controls .lastscan{text-align:left;margin-top:0}}
