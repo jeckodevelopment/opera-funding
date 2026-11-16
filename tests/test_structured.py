@@ -64,6 +64,19 @@ class StructuredTests(unittest.TestCase):
         result=structured_facts(html,"https://bandi.comune.torino.it/avviso/avviso-pubblico-torino-youth-climate-action-fund-lassegnazione-contributi-sostegno-della")
         self.assertEqual(result["deadline"],"2026-10-08")
         self.assertFalse(result["source_open_confirmed"])
+    def test_torino_explicit_deadline_written_month(self):
+        html="<main><h1>Contributi ordinari Circ. 4</h1><p>Scadenza delle domande: 26 novembre 2026 alle ore 12.00.</p><p>Pubblicato il 10 ottobre 2026.</p></main>"
+        facts=structured_facts(html,"https://bandi.comune.torino.it/avviso/circ-4-secondo-avviso-concessione-contributi-ordinari-2026")
+        self.assertEqual(facts["deadline"],"2026-11-26")
+        self.assertFalse(facts["source_open_confirmed"])
+        self.assertEqual(facts["deadline_source"],"https://bandi.comune.torino.it/avviso/circ-4-secondo-avviso-concessione-contributi-ordinari-2026")
+    def test_torino_textual_deadline_not_generic_event_date(self):
+        html="<main><p>Il festival sarà il 26 novembre 2026.</p><p>Pubblicazione 10 ottobre 2026.</p></main>"
+        self.assertIsNone(structured_facts(html,"https://bandi.comune.torino.it/avviso/festival")["deadline"])
+    def test_torino_textual_deadline_not_applied_to_other_sources(self):
+        html="<main><p>Scadenza delle domande: 26 novembre 2026</p></main>"
+        self.assertIsNone(structured_facts(html,"https://example.org/bando")["deadline"])
+
     def test_torino_official_submission_but_no_date(self):
         html="<main>Termine di presentazione delle proposte progettuali da definire</main>"
         self.assertIsNone(structured_facts(html,"https://bandi.comune.torino.it/avviso/clima")["deadline"])
