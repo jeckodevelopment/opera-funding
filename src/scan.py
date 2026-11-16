@@ -106,8 +106,8 @@ def run():
                         item["first_seen"] = previous.get("first_seen", now)
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
                         # preserve data verified by future, dedicated detail-page extractors
-                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
-                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
+                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
                                 item[key] = previous[key]
                     if "source_open_confirmed" not in item:
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
