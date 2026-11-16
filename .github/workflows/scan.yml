@@ -35,5 +35,7 @@ jobs:
           git add data/opportunities.json data/scan-status.json
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh funding discovery"
-            git push
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
