@@ -19,7 +19,7 @@ from verification import pick_for_review, coverage, backlog_candidates, classify
 from crt_windows import guidance_for_window
 from source_alternatives import delegated_source_status
 from eu_api import fetch_creative_europe
-from catalog import deduplicate_catalog
+from catalog import deduplicate_catalog, reconcile_official_equivalents
 from issuer_sources import apply_issuer_evidence
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -201,7 +201,7 @@ def run():
     # Reconcile retained historical links too; do not keep outdated open flags.
     for entry in indexed.values():
         explain(annotate(reconcile_status(entry)))
-    rows=deduplicate_catalog(list(indexed.values()))
+    rows=reconcile_official_equivalents(deduplicate_catalog(list(indexed.values())))
     # Independent primary-source checks for a few recurring aggregator grants.
     # This cannot assume the aggregator listing itself confirms a live application.
     with requests.Session() as issuer_session:

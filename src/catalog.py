@@ -36,3 +36,36 @@ def deduplicate_catalog(rows):
         canonical["alternative_urls"]=sorted(alternative-{canonical.get("url")})
         remaining.append(canonical)
     return remaining
+
+# Explicitly checked identity: the syndication notice and the municipal
+# application page describe the same Circoscrizione 7 / 2027 call, not two calls.
+OFFICIAL_EQUIVALENTS={
+    "https://volontariatotorino.it/bandi/circoscrizione-7-invito-a-presentare-progetti-per-iniziative-varie-anno-2027":
+    "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7"
+}
+
+def reconcile_official_equivalents(rows):
+    """Coalesce only curated official/aggregator pairs with matching deadline.
+
+    Retain the original syndicated URL as an alias; never merge different
+    editions, missing deadlines, or mismatched confirmed windows.
+    """
+    by_url={_path(r.get("url")):r for r in rows}
+    discard=set()
+    for syndicated_url, official_url in OFFICIAL_EQUIVALENTS.items():
+        syndicated=by_url.get(_path(syndicated_url))
+        official=by_url.get(_path(official_url))
+        if not syndicated or not official or syndicated is official:
+            continue
+        if syndicated.get("source_id")!="volto" or official.get("source_id")!="torino":
+            continue
+        if not syndicated.get("deadline") or syndicated["deadline"]!=official.get("deadline"):
+            continue
+        # Only propagate an authoritative, currently verified state if present.
+        alternatives=set(official.get("alternative_urls") or [])
+        alternatives.add(syndicated["url"])
+        alternatives.update(syndicated.get("alternative_urls") or [])
+        official["alternative_urls"]=sorted(alternatives-{official.get("url")})
+        official["first_seen"]=min(official.get("first_seen") or "9999",syndicated.get("first_seen") or "9999")
+        discard.add(id(syndicated))
+    return [row for row in rows if id(row) not in discard]
