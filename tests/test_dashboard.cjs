@@ -6,8 +6,8 @@ const context = {
   document: {getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
   URL, Date, console
 };
-vm.runInNewContext(src.replace(/\ninit\(\);\s*$/, "\n") + "\nglobalThis.exposed = {state, dateLabel, sortRows, safeUrl, PAGE_SIZE};", context);
-const {state, dateLabel, sortRows, safeUrl, PAGE_SIZE} = context.exposed;
+vm.runInNewContext(src.replace(/\ninit\(\);\s*$/, "\n") + "\nglobalThis.exposed = {state, dateLabel, sortRows, safeUrl, PAGE_SIZE, sourceHealth};", context);
+const {state, dateLabel, sortRows, safeUrl, PAGE_SIZE, sourceHealth} = context.exposed;
 assert.equal(state({status:"aperto (fonte indice)",deadline:"2025-05-01"}),"chiuso");
 assert.equal(state({status:"non verificato"}),"non verificato");
 assert.equal(state({status:"aperto (fonte indice)",deadline:"2027-02-15",source_open_confirmed:true,link_status:"raggiungibile"}),"aperto");
@@ -41,4 +41,13 @@ assert.match(css,/max-width:102px!important/);
 assert.match(html,/data-value="aperto"/);
 assert.match(html,/data-value="chiuso"/);
 assert.match(html,/aria-pressed="true"/);
+assert.match(html,/id="health-dot"/);
+assert.match(html,/id="source-incidents"/);
+assert.equal(sourceHealth({sources:[{ok:true},{ok:true}]},[]).level,"green");
+assert.equal(sourceHealth({sources:[{ok:false,source_id:"a",error:"HTTP 500"},{ok:true},{ok:true},{ok:true}]},[]).level,"red"); // 25% missing
+assert.equal(sourceHealth({sources:[{ok:false,source_id:"a",error:"HTTP 500"},...Array(5).fill({ok:true})]},[]).level,"yellow");
+assert.equal(sourceHealth({sources:[{ok:false},{ok:false},{ok:false},{ok:true}]},[]).level,"red");
+assert.equal(sourceHealth({sources:[{ok:false,source_id:"piemonte",source_name:"Regione Piemonte",error:"Errore"}]},[]).incidents[0].name,"Regione Piemonte");
+assert.doesNotMatch(src,/Controlli prima della candidatura:/);
+assert.doesNotMatch(html,/DA VERIFICARE/);
 console.log("Dashboard UX regression checks passed");
