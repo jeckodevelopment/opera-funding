@@ -17,6 +17,7 @@ MONTHS={"january":1,"february":2,"march":3,"april":4,"may":5,"june":6,"july":7,"
 EN_DATE=r"(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(20\d{2})"
 EN_DEADLINE=re.compile(r"(?i)\bdeadline\s*[:–-]?\s*"+EN_DATE)
 EN_OPENING=re.compile(r"(?i)\bopening date\s*[:–-]?\s*"+EN_DATE)
+EN_VERIFIED_CALL_OPEN_UNTIL=re.compile(r"(?i)\\bthe\\s+call\\s+is\\s+open\\s+until\\s+"+EN_DATE)
 def _english_date(match):
     if not match:return None
     try:return date(int(match.group(3)),MONTHS[match.group(2).lower()],int(match.group(1))).isoformat()
@@ -116,6 +117,14 @@ def structured_facts(html,url):
     if windows:deadline=next((x for x in windows if x>=date.today().isoformat()),windows[-1])
     if not deadline:deadline=_english_date(EN_DEADLINE.search(txt))
     if not opening:opening=_english_date(EN_OPENING.search(txt))
+    official_cme_announcement=(
+        url.startswith("https://culture.ec.europa.eu/culture-moves-europe/whats-new/news/")
+        and "new-call-for-" in url and url.rstrip("/").endswith("-2026-2027-open")
+    )
+    official_news_closing=EN_VERIFIED_CALL_OPEN_UNTIL.search(txt) if official_cme_announcement else None
+    if official_news_closing and not deadline:
+        deadline=_english_date(official_news_closing)
+
     if ("infobandi.csvnet.it" in url or "volontariatotorino.it" in url) and not deadline:
         deadline=_csvnet_deadline(txt)
     if "spettacolo.cultura.gov.it" in url and not deadline:
@@ -170,7 +179,7 @@ def structured_facts(html,url):
         except ValueError:
             pass
     state=STATUS.search(txt)
-    source_open=bool((state and state.group(1).lower() in ("in corso","aperto","aperta","attivo","attiva","open")) or window or mic_open_evidence)
+    source_open=bool((state and state.group(1).lower() in ("in corso","aperto","aperta","attivo","attiva","open")) or window or mic_open_evidence or (official_news_closing and deadline))
     source_closed=bool((state and state.group(1).lower() in ("chiuso","chiusa","scaduto","scaduta","closed")) or closed_alcotra)
     beneficiaries=BENEFICIARIES.search(txt)
     return {
@@ -178,6 +187,6 @@ def structured_facts(html,url):
       "closure_confirmed":source_closed,
       "opening_evidence":url if opening else None,
       "deadline_source":url if deadline else None,
-      "status_evidence":url if (state or closed_alcotra or mic_open_evidence) else None,
+      "status_evidence":url if (state or closed_alcotra or mic_open_evidence or official_news_closing) else None,
       "beneficiaries_excerpt":beneficiaries.group(0).strip()[:270] if beneficiaries else None
     }
