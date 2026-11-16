@@ -13,7 +13,7 @@ DOC_PATTERN = re.compile(r"(?i)\b(bando|avviso|faq|frequently asked|allegat|modu
 BENEFICIARY_LABEL = re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammissibili|chi può partecipare|eligible applicants)\s*[:–-]?")
 MAX_DETAIL_LINKS = 8
 MAX_HTML_BYTES = 1_000_000
-DETAIL_SCHEMA_VERSION = 3
+DETAIL_SCHEMA_VERSION = 4
 
 def safe_same_origin(link, origin):
     u = urlparse(link)
@@ -57,7 +57,25 @@ def extract(html, page_url):
 def enrich(item, source, session, eligible_to_fetch):
     """Failure must not cause an opportunity to disappear from the dashboard."""
     url = item["url"]
-    if not safe_same_origin(url, source["url"]) or url.lower().split("?")[0].endswith((".pdf",".doc",".docx",".zip")):
+    if not safe_same_origin(url, source["url"]):
+        return item
+    if urlparse(url).path.lower().endswith(".pdf"):
+        # Some source indexes point directly to a PDF rather than an HTML page.
+        deadline, pdf_url = pdf_deadline_from_documents(
+            [{"label":"Documento ufficiale","url":url}],
+            source["url"], session, eligible_to_fetch, include_first=True
+        )
+        if deadline:
+            item["deadline"]=deadline
+            item["deadline_source"]=pdf_url
+            item["deadline_verified_at"]=datetime.now(timezone.utc).isoformat(timespec="seconds")
+            item["documents"]=[{"label":"Documento ufficiale","url":pdf_url}]
+            item["detail_checked"]=True
+            item["detail_checked_at"]=item["deadline_verified_at"]
+            item["detail_version"]=DETAIL_SCHEMA_VERSION
+            item["detail_basis"]="Scadenza esplicita nel documento PDF ufficiale"
+        return item
+    if urlparse(url).path.lower().endswith((".doc",".docx",".zip")):
         return item
     if not eligible_to_fetch(url, session):
         return item
@@ -84,7 +102,7 @@ def enrich(item, source, session, eligible_to_fetch):
                 item[key] = structured[key]
         if structured.get("beneficiaries_excerpt") and not parsed["beneficiaries_excerpt"]:
             parsed["beneficiaries_excerpt"] = structured["beneficiaries_excerpt"]
-        if not parsed["deadline"] and parsed["documents"] and not item.get("deadline"):
+        if not parsed["deadline"] and parsed["documents"]:
             deadline, document_url = pdf_deadline_from_documents(parsed["documents"], source["url"], session, eligible_to_fetch)
             if deadline:
                 parsed["deadline"] = deadline
@@ -92,7 +110,6 @@ def enrich(item, source, session, eligible_to_fetch):
         parsed["detail_checked_at"]=datetime.now(timezone.utc).isoformat(timespec="seconds")
         parsed["detail_version"]=DETAIL_SCHEMA_VERSION
         for key in ("amount","beneficiaries_excerpt","documents","detail_checked","detail_basis","detail_checked_at","detail_version"):
-
             item[key] = parsed[key]
         if structured.get("source_open_confirmed"):
             item["status"] = "aperto (pagina ufficiale)"
@@ -100,10 +117,10 @@ def enrich(item, source, session, eligible_to_fetch):
         if structured.get("closure_confirmed"):
             item["status"] = "chiuso"
             item["status_basis"] = "Stato chiuso esplicito nella scheda ufficiale"
-        if parsed["deadline"] and not item.get("deadline"):
+        if parsed["deadline"]:
             item["deadline"] = parsed["deadline"]
             item["deadline_source"] = parsed.get("deadline_source") or response.url
-            item["deadline_verified_at"] = __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(timespec="seconds")
+            item["deadline_verified_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
             if parsed["deadline"] < date.today().isoformat():
                 item["status"] = "chiuso"
                 item["status_basis"] = "scadenza esplicita della scheda trascorsa"
