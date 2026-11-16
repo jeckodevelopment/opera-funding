@@ -23,3 +23,9 @@ Attenzione: il crawler generico legge ancora soltanto gli indici HTML; per i por
 
 ## Priorità 2026: spettacolo dal vivo
 La pagina ufficiale [Aiuti allo spettacolo dal vivo](https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo) è stata aggiunta al controllo diretto ripetuto: lo stato, la scadenza e la loro provenienza vengono nuovamente estratti dal sito della Regione a ogni esecuzione, non precaricati come fatti nel JSON. Il bando è rivolto a **imprese e liberi professionisti**: la sua apertura non costituisce prova dell'ammissibilità di Opera+, che richiede una verifica delle condizioni del bando e dell'eventuale forma progettuale.
+
+## Adattatori alle fonti piemontesi (novembre 2026)
+- **Compagnia di San Paolo:** il parser riconosce ora `Stato: IN CORSO` e `Data scadenza`, senza interpretare `Data pubblicazione` come scadenza. I bandi prioritari `Festival partecipativi 2027` e `AI nell'economia sociale` sono monitorati direttamente. Il primo prevede finestre differenti per i festival di stagioni diverse: consultare il calendario completo, non soltanto l'ultima data riportata in testata.
+- **Città di Torino:** interpretazione delle finestre ufficiali `Attivo dal DD/MM/YYYY al DD/MM/YYYY`, esclusivamente su pagine del portale bandi comunale; priorità agli avvisi per iniziative culturali della Circoscrizione 7.
+- **Fondazione CRT:** resta fonte ad alta priorità, ma lo stato degli avvisi e le scadenze si considerano provati solo se individuati nelle pagine o documenti ufficiali; non vengono dedotti dall'appartenenza al registro delle fonti.
+- Le opportunità vengono sottoposte a controlli effettivi a ogni scansione mediante link ufficiale e robots.txt. L'inclusione nella lista di priorità non equivale ad apertura o ammissibilità accertata.
