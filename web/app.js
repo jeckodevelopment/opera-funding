@@ -4,9 +4,9 @@ let all = [], visibleCount = PAGE_SIZE;
 const safeUrl = value => { try { const u = new URL(value); return u.protocol === "https:" ? u.href : null; } catch { return null; } };
 const el = (tag, value, className) => { const e=document.createElement(tag); if(value!==undefined)e.textContent=value; if(className)e.className=className; return e; };
 function addLink(parent,label,url) { const safe=safeUrl(url); if(!safe)return; const a=el("a",label); a.href=safe;a.target="_blank";a.rel="noopener noreferrer";parent.append(a); }
-function isExpired(o) { if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(o.deadline||""))return false; return o.deadline < new Date().toISOString().slice(0,10); }
+function isExpired(o) { if(!/^\d{4}-\d{2}-\d{2}$/.test(o.deadline||""))return false; return o.deadline < new Date().toISOString().slice(0,10); }
 function state(o) { if(isExpired(o))return "chiuso"; if(o.status==="chiuso")return "chiuso"; if((o.status||"").startsWith("aperto"))return "aperto"; return "non verificato"; }
-function dateLabel(value) { if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(value||""))return "Scadenza da verificare"; const [y,m,d]=value.split("-");return "Scade il "+d+"/"+m+"/"+y; }
+function dateLabel(value) { if(!/^\d{4}-\d{2}-\d{2}$/.test(value||""))return "Scadenza da verificare"; const [y,m,d]=value.split("-");return "Scade il "+d+"/"+m+"/"+y; }
 function priority(o) { const s=state(o);return s==="aperto"?0:s==="non verificato"?1:2; }
 function sortRows(rows,order) {
  const cmp=(a,b)=>Number(b.relevance||0)-Number(a.relevance||0);
