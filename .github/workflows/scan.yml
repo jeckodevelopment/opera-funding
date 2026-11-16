@@ -11,6 +11,9 @@ on:
       - 'src/status.py'
       - 'src/fit.py'
       - 'src/pdf_dates.py'
+      - 'src/structured.py'
+      - 'src/priority.py'
+      - 'config/priority_pages.json'
       - 'config/sources.json'
       - '.github/workflows/scan.yml'
   schedule:

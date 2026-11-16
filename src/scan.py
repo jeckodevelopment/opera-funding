@@ -14,6 +14,7 @@ from detail import enrich
 from quality import check_link, reconcile_status
 from status import annotate
 from fit import explain
+from priority import check_priority
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -68,7 +69,7 @@ def discover(source, session, now):
         if target.rstrip("/") == response.url.rstrip("/"):
             continue
         result = classify(snippet, snippet)
-        if len(result["title"]) < 12:
+        if len(result["title"]) < 12 or result["title"].strip().lower() in ("scopri il bando", "leggi il bando", "consulta il bando"):
             continue
         rows.append({
             "id": target.lower().rstrip("/"), **result,
@@ -91,6 +92,7 @@ def run():
     output = Path(args.output)
     existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else []
     indexed = {row["id"]: row for row in existing}
+    priority_pages = json.loads((ROOT / "config/priority_pages.json").read_text(encoding="utf-8"))
     statuses = []
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     with requests.Session() as session:
@@ -98,27 +100,40 @@ def run():
         for source in sources:
             try:
                 found = discover(source, session, now)
-                # Avoid overloading sources; improve a small batch on each scan.
+                # Prioritize candidate funding calls over general archive entries.
                 enriched_count = 0
                 checked_count = 0
+                found.sort(key=lambda x: (x.get("opportunity_type") not in ("finanziamento potenziale","call progettuale da verificare"),
+                                          "2026" not in x.get("title","") and "2027" not in x.get("title",""),
+                                          -x.get("relevance",0)))
                 for item in found:
                     if item["id"] in indexed:
                         previous = indexed[item["id"]]
                         item["first_seen"] = previous.get("first_seen", now)
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
+                        # The verified detail page is stronger than an index snippet.
+                        if previous.get("status_evidence"):
+                            item["source_open_confirmed"] = previous.get("source_open_confirmed",False)
+                            item["closure_confirmed"] = previous.get("closure_confirmed",False)
+                            item["status_evidence"] = previous["status_evidence"]
                         # preserve data verified by future, dedicated detail-page extractors
-                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
-                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed", "link_status", "link_http_status", "link_checked_at", "resolved_url"):
+                            if (previous.get("verified") or (previous.get("detail_checked") and key in ("deadline", "amount", "documents", "detail_checked", "detail_basis", "beneficiaries_excerpt", "deadline_source", "deadline_verified_at", "opening_date", "opening_evidence", "status_evidence", "closure_confirmed")) or key in ("link_status", "link_http_status", "link_checked_at", "resolved_url")) and key in previous:
                                 item[key] = previous[key]
                     if "source_open_confirmed" not in item:
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
-                    if not item.get("detail_checked") and enriched_count < 3 and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
+                    if not item.get("detail_checked") and enriched_count < (6 if source.get("tier")=="high" else 3) and item.get("opportunity_type") in ("finanziamento potenziale", "call progettuale da verificare"):
                         item = enrich(item, source, session, eligible_to_fetch)
                         enriched_count += 1
                     if not item.get("link_checked_at") and checked_count < 8:
                         item = check_link(item, session, now)
                         checked_count += 1
                     indexed[item["id"]] = explain(annotate(reconcile_status(item)))
+                # Small curated set of official call pages, rechecked every run.
+                for target in (p for p in priority_pages if p["source_id"] == source["id"]):
+                    key=target["url"].lower().rstrip("/")
+                    verified=check_priority(target,source,session,eligible_to_fetch,now,indexed.get(key))
+                    if verified is not None:indexed[key]=verified
                 statuses.append({"source_id":source["id"],"ok":True,"discovered":len(found),"checked_at":now})
             except (requests.RequestException, RuntimeError, ValueError) as exc:
                 statuses.append({"source_id":source["id"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]})

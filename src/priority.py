@@ -1,0 +1,53 @@
+"""Recheck a very small curated list of official call pages on every scan.
+
+An entry is not considered open until its own page yields dated evidence.
+"""
+from datetime import datetime, timezone
+from urllib.parse import urlparse
+from structured import structured_facts
+from classify import classify
+from status import annotate
+from fit import explain
+
+def check_priority(item, source, session, eligible, now, previous=None):
+    url=item["url"]
+    if urlparse(url).hostname!=urlparse(source["url"]).hostname or not eligible(url,session):
+        return None
+    response=None
+    try:
+        response=session.get(url,timeout=16,stream=True,allow_redirects=True)
+        response.raise_for_status()
+        if urlparse(response.url).hostname!=urlparse(source["url"]).hostname:return None
+        if "text/html" not in response.headers.get("Content-Type",""):return None
+        content=bytearray()
+        for chunk in response.iter_content(32768):
+            content.extend(chunk)
+            if len(content)>1200000:return None
+        response._content=bytes(content)
+        facts=structured_facts(response.text,response.url)
+        base=classify(item["title"],"")
+        result={
+         "id":url.lower().rstrip("/"),**base,"title":item["title"],
+         "issuer":source["name"],"source_id":source["id"],"source_url":source["url"],"url":url,
+         "documents":[{"label":"Scheda ufficiale","url":response.url}],
+         "amount":None,"eligibility":"da verificare","project_potential":"da valutare",
+         "verified":False,"detail_checked":True,"detail_basis":"Pagina ufficiale verificata con evidenze strutturate",
+         "first_seen":(previous or {}).get("first_seen",now),"last_seen":now,
+         "link_status":"raggiungibile","resolved_url":response.url,"link_checked_at":now,
+         "link_http_status":200
+        }
+        for k,v in facts.items():
+            if v is not None:
+                result[k]=v
+        if facts["deadline"]:result["deadline_verified_at"]=now
+        if facts["source_open_confirmed"]:
+            result["status"]="aperto (pagina ufficiale)"
+            result["status_basis"]="Stato aperto esplicito nella scheda ufficiale"
+        if facts["closure_confirmed"]:
+            result["status"]="chiuso"
+            result["status_basis"]="Stato chiuso esplicito nella scheda ufficiale"
+        return explain(annotate(result))
+    except Exception:
+        return None
+    finally:
+        if response is not None:response.close()

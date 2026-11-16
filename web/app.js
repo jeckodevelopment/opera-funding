@@ -55,7 +55,7 @@ function filteredRows(){
  const q=$("search").value.toLocaleLowerCase("it").trim(),status=$("status").value,kind=$("kind").value,issuer=$("issuer").value,min=Number($("level").value);
  const rows=all.filter(o=>{
    const s=state(o);
-   if(status==="active"&&s==="chiuso")return false;
+   if(status==="active"&&(s==="chiuso"||o.link_status==="non disponibile"))return false;
    if(status&&status!=="active"&&s!==status)return false;
    if(kind==="funding"&&!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return false;
    if(kind&&kind!=="funding"&&(o.opportunity_type||"non classificato")!==kind)return false;
@@ -71,7 +71,7 @@ function renderItem(o){
  const badges=el("div",undefined,"item-badges");const st=state(o);
  badges.append(chip(st==="chiuso"?"CHIUSO":st==="aperto"?"APERTO":st==="in arrivo"?"IN ARRIVO":"DA VERIFICARE","status "+(st==="chiuso"?"closed":st==="aperto"?"open":st==="in arrivo"?"upcoming":"unknown")));
  badges.append(chip(dateLabel(o.deadline),"deadline"));
- badges.append(chip(o.opportunity_type||"Tipologia da verificare"));
+ badges.append(chip(o.opportunity_type==="call progettuale da verificare"?"Call progettuale":o.opportunity_type==="finanziamento potenziale"?"Finanziamento potenziale":(o.opportunity_type||"Tipologia da definire")));
  left.append(badges,el("h3",o.title||"Senza titolo"),meta);
  const score=el("div",undefined,"item-score");score.append(el("strong",String(o.relevance??0)+"/100"),el("span","Pertinenza"));
  main.append(left,score);item.append(main);
