@@ -58,7 +58,7 @@ def _piter_windows(text):
     marker=PITER_LIST_CONTEXT.search(text)
     if not marker:return []
     # Only the short list immediately after the official filing-dates label.
-    excerpt=text[marker.end():marker.end()+140]
+    excerpt=text[marker.end():marker.end()+140].split(".",1)[0]
     values=[]
     for m in re.finditer(ITALIAN_DATE,excerpt,re.I):
         parsed=_italian_date(m)
