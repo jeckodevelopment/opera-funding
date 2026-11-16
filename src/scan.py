@@ -9,6 +9,7 @@ from urllib.parse import urljoin, urlparse, urldefrag
 from urllib.robotparser import RobotFileParser
 import requests
 from bs4 import BeautifulSoup
+from classify import classify
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -53,8 +54,8 @@ def discover(source, session, now):
     soup = BeautifulSoup(response.text, "html.parser")
     rows = []
     for a in soup.select("a[href]"):
-        title = " ".join(a.get_text(" ", strip=True).split())[:200]
-        if len(title) < 12 or not INCLUDE.search(title) or IGNORE.search(title):
+        snippet = " ".join(a.get_text(" ", strip=True).split())[:600]
+        if len(snippet) < 12 or not INCLUDE.search(snippet) or IGNORE.search(snippet):
             continue
         target, _ = urldefrag(urljoin(response.url, a["href"]))
         parsed = urlparse(target)
@@ -62,17 +63,17 @@ def discover(source, session, now):
             continue
         if target.rstrip("/") == response.url.rstrip("/"):
             continue
-        relevance, themes = score(title)
+        result = classify(snippet, snippet)
+        if len(result["title"]) < 12:
+            continue
         rows.append({
-            "id": target.lower().rstrip("/"), "title": title,
+            "id": target.lower().rstrip("/"), **result,
             "issuer": source["name"], "source_id": source["id"],
             "source_url": url, "url": target,
-            "documents": [{"label":"Pagina o documento ufficiale da verificare", "url":target}],
-            "deadline": None, "amount": None,
-            "relevance": relevance, "relevance_basis": "euristica sul titolo",
-            "themes": themes, "eligibility":"da verificare",
-            "project_potential":"da valutare", "first_seen":now, "last_seen":now,
-            "verified": False
+            "documents": [{"label":"Fonte da verificare", "url":target}],
+            "amount": None, "eligibility":"da verificare",
+            "project_potential":"da valutare",
+            "first_seen":now, "last_seen":now, "verified":False
         })
     return rows
 
@@ -98,7 +99,7 @@ def run():
                         previous = indexed[item["id"]]
                         item["first_seen"] = previous.get("first_seen", now)
                         # preserve data verified by future, dedicated detail-page extractors
-                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified"):
+                        for key in ("deadline", "amount", "eligibility", "project_potential", "verified", "status", "status_basis"):
                             if previous.get("verified") and key in previous:
                                 item[key] = previous[key]
                     indexed[item["id"]] = item
