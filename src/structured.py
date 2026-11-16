@@ -5,9 +5,12 @@ from bs4 import BeautifulSoup
 from classify import parse_deadline
 
 DATE_TOKEN = r"(?:[A-Za-zÀ-ÿ]{3,12},?\s*)?(\d{1,2})[./-](\d{1,2})[./-](20\d{2})"
-DEADLINE = re.compile(r"(?i)(?:^|\b)(?:scadenza|termine (?:per |di )?(?:la )?(?:presentazione|candidatura|domande)|deadline|apply by)\s*[:–-]?\s*"+DATE_TOKEN)
+DEADLINE = re.compile(r"(?i)(?:^|\b)(?:data scadenza|scadenza|termine (?:per |di )?(?:la )?(?:presentazione|candidatura|domande)|deadline|apply by)\s*[:–-]?\s*"+DATE_TOKEN)
 OPENING = re.compile(r"(?i)(?:domande dal|candidature dal|apertura (?:del |delle )?(?:bando|domande|candidature)|presentazione domande dal)\s*[:–-]?\s*"+DATE_TOKEN)
-STATUS = re.compile(r"(?i)\bstato\s*[:–-]?\s*(aperto|aperta|attivo|attiva|chiuso|chiusa|scaduto|scaduta)\b")
+STATUS = re.compile(r"(?i)\bstato\s*[:–-]?\s*(in corso|aperto|aperta|attivo|attiva|chiuso|chiusa|scaduto|scaduta)\b")
+# Turin detail pages encode an active application window with dal/al dates.
+TURIN_WINDOW=re.compile(r"(?i)\battivo\b\s*dal\s*[:–-]?\s*"+DATE_TOKEN+
+                         r"\s*al\s*[:–-]?\s*"+DATE_TOKEN)
 BENEFICIARIES = re.compile(r"(?i)\b(?:rivolto a|chi può partecipare|soggetti beneficiari|beneficiari)\s*[:–-]?\s*(.{8,260})")
 
 def _date(match):
@@ -26,8 +29,15 @@ def structured_facts(html,url):
     # Avoid matching 'Scadenza' in an unrelated phrase by requiring the date nearby.
     deadline=_date(DEADLINE.search(txt))
     opening=_date(OPENING.search(txt))
+    window=TURIN_WINDOW.search(txt) if "bandi.comune.torino.it" in url else None
+    if window:
+        opening=_date(window)
+        try:
+            deadline=date(int(window.group(6)),int(window.group(5)),int(window.group(4))).isoformat()
+        except ValueError:
+            pass
     state=STATUS.search(txt)
-    source_open=bool(state and state.group(1).lower() in ("aperto","aperta","attivo","attiva"))
+    source_open=bool((state and state.group(1).lower() in ("in corso","aperto","aperta","attivo","attiva")) or window)
     source_closed=bool(state and state.group(1).lower() in ("chiuso","chiusa","scaduto","scaduta"))
     beneficiaries=BENEFICIARIES.search(txt)
     return {
