@@ -57,13 +57,16 @@ def extract(html, page_url):
 def enrich(item, source, session, eligible_to_fetch):
     """Failure must not cause an opportunity to disappear from the dashboard."""
     url = item["url"]
-    if not safe_same_origin(url, source["url"]):
+    parsed_url=urlparse(url)
+    allowed_hosts={urlparse(source["url"]).hostname,*(source.get("approved_detail_hosts") or [])}
+    if (parsed_url.scheme!="https" or parsed_url.hostname not in allowed_hosts
+            or parsed_url.port not in (None,443) or parsed_url.username or parsed_url.password):
         return item
     if urlparse(url).path.lower().endswith(".pdf"):
         # Some source indexes point directly to a PDF rather than an HTML page.
         deadline, pdf_url = pdf_deadline_from_documents(
             [{"label":"Documento ufficiale","url":url}],
-            source["url"], session, eligible_to_fetch, include_first=True
+            url, session, eligible_to_fetch, include_first=True
         )
         if deadline:
             item["deadline"]=deadline
@@ -82,7 +85,7 @@ def enrich(item, source, session, eligible_to_fetch):
     try:
         response = session.get(url, timeout=12, stream=True)
         response.raise_for_status()
-        if not safe_same_origin(response.url, source["url"]):
+        if not safe_same_origin(response.url, url):
             return item
         if "text/html" not in response.headers.get("Content-Type",""):
             return item
@@ -103,7 +106,7 @@ def enrich(item, source, session, eligible_to_fetch):
         if structured.get("beneficiaries_excerpt") and not parsed["beneficiaries_excerpt"]:
             parsed["beneficiaries_excerpt"] = structured["beneficiaries_excerpt"]
         if not parsed["deadline"] and parsed["documents"]:
-            deadline, document_url = pdf_deadline_from_documents(parsed["documents"], source["url"], session, eligible_to_fetch)
+            deadline, document_url = pdf_deadline_from_documents(parsed["documents"], url, session, eligible_to_fetch)
             if deadline:
                 parsed["deadline"] = deadline
                 parsed["deadline_source"] = document_url
