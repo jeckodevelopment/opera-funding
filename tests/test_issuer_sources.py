@@ -33,6 +33,26 @@ class IssuerTests(unittest.TestCase):
         self.assertEqual(result["link_status"],"raggiungibile")
         self.assertIn(CHECK["official_url"],[d["url"] for d in result["documents"]])
         response.close.assert_called_once()
+    def test_cepell_explicit_official_filing_closure(self):
+        html="<main><h1>Educare alla lettura</h1><p>Le proposte di progetto devono essere compilate e inviate esclusivamente on line attraverso la piattaforma bandi del Centro entro e non oltre le ore 13:00 del giorno 13 novembre 2026.</p></main>"
+        self.assertEqual(parse_issuer_window(html,"cepell"),{"opening_date":None,"deadline":"2026-11-13"})
+        self.assertIsNone(parse_issuer_window("<p>Evento del 13 novembre 2026</p>","cepell"))
+    def test_cepell_official_deadline_marks_ended_without_fake_open(self):
+        check={"source_id":"volto","match_path":"/bando-educare-alla-lettura-2026",
+               "official_url":"https://centroperillibro.cultura.gov.it/educare-alla-lettura-online-la-9a-edizione-del-bando-scadenza-13-novembre/",
+               "parser":"cepell"}
+        html="<main>Le proposte di progetto devono essere compilate e inviate esclusivamente on line entro e non oltre le ore 13:00 del giorno 13 novembre 2026.</main>"
+        response=Mock(url=check["official_url"],headers={"Content-Type":"text/html"},text=html)
+        response.iter_content.return_value=[html.encode()]
+        row={"source_id":"volto","url":"https://infobandi.csvnet.it/bando-educare-alla-lettura-2026/","funding_status":"DA VERIFICARE","documents":[]}
+        session=Mock()
+        session.get.return_value=response
+        result=apply_issuer_evidence(row,None,[check],session,lambda url,s:True,"2026-11-17T00:00:00+00:00")
+        self.assertEqual(result["deadline"],"2026-11-13")
+        self.assertTrue(result["closure_confirmed"])
+        self.assertFalse(result["source_open_confirmed"])
+        self.assertEqual(result["deadline_source"],check["official_url"])
+        self.assertNotIn("opening_evidence",result)
     def test_blocked_robots_keeps_unverified(self):
         item={"source_id":"volto","url":"https://infobandi.csvnet.it/bando-fabbrica-spazi-civici-per-la-gioventu/","funding_status":"DA VERIFICARE"}
         session=Mock()
