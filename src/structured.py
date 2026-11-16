@@ -73,9 +73,9 @@ TORINO_PROPOSAL_CLOSING=re.compile(
 )
 TORINO_TEXTUAL_DEADLINE=re.compile(r"(?i)\b(?:scadenza(?:\s+(?:del\s+bando|delle\s+domande))?|termine\s+(?:di\s+)?presentazione\s+(?:(?:delle|delle\s+)?\s*)?(?:domande|candidature|proposte\s+progettuali))\s*[:–-]?\s*(?:entro\s+(?:il\s+)?)?"+ITALIAN_DATE)
 TORINO_PUBLISHED_APPLICATION_PERIOD=re.compile(
-    r"(?i)\\bnel\\s+periodo\\s+compreso\\s+tra\\s+il\\s+"+ITALIAN_DATE+
-    r"\\s+e\\s+il\\s+"+ITALIAN_DATE+
-    r"(?=.{0,180}?\\b(?:presentare\\s+(?:istanza|domanda|richiesta)|presentazione\\s+(?:di\\s+)?(?:istanze|domande|richieste))\\b)"
+    r"(?i)\bnel\s+periodo\s+compreso\s+tra\s+il\s+"+ITALIAN_DATE+
+    r"\s+e\s+il\s+"+ITALIAN_DATE+
+    r"(?=.{0,180}?\b(?:presentare\s+(?:istanza|domanda|richiesta)|presentazione\s+(?:di\s+)?(?:istanze|domande|richieste))\b)"
 )
 TORINO_NUMERIC_END=re.compile(r"(?i)\b(?:richiest[ae]|domand[ae]|candidatur[ae]|propost[ae]).{0,100}?\b(?:entro|al)\s*(?:il\s+)?"+DATE_TOKEN)
 def _italian_date(match,start=1):
