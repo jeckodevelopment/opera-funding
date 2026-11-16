@@ -187,3 +187,9 @@ I nuovi controlli mantengono il limite sulla scansione, i collegamenti ufficiali
 
 ### Parser version 6: revisione obbligatoria dopo nuovi formati ufficiali
 L'integrazione dei formati Vol.To, MiC e ALCOTRA della PR #34 richiede un bump di versione del lettore dettagli. Senza questo, le schede con `detail_checked_at` recente e `detail_version=5` verrebbero saltate, anche se il codice ora riconosce le loro scadenze. La versione **6** forza la revisione progressiva degli elementi candidabili secondo la coda equa e il budget per fonte; la scansione produce nuovi valori di `deadline`, `deadline_source` e stato soltanto quando la fonte realmente letta contiene evidenze.
+
+## Normalizzazione delle opportunità (novembre 2026)
+- Il monitoraggio delle fonti controlla direttamente la scheda ufficiale **Torino Youth Climate Action Fund**: termine di presentazione delle proposte progettuali l'**8 ottobre 2026**, quindi scaduto. La data è acquisita dal testo «Termine di presentazione delle proposte progettuali: ore 12.00 del 8 ottobre 2026», non da un periodo generico di attività.
+- La scheda ufficiale **ALCOTRA PITER+ — progetti singoli 2021–2027** riporta «Data di chiusura 03/12/2024» e non è più candidabile. Viene riletta direttamente senza promuoverla artificialmente a opportunità aperta.
+- Vol.To/CSVnet pubblica talvolta lo **stesso bando tramite due indirizzi**. Il catalogo unifica esclusivamente record CSVnet dello stesso ente, con titolo identico e scadenza identica, mai finestre o edizioni diverse; conserva gli URL alternativi e la prima data di individuazione. Le opportunità prive di data non sono accorpate senza prove.
+- La deduplicazione viene eseguita prima del salvataggio dei JSON e del report di copertura, così i conteggi non duplicano lo stesso finanziamento. Non modifica la UI o il flusso FTP.
