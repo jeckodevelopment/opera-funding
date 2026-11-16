@@ -60,3 +60,9 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - **Scadenze:** se non rilevate nell'HTML, il motore può leggere un PDF ufficiale dello stesso dominio (un documento per scheda, max 2 MB e prime 8 pagine testuali). Le date vengono estratte solo da etichette esplicite, con URL di origine e timestamp. Nessuna copia del documento viene persistita.
 - PDF scansiti o senza testo estraibile richiederanno connettori/analisi specifici; **una data non trovata rimane mancante** e lo stato non viene inventato.
 - Il default mostra solo call/finanziamenti e una metrica delle opportunità confermate APERTE. La fonte della scadenza è disponibile nei dettagli della scheda.
+
+## Suitability spiegabile (16 novembre 2026)
+- La classificazione produce motivazioni di pertinenza e alcune **possibili** idee progettuali per Opera+ coerenti con il titolo della call; non sono condizioni ufficiali del bando e non sostituiscono la lettura della documentazione.
+- Il punteggio originale `relevance` resta invariato per non attribuire precisione a informazioni mancanti. È esplicitamente contrassegnato come **preliminare / confidenza bassa** finché non saranno disponibili requisiti e importi verificati.
+- Controlli candidabilità: natura giuridica dei beneficiari, eventuale partenariato, cofinanziamenti e vincoli. La presenza della parola «partner» attiva un invito alla verifica, **non una dichiarazione** che sia obbligatorio.
+- I requisiti mancanti non occultano né penalizzano automaticamente l'opportunità. Lo stato di apertura della call resta indipendente dalla suitability e dall'idoneità dell'associazione.
