@@ -45,13 +45,14 @@
         <button id="reset" class="clear-button" type="button">Azzera filtri</button>
       </div>
       <div class="quick-tabs" role="group" aria-label="Filtra per stato della candidatura">
-        <button class="quick-tab active" type="button" data-value="aperto" aria-pressed="true">Aperte</button>
+        <button class="quick-tab" type="button" data-value="aperto" aria-pressed="false">Aperte</button>
         <button class="quick-tab" type="button" data-value="in arrivo" aria-pressed="false">In arrivo</button>
         <button class="quick-tab" type="button" data-value="non verificato" aria-pressed="false">Da approfondire</button>
         <button class="quick-tab" type="button" data-value="chiuso" aria-pressed="false">Scadute</button>
-        <button class="quick-tab" type="button" data-value="" aria-pressed="false">Tutti</button>
+        <button class="quick-tab" type="button" data-value="altro contenuto" aria-pressed="false">Altri contenuti</button>
+        <button class="quick-tab active" type="button" data-value="" aria-pressed="true">Tutti</button>
       </div>
-      <input id="status" type="hidden" value="aperto">
+      <input id="status" type="hidden" value="">
       <div class="filter-panel">
         <label class="search-label"><span>Cerca un'opportunità</span><span class="input-wrap"><span aria-hidden="true" class="search-icon">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Titolo, ente, tema…"></span></label>
         <label><span>Ente finanziatore</span><select id="issuer"><option value="">Tutti gli enti</option></select></label>
@@ -59,7 +60,7 @@
         <label><span>Affinità minima</span><select id="level"><option value="0">Tutte</option><option value="60">60/100</option><option value="80">80/100</option></select></label>
       </div>
       <div class="results-toolbar">
-        <div><strong id="count" aria-live="polite">Caricamento…</strong><span class="toolbar-helper">Bandi in ordine di utilità per Opera+</span></div>
+        <div><strong id="count" aria-live="polite">Caricamento…</strong><span class="toolbar-helper">Candidature e contenuti, con stato distinto</span></div>
         <div class="sort-group">
           <span>Ordina per</span>
           <div class="sort-buttons" role="group" aria-label="Ordina risultati">
