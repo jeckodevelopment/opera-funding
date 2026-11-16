@@ -17,6 +17,25 @@ PAGE="""<html><main>
 URL="https://bandi.regione.piemonte.it/contributi-finanziamenti/manifestazioni"
 
 class StructuredTests(unittest.TestCase):
+    def test_csvnet_explicit_italian_deadline(self):
+        html="<main><h1>Bando lettura</h1><div>SCADENZA</div><div>13 novembre 2026 alle ore 13:00</div><div>Pubblicato il 25 ottobre 2026</div></main>"
+        facts=structured_facts(html,"https://infobandi.csvnet.it/bando-educare-alla-lettura-2026/")
+        self.assertEqual(facts["deadline"],"2026-11-13")
+        self.assertFalse(facts["source_open_confirmed"])
+    def test_alcotra_explicit_open_and_close_fields(self):
+        html="<main><h1>Quarto bando progetti maturi</h1><p>Data di apertura 01/07/2025</p><p>Data di chiusura 31/10/2025</p></main>"
+        facts=structured_facts(html,"https://interreg-alcotra.eu/it/quarto-bando-progetti-singoli-finestra-1-progetti-maturi")
+        self.assertEqual(facts["opening_date"],"2025-07-01")
+        self.assertEqual(facts["deadline"],"2025-10-31")
+    def test_torino_application_range_textual_dates(self):
+        html="<main><p>Dal 15 ottobre 2026 al 2 novembre 2026 entro le ore 18:00 è possibile presentare la richiesta.</p></main>"
+        facts=structured_facts(html,"https://bandi.comune.torino.it/avviso/3deg-avviso-pubblico-concessione-contributi-ordinari-altri-benefici-economici")
+        self.assertEqual(facts["deadline"],"2026-11-02")
+        self.assertEqual(facts["opening_date"],"2026-10-15")
+    def test_not_generic_project_period(self):
+        html="<main><p>Il progetto si svolge dal 15 ottobre 2026 al 2 novembre 2026</p></main>"
+        facts=structured_facts(html,"https://bandi.comune.torino.it/avviso/evento")
+        self.assertIsNone(facts["deadline"])
     def test_official_description_for_card(self):
         html='<html><head><meta name="description" content="Sostegno a progetti culturali che coinvolgono giovani e comunità locali del Piemonte."></head><body><main>Stato: Aperto</main></body></html>'
         facts=structured_facts(html,"https://bandi.regione.piemonte.it/contributi-finanziamenti/progetti")
