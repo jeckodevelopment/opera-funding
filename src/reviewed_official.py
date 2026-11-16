@@ -13,7 +13,8 @@ def apply_reviewed_facts(rows, facts, now):
             if row.get("source_id")!=fact["source_id"]:
                 continue
             url=urlparse(row.get("url") or "")
-            if url.scheme!="https" or not url.path.rstrip("/").lower()==fact["match_path"].rstrip("/").lower():
+            if (url.scheme!="https" or url.hostname!=fact["match_host"] or url.port not in (None,443)
+                    or url.path.rstrip("/").lower()!=fact["match_path"].rstrip("/").lower()):
                 continue
             evidence=urlparse(fact["official_url"])
             if evidence.scheme!="https" or not evidence.hostname:
