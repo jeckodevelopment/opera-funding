@@ -72,6 +72,11 @@ TORINO_PROPOSAL_CLOSING=re.compile(
     r"(?:ore\s+\d{1,2}(?:[.:]\d{2})?\s+)?(?:del\s+)?"+ITALIAN_DATE
 )
 TORINO_TEXTUAL_DEADLINE=re.compile(r"(?i)\b(?:scadenza(?:\s+(?:del\s+bando|delle\s+domande))?|termine\s+(?:di\s+)?presentazione\s+(?:(?:delle|delle\s+)?\s*)?(?:domande|candidature|proposte\s+progettuali))\s*[:–-]?\s*(?:entro\s+(?:il\s+)?)?"+ITALIAN_DATE)
+TORINO_PUBLISHED_APPLICATION_PERIOD=re.compile(
+    r"(?i)\\bnel\\s+periodo\\s+compreso\\s+tra\\s+il\\s+"+ITALIAN_DATE+
+    r"\\s+e\\s+il\\s+"+ITALIAN_DATE+
+    r"(?=.{0,180}?\\b(?:presentare\\s+(?:istanza|domanda|richiesta)|presentazione\\s+(?:di\\s+)?(?:istanze|domande|richieste))\\b)"
+)
 TORINO_NUMERIC_END=re.compile(r"(?i)\b(?:richiest[ae]|domand[ae]|candidatur[ae]|propost[ae]).{0,100}?\b(?:entro|al)\s*(?:il\s+)?"+DATE_TOKEN)
 def _italian_date(match,start=1):
     if not match:return None
@@ -143,6 +148,14 @@ def structured_facts(html,url):
         if match and re.search(r"(?i)(presentare\s+la\s+richiesta|presentare\s+(?:le\s+)?domande|presentazione\s+(?:di\s+)?progetti)",txt[max(0,match.start()-70):match.end()+100]):
             deadline=_italian_date(match,4)
             if not opening:opening=_italian_date(match,1)
+        if not deadline:
+            period=TORINO_PUBLISHED_APPLICATION_PERIOD.search(txt)
+            if period:
+                candidate_start=_italian_date(period,1)
+                candidate_end=_italian_date(period,4)
+                if candidate_start and candidate_end and candidate_start<=candidate_end:
+                    deadline=candidate_end
+                    if not opening:opening=candidate_start
         if not deadline:deadline=_italian_date(TORINO_TEXTUAL_DEADLINE.search(txt))
         if not deadline:deadline=_italian_date(TORINO_PROPOSAL_CLOSING.search(txt))
         if not deadline:deadline=_date(TORINO_NUMERIC_END.search(txt))
