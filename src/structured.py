@@ -7,7 +7,7 @@ from classify import parse_deadline
 DATE_TOKEN = r"(?:[A-Za-zÀ-ÿ]{3,12},?\s*)?(\d{1,2})[./-](\d{1,2})[./-](20\d{2})"
 DEADLINE = re.compile(r"(?i)(?:^|\b)(?:data scadenza|scadenza|termine (?:per |di )?(?:la )?(?:presentazione|candidatura|domande)|deadline|apply by)\s*[:–-]?\s*"+DATE_TOKEN)
 OPENING = re.compile(r"(?i)(?:domande dal|candidature dal|apertura (?:del |delle )?(?:bando|domande|candidature)|presentazione domande dal)\s*[:–-]?\s*"+DATE_TOKEN)
-STATUS = re.compile(r"(?i)\bstato\s*[:–-]?\s*(in corso|aperto|aperta|attivo|attiva|chiuso|chiusa|scaduto|scaduta)\b")
+STATUS = re.compile(r"(?i)\b(?:stato|opportunity status|status)\s*[:–-]?\s*(in corso|aperto|aperta|attivo|attiva|open|chiuso|chiusa|scaduto|scaduta|closed)\b")
 # Turin detail pages encode an active application window with dal/al dates.
 TURIN_WINDOW=re.compile(r"(?i)\battivo\b\s*dal\s*[:–-]?\s*"+DATE_TOKEN+
                          r"\s*al\s*[:–-]?\s*"+DATE_TOKEN)
