@@ -4,6 +4,7 @@ from urllib.parse import urlparse, urljoin, urldefrag
 from datetime import date
 from bs4 import BeautifulSoup
 from classify import parse_deadline
+from pdf_dates import pdf_deadline_from_documents
 
 DEADLINE_PATTERN = re.compile(r"(?i)(?:scadenza|termine (?:di |per (?:la )?)?(?:presentazione|candidatur|domand)|deadline|apply by)\s*[:–-]?\s*(\d{1,2}[./-]\d{1,2}[./-]20\d{2})")
 EUR_PATTERN = re.compile(r"(?i)(?:contributo massimo|finanziamento massimo|importo massimo|dotazione finanziaria|budget complessivo)\s*[:–-]?\s*(?:€|euro|eur)?\s*([\d.]+(?:,\d{2})?)\s*(?:€|euro|eur)?")
@@ -72,10 +73,18 @@ def enrich(item, source, session, eligible_to_fetch):
                 return item
         response._content = bytes(content)
         parsed = extract(response.text, response.url)
+        if not parsed["deadline"] and parsed["documents"] and not item.get("deadline"):
+            deadline, document_url = pdf_deadline_from_documents(parsed["documents"], source["url"], session, eligible_to_fetch)
+            if deadline:
+                parsed["deadline"] = deadline
+                parsed["deadline_source"] = document_url
         for key in ("amount","beneficiaries_excerpt","documents","detail_checked","detail_basis"):
+
             item[key] = parsed[key]
         if parsed["deadline"] and not item.get("deadline"):
             item["deadline"] = parsed["deadline"]
+            item["deadline_source"] = parsed.get("deadline_source") or response.url
+            item["deadline_verified_at"] = __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(timespec="seconds")
             if parsed["deadline"] < date.today().isoformat():
                 item["status"] = "chiuso"
                 item["status_basis"] = "scadenza esplicita della scheda trascorsa"
