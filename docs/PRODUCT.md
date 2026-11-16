@@ -42,3 +42,11 @@ Individuare e mostrare opportunità di finanziamento per Opera+ anche quando ric
 - Estrazione di un breve **estratto dei beneficiari** esclusivamente quando una scheda HTML ha un'etichetta esplicita. Non equivale a verifica dell'ammissibilità.
 - Il logo ufficiale è caricato dall'asset pubblico https://opera.plus/assets/operaplus-logo.png indicato dall'associazione, senza duplicare il file nel repository; serve accessibilità del dominio esterno.
 - La dashboard conserva bandi non verificati, chiusi e con requisiti mancanti; il link diretto non viene mostrato se la fonte risponde esplicitamente 404/410.
+
+## Dashboard UX compatta (novembre 2026)
+- Intestazione ridotta: logo grafico Opera+ contenuto rigidamente in 104×38 px su desktop e 80×30 px su smartphone. Titolo semplice e descrizione breve, senza spazio verticale eccessivo.
+- Riepilogo compatto, filtri su due righe (una su desktop ampio), ricerca sempre visibile, pulsante per ripristinarli, ordinamento per priorità/pertinenza, scadenza o rilevazione.
+- Per facilitare l'uso quotidiano, la vista iniziale mostra le opportunità non segnalate come chiuse: gli avvisi chiusi restano disponibili tramite filtro “Tutti, anche chiusi”. **Nessuna esclusione per requisiti di ammissibilità**.
+- Solo 20 risultati inizialmente, con “Mostra altri risultati”; scheda riassuntiva con titolo, ente, stato, scadenza, tipologia e punteggio. I dettagli secondari, collegamenti documentali, beneficiari ed evidenze sono espandibili.
+- Gli stati con data trascorsa sono calcolati anche nel browser, per evitare badge “aperto” non aggiornati prima della successiva scansione.
+- Compatibilità con schema dati esistente e collegamenti esterni con protocollo HTTPS.
