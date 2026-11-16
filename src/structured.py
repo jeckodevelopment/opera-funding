@@ -17,7 +17,7 @@ MONTHS={"january":1,"february":2,"march":3,"april":4,"may":5,"june":6,"july":7,"
 EN_DATE=r"(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(20\d{2})"
 EN_DEADLINE=re.compile(r"(?i)\bdeadline\s*[:–-]?\s*"+EN_DATE)
 EN_OPENING=re.compile(r"(?i)\bopening date\s*[:–-]?\s*"+EN_DATE)
-EN_VERIFIED_CALL_OPEN_UNTIL=re.compile(r"(?i)\\bthe\\s+call\\s+is\\s+open\\s+until\\s+"+EN_DATE)
+EN_VERIFIED_CALL_OPEN_UNTIL=re.compile(r"(?i)\bthe\s+call\s+is\s+open\s+until\s+"+EN_DATE)
 def _english_date(match):
     if not match:return None
     try:return date(int(match.group(3)),MONTHS[match.group(2).lower()],int(match.group(1))).isoformat()
