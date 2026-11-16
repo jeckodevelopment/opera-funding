@@ -64,6 +64,30 @@ class StructuredTests(unittest.TestCase):
         result=structured_facts(html,"https://bandi.comune.torino.it/avviso/avviso-pubblico-torino-youth-climate-action-fund-lassegnazione-contributi-sostegno-della")
         self.assertEqual(result["deadline"],"2026-10-08")
         self.assertFalse(result["source_open_confirmed"])
+    def test_torino_explicit_submission_period_is_deadline(self):
+        html=("<main><p>Si pubblica l'avviso, nel periodo compreso tra il "
+              "10 settembre 2026 e il 30 settembre 2026, per informare i soggetti "
+              "interessati circa la possibilità di presentare istanza di contributo "
+              "per progetti specifici.</p></main>")
+        url="https://bandi.comune.torino.it/avviso/circ-4-secondo-avviso-concessione-contributi-ordinari-2026"
+        facts=structured_facts(html,url)
+        self.assertEqual(facts["opening_date"],"2026-09-10")
+        self.assertEqual(facts["deadline"],"2026-09-30")
+        self.assertEqual(facts["deadline_source"],url)
+        self.assertFalse(facts["source_open_confirmed"])
+
+    def test_torino_generic_period_cannot_create_deadline(self):
+        url="https://bandi.comune.torino.it/avviso/manifestazione"
+        html="<main>Festival nel periodo compreso tra il 10 settembre 2026 e il 30 settembre 2026, con spettacoli nel centro cittadino.</main>"
+        facts=structured_facts(html,url)
+        self.assertIsNone(facts["deadline"])
+        self.assertIsNone(facts["opening_date"])
+
+    def test_torino_submission_period_not_used_on_other_sites(self):
+        html="<main>nel periodo compreso tra il 10 settembre 2026 e il 30 settembre 2026 per presentare istanza.</main>"
+        facts=structured_facts(html,"https://other.example/notizia")
+        self.assertIsNone(facts["deadline"])
+
     def test_torino_explicit_deadline_written_month(self):
         html="<main><h1>Contributi ordinari Circ. 4</h1><p>Scadenza delle domande: 26 novembre 2026 alle ore 12.00.</p><p>Pubblicato il 10 ottobre 2026.</p></main>"
         facts=structured_facts(html,"https://bandi.comune.torino.it/avviso/circ-4-secondo-avviso-concessione-contributi-ordinari-2026")
