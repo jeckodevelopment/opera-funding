@@ -11,6 +11,39 @@ from fit import explain
 from crt_windows import extract_ordinarie_windows
 from detail import extract
 
+def official_alternative_facts(item, source, session, eligible):
+    """Try explicitly curated same-host official page variants only when needed."""
+    original=urlparse(item["url"])
+    for alternative in item.get("official_alternative_urls", []):
+        target=urlparse(alternative)
+        if (target.scheme!="https" or target.hostname!=original.hostname
+                or target.port not in (None,443) or target.username or target.password
+                or not eligible(alternative,session)):
+            continue
+        response=None
+        try:
+            response=session.get(alternative,timeout=16,stream=True,allow_redirects=True)
+            response.raise_for_status()
+            final=urlparse(response.url)
+            if (final.scheme!="https" or final.hostname!=original.hostname
+                    or final.port not in (None,443)
+                    or "text/html" not in response.headers.get("Content-Type","")):
+                continue
+            content=bytearray()
+            for chunk in response.iter_content(32768):
+                content.extend(chunk)
+                if len(content)>1_200_000:break
+            if len(content)>1_200_000:continue
+            response._content=bytes(content)
+            facts=structured_facts(response.text,response.url)
+            if facts.get("deadline") and facts.get("source_open_confirmed"):
+                return facts
+        except Exception:
+            continue
+        finally:
+            if response is not None:response.close()
+    return None
+
 def check_priority(item, source, session, eligible, now, previous=None):
     url=item["url"]
     if urlparse(url).hostname!=urlparse(source["url"]).hostname or not eligible(url,session):
@@ -27,6 +60,10 @@ def check_priority(item, source, session, eligible, now, previous=None):
             if len(content)>1200000:return None
         response._content=bytes(content)
         facts=structured_facts(response.text,response.url)
+        if not (facts.get("deadline") and facts.get("source_open_confirmed")):
+            verified_alternative=official_alternative_facts(item,source,session,eligible)
+            if verified_alternative is not None:
+                facts=verified_alternative
         details=extract(response.text,response.url)
         period_windows=extract_ordinarie_windows(response.text,response.url)
         base=classify(item["title"],"")
