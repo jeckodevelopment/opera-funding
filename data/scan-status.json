@@ -1,65 +1,65 @@
 {
-  "checked_at": "2026-11-16T18:50:43+00:00",
+  "checked_at": "2026-11-16T18:57:28+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     },
     {
       "source_id": "crt",
       "ok": true,
       "discovered": 37,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     },
     {
       "source_id": "piemonte",
       "ok": true,
       "discovered": 14,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     },
     {
       "source_id": "torino",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     },
     {
       "source_id": "culturatorino",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     },
     {
       "source_id": "volto",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     },
     {
       "source_id": "mic",
       "ok": true,
       "discovered": 20,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     },
     {
       "source_id": "eucreative",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     },
     {
       "source_id": "erasmus",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     },
     {
       "source_id": "eufunding",
       "ok": true,
       "discovered": 0,
-      "checked_at": "2026-11-16T18:50:43+00:00"
+      "checked_at": "2026-11-16T18:57:28+00:00"
     }
   ]
 }
