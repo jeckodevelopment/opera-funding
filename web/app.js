@@ -152,6 +152,123 @@ function evidenceSection(o){
  }
  return section;
 }
+// Evaluation handout is built with text nodes and HTTPS-only links to avoid
+// interpreting text supplied by external funding sites as HTML.
+function evaluationData(o,issued=new Date()){
+ const review=reviewSignals(o),links=[];
+ const seen=new Set();
+ const candidates=[
+  ["Scheda del bando",o.link_status==="non disponibile"?o.source_url:(o.resolved_url||o.url)],
+  ["Fonte della scadenza",o.deadline_source],
+  ["Fonte dei beneficiari",o.beneficiaries_source],
+  ["Fonte dell'importo",o.amount_source],
+  ["Fonte della procedura a sportello",o.rolling_guidance_source],
+  ...(Array.isArray(o.documents)?o.documents.map(d=>[d.label||"Documento",d.url]):[])
+ ];
+ for(const [label,url] of candidates){
+  const href=safeUrl(url);
+  if(!href||seen.has(href))continue;
+  seen.add(href);links.push({label:String(label),href});
+ }
+ return {
+  title:String(o.title||"Opportunità senza titolo"),
+  issuer:String(o.issuer||"Ente non indicato"),
+  status:statusLabel(state(o)),
+  date:issued.toLocaleDateString("it-IT",{year:"numeric",month:"long",day:"numeric"}),
+  deadline:validDate(o.deadline)?dateLabel(o.deadline).replace("Scade il ",""):"Non indicata",
+  opening:validDate(o.opening_date)?dateLabel(o.opening_date).replace("Scade il ",""):"Non indicata",
+  amount:String(o.amount||"Non indicato"),
+  amountKind:String(o.amount_kind||"Da verificare"),
+  type:String(o.application_type||o.opportunity_type||"Non indicata"),
+  fit:score(o)+"/100",
+  confidence:review.confidence||"Non documentata",
+  basis:String(o.score_explanation_basis||"Titolo e informazioni preliminari"),
+  reasoning:review.explanation||"Motivazione non disponibile",
+  eligibility:review.eligibility,
+  beneficiaries:String(o.beneficiaries_excerpt||"Non documentati"),
+  rolling:String(o.rolling_guidance||""),
+  summary:opportunitySummary(o),
+  checks:review.checks,
+  missing:review.missing,
+  ideas:Array.isArray(o.project_ideas)?o.project_ideas.slice(0,4).filter(x=>typeof x==="string"):[],
+  links
+ };
+}
+function appendReportList(parent,title,values){
+ if(!values.length)return;
+ const section=el("section",undefined,"print-section");
+ section.append(el("h2",title));
+ const ul=el("ul");
+ for(const value of values)ul.append(el("li",value));
+ section.append(ul);parent.append(section);
+}
+function addReportFact(parent,label,value){
+ const item=el("div",undefined,"print-fact");
+ item.append(el("dt",label),el("dd",value));
+ parent.append(item);
+}
+function prepareEvaluationSheet(o){
+ const d=evaluationData(o),sheet=$("print-sheet");
+ sheet.replaceChildren();
+ const heading=el("header",undefined,"print-head");
+ const logo=el("img");logo.src="assets/operaplus-logo.png";logo.alt="Opera+";logo.width=133;
+ heading.append(logo,el("p","FUNDING · SCHEDA DI VALUTAZIONE","print-kicker"));
+ sheet.append(heading);
+ sheet.append(el("h1",d.title));
+ const meta=el("p",d.issuer+" · "+d.status+" · Scheda generata il "+d.date,"print-meta");
+ sheet.append(meta);
+ const facts=el("dl",undefined,"print-facts");
+ for(const [label,value] of [
+  ["Scadenza",d.deadline],["Apertura candidature",d.opening],
+  ["Contributo / dotazione",d.amount],["Natura dell'importo",d.amountKind],
+  ["Tipologia",d.type],["Adeguatezza tematica",d.fit],
+  ["Ammissibilità",d.eligibility],["Affidabilità analisi",d.confidence]
+ ])addReportFact(facts,label,value);
+ sheet.append(facts);
+ const summary=el("section",undefined,"print-section");
+ summary.append(el("h2","Sintesi dell'opportunità"),el("p",d.summary));
+ sheet.append(summary);
+ const assessment=el("section",undefined,"print-section");
+ assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.reasoning),
+  el("p","Elementi utilizzati: "+d.basis,"print-muted"));
+ sheet.append(assessment);
+ const beneficiaries=el("section",undefined,"print-section");
+ beneficiaries.append(el("h2","Destinatari / beneficiari"),el("p",d.beneficiaries));
+ sheet.append(beneficiaries);
+ if(d.rolling){
+  const rolling=el("section",undefined,"print-section");
+  rolling.append(el("h2","Possibile procedura a sportello"),el("p",d.rolling));
+  sheet.append(rolling);
+ }
+ appendReportList(sheet,"Verifiche prima della decisione",d.checks);
+ appendReportList(sheet,"Informazioni mancanti o da approfondire",d.missing);
+ appendReportList(sheet,"Spunti progettuali",d.ideas);
+ if(d.links.length){
+  const sources=el("section",undefined,"print-section print-sources");
+  sources.append(el("h2","Fonti e documentazione"));
+  const ol=el("ol");
+  for(const link of d.links){
+   const li=el("li");
+   li.append(el("span",link.label+" — "));
+   const a=el("a",link.href);a.href=link.href;a.rel="noopener noreferrer";
+   li.append(a);ol.append(li);
+  }
+  sources.append(ol);sheet.append(sources);
+ }
+ const disclaimer=el("footer",undefined,"print-disclaimer");
+ disclaimer.append(el("strong","Valutazione preliminare, non decisione di candidatura."),
+  el("p","Le informazioni provengono dal catalogo Opera+ Funding e possono essere incomplete o superate. L'adeguatezza tematica non conferma ammissibilità né probabilità di finanziamento. Verificare sempre i documenti ufficiali prima di candidarsi."));
+ sheet.append(disclaimer);
+ return sheet;
+}
+function printEvaluation(o){
+ const sheet=prepareEvaluationSheet(o);
+ // Keep print content separate from the interactive dialog and dashboard.
+ if($("opportunity-dialog").open)$("opportunity-dialog").close();
+ sheet.hidden=false;
+ window.print();
+}
+
 function openDetails(o){
  const dialog=$("opportunity-dialog"),content=$("dialog-content");
  content.replaceChildren();
@@ -217,6 +334,13 @@ function openDetails(o){
   if(!used.has(d.url)){addLink(links,(d.label||"Documento")+" ↗",d.url);used.add(d.url);}
  }
  content.append(links);
+ const exportBar=el("div",undefined,"dialog-export");
+ const pdfButton=el("button","Esporta scheda PDF","export-pdf-button");
+ pdfButton.type="button";
+ pdfButton.title="Apri la stampa: seleziona Salva come PDF";
+ pdfButton.addEventListener("click",()=>printEvaluation(o));
+ exportBar.append(pdfButton,el("span","Si apre la stampa del browser: scegli Salva come PDF.","export-hint"));
+ content.append(exportBar);
  dialog.showModal();
 }
 // Subtle recent-change badges only when the scan recorded a material change.
@@ -342,4 +466,5 @@ $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
 $("refresh").addEventListener("click",init);
 $("dialog-close").addEventListener("click",()=>$("opportunity-dialog").close());
 $("opportunity-dialog").addEventListener("click",event=>{if(event.target===$("opportunity-dialog"))$("opportunity-dialog").close();});
+window.addEventListener("afterprint",()=>{$("print-sheet").hidden=true;});
 init();
