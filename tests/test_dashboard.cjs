@@ -132,6 +132,10 @@ assert.match(src,/function renderOpportunity/);
 assert.match(src,/window\.history\.pushState/);
 assert.match(src,/popstate/);
 assert.match(src,/Copia link della scheda/);
+assert.match(src,/detailLink\.href=opportunityUrl\(o\.id\)/);
+assert.doesNotMatch(src,/detailLink\.addEventListener\("click"/);
+assert.match(css,/\.item-actions a\.details-toggle\{display:inline-flex/);
+
 assert.match(src,/Possibile opportunità a sportello/);
 assert.match(src,/Natura dell’importo/);
 assert.match(css,/\.rolling-guidance/);

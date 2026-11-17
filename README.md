@@ -53,3 +53,7 @@ La scelta di un parametro query consente il **deep linking su hosting statico**,
 ### Opportunità da seguire — primo livello personale
 
 Il pulsante **Segui opportunità** è disponibile sulle schede del catalogo e nelle pagine autonome, con l'indicazione del salvataggio. La nuova scheda **Da seguire** mostra soltanto le opportunità contrassegnate; gli altri filtri rimangono disponibili. Il salvataggio di soli ID è effettuato in `localStorage` del browser (`opera-funding-watchlist-v1`); non vengono raccolti nomi, email o note, né inviati dati a terzi. **Non è una lista condivisa**: cambia fra dispositivi o browser, può essere cancellata dalla pulizia dei dati del sito e potrebbe non sopravvivere alla modalità privata. Per una vera gestione di volontari, ruoli, stati e note serviranno autenticazione e backend con dati riservati; NON mettere questi dati nel catalogo JSON pubblico. Il badge e il filtro non eliminano opportunità, non alterano punteggi, stato, scansioni o notifiche email.
+
+### Collegamenti alle opportunità
+
+Il comando **Esamina opportunità** usa un normale link HTML verso l'URL condivisibile della scheda, con aspetto grafico di pulsante coerente con **Segui opportunità**. La navigazione nativa del browser (anche da tastiera, in nuova scheda e dopo un ricaricamento) evita la dipendenza da intercettazioni JavaScript del click. La dashboard mantiene il catalogo completo e non cambia il tracciamento delle opportunità.
