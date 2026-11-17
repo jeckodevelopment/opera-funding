@@ -50,6 +50,7 @@
         <button class="quick-tab" type="button" data-value="non verificato" aria-pressed="false">Da approfondire</button>
         <button class="quick-tab" type="button" data-value="chiuso" aria-pressed="false">Scadute</button>
         <button class="quick-tab" type="button" data-value="altro contenuto" aria-pressed="false">Altri contenuti</button>
+        <button class="quick-tab" type="button" data-value="followed" aria-pressed="false">Da seguire</button>
         <button class="quick-tab" type="button" data-value="" aria-pressed="false">Tutti</button>
       </div>
       <input id="status" type="hidden" value="aperto">
@@ -59,6 +60,7 @@
         <label><span>Tipologia</span><select id="kind"><option value="">Tutte le tipologie</option><option value="funding">Finanziamenti e call</option><option value="finanziamento potenziale">Finanziamenti</option><option value="call progettuale da verificare">Call progettuali</option><option value="altro avviso">Altri avvisi</option></select></label>
         <label><span>Affinità minima</span><select id="level"><option value="0">Tutte</option><option value="60">60/100</option><option value="80">80/100</option></select></label>
       </div>
+      <p class="followed-note" id="followed-note" hidden>Le opportunità da seguire sono salvate soltanto su questo browser. Non sono ancora condivise fra volontari.</p>
       <div class="results-toolbar">
         <div><strong id="count" aria-live="polite">Caricamento…</strong><span class="toolbar-helper">Candidature e contenuti, con stato distinto</span></div>
         <div class="sort-group">

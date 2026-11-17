@@ -3,6 +3,36 @@ const PAGE_SIZE = 12;
 const DATA_ORIGIN = "https://raw.githubusercontent.com/jeckodevelopment/opera-funding/main/data/";
 const FALLBACK_ORIGIN = "data/";
 let all=[], visibleCount=PAGE_SIZE;
+const WATCHLIST_KEY="opera-funding-watchlist-v1";
+function readWatchlist(){
+ try{
+  if(typeof localStorage==="undefined")return new Set();
+  const raw=JSON.parse(localStorage.getItem(WATCHLIST_KEY)||"[]");
+  return new Set(Array.isArray(raw)?raw.filter(x=>typeof x==="string"&&x.length<2500):[]);
+ }catch{return new Set();}
+}
+let followed=readWatchlist();
+function isFollowed(o){return followed.has(o.id);}
+function toggleFollowed(o){
+ if(isFollowed(o))followed.delete(o.id);else followed.add(o.id);
+ try{if(typeof localStorage!=="undefined")localStorage.setItem(WATCHLIST_KEY,JSON.stringify([...followed]));}
+ catch{ /* Browser storage may be unavailable; current session remains usable. */ }
+ updateStateCounts();
+ render();
+}
+function followButton(o){
+ const button=el("button",isFollowed(o)?"✓ Da seguire":"Segui opportunità","follow-button"+(isFollowed(o)?" selected":""));
+ button.type="button";
+ button.setAttribute("aria-pressed",String(isFollowed(o)));
+ button.addEventListener("click",()=>{
+  toggleFollowed(o);
+  button.textContent=isFollowed(o)?"✓ Da seguire":"Segui opportunità";
+  button.classList.toggle("selected",isFollowed(o));
+  button.setAttribute("aria-pressed",String(isFollowed(o)));
+ });
+ return button;
+}
+
 const el=(tag,text,className)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;};
 const safeUrl=value=>{try{const u=new URL(value);return u.protocol==="https:"?u.href:null;}catch{return null;}};
 function addLink(parent,label,url,className){
@@ -59,7 +89,8 @@ function filteredRows(){
  const term=$("search").value.trim().toLocaleLowerCase("it"),stateFilter=$("status").value,issuer=$("issuer").value,kind=$("kind").value,minimum=Number($("level").value);
  return sortRows(all.filter(o=>{
   const actual=state(o);
-  if(stateFilter&&actual!==stateFilter)return false;
+  if(stateFilter==="followed"&&!isFollowed(o))return false;
+  if(stateFilter&&stateFilter!=="followed"&&actual!==stateFilter)return false;
   if(kind==="funding"&&!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return false;
   if(kind&&kind!=="funding"&&kind!==o.opportunity_type)return false;
   if(issuer&&issuer!==o.issuer)return false;
@@ -390,7 +421,7 @@ function renderOpportunity(o){
  const share=el("button","Copia link della scheda","share-link-button");
  share.type="button";
  share.addEventListener("click",()=>copyOpportunityUrl(o,share));
- shareBar.append(share,el("span","La pagina ha un URL condivisibile e si apre anche direttamente.","export-hint"));
+ shareBar.append(share,followButton(o),el("span","Il salvataggio «Da seguire» è personale su questo browser.","export-hint"));
  content.append(shareBar);
  content.append(exportBar);
 }
@@ -428,7 +459,7 @@ function makeCard(o){
   navigateOpportunity(o.id);
   window.scrollTo(0,0);
  });
- actions.append(detailLink);
+ actions.append(detailLink,followButton(o));
  if(o.link_status==="non disponibile")addLink(actions,"Sito dell’ente ↗",o.source_url,"source-link");
  else addLink(actions,"Fonte ufficiale ↗",o.resolved_url||o.url,"source-link");
  left.append(actions);
@@ -442,15 +473,16 @@ function updateStateCounts(){
   if(!key)continue;
   const title=tab.dataset.label||tab.textContent.replace(/\\s*\\(\\d+\\)$/,"").trim();
   tab.dataset.label=title;
-  const number=all.filter(o=>state(o)===key).length;
+  const number=all.filter(o=>key==="followed"?isFollowed(o):state(o)===key).length;
   tab.textContent=title+" ("+number+")";
  }
 }
 function render(){
  const items=filteredRows(),batch=items.slice(0,visibleCount);
+ $("followed-note").hidden=$("status").value!=="followed";
  $("items").replaceChildren(...batch.map(makeCard));
  if(!items.length){
-  const empty=$("status").value==="aperto"?"Nessuna opportunità aperta confermata con i filtri selezionati. Esplora le altre opportunità.":"Nessuna opportunità corrisponde ai filtri selezionati.";
+  const empty=$("status").value==="followed"?"Non hai ancora salvato opportunità da seguire su questo browser.":$("status").value==="aperto"?"Nessuna opportunità aperta confermata con i filtri selezionati. Esplora le altre opportunità.":"Nessuna opportunità corrisponde ai filtri selezionati.";
   $("items").append(el("p",empty,"empty"));
  }
  $("count").textContent=items.length+" opportunità"+(items.length>PAGE_SIZE?" · "+batch.length+" visualizzate":"");

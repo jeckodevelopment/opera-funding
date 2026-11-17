@@ -126,3 +126,11 @@ body.detail-view .source-health{display:none}
  .opportunity-page-toolbar{padding-bottom:11px;margin-bottom:19px}
  .opportunity-page .dialog-grid{grid-template-columns:1fr}
 }
+
+/* Personal watchlist controls: subdued and secondary to official information. */
+.follow-button{border:1px solid #d7d3ca;border-radius:8px;background:#fff;color:#596368;
+ padding:9px 12px;font-size:11px;font-weight:750}
+.follow-button:hover{background:#f9f7f1}
+.follow-button.selected{border-color:#bfac84;background:#fbf7ed;color:#805c28}
+.followed-note{font-size:11px;color:#667176;margin:0 0 10px;padding:9px 12px;
+ border-left:3px solid #c9b186;background:#f9f7f2}
