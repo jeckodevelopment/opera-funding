@@ -98,6 +98,6 @@ footer{border-top:1px solid var(--line);margin:30px 0 0;padding:20px 0 30px;disp
  #print-sheet .print-sources li{break-inside:avoid}
  #print-sheet a{color:#365b75!important;text-decoration:underline;overflow-wrap:anywhere;word-break:break-word}
  #print-sheet .print-muted{color:#5b6266;font-size:8.5pt}
- #print-sheet .print-disclaimer{border-top:1px solid #d6d1c5;margin-top:16pt;padding-top:9pt;color:#545d60;font-size:8.5pt;break-inside:avoid-page}
+ #print-sheet .print-disclaimer{display:block!important;border-top:1px solid #d6d1c5;margin-top:16pt;padding-top:9pt;color:#545d60;font-size:8.5pt;break-inside:avoid-page}
  #print-sheet .print-disclaimer p{margin:3pt 0 0}
 }
