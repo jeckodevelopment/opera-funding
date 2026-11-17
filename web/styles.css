@@ -134,3 +134,10 @@ body.detail-view .source-health{display:none}
 .follow-button.selected{border-color:#bfac84;background:#fbf7ed;color:#805c28}
 .followed-note{font-size:11px;color:#667176;margin:0 0 10px;padding:9px 12px;
  border-left:3px solid #c9b186;background:#f9f7f2}
+
+/* Match the follow action: actual links with button appearance and native navigation. */
+.item-actions a.details-toggle{display:inline-flex;align-items:center;justify-content:center;
+ border:1px solid #d7d3ca;border-radius:8px;background:#fff;color:#596368;
+ padding:9px 12px;font-size:11px;font-weight:750;text-decoration:none;line-height:normal}
+.item-actions a.details-toggle:hover{background:#f9f7f1;text-decoration:none}
+.item-actions a.details-toggle:focus-visible{outline:3px solid #d2a34f;outline-offset:2px}
