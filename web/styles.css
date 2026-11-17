@@ -63,3 +63,7 @@ footer{border-top:1px solid var(--line);margin:30px 0 0;padding:20px 0 30px;disp
 /* Guidance about a possible rolling call is advisory, never an OPEN badge. */
 .rolling-guidance{border-left:3px solid #b98936;background:#fbf7ed;border-radius:0 9px 9px 0;padding:13px 15px}
 .rolling-guidance h3{font-size:16px;margin-bottom:5px}
+
+/* Discreet discovery change labels, intentionally less prominent than OPEN. */
+.chip.change{font-size:10px;font-weight:750;letter-spacing:.025em;border:1px solid #d9d1c2;background:#fbf7ef;color:#7b6035}
+.chip.change.updated{background:#f1f4f4;border-color:#dce4e2;color:#54736e}

@@ -159,6 +159,8 @@ function openDetails(o){
  content.lastChild.id="dialog-title";
  const line=el("div",undefined,"dialog-meta");
  line.append(el("span",statusLabel(state(o)),"chip status "+(state(o)==="aperto"?"open":state(o)==="chiuso"?"closed":state(o)==="in arrivo"?"upcoming":"unknown")));
+ const change=changeBadge(o);
+ if(change)line.append(el("span",change.label,"chip change "+change.kind));
  line.append(el("span",o.issuer||"Ente non indicato"));
  content.append(line);
  content.append(el("p",opportunitySummary(o),"dialog-summary"));
@@ -217,11 +219,25 @@ function openDetails(o){
  content.append(links);
  dialog.showModal();
 }
+// Subtle recent-change badges only when the scan recorded a material change.
+// Never infer novelty from first_seen on the existing catalog.
+function changeBadge(o,now=new Date()){
+ const labels=[["catalog_new_at","NUOVA","new"],["catalog_updated_at","AGGIORNATA","updated"]];
+ for(const [key,label,kind] of labels){
+  const value=o[key];
+  if(typeof value!=="string"||!/^\d{4}-\d{2}-\d{2}T/.test(value))continue;
+  const time=Date.parse(value),age=now.getTime()-time;
+  if(Number.isFinite(time)&&age>=0&&age<7*86400000)return {label,kind};
+ }
+ return null;
+}
 function makeCard(o){
  const article=el("article",undefined,"item");
  const left=el("div",undefined,"item-main"),right=el("aside",undefined,"item-side");
  const tags=el("div",undefined,"item-badges"),st=state(o);
  tags.append(el("span",statusLabel(st),"chip status "+(st==="aperto"?"open":st==="chiuso"?"closed":st==="in arrivo"?"upcoming":"unknown")));
+ const change=changeBadge(o);
+ if(change)tags.append(el("span",change.label,"chip change "+change.kind));
  if(o.application_type)tags.append(el("span",o.application_type+" · "+(o.window_label||"Candidatura"),"chip"));
  left.append(tags,el("h3",o.title||"Opportunità senza titolo","item-title"),el("p",opportunitySummary(o),"item-summary"));
  const meta=el("div",undefined,"item-meta");
