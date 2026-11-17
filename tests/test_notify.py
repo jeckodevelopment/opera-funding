@@ -155,6 +155,36 @@ class NotifyTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_recipients(",".join(f"u{i}@example.org" for i in range(11)))
 
+    def test_branded_email_matches_dashboard_and_is_email_safe(self):
+        subj,html,plain=make_message([item("a",title="Progetto <Opera & Cultura>",
+                                              issuer="Ente <pubblico>",summary="Musica & formazione",
+                                              deadline="2027-01-15")])
+        self.assertIn("Opera+ Funding",subj)
+        self.assertIn("Le opportunità da non perdere.",html)
+        self.assertIn("#f7f6f3",html)
+        self.assertIn("#b7dfc5",html)
+        self.assertIn("operaplus-logo.png",html)
+        self.assertIn('role="presentation"',html)
+        self.assertIn("15 gennaio 2027",html)
+        self.assertIn("&lt;Opera &amp; Cultura&gt;",html)
+        self.assertIn("Ente &lt;pubblico&gt;",html)
+        self.assertNotIn("<Opera & Cultura>",html)
+        self.assertIn("Musica &amp; formazione",html)
+        self.assertIn("https://example.org/call/a",html)
+        self.assertIn("15 gennaio 2027",plain)
+        self.assertIn("Esplora tutte le opportunità",html)
+        self.assertNotIn("<script",html)
+        self.assertNotIn("<style",html)
+        self.assertNotIn("<link ",html)
+
+    def test_branded_email_does_not_invent_missing_summary_or_dates(self):
+        subject,html,plain=make_message([item("x",summary="",deadline=None),
+                                           item("y",url="javascript:alert(1)")])
+        self.assertIn("2 nuove opportunità",subject)
+        self.assertIn("Da verificare",html)
+        self.assertNotIn("javascript:",html)
+        self.assertIn("https://jeckodevelopment.com/dev/funding/",html)
+
     def test_failure_with_corrupt_state_is_explicit(self):
         self.path.write_text('{"version": 999, "statuses": {}}')
         with self.assertRaises(RuntimeError):
