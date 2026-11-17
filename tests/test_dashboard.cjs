@@ -4,11 +4,40 @@ const assert=require("node:assert/strict");
 const src=fs.readFileSync("web/app.js","utf8").replace(/\ninit\(\);\s*$/,"\n");
 const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
- URL,Date,console
+ URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData}=context.exposed;
 assert.equal(PAGE_SIZE,12);
+const evaluation=evaluationData({
+ title:"Contributo educativo",issuer:"Fondazione Esempio",relevance:72,
+ opportunity_type:"finanziamento potenziale",eligibility:"da verificare",
+ deadline:"2027-03-12",amount:"€ 50.000 (da verificare)",amount_kind:"dotazione finanziaria",
+ beneficiaries_excerpt:"ETS iscritti al registro",
+ score_explanation:"Coerenza con formazione e giovani (scheda).",
+ score_confidence:"indicativa",score_explanation_basis:"titolo e scheda",
+ eligibility_checks:["Verificare sede legale"],
+ documents:[
+  {label:"Avviso",url:"https://example.org/bando.pdf"},
+  {label:"Link malevolo",url:"javascript:alert(1)"},
+  {label:"Duplicato",url:"https://example.org/bando.pdf"}
+ ],
+ url:"https://example.org/opportunita"
+},new Date("2026-11-17T12:00:00Z"));
+assert.equal(evaluation.fit,"72/100");
+assert.equal(evaluation.deadline,"12/03/2027");
+assert.equal(evaluation.eligibility,"da verificare");
+assert.equal(evaluation.amountKind,"dotazione finanziaria");
+assert.equal(evaluation.checks[0],"Verificare sede legale");
+assert.equal(evaluation.reasoning,"Coerenza con formazione e giovani (scheda).");
+assert.equal(evaluation.links.length,2);
+assert.ok(evaluation.links.every(x=>x.href.startsWith("https://")));
+const incompleteEvaluation=evaluationData({title:"Avviso",opportunity_type:"call progettuale da verificare",relevance:10},new Date("2026-11-17T12:00:00Z"));
+assert.equal(incompleteEvaluation.deadline,"Non indicata");
+assert.ok(incompleteEvaluation.missing.some(x=>x.includes("Beneficiari")));
+assert.equal(incompleteEvaluation.eligibility,"da verificare");
+assert.equal(incompleteEvaluation.fit,"10/100");
+
 const now=new Date("2026-11-20T08:00:00Z");
 assert.equal(changeBadge({catalog_new_at:"2026-11-18T07:00:00Z"},now).label,"NUOVA");
 assert.equal(changeBadge({catalog_updated_at:"2026-11-18T07:00:00Z"},now).label,"AGGIORNATA");
@@ -86,6 +115,15 @@ assert.match(src,/Possibile opportunità a sportello/);
 assert.match(src,/Natura dell’importo/);
 assert.match(css,/\.rolling-guidance/);
 assert.match(css,/\.chip\.change/);
+assert.match(html,/id="print-sheet"/);
+assert.match(src,/function prepareEvaluationSheet/);
+assert.match(src,/window.print\(\)/);
+assert.match(src,/afterprint/);
+assert.match(src,/Esporta scheda PDF/);
+assert.match(css,/@page\{size:A4/);
+assert.match(css,/@media print/);
+assert.match(css,/#print-sheet:not\(\[hidden\]\)/);
+
 assert.match(src,/changeBadge\(o\)/);
 assert.match(src,/function makeAdequacy/);
 assert.match(css,/\.health-dot\.red/);
