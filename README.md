@@ -29,3 +29,7 @@ Il modulo `src/evidence.py` estrae dai siti ufficiali soltanto dati associati a 
 ### Pubblicazione frontend
 
 **Unico publisher autorizzato:** workflow `Pubblica interfaccia Opera+ Funding via SFTP` nella repository `jeckodevelopment/jeckodevsite` (`.github/workflows/publish-opera-funding.yml`), mediante `scripts/deploy_opera_funding.py`. Utilizza le credenziali SFTP già presenti in `jeckodevsite`, verifica gli asset pubblici via HTTPS e gestisce il rollback. Non creare workflow SFTP in `opera-funding`. La pubblicazione si avvia tramite la richiesta versionata `deploy-requests/opera-funding.txt` in `jeckodevsite` oppure manualmente via `workflow_dispatch` sull'unico publisher.
+
+### Motivazioni dell'adeguatezza basate sulle evidenze
+
+In `src/fit.py` la motivazione tematica usa il titolo e, se la scheda è stata effettivamente ispezionata, anche il riepilogo e i beneficiari estratti. `score_explanation_basis` distingue le due casistiche; nella finestra dettaglio vengono mostrati motivazione e livello di attendibilità. **Il punteggio numerico non viene ricalcolato**: è un indicatore storico di scoperta basato sul titolo e non rappresenta una percentuale di ammissibilità o probabilità di ottenere fondi. L'analisi non sopprime opportunità; aggiunge verifiche mirate per dotazioni complessive e procedure a sportello. Le nuove motivazioni saranno ricalcolate dal prossimo ciclo di scansione. Le richieste di deploy passano unicamente per `jeckodevsite`.
