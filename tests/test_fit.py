@@ -24,6 +24,41 @@ class FitTests(unittest.TestCase):
         explain(item)
         self.assertEqual(item["project_ideas"],["Videolezioni sull'opera e cultura musicale"])
         self.assertEqual(item["relevance"],55)
+    def test_inspected_description_adds_supported_thematic_reasons(self):
+        item=explain({"title":"Bando progetti 2027","relevance":20,"detail_checked":True,
+                      "detail_basis":"HTML della scheda",
+                      "summary":"Finanziamento per videopodcast e formazione digitale dei giovani",
+                      "beneficiaries_excerpt":"Beneficiari: enti culturali"})
+        self.assertEqual(item["relevance"],20)
+        self.assertIn("contenuto della scheda",item["score_explanation"])
+        self.assertIn("punteggio calcolato in fase di scoperta",item["score_confidence"])
+        self.assertEqual(item["score_explanation_basis"],"titolo e contenuti della scheda consultata")
+        self.assertEqual(item["eligibility"],"da verificare")
+
+    def test_uninspected_summary_never_counts_as_documented_evidence(self):
+        item=explain({"title":"Avviso generico 2027","relevance":20,
+                      "summary":"Sostegno a corsi di musica e video per le scuole"})
+        self.assertNotIn("contenuto della scheda",item["score_explanation"])
+        self.assertEqual(item["score_explanation_basis"],"solo titolo")
+
+    def test_checks_distinguish_total_budget_and_rolling_hint(self):
+        item=explain({"title":"Bando cultura", "amount_kind":"dotazione finanziaria",
+                      "rolling_guidance":"Possibile procedura a sportello",
+                      "eligibility":"da verificare"})
+        joined=" ".join(item["eligibility_checks"])
+        self.assertIn("dotazione complessiva",joined)
+        self.assertIn("sportello",joined)
+        self.assertEqual(item["eligibility"],"da verificare")
+
+    def test_explain_reconciles_idempotently_without_duplicate_checks(self):
+        item={"title":"Bando cultura", "relevance":25,
+              "beneficiaries_excerpt":"Beneficiari: enti del terzo settore",
+              "detail_checked":True, "detail_basis":"HTML della scheda"}
+        explain(item)
+        explain(item)
+        self.assertEqual(len(item["eligibility_checks"]),len(set(item["eligibility_checks"])))
+        self.assertEqual(item["relevance"],25)
+
     def test_irrelevant_title_has_no_invented_project(self):
         item=explain({"title":"Avviso selezione del personale tecnico","relevance":20})
         self.assertEqual(item["project_ideas"],[])
