@@ -33,6 +33,27 @@ class VerifiedFactsTests(unittest.TestCase):
         self.assertEqual(rows[4]["rolling_evidence"],FACTS[4]["official_url"])
         self.assertNotIn("opening_date",rows[2])
 
+    def test_actual_volto_bandi_urls_are_matched(self):
+        rows=[
+            {"source_id":"volto","url":"https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord/",
+             "deadline":"2026-11-20","link_status":"raggiungibile"},
+            {"source_id":"volto","url":"https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo/",
+             "deadline":"2026-12-31","link_status":"raggiungibile"}
+        ]
+        apply_reviewed_facts(rows,FACTS,"2026-11-17T00:00:00+00:00")
+        self.assertEqual([effective_status(r,date(2026,11,17)) for r in rows],["APERTO","APERTO"])
+        self.assertEqual(rows[0]["reviewed_official_basis"],"official_issuer_statement")
+        self.assertEqual(rows[1]["reviewed_official_basis"],"official_rolling_application_process")
+        self.assertTrue(rows[1]["rolling_confirmed"])
+        self.assertIn("linkedin.com",rows[0]["status_evidence"])
+        self.assertIn("intesasanpaolo.com",rows[1]["status_evidence"])
+
+    def test_no_broad_path_suffix_matching_for_unrelated_pages(self):
+        r={"source_id":"volto","url":"https://volontariatotorino.it/archivio/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord",
+           "deadline":"2026-11-20","link_status":"raggiungibile"}
+        apply_reviewed_facts([r],FACTS,"2026-11-17T00:00:00+00:00")
+        self.assertNotIn("reviewed_official_basis",r)
+
     def test_official_evidence_expires_without_fake_future_open(self):
         rows=[row(f) for f in FACTS]
         apply_reviewed_facts(rows,FACTS,"2026-11-25T09:00:00+00:00")
