@@ -93,11 +93,11 @@ def make_message(items):
         'border-collapse:separate;border-radius:12px;">'
         '<tr><td style="padding:21px 24px;border-bottom:1px solid #e9e5dd;">'
         '<table role="presentation" cellpadding="0" cellspacing="0"><tr>'
-        # The source logo has dark lettering on transparent pixels. Email '
-        # dark-mode engines can darken surrounding surfaces without recoloring '
-        # the image. A bounded opaque white tile plus a white CSS gradient '
-        # keeps a deliberate light area behind the original logo in clients '
-        # that preserve gradients under forced dark-mode inversion. '
+        # The source logo has dark lettering on transparent pixels. Email
+        # dark-mode engines can darken surrounding surfaces without recoloring
+        # the image. A bounded opaque white tile plus a white CSS gradient
+        # keeps a deliberate light area behind the original logo in clients
+        # that preserve gradients under forced dark-mode inversion.
         '<td valign="middle" bgcolor="#ffffff" style="vertical-align:middle;'
         'background-color:#ffffff;background-image:linear-gradient(#ffffff,#ffffff);'
         'border:1px solid #e5e2dc;border-radius:8px;padding:9px 11px;">'
