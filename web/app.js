@@ -111,6 +111,46 @@ function dialogField(parent,label,value){
  field.append(el("dt",label),el("dd",String(value)));
  parent.append(field);
 }
+// Display evidence without affecting discovery, status, sorting or filtering.
+function reviewSignals(o){
+ const checks=Array.isArray(o.eligibility_checks)?o.eligibility_checks.filter(x=>typeof x==="string"&&x.trim()):[];
+ const missing=[];
+ if(!o.beneficiaries_excerpt)missing.push("Beneficiari ammessi non documentati");
+ if(!o.amount)missing.push("Importo o dotazione non indicati");
+ if(!validDate(o.deadline)&&o.rolling_confirmed!==true)missing.push("Scadenza o apertura a sportello da verificare");
+ if(o.link_status!=="raggiungibile")missing.push("Collegamento alla fonte da verificare");
+ return {checks,missing,explanation:typeof o.score_explanation==="string"?o.score_explanation.trim():"",
+  confidence:typeof o.score_confidence==="string"?o.score_confidence.trim():"",
+  eligibility:typeof o.eligibility==="string"?o.eligibility.trim():"da verificare"};
+}
+function evidenceSection(o){
+ const review=reviewSignals(o),section=el("section",undefined,"dialog-section evidence-review");
+ section.append(el("h3","Valutazione preliminare"));
+ const intro=el("p","Il punteggio indica la coerenza tematica, non l'ammissibilità né le probabilità di ottenere il contributo.");
+ section.append(intro);
+ const dl=el("dl",undefined,"review-facts");
+ dialogField(dl,"Adeguatezza tematica",score(o)+"/100");
+ dialogField(dl,"Ammissibilità",review.eligibility);
+ dialogField(dl,"Affidabilità della valutazione",review.confidence||"Non documentata");
+ section.append(dl);
+ if(review.explanation){
+  section.append(el("h4","Perché questa opportunità può interessare"));
+  section.append(el("p",review.explanation));
+ }
+ if(review.checks.length){
+  section.append(el("h4","Verifiche prima di decidere"));
+  const list=el("ul");
+  for(const check of review.checks)list.append(el("li",check));
+  section.append(list);
+ }
+ if(review.missing.length){
+  section.append(el("h4","Informazioni da approfondire"));
+  const list=el("ul");
+  for(const missing of review.missing)list.append(el("li",missing));
+  section.append(list);
+ }
+ return section;
+}
 function openDetails(o){
  const dialog=$("opportunity-dialog"),content=$("dialog-content");
  content.replaceChildren();
@@ -129,6 +169,7 @@ function openDetails(o){
  dialogField(grid,"Edizione",o.edition_year||"");
  dialogField(grid,"Finestra",o.window_label||"");
  content.append(grid);
+ content.append(evidenceSection(o));
  if(o.beneficiaries_excerpt){
   const section=el("section",undefined,"dialog-section");
   section.append(el("h3","Destinatari"),el("p",o.beneficiaries_excerpt));
