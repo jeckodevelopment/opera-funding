@@ -25,21 +25,42 @@ PARTNER_PATTERN = re.compile(r"(?i)(?:obbligatori[oa]?)?\s*(?:partenariat|partne
 SPECIFIC = re.compile(r"(?i)\b(associazion|enti del terzo settore|ets|non profit|ong|fondazion)\b")
 
 def explain(row):
+    """Explain thematic suitability from identifiable evidence, never assert eligibility.
+
+    The numeric score remains the discovery-time heuristic, not an assessment
+    recalculated from official documents. Only text obtained from an inspected
+    official/detail page is used as stronger thematic evidence.
+    """
     title=str(row.get("title") or "")
+    evidence_parts=[]
+    if row.get("detail_checked") and row.get("detail_basis"):
+        for field in ("summary", "beneficiaries_excerpt"):
+            value=row.get(field)
+            if isinstance(value,str) and value.strip():
+                evidence_parts.append(value.strip()[:600])
+    context=" ".join(evidence_parts)
     themes=[]
     projects=[]
-    for pattern, project, reason in PROJECTS:
+    for pattern,project,reason in PROJECTS:
         if pattern.search(title):
+            themes.append(reason + " (titolo)")
             projects.append(project)
-            themes.append(reason)
-    # Preserve the original numeric relevance rather than fabricating
-    # precision from unknown applicant rules.
+        elif context and pattern.search(context):
+            themes.append(reason + " (contenuto della scheda)")
+            projects.append(project)
     row["score_explanation"] = (
         "; ".join(themes[:3])+"."
         if themes else
-        "Pertinenza preliminare: dal titolo non emergono elementi sufficienti per collegare il bando ai progetti Opera+."
+        "Non sono emerse corrispondenze tematiche esplicite nei contenuti analizzati; un punteggio basso non esclude opportunità progettuali."
     )
-    row["score_confidence"] = "bassa — analisi preliminare del titolo"
+    row["score_confidence"] = (
+        "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta"
+        if context else
+        "bassa — analisi preliminare del titolo"
+    )
+    row["score_explanation_basis"] = (
+        "titolo e contenuti della scheda consultata" if context else "solo titolo"
+    )
     row["project_ideas"] = list(row.get("curated_project_ideas") or projects[:3])
     row["eligibility"] = row.get("eligibility") or "da verificare"
     beneficiary=str(row.get("beneficiaries_excerpt") or "")
@@ -48,6 +69,10 @@ def explain(row):
         checks.append("Controllare se il partenariato è obbligatorio e con quali caratteristiche")
     if SPECIFIC.search(beneficiary):
         checks.append("Confrontare la categoria dei beneficiari con lo statuto e i requisiti di Opera+")
+    if row.get("amount_kind") in ("dotazione finanziaria","budget complessivo"):
+        checks.append("La cifra indicata può essere la dotazione complessiva, non il contributo ottenibile dal singolo progetto")
+    if row.get("rolling_guidance"):
+        checks.append("Verificare la disponibilità attuale dei fondi e le condizioni della procedura a sportello")
     checks.append("Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale")
-    row["eligibility_checks"] = checks
+    row["eligibility_checks"]=list(dict.fromkeys(checks))
     return row
