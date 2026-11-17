@@ -225,7 +225,7 @@ function changeBadge(o,now=new Date()){
  const labels=[["catalog_new_at","NUOVA","new"],["catalog_updated_at","AGGIORNATA","updated"]];
  for(const [key,label,kind] of labels){
   const value=o[key];
-  if(typeof value!=="string"||!/^\\d{4}-\\d{2}-\\d{2}T/.test(value))continue;
+  if(typeof value!=="string"||!/^\d{4}-\d{2}-\d{2}T/.test(value))continue;
   const time=Date.parse(value),age=now.getTime()-time;
   if(Number.isFinite(time)&&age>=0&&age<7*86400000)return {label,kind};
  }
