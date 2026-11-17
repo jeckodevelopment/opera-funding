@@ -33,7 +33,7 @@ def main():
     if not password and not key_file:
         raise ValueError("Set SFTP_PASSWORD or SFTP_PRIVATE_KEY_FILE")
     try:
-        client.connect(hostname=host, port=int(os.environ.get("SFTP_PORT","22")),
+        client.connect(hostname=host, port=int(os.environ.get("SFTP_PORT") or "22"),
                        username=user, password=password, key_filename=key_file,
                        look_for_keys=False, allow_agent=False, timeout=20)
         with client.open_sftp() as sftp:
