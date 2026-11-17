@@ -4,6 +4,8 @@
 No catalog changes, no ledger mutations, no recipient addresses in logs.
 """
 import os
+import json
+from urllib.error import HTTPError
 from datetime import datetime, timezone
 from notify import FROM_ADDRESS, DASHBOARD, parse_recipients, post_resend
 
@@ -36,7 +38,24 @@ def main():
         import hashlib, hmac
         token=hmac.new(key.encode(),address.casefold().encode(),"sha256").hexdigest()[:32]
         job=os.getenv("GITHUB_RUN_ID","local")
-        post_resend(key,address,subject,html,body,f"opera-smoke-{job}-{token}")
+        try:
+            post_resend(key,address,subject,html,body,f"opera-smoke-{job}-{token}")
+        except RuntimeError as exc:
+            provider=exc.__cause__
+            if isinstance(provider,HTTPError):
+                try:
+                    payload=json.loads(provider.read(8192).decode("utf-8"))
+                except (ValueError,UnicodeDecodeError):
+                    payload={}
+                # Resend response messages may contain private email addresses.
+                # Print ONLY well-known machine-readable classification, never
+                # provider messages, URLs, request payloads or recipients.
+                name=payload.get("name")
+                safe_names={"validation_error","authorization_error","restricted_api_key",
+                            "missing_api_key","invalid_api_key","rate_limit_exceeded"}
+                safe_name=name if name in safe_names else "other_provider_error"
+                print(f"Resend: HTTP {provider.code}; categoria={safe_name}")
+            raise
         count+=1
     print(f"Smoke test completato: {count} messaggi accettati da Resend.")
     print("La consegna finale nelle caselle va verificata sui destinatari/Resend.")
