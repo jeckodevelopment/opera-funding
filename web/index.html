@@ -73,12 +73,13 @@
       <div id="items" class="results" aria-live="polite"></div>
       <div class="pagination"><button id="more" class="more" type="button" hidden>Mostra altre opportunità</button></div>
     </section>
-    <dialog id="opportunity-dialog" class="opportunity-dialog" aria-labelledby="dialog-title">
-      <div class="dialog-shell">
-        <div class="dialog-top"><span class="dialog-eyebrow">SCHEDA OPPORTUNITÀ</span><button id="dialog-close" type="button" class="dialog-close" aria-label="Chiudi la scheda">×</button></div>
-        <div id="dialog-content" class="dialog-content"></div>
+    <section id="opportunity-page" class="opportunity-page" aria-labelledby="dialog-title" hidden>
+      <div class="opportunity-page-toolbar">
+        <button id="dialog-close" type="button" class="back-to-catalog">← Torna al catalogo</button>
+        <span class="dialog-eyebrow">SCHEDA OPPORTUNITÀ</span>
       </div>
-    </dialog>
+      <div id="dialog-content" class="dialog-content"></div>
+    </section>
     <section class="source-health" id="source-health" aria-labelledby="source-health-title">
       <div class="source-head">
         <div><p class="eyebrow">MONITORAGGIO</p><h2 id="source-health-title">Stato delle fonti</h2><p>Eventuali problemi di accesso o elaborazione dei portali monitorati.</p></div>
