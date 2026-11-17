@@ -96,6 +96,7 @@ def post_resend(key,recipient,subject,html,text_body,idempotency):
     request=Request("https://api.resend.com/emails",data=payload,method="POST",headers={
         "Authorization":"Bearer "+key,
         "Content-Type":"application/json",
+        "User-Agent":"OperaFunding/1.0 (https://github.com/jeckodevelopment/opera-funding)",
         "Idempotency-Key":idempotency,
     })
     try:

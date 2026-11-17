@@ -55,6 +55,7 @@ def main():
     nonce=hashlib.sha256(payload).hexdigest()[:24]
     request=Request("https://api.resend.com/emails",data=payload,method="POST",headers={
         "Authorization":"Bearer "+key,"Content-Type":"application/json",
+        "User-Agent":"OperaFunding/1.0 (https://github.com/jeckodevelopment/opera-funding)",
         "Idempotency-Key":"opera-diagnostic-"+nonce,
     })
     try:
