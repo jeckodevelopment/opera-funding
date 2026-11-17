@@ -101,3 +101,28 @@ footer{border-top:1px solid var(--line);margin:30px 0 0;padding:20px 0 30px;disp
  #print-sheet .print-disclaimer{display:block!important;border-top:1px solid #d6d1c5;margin-top:16pt;padding-top:9pt;color:#545d60;font-size:8.5pt;break-inside:avoid-page}
  #print-sheet .print-disclaimer p{margin:3pt 0 0}
 }
+
+/* Standalone opportunity detail view within the existing static index.html. */
+body.detail-view .hero,body.detail-view .overview,body.detail-view .explore,
+body.detail-view .source-health{display:none}
+.opportunity-page{max-width:900px;margin:35px auto 42px;padding:30px 34px;
+ background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}
+.opportunity-page-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;
+ border-bottom:1px solid #e9e4da;padding-bottom:18px;margin-bottom:25px}
+.back-to-catalog{background:transparent;border:0;color:#825e2d;font-size:12px;font-weight:750;padding:8px 0}
+.back-to-catalog:hover{text-decoration:underline}
+.opportunity-page .dialog-title{font-size:clamp(25px,3.2vw,34px)}
+.opportunity-page .dialog-summary{font-size:14px}
+.opportunity-page .dialog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.share-opportunity{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+ padding-top:15px;margin-top:17px;border-top:1px solid #e9e4da}
+.share-link-button{border:1px solid #d5c9b4;border-radius:8px;color:#735323;background:#fbf7ed;
+ padding:10px 14px;font-weight:750;font-size:12px}
+.share-link-button:hover{background:#f3e8d3}
+.item-actions a.details-toggle{text-decoration:none;color:#8a6027;font-weight:800;font-size:12px}
+.item-actions a.details-toggle:hover{text-decoration:underline}
+@media(max-width:700px){
+ .opportunity-page{margin:20px auto 27px;padding:20px 18px}
+ .opportunity-page-toolbar{padding-bottom:11px;margin-bottom:19px}
+ .opportunity-page .dialog-grid{grid-template-columns:1fr}
+}
