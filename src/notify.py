@@ -11,6 +11,7 @@ import hmac
 import re
 from html import escape
 import json
+from email_template import make_message
 import os
 from pathlib import Path
 from urllib.parse import urlparse
@@ -56,39 +57,6 @@ def candidates(rows, previous, alerted):
         seen.add(key)
         out.append(r)
     return sorted(out,key=lambda r:(-int(r.get("relevance") or 0),str(r.get("deadline") or ""),r.get("title") or ""))
-
-def make_message(items):
-    displayed=items[:MAX_ITEMS]
-    count=len(items)
-    subject=f"Opera+ Funding — {count} {'nuova opportunità aperta' if count==1 else 'nuove opportunità aperte'}"
-    opening=f"Sono state rilevate {count} nuove opportunità aperte e potenzialmente pertinenti ai progetti culturali o formativi. L'ammissibilità deve essere verificata sui bandi ufficiali."
-    html_items=[]
-    lines=[]
-    for row in displayed:
-        title=str(row.get("title") or "Opportunità")
-        issuer=str(row.get("issuer") or "Ente da verificare")
-        deadline=str(row.get("deadline") or "Da verificare")
-        url=row["url"]
-        html_items.append(
-            "<li><strong>"+escape(title)+"</strong><p>Fonte: "+escape(issuer)+
-            " · Scadenza: "+escape(deadline)+"</p><a href=\""+escape(url,quote=True)+
-            "\">Consulta la scheda originale</a></li>"
-        )
-        lines.append(f"- {title} | {issuer} | Scadenza: {deadline}\n  {url}")
-    more=(f"\nAltre {count-MAX_ITEMS} opportunità nella dashboard." if count>MAX_ITEMS else "")
-    body_html=(
-        "<!doctype html><html lang=\"it\"><body style=\"font-family:Arial,sans-serif;"
-        "max-width:640px;margin:24px auto;color:#17212b\">"
-        "<h2>Opera+ Funding</h2><p>"+escape(opening)+"</p><ol>"+
-        "".join(html_items)+"</ol>"+
-        ("<p>"+escape(more.strip())+"</p>" if more else "")+
-        "<p><a href=\""+DASHBOARD+"\">Apri la dashboard</a></p>"+
-        "<p style=\"font-size:12px;color:#607080\">Notifica automatica informativa; "
-        "verifica sempre requisiti, scadenze e disponibilità sui siti degli enti.</p>"
-        "</body></html>"
-    )
-    text_body=opening+"\n\n"+"\n".join(lines)+more+"\n\nDashboard: "+DASHBOARD
-    return subject,body_html,text_body
 
 def post_resend(key,recipient,subject,html,text_body,idempotency):
     payload=json.dumps({"from":FROM_ADDRESS,"to":[recipient],"subject":subject,
