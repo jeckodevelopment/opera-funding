@@ -34,3 +34,11 @@ La prima esecuzione inizializza `data/notification-state.json` senza inviare tut
 ## Destinatari multipli
 
 Il Secret mantiene il nome **`FUNDING_ALERT_RECIPIENT`** anche con più destinatari. Non bisogna creare più Secrets. Per ragioni di privacy i messaggi partono separatamente, e il registro pubblicato su GitHub contiene unicamente identificatori HMAC calcolati usando la chiave Resend come chiave segreta. Gli indirizzi non vengono stampati nei log o salvati nel repository. Le quote di sicurezza contano ogni messaggio individuale. Modificare l'elenco destinatari non comporta reinvio retroattivo dei bandi già notificati. Una rotazione della chiave Resend durante invii parzialmente completati cambia gli identificatori di consegna: verificare la coda prima di ruotare il Secret.
+
+## Template grafico (17 novembre 2026)
+
+Le email utilizzano il template condiviso `src/email_template.py`, ispirato alla dashboard: sfondo avorio `#f7f6f3`, schede bianche con bordi sottili, tipografia Georgia per i titoli, verde per lo stato APERTA, dettagli color oro. Il logo di Opera+ viene caricato da `https://jeckodevelopment.com/dev/funding/assets/operaplus-logo.png` con testo alternativo per i client che bloccano le immagini.
+
+L'HTML usa tabelle di presentazione e stili inline (compatibilità con i principali client email), senza CSS remoto, JavaScript, tracking pixel o font esterni. Ogni scheda include ente, titolo, sintesi se disponibile, scadenza in italiano e collegamento HTTPS alla fonte; nessuna sintesi o scadenza viene inventata. È sempre disponibile una versione testuale.
+
+L'anteprima di collaudo viene inviata una sola volta mediante un workflow temporaneo, con **bandi chiaramente fittizi**, oggetto `[ANTEPRIMA — BANDI FITTIZI]`, senza modificare il catalogo o il registro delle notifiche. Dopo aver verificato la ricezione, rimuovere `src/email_preview_once.py` e `.github/workflows/email-preview-once.yml`.
