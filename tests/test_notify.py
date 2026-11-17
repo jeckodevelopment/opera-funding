@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-from notify import run,candidates,make_message,is_open,MAX_DAILY,MAX_MONTHLY
+from notify import run,candidates,make_message,is_open,MAX_DAILY,MAX_MONTHLY,parse_recipients
 
 def item(key, status="APERTO", relevance=80, **kw):
     return {
@@ -108,6 +108,52 @@ class NotifyTests(unittest.TestCase):
         self.assertIn("&lt;script&gt;",html)
         self.assertNotIn("<script>",html)
         self.assertEqual(candidates([item("bad",url="javascript:alert(1)")],{},set()),[])
+
+    def test_multiple_recipients_each_get_private_email(self):
+        self.check([])
+        addresses="one@example.org, two@example.org; THREE@example.org\nOne@example.org"
+        self.assertEqual(self.check([item("multi")],recipient=addresses),"sent")
+        self.assertEqual([x[1] for x in self.sent],["one@example.org","two@example.org","THREE@example.org"])
+        self.assertEqual(len({x[5] for x in self.sent}),3)
+        state=self.path.read_text()
+        for address in ("one@example.org","two@example.org","THREE@example.org"):
+            self.assertNotIn(address,state)
+        self.assertEqual(self.check([item("multi")],recipient=addresses),"no-news")
+        self.assertEqual(len(self.sent),3)
+
+    def test_partial_failure_retries_only_missing_recipient(self):
+        self.check([])
+        calls=[]
+        def partly_failing(*args):
+            calls.append(args[1])
+            if len(calls)==2:
+                raise RuntimeError("provider error")
+            return "ok"
+        with self.assertRaises(RuntimeError):
+            run([item("new")],self.path,"2026-11-17T06:00:00+00:00",
+                "key","one@example.org,two@example.org",partly_failing)
+        self.assertEqual(calls,["one@example.org","two@example.org"])
+        self.assertNotIn("one@example.org",self.path.read_text())
+        self.assertEqual(self.check([item("new")],recipient="one@example.org,two@example.org",key="key"),"sent")
+        self.assertEqual([x[1] for x in self.sent],["two@example.org"])
+        self.assertEqual(self.check([item("new")],recipient="one@example.org,two@example.org",key="key"),"no-news")
+
+    def test_multiple_recipients_consume_daily_quota_individually(self):
+        self.check([])
+        state=json.loads(self.path.read_text())
+        state["sent_days"]={"2026-11-17":MAX_DAILY-1}
+        self.path.write_text(json.dumps(state))
+        self.assertEqual(self.check([item("new")],recipient="one@example.org,two@example.org"),"quota")
+        self.assertEqual([x[1] for x in self.sent],["one@example.org"])
+        self.assertEqual(self.check([item("new")],day="2026-11-18",recipient="one@example.org,two@example.org"),"sent")
+        self.assertEqual([x[1] for x in self.sent],["one@example.org","two@example.org"])
+
+    def test_invalid_addresses_and_too_many_recipients(self):
+        self.assertEqual(parse_recipients("a@example.org; b@example.org, A@example.org"),["a@example.org","b@example.org"])
+        with self.assertRaises(ValueError):
+            parse_recipients("valid@example.org, invalid entry")
+        with self.assertRaises(ValueError):
+            parse_recipients(",".join(f"u{i}@example.org" for i in range(11)))
 
     def test_failure_with_corrupt_state_is_explicit(self):
         self.path.write_text('{"version": 999, "statuses": {}}')

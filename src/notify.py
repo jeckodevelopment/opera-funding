@@ -7,6 +7,8 @@ addresses or credentials. The first run bootstraps silently (no old alerts).
 import argparse
 from datetime import datetime, timezone
 from hashlib import sha256
+import hmac
+import re
 from html import escape
 import json
 import os
@@ -107,14 +109,38 @@ def post_resend(key,recipient,subject,html,text_body,idempotency):
         raise RuntimeError("Resend non ha restituito un identificativo di invio")
     return result["id"]
 
+def parse_recipients(value):
+    """Comma-, semicolon- or newline-separated addresses, with no duplicates."""
+    addresses=[]
+    for raw in re.split(r"[,;\n]+", value or ""):
+        address=raw.strip()
+        if not address:
+            continue
+        # Prevent header injection and invalid addresses before making API calls.
+        if (not re.fullmatch(r"[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+",address)
+                or len(address)>254):
+            raise ValueError("FUNDING_ALERT_RECIPIENT contiene un indirizzo non valido")
+        if address.casefold() not in {v.casefold() for v in addresses}:
+            addresses.append(address)
+    if len(addresses)>10:
+        raise ValueError("Sono consentiti al massimo 10 destinatari")
+    return addresses
+
+def persist(state_path,stored):
+    state_path.parent.mkdir(parents=True,exist_ok=True)
+    state_path.write_text(json.dumps(stored,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+
+def recipient_token(api_key,address):
+    """HMAC avoids publishing email addresses or reversible plain hashes in git."""
+    return hmac.new(api_key.encode("utf-8"),address.casefold().encode("utf-8"),"sha256").hexdigest()
+
 def run(rows,state_path,now,api_key=None,recipient=None,sender=post_resend):
     current=snapshot(rows)
     stored=json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else None
     if stored is None:
         state={"version":1,"statuses":current,"alerted_ids":[],
                "sent_days":{},"sent_months":{}}
-        state_path.parent.mkdir(parents=True,exist_ok=True)
-        state_path.write_text(json.dumps(state,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+        persist(state_path,state)
         print("Notifiche: prima esecuzione; catalogo iniziale registrato senza inviare email")
         return "bootstrapped"
     if stored.get("version")!=1:
@@ -123,36 +149,54 @@ def run(rows,state_path,now,api_key=None,recipient=None,sender=post_resend):
     found=candidates(rows,stored.get("statuses") or {},alerted)
     day=now[:10]
     month=day[:7]
-    has_config=bool(api_key and recipient)
-    # Maintain current snapshot even if notifications are disabled. It prevents
-    # retrospectively emailing historical entries after configuring the secrets.
-    if not has_config:
+    if not api_key or not recipient:
         stored["statuses"]=current
-        state_path.write_text(json.dumps(stored,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+        persist(state_path,stored)
         print("Notifiche disattivate: servono RESEND_API_KEY e FUNDING_ALERT_RECIPIENT")
         return "disabled"
-    if len(found)==0:
+    recipients=parse_recipients(recipient)
+    if not recipients:
+        raise ValueError("FUNDING_ALERT_RECIPIENT non contiene destinatari")
+    if not found:
         stored["statuses"]=current
-        state_path.write_text(json.dumps(stored,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+        persist(state_path,stored)
         print("Notifiche: nessuna nuova opportunità aperta")
         return "no-news"
-    if (stored.get("sent_days",{}).get(day,0)>=MAX_DAILY or
-            stored.get("sent_months",{}).get(month,0)>=MAX_MONTHLY):
-        # Preserve old status so pending alerts can be sent on a later scan.
-        print("Notifiche: raggiunto il limite di sicurezza gratuito, nessuna email inviata")
-        return "quota"
-    subject,html,text_body=make_message(found)
-    event_ids=sorted(identity(r) for r in found)
-    digest=sha256((recipient.lower().strip()+"|"+",".join(event_ids)).encode("utf-8")).hexdigest()[:40]
-    sender(api_key,recipient,subject,html,text_body,"opera-funding-"+digest)
-    stored["statuses"]=current
-    alerted.update(event_ids)
+
+    # Each recipient gets a distinct email and never sees the others. Persist
+    # confirmations after EACH successful send, so partial failures can retry
+    # only the recipients/opportunities still awaiting delivery.
+    delivered=stored.setdefault("delivered",{})
+    sent=0
+    for address in recipients:
+        token=recipient_token(api_key,address)
+        already=set(delivered.get(token,[]))
+        pending=[r for r in found if identity(r) not in already]
+        if not pending:
+            continue
+        if (stored.get("sent_days",{}).get(day,0)>=MAX_DAILY or
+                stored.get("sent_months",{}).get(month,0)>=MAX_MONTHLY):
+            print("Notifiche: limite gratuito raggiunto; invii restanti rinviati")
+            return "quota"
+        subject,html,text_body=make_message(pending)
+        event_ids=sorted(identity(r) for r in pending)
+        digest=sha256((token+"|"+",".join(event_ids)).encode("utf-8")).hexdigest()[:40]
+        sender(api_key,address,subject,html,text_body,"opera-funding-"+digest)
+        delivered[token]=sorted(already.union(event_ids))
+        stored.setdefault("sent_days",{})[day]=stored.get("sent_days",{}).get(day,0)+1
+        stored.setdefault("sent_months",{})[month]=stored.get("sent_months",{}).get(month,0)+1
+        persist(state_path,stored)
+        sent+=1
+
+    # Only mark the opportunities globally complete when every configured
+    # destination has received them. Outstanding calls remain retryable.
+    alerted.update(identity(r) for r in found)
     stored["alerted_ids"]=sorted(alerted)
-    stored.setdefault("sent_days",{})[day]=stored.get("sent_days",{}).get(day,0)+1
-    stored.setdefault("sent_months",{})[month]=stored.get("sent_months",{}).get(month,0)+1
-    state_path.write_text(json.dumps(stored,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
-    print(f"Notifiche: riepilogo inviato per {len(found)} opportunità")
-    return "sent"
+    stored["statuses"]=current
+    stored.pop("delivered",None)
+    persist(state_path,stored)
+    print(f"Notifiche: {sent} email individuali per {len(found)} opportunità")
+    return "sent" if sent else "no-news"
 
 def main():
     parser=argparse.ArgumentParser()
