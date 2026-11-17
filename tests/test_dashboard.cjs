@@ -6,9 +6,17 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge}=context.exposed;
 assert.equal(PAGE_SIZE,12);
+const now=new Date("2026-11-20T08:00:00Z");
+assert.equal(changeBadge({catalog_new_at:"2026-11-18T07:00:00Z"},now).label,"NUOVA");
+assert.equal(changeBadge({catalog_updated_at:"2026-11-18T07:00:00Z"},now).label,"AGGIORNATA");
+assert.equal(changeBadge({catalog_new_at:"2026-11-18T07:00:00Z",catalog_updated_at:"2026-11-19T07:00:00Z"},now).label,"NUOVA");
+assert.equal(changeBadge({first_seen:"2026-11-18T07:00:00Z"},now),null);
+assert.equal(changeBadge({catalog_updated_at:"2026-11-10T07:00:00Z"},now),null);
+assert.equal(changeBadge({catalog_new_at:"2026-11-22T07:00:00Z"},now),null);
+
 const incomplete=reviewSignals({title:"Bando culturale",relevance:35,eligibility:"da verificare",
  score_explanation:"Affinità preliminare con formazione",eligibility_checks:["Verificare beneficiari"]});
 assert.ok(incomplete.missing.some(x=>x.includes("Beneficiari")));
@@ -77,6 +85,8 @@ assert.match(src,/function openDetails/);
 assert.match(src,/Possibile opportunità a sportello/);
 assert.match(src,/Natura dell’importo/);
 assert.match(css,/\.rolling-guidance/);
+assert.match(css,/\.chip\.change/);
+assert.match(src,/changeBadge\(o\)/);
 assert.match(src,/function makeAdequacy/);
 assert.match(css,/\.health-dot\.red/);
 assert.doesNotMatch(src,/Controlli prima della candidatura:/);
