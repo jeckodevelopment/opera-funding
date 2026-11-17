@@ -10,9 +10,13 @@ function addLink(parent,label,url,className){
  const a=el("a",label,className);a.href=href;a.target="_blank";a.rel="noopener noreferrer";parent.append(a);
 }
 async function fetchDataset(origin){
+ // GitHub raw CDN can serve an older main-branch snapshot despite no-store.
+ // Use the same unique token for both resources, so refresh never combines
+ // different cached generations of catalog and scan status.
+ const revision="v="+Date.now();
  const [opResponse,scanResponse]=await Promise.all([
-  fetch(origin+"opportunities.json",{cache:"no-store",credentials:"omit"}),
-  fetch(origin+"scan-status.json",{cache:"no-store",credentials:"omit"})
+  fetch(origin+"opportunities.json?"+revision,{cache:"no-store",credentials:"omit"}),
+  fetch(origin+"scan-status.json?"+revision,{cache:"no-store",credentials:"omit"})
  ]);
  if(!opResponse.ok||!scanResponse.ok)throw Error("Could not load funding data");
  const [opportunities,status]=await Promise.all([opResponse.json(),scanResponse.json()]);
