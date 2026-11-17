@@ -8,6 +8,8 @@ on:
       - 'src/catalog.py'
       - 'src/issuer_sources.py'
       - 'config/issuer_checks.json'
+      - 'config/reviewed_official_facts.json'
+      - 'src/reviewed_official.py'
       - 'src/source_alternatives.py'
       - 'src/eu_api.py'
       - 'src/verification.py'
