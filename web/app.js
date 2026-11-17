@@ -453,12 +453,8 @@ function makeCard(o){
  const actions=el("div",undefined,"item-actions");
  const detailLink=el("a","Esamina opportunità","details-toggle");
  detailLink.href=opportunityUrl(o.id);
- detailLink.addEventListener("click",event=>{
-  if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
-  event.preventDefault();
-  navigateOpportunity(o.id);
-  window.scrollTo(0,0);
- });
+ // Use native anchor navigation for reliable click, keyboard and new-tab behavior.
+ detailLink.setAttribute("aria-label","Esamina opportunità: "+(o.title||"scheda"));
  actions.append(detailLink,followButton(o));
  if(o.link_status==="non disponibile")addLink(actions,"Sito dell’ente ↗",o.source_url,"source-link");
  else addLink(actions,"Fonte ufficiale ↗",o.resolved_url||o.url,"source-link");
