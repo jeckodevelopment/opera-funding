@@ -112,12 +112,12 @@ def post_resend(key,recipient,subject,html,text_body,idempotency):
 def parse_recipients(value):
     """Comma-, semicolon- or newline-separated addresses, with no duplicates."""
     addresses=[]
-    for raw in re.split(r"[,;\\n]+", value or ""):
+    for raw in re.split(r"[,;\n]+", value or ""):
         address=raw.strip()
         if not address:
             continue
         # Prevent header injection and invalid addresses before making API calls.
-        if (not re.fullmatch(r"[^\\s@,;<>]+@[^\\s@,;<>]+\\.[^\\s@,;<>]+",address)
+        if (not re.fullmatch(r"[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+",address)
                 or len(address)>254):
             raise ValueError("FUNDING_ALERT_RECIPIENT contiene un indirizzo non valido")
         if address.casefold() not in {v.casefold() for v in addresses}:
@@ -128,7 +128,7 @@ def parse_recipients(value):
 
 def persist(state_path,stored):
     state_path.parent.mkdir(parents=True,exist_ok=True)
-    state_path.write_text(json.dumps(stored,ensure_ascii=False,indent=2,sort_keys=True)+"\\n",encoding="utf-8")
+    state_path.write_text(json.dumps(stored,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
 def recipient_token(api_key,address):
     """HMAC avoids publishing email addresses or reversible plain hashes in git."""
