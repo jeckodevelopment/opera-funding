@@ -5,7 +5,7 @@ const source=fs.readFileSync("web/app.js","utf8").replace(/\ninit\(\);\s*$/,"\n"
 async function scenario(remoteAvailable){
  const calls=[];
  const context={
-  URL,Date,console,
+  URL,Date,console,window:{addEventListener(){}},
   document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
   fetch:async (url,opts)=>{
    calls.push({url,opts});
