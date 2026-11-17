@@ -264,13 +264,59 @@ function prepareEvaluationSheet(o){
 function printEvaluation(o){
  const sheet=prepareEvaluationSheet(o);
  // Keep print content separate from the interactive dialog and dashboard.
- if($("opportunity-dialog").open)$("opportunity-dialog").close();
+
  sheet.hidden=false;
  window.print();
 }
 
-function openDetails(o){
- const dialog=$("opportunity-dialog"),content=$("dialog-content");
+// Static-hosting-friendly deep links: the same index.html serves every page.
+function opportunityUrl(id,base=window.location.href){
+ const target=new URL(base);
+ target.searchParams.set("opportunity",String(id));
+ target.hash="";
+ return target.href;
+}
+function requestedOpportunity(href){
+ const id=new URL(href).searchParams.get("opportunity");
+ return id&&id.length<=2500?id:null;
+}
+function navigateOpportunity(id){
+ const target=id?opportunityUrl(id):new URL(window.location.href);
+ if(!id)target.searchParams.delete("opportunity");
+ window.history.pushState(null,"",target.href);
+ renderRoute();
+}
+function renderRoute(){
+ const id=requestedOpportunity(window.location.href);
+ const page=$("opportunity-page");
+ page.hidden=!id;
+ document.body.classList.toggle("detail-view",!!id);
+ if(!id){
+  document.title="Opera+ Funding · Opportunità per la cultura";
+  return;
+ }
+ const opportunity=all.find(o=>o.id===id);
+ if(!opportunity){
+  $("dialog-content").replaceChildren(el("h2","Opportunità non trovata","dialog-title"),
+   el("p","Questa opportunità non è disponibile nel catalogo attuale. Puoi tornare alla dashboard e cercare altre iniziative."));
+  document.title="Opportunità non trovata · Opera+ Funding";
+  return;
+ }
+ renderOpportunity(opportunity);
+ document.title=(opportunity.title||"Opportunità")+" · Opera+ Funding";
+}
+async function copyOpportunityUrl(o,button){
+ const url=opportunityUrl(o.id);
+ try{
+  await navigator.clipboard.writeText(url);
+  button.textContent="Link copiato";
+ }catch{
+  // Always expose the shareable URL without relying on clipboard permissions.
+  button.textContent="Copia il link dalla barra degli indirizzi";
+ }
+}
+function renderOpportunity(o){
+ const content=$("dialog-content");
  content.replaceChildren();
  content.append(el("h2",o.title||"Opportunità","dialog-title"));
  content.lastChild.id="dialog-title";
@@ -340,8 +386,13 @@ function openDetails(o){
  pdfButton.title="Apri la stampa: seleziona Salva come PDF";
  pdfButton.addEventListener("click",()=>printEvaluation(o));
  exportBar.append(pdfButton,el("span","Si apre la stampa del browser: scegli Salva come PDF.","export-hint"));
+ const shareBar=el("div",undefined,"share-opportunity");
+ const share=el("button","Copia link della scheda","share-link-button");
+ share.type="button";
+ share.addEventListener("click",()=>copyOpportunityUrl(o,share));
+ shareBar.append(share,el("span","La pagina ha un URL condivisibile e si apre anche direttamente.","export-hint"));
+ content.append(shareBar);
  content.append(exportBar);
- dialog.showModal();
 }
 // Subtle recent-change badges only when the scan recorded a material change.
 // Never infer novelty from first_seen on the existing catalog.
@@ -369,9 +420,15 @@ function makeCard(o){
  if(o.themes?.length)meta.append(el("span",o.themes[0]));
  left.append(meta);
  const actions=el("div",undefined,"item-actions");
- const button=el("button","Esamina opportunità","details-toggle");button.type="button";
- button.addEventListener("click",()=>openDetails(o));
- actions.append(button);
+ const detailLink=el("a","Esamina opportunità","details-toggle");
+ detailLink.href=opportunityUrl(o.id);
+ detailLink.addEventListener("click",event=>{
+  if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+  event.preventDefault();
+  navigateOpportunity(o.id);
+  window.scrollTo(0,0);
+ });
+ actions.append(detailLink);
  if(o.link_status==="non disponibile")addLink(actions,"Sito dell’ente ↗",o.source_url,"source-link");
  else addLink(actions,"Fonte ufficiale ↗",o.resolved_url||o.url,"source-link");
  left.append(actions);
@@ -448,7 +505,7 @@ async function init(){
    const option=el("option",name);option.value=name;selector.append(option);
   }
   selector.value=[...selector.options].some(x=>x.value===oldValue)?oldValue:"";
-  renderSourceHealth(status,all);updateStateCounts();syncControls();render();
+  renderSourceHealth(status,all);updateStateCounts();syncControls();render();renderRoute();
  }catch(e){
   $("scan").textContent="Dati non disponibili";$("items").replaceChildren(el("p","Impossibile caricare le opportunità. Riprova con Aggiorna.","empty"));
   $("health-dot").className="health-dot red";$("health-label").textContent="Dati non disponibili";
@@ -464,7 +521,7 @@ $("reset").addEventListener("click",()=>{
 });
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
 $("refresh").addEventListener("click",init);
-$("dialog-close").addEventListener("click",()=>$("opportunity-dialog").close());
-$("opportunity-dialog").addEventListener("click",event=>{if(event.target===$("opportunity-dialog"))$("opportunity-dialog").close();});
+$("dialog-close").addEventListener("click",()=>{navigateOpportunity(null);window.scrollTo(0,0);});
+window.addEventListener("popstate",renderRoute);
 window.addEventListener("afterprint",()=>{$("print-sheet").hidden=true;});
 init();
