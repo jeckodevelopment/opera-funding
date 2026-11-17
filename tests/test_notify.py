@@ -177,6 +177,16 @@ class NotifyTests(unittest.TestCase):
         self.assertNotIn("<style",html)
         self.assertNotIn("<link ",html)
 
+    def test_transparent_logo_has_opaque_white_tile_in_dark_mode(self):
+        _,html,_=make_message([item("logo")])
+        start=html.index('alt="Opera+"')
+        tile=html[max(0,start-480):start+250]
+        self.assertIn('bgcolor="#ffffff"',tile)
+        self.assertIn('background-color:#ffffff',tile)
+        self.assertIn('background-image:linear-gradient(#ffffff,#ffffff)',tile)
+        self.assertIn('border-radius:8px',tile)
+        self.assertIn('operaplus-logo.png',tile)
+
     def test_branded_email_does_not_invent_missing_summary_or_dates(self):
         subject,html,plain=make_message([item("x",summary="",deadline=None),
                                            item("y",url="javascript:alert(1)")])
