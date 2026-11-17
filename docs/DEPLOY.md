@@ -26,3 +26,6 @@ Non servono GitHub Pages, servizi esterni, token nel browser o nuove credenziali
 6. Verificare che altri percorsi di jeckodevelopment.com non siano cambiati.
 
 La qualità dei contenuti è indipendente dal canale di consegna: stati, scadenze, link e ammissibilità restano da validare secondo le regole in `docs/PRODUCT.md`.
+
+## Aggiornamento cache GitHub (17/11/2026)
+Per evitare una discrepanza temporanea tra il dataset presente in `main` e quello distribuito dalla CDN GitHub raw, ogni richiesta browser dei due JSON usa lo stesso identificatore temporale `?v=<millisecondi>`. Il comportamento `cache: no-store` rimane attivo; anche la copia locale utilizza lo stesso parametro senza cambiare il fallback. Il timestamp `checked_at` continua a riferirsi alla scansione, non alla richiesta del browser. **Questa modifica riguarda il JavaScript e richiede una nuova pubblicazione SFTP del frontend**.
