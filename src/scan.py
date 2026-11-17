@@ -14,6 +14,7 @@ from detail import enrich, DETAIL_SCHEMA_VERSION
 from quality import check_link, reconcile_status
 from status import annotate
 from fit import explain
+from catalog_changes import track_changes
 from priority import check_priority
 from verification import pick_for_review, coverage, backlog_candidates, classify_crt_information, classify_informational_page
 from crt_windows import guidance_for_window
@@ -218,6 +219,8 @@ def run():
     apply_reviewed_facts(rows,reviewed_facts,now)
     for row in rows:
         explain(annotate(reconcile_status(row)))
+
+    rows=track_changes(rows, existing, now)
 
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
