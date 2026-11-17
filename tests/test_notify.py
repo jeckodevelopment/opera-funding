@@ -111,7 +111,7 @@ class NotifyTests(unittest.TestCase):
 
     def test_multiple_recipients_each_get_private_email(self):
         self.check([])
-        addresses="one@example.org, two@example.org; THREE@example.org\\nOne@example.org"
+        addresses="one@example.org, two@example.org; THREE@example.org\nOne@example.org"
         self.assertEqual(self.check([item("multi")],recipient=addresses),"sent")
         self.assertEqual([x[1] for x in self.sent],["one@example.org","two@example.org","THREE@example.org"])
         self.assertEqual(len({x[5] for x in self.sent}),3)
