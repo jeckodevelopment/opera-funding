@@ -59,3 +59,7 @@ footer{border-top:1px solid var(--line);margin:30px 0 0;padding:20px 0 30px;disp
 .evidence-review .dialog-field{padding:9px 0}
 .evidence-review li{padding:2px 0}
 @media(max-width:480px){.evidence-review{padding:14px}.evidence-review .review-facts{grid-template-columns:1fr}}
+
+/* Guidance about a possible rolling call is advisory, never an OPEN badge. */
+.rolling-guidance{border-left:3px solid #b98936;background:#fbf7ed;border-radius:0 9px 9px 0;padding:13px 15px}
+.rolling-guidance h3{font-size:16px;margin-bottom:5px}
