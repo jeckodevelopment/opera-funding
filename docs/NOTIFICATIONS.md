@@ -42,3 +42,7 @@ Le email utilizzano il template condiviso `src/email_template.py`, ispirato alla
 L'HTML usa tabelle di presentazione e stili inline (compatibilità con i principali client email), senza CSS remoto, JavaScript, tracking pixel o font esterni. Ogni scheda include ente, titolo, sintesi se disponibile, scadenza in italiano e collegamento HTTPS alla fonte; nessuna sintesi o scadenza viene inventata. È sempre disponibile una versione testuale.
 
 L'anteprima di collaudo viene inviata una sola volta mediante un workflow temporaneo, con **bandi chiaramente fittizi**, oggetto `[ANTEPRIMA — BANDI FITTIZI]`, senza modificare il catalogo o il registro delle notifiche. Dopo aver verificato la ricezione, rimuovere `src/email_preview_once.py` e `.github/workflows/email-preview-once.yml`.
+
+## Logo e dark mode
+
+Il logo ufficiale ha lettering nero/oro e trasparenza. Per impedirne la perdita di contrasto nei client email in modalità scura, il template lo presenta sopra un riquadro bianco esplicito (`bgcolor`, `background-color` e gradiente bianco per i client che preservano i gradienti). Non viene cambiato il marchio. Il risultato effettivo può variare perché alcuni client applicano inversioni forzate: verificare il messaggio su Apple Mail e Gmail, sia in modalità chiara che scura.
