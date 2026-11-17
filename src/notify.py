@@ -58,7 +58,7 @@ def candidates(rows, previous, alerted):
 def make_message(items):
     displayed=items[:MAX_ITEMS]
     count=len(items)
-    subject=f"Opera+ Funding — {count} nuov{'a opportunità' if count==1 else 'e opportunità'} aperte"
+    subject=f"Opera+ Funding — {count} {'nuova opportunità aperta' if count==1 else 'nuove opportunità aperte'}"
     opening=f"Sono state rilevate {count} nuove opportunità aperte e potenzialmente pertinenti ai progetti culturali o formativi. L'ammissibilità deve essere verificata sui bandi ufficiali."
     html_items=[]
     lines=[]
@@ -158,8 +158,14 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--catalog",default="data/opportunities.json")
     parser.add_argument("--state",default="data/notification-state.json")
+    parser.add_argument("--report",default="data/scan-status.json")
     args=parser.parse_args()
     rows=json.loads(Path(args.catalog).read_text(encoding="utf-8"))
+    report=json.loads(Path(args.report).read_text(encoding="utf-8"))
+    sources=report.get("sources") or []
+    if not sources or not all(source.get("ok") is True for source in sources):
+        print("Notifiche non inviate: una o più fonti non sono state acquisite correttamente")
+        return
     now=datetime.now(timezone.utc).isoformat(timespec="seconds")
     run(rows,Path(args.state),now,os.getenv("RESEND_API_KEY"),os.getenv("FUNDING_ALERT_RECIPIENT"))
 
