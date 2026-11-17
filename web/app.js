@@ -132,6 +132,7 @@ function evidenceSection(o){
  dialogField(dl,"Adeguatezza tematica",score(o)+"/100");
  dialogField(dl,"Ammissibilità",review.eligibility);
  dialogField(dl,"Affidabilità della valutazione",review.confidence||"Non documentata");
+ dialogField(dl,"Elementi utilizzati",o.score_explanation_basis||"Solo titolo (valutazione preliminare)");
  section.append(dl);
  if(review.explanation){
   section.append(el("h4","Perché questa opportunità può interessare"));
