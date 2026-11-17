@@ -165,11 +165,18 @@ function openDetails(o){
  dialogField(grid,"Scadenza",validDate(o.deadline)?dateLabel(o.deadline).replace("Scade il ",""):"Non indicata");
  dialogField(grid,"Apertura candidature",validDate(o.opening_date)?dateLabel(o.opening_date).replace("Scade il ",""):"");
  dialogField(grid,"Contributo / dotazione",o.amount?String(o.amount).replace(" (da verificare)",""):"Non indicato nella scheda");
+ dialogField(grid,"Natura dell’importo",o.amount_kind||"");
  dialogField(grid,"Tipologia candidatura",o.application_type||o.opportunity_type||"");
  dialogField(grid,"Edizione",o.edition_year||"");
  dialogField(grid,"Finestra",o.window_label||"");
  content.append(grid);
  content.append(evidenceSection(o));
+ if(o.rolling_guidance){
+  const rolling=el("section",undefined,"dialog-section rolling-guidance");
+  rolling.append(el("h3","Possibile opportunità a sportello"));
+  rolling.append(el("p",o.rolling_guidance));
+  content.append(rolling);
+ }
  if(o.beneficiaries_excerpt){
   const section=el("section",undefined,"dialog-section");
   section.append(el("h3","Destinatari"),el("p",o.beneficiaries_excerpt));
@@ -195,6 +202,13 @@ function openDetails(o){
  const links=el("div",undefined,"dialog-links");
  addLink(links,"Apri la scheda ufficiale ↗",o.link_status==="non disponibile"?o.source_url:(o.resolved_url||o.url));
  if(o.deadline_source&&o.deadline_source!==(o.resolved_url||o.url))addLink(links,"Fonte della scadenza ↗",o.deadline_source);
+ // Link to distinct evidence sources only; avoid repeating the main official page.
+ for(const [label,url] of [["Fonte beneficiari ↗",o.beneficiaries_source],
+                           ["Fonte importo ↗",o.amount_source],
+                           ["Fonte indicazione sportello ↗",o.rolling_guidance_source]]){
+  if(url&&![o.url,o.resolved_url,o.deadline_source,o.source_url].includes(url))
+   addLink(links,label,url);
+ }
  const used=new Set([o.url,o.resolved_url,o.deadline_source]);
  for(const d of o.documents||[]){
   if(!used.has(d.url)){addLink(links,(d.label||"Documento")+" ↗",d.url);used.add(d.url);}

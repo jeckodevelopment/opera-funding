@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from classify import parse_deadline
 from pdf_dates import pdf_deadline_from_documents
 from structured import structured_facts
+from evidence import official_evidence
 
 DEADLINE_PATTERN = re.compile(r"(?i)(?:scadenza|termine (?:di |per (?:la )?)?(?:presentazione|candidatur|domand)|deadline|apply by)\s*[:–-]?\s*(\d{1,2}[./-]\d{1,2}[./-]20\d{2})")
 EUR_PATTERN = re.compile(r"(?i)(?:contributo massimo|finanziamento massimo|importo massimo|dotazione finanziaria|budget complessivo)\s*[:–-]?\s*(?:€|euro|eur)?\s*([\d.]+(?:,\d{2})?)\s*(?:€|euro|eur)?")
@@ -51,7 +52,14 @@ def extract(html, page_url):
         seen.add(link)
         if len(documents) >= MAX_DETAIL_LINKS:
             break
-    return {"deadline":deadline,"amount":amount,"beneficiaries_excerpt":beneficiaries,"documents":documents,"detail_checked":True,
+    facts=official_evidence(html,page_url)
+    return {"deadline":deadline,"amount":amount or facts["amount"],
+            "beneficiaries_excerpt":beneficiaries or facts["beneficiaries_excerpt"],
+            "beneficiaries_source":page_url if (beneficiaries or facts["beneficiaries_excerpt"]) else None,
+            "amount_kind":facts["amount_kind"],"amount_source":facts["amount_source"] if facts["amount"] else (page_url if amount else None),
+            "rolling_guidance":facts["rolling_guidance"],
+            "rolling_guidance_source":facts["rolling_guidance_source"],
+            "documents":documents,"detail_checked":True,
             "detail_basis":"HTML della scheda; non include verifica di PDF o FAQ"}
 
 def enrich(item, source, session, eligible_to_fetch):
@@ -112,8 +120,9 @@ def enrich(item, source, session, eligible_to_fetch):
                 parsed["deadline_source"] = document_url
         parsed["detail_checked_at"]=datetime.now(timezone.utc).isoformat(timespec="seconds")
         parsed["detail_version"]=DETAIL_SCHEMA_VERSION
-        for key in ("amount","beneficiaries_excerpt","documents","detail_checked","detail_basis","detail_checked_at","detail_version"):
-            item[key] = parsed[key]
+        for key in ("amount","beneficiaries_excerpt","beneficiaries_source","amount_kind","amount_source","rolling_guidance","rolling_guidance_source","documents","detail_checked","detail_basis","detail_checked_at","detail_version"):
+            if parsed.get(key) is not None or key not in item:
+                item[key] = parsed.get(key)
         if structured.get("source_open_confirmed"):
             item["status"] = "aperto (pagina ufficiale)"
             item["status_basis"] = "Stato aperto esplicito nella scheda ufficiale"
