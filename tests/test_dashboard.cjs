@@ -6,9 +6,12 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,readWatchlist,isFollowed};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,readWatchlist,isFollowed}=context.exposed;
 assert.equal(PAGE_SIZE,12);
+assert.equal(readWatchlist().size,0);
+assert.equal(isFollowed({id:"https://example.org/call"}),false);
+
 const id="https://example.org/call?id=32&mode=it#window=1";
 const shared=opportunityUrl(id,"https://jeckodevelopment.com/dev/funding/?campaign=old");
 assert.equal(requestedOpportunity(shared),id);
@@ -117,6 +120,13 @@ assert.match(css,/\.opportunity-page/);
 assert.match(css,/\.evidence-review/);
 assert.match(src,/content.append\(evidenceSection\(o\)\)/);
 assert.match(html,/id="opportunity-page"/);
+assert.match(html,/data-value="followed"/);
+assert.match(html,/id="followed-note"/);
+assert.match(src,/function toggleFollowed/);
+assert.match(src,/WATCHLIST_KEY/);
+assert.match(src,/localStorage\.setItem/);
+assert.match(css,/\.follow-button/);
+
 assert.match(html,/id="dialog-close"/);
 assert.match(src,/function renderOpportunity/);
 assert.match(src,/window\.history\.pushState/);
