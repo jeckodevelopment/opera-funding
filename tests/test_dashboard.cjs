@@ -6,9 +6,21 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals}=context.exposed;
 assert.equal(PAGE_SIZE,12);
+const incomplete=reviewSignals({title:"Bando culturale",relevance:35,eligibility:"da verificare",
+ score_explanation:"Affinità preliminare con formazione",eligibility_checks:["Verificare beneficiari"]});
+assert.ok(incomplete.missing.some(x=>x.includes("Beneficiari")));
+assert.ok(incomplete.missing.some(x=>x.includes("Scadenza")));
+assert.equal(incomplete.eligibility,"da verificare");
+assert.equal(incomplete.checks[0],"Verificare beneficiari");
+assert.equal(incomplete.explanation,"Affinità preliminare con formazione");
+const complete=reviewSignals({beneficiaries_excerpt:"ETS",amount:"10.000 euro",deadline:"2027-04-01",
+ link_status:"raggiungibile",eligibility_checks:[]});
+assert.equal(complete.missing.length,0);
+assert.equal(state({opportunity_type:"finanziamento potenziale",relevance:0}),"non verificato");
+
 assert.equal(statusLabel("aperto"),"APERTA");
 assert.equal(statusLabel("chiuso"),"SCADUTA");
 assert.equal(statusLabel("in arrivo"),"IN ARRIVO");
@@ -56,7 +68,9 @@ assert.match(src,/\$\("kind"\)\.value="";/);
 assert.match(css,/\.calendar-month/);
 assert.match(css,/\.adequacy-track/);
 assert.match(css,/\.adequacy-mask/);
-assert.match(css,/\.opportunity-dialog/);
+assert.match(css,/\\.opportunity-dialog/);
+assert.match(css,/\\.evidence-review/);
+assert.match(src,/content.append\\(evidenceSection\\(o\\)\\)/);
 assert.match(html,/id="opportunity-dialog"/);
 assert.match(html,/id="dialog-close"/);
 assert.match(src,/function openDetails/);
