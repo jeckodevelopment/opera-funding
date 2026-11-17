@@ -6,9 +6,17 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity}=context.exposed;
 assert.equal(PAGE_SIZE,12);
+const id="https://example.org/call?id=32&mode=it#window=1";
+const shared=opportunityUrl(id,"https://jeckodevelopment.com/dev/funding/?campaign=old");
+assert.equal(requestedOpportunity(shared),id);
+assert.ok(shared.startsWith("https://jeckodevelopment.com/dev/funding/?"));
+assert.equal(new URL(shared).searchParams.get("campaign"),"old");
+assert.equal(requestedOpportunity("https://jeckodevelopment.com/dev/funding/"),null);
+assert.equal(requestedOpportunity("https://jeckodevelopment.com/dev/funding/?opportunity="+"x".repeat(2501)),null);
+
 const evaluation=evaluationData({
  title:"Contributo educativo",issuer:"Fondazione Esempio",relevance:72,
  opportunity_type:"finanziamento potenziale",eligibility:"da verificare",
@@ -105,12 +113,15 @@ assert.match(src,/\$\("kind"\)\.value="";/);
 assert.match(css,/\.calendar-month/);
 assert.match(css,/\.adequacy-track/);
 assert.match(css,/\.adequacy-mask/);
-assert.match(css,/\.opportunity-dialog/);
+assert.match(css,/\.opportunity-page/);
 assert.match(css,/\.evidence-review/);
 assert.match(src,/content.append\(evidenceSection\(o\)\)/);
-assert.match(html,/id="opportunity-dialog"/);
+assert.match(html,/id="opportunity-page"/);
 assert.match(html,/id="dialog-close"/);
-assert.match(src,/function openDetails/);
+assert.match(src,/function renderOpportunity/);
+assert.match(src,/window\.history\.pushState/);
+assert.match(src,/popstate/);
+assert.match(src,/Copia link della scheda/);
 assert.match(src,/Possibile opportunità a sportello/);
 assert.match(src,/Natura dell’importo/);
 assert.match(css,/\.rolling-guidance/);
