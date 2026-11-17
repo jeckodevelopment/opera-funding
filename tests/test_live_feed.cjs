@@ -23,7 +23,7 @@ async function scenario(remoteAvailable){
  assert(calls.every(x=>x.opts.credentials==="omit"&&x.opts.cache==="no-store"));
  assert(calls[0].url.startsWith("https://raw.githubusercontent.com/jeckodevelopment/opera-funding/main/data/"));
  const versions=calls.map(x=>new URL(x.url,"https://local.example/dev/funding/").searchParams.get("v"));
- assert(versions.every(v=>v&&/^\\d+$/.test(v)));
+ assert(versions.every(v=>v&&/^\d+$/.test(v)));
  assert.equal(versions[0],versions[1]);
  if(!remoteAvailable){
    assert(calls.some(x=>x.url.startsWith("data/opportunities.json?v=")));
