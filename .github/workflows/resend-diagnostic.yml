@@ -1,0 +1,21 @@
+name: One-off redacted Resend diagnostic
+on:
+  push:
+    branches: [main]
+    paths: ['src/resend_diagnostic.py']
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    if: ${{ github.run_attempt == 1 }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Diagnose Resend API response without exposing secrets
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          FUNDING_ALERT_RECIPIENT: ${{ secrets.FUNDING_ALERT_RECIPIENT }}
+        run: python src/resend_diagnostic.py
