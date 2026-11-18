@@ -23,6 +23,28 @@ PARTNERS_REQUIRED=re.compile(
     r"consortium required|consorzio obbligatorio"
 )
 
+def restricted_applicants(terms):
+    """Only explicit exclusive applicant rules, not 'not only X' statements."""
+    for pattern in (INDIVIDUAL_ONLY, FIRMS_ONLY):
+        for match in pattern.finditer(terms):
+            prefix=terms[max(0,match.start()-12):match.start()].lower()
+            if re.search(r"(?:non|not)\s+$",prefix):
+                continue
+            return True
+    return False
+
+
+def unresolved_eligibility_documents(row):
+    """Different excerpts are a review signal, not proven legal conflicts."""
+    relevant={"beneficiaries_excerpt","requirements_excerpt"}
+    return [
+        entry for entry in (row.get("assessment_document_discrepancies") or [])
+        if isinstance(entry,dict) and entry.get("field") in relevant
+        and entry.get("first_source") and entry.get("other_source")
+        and entry["first_source"]!=entry["other_source"]
+    ]
+
+
 def apply_adequacy(row):
     kind=row.get("opportunity_type") or ""
     editorial=row.get("assessment_label") or ""
@@ -34,6 +56,7 @@ def apply_adequacy(row):
 
     level=RANK.get(editorial,1)
     reasons=[]
+    row["adequacy_verification_flags"]=[]
     evidence=any(row.get(f) for f in (
         "programme_objectives_excerpt","funded_activities_excerpt",
         "beneficiaries_excerpt","requirements_excerpt"))
@@ -50,14 +73,23 @@ def apply_adequacy(row):
     beneficiaries=str(row.get("beneficiaries_excerpt") or "")
     requirements=str(row.get("requirements_excerpt") or "")
     terms=beneficiaries+" "+requirements
-    if INDIVIDUAL_ONLY.search(terms) or FIRMS_ONLY.search(terms):
+    if restricted_applicants(terms):
         level=min(level,1)
-        reasons.append("Il testo disponibile limita i destinatari a soggetti diversi da un'associazione culturale")
+        row["adequacy_verification_flags"].append("beneficiari_esclusivi")
+        reasons.append("Il testo disponibile sembra limitare i destinatari a soggetti diversi da un'associazione culturale: verificare eventuale ammissione come partner")
     elif PARTNERS_REQUIRED.search(terms):
         reasons.append("È necessario verificare il partenariato richiesto")
     elif ("scuol" in beneficiaries.lower() or "school" in beneficiaries.lower()) and not PARTNERS_ALLOWED.search(terms):
         reasons.append("Verificare se Opera+ può partecipare come partner di un ente scolastico")
 
+    discrepancies=unresolved_eligibility_documents(row)
+    if discrepancies:
+        # A higher assessment must not depend on applicant rules that differ
+        # between two inspected official documents. These passages might be
+        # complementary rather than legally conflicting, so cap at MEDIUM.
+        level=min(level,2)
+        row["adequacy_verification_flags"].append("fonti_requisiti_da_confrontare")
+        reasons.append("I documenti riportano formulazioni differenti su beneficiari o requisiti: confronto delle fonti necessario")
     row["adequacy_label"]=NAMES[level]
     row["adequacy_level"]=level
     row["adequacy_reason"]="; ".join(reasons) if reasons else (

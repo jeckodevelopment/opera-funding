@@ -230,3 +230,10 @@ La vista iniziale e il reset dei filtri selezionano sempre **Aperte**. La vista 
 ## PDF sintetico senza metadati tecnici (18 novembre 2026)
 - La sezione «Motivazione dell'adeguatezza» del PDF mostra soltanto la motivazione sostanziale; sono esclusi «Copertura documentale», «Metodo» ed «Elementi utilizzati». Il disclaimer finale è mantenuto.
 - I dati tecnici restano disponibili nella scheda Web, nel pannello espandibile dedicato alla metodologia. Requisiti, condizioni e informazioni aggiuntive restano integralmente esportati.
+
+## Vincoli documentali nel giudizio di adeguatezza (18 novembre 2026)
+- L'adeguatezza continua a essere espressa su un solo indicatore grafico, distinto dall'apertura e dall'ammissibilità giuridica.
+- Quando il parser trova formulazioni diverse per **beneficiari** o **requisiti** in PDF ufficiali differenti, la valutazione ALTA viene prudenzialmente limitata a MEDIA e viene registrato `adequacy_verification_flags: ["fonti_requisiti_da_confrontare"]` e una motivazione leggibile. Non è una certificazione di conflitto: possono essere passaggi complementari o versioni differenti, da verificare manualmente.
+- Divergenze nelle sole finalità non comportano un abbassamento automatico, perché non dimostrano una differenza nell'ammissibilità.
+- Le espressioni negative come «non solo persone fisiche» non sono interpretate come esclusioni; un'esclusione chiara di associazioni culturali resta invece un vincolo prudenziale già esistente.
+- Il giudizio non aumenta automaticamente per la presenza di più documenti; mantiene traccia dei segnali di verifica senza inventare requisiti, possibilità di partecipazione o percentuali di aggiudicazione.

@@ -47,6 +47,72 @@ class AdequacyTests(unittest.TestCase):
         })
         self.assertEqual(row["adequacy_label"],"MEDIA")
 
+    def test_unresolved_beneficiary_evidence_caps_high_at_medium(self):
+        row=apply_adequacy({
+            "opportunity_type":"finanziamento potenziale",
+            "assessment_label":"ALTA AFFINITÀ",
+            "assessment_evidence_source":"https://example.org/bando",
+            "programme_objectives_excerpt":"Educazione musicale",
+            "funded_activities_excerpt":"Laboratori teatrali",
+            "beneficiaries_excerpt":"Associazioni culturali ammesse",
+            "requirements_excerpt":"Candidatura entro dicembre",
+            "assessment_document_discrepancies":[{
+                "field":"beneficiaries_excerpt",
+                "first_source":"https://example.org/call.pdf",
+                "other_source":"https://example.org/faq.pdf",
+                "status":"testi_diversi_da_verificare"
+            }]
+        })
+        self.assertEqual(row["adequacy_label"],"MEDIA")
+        self.assertIn("fonti_requisiti_da_confrontare",row["adequacy_verification_flags"])
+        self.assertIn("formulazioni differenti",row["adequacy_reason"])
+
+    def test_difference_about_objectives_does_not_cap_eligibility(self):
+        row=apply_adequacy({
+            "opportunity_type":"finanziamento potenziale",
+            "assessment_label":"ALTA AFFINITÀ",
+            "assessment_evidence_source":"https://example.org/bando",
+            "programme_objectives_excerpt":"Promozione culturale",
+            "funded_activities_excerpt":"Laboratori musicali",
+            "beneficiaries_excerpt":"Associazioni culturali",
+            "requirements_excerpt":"Progetto artistico",
+            "assessment_document_discrepancies":[{
+                "field":"programme_objectives_excerpt",
+                "first_source":"https://example.org/a.pdf",
+                "other_source":"https://example.org/b.pdf"
+            }]
+        })
+        self.assertEqual(row["adequacy_label"],"ALTA")
+        self.assertEqual(row["adequacy_verification_flags"],[])
+
+    def test_mention_not_only_individual_applicants_is_not_exclusive(self):
+        row=apply_adequacy({
+            "opportunity_type":"finanziamento potenziale",
+            "assessment_label":"ALTA AFFINITÀ",
+            "assessment_evidence_source":"https://example.org/bando",
+            "programme_objectives_excerpt":"Promozione culturale",
+            "funded_activities_excerpt":"Progetti culturali",
+            "beneficiaries_excerpt":"Sono ammessi non solo persone fisiche ma anche enti culturali",
+            "requirements_excerpt":"Progetto documentato"
+        })
+        self.assertEqual(row["adequacy_level"],3)
+        self.assertNotIn("beneficiari_esclusivi",row["adequacy_verification_flags"])
+
+    def test_missing_or_same_source_discrepancy_is_not_a_verified_conflict(self):
+        row=apply_adequacy({
+            "opportunity_type":"finanziamento potenziale",
+            "assessment_label":"ALTA AFFINITÀ",
+            "assessment_evidence_source":"https://example.org/bando",
+            "programme_objectives_excerpt":"Promozione culturale",
+            "funded_activities_excerpt":"Progetti culturali",
+            "beneficiaries_excerpt":"Associazioni",
+            "requirements_excerpt":"Cofinanziamento possibile",
+            "assessment_document_discrepancies":[{"field":"requirements_excerpt",
+                 "first_source":"https://example.org/a.pdf",
+                 "other_source":"https://example.org/a.pdf"}]
+        })
+        self.assertEqual(row["adequacy_level"],3)
+
     def test_informational_record_not_misrepresented_as_grant(self):
         row=apply_adequacy({"opportunity_type":"altro avviso",
                              "assessment_label":"INFORMATIVA"})
