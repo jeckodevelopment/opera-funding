@@ -18,8 +18,12 @@ REGIONS = (
     "calabria", "friuli-venezia giulia", "trentino-alto adige"
 )
 AGE_PATTERN = re.compile(r"(?i)\b(?:almeno|minimo|non meno di)\s+(\d{1,2})\s+ann[io]\s+di\s+(?:attivit[àa]|costituzione)|\bcostituit[ioe]\s+da\s+almeno\s+(\d{1,2})\s+ann[io]")
-RUNTS_PATTERN = re.compile(r"(?i)\b(?:iscritt[ioe]|registrat[ioe])\s+(?:al|nel|alla|all')\s*runts\b")
-REGION_PATTERN = re.compile(r"(?i)\bsede\s+(?:legale|operativa)\s+(?:in|nel|nella)\s+(?:regione\s+)?([a-zàèéìòù' -]+)")
+RUNTS_MANDATORY = re.compile(
+    r"(?i)\b(?:iscrizione\s+(?:al|nel)\s+runts\s+(?:obbligatoria|richiesta)|"
+    r"(?:obbligo|requisito)\s+di\s+iscrizione\s+(?:al|nel)\s+runts|"
+    r"(?:devono|dovranno)\s+essere\s+iscritt[ieo]\s+(?:al|nel)\s+runts|"
+    r"solo\s+(?:gli\s+)?iscritt[ieo]\s+(?:al|nel)\s+runts)\b"
+)
 MAX_SUMMARY_LENGTH = 240
 
 
@@ -47,7 +51,7 @@ def _profile_value(profile, key):
 def _safe_compare(condition, profile, as_of):
     category = condition.get("category")
     excerpt = str(condition.get("excerpt") or "")
-    if category == "natura_giuridica" and RUNTS_PATTERN.search(excerpt):
+    if category == "natura_giuridica" and RUNTS_MANDATORY.search(excerpt):
         registered = _profile_value(profile, "runts_registration")
         if isinstance(registered, bool):
             return ("compatibile" if registered else "potenzialmente_incompatibile",
@@ -63,8 +67,8 @@ def _safe_compare(condition, profile, as_of):
                     return None
                 reached = (as_of.year-born.year -
                            ((as_of.month, as_of.day) < (born.month, born.day)))
-                return ("compatibile" if reached >= years else "potenzialmente_incompatibile",
-                        "Anzianità confrontata con la data costitutiva documentata alla data del controllo")
+                return ("compatibile" if reached >= years else "da_verificare",
+                        "Anzianità verificata alla data del controllo; la data di riferimento del bando può essere successiva")
             except (ValueError, StopIteration):
                 pass
     # A region mention can be ambiguous (legal or operational seat, multiple
