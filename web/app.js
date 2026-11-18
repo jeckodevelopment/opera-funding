@@ -2,7 +2,7 @@ const $ = id => document.getElementById(id);
 const PAGE_SIZE = 12;
 const DATA_ORIGIN = "https://raw.githubusercontent.com/jeckodevelopment/opera-funding/main/data/";
 const FALLBACK_ORIGIN = "data/";
-let all=[], visibleCount=PAGE_SIZE;
+let all=[], visibleCount=PAGE_SIZE,loadSequence=0;
 const WATCHLIST_KEY="opera-funding-watchlist-v1";
 function readWatchlist(){
  try{
@@ -39,23 +39,37 @@ function addLink(parent,label,url,className){
  const href=safeUrl(url);if(!href)return;
  const a=el("a",label,className);a.href=href;a.target="_blank";a.rel="noopener noreferrer";parent.append(a);
 }
-async function fetchDataset(origin){
- // GitHub raw CDN can serve an older main-branch snapshot despite no-store.
- // Use the same unique token for both resources, so refresh never combines
- // different cached generations of catalog and scan status.
+async function fetchDataset(origin,signal){
+ // A unique token prevents the GitHub CDN from returning an older catalog.
  const revision="v="+Date.now();
+ const opts={cache:"no-store",credentials:"omit",signal};
  const [opResponse,scanResponse]=await Promise.all([
-  fetch(origin+"opportunities.json?"+revision,{cache:"no-store",credentials:"omit"}),
-  fetch(origin+"scan-status.json?"+revision,{cache:"no-store",credentials:"omit"})
+  fetch(origin+"opportunities.json?"+revision,opts),
+  fetch(origin+"scan-status.json?"+revision,opts)
  ]);
  if(!opResponse.ok||!scanResponse.ok)throw Error("Could not load funding data");
  const [opportunities,status]=await Promise.all([opResponse.json(),scanResponse.json()]);
  if(!Array.isArray(opportunities)||!status||!Array.isArray(status.sources))throw Error("Invalid funding data");
  return {opportunities,status};
 }
+// Do not leave the dashboard indefinitely in "Caricamento" if GitHub Raw
+// stalls or is blocked by a browser/network extension.
+async function fetchWithDeadline(origin,timeoutMs=6500){
+ const aborter=typeof AbortController!=="undefined"?new AbortController():null;
+ let timeoutId;
+ try{
+  return await Promise.race([
+   fetchDataset(origin,aborter?.signal),
+   new Promise((_,reject)=>{timeoutId=setTimeout(()=>{
+    aborter?.abort();
+    reject(new Error("Funding data request timed out"));
+   },timeoutMs);})
+  ]);
+ }finally{clearTimeout(timeoutId);}
+}
 async function loadDataset(){
- try{return {...await fetchDataset(DATA_ORIGIN),origin:"github"};}
- catch(e){return {...await fetchDataset(FALLBACK_ORIGIN),origin:"local"};}
+ try{return {...await fetchWithDeadline(DATA_ORIGIN),origin:"github"};}
+ catch(e){return {...await fetchWithDeadline(FALLBACK_ORIGIN),origin:"local"};}
 }
 const validDate=value=>typeof value==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&!Number.isNaN(Date.parse(value+"T12:00:00Z"));
 const today=()=>new Date().toISOString().slice(0,10);
@@ -517,9 +531,12 @@ function syncControls(){
 }
 function resetPagination(){visibleCount=PAGE_SIZE;render();}
 async function init(){
+ const sequence=++loadSequence;
  const button=$("refresh");button.disabled=true;button.textContent="Aggiornamento…";
  try{
-  const dataset=await loadDataset();all=dataset.opportunities;const status=dataset.status;
+  const dataset=await loadDataset();
+  if(sequence!==loadSequence)return;
+  all=dataset.opportunities;const status=dataset.status;
   $("total").textContent=all.filter(o=>state(o)==="aperto").length;
   $("potential").textContent=all.filter(o=>["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type)).length;
   $("high").textContent=all.filter(o=>state(o)==="aperto"&&score(o)>=60).length;
@@ -535,10 +552,11 @@ async function init(){
   selector.value=[...selector.options].some(x=>x.value===oldValue)?oldValue:"";
   renderSourceHealth(status,all);updateStateCounts();syncControls();render();renderRoute();
  }catch(e){
+  if(sequence!==loadSequence)return;
   $("scan").textContent="Dati non disponibili";$("items").replaceChildren(el("p","Impossibile caricare le opportunità. Riprova con Aggiorna.","empty"));
   $("health-dot").className="health-dot red";$("health-label").textContent="Dati non disponibili";
   $("source-incidents").textContent="Il report dell’ultima scansione non è disponibile.";
- }finally{button.disabled=false;button.textContent="Aggiorna ↻";}
+ }finally{if(sequence===loadSequence){button.disabled=false;button.textContent="Aggiorna ↻";}}
 }
 for(const id of ["search","issuer","kind","level"])$(id).addEventListener(id==="search"?"input":"change",resetPagination);
 for(const node of document.querySelectorAll(".quick-tab"))node.addEventListener("click",()=>{$("status").value=node.dataset.value;syncControls();resetPagination();});

@@ -16,6 +16,8 @@ on:
       - 'src/verification.py'
       - 'src/classify.py'
       - 'src/detail.py'
+      - 'src/evidence.py'
+      - 'src/catalog_changes.py'
       - 'src/quality.py'
       - 'src/status.py'
       - 'src/fit.py'

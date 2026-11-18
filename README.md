@@ -57,3 +57,9 @@ Il pulsante **Segui opportunità** è disponibile sulle schede del catalogo e ne
 ### Collegamenti alle opportunità
 
 Il comando **Esamina opportunità** usa un normale link HTML verso l'URL condivisibile della scheda, con aspetto grafico di pulsante coerente con **Segui opportunità**. La navigazione nativa del browser (anche da tastiera, in nuova scheda e dopo un ricaricamento) evita la dipendenza da intercettazioni JavaScript del click. La dashboard mantiene il catalogo completo e non cambia il tracciamento delle opportunità.
+
+### Avvio, cache e aggiornamento dati — correzione novembre 2026
+
+Il frontend carica il feed GitHub con un limite massimo di attesa per evitare che il catalogo resti indefinitamente su “Caricamento…”. Se il feed remoto non risponde entro il limite, prova la copia locale predisposta dal publisher; se entrambe le richieste falliscono mostra un errore esplicito anziché lasciare una schermata in attesa. Il caricamento protegge anche da risposte di richieste obsolete. La pagina HTML include una versione esplicita nelle URL degli asset `app.js` e `styles.css` per aggirare le copie vecchie della cache dopo il deploy.
+
+La scansione automatica resta programmata lunedì, mercoledì e venerdì alle **06:00 UTC**; il deploy del frontend è indipendente dalla scansione e non sostituisce l'aggiornamento del catalogo. In caso di esecuzione pianificata mancata, controllare il workflow *Scan funding sources* su GitHub Actions. Il workflow include anche le modifiche ai moduli `src/evidence.py` e `src/catalog_changes.py` fra gli eventi che richiedono una nuova scansione. Il publisher rimane esclusivamente quello di `jeckodevsite`.
