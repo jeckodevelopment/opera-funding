@@ -51,7 +51,11 @@ def ingest_programme_calls(programmes,monitor_state,indexed,session,eligible,now
         added=existing=rejected=0
         source={"id":"programme:"+p["id"],"name":p.get("funder_name") or p["name"],
                 "url":p["url"],"tier":"medium"}
-        for candidate in state.get("candidate_links",[])[:MAX_PER_PROGRAMME]:
+        candidates=state.get("candidate_links",[])
+        offset=int(state.get("cursor") or 0)%len(candidates) if candidates else 0
+        batch=(candidates+candidates)[offset:offset+MAX_PER_PROGRAMME]
+        state["cursor"]=(offset+len(batch))%len(candidates) if candidates else 0
+        for candidate in batch:
             if not qualified_candidate(candidate,p):
                 rejected+=1
                 continue
