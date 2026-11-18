@@ -86,6 +86,58 @@ def api_result_to_opportunity(record,source,now):
         result["detail_basis"]="Metadati espliciti dell'API ufficiale UE"
     return explain(annotate(result))
 
+def fetch_topic_evidence(item,session,now):
+    """Consult a single historic topic via the official EC Topic Details search.
+
+    The Funding & Tenders page is a client-rendered SPA. Its HTML is not a
+    trustworthy substitute for the per-topic official search API.
+    """
+    from urllib.parse import urlparse, unquote
+    url=item.get("url","")
+    parsed=urlparse(url)
+    if (parsed.scheme!="https" or parsed.hostname!="ec.europa.eu"
+            or not parsed.path.startswith("/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/")):
+        return item
+    topic=unquote(parsed.path.rsplit("/",1)[-1])
+    if not TOPIC.fullmatch(topic):
+        return item
+    query={"bool":{"must":[{"term":{"topicAbbreviation":topic}}]}}
+    data={"query":("query.json",json.dumps(query),"application/json"),
+          "languages":("languages.json",'["en"]',"application/json"),
+          "displayLanguage":(None,"en")}
+    try:
+        response=session.post(
+            API,params={"apiKey":"SEDIA","text":'"'+topic+'"',
+                        "pageSize":10,"pageNumber":1},
+            files=data,timeout=20,headers={"Accept":"application/json"})
+        response.raise_for_status()
+        payload=response.json()
+        if not isinstance(payload,dict) or not isinstance(payload.get("results"),list):
+            return item
+    except Exception:
+        # The caller retains the record in the retry queue if the API is down.
+        return item
+    item["detail_attempted_at"]=now
+    item["detail_basis"]="Ricerca puntuale nel servizio ufficiale Topic Details UE"
+    item["assessment_evidence_source"]=url
+    match=next((record for record in payload["results"]
+                if isinstance(record,dict) and isinstance(record.get("metadata"),dict)
+                and (first(record["metadata"],"topicAbbreviation","topicIdentifier") or "").upper()==topic.upper()),None)
+    if match is None:
+        item["detail_checked"]=False
+        item["detail_basis"]="Topic non restituito dalla ricerca ufficiale UE"
+        return item
+    meta=match["metadata"]
+    evidence=metadata_evidence(meta)
+    for field,value in evidence.items():
+        if not item.get(field):
+            item[field]=value
+    item["detail_checked"]=bool(evidence)
+    item["detail_checked_at"]=now
+    item["detail_basis"]="Topic identificato nella API ufficiale UE; requisiti disponibili nei metadati" if evidence else "Topic identificato nella API UE; testo completo non presente nei metadati"
+    return item
+
+
 def fetch_creative_europe(session,source,now):
     query={"bool":{"must":[
         {"terms":{"type":["1","2","8"]}},
