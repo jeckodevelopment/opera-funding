@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T21:42:08+00:00",
+  "checked_at": "2026-11-18T21:55:30+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 15,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "torino",
@@ -31,7 +31,7 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "culturatorino",
@@ -39,7 +39,7 @@
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "volto",
@@ -47,7 +47,7 @@
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T21:42:08+00:00",
+      "checked_at": "2026-11-18T21:55:30+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-18T21:42:08+00:00",
+      "checked_at": "2026-11-18T21:55:30+00:00",
       "error": "robots.txt: risposta HTTP 503; verifica automatica non disponibile",
       "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
       "institutional_reference_label": "Regione Piemonte — bando ALCOTRA",
@@ -111,23 +111,23 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T21:42:08+00:00"
+      "checked_at": "2026-11-18T21:55:30+00:00"
     }
   ],
   "coverage": {
     "totals": {
-      "all": 255,
-      "open": 34,
+      "all": 256,
+      "open": 33,
       "closed": 138,
       "upcoming": 2,
-      "unverified": 81,
+      "unverified": 83,
       "dated": 171,
       "dated_with_source": 171,
-      "detail_checked": 183,
-      "reachable": 254,
-      "candidate_unverified": 0,
+      "detail_checked": 184,
+      "reachable": 255,
+      "candidate_unverified": 2,
       "informational_unverified": 81,
-      "candidate_missing_deadline": 2
+      "candidate_missing_deadline": 3
     },
     "by_source": {
       "culturatorino": {
@@ -209,23 +209,23 @@
       },
       "eucreative": {
         "total": 4,
-        "open": 3,
-        "unverified": 1,
-        "dated": 3,
-        "dated_with_source": 3,
+        "open": 2,
+        "unverified": 2,
+        "dated": 2,
+        "dated_with_source": 2,
         "detail_checked": 4,
-        "candidate_unverified": 0,
+        "candidate_unverified": 1,
         "informational_unverified": 1,
-        "candidate_missing_deadline": 0
+        "candidate_missing_deadline": 1
       },
       "volto": {
-        "total": 15,
+        "total": 16,
         "open": 11,
-        "unverified": 2,
-        "dated": 13,
-        "dated_with_source": 13,
-        "detail_checked": 14,
-        "candidate_unverified": 0,
+        "unverified": 3,
+        "dated": 14,
+        "dated_with_source": 14,
+        "detail_checked": 15,
+        "candidate_unverified": 1,
         "informational_unverified": 2,
         "candidate_missing_deadline": 0
       },
@@ -267,11 +267,11 @@
     "sources_total": 13
   },
   "assessment_coverage": {
-    "total": 255,
+    "total": 256,
     "with_document_issues": 34,
-    "with_editorial_label": 255,
+    "with_editorial_label": 256,
     "by_review_status": {
-      "PARZIALE": 102,
+      "PARZIALE": 103,
       "EVIDENZE RACCOLTE": 16,
       "REVISIONE DOCUMENTALE": 23,
       "FONTE NON SUFFICIENTE": 114
@@ -279,5 +279,571 @@
     "completely_verified_applicability": 0,
     "open_without_individual_review": 13,
     "new_pending": 0
+  },
+  "open_eligibility_review": {
+    "as_of": "2026-11-18",
+    "open_total": 33,
+    "in_queue": 33,
+    "condition_status_counts": {
+      "compatibilita_documentata": 2,
+      "informazioni_insufficienti": 31
+    },
+    "specific_requirement_category_counts": {
+      "natura_giuridica": 2,
+      "territorio": 2
+    },
+    "items": [
+      {
+        "public_id": 175,
+        "title": "Dora in Avanti: bando per lo sviluppo delle comunità a Torino nord Scadenza: 20 Novembre 2026 Ente promotore: Fondazione Lavazza Territorio: Torino e Settimo Torinese Ambito: Ambiente , Cittadinanza attiva , Salute , Soc",
+        "deadline": "2026-11-20",
+        "days_remaining": 2,
+        "adequacy": "MEDIA",
+        "condition_status": "compatibilita_documentata",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord/"
+        ]
+      },
+      {
+        "public_id": 120,
+        "title": "Call for proposals: European Literacy Coalition consortium",
+        "deadline": "2026-11-23",
+        "days_remaining": 5,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://erasmus-plus.ec.europa.eu/funding-opportunities/european-literacy-coalition-consortium-fpa-sga"
+        ]
+      },
+      {
+        "public_id": 176,
+        "title": "Educazione alla Cittadinanza Globale per la sostenibilità e la solidarietà internazionale - bando 2026 Scadenza: 23 Novembre 2026 Ente promotore: Regione Piemonte e Fondazione Compagnia di San Paolo Territorio: Piemonte",
+        "deadline": "2026-11-23",
+        "days_remaining": 5,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "PARZIALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026/"
+        ]
+      },
+      {
+        "public_id": 23,
+        "title": "Contributi per comunicazione e promozione di manifestazioni ed eventi in Piemonte – 2026",
+        "deadline": "2026-11-24",
+        "days_remaining": 6,
+        "adequacy": "MEDIA",
+        "condition_status": "compatibilita_documentata",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 1,
+        "tasks": [
+          "Verificare sede e ambito territoriale"
+        ],
+        "sources": [
+          "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni"
+        ]
+      },
+      {
+        "public_id": 8,
+        "title": "Invito a presentare progetti per iniziative varie nel 2027 – Circoscrizione 7",
+        "deadline": "2026-11-26",
+        "days_remaining": 8,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7"
+        ]
+      },
+      {
+        "public_id": 144,
+        "title": "Bando “Lo Sport è vita” Due linee di finanziamento per sostenere progetti di promozione dell'attività sportiva come strumento di prevenzione, tutela della salute e benessere psicologico, anche a favore di persone con pat",
+        "deadline": "2026-11-28",
+        "days_remaining": 10,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://infobandi.csvnet.it/bando-lo-sport-e-vita/",
+          "https://infobandi.csvnet.it/bando-lo-sport-e-vita/?utm_source=rss&utm_medium=rss&utm_campaign=bando-lo-sport-e-vita"
+        ]
+      },
+      {
+        "public_id": 115,
+        "title": "European slate development",
+        "deadline": "2026-12-01",
+        "days_remaining": 13,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "FONTE NON SUFFICIENTE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVSLATE"
+        ]
+      },
+      {
+        "public_id": 190,
+        "title": "Linee guida per i Festival partecipativi 2027",
+        "deadline": "2026-12-03",
+        "days_remaining": 15,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027/"
+        ]
+      },
+      {
+        "public_id": 19,
+        "title": "Per saperne di più su Avviso pubblico di finanziamento alle associazioni turistiche pro loco del Piemonte - anno 2026",
+        "deadline": "2026-12-04",
+        "days_remaining": 16,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 1,
+        "tasks": [
+          "Verificare natura giuridica e iscrizioni richieste"
+        ],
+        "sources": [
+          "https://bandi.regione.piemonte.it/contributi-finanziamenti/avviso-pubblico-finanziamento-alle-associazioni-turistiche-pro-loco-piemonte-anno-2026"
+        ]
+      },
+      {
+        "public_id": 148,
+        "title": "Erase Indifference Challenge 2026 Le candidature sono aperte a iniziative già realizzate che abbiano dimostrato risultati concreti nel contrastare l’indifferenza di fronte a diverse forme di discriminazione, tra cui razz",
+        "deadline": "2026-12-04",
+        "days_remaining": 16,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "PARZIALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026"
+        ]
+      },
+      {
+        "public_id": 255,
+        "title": "Call for ideas 2026 di Fondazione Allianz Umana Mente Sostegno a progetti promossi da enti non profit e del Terzo settore, da realizzare in Italia, per favorire l'inclusione di persone con disabilità e di bambini e giova",
+        "deadline": "2026-12-10",
+        "days_remaining": 22,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "PARZIALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili"
+        ],
+        "sources": [
+          "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente"
+        ]
+      },
+      {
+        "public_id": 25,
+        "title": "Per saperne di più su Presentazione progetti di invecchiamento attivo da parte degli Ambiti Territoriali Sociali",
+        "deadline": "2026-12-10",
+        "days_remaining": 22,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-invecchiamento-attivo-parte-ambiti-territoriali-sociali"
+        ]
+      },
+      {
+        "public_id": 143,
+        "title": "Bando “Fabbrica – Spazi Civici per la Gioventù” Il bando sostiene la creazione e il rafforzamento di Spazi Civici aperti, accessibili e multifunzionali, attraverso progetti presentati da ASD/SSD ed ETS in partenariato, d",
+        "deadline": "2026-12-18",
+        "days_remaining": 30,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 1,
+        "tasks": [
+          "Verificare natura giuridica e iscrizioni richieste"
+        ],
+        "sources": [
+          "https://www.sportesalute.eu/fabbrica.html",
+          "https://infobandi.csvnet.it/bando-fabbrica-spazi-civici-per-la-gioventu/?utm_source=rss&utm_medium=rss&utm_campaign=bando-fabbrica-spazi-civici-per-la-gioventu"
+        ]
+      },
+      {
+        "public_id": 182,
+        "title": "Innovazione e intelligenza artificiale nell'economia sociale",
+        "deadline": "2026-12-18",
+        "days_remaining": 30,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 1,
+        "tasks": [
+          "Verificare sede e ambito territoriale"
+        ],
+        "sources": [
+          "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/"
+        ]
+      },
+      {
+        "public_id": 18,
+        "title": "Aiuti allo spettacolo dal vivo — Regione Piemonte",
+        "deadline": "2026-12-31",
+        "days_remaining": 43,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo"
+        ]
+      },
+      {
+        "public_id": 177,
+        "title": "Linee Guida 2025-2026 per le richieste di contributo al Fondo di beneficenza di Intesa Sanpaolo Scadenza: 31 Dicembre 2026 Ente promotore: Gruppo Intesa SanPaolo Territorio: Italia Ambito: Vari",
+        "deadline": "2026-12-31",
+        "days_remaining": 43,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
+          "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo/"
+        ]
+      },
+      {
+        "public_id": 33,
+        "title": "Call for residency hosts 2026–2027 – Culture Moves Europe",
+        "deadline": "2027-01-18",
+        "days_remaining": 61,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts"
+        ]
+      },
+      {
+        "public_id": 117,
+        "title": "Films on the Move",
+        "deadline": "2027-01-21",
+        "days_remaining": 64,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "FONTE NON SUFFICIENTE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMOVE"
+        ]
+      },
+      {
+        "public_id": 34,
+        "title": "Call: Circulation of European literary works 2027",
+        "deadline": "2027-01-27",
+        "days_remaining": 70,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "FONTE NON SUFFICIENTE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5"
+        ]
+      },
+      {
+        "public_id": 189,
+        "title": "SCOPRI IL BANDO",
+        "deadline": "2027-01-28",
+        "days_remaining": 71,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-medtech/"
+        ]
+      },
+      {
+        "public_id": 254,
+        "title": "Bando 2027 del “Fondo Nazionale per la rievocazione storica” Il Fondo, con una dotazione di 2 milioni di euro, finanzia manifestazioni che ricostruiscono eventi storici significativi presentati da enti locali, soggetti p",
+        "deadline": "2027-01-31",
+        "days_remaining": 74,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "PARZIALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://infobandi.csvnet.it/bando-2027-del-fondo-nazionale-per-la-rievocazione-storica/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-del-fondo-nazionale-per-la-rievocazione-storica"
+        ]
+      },
+      {
+        "public_id": 162,
+        "title": "Bando FONDO NAZIONALE RIEVOCAZIONE STORICA / 2027 – Attivazione della modulistica online per la presentazione delle domande di contributo",
+        "deadline": "2027-01-31",
+        "days_remaining": 74,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/"
+        ]
+      },
+      {
+        "public_id": 116,
+        "title": "European video games and immersive content",
+        "deadline": "2027-02-02",
+        "days_remaining": 76,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "FONTE NON SUFFICIENTE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVVGIM"
+        ]
+      },
+      {
+        "public_id": 119,
+        "title": "TV and online content Animation projects",
+        "deadline": "2027-02-10",
+        "days_remaining": 84,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?callIdentifier=CREA-MEDIA-2027-TVONLINE&isExactMatch=true&order=DESC&pageNumber=1&pageSize=50&sortBy=startDate&status=31094501%2C31094502%2C31094503",
+          "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-TVONLINE"
+        ]
+      },
+      {
+        "public_id": 146,
+        "title": "Bando Una mano a chi sostiene – nuova edizione 2026/27 Il bando mette a disposizione 500 mila euro per sostenere sul territorio italiano progetti in grado di generare impatto sociale duraturo attraverso la coesione socia",
+        "deadline": "2027-02-16",
+        "days_remaining": 90,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "PARZIALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/",
+          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026"
+        ]
+      },
+      {
+        "public_id": 22,
+        "title": "Per saperne di più su CSR 2023-2027. Reti antigrandine (SRD06 intervento 1.2.1). Bando 2026",
+        "deadline": "2027-02-22",
+        "days_remaining": 96,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-reti-antigrandine-srd06-intervento-121-bando-2026"
+        ]
+      },
+      {
+        "public_id": 149,
+        "title": "Supporto a organizzazioni della società civile per promuovere i valori dell’UE Il bando intende selezionare un numero limitato di intermediari negli Stati membri dell’UE, in grado di rafforzare le capacità di un ampio nu",
+        "deadline": "2027-02-24",
+        "days_remaining": 98,
+        "adequacy": "ALTA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "EVIDENZE RACCOLTE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue"
+        ]
+      },
+      {
+        "public_id": 113,
+        "title": "Audience Development and Film Education",
+        "deadline": "2027-03-02",
+        "days_remaining": 104,
+        "adequacy": "MEDIA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "FONTE NON SUFFICIENTE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-AUDFILMEDU"
+        ]
+      },
+      {
+        "public_id": 114,
+        "title": "European co-development",
+        "deadline": "2027-03-02",
+        "days_remaining": 104,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "FONTE NON SUFFICIENTE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
+        "sources": [
+          "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV"
+        ]
+      },
+      {
+        "public_id": 145,
+        "title": "Bando per attività formative rivolte ai professionisti della giustizia Il bando è dedicato al sostegno di progetti per la formazione dei professionisti della giustizia in materia di diritto civile, diritto penale e dirit",
+        "deadline": "2027-03-04",
+        "days_remaining": 106,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://european-training-platform.e-justice.europa.eu/about-platform",
+          "https://infobandi.csvnet.it/bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia/?utm_source=rss&utm_medium=rss&utm_campaign=bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia"
+        ]
+      },
+      {
+        "public_id": 185,
+        "title": "Call for Partnership. Promozione dell’iniziativa “Scelte Future”",
+        "deadline": "2027-03-30",
+        "days_remaining": 132,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://www.compagniadisanpaolo.it/it/contributi/call-for-partnership-promozione-delliniziativa-scelte-future/"
+        ]
+      },
+      {
+        "public_id": 188,
+        "title": "SCOPRI IL BANDO",
+        "deadline": "2029-06-30",
+        "days_remaining": 955,
+        "adequacy": "BASSA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-06-alleanze-ad-alta-intensita-educativa/"
+        ]
+      },
+      {
+        "public_id": 183,
+        "title": "SCOPRI IL BANDO",
+        "deadline": null,
+        "days_remaining": null,
+        "adequacy": "ALTA",
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "EVIDENZE RACCOLTE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
+        "sources": [
+          "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/"
+        ]
+      }
+    ]
   }
 }
