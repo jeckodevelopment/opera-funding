@@ -1,12 +1,109 @@
 {
+  "alba-cultura": {
+    "baseline_created": true,
+    "candidate_links": [
+      {
+        "title": "Ascolta",
+        "url": "https://www.comune.alba.cn.it/it/page/bando-per-le-associazioni-area-cultura-2023"
+      },
+      {
+        "title": "PDF Scarica",
+        "url": "https://www.comune.alba.cn.it/s3/102/allegati/argomenti/culturali/contributi-annuali-2027/bando-2027.pdf"
+      },
+      {
+        "title": "PDF Scarica",
+        "url": "https://www.comune.alba.cn.it/s3/102/allegati/argomenti/culturali/contributi-annuali-2027/bando_cultura_2027_all_a_domanda.pdf"
+      },
+      {
+        "title": "PDF Scarica",
+        "url": "https://www.comune.alba.cn.it/s3/102/allegati/argomenti/culturali/contributi-annuali-2027/bando_cultura_2027_all_b_scheda_progetto.pdf"
+      },
+      {
+        "title": "PDF Scarica",
+        "url": "https://www.comune.alba.cn.it/s3/102/allegati/argomenti/culturali/contributi-annuali-2027/bando_cultura_2027_all_c_mod_contributi.pdf"
+      }
+    ],
+    "changed": false,
+    "cursor": 3,
+    "digest": "f41fe39b5afd7c26dd749e261ff404275eda054afe349abd6dea4aa981c888d8",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
+    "status": "ok"
+  },
+  "bra-associazioni": {
+    "baseline_created": true,
+    "candidate_links": [
+      {
+        "title": "Contributi",
+        "url": "https://www.comune.bra.cn.it/it/page/richiesta-di-contributi"
+      }
+    ],
+    "changed": false,
+    "cursor": 0,
+    "digest": "386001ef98d52c4fb1dc34cda01f14122c5ed3a3eb20e5fa5299b35a47091835",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
+    "status": "ok"
+  },
+  "cmtorino-giovani": {
+    "baseline_created": true,
+    "candidate_links": [
+      {
+        "title": "Leggi tutto Contributi per il contrasto delle discriminazioni (...)",
+        "url": "https://www.cittametropolitana.torino.it/comunicazione/contributi-il-contrasto-delle-discriminazioni"
+      },
+      {
+        "title": "Avvisi e Bandi",
+        "url": "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/antidiscriminazioni/avvisi-e-bandi"
+      },
+      {
+        "title": "Avvisi e Bandi",
+        "url": "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/politiche-giovanili/avvisi-e-bandi"
+      },
+      {
+        "title": "Servizio Civile - Bandi",
+        "url": "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/servizio-civile/servizio-civile-bandi"
+      },
+      {
+        "title": "AVVISO PUBBLICO.pdf",
+        "url": "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/AVVISO%20PUBBLICO.pdf"
+      },
+      {
+        "title": "Avviso pubblico aMare.pdf",
+        "url": "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/Avviso%20pubblico%20aMare.pdf"
+      },
+      {
+        "title": "ESITO AVVISO PUBBLICO AMARE.pdf",
+        "url": "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/ESITO%20AVVISO%20PUBBLICO%20AMARE.pdf"
+      },
+      {
+        "title": "ESITO AVVISO PUBBLICO GUIDA SICURA.pdf",
+        "url": "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/ESITO%20AVVISO%20PUBBLICO%20GUIDA%20SICURA.pdf"
+      },
+      {
+        "title": "Avviso di manifestazione di interesse festival giovani.pdf",
+        "url": "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/FESTIVAL%20GIOVANI/Avviso%20di%20manifestazione%20di%20interesse%20festival%20giovani.pdf"
+      },
+      {
+        "title": "DD_363_2026 - DETERMINA APPROVAZIONE AVVISO.pdf",
+        "url": "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/GUIDA%20SICURA%2026/DD_363_2026%20-%20DETERMINA%20APPROVAZIONE%20AVVISO.pdf"
+      }
+    ],
+    "changed": false,
+    "cursor": 8,
+    "digest": "1fea2a6e332db4275031d9f5ca438294bfcba357ae3a59a356305ee781f0a210",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
+    "status": "ok"
+  },
   "enelcuore-progetti": {
     "baseline_created": false,
     "candidate_links": [],
     "changed": false,
     "cursor": 0,
     "digest": "6473a20b9fd4feb223c51f4f7169162cfe4a1cf29486ee0458e3282c2f4e6fbb",
-    "last_checked_at": "2026-11-18T22:54:33+00:00",
-    "last_success_at": "2026-11-18T22:54:33+00:00",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
     "status": "ok"
   },
   "isp-beneficenza": {
@@ -15,8 +112,271 @@
     "changed": false,
     "cursor": 0,
     "digest": "1df7919d4bcfebf203903da8b8f3891fbd2f28254c8b08ddc50021230ea30c70",
-    "last_checked_at": "2026-11-18T22:54:33+00:00",
-    "last_success_at": "2026-11-18T22:54:33+00:00",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
+    "status": "ok"
+  },
+  "moncalieri-eventi": {
+    "baseline_created": true,
+    "candidate_links": [
+      {
+        "title": "Allegato A - Bando Manifestazioni",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/allegato-bando-manifestazioni"
+      },
+      {
+        "title": "Bando Manifestazione 2026_Allegati A B C D",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazione-2026-allegati-b-c-d"
+      },
+      {
+        "title": "Bando Manifestazioni 2026",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026"
+      },
+      {
+        "title": "Bando Manifestazioni 2026_Allegato E",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato"
+      },
+      {
+        "title": "Bando Manifestazioni 2026_Allegato I",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-0"
+      },
+      {
+        "title": "Bando Manifestazioni 2026: Allegato L",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-1"
+      },
+      {
+        "title": "Bando Manifestazioni 2026 - Allegato A",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-2"
+      },
+      {
+        "title": "Bando Manifestazioni 2026 - Allegato B",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-b"
+      },
+      {
+        "title": "Bando Manifestazioni 2026 - Allegato B - istanze post 31/07/2026",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-b-istanze-post-31072026"
+      },
+      {
+        "title": "Bando Manifestazioni 2026 - Allegato C",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-c"
+      },
+      {
+        "title": "Bando Manifestazioni 2026 - Allegato D",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-d"
+      },
+      {
+        "title": "Bando Manifestazioni 2026_Allegato F",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-f"
+      },
+      {
+        "title": "Bando Manifestazioni 2026_Allegato G1",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-g1"
+      },
+      {
+        "title": "Bando Manifestazioni 2026_Allegato G2",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-g2"
+      },
+      {
+        "title": "Bando Manifestazioni 2026_Allegato H",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-h"
+      },
+      {
+        "title": "Bando Manifestazioni 2026 - Allegato A - istanze post 31/07/2026",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-allegato-istanze-post-31072026"
+      },
+      {
+        "title": "Bando Manifestazioni 2026_Novità",
+        "url": "https://www.comune.moncalieri.to.it/amministrazione/documenti-dati/documenti/bando-manifestazioni-2026-novita"
+      }
+    ],
+    "changed": false,
+    "cursor": 8,
+    "digest": "44d533ab31028d0e536fb0bca66820d3202c6c971da8652ec615eedc79bad55b",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
+    "status": "ok"
+  },
+  "pinerolo-cultura": {
+    "baseline_created": true,
+    "candidate_links": [
+      {
+        "title": "Testo del bando pubblico",
+        "url": "https://www.comune.pinerolo.to.it/media/1184"
+      },
+      {
+        "title": "FAQ relative al bando",
+        "url": "https://www.comune.pinerolo.to.it/media/1185"
+      },
+      {
+        "title": "Linee guida per la rendicontazione dei contributi ordinari",
+        "url": "https://www.comune.pinerolo.to.it/media/1192"
+      },
+      {
+        "title": "Esito bando pubblico anno 2020",
+        "url": "https://www.comune.pinerolo.to.it/media/1203"
+      },
+      {
+        "title": "Esito bando pubblico anno 2021",
+        "url": "https://www.comune.pinerolo.to.it/media/1204"
+      },
+      {
+        "title": "Esito bando pubblico anno 2022",
+        "url": "https://www.comune.pinerolo.to.it/media/1205"
+      },
+      {
+        "title": "Testo del bando pubblico",
+        "url": "https://www.comune.pinerolo.to.it/media/2471"
+      },
+      {
+        "title": "Linee guida per la rendicontazione dei contributi ordinari",
+        "url": "https://www.comune.pinerolo.to.it/media/2481"
+      },
+      {
+        "title": "Istanza di liquidazione del contributo",
+        "url": "https://www.comune.pinerolo.to.it/media/2482"
+      },
+      {
+        "title": "ESITO Bando contributi ordinari 2025",
+        "url": "https://www.comune.pinerolo.to.it/media/2745"
+      },
+      {
+        "title": "Regolamento comunale per la concessione di Patrocini, contributi e altri benefici economici, approvato con deliberazione del Consiglio comunale n. 19 del 08/05/2019",
+        "url": "https://www.comune.pinerolo.to.it/media/383"
+      }
+    ],
+    "changed": false,
+    "cursor": 8,
+    "digest": "bfb52e9122d5d32ba78b4b63d13fde05c1a8d5e7d687dc32daa690efbdd5aaba",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
+    "status": "ok"
+  },
+  "rivoli-associazioni": {
+    "baseline_created": true,
+    "candidate_links": [
+      {
+        "title": "Modulo 1 allegato avviso - File vnd.openxmlformat... 25,26 kB",
+        "url": "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/1324b6bc0a874620df99da6741e7b829.docx/file/modulo%2B1%2Ballegato%2Bavviso.docx"
+      },
+      {
+        "title": "Modulo 2 allegato avviso - File vnd.openxmlformat... 9,51 kB",
+        "url": "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/38bd9a5dc20f3ce0978de866d6e11b70.docx/file/modulo%2B2%2Ballegato%2Bavviso.docx"
+      },
+      {
+        "title": "A3 contributi economici alle associazioni del territorio (1) - File pdf 202,82 kB",
+        "url": "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/4a27c1f655edeedf3f7243348fe3f3cf.pdf/file/A3_contributi%2Beconomici%2Balle%2Bassociazioni%2Bdel%2Bterritorio%2B%25281%2529.pdf"
+      },
+      {
+        "title": "Social contributi economici alle associazioni del territorio (1) - File image/png 184,88 kB",
+        "url": "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/516b2c7d304b9417fddd74c4441e1869.png/file/Social_contributi%2Beconomici%2Balle%2Bassociazioni%2Bdel%2Bterritorio%2B%25281%2529.png"
+      },
+      {
+        "title": "Avviso contributi - File pdf 196,93 kB",
+        "url": "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/c8fede5d77292d746efa498315c98a33.pdf/file/avviso%2Bcontributi.pdf"
+      }
+    ],
+    "changed": false,
+    "cursor": 3,
+    "digest": "557d8a0278b9719b0417d9253462792f2f6fe9bdd4c0f2764badca8198255254",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
+    "status": "ok"
+  },
+  "tim-bandi": {
+    "baseline_created": true,
+    "candidate_links": [
+      {
+        "title": "VAI AL BANDO",
+        "url": "https://www.fondazionetim.it/bandi/bando-inclusione"
+      },
+      {
+        "title": "VAI AL BANDO",
+        "url": "https://www.fondazionetim.it/bandi/bando-ricerca"
+      },
+      {
+        "title": "VAI AL BANDO",
+        "url": "https://www.fondazionetim.it/bandi/bando-salute-2025"
+      },
+      {
+        "title": "VAI AL BANDO",
+        "url": "https://www.fondazionetim.it/bandi/call-ideas-inclusione-sociale"
+      },
+      {
+        "title": "VAI AL BANDO",
+        "url": "https://www.fondazionetim.it/bandi/vivere-larte"
+      },
+      {
+        "title": "VAI AL BANDO",
+        "url": "https://www.fondazionetim.it/bandi/vivere-prossimo"
+      },
+      {
+        "title": "VAI AL BANDO",
+        "url": "https://www.fondazionetim.it/bandi/vivere-talento"
+      },
+      {
+        "title": "2009",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2009"
+      },
+      {
+        "title": "2010",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2010"
+      },
+      {
+        "title": "2011",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2011"
+      },
+      {
+        "title": "2013",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2013"
+      },
+      {
+        "title": "2019",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2019"
+      },
+      {
+        "title": "2021",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2021"
+      },
+      {
+        "title": "2022",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2022"
+      },
+      {
+        "title": "2023",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2023"
+      },
+      {
+        "title": "2024",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2024"
+      },
+      {
+        "title": "2025",
+        "url": "https://www.fondazionetim.it/bandi?f%5B0%5D=data%3A2025"
+      }
+    ],
+    "changed": false,
+    "cursor": 8,
+    "digest": "bf626c7b73121d505a3fc3ee3faa77e3d282c81ff2a6099d8b30f595dc7951d5",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
+    "status": "ok"
+  },
+  "unicredit-bandi": {
+    "baseline_created": true,
+    "candidate_links": [
+      {
+        "title": "Vedi tutto Arrow",
+        "url": "https://www.unicreditfoundation.org/it/archivio-dei-bandi"
+      },
+      {
+        "title": "Bandi aperti",
+        "url": "https://www.unicreditfoundation.org/it/bandi-aperti"
+      }
+    ],
+    "changed": false,
+    "cursor": 0,
+    "digest": "d69cc15bd3dbc705ca3952ef4def6183dfea32a5c047c622c0da2f7dbb473e6f",
+    "last_checked_at": "2026-11-18T22:56:17+00:00",
+    "last_success_at": "2026-11-18T22:56:17+00:00",
     "status": "ok"
   }
 }

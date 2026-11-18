@@ -1,13 +1,18 @@
 {
   "alerted_ids": [
     "https://infobandi.csvnet.it/bando-2027-otto-per-mille-valdese/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-otto-per-mille-valdese",
-    "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026"
+    "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026",
+    "https://www.cittametropolitana.torino.it/comunicazione/contributi-il-contrasto-delle-discriminazioni",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico%20amare.pdf",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico.pdf",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20amare.pdf",
+    "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/c8fede5d77292d746efa498315c98a33.pdf/file/avviso%2bcontributi.pdf"
   ],
   "sent_days": {
-    "2026-11-18": 2
+    "2026-11-18": 4
   },
   "sent_months": {
-    "2026-11": 2
+    "2026-11": 4
   },
   "statuses": {
     "https://bandi.comune.torino.it": "ALTRO",
@@ -193,6 +198,12 @@
     "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo": "APERTO",
     "https://volontariatotorino.it/progetti-servizio-civile": "ALTRO",
     "https://volontariatotorino.it/progetti-volto": "ALTRO",
+    "https://www.cittametropolitana.torino.it/comunicazione/contributi-il-contrasto-delle-discriminazioni": "DA VERIFICARE",
+    "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/servizio-civile/servizio-civile-bandi": "ALTRO",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico%20amare.pdf": "DA VERIFICARE",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico.pdf": "DA VERIFICARE",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20amare.pdf": "DA VERIFICARE",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20guida%20sicura.pdf": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/contributi/bando-per-la-promozione-della-salute-mentale-delle-giovani-generazioni": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lattrattivita-e-la-professionalizzazione-di-artisti-e-creativi": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale": "APERTO",
@@ -207,6 +218,7 @@
     "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-nuovi-spazi-di-partecipazione-attiva": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-cambiamento-sistemico": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-sviluppo": "ALTRO",
+    "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/c8fede5d77292d746efa498315c98a33.pdf/file/avviso%2bcontributi.pdf": "DA VERIFICARE",
     "https://www.erasmusplus.it/educazione_adulti/esiti": "ALTRO",
     "https://www.erasmusplus.it/istruzione_superiore/partenariati-strategici-ka2-3": "ALTRO",
     "https://www.erasmusplus.it/iv-3-erasmus-accreditation-ae-vet-se-assessment-guidelines-2025": "ALTRO",
