@@ -152,16 +152,19 @@ def enrich(item, source, session, eligible_to_fetch):
                 parsed["deadline"] = deadline
                 parsed["deadline_source"] = document_url
         pdf_facts = official_pdf_evidence(parsed["documents"], url, session, eligible_to_fetch)
+        pdf_sources = pdf_facts.get("assessment_field_sources") or {}
         for key, value in pdf_facts.items():
-            if key == "assessment_evidence_source":
+            if key in ("assessment_evidence_source", "assessment_field_sources"):
                 continue
             if not parsed.get(key):
                 parsed[key] = value
+                if key in pdf_sources:
+                    parsed.setdefault("assessment_field_sources", {})[key] = pdf_sources[key]
         if pdf_facts and not parsed.get("assessment_evidence_source"):
             parsed["assessment_evidence_source"] = pdf_facts.get("assessment_evidence_source")
         parsed["detail_checked_at"]=datetime.now(timezone.utc).isoformat(timespec="seconds")
         parsed["detail_version"]=DETAIL_SCHEMA_VERSION
-        for key in ("amount","beneficiaries_excerpt","beneficiaries_source","amount_kind","amount_source","rolling_guidance","rolling_guidance_source","documents","detail_checked","detail_basis","detail_checked_at","detail_version","programme_objectives_excerpt","funded_activities_excerpt","requirements_excerpt","assessment_evidence_source"):
+        for key in ("amount","beneficiaries_excerpt","beneficiaries_source","amount_kind","amount_source","rolling_guidance","rolling_guidance_source","documents","detail_checked","detail_basis","detail_checked_at","detail_version","programme_objectives_excerpt","funded_activities_excerpt","requirements_excerpt","assessment_evidence_source","assessment_field_sources"):
             if parsed.get(key) is not None or key not in item:
                 item[key] = parsed.get(key)
         if structured.get("source_open_confirmed"):
