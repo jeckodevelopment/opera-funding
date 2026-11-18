@@ -199,3 +199,10 @@ La scheda `DA APPROFONDIRE` riguarda **solo** `finanziamento potenziale` e `call
 
 ## Stato iniziale dashboard (17/11/2026)
 La vista iniziale e il reset dei filtri selezionano sempre **Aperte**. La vista **Tutti** continua a includere ogni scheda, comprese le pagine informative, ma è attivabile soltanto con scelta esplicita. È mantenuta la distinzione fra **Da approfondire** (solo candidabili) e **Altri contenuti**. La modifica corregge la regressione introdotta con la separazione delle categorie e richiede pubblicazione frontend SFTP.
+
+## Consolidamento lettura allegati PDF (18 novembre 2026)
+- L'estrazione documentale combina ora **evidenze complementari** provenienti da un massimo di due PDF ufficiali HTTPS dello stesso dominio, anziché scegliere solamente il PDF con il maggior numero di campi. Per esempio, destinatari nel bando e partenariato nelle FAQ concorrono alla stessa scheda.
+- La fonte originaria di ciascun campo acquisito dai PDF viene conservata in `assessment_field_sources` (mappa campo → URL). Resta disponibile `assessment_evidence_source` per compatibilità con le schede precedenti.
+- A parità di campo, prevale il primo documento nella lista: l'estrattore non stabilisce automaticamente quale versione del bando sia prevalente. Un eventuale conflitto richiede verifica; non si deduce l'ammissibilità legale da parole chiave.
+- Si mantengono i limiti preesistenti di documenti, pagine, byte, timeout, controllo robots e origine. Non viene salvata una copia dei PDF; i PDF scannerizzati senza testo ricercabile rimangono non leggibili senza un processo specifico.
+- La mappa di provenienza viene mantenuta nei successivi cicli di scansione, anche quando una scheda non è riletta. La dashboard non cambia graficamente.

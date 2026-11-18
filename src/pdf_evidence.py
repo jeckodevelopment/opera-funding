@@ -39,7 +39,10 @@ def pdf_extract_evidence(data):
 def official_pdf_evidence(documents, source_url, session, allowed_to_fetch):
     host = urlparse(source_url).hostname
     inspected = 0
-    best = {}
+    found_fields = {}
+    field_sources = {}
+    # Complementary official documents (call and FAQ) may contain different
+    # applicant requirements. Keep the first source for conflicting passages.
     for item in documents:
         url = item.get("url", "") if isinstance(item, dict) else ""
         address = urlparse(url)
@@ -68,14 +71,19 @@ def official_pdf_evidence(documents, source_url, session, allowed_to_fetch):
                     break
             if len(data) > MAX_BYTES:
                 continue
-            found = pdf_extract_evidence(bytes(data))
-            if len(found) > len(best):
-                best = {**found, "assessment_evidence_source": url}
-            if len(found) == len(LABELS):
+            extracted = pdf_extract_evidence(bytes(data))
+            for field, value in extracted.items():
+                if field not in found_fields and value:
+                    found_fields[field] = value
+                    field_sources[field] = url
+            if len(found_fields) == len(LABELS):
                 break
         except Exception:
             continue
         finally:
             if response is not None:
                 response.close()
-    return best
+    if field_sources:
+        found_fields["assessment_evidence_source"] = next(iter(field_sources.values()))
+        found_fields["assessment_field_sources"] = field_sources
+    return found_fields
