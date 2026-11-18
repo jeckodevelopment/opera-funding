@@ -99,3 +99,7 @@ La coda di lettura comprende anche la tipologia `non classificato`: il fatto che
 
 
 La seconda verifica del 18 novembre aggiunge le schede 177 (Fondo di Beneficenza), 175 (Dora in Avanti), 182 (AI nell'economia sociale), 8 (iniziative 2027 della Circoscrizione 7) e 143 (Fabbrica — Spazi Civici). Il registro documenta ora **9 valutazioni individuali**. Per opportunità originate su aggregatori, `evidence_url` distingue l'URL della fonte consultata dall'indirizzo della scheda indicizzata; non si presenta un aggregatore come fonte primaria ufficiale.
+
+### Chiusura della revisione delle candidature attualmente aperte — 18 novembre 2026
+
+Il registro `config/assessment_reviews.json` contiene 22 revisioni individuali sulle 22 opportunità che risultavano aperte nello snapshot del catalogo del 18 novembre 2026. La revisione comprende beneficiari, attività, requisiti e coerenza con un progetto Opera+, anche quando il giudizio conclusivo è bassa affinità. L'eventuale presenza di nuove opportunità aperte in scansioni successive richiederà nuove verifiche, e le categorie chiuse/informative rimangono valutate dal motore con livello di prova esplicito. La revisione documentale non costituisce certificazione formale di ammissibilità dell'associazione.
