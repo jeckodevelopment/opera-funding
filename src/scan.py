@@ -20,7 +20,7 @@ from priority import check_priority
 from verification import pick_for_review, coverage, backlog_candidates, classify_crt_information, classify_informational_page
 from crt_windows import guidance_for_window
 from source_alternatives import delegated_source_status
-from eu_api import fetch_creative_europe
+from eu_api import fetch_creative_europe, fetch_topic_evidence
 from catalog import deduplicate_catalog, reconcile_official_equivalents
 from issuer_sources import apply_issuer_evidence
 from reviewed_official import apply_reviewed_facts
@@ -183,10 +183,12 @@ def run():
                     if "source_open_confirmed" not in item:
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
                     if item["id"] in review_ids:
-                        item = enrich(item, source, session, eligible_to_fetch)
+                        item = (fetch_topic_evidence(item,session,now) if source["id"]=="eufunding"
+                                else enrich(item, source, session, eligible_to_fetch))
                         # Record every attempt, even when access is blocked, to avoid
                         # starving the rest of the queue on subsequent scans.
-                        item["detail_attempted_at"] = now
+                        if source["id"]!="eufunding" or item.get("detail_attempted_at"):
+                            item["detail_attempted_at"] = now
                     if not item.get("link_checked_at") and checked_count < 8:
                         item = check_link(item, session, now)
                         checked_count += 1
@@ -196,8 +198,10 @@ def run():
                 for old in backlog:
                     if old["id"] not in review_ids:
                         continue
-                    old=enrich(old,source,session,eligible_to_fetch)
-                    old["detail_attempted_at"]=now
+                    old=(fetch_topic_evidence(old,session,now) if source["id"]=="eufunding"
+                         else enrich(old,source,session,eligible_to_fetch))
+                    if old.get("detail_attempted_at") or source["id"]!="eufunding":
+                        old["detail_attempted_at"]=now
                     indexed[old["id"]]=explain(annotate(reconcile_status(classify_informational_page(old))))
                 # Small curated set of official call pages, rechecked every run.
                 for target in (p for p in priority_pages if p["source_id"] == source["id"]):
