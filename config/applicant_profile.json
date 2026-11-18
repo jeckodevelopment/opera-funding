@@ -2,13 +2,65 @@
   "schema_version": 1,
   "organization": "Opera+",
   "profile_fields": {
-    "legal_form": {"value": "associazione culturale", "verification": "dichiarato", "source": "Informazione di progetto; non sostituisce documenti costitutivi"},
-    "registered_region": {"value": null, "verification": "non_verificato", "source": null},
-    "registered_municipality": {"value": null, "verification": "non_verificato", "source": null},
-    "runts_registration": {"value": null, "verification": "non_verificato", "source": null},
-    "constitution_date": {"value": null, "verification": "non_verificato", "source": null},
-    "annual_budget_eur": {"value": null, "verification": "non_verificato", "source": null},
-    "available_cofinancing_eur": {"value": null, "verification": "non_verificato", "source": null},
-    "confirmed_partners": {"value": null, "verification": "non_verificato", "source": null}
+    "legal_form": {
+      "value": "associazione culturale non riconosciuta",
+      "verification": "dichiarato",
+      "source": "Dichiarazione dell'associazione del 18/11/2026"
+    },
+    "registered_region": {
+      "value": "Piemonte",
+      "verification": "dichiarato",
+      "source": "Dichiarazione dell'associazione del 18/11/2026"
+    },
+    "registered_municipality": {
+      "value": "Torino",
+      "verification": "dichiarato",
+      "source": "Dichiarazione dell'associazione del 18/11/2026"
+    },
+    "runts_registration": {
+      "value": "in_corso",
+      "verification": "dichiarato",
+      "source": "Dichiarazione dell'associazione del 18/11/2026"
+    },
+    "constitution_date": {
+      "value": "2026-04-23",
+      "verification": "dichiarato",
+      "source": "Dichiarazione dell'associazione del 18/11/2026"
+    },
+    "annual_budget_eur": {
+      "value": null,
+      "verification": "non_verificato",
+      "source": null
+    },
+    "available_cofinancing_eur": {
+      "value": null,
+      "verification": "non_verificato",
+      "source": null
+    },
+    "confirmed_partners": {
+      "value": null,
+      "verification": "non_verificato",
+      "source": null
+    },
+    "tax_code_exists": {
+      "value": true,
+      "verification": "dichiarato",
+      "source": "Dichiarazione dell'associazione del 18/11/2026"
+    },
+    "completed_activities": {
+      "value": false,
+      "verification": "dichiarato",
+      "source": "Dichiarazione dell'associazione del 18/11/2026"
+    },
+    "cofinancing_policy": {
+      "value": "da_valutare_per_progetto",
+      "verification": "dichiarato",
+      "source": "Dichiarazione dell'associazione del 18/11/2026"
+    },
+    "partnership_willingness": {
+      "value": true,
+      "verification": "dichiarato",
+      "source": "Dichiarazione dell'associazione del 18/11/2026"
+    }
   }
 }

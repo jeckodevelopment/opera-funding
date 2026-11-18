@@ -53,6 +53,15 @@ class SpecificRequirementTests(unittest.TestCase):
         self.assertEqual(origin["anzianita"],"https://official.example/rules.pdf")
         self.assertEqual(origin["territorio"],"https://official.example/applicants.pdf")
 
+    def test_explicit_prior_experience_required_not_merely_discussed(self):
+        eligible=annotate_specific_requirements({**BASE,
+            "requirements_excerpt":"Esperienza pregressa obbligatoria nella gestione di progetti culturali."})
+        self.assertEqual([x["category"] for x in eligible["eligibility_specific_requirements"]],
+                         ["esperienza_pregressa"])
+        generic=annotate_specific_requirements({**BASE,
+            "requirements_excerpt":"Il progetto valorizza le esperienze culturali e la creatività."})
+        self.assertEqual(generic["eligibility_specific_unchecked"],0)
+
     def test_informational_records_not_assessed(self):
         row=annotate_specific_requirements({**BASE,"opportunity_type":"altro avviso",
             "requirements_excerpt":"Partenariato obbligatorio."})
