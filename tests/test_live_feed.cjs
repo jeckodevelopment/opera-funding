@@ -45,13 +45,8 @@ async function timeoutScenario(){
    return Promise.resolve({ok:true,json:async()=>url.includes("opportunities.json?")?[]:{checked_at:"2026-11-18T08:00:00Z",sources:[]}});
   }
  };
- vm.runInNewContext(source+"\nglobalThis.getFeed=loadDataset;globalThis.getTimed=fetchWithDeadline;",context);
- const started=Date.now();
- const dataset=await context.getTimed("data/",120);
- assert.equal(dataset.opportunities.length,0);
- assert(Date.now()-started<1000);
- // The remote request times out, then a same-origin JSON snapshot is loaded.
- // Shorten the remote deadline without changing production timeouts.
+ // Remote request stalls; shorten the production deadline inside this VM
+ // to verify that the dashboard falls back to its local snapshot promptly.
  const original=fs.readFileSync("web/app.js","utf8")
    .replace(/fetchWithDeadline\(DATA_ORIGIN\)/g,"fetchWithDeadline(DATA_ORIGIN,80)")
    .replace(/fetchWithDeadline\(FALLBACK_ORIGIN\)/g,"fetchWithDeadline(FALLBACK_ORIGIN,80)")
