@@ -35,6 +35,7 @@ from operational_assessment import annotate_operational_assessment
 from catalog_reconciliation import summarize_catalog_reconciliation
 from funder_registry import load_registry, link_opportunities, public_monitoring
 from programme_monitor import check_programmes, load_programme_state, public_status
+from programme_ingest import ingest_programme_calls
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -279,6 +280,16 @@ def run():
                     failure["institutional_reference_label"]=source.get("institutional_reference_label","Fonte istituzionale integrativa")
                     failure["coverage_note"]="Storico conservato; la fonte integrativa non sostituisce la scansione ufficiale non riuscita."
                 statuses.append(failure)
+    # Check official company pages; only verified specific calls enter the catalog.
+    registry_funders=load_registry(ROOT / 'config/funders.json')
+    programme_state_path=ROOT / "data/programme-monitoring.json"
+    previous_programmes=load_programme_state(programme_state_path)
+    with requests.Session() as programme_session:
+        programme_session.headers.update({"User-Agent":AGENT,"Accept":"text/html"})
+        programme_state=check_programmes(registry_funders,previous_programmes,programme_session,eligible_to_fetch,now)
+        programme_entries=[{**p,"funder_name":next((f["name"] for f in registry_funders["funders"] if f["id"]==p["funder_id"]),p["name"])} for p in registry_funders["programs"]]
+        programme_ingestion=ingest_programme_calls(programme_entries,programme_state,indexed,programme_session,eligible_to_fetch,now)
+
     # Reconcile retained historical links too; do not keep outdated open flags.
     for entry in indexed.values():
         explain(annotate(reconcile_status(entry)))
@@ -311,14 +322,8 @@ def run():
         annotate_applicant_comparison(row, applicant_profile, now[:10])
         apply_adequacy(row)
         annotate_operational_assessment(row)
-    registry_funders=load_registry(ROOT / 'config/funders.json')
     rows=link_opportunities(rows, registry_funders)
     rows=track_changes(rows, existing, now)
-    programme_state_path=ROOT / "data/programme-monitoring.json"
-    previous_programmes=load_programme_state(programme_state_path)
-    with requests.Session() as programme_session:
-        programme_session.headers.update({"User-Agent":AGENT,"Accept":"text/html"})
-        programme_state=check_programmes(registry_funders,previous_programmes,programme_session,eligible_to_fetch,now)
     programme_state_path.write_text(json.dumps(programme_state,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -327,7 +332,8 @@ def run():
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows),
                                         "open_eligibility_review":build_open_review_queue(rows,now[:10]),
                                         "catalog_reconciliation":summarize_catalog_reconciliation(rows),
-                                        "funder_monitoring":public_monitoring(registry_funders,statuses,now,public_status(programme_state))},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+                                        "funder_monitoring":public_monitoring(registry_funders,statuses,now,public_status(programme_state)),
+                                        "programme_ingestion":programme_ingestion},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
 
 if __name__ == "__main__":
