@@ -165,8 +165,8 @@ const html=fs.readFileSync("web/index.html","utf8");
 const css=fs.readFileSync("web/styles.css","utf8");
 for(const id of ["status","search","issuer","kind","level","sort","reset","more","items","health-dot","source-incidents","total","potential","high","sources"])assert.match(html,new RegExp('id="'+id+'"'));
 assert.match(html,/assets\/operaplus-logo\.png/);
-assert.match(html,/app\.js\?v=20261118-05/);
-assert.match(html,/styles\.css\?v=20261118-05/);
+assert.match(html,/app\.js\?v=20261118-06/);
+assert.match(html,/styles\.css\?v=20261118-06/);
 assert.match(src,/function fetchWithDeadline/);
 assert.match(src,/loadSequence/);
 assert.match(html,/>Aperte<\/button>/);
@@ -254,3 +254,11 @@ assert.match(src,/function makeAdequacy/);
 assert.match(css,/\.health-dot\.red/);
 assert.doesNotMatch(src,/Controlli prima della candidatura:/);
 console.log("Opera+ editorial dashboard tests passed");
+
+// The public PDF must not expose internal method/coverage metadata.
+const printableSource=src.slice(src.indexOf("function prepareEvaluationSheet(o){"),src.indexOf("function printEvaluation(o){"));
+assert.doesNotMatch(printableSource,/Copertura documentale:/);
+assert.doesNotMatch(printableSource,/Elementi utilizzati:/);
+assert.doesNotMatch(printableSource,/d\.methodology|d\.coverage|d\.basis/);
+assert.match(printableSource,/d\.adequacyReason/);
+assert.match(printableSource,/print-disclaimer/);
