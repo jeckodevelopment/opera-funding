@@ -75,29 +75,79 @@ def explain(row):
         checks.append("Verificare la disponibilità attuale dei fondi e le condizioni della procedura a sportello")
     checks.append("Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale")
     row["eligibility_checks"]=list(dict.fromkeys(checks))
-    # Assign a substantive editorial reading to every record, including
-    # informational pages. This is *not* evidence of current opening or legal
-    # eligibility. Missing official facts remain explicit in the checks.
-    point = max(0,min(100,int(row.get("relevance") or 0)))
+    # A title is discovery metadata, not a substantive examination of a call.
+    # Prefer source-backed programme, activity, beneficiaries and conditions.
+    evidence_fields = (
+        ("attività finanziabili", "funded_activities_excerpt"),
+        ("destinatari", "beneficiaries_excerpt"),
+        ("finalità del bando", "programme_objectives_excerpt"),
+        ("vincoli e condizioni", "requirements_excerpt"),
+        ("contenuto della scheda", "summary"),
+    )
+    supplied = [(label, str(row.get(key) or "").strip()) for label, key in evidence_fields
+                if isinstance(row.get(key), str) and row.get(key).strip()]
+    evidence_text = " ".join(value for _, value in supplied)
+    evidence_kinds = [label for label, _ in supplied]
     kind = row.get("opportunity_type") or ""
-    if kind not in ("finanziamento potenziale", "call progettuale da verificare", "non classificato"):
+    informational = kind not in ("finanziamento potenziale", "call progettuale da verificare", "non classificato")
+    # Never use title-derived themes to fabricate evidence in the source text.
+    matches = [
+        ("musica, opera e spettacolo", r"opera liric|\\bliric|\\boperist|\\bmusic|spettacol|\\bteatr|performing arts"),
+        ("educazione e formazione", r"formazion|didattic|educazion|education|learning|student|scuol"),
+        ("produzione audiovisiva e digitale", r"digit|audiovis|videolezion|videopodcast|podcast|multimedia"),
+        ("accesso alla cultura e partecipazione", r"accessib|inclus|partecip|pubblic|audience|comunit"),
+    ]
+    supported = [label for label, pattern in matches if re.search(pattern, evidence_text, re.I)]
+    unsupported = [label for label, pattern in matches if re.search(pattern, title, re.I)
+                   and label not in supported]
+    beneficiary = str(row.get("beneficiaries_excerpt") or "")
+    requirements = str(row.get("requirements_excerpt") or "")
+    # Negative indicators are stated as cautions rather than as an eligibility verdict.
+    issues = []
+    if re.search(r"(?i)solo (?:persone fisiche|individui|singoli artisti)|individual (?:artists|applicants)", beneficiary):
+        issues.append("La fonte menziona beneficiari individuali: verificare se un'associazione può candidarsi.")
+    if re.search(r"(?i)partenariat|consorzio|co-applicant|partner obbligat", requirements):
+        issues.append("La candidatura può dipendere da requisiti di partenariato indicati nella fonte.")
+    if not beneficiary:
+        issues.append("Beneficiari ammessi non documentati.")
+    if not row.get("funded_activities_excerpt"):
+        issues.append("Attività finanziabili non documentate.")
+    if not row.get("requirements_excerpt"):
+        issues.append("Vincoli di candidatura non documentati.")
+    if informational:
         label = "INFORMATIVA"
-        reason = "Contenuto informativo o avviso non classificato come candidatura a finanziamento."
-    elif point >= 70:
-        label = "ALTA AFFINITÀ"
-        reason = "Buona corrispondenza tematica per attività culturali o formative; verificare beneficiari e condizioni."
-    elif point >= 45:
-        label = "MEDIA AFFINITÀ"
-        reason = "Alcuni temi coerenti con le attività dell'associazione; utilità progettuale da confermare nei requisiti."
+        reason = "Avviso informativo o procedura diversa da una candidatura a finanziamento."
+    elif supplied:
+        # Source-supported thematic overlap outweighs title-only hints; a generic
+        # introductory paragraph cannot by itself justify an 'alta affinità'.
+        if len(supported) >= 2 and (row.get("funded_activities_excerpt") or row.get("programme_objectives_excerpt")):
+            label = "ALTA AFFINITÀ"
+        elif supported:
+            label = "MEDIA AFFINITÀ"
+        else:
+            label = "BASSA AFFINITÀ"
+        reason = ("Dalla documentazione consultata emergono: " + ", ".join(supported) + "."
+                  if supported else "Nei contenuti disponibili non emergono attività direttamente coerenti con Opera+.")
     else:
-        label = "BASSA AFFINITÀ"
-        reason = "Corrispondenza tematica limitata nelle informazioni disponibili; conservata nel catalogo."
+        # Explicitly provisional judgement, not a fake full assessment.
+        point = max(0, min(100, int(row.get("relevance") or 0)))
+        label = ("ALTA AFFINITÀ" if point >= 70 else "MEDIA AFFINITÀ" if point >= 45 else "BASSA AFFINITÀ")
+        reason = "Valutazione provvisoria basata soltanto sul titolo; il testo ufficiale non è ancora disponibile nel catalogo."
     if kind == "non classificato":
-        reason += " La tipologia non è ancora accertata: non equivale a un contenuto informativo."
+        reason += " La tipologia della procedura non è ancora accertata."
+    if supplied and unsupported:
+        reason += " Temi presenti solo nel titolo: " + ", ".join(unsupported) + "."
     row["assessment_label"] = label
     row["assessment_reason"] = reason
-    row["assessment_basis"] = row["score_explanation_basis"]
+    row["assessment_basis"] = ("fonte ufficiale: " + ", ".join(evidence_kinds) if supplied else "solo titolo, evidenze insufficienti")
+    row["assessment_confidence"] = (
+        "alta" if (row.get("funded_activities_excerpt") and row.get("beneficiaries_excerpt") and row.get("requirements_excerpt"))
+        else "media" if (row.get("funded_activities_excerpt") and row.get("beneficiaries_excerpt"))
+        else "limitata" if supplied else "bassa"
+    )
+    row["assessment_gaps"] = issues
+    row["assessment_source"] = row.get("assessment_evidence_source") or (row.get("url") if supplied else None)
     row["assessment_opening_note"] = (
-        "Lo stato di apertura è distinto dalla pertinenza: senza evidenza ufficiale, non è confermato."
+        "L'affinità non implica ammissibilità o apertura: verificare i requisiti e lo stato sulla fonte ufficiale."
     )
     return row
