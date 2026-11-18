@@ -139,6 +139,7 @@ def discover(source, session, now):
         })
     return rows
 
+# Trigger the configured main-branch scan after assessment reconciliation PR #140.
 def run():
     parser = argparse.ArgumentParser()
     parser.add_argument("--sources", default=str(ROOT / "config/sources.json"))
