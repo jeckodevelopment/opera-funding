@@ -46,6 +46,42 @@ class PdfEvidenceMergeTests(unittest.TestCase):
         self.assertEqual(facts["assessment_field_sources"]["beneficiaries_excerpt"], documents[0]["url"])
         self.assertEqual(facts["requirements_excerpt"], "Obbligo di cofinanziamento")
 
+    def test_differing_document_passages_require_review_not_false_conflict(self):
+        base = "https://example.org/"
+        documents = [{"url": base + "call.pdf"}, {"url": base + "faq.pdf"}]
+        session = Mock()
+        session.get.side_effect = [response(x["url"]) for x in documents]
+        with patch("pdf_evidence.pdf_extract_evidence", side_effect=[
+            {"requirements_excerpt": "Richiesto un partner universitario"},
+            {"requirements_excerpt": "Richiesti due partner educativi"}
+        ]):
+            facts = official_pdf_evidence(documents, base + "bando", session, lambda u, s: True)
+        self.assertEqual(facts["requirements_excerpt"], "Richiesto un partner universitario")
+        self.assertEqual(facts["assessment_document_discrepancies"][0]["status"], "testi_diversi_da_verificare")
+        self.assertEqual(facts["assessment_document_discrepancies"][0]["first_source"], documents[0]["url"])
+        self.assertEqual(facts["assessment_document_discrepancies"][0]["other_source"], documents[1]["url"])
+
+    def test_image_only_pdf_is_distinguished_from_document_without_matching_evidence(self):
+        url = "https://example.org/bando.pdf"
+        session = Mock()
+        session.get.return_value = response(url)
+        with patch("pdf_evidence.pdf_extract_evidence", return_value={}), patch(
+            "pdf_evidence.pdf_text_status", return_value="testo_non_estratto"
+        ):
+            facts = official_pdf_evidence([{"url":url}], "https://example.org/bando", session, lambda u,s: True)
+        self.assertEqual(facts["assessment_document_diagnostics"], [
+            {"url":url,"status":"testo_non_estratto"}])
+        self.assertNotIn("assessment_evidence_source", facts)
+
+    def test_unreadable_pdf_does_not_masquerade_as_evidence(self):
+        url = "https://example.org/bando.pdf"
+        session = Mock()
+        session.get.return_value = response(url)
+        with patch("pdf_evidence.pdf_extract_evidence", side_effect=ValueError("bad PDF")):
+            facts = official_pdf_evidence([{"url":url}], "https://example.org/bando", session, lambda u,s: True)
+        self.assertEqual(facts["assessment_document_diagnostics"][0]["status"], "pdf_non_interpretabile")
+        self.assertNotIn("assessment_field_sources", facts)
+
     def test_external_and_disallowed_documents_not_downloaded(self):
         session = Mock()
         facts = official_pdf_evidence([
