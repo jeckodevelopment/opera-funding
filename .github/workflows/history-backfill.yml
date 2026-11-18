@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/history-backfill.yml'
+      - 'src/scan.py'
+      - 'src/eu_api.py'
 permissions:
   contents: write
 concurrency:
@@ -21,6 +23,8 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Verify scan and API modules compile
+        run: python -m compileall -q src
       - name: Inspect all outstanding historical opportunities and their documents
         run: python -u src/scan.py --history-backfill
       - name: Validate all catalogue entries and review coverage
