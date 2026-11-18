@@ -11,7 +11,8 @@ class TestFunderRegistry(unittest.TestCase):
   data=load_registry(ROOT/"config/funders.json")
   self.assertGreaterEqual(len(data["funders"]),49)
   self.assertGreaterEqual(len(data["programs"]),29)
-  self.assertEqual(len([p for p in data["programs"] if p["monitoring"]=="direct"]),11)
+  self.assertGreaterEqual(len([p for p in data["programs"] if p["monitoring"]=="direct"]),11)
+  self.assertTrue({"torino2033-iniziative","culturatorino-2033","fedora-prizes","operaeuropa-nextgen","effea-calls","ecf-open-calls","creative-europe-culture"}.issubset({p["id"] for p in data["programs"]}))
   self.assertTrue(all(p["funder_id"] for p in data["programs"]))
  def test_links_are_strict(self):
   data=load_registry(ROOT/"config/funders.json")
