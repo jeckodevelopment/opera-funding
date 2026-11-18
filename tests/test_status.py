@@ -25,6 +25,12 @@ class FundingStatusTests(unittest.TestCase):
         self.assertEqual(effective_status(row,NOW),"IN ARRIVO")
         row={"rolling_confirmed":True,"rolling_evidence":"https://example.org/info","source_open_confirmed":True,"link_status":"raggiungibile"}
         self.assertEqual(effective_status(row,NOW),"APERTO")
+    def test_informational_catalogue_page_is_not_an_open_application(self):
+        entry={"opportunity_type":"altro avviso","status":"aperto",
+               "source_open_confirmed":True,"deadline":"2027-03-01",
+               "link_status":"raggiungibile"}
+        self.assertEqual(effective_status(entry,NOW),"DA VERIFICARE")
+
     def test_no_eligibility_penalty(self):
         row={"source_open_confirmed":True,"deadline":"2027-01-01","link_status":"raggiungibile","eligibility":"partner da reperire","relevance":98}
         self.assertEqual(annotate(row,NOW)["funding_status"],"APERTO")
