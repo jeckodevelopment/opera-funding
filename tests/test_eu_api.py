@@ -21,6 +21,24 @@ class APITests(unittest.TestCase):
   self.assertEqual(row["source_id"],"eufunding")
   self.assertIn("CREA-CULT-2027-COOP",row["url"])
   self.assertEqual(row["link_status"],"non verificato")
+ def test_eu_api_uses_only_explicit_substantive_metadata(self):
+  data={"metadata":{**RECORD["metadata"],
+    "topicDescription":["Support for international cultural collaboration in Europe."],
+    "eligibleActivities":["Grants for cross-border performing arts projects."],
+    "eligibleApplicants":["Registered non-profit cultural organisations."],
+    "eligibilityConditions":["Applications must include an international partner."]}}
+  row=api_result_to_opportunity(data,SOURCE,NOW)
+  self.assertIn("cultural collaboration",row["programme_objectives_excerpt"])
+  self.assertIn("performing arts",row["funded_activities_excerpt"])
+  self.assertIn("non-profit",row["beneficiaries_excerpt"])
+  self.assertIn("international partner",row["requirements_excerpt"])
+  self.assertEqual(row["assessment_evidence_source"],row["url"])
+
+ def test_eu_api_does_not_invent_missing_beneficiary_conditions(self):
+  row=api_result_to_opportunity(RECORD,SOURCE,NOW)
+  self.assertFalse(row.get("beneficiaries_excerpt"))
+  self.assertFalse(row.get("requirements_excerpt"))
+
  def test_past_deadline_never_open(self):
   record={"metadata":{**RECORD["metadata"],"deadlineDate":["2025-01-01"]}}
   row=api_result_to_opportunity(record,SOURCE,NOW)
