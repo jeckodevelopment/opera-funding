@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T22:06:17+00:00",
+  "checked_at": "2026-11-18T22:12:41+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 15,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "torino",
@@ -31,7 +31,7 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "culturatorino",
@@ -39,7 +39,7 @@
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "volto",
@@ -47,7 +47,7 @@
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:06:17+00:00",
+      "checked_at": "2026-11-18T22:12:41+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-18T22:06:17+00:00",
+      "checked_at": "2026-11-18T22:12:41+00:00",
       "error": "robots.txt: risposta HTTP 503; verifica automatica non disponibile",
       "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
       "institutional_reference_label": "Regione Piemonte — bando ALCOTRA",
@@ -111,7 +111,7 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T22:06:17+00:00"
+      "checked_at": "2026-11-18T22:12:41+00:00"
     }
   ],
   "coverage": {
@@ -863,7 +863,7 @@
     ]
   },
   "funder_monitoring": {
-    "checked_at": "2026-11-18T22:06:17+00:00",
+    "checked_at": "2026-11-18T22:12:41+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -1175,7 +1175,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:06:17+00:00"
+        "last_checked_at": "2026-11-18T22:12:41+00:00"
       },
       {
         "id": "sanpaolo-contributi",
@@ -1186,7 +1186,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:06:17+00:00"
+        "last_checked_at": "2026-11-18T22:12:41+00:00"
       },
       {
         "id": "regione-bandi",
@@ -1197,7 +1197,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:06:17+00:00"
+        "last_checked_at": "2026-11-18T22:12:41+00:00"
       },
       {
         "id": "torino-contributi",
@@ -1208,7 +1208,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:06:17+00:00"
+        "last_checked_at": "2026-11-18T22:12:41+00:00"
       },
       {
         "id": "culturatorino-bandi",
@@ -1219,7 +1219,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:06:17+00:00"
+        "last_checked_at": "2026-11-18T22:12:41+00:00"
       }
     ]
   }
