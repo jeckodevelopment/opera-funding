@@ -192,7 +192,7 @@ assert.match(html,/id="print-sheet"/);
 assert.match(src,/function prepareEvaluationSheet/);
 assert.match(src,/window.print\(\)/);
 assert.match(src,/afterprint/);
-assert.match(src,/Esporta scheda PDF/);
+assert.match(src,/Esporta PDF/);
 assert.match(css,/@page\{size:A4/);
 assert.match(css,/@media print/);
 assert.match(css,/#print-sheet:not\(\[hidden\]\)/);
