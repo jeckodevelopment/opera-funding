@@ -226,3 +226,7 @@ La vista iniziale e il reset dei filtri selezionano sempre **Aperte**. La vista 
 - Restano inclusi titolo, ente, stato, scadenza, importo, adeguatezza motivata, copertura/metodo, criticità e verifiche, spunti progettuali e l'elenco dei link alle fonti e agli allegati.
 - L'impaginazione di stampa usa una colonna per i testi lunghi e consente alle sezioni estese di proseguire nelle pagine successive; testi esterni sono inseriti come nodi di testo e i link sono limitati a HTTPS.
 - L'esportazione è una stampa del browser («Salva come PDF»); non richiede backend PDF, non cambia le valutazioni, né produce file di documentazione pubblici contenenti note riservate della gestione personale.
+
+## PDF sintetico senza metadati tecnici (18 novembre 2026)
+- La sezione «Motivazione dell'adeguatezza» del PDF mostra soltanto la motivazione sostanziale; sono esclusi «Copertura documentale», «Metodo» ed «Elementi utilizzati». Il disclaimer finale è mantenuto.
+- I dati tecnici restano disponibili nella scheda Web, nel pannello espandibile dedicato alla metodologia. Requisiti, condizioni e informazioni aggiuntive restano integralmente esportati.

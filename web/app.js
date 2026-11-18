@@ -420,9 +420,7 @@ function prepareEvaluationSheet(o){
  summary.append(el("h2","Sintesi dell'opportunità"),el("p",d.summary));
  sheet.append(summary);
  const assessment=el("section",undefined,"print-section");
- assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.adequacyReason),
-  el("p","Copertura documentale: "+d.coverage+" · Metodo: "+d.methodology,"print-muted"),
-  el("p","Elementi utilizzati: "+d.basis,"print-muted"));
+ assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.adequacyReason));
  sheet.append(assessment);
  const details=el("section",undefined,"print-section print-conditions");
  details.append(el("h2","Requisiti, condizioni e informazioni aggiuntive"));
