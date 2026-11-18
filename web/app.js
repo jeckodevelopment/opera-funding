@@ -738,6 +738,34 @@ function syncControls(){
  }
 }
 function resetPagination(){visibleCount=PAGE_SIZE;render();}
+function registryTable(headers){
+ const scroll=el("div",undefined,"registry-scroll");
+ scroll.tabIndex=0;
+ scroll.setAttribute("role","region");
+ scroll.setAttribute("aria-label",headers.join(", "));
+ const table=el("table",undefined,"registry-table");
+ const head=el("thead"),row=el("tr");
+ for(const title of headers){
+  const th=el("th",title);th.scope="col";row.append(th);
+ }
+ head.append(row);
+ const body=el("tbody");
+ table.append(head,body);
+ scroll.append(table);
+ return {scroll,body};
+}
+function registryCell(row,content,className){
+ const cell=el("td",undefined,className);
+ if(typeof content==="string")cell.textContent=content;
+ else if(content)cell.append(content);
+ row.append(cell);
+ return cell;
+}
+function registryDate(value){
+ if(!value)return "—";
+ const d=new Date(value);
+ return Number.isNaN(d.getTime())?"—":d.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"});
+}
 function renderFundingRegistry(status){
  const registry=status&&status.funder_monitoring;
  const funderList=$("funder-list"),programmeList=$("programme-list");
@@ -750,43 +778,61 @@ function renderFundingRegistry(status){
   return;
  }
  const funders=registry.funders,programs=registry.programs;
- const byFunder=new Map(),lookup=new Map(funders.map(f=>[f.id,f]));
- for(const p of programs){if(!byFunder.has(p.funder_id))byFunder.set(p.funder_id,[]);byFunder.get(p.funder_id).push(p);}
- $("funder-count").textContent=funders.length+" censiti";
- $("programme-count").textContent=programs.length+" programmi";
+ const lookup=new Map(funders.map(f=>[f.id,f]));
+ const byFunder=new Map();
+ for(const p of programs){
+  if(!byFunder.has(p.funder_id))byFunder.set(p.funder_id,[]);
+  byFunder.get(p.funder_id).push(p);
+ }
  const term=$("funder-search").value.trim().toLocaleLowerCase("it");
+ const matching=[...funders].filter(f=>[f.name,f.type,f.territory].some(s=>
+   String(s||"").toLocaleLowerCase("it").includes(term)
+ )).sort((a,b)=>String(a.name).localeCompare(String(b.name),"it"));
+ $("funder-count").textContent=matching.length+" di "+funders.length+" finanziatori";
+ $("programme-count").textContent=programs.length+" programmi";
  funderList.replaceChildren();
- let shown=0;
- for(const f of [...funders].sort((a,b)=>String(a.name).localeCompare(String(b.name),"it"))){
-  if(![f.name,f.type,f.territory].some(s=>String(s||"").toLocaleLowerCase("it").includes(term)))continue;
-  shown++;
-  const item=el("article",undefined,"registry-card");
-  item.append(el("h3",f.name||"Finanziatore"),el("p",[f.type,f.territory].filter(Boolean).join(" · "),"registry-metadata"));
-  if(f.website)addLink(item,"Sito o pagina contributi",f.website);
-  const related=byFunder.get(f.id)||[];
-  item.append(el("p",related.length+" programmi registrati","registry-metadata"));
-  for(const p of related){
-   const line=el("p",p.name,"registry-programme");
-   line.append(document.createTextNode(" "),el("span",({ok:"Monitorato",error:"Errore scansione",not_configured:"Non monitorato"}[p.monitoring_status]||"Non verificato"),"registry-status "+(p.monitoring_status||"")));
-   item.append(line);
+ if(!matching.length){
+  funderList.append(el("p","Nessun finanziatore corrispondente.","registry-empty"));
+ }else{
+  const {scroll,body}=registryTable(["Finanziatore","Tipologia","Territorio","Programmi","Fonte"]);
+  for(const f of matching){
+   const tr=el("tr");
+   registryCell(tr,f.name||"—","registry-name");
+   registryCell(tr,f.type||"—");
+   registryCell(tr,f.territory||"—");
+   registryCell(tr,String((byFunder.get(f.id)||[]).length),"registry-number");
+   const source=registryCell(tr,null);
+   if(f.website)addLink(source,"Apri fonte",f.website);
+   else source.textContent="—";
+   body.append(tr);
   }
-  funderList.append(item);
+  funderList.append(scroll);
  }
- if(!shown)funderList.append(el("p","Nessun finanziatore corrispondente.","registry-empty"));
  programmeList.replaceChildren();
- for(const p of [...programs].sort((a,b)=>String(a.name).localeCompare(String(b.name),"it"))){
-  const item=el("article",undefined,"registry-card"),f=lookup.get(p.funder_id);
-  item.append(el("h3",p.name),el("p",f?f.name:"Finanziatore non trovato"));
-  item.append(el("span",({ok:"Fonte controllata",error:"Errore ultima scansione",not_configured:"Controllo non configurato"}[p.monitoring_status]||"Stato non disponibile"),"registry-status "+(p.monitoring_status||"")));
-  if(p.changed===true)item.append(el("p","Pagina modificata: verificare eventuali nuove opportunità.","registry-metadata"));
-  if(p.last_checked_at){
-   const d=new Date(p.last_checked_at);
-   item.append(el("p","Ultima verifica: "+(Number.isNaN(d.getTime())?"non disponibile":d.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"})),"registry-metadata"));
+ if(!programs.length){
+  programmeList.append(el("p","Nessun programma censito.","registry-empty"));
+ }else{
+  const {scroll,body}=registryTable(["Programma","Finanziatore","Stato","Ultima verifica","Fonte"]);
+  for(const p of [...programs].sort((a,b)=>String(a.name).localeCompare(String(b.name),"it"))){
+   const tr=el("tr"),f=lookup.get(p.funder_id);
+   registryCell(tr,p.name||"—","registry-name");
+   registryCell(tr,f?f.name:"—");
+   const statusCell=registryCell(tr,null);
+   const statusLabel={ok:"Monitorato",error:"Errore di scansione",not_configured:"Da configurare"}[p.monitoring_status]||"Da verificare";
+   statusCell.append(el("span",statusLabel,"registry-status "+(p.monitoring_status||"")));
+   if(p.changed===true){
+    const change=el("span","Pagina modificata","registry-change");
+    change.title="Variazione da controllare: non implica un nuovo bando aperto";
+    statusCell.append(change);
+   }
+   registryCell(tr,registryDate(p.last_checked_at),"registry-date");
+   const source=registryCell(tr,null);
+   if(p.url)addLink(source,"Apri fonte",p.url);
+   else source.textContent="—";
+   body.append(tr);
   }
-  if(p.url)addLink(item,"Pagina del programma",p.url);
-  programmeList.append(item);
+  programmeList.append(scroll);
  }
- if(!programs.length)programmeList.append(el("p","Nessun programma censito.","registry-empty"));
 }
 
 async function init(){
