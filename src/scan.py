@@ -33,6 +33,7 @@ from applicant_comparison import load_applicant_profile, annotate_applicant_comp
 from open_review_queue import build_open_review_queue
 from operational_assessment import annotate_operational_assessment
 from catalog_reconciliation import summarize_catalog_reconciliation
+from catalog_audit import load_retired_sources, mark_retired_source, audit_catalog
 from funder_registry import load_registry, link_opportunities, public_monitoring
 from programme_monitor import check_programmes, load_programme_state, public_status
 from programme_ingest import ingest_programme_calls
@@ -149,7 +150,10 @@ def run():
     sources = json.loads(Path(args.sources).read_text(encoding="utf-8"))
     output = Path(args.output)
     existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else []
-    indexed = {row["id"]: classify_informational_page(row) for row in existing}
+    retired_sources=load_retired_sources(ROOT / "config/retired_sources.json")
+    # Preserve historic cards/IDs, but never carry an unverified old OPEN badge.
+    indexed = {row["id"]: classify_informational_page(
+        mark_retired_source(row,retired_sources)) for row in existing}
     priority_pages = json.loads((ROOT / "config/priority_pages.json").read_text(encoding="utf-8"))
     issuer_checks = json.loads((ROOT / "config/issuer_checks.json").read_text(encoding="utf-8"))
     reviewed_facts = json.loads((ROOT / "config/reviewed_official_facts.json").read_text(encoding="utf-8"))
@@ -174,7 +178,7 @@ def run():
                 current_ids={item["id"] for item in found}
                 backlog=backlog_candidates(indexed,source["id"],current_ids)
                 review_limit = (max(250,len(found)+len(backlog)) if args.history_backfill
-                                else 16 if source["id"] in ("volto","torino","mic","alcotra")
+                                else 16 if source["id"] in ("volto","torino","mic")
                                 else 12 if source.get("tier")=="high" else 10)
                 found=[classify_informational_page(item) for item in found]
                 backlog=[classify_informational_page(item) for item in backlog]
@@ -324,6 +328,7 @@ def run():
         annotate_operational_assessment(row)
     rows=link_opportunities(rows, registry_funders)
     rows=track_changes(rows, existing, now)
+    catalogue_audit=audit_catalog(rows,retired_sources)
     programme_state_path.write_text(json.dumps(programme_state,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -332,6 +337,7 @@ def run():
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows),
                                         "open_eligibility_review":build_open_review_queue(rows,now[:10]),
                                         "catalog_reconciliation":summarize_catalog_reconciliation(rows),
+                                        "catalog_audit":catalogue_audit,
                                         "funder_monitoring":public_monitoring(registry_funders,statuses,now,public_status(programme_state)),
                                         "programme_ingestion":programme_ingestion},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
