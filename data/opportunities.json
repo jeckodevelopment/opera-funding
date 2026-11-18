@@ -31,13 +31,13 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
     "closure_confirmed": true,
     "status_evidence": "https://centroperillibro.cultura.gov.it/educare-alla-lettura-online-la-9a-edizione-del-bando-scadenza-13-novembre/",
-    "detail_attempted_at": "2026-11-17T22:39:46+00:00",
+    "detail_attempted_at": "2026-11-18T08:51:27+00:00",
     "link_status": "non disponibile",
     "link_http_status": 404,
     "link_checked_at": "2026-11-16T19:29:54+00:00",
@@ -55,7 +55,8 @@
     "deadline_source": "https://centroperillibro.cultura.gov.it/educare-alla-lettura-online-la-9a-edizione-del-bando-scadenza-13-novembre/",
     "reviewed_official_at": "2026-11-17",
     "reviewed_official_basis": "official_expired_application_deadline",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
+    "public_id": 142,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "796fbe569bd5ef8f27d73604319e42ea0126d3d70223f11a7688798014d88c30"
   },
@@ -87,7 +88,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -107,6 +108,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 138,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "470d4de0e6944206123c60d2b575eac7cad761ec9a37c042fcc01ba45bdc694b"
   },
@@ -146,7 +148,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -176,6 +178,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 139,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "faf200e3ecccc8b472476f3825a6134aa9dd4a7a9509cdf22956e8717fb96bfe"
   },
@@ -207,7 +210,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -227,6 +230,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 136,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "4d0f39e3668d49ee58b83a604aeaa9aa4dd222c66fb893145f74911081095098"
   },
@@ -270,7 +274,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -300,6 +304,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 135,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c7d38bcf9fa04be3aacf761ffc550721bdf3734b82b5e0974abb82bb438a72ac"
   },
@@ -351,7 +356,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -380,6 +385,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 122,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "e1dfaa5dc41eac087a06b148498e9caaa535693e72d7689f85949f8f542bfdaf"
   },
@@ -427,7 +433,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -457,6 +463,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 137,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "9e6b1a9949db1ad5f1cea6fa506ae5482e750dc6341ee751b2ab273fb6c40b36"
   },
@@ -488,7 +495,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -508,6 +515,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 134,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "fc5d2b91f62674cd3afaf1ee97b8b3ddfc8ceb1a4561a565b3e778c0b9804b3a"
   },
@@ -562,10 +570,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027/",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [
       "2026-12-03",
@@ -576,7 +584,7 @@
     "closure_confirmed": false,
     "deadline_source": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027/",
     "status_evidence": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027/",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "APERTO",
     "score_explanation": "Coerenza con divulgazione musicale e spettacolo (titolo); Coerenza con accesso, partecipazione e inclusione culturale (titolo).",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -589,6 +597,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 190,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ce3fa7c2dd6526d1c372864d080d20ce75584ae962040d63550e8b110130e9b6"
   },
@@ -641,7 +650,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "c89a249817da02b4acd63b082b11b308e58e48f7eee7c1a5d6e3873a2bf34d9b"
+    "catalog_fingerprint": "c89a249817da02b4acd63b082b11b308e58e48f7eee7c1a5d6e3873a2bf34d9b",
+    "public_id": 15
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2027-audfilmedu",
@@ -671,7 +681,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": true,
@@ -696,6 +706,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T21:56:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-AUDFILMEDU",
+    "public_id": 113,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "e0091f10bd9196a26bcdd4c9042ab8893c99e8bb48a588f97481caafd0ce75b8"
   },
@@ -727,7 +738,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -752,6 +763,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:13:50+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-AUDFILMEDU",
+    "public_id": 97,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "67f4a2220d078f9a2cbee13416f2c3405e8d1cfcba8afe32704bb128c720c3d4"
   },
@@ -809,7 +821,8 @@
     "link_checked_at": "2026-11-16T21:56:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-AUDFILMEDU",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "d47ce5f2cecca953c9309a77252851c954854c0c866badc8bf160fa01ee27ccb"
+    "catalog_fingerprint": "d47ce5f2cecca953c9309a77252851c954854c0c866badc8bf160fa01ee27ccb",
+    "public_id": 82
   },
   {
     "id": "https://www.fondazionecrt.it/fondazione-crt-per-la-scuola",
@@ -865,7 +878,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "a93fdaea0d649adf00495f290279b3391dfed0b5d4b07c00e4019d0952c3d4cf"
+    "catalog_fingerprint": "a93fdaea0d649adf00495f290279b3391dfed0b5d4b07c00e4019d0952c3d4cf",
+    "public_id": 231
   },
   {
     "id": "https://www.erasmusplus.it/wp-content/uploads/2021/10/allegato_nau_alle_disposizioni_nazionali_2021_he_minori_opportunita_signed.pdf",
@@ -895,7 +909,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -915,6 +929,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 201,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "4746ab95f80db013581a8c580af436a1c60a5ccdc430f5a83591a2f7cc91f740"
   },
@@ -946,7 +961,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -966,6 +981,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 202,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "634e63f4bda7e93ea1108ca8292df015bc963ef0b5567e19d3c9eeda4bd08c2e"
   },
@@ -1027,10 +1043,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T20:23:16+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "opening_date": "2024-10-01",
     "application_windows": [],
@@ -1040,7 +1056,7 @@
     "deadline_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
     "status_evidence": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
     "beneficiaries_excerpt": "Rivolto a Imprese e liberi professionisti Risorse Risorse statali FESR Procedura Bando a sportello +++ Comunicazioni importanti: con Determinazione Dirigenziale n. 452 del 10.09.2026 è stata incrementata la dotazione finanziaria del bando Aiuti allo spettacolo dal vivo",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "APERTO",
     "score_explanation": "Coerenza con divulgazione musicale e spettacolo (titolo).",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -1052,6 +1068,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 18,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "372a1b1fe037f14888df3a8e8cf6fce6436330afe835825ae9c57d0c2d7ddd50"
   },
@@ -1082,7 +1099,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -1101,6 +1118,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 125,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "3e5a53fd43018dafe760688f402f23bdc7f34b1318379979b16209a96340a3f5"
   },
@@ -1131,7 +1149,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -1150,6 +1168,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 126,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "5d9a850f3a049993c6c4088227fca858f8074f77db3fc81ce0839bb47fc18e9d"
   },
@@ -1180,7 +1199,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": true,
@@ -1199,6 +1218,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 127,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "bf2c949e65007a10e6fdf0b545004a656d57b83f79e72bf5c6dfcf5a570ec825"
   },
@@ -1229,7 +1249,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -1246,6 +1266,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 129,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "0f66a1fe9a1b5e8c2bcfbe7195ecf58c58c6d9d487bfa2e76ad4e0ed28e58411"
   },
@@ -1276,7 +1297,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -1295,6 +1316,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 130,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "3a6ab028b7a67debf01aa37adb08b4590e3457550d26ce8394ed3e439cc8712a"
   },
@@ -1325,7 +1347,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -1342,6 +1364,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 131,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "3350bbb7f1905ad7e5c66f41b2dca08c1f72fb3b81ad7c33a6c994e2efd0bb7f"
   },
@@ -1400,7 +1423,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-17T21:21:28+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -1426,6 +1449,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 161,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "f582e421ceec65c1a933657015ce3ee022427eac861f5c050a21642438540f68"
   },
@@ -1459,17 +1483,17 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T20:38:57+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://www.fondazionecrt.it/bandi-progetti/note-sipari/",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "summary": "NoteSipari è il bando tematico della Fondazione CRT che dal 2004 sostiene lo spettacolo dal vivo per rafforzare la cultura nei territori e per creare legami",
     "source_open_confirmed": false,
     "closure_confirmed": false,
     "deadline_source": "https://www.fondazionecrt.it/bandi-progetti/note-sipari/",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "CHIUSO",
     "score_explanation": "Coerenza con divulgazione musicale e spettacolo (titolo).",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -1481,6 +1505,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 223,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "a2f5ce622446f709bbde2f0ef240a5fa980ccf0874e77cd7175ac3b677d6b50b"
   },
@@ -1514,10 +1539,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T21:33:04+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://www.fondazionecrt.it/bandi-progetti/arte-cultura-ordinarie/",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "summary": "Contributo per progetti culturali. Finestra di candidatura 2026-02-02 – 2026-04-30.",
@@ -1525,7 +1550,7 @@
     "closure_confirmed": false,
     "deadline_source": "https://www.fondazionecrt.it/bandi-progetti/arte-cultura-ordinarie/",
     "beneficiaries_excerpt": "beneficiari ) Seconda scadenza: tra il 01/07/2026 e il 15/10/2026, ore 15.00 Sostegno attività – Bando Ordinarie 2026: Unica scadenza: tra il 02/02/2026 e il 04/03/2026, ore 15.00 ( consulta l’elenco dei beneficiari ) Responsabili Roberta Delbosco – Welfare e Territorio",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "CHIUSO",
     "score_explanation": "Non sono emerse corrispondenze tematiche esplicite nei contenuti analizzati; un punteggio basso non esclude opportunità progettuali.",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -1551,6 +1576,7 @@
       "Produzione di videolezioni e contenuti digitali di divulgazione dell'opera",
       "Laboratori extrascolastici di ascolto e cultura musicale per giovani e adulti"
     ],
+    "public_id": 219,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "289e369253979ea20f8f4fce1516c9e615501b58f21d0e7d35cd67504c4b5ea3"
   },
@@ -1584,10 +1610,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T21:33:04+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://www.fondazionecrt.it/bandi-progetti/arte-cultura-ordinarie/",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "summary": "Contributo per progetti culturali. Finestra di candidatura 2026-07-01 – 2026-10-15.",
@@ -1595,7 +1621,7 @@
     "closure_confirmed": false,
     "deadline_source": "https://www.fondazionecrt.it/bandi-progetti/arte-cultura-ordinarie/",
     "beneficiaries_excerpt": "beneficiari ) Seconda scadenza: tra il 01/07/2026 e il 15/10/2026, ore 15.00 Sostegno attività – Bando Ordinarie 2026: Unica scadenza: tra il 02/02/2026 e il 04/03/2026, ore 15.00 ( consulta l’elenco dei beneficiari ) Responsabili Roberta Delbosco – Welfare e Territorio",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "CHIUSO",
     "score_explanation": "Non sono emerse corrispondenze tematiche esplicite nei contenuti analizzati; un punteggio basso non esclude opportunità progettuali.",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -1621,6 +1647,7 @@
       "Produzione di videolezioni e contenuti digitali di divulgazione dell'opera",
       "Laboratori extrascolastici di ascolto e cultura musicale per giovani e adulti"
     ],
+    "public_id": 220,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "dbd9bba02fef4649c5c1b052e07f6d6cf963be97cae35f6820341a491c6c1eff"
   },
@@ -1654,10 +1681,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T21:33:04+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://www.fondazionecrt.it/bandi-progetti/arte-cultura-ordinarie/",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "summary": "Contributo per il sostegno delle attività culturali. Finestra di candidatura 2026-02-02 – 2026-03-04.",
@@ -1665,7 +1692,7 @@
     "closure_confirmed": false,
     "deadline_source": "https://www.fondazionecrt.it/bandi-progetti/arte-cultura-ordinarie/",
     "beneficiaries_excerpt": "beneficiari ) Seconda scadenza: tra il 01/07/2026 e il 15/10/2026, ore 15.00 Sostegno attività – Bando Ordinarie 2026: Unica scadenza: tra il 02/02/2026 e il 04/03/2026, ore 15.00 ( consulta l’elenco dei beneficiari ) Responsabili Roberta Delbosco – Welfare e Territorio",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "CHIUSO",
     "score_explanation": "Non sono emerse corrispondenze tematiche esplicite nei contenuti analizzati; un punteggio basso non esclude opportunità progettuali.",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -1691,6 +1718,7 @@
       "Consolidamento delle attività continuative di divulgazione musicale di Opera+",
       "Sviluppo di contenuti e strumenti didattici accessibili per il pubblico"
     ],
+    "public_id": 221,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "e5a18a7a7110f2819e01c4c2267c4de58cc82cb9834956b4a2caf339c33bdd75"
   },
@@ -1724,17 +1752,17 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T20:38:57+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://www.fondazionecrt.it/bandi-progetti/orizzonti-l-i-v-e/",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "summary": "Orizzonti L.I.V.E. è il nuovo bando tematico della Fondazione CRT dedicato alle realtà culturali strutturate, pensato per generare impatto e visioni capaci",
     "source_open_confirmed": false,
     "closure_confirmed": false,
     "deadline_source": "https://www.fondazionecrt.it/bandi-progetti/orizzonti-l-i-v-e/",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "CHIUSO",
     "score_explanation": "Coerenza con divulgazione musicale e spettacolo (titolo).",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -1746,6 +1774,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 224,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "455d0ee2b44b3c550b941aec0e5f19f13fa367247a8752fd13723f810762519a"
   },
@@ -1804,7 +1833,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -1830,6 +1859,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 164,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "6ba79abd60e084390f30274913a266d8f791c330800174fea74103827af9a50b"
   },
@@ -1915,7 +1945,8 @@
     ],
     "score_explanation_basis": "titolo e contenuti della scheda consultata",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "17fc2fa48cb0c33ccd9cfee5ad28651ffd1e1f1c5589bf78302e35badf22f6f0"
+    "catalog_fingerprint": "17fc2fa48cb0c33ccd9cfee5ad28651ffd1e1f1c5589bf78302e35badf22f6f0",
+    "public_id": 163
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lattrattivita-e-la-professionalizzazione-di-artisti-e-creativi",
@@ -1956,7 +1987,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -1988,6 +2019,7 @@
       "Confrontare la categoria dei beneficiari con lo statuto e i requisiti di Opera+",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 181,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "b2483f8823df9a5688e7a230be824e23966b5b21f2ea0ab0f77dfa1d6168c74f"
   },
@@ -2021,10 +2053,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T20:36:36+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "summary": "The call provides financial support to organisations and individual artists that want to host artists and cultural professionals for a residency project. Apply until 18 January 2027.",
@@ -2032,7 +2064,7 @@
     "closure_confirmed": false,
     "deadline_source": "https://culture.ec.europa.eu/culture-moves-europe/whats-new/news/culture-moves-europe-new-call-for-residency-hosts-2026-2027-open",
     "status_evidence": "https://culture.ec.europa.eu/culture-moves-europe/whats-new/news/culture-moves-europe-new-call-for-residency-hosts-2026-2027-open",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "APERTO",
     "score_explanation": "Potenziale per una progettazione in partenariato (titolo).",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -2044,6 +2076,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 33,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "b231b89e454a23cf2d2bc35086abdb9725f4e882c5b5e3c40d0aa0b5d9469dce"
   },
@@ -2109,7 +2142,8 @@
     ],
     "score_explanation_basis": "titolo e contenuti della scheda consultata",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "57b8205049989fac308171285fa3923e975fbb434edebd29b569faa894f20c9e"
+    "catalog_fingerprint": "57b8205049989fac308171285fa3923e975fbb434edebd29b569faa894f20c9e",
+    "public_id": 166
   },
   {
     "id": "https://www.fondazionecrt.it/covid-fondazione-crt-premia-quattro-progetti-culturali-resilienti-in-europa",
@@ -2163,7 +2197,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "c6df52675b035ca6fa477f2829da86d474de9f2d4a4cdb0a4ff905c017fe57e7"
+    "catalog_fingerprint": "c6df52675b035ca6fa477f2829da86d474de9f2d4a4cdb0a4ff905c017fe57e7",
+    "public_id": 226
   },
   {
     "id": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
@@ -2175,9 +2210,9 @@
     "relevance_basis": "corrispondenza tematica preliminare sul titolo",
     "opportunity_type": "non classificato",
     "type_reason": "Informazioni insufficienti per determinare la tipologia",
-    "deadline": "2027-04-30",
-    "status": "aperto (pagina ufficiale)",
-    "status_basis": "Stato aperto esplicito nella scheda ufficiale",
+    "deadline": null,
+    "status": "non verificato",
+    "status_basis": "stato non confermato",
     "issuer": "Creative Europe",
     "source_id": "eucreative",
     "source_url": "https://culture.ec.europa.eu/funding/calls",
@@ -2203,31 +2238,97 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
-    "summary": "Artists and cultural professionals in Creative Europe countries can apply until 30 April 2027 for the new Culture Moves Europe call, the European Union’s flagship mobility scheme for the cultural and creative sectors.",
-    "source_open_confirmed": true,
+    "summary": "Culture Moves Europe’s new call for individual mobility targets artists and cultural professionals working in the music, literature, architecture, cultural heritage, design and fashion design, visual arts and performing arts sectors.",
+    "source_open_confirmed": false,
     "closure_confirmed": false,
-    "deadline_source": "https://culture.ec.europa.eu/culture-moves-europe/whats-new/news/culture-moves-europe-new-call-for-individual-mobility-2026-2027-open",
-    "status_evidence": "https://culture.ec.europa.eu/culture-moves-europe/whats-new/news/culture-moves-europe-new-call-for-individual-mobility-2026-2027-open",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
-    "funding_status": "APERTO",
-    "score_explanation": "Potenziale per una progettazione in partenariato (titolo).",
+    "funding_status": "DA VERIFICARE",
+    "score_explanation": "Coerenza con divulgazione musicale e spettacolo (contenuto della scheda); Potenziale per una progettazione in partenariato (titolo).",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
     "score_explanation_basis": "titolo e contenuti della scheda consultata",
     "project_ideas": [
+      "Divulgazione dell'opera lirica con lezioni, incontri o attività dal vivo",
       "Collaborazione culturale o formativa con enti partner"
     ],
     "eligibility_checks": [
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 32,
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "240b5a43ee00d2423b9fed6d05ec7758d809be91f5421320c0d3862b6fa1bbcb"
+    "catalog_fingerprint": "059ba7bd2a814ee1136c2072c16d4657ffd1ddd31a63defcb3e6a1b053cb4d24",
+    "catalog_updated_at": "2026-11-18T08:51:27+00:00"
+  },
+  {
+    "id": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "title": "Culture Moves Europe: bando per la mobilità individuale di artisti e professionisti della cultura Il nuovo bando nell’ambito di Culture Moves Europe, finanziato dal programma Europa Creativa e gestito dal Goethe Insitut,",
+    "relevance": 55,
+    "themes": [
+      "cultura e spettacolo"
+    ],
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "opportunity_type": "finanziamento potenziale",
+    "type_reason": "Il titolo contiene indicatori di contributo o finanziamento; verifica necessaria",
+    "deadline": "2027-04-30",
+    "status": "non verificato",
+    "status_basis": "stato non confermato",
+    "issuer": "Vol.To",
+    "source_id": "volto",
+    "source_url": "https://volontariatotorino.it/bandi/",
+    "url": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2"
+      }
+    ],
+    "amount": null,
+    "eligibility": "da verificare",
+    "project_potential": "da valutare",
+    "first_seen": "2026-11-18T08:51:27+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
+    "verified": false,
+    "detail_checked": true,
+    "source_open_confirmed": false,
+    "closure_confirmed": false,
+    "application_windows": [],
+    "beneficiaries_excerpt": "DESTINATARI — Artisti e professionisti della cultura , appartenenti ai settori architettura, patrimonio culturale, design, moda, traduzione letteraria, musica, arti visive e arti dello spettacolo. I candidati devono avere età superiore ai 18 anni, qualsiasi tipo di titolo di studio e livello di esperienza ed essere residenti in uno dei Paesi ammiss",
+    "beneficiaries_source": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "amount_kind": null,
+    "amount_source": null,
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked_at": "2026-11-18T08:52:15+00:00",
+    "detail_version": 7,
+    "deadline_source": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "deadline_verified_at": "2026-11-18T08:52:15+00:00",
+    "detail_attempted_at": "2026-11-18T08:51:27+00:00",
+    "link_status": "raggiungibile",
+    "resolved_url": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "link_http_status": 200,
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
+    "funding_status": "DA VERIFICARE",
+    "score_explanation": "Coerenza con divulgazione musicale e spettacolo (contenuto della scheda); Potenziale per una progettazione in partenariato (titolo).",
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "project_ideas": [
+      "Divulgazione dell'opera lirica con lezioni, incontri o attività dal vivo",
+      "Collaborazione culturale o formativa con enti partner"
+    ],
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "public_id": 147,
+    "catalog_tracking_version": 1,
+    "catalog_fingerprint": "31d5e66f5b21ea3f66c56f2cfa4aeea176d60b7fa8d404a5489eefff151c4555",
+    "catalog_new_at": "2026-11-18T08:51:27+00:00"
   },
   {
     "id": "https://www.fondazionecrt.it/culture-of-solidarity-fund-progetti-vincitori",
@@ -2279,7 +2380,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "05c93934886be1daded85e812cf2190393af15fc702147520a1b44b74dfec999"
+    "catalog_fingerprint": "05c93934886be1daded85e812cf2190393af15fc702147520a1b44b74dfec999",
+    "public_id": 227
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2025-coop",
@@ -2308,7 +2410,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -2333,6 +2435,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:37:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2025-COOP",
+    "public_id": 62,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "6e6e0c524dd0a39bd200f144593c888a7bffaf4ca789a039aabd602be6299891"
   },
@@ -2363,7 +2466,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -2388,6 +2491,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:13:50+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2021-COOP",
+    "public_id": 47,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "2b57d0600653a41dec3989394bbe39ea336314ad34810324765ec8630df7046f"
   },
@@ -2418,7 +2522,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -2443,6 +2547,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:24:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2022-COOP",
+    "public_id": 52,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "579b3db9a058f33b68a886884d47ca9c71b75cbe33af994a57c61433b3700a8e"
   },
@@ -2473,7 +2578,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -2505,6 +2610,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T21:56:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-FEST",
+    "public_id": 87,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "2063d27099cfd28894ab8bbb15d8bfcc469998d3238e9a2f58fc1cc07a75b9f2"
   },
@@ -2535,7 +2641,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -2567,6 +2673,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:13:50+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-FEST",
+    "public_id": 102,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ef2dcdb14f674e460affafeb3e77b9de68b0d75393f35df50043c82e28886723"
   },
@@ -2597,7 +2704,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -2621,6 +2728,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:37:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2024-NET",
+    "public_id": 60,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "cae2e3f11b6e012ec91f7fb67e48aeb84d93288b84ac3635c12f6ceffcbda354"
   },
@@ -2651,7 +2759,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -2675,6 +2783,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:37:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2021-NET",
+    "public_id": 49,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d5fe57862cea25f39836887aaf60ad0cb66833ec134e2dd446746da83922cc9a"
   },
@@ -2705,7 +2814,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -2729,6 +2838,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:37:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2021-PLAT",
+    "public_id": 51,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "3ce8240b6a3710546a7d035ce848008e85c4316be3db8d53a741aeb9e36ab15f"
   },
@@ -2785,7 +2895,8 @@
     "link_checked_at": "2026-11-16T21:56:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-VODNET",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "de496b95c746e28acdb77629dc8cb5e92c9ec750ac1b8ef4b1d7f23b653e7935"
+    "catalog_fingerprint": "de496b95c746e28acdb77629dc8cb5e92c9ec750ac1b8ef4b1d7f23b653e7935",
+    "public_id": 73
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2026-vodnet",
@@ -2814,7 +2925,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -2839,6 +2950,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:24:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-VODNET",
+    "public_id": 112,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "7763d2f704eefa1c0159b9843cbcac52ae8346d8bc8efe72cf1bf02ae0bc07b6"
   },
@@ -2869,7 +2981,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -2894,6 +3006,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:13:50+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-VODNET",
+    "public_id": 81,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "b2053dad4169db5af8accc2e76526b7adde7837597430d51e7fc8f9aaa8d866e"
   },
@@ -2947,7 +3060,8 @@
     "link_checked_at": "2026-11-16T22:24:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2025-COOP-UA",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "d1d7e02a8519e4bc998cf1961083afb7b81bb95b987cede0d0769d0505e4b189"
+    "catalog_fingerprint": "d1d7e02a8519e4bc998cf1961083afb7b81bb95b987cede0d0769d0505e4b189",
+    "public_id": 63
   },
   {
     "id": "https://culture.ec.europa.eu/cultural-heritage/funding-opportunities-for-cultural-heritage",
@@ -2976,7 +3090,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -3000,6 +3114,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 31,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "aef69f214dc52edcffb825e7c052075118d3e02518bf97e44bb4450d123f1e18"
   },
@@ -3056,7 +3171,8 @@
     "link_checked_at": "2026-11-16T22:24:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2024-MME",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "219dc3bc0159c49859df2bc248243f893ace72f06728d51cc974c682268ca2a1"
+    "catalog_fingerprint": "219dc3bc0159c49859df2bc248243f893ace72f06728d51cc974c682268ca2a1",
+    "public_id": 59
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2022-mme",
@@ -3085,7 +3201,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -3110,6 +3226,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:24:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2022-MME",
+    "public_id": 54,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "350457abec389a08b802a980c97f8a4a6417f791db2e336d1290fe73297a28d9"
   },
@@ -3173,7 +3290,8 @@
     "link_checked_at": "2026-11-16T21:56:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2024-FESTNET",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "dc720512694f8ca3b2b743714d4324d440758178cafda9b505a93f993d30b615"
+    "catalog_fingerprint": "dc720512694f8ca3b2b743714d4324d440758178cafda9b505a93f993d30b615",
+    "public_id": 93
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2022-festnet",
@@ -3202,7 +3320,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -3234,6 +3352,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:13:50+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-FESTNET",
+    "public_id": 77,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "056de3fdc8c236fe71f610fd91925222ee44c43d8005801957c238c1afe4a216"
   },
@@ -3264,7 +3383,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -3296,6 +3415,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:13:50+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-FESTNET",
+    "public_id": 109,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "b1337058ffd2b618d5c75b4d15bbb8250ee4e857b373edc28ab2021b4e55c4d3"
   },
@@ -3326,7 +3446,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -3350,6 +3470,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:37:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2024-PECE",
+    "public_id": 61,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "6f332a3f1bdf19b0c02b33045582d634aee124fcfd397a37579ca91040b662f5"
   },
@@ -3380,7 +3501,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -3404,6 +3525,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:13:50+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2021-PECE",
+    "public_id": 50,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "8717c88cbc52f46f9bc8cea12d5ed5255fde11ff755f32f5dab11a1b78b154bf"
   },
@@ -3434,7 +3556,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -3463,6 +3585,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 195,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "e4bb2761b168fa43a1f9e5ee4be1c9a4050eea49d8813b6878435820b6357175"
   },
@@ -3493,7 +3616,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -3510,6 +3633,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 140,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "f74ff899793de7ed57f7a15b9e0f111a34c886a51da21ace61561b6d8937e98c"
   },
@@ -3563,7 +3687,8 @@
     "link_checked_at": "2026-11-16T22:24:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2023-COOP-UA",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "5c01a76e6e2fc7b1d948bb8cacc7e3d9a647371aeffc76e1a9c3bd12d65811a4"
+    "catalog_fingerprint": "5c01a76e6e2fc7b1d948bb8cacc7e3d9a647371aeffc76e1a9c3bd12d65811a4",
+    "public_id": 56
   },
   {
     "id": "https://www.fondazionecrt.it/europrogettazione-webinar-2022",
@@ -3613,7 +3738,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "19f8b90b29545e7366ad29d68286f50b8ef142b934822aae5d0a7cf3c3cf8eea"
+    "catalog_fingerprint": "19f8b90b29545e7366ad29d68286f50b8ef142b934822aae5d0a7cf3c3cf8eea",
+    "public_id": 230
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-diderot-2024-2025",
@@ -3667,7 +3793,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "969fd0e61d5ea870be8b5533ae88b79989a71e3356b73e819b03aff5681981a6"
+    "catalog_fingerprint": "969fd0e61d5ea870be8b5533ae88b79989a71e3356b73e819b03aff5681981a6",
+    "public_id": 240
   },
   {
     "id": "https://www.fondazionecrt.it/al-via-il-progetto-diderot-2026-2027",
@@ -3721,7 +3848,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "80449a9d35783920a93cbf59b2038b3828c8060310164427718ffcddb9c22f48"
+    "catalog_fingerprint": "80449a9d35783920a93cbf59b2038b3828c8060310164427718ffcddb9c22f48",
+    "public_id": 216
   },
   {
     "id": "https://www.erasmusplus.it/wp-content/uploads/2025/06/assegnazione-del-budget-ka121-adu-call-2025.pdf",
@@ -3750,7 +3878,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -3769,6 +3897,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 211,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "78ad14f80844e0c559d8d1727ff717c18fccee5bfbf66f948f03da423f98e782"
   },
@@ -3811,7 +3940,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -3841,6 +3970,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 123,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "3955f2008c07bb9e58a02ddf85b3b1aec46ae0a72429f0b4ac5f1ec47e3ff85a"
   },
@@ -3875,7 +4005,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -3887,7 +4017,7 @@
     "detail_attempted_at": "2026-11-16T23:40:23+00:00",
     "beneficiaries_excerpt": "beneficiari non devono avere scopo di lucro. Le organizzazioni profit possono partecipare solo come partner e non come proponenti. Le entità affiliate a un beneficiario non sono considerate come partecipanti al progetto ed i loro costi non sono ammissibili. DOTAZIONE FI",
     "deadline_source": "https://european-training-platform.e-justice.europa.eu/about-platform",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "application_windows": [],
     "opening_date": "2026-10-28",
     "opening_evidence": "https://european-training-platform.e-justice.europa.eu/about-platform",
@@ -3911,6 +4041,7 @@
     ],
     "reviewed_official_at": "2026-11-17",
     "reviewed_official_basis": "official_active_application_window",
+    "public_id": 145,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ad49382be0b27f979c449cec2fe1374ba900c2900511f45054c2abed22bcd23c"
   },
@@ -3969,7 +4100,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -3998,6 +4129,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 180,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "9bebce24c12436c9aa9e3ba951f7a02280a017c33ef1b8f1a9849727210dcae9"
   },
@@ -4028,7 +4160,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4048,6 +4180,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 208,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "7224c1a16eb794c3b307abde6a74c5c0e34232b6d04678e2ef731f5291441863"
   },
@@ -4078,7 +4211,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4097,6 +4230,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 199,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "6221ef18277f68dd29d2fc747a3278fa950011257bc3fe9036681c6e27b078e3"
   },
@@ -4127,7 +4261,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4146,6 +4280,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 205,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "043cf8685d77f4769012f785afe5b1517427f907f5786403c23eb8aec2cb8549"
   },
@@ -4176,7 +4311,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4195,6 +4330,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 176,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "64b970aeeea87ba695bf30a792681143646c1a4860565c90a40e4fe565527133"
   },
@@ -4250,7 +4386,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "05ab12a49b2f2e343690965cccdd2e595a1c2ee613544052d712c882cd3a4629"
+    "catalog_fingerprint": "05ab12a49b2f2e343690965cccdd2e595a1c2ee613544052d712c882cd3a4629",
+    "public_id": 236
   },
   {
     "id": "https://www.erasmusplus.it/wp-content/uploads/2022/02/assegnazione-del-budget-ka121-sch-call-2022-1.pdf",
@@ -4279,7 +4416,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4298,6 +4435,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 204,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "80bd79be7a43e35b3db4187fef8bdb5994a0f4f4696a4383b8b12bca7c0f843e"
   },
@@ -4328,7 +4466,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4347,6 +4485,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 203,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d4750d3f25b4083a0f64e43b4e51796fa670590f6637f622c28246370cbd91bc"
   },
@@ -4408,16 +4547,16 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://bandi.comune.torino.it/avviso/avviso-pubblico-torino-youth-climate-action-fund-lassegnazione-contributi-sostegno-della",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "source_open_confirmed": false,
     "closure_confirmed": false,
     "deadline_source": "https://bandi.comune.torino.it/avviso/avviso-pubblico-torino-youth-climate-action-fund-lassegnazione-contributi-sostegno-della",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "CHIUSO",
     "score_explanation": "Coerenza con formazione e coinvolgimento dei giovani (titolo).",
     "score_confidence": "bassa — analisi preliminare del titolo",
@@ -4429,6 +4568,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 4,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "56cc611e6fad72e21c8ff9b2b99e1934b8b8dced90a3647342eda1c021528428"
   },
@@ -4459,7 +4599,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4478,6 +4618,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 29,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ab8651646f631a17891c64381d8ee9b22dbb2ff32c00801f5630985ada83c578"
   },
@@ -4520,7 +4661,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -4550,6 +4691,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 2,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "0384799ad778092b32ec0e1e109cfab01222cfbd0ecc792528c144c50c3c758b"
   },
@@ -4588,7 +4730,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -4614,6 +4756,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 3,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "f65fb87326ddd4c88adba8c20a9ee31e12821f7d5be3b956f689dfd680005400"
   },
@@ -4644,7 +4787,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4663,6 +4806,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 14,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "9a56ea50dd76ddd63e6d6bb6c9a6b5af050441aabb717ef4fd5f43cb4478482b"
   },
@@ -4693,7 +4837,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4713,6 +4857,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 13,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "db6aaebe0ea80011ba224415c1ee119889ec6877ca8a85a0efac89af48aa09d7"
   },
@@ -4759,7 +4904,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -4790,6 +4935,7 @@
       "Confrontare la categoria dei beneficiari con lo statuto e i requisiti di Opera+",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 132,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "6508f9963746c012b1d92579c323fcb0bbd0d12f5c4072f8cbb3333d8f5baea9"
   },
@@ -4844,7 +4990,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -4874,6 +5020,7 @@
       "Confrontare la categoria dei beneficiari con lo statuto e i requisiti di Opera+",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 133,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d18ad295a9e18e189f920d0d0b037595367fea1c6ad34988a58a98f92da426fa"
   },
@@ -4908,7 +5055,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -4941,8 +5088,9 @@
       "Controllare se il partenariato è obbligatorio e con quali caratteristiche",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
-    "issuer_verified_at": "2026-11-18T08:18:50+00:00",
+    "issuer_verified_at": "2026-11-18T08:51:27+00:00",
     "issuer_official_url": "https://www.sportesalute.eu/fabbrica",
+    "public_id": 143,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "b0dcb005f67acc0e05d18c51e8af8a483cdc38bd781ea296fa92344197e018ca"
   },
@@ -4973,7 +5121,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -4997,6 +5145,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:37:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-CODEV",
+    "public_id": 84,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "3b969049de8f664c475550919aca11beba8597213dedd287e1d5faa971b1bb00"
   },
@@ -5027,7 +5176,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -5051,6 +5200,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:33:01+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2025-INNOVLAB",
+    "public_id": 41,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "7c4a3aa38c1bf6063d5c0db172b7683f9ec198955cc4b7c057e193c2d640c7c6"
   },
@@ -5081,7 +5231,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -5105,6 +5255,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:03:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2026-INNOVLAB",
+    "public_id": 44,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "465a09cb7f95026299c460d04bcd12cc43f6c080a0f255cd5fb855a4ec9b8c34"
   },
@@ -5139,7 +5290,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -5151,7 +5302,7 @@
     "detail_attempted_at": "2026-11-16T23:40:23+00:00",
     "beneficiaries_excerpt": null,
     "deadline_source": "https://it.linkedin.com/posts/fondazione-lavazza_dora-in-avanti-aperta-la-call-per-progetti-activity-7520488906006421504-p9rD",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "application_windows": [],
     "link_status": "raggiungibile",
     "link_http_status": 200,
@@ -5170,6 +5321,7 @@
     ],
     "reviewed_official_at": "2026-11-17",
     "reviewed_official_basis": "official_issuer_statement",
+    "public_id": 175,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "bc6669818c9554f1a0d42db51e2f5eb21aa86228eeb1a4eaa6fb554407324377"
   },
@@ -5200,7 +5352,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": true,
@@ -5225,6 +5377,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:37:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVVGIM",
+    "public_id": 116,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "70ef919c5786848de73842b1436df0befd10bbf5e50dd73855e3898a631e810b"
   },
@@ -5255,7 +5408,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -5280,6 +5433,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:24:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-TRAINING",
+    "public_id": 80,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "cd9446905d4aed54bbb1b7044ccbaf66395a3302d707eb550ebe96d7fc4ca658"
   },
@@ -5335,7 +5489,8 @@
     "link_checked_at": "2026-11-16T23:27:25+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2023-INNOVLAB",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "2f6a3ff6a972b2577686329c2928e463484aa08199ca90199f41470ab15da510"
+    "catalog_fingerprint": "2f6a3ff6a972b2577686329c2928e463484aa08199ca90199f41470ab15da510",
+    "public_id": 38
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2022-innovlab",
@@ -5364,7 +5519,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -5388,6 +5543,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:03:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2022-INNOVLAB",
+    "public_id": 35,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d9a350442638989b9f9c88aad040d366af95d3d2a9f90f6c4549f88109c6817e"
   },
@@ -5418,7 +5574,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -5442,6 +5598,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:24:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2024-INNOVBUSMOD",
+    "public_id": 96,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d4e718587ac80516a3ebda13cc8efea9d500cf3eaebbcb88f37446864823c443"
   },
@@ -5497,7 +5654,8 @@
     "link_checked_at": "2026-11-16T22:33:01+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-INNOVBUSMOD",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "4b5045370fa6651ee163eaf2711b74b0cf533f96ee68ad5a770cd8c1471952dc"
+    "catalog_fingerprint": "4b5045370fa6651ee163eaf2711b74b0cf533f96ee68ad5a770cd8c1471952dc",
+    "public_id": 91
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2021-innovbusmod",
@@ -5551,7 +5709,8 @@
     "link_checked_at": "2026-11-16T22:33:01+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-INNOVBUSMOD",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "217ae6f84fee6fbcd2049f360d2aa4c9a4dbdaba2b724fad8846fad82f3c6ac4"
+    "catalog_fingerprint": "217ae6f84fee6fbcd2049f360d2aa4c9a4dbdaba2b724fad8846fad82f3c6ac4",
+    "public_id": 69
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2025-innovbusmod",
@@ -5605,7 +5764,8 @@
     "link_checked_at": "2026-11-16T23:27:25+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-INNOVBUSMOD",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "72d299ca1e1eb75067db254098700d1e0c9514a64bbbfacb986cfd55d7049f26"
+    "catalog_fingerprint": "72d299ca1e1eb75067db254098700d1e0c9514a64bbbfacb986cfd55d7049f26",
+    "public_id": 105
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2022-innovbusmod",
@@ -5634,7 +5794,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -5658,6 +5818,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:03:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-INNOVBUSMOD",
+    "public_id": 78,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ed158ff4d1e723c0ca34f4b7d583e29d31d40eebc7116ee260aaea89f7a853d0"
   },
@@ -5703,10 +5864,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "summary": "Un percorso volto ad accompagnare gli enti dell’Economia Sociale nell’adozione responsabile e sicura dell’AI.",
@@ -5715,7 +5876,7 @@
     "deadline_source": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/",
     "status_evidence": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/",
     "beneficiaries_excerpt": "rivolto agli enti privati senza scopo di lucro attivi negli ambiti sociale, culturale e ambientale, con almeno una sede operativa in Piemonte, Liguria e/o Valle d’Aosta. Gli enti dovranno inoltre possedere i requisiti di ammissibilità ai contributi della Fondazione Com",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "APERTO",
     "score_explanation": "Coerenza con divulgazione musicale e spettacolo (contenuto della scheda); Coerenza con contenuti digitali e innovazione culturale (titolo).",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -5728,6 +5889,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 182,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "401e998f54e0b9837c5dfbc94f55c5e378e6e1d75d326b39fa889c5166a1ac67"
   },
@@ -5783,7 +5945,8 @@
     "link_checked_at": "2026-11-16T22:33:01+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-MEDIA360",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "d1a5ee4415dadef84f780f04e723a308cbf954cd02be04d0fd1e516691375fd2"
+    "catalog_fingerprint": "d1a5ee4415dadef84f780f04e723a308cbf954cd02be04d0fd1e516691375fd2",
+    "public_id": 106
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2022-media360",
@@ -5812,7 +5975,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -5836,6 +5999,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:37:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-MEDIA360",
+    "public_id": 79,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "706433b9f51b3c2b3d407212bd724fa4ff6a7b6f4a0629e8e0f44e0168c51668"
   },
@@ -5866,7 +6030,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -5890,6 +6054,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:33:01+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2025-MFP",
+    "public_id": 43,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ed4555214fe98803912426a8f87dc161d28f68cbcae01c604b9613edd83d03ac"
   },
@@ -5945,7 +6110,8 @@
     "link_checked_at": "2026-11-16T22:33:01+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2023-MEDIALITERACY",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "1668127232dd6c043dd3deaa60304b6f22532cd06afa4d1c9d31a7b7aed433ba"
+    "catalog_fingerprint": "1668127232dd6c043dd3deaa60304b6f22532cd06afa4d1c9d31a7b7aed433ba",
+    "public_id": 40
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2026-medialiteracy",
@@ -5974,7 +6140,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -5998,6 +6164,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:03:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2026-MEDIALITERACY",
+    "public_id": 46,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c2453c0b0cf0cfe80478cb13a7494cfdc825892a5b72e560e8e52d3586e64f89"
   },
@@ -6028,7 +6195,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -6048,6 +6215,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 229,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "b10a53181d7d704fdde4a60f694ad3e64ca21c00f8d8c146b67a6114660b264b"
   },
@@ -6098,7 +6266,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "662ff45614271db3ef7f3fbab1a9d41acfab415e95cec48246c87f396c20afa4"
+    "catalog_fingerprint": "662ff45614271db3ef7f3fbab1a9d41acfab415e95cec48246c87f396c20afa4",
+    "public_id": 16
   },
   {
     "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/avviso-pubblico-finanziamento-alle-associazioni-turistiche-pro-loco-piemonte-anno-2026",
@@ -6172,7 +6341,8 @@
     ],
     "score_explanation_basis": "titolo e contenuti della scheda consultata",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "91ede9aad9415e492fd63f89a0467f87f8072779fa30eed4dd9554fe38578e0f"
+    "catalog_fingerprint": "91ede9aad9415e492fd63f89a0467f87f8072779fa30eed4dd9554fe38578e0f",
+    "public_id": 19
   },
   {
     "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/patrimonio-linguistico-dialettale-piemonte-avviso-pubblico-finanziamento-invito-alla-presentazione",
@@ -6221,7 +6391,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -6252,6 +6422,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 24,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "67e0ea8622d342f06ceb9af948ec8443c9d958aded48cd82458cd67fa4b0044e"
   },
@@ -6308,7 +6479,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "dbcba4ea4d7789b4e90eafb7366c9afca66d3e146c4690d4e5bdd35a33e8518e"
+    "catalog_fingerprint": "dbcba4ea4d7789b4e90eafb7366c9afca66d3e146c4690d4e5bdd35a33e8518e",
+    "public_id": 248
   },
   {
     "id": "https://www.fondazionecrt.it/talenti-comunita-1-edizione",
@@ -6380,7 +6552,8 @@
     ],
     "score_explanation_basis": "titolo e contenuti della scheda consultata",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "3f2e0ff68c96f443b6051f22a6fe6f4bcb7f4528da495cca69398287af475dd8"
+    "catalog_fingerprint": "3f2e0ff68c96f443b6051f22a6fe6f4bcb7f4528da495cca69398287af475dd8",
+    "public_id": 249
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/quarto-avviso-pubblico-concessione-lerogazione-contributi-ordinari-altri-benefici-economici",
@@ -6421,7 +6594,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -6451,6 +6624,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 10,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "7250b2e5cd8e12253d83705add9d47a0793ae66977f53d9a4e68239f1d8bc5df"
   },
@@ -6481,7 +6655,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -6500,6 +6674,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 149,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d4796d390ac047d709c5253c0a26a9121860631a9e1a38f46a6d58fa435b2858"
   },
@@ -6542,7 +6717,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -6570,6 +6745,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 11,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "63595e7e36e37056d8ed097e6fb306eb87875fc60fcf73480c7641f4a88c6c41"
   },
@@ -6600,7 +6776,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -6624,6 +6800,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:33:01+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-DEVVGIM",
+    "public_id": 101,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "83d423590822d53d9b0ef69c998d4b43d76093587c7947314be8986a9d1e2ae1"
   },
@@ -6654,7 +6831,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -6678,6 +6855,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:03:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-DEVVGIM",
+    "public_id": 76,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "2bfe619593393ab634ba043560d07cd6c0e96064ea1b2ce4e23bc7b330fe528d"
   },
@@ -6734,7 +6912,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "5036b04ba81e860ee1b8ce858cabe13ab01ced7be967b2997afd4bc9296b8548"
+    "catalog_fingerprint": "5036b04ba81e860ee1b8ce858cabe13ab01ced7be967b2997afd4bc9296b8548",
+    "public_id": 250
   },
   {
     "id": "https://interreg-alcotra.eu/it/bando-la-selezione-dei-progetti-singoli-dei-piani-territoriali-integrati-piter-2021-2027",
@@ -6792,10 +6971,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://interreg-alcotra.eu/it/bando-la-selezione-dei-progetti-singoli-dei-piani-territoriali-integrati-piter-2021-2027",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [
       "2024-07-02",
@@ -6805,7 +6984,7 @@
     "source_open_confirmed": false,
     "closure_confirmed": false,
     "deadline_source": "https://interreg-alcotra.eu/it/bando-la-selezione-dei-progetti-singoli-dei-piani-territoriali-integrati-piter-2021-2027",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "CHIUSO",
     "score_explanation": "Non sono emerse corrispondenze tematiche esplicite nei contenuti analizzati; un punteggio basso non esclude opportunità progettuali.",
     "score_confidence": "bassa — analisi preliminare del titolo",
@@ -6815,6 +6994,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 151,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "619018d3475da21d9146c693417f06f342575f3079ccc684d06a82530659f418"
   },
@@ -6867,7 +7047,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "9f136ed4fd35155c86a48b1eff6e4573e4ebf60c583562b2d562cbfc12b5acd7"
+    "catalog_fingerprint": "9f136ed4fd35155c86a48b1eff6e4573e4ebf60c583562b2d562cbfc12b5acd7",
+    "public_id": 233
   },
   {
     "id": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4352/all.2_scheda_progetto_0.docx",
@@ -6894,7 +7075,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -6912,6 +7093,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 12,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "dbf38d456ced4fd805b6a283e4148355ffb84330cad9d4d6ae6786a520cb38a7"
   },
@@ -6958,7 +7140,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "c49a35a9851117eedc7190782cfaaf16176a3798f26e44f19711aa66699fcc8a"
+    "catalog_fingerprint": "c49a35a9851117eedc7190782cfaaf16176a3798f26e44f19711aa66699fcc8a",
+    "public_id": 217
   },
   {
     "id": "https://www.erasmusplus.it/wp-content/uploads/2025/02/assegnazione-del-budget-ka121-sch-call-2025.pdf",
@@ -6985,7 +7168,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -7002,6 +7185,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 210,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "3f123ae38be8481aced279ee00529fc9a35f93e0b9f7de3a2e796759630632b9"
   },
@@ -7048,7 +7232,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "47fd5471c6248dbddb919b1be5bd9fcc19c2346318dba35457c6ccee53772a40"
+    "catalog_fingerprint": "47fd5471c6248dbddb919b1be5bd9fcc19c2346318dba35457c6ccee53772a40",
+    "public_id": 215
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-di-concessione-gratuita-di-spazi-destinati-alla-vendita-in-occasione-della-ix-edizione-di-biennale-democrazia",
@@ -7075,7 +7260,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -7092,6 +7277,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 124,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "0d0e3d4e430ca8b8ee00c614afc35cd51d86f8bb1c93e74675452790808931ae"
   },
@@ -7120,7 +7306,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -7137,6 +7323,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 1,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "23941ba6f81dc40a18bab7a2490481373c130a78d3cb2c0e055f3aaaf07c2303"
   },
@@ -7165,7 +7352,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -7182,6 +7369,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 251,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "1a1d323f313ded4c1a7fd9f20b0beefe3bb04a28937ceafd97406f67307e866b"
   },
@@ -7228,7 +7416,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "b8c4768ae68548d4a0e680550b7aac1233e00cea7352b1baaa84457af0679ff2"
+    "catalog_fingerprint": "b8c4768ae68548d4a0e680550b7aac1233e00cea7352b1baaa84457af0679ff2",
+    "public_id": 218
   },
   {
     "id": "https://fpct.it/index.php/bandi-e-avvisi",
@@ -7255,7 +7444,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -7272,6 +7461,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 141,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d910f5e8606f7d0931bf90f1e737803a861e53100e0536f6c0a9c3a6881ecefb"
   },
@@ -7328,7 +7518,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -7357,6 +7547,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 162,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ef58172e145f55646628124b826bdb8339cab7da57b31559ae89f775aa08b763"
   },
@@ -7403,7 +7594,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "7580660b8c7c2bf0dd5484c8558f2c171aa354622abd79fc6f2cb9cc736c7a9f"
+    "catalog_fingerprint": "7580660b8c7c2bf0dd5484c8558f2c171aa354622abd79fc6f2cb9cc736c7a9f",
+    "public_id": 225
   },
   {
     "id": "https://spettacolo.cultura.gov.it/bando-teatro-urbano-sociale-e-di-strada-2026-assegnazione-dei-contributi",
@@ -7430,7 +7622,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -7449,11 +7641,12 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 165,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "0106e1ba0accaeaceee5f6bc8314a58ca7456bd26eed80fbddfea229ef4329af"
   },
   {
-    "id": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27",
+    "id": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026",
     "title": "Bando Una mano a chi sostiene – nuova edizione 2026/27 Il bando mette a disposizione 500 mila euro per sostenere sul territorio italiano progetti in grado di generare impatto sociale duraturo attraverso la coesione socia",
     "relevance": 20,
     "themes": [],
@@ -7466,11 +7659,11 @@
     "issuer": "Vol.To",
     "source_id": "volto",
     "source_url": "https://volontariatotorino.it/bandi/",
-    "url": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27",
+    "url": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026",
     "documents": [
       {
         "label": "Pagina del bando",
-        "url": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27"
+        "url": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/"
       },
       {
         "label": "Bando presso l'ente erogatore",
@@ -7481,7 +7674,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -7494,15 +7687,15 @@
     "rolling_guidance": null,
     "rolling_guidance_source": null,
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
-    "detail_checked_at": "2026-11-17T22:40:29+00:00",
+    "detail_checked_at": "2026-11-18T08:52:13+00:00",
     "detail_version": 7,
     "deadline_source": "https://www.unamanoachisostiene.it/",
-    "deadline_verified_at": "2026-11-17T22:40:29+00:00",
-    "detail_attempted_at": "2026-11-17T22:39:46+00:00",
+    "deadline_verified_at": "2026-11-18T08:52:13+00:00",
+    "detail_attempted_at": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
-    "resolved_url": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27",
+    "resolved_url": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/",
     "link_http_status": 200,
-    "link_checked_at": "2026-11-17T22:39:46+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "APERTO",
     "score_explanation": "Non sono emerse corrispondenze tematiche esplicite nei contenuti analizzati; un punteggio basso non esclude opportunità progettuali.",
     "score_confidence": "bassa — analisi preliminare del titolo",
@@ -7513,15 +7706,17 @@
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
     "alternative_urls": [
-      "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026"
+      "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27"
     ],
     "opening_date": "2026-11-16",
     "opening_evidence": "https://www.unamanoachisostiene.it/",
     "status_evidence": "https://www.unamanoachisostiene.it/",
-    "issuer_verified_at": "2026-11-17T22:39:46+00:00",
+    "issuer_verified_at": "2026-11-18T08:51:27+00:00",
     "issuer_official_url": "https://www.unamanoachisostiene.it/",
+    "public_id": 146,
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "5fbd1d6e44db6c2431640fbeb4db1b585df19d43b84dd2dd06e195ac8a11f01f"
+    "catalog_fingerprint": "440b68c4328fa0c254e0127aa1a259a084ca0e39f23f1f8db0b7c9defd07cef1",
+    "catalog_new_at": "2026-11-18T08:51:27+00:00"
   },
   {
     "id": "https://infobandi.csvnet.it/bando-lo-sport-e-vita/?utm_source=rss&utm_medium=rss&utm_campaign=bando-lo-sport-e-vita",
@@ -7552,7 +7747,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -7581,8 +7776,9 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
-    "issuer_verified_at": "2026-11-18T08:18:50+00:00",
+    "issuer_verified_at": "2026-11-18T08:51:27+00:00",
     "issuer_official_url": "https://www.sportesalute.eu/lo-sport-e-vita.html",
+    "public_id": 144,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "88049aa8feb93ee243a7b84a1812c0c18a29033da41eaea5d3eef29ada9e28c5"
   },
@@ -7611,7 +7807,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -7628,6 +7824,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 128,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "51eec6ac65f0071fc8105162a036481c1ffc1fcfbc2b60ffac0e85c87e6d0ba4"
   },
@@ -7664,7 +7861,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -7695,6 +7892,7 @@
       "Controllare se il partenariato è obbligatorio e con quali caratteristiche",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 184,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "5f8d0c7d53240074cfb96be815a527623a8631ee3ca3049c867aaaded5d4581d"
   },
@@ -7727,7 +7925,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -7759,6 +7957,7 @@
       "Controllare se il partenariato è obbligatorio e con quali caratteristiche",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 185,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "2a6407042f9714513cf9060924789a137b244c8c0d3cb12ece6b31423f44b423"
   },
@@ -7794,10 +7993,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T20:36:36+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://erasmus-plus.ec.europa.eu/funding-opportunities/european-literacy-coalition-consortium-fpa-sga",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "summary": "Framework Partnership Agreement (FPA) to European Literacy Coalition consortium and the first Specific Grant Agreement (SGA) thereunder.",
@@ -7818,9 +8017,10 @@
     "reviewed_official_at": "2026-11-17",
     "reviewed_official_basis": "official_active_application_window",
     "status_evidence": "https://erasmus-plus.ec.europa.eu/el/funding-opportunities/european-literacy-coalition-consortium-fpa-sga",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "opening_date": "2026-09-22",
     "opening_evidence": "https://erasmus-plus.ec.europa.eu/el/funding-opportunities/european-literacy-coalition-consortium-fpa-sga",
+    "public_id": 120,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "5ff543458ffedfae1296ab6402b6ea6b3cdcaca45e70854226932d4a27277f16"
   },
@@ -7852,10 +8052,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T20:36:36+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "application_windows": [],
     "summary": "The action will support around 40 projects to translate, publish, distribute and promote European literary works, implemented by a single entity or a consortium of organisations.",
@@ -7872,6 +8072,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 34,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "1220a86692c38d3fa2b5f919f6ae765ac73f289cfc810693a330ffedaff0b598"
   },
@@ -7908,7 +8109,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -7936,6 +8137,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 5,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "44bd5587897557adf452e73235fe108ffbbdb7caed109744cd541b573ca9695c"
   },
@@ -7989,7 +8191,8 @@
     "link_checked_at": "2026-11-16T23:29:11+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2024-LIT",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "d4c78ceb0e1ca744fd70ec6c6dca1ec1e8edfd96f60c7a21bef00fd131a43bb1"
+    "catalog_fingerprint": "d4c78ceb0e1ca744fd70ec6c6dca1ec1e8edfd96f60c7a21bef00fd131a43bb1",
+    "public_id": 58
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2023-lit",
@@ -8041,7 +8244,8 @@
     "link_checked_at": "2026-11-16T23:32:16+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2023-LIT",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "ce6e889fe2caff12649765c74f6de962f9269799bd78b370409e405a74884f29"
+    "catalog_fingerprint": "ce6e889fe2caff12649765c74f6de962f9269799bd78b370409e405a74884f29",
+    "public_id": 57
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2021-lit",
@@ -8068,7 +8272,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -8092,6 +8296,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:25:07+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2021-LIT",
+    "public_id": 48,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "23ace0a857dbc36d0ed1d00069481b02ed95e63124e44f5803bae93e16b6eea0"
   },
@@ -8120,7 +8325,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -8144,6 +8349,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 152,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ecfd2a1f1b43f17e186e273ae505aa03c556bdc7e3b0ab113296a473cb57c3b2"
   },
@@ -8196,7 +8402,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -8220,6 +8426,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 170,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "69250efe00928a1034db38727e9b256810d18a8cde378bb31a8bc8dd2305f1d8"
   },
@@ -8248,7 +8455,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -8275,6 +8482,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 17,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "800f9c88f51d8741396deae05cbfa8f6064bfc6e715d9897982be0cfeed8617c"
   },
@@ -8331,7 +8539,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -8355,6 +8563,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 167,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ef9f6c5fb6caa15a28bc4f2497d043534f3d812b301cc48080474241d8705e20"
   },
@@ -8383,7 +8592,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -8407,6 +8616,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 169,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c48537dc4767056f25638f3d6936d76c2a5d4631fa1836afbb42ff60e936cee5"
   },
@@ -8458,10 +8668,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T19:56:07+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "opening_date": "2026-11-02",
     "application_windows": [],
@@ -8472,7 +8682,7 @@
     "deadline_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni",
     "status_evidence": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni",
     "beneficiaries_excerpt": "Rivolto a Enti pubblici Terzo settore Risorse Risorse regionali Procedura Bando Procedura valutativa finalizzata alla verifica dell'ammissibilità sostanziale delle iniziative secondo gli elementi di merito stabiliti dal bando. Non è prevista l'attribuzione di punteggi v",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "APERTO",
     "score_explanation": "Coerenza con accesso, partecipazione e inclusione culturale (contenuto della scheda).",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
@@ -8484,6 +8694,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 23,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "555d94c0f6ebac876cf4db1803316c1a7cfe9b20c7c14fa5f1bc94a5c2647156"
   },
@@ -8516,7 +8727,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -8540,6 +8751,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 6,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "3c83263397cbde82a28146258919cc9962cf0e8414756927dcd37cbeacc1a552"
   },
@@ -8576,7 +8788,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -8600,6 +8812,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 7,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "17fe772ad052338dca70cc5389bf41c981cae49853f33641d2d3530602b4e77b"
   },
@@ -8652,7 +8865,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "9c7d21e3685ac9242ab743dc6228ea79baf379d7f1e2e2710c89b4eacbc0c1e8"
+    "catalog_fingerprint": "9c7d21e3685ac9242ab743dc6228ea79baf379d7f1e2e2710c89b4eacbc0c1e8",
+    "public_id": 228
   },
   {
     "id": "https://www.erasmusplus.it/wp-content/uploads/2021/05/disposizioni-nazionali-it02-call-2021_istruzione-superiore.pdf",
@@ -8679,7 +8893,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -8696,6 +8910,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 200,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "afffdda4b5cbbf754489843539e66b7703df53585b51e15f610283c654ec5062"
   },
@@ -8724,7 +8939,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -8741,6 +8956,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 206,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ed8c4c4f7a9697b66a7e9c241f580600a2ed90f91f2d363c0524ae96cec04be9"
   },
@@ -8769,7 +8985,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -8786,6 +9002,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 148,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "178a4519c235ab1676e81c9a7e57c4ffad2832a96139d4843e648d6eaa4cd492"
   },
@@ -8814,7 +9031,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -8831,6 +9048,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 194,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "8915b796923a2395806eb2ff08c5c5f816101186e3b1a16c00a30a1fb9f8498f"
   },
@@ -8884,7 +9102,8 @@
     "link_checked_at": "2026-11-16T23:29:11+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-CODEV",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "45fbbf2f893c7c266dea68b709bdc9463d0b85f4967766be1bef3c8ce815b5b9"
+    "catalog_fingerprint": "45fbbf2f893c7c266dea68b709bdc9463d0b85f4967766be1bef3c8ce815b5b9",
+    "public_id": 74
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2021-codev",
@@ -8911,7 +9130,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -8935,6 +9154,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:12:58+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-CODEV",
+    "public_id": 66,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "56cb08e3b99b23994a529b3d99ce56e79dc67dd55b2ef583645cb3789451e163"
   },
@@ -8988,7 +9208,8 @@
     "link_checked_at": "2026-11-16T23:32:16+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2024-FILMDIST",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "75268ea9f3df68cfc4f7eae198a194b9d2722c005e457a15be6d3b6e92578d77"
+    "catalog_fingerprint": "75268ea9f3df68cfc4f7eae198a194b9d2722c005e457a15be6d3b6e92578d77",
+    "public_id": 94
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2023-filmdist",
@@ -9015,7 +9236,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -9039,6 +9260,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:12:58+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-FILMDIST",
+    "public_id": 88,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "af0532eea4190a83f07ea443b511188c4308ed1a6ff54795cb42a9487bacff0b"
   },
@@ -9067,7 +9289,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": true,
@@ -9091,6 +9313,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:25:07+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMSALES",
+    "public_id": 118,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "a0767c68f962bee42c95ad9c6ab68aa76b2537dd3576539106db96e45237cb6a"
   },
@@ -9119,7 +9342,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -9143,6 +9366,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:12:58+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-FILMSALES",
+    "public_id": 90,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c7268afafa31d2d880929bdcdddcc94dc3b3d46f27e3105261f60fe3b7a2bf03"
   },
@@ -9171,7 +9395,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -9195,6 +9419,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:25:07+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-FILMSALES",
+    "public_id": 104,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d0e29e5f1e799a047fb655bc10a6178c628e10cc9e1bb0877a2f1ce3362da839"
   },
@@ -9223,7 +9448,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -9247,6 +9472,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:25:07+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-CODEV",
+    "public_id": 98,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "b0e8f371e226fe2ef38d52f0e709d23ddf0cdbb7c8cffaa7100f48f2fa8068d0"
   },
@@ -9300,7 +9526,8 @@
     "link_checked_at": "2026-11-16T23:29:11+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "5977d1840f47f875508c3f8e5333b310e5f34d0b0a8cf10d89ed115686da5fc5"
+    "catalog_fingerprint": "5977d1840f47f875508c3f8e5333b310e5f34d0b0a8cf10d89ed115686da5fc5",
+    "public_id": 114
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2021-devminislate",
@@ -9352,7 +9579,8 @@
     "link_checked_at": "2026-11-16T23:27:25+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-DEVMINISLATE",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "2293325ce24ab482db05f1ca83c74dc09377761ff1e4a2191d66eb6b9aa4382a"
+    "catalog_fingerprint": "2293325ce24ab482db05f1ca83c74dc09377761ff1e4a2191d66eb6b9aa4382a",
+    "public_id": 67
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2025-devminislate",
@@ -9404,7 +9632,8 @@
     "link_checked_at": "2026-11-16T23:27:25+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-DEVMINISLATE",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "d6b9b761add5af5295023c320bac70d0ef16fa1acc7f9aec7d2dc620a643d59f"
+    "catalog_fingerprint": "d6b9b761add5af5295023c320bac70d0ef16fa1acc7f9aec7d2dc620a643d59f",
+    "public_id": 99
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2023-devminislate",
@@ -9431,7 +9660,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -9455,6 +9684,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:25:07+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-DEVMINISLATE",
+    "public_id": 85,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "042f6970567f60bf7b8946c44c844b3f31afa9762d02bf61b9df015ac3912128"
   },
@@ -9483,7 +9713,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -9507,6 +9737,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:12:58+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-DEVSLATE",
+    "public_id": 68,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "4d579f57be3577470802ddd27271ee38be0bcf596c4ce9fe62f7ba2199c6f500"
   },
@@ -9560,7 +9791,8 @@
     "link_checked_at": "2026-11-16T23:29:11+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-DEVSLATE",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "ed3b97a8c542cc61eb5057fb53b5a8de9ed0dce8a50c62aa97bc90ee0c2d2d5c"
+    "catalog_fingerprint": "ed3b97a8c542cc61eb5057fb53b5a8de9ed0dce8a50c62aa97bc90ee0c2d2d5c",
+    "public_id": 100
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2022-devslate",
@@ -9587,7 +9819,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -9611,6 +9843,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:03:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-DEVSLATE",
+    "public_id": 75,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "519b98982328b1736e2ad01946456f70a5386c29689fafcbedeb0e76e864c7ee"
   },
@@ -9639,7 +9872,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -9663,6 +9896,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:12:58+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-DEVSLATE",
+    "public_id": 86,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "6f0bdcec7e4648111330ca9f54bb99c47b8519b611697ecfd7b773b341bf1fa4"
   },
@@ -9691,7 +9925,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": true,
@@ -9715,6 +9949,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:25:07+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVSLATE",
+    "public_id": 115,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "364704fe3b03af8a74613a13595f3216fce2302f223592acfeeb694dbaae691d"
   },
@@ -9771,7 +10006,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -9797,6 +10032,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 171,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "f2f51a1aa01f7d05b7139965f58285a89660372b11f5c32479ec9f0644a665e5"
   },
@@ -9853,7 +10089,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -9877,6 +10113,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 172,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "71e094c3c1a02d32fd56886de2e3b143beb3369dbab7562fb6518133bf1545c7"
   },
@@ -9928,7 +10165,8 @@
     "link_checked_at": "2026-11-16T23:27:25+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-FILMOVE",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "7f6756e8ff1095480978e0fe242e801cf958c944a0bbbf7c5525e0339bef4508"
+    "catalog_fingerprint": "7f6756e8ff1095480978e0fe242e801cf958c944a0bbbf7c5525e0339bef4508",
+    "public_id": 110
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2023-filmove",
@@ -9978,7 +10216,8 @@
     "link_checked_at": "2026-11-16T23:29:11+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-FILMOVE",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "ba6c67c114c2c7c137c8d3dfe7042cce744afa921585981be0adc993bf9d3423"
+    "catalog_fingerprint": "ba6c67c114c2c7c137c8d3dfe7042cce744afa921585981be0adc993bf9d3423",
+    "public_id": 89
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2025-filmove",
@@ -10028,7 +10267,8 @@
     "link_checked_at": "2026-11-16T23:32:16+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-FILMOVE",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "fb1ee6d04454a03cebc46daa0420fb30448b0db4ec24b8d165c75c51b0ac567c"
+    "catalog_fingerprint": "fb1ee6d04454a03cebc46daa0420fb30448b0db4ec24b8d165c75c51b0ac567c",
+    "public_id": 103
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2024-filmove",
@@ -10055,7 +10295,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -10077,6 +10317,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:03:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2024-FILMOVE",
+    "public_id": 95,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "6c86bd46ded9c6108d533820e281fba55515fac16bde0487911dc86ca1cfdca1"
   },
@@ -10105,7 +10346,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": true,
@@ -10127,6 +10368,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:12:58+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMOVE",
+    "public_id": 117,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c53054528d9ae119813fbfda541e3dcdfae463cf0edb028d2445e4a40f15cdf7"
   },
@@ -10173,7 +10415,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "5c9e3b5cadee95af024cef9668d137ea26d750a29d5d52521053068f5b1b7e24"
+    "catalog_fingerprint": "5c9e3b5cadee95af024cef9668d137ea26d750a29d5d52521053068f5b1b7e24",
+    "public_id": 232
   },
   {
     "id": "https://www.fondazionecrt.it/guida-alleuroprogettazione-i-risultati-del-sondaggio",
@@ -10220,7 +10463,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "08df9c1d620386fcc55847de35213e17dd3c6cdb350a46703eadf61504fc5175"
+    "catalog_fingerprint": "08df9c1d620386fcc55847de35213e17dd3c6cdb350a46703eadf61504fc5175",
+    "public_id": 234
   },
   {
     "id": "https://interreg-alcotra.eu/it/i-prodotti-dei-progetti",
@@ -10247,7 +10491,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -10271,6 +10515,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 153,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c53bdb9d8bca5032c672f0901c825498eba9b1388cb23f78ed5d801f3861ab4c"
   },
@@ -10299,7 +10544,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -10323,6 +10568,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 192,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "e9f2b9d5d012986621605b81d36bd87a9a2e02dce7f19fd595059c5c0781daf9"
   },
@@ -10351,7 +10597,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -10375,6 +10621,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 154,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "ab5496c1e443f511e435f0f305fe3873f987786d63682555c10814856f7579ed"
   },
@@ -10403,7 +10650,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -10427,6 +10674,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 155,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "91a41bacac6bb57b1228ced9b3633cf18985c6a95a5a630aa7f5df1032894873"
   },
@@ -10455,7 +10703,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T20:38:57+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -10472,6 +10720,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 222,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "197b4052b5cc24f38a9553b58fcd0969de34ad3eb9d92abd2445c36a375e01a5"
   },
@@ -10524,7 +10773,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "1dc1f79ff056f24a7edb91f7cdd7c29999efefc1933d0a398f68f69b4349afcd"
+    "catalog_fingerprint": "1dc1f79ff056f24a7edb91f7cdd7c29999efefc1933d0a398f68f69b4349afcd",
+    "public_id": 238
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
@@ -10582,10 +10832,10 @@
     "detail_checked": true,
     "detail_basis": "Pagina ufficiale verificata con evidenze strutturate",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "link_status": "raggiungibile",
     "resolved_url": "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
-    "link_checked_at": "2026-11-18T08:18:50+00:00",
+    "link_checked_at": "2026-11-18T08:51:27+00:00",
     "link_http_status": 200,
     "opening_date": "2026-10-12",
     "application_windows": [],
@@ -10593,7 +10843,7 @@
     "closure_confirmed": false,
     "opening_evidence": "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
     "deadline_source": "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "funding_status": "APERTO",
     "score_explanation": "Non sono emerse corrispondenze tematiche esplicite nei contenuti analizzati; un punteggio basso non esclude opportunità progettuali.",
     "score_confidence": "bassa — analisi preliminare del titolo",
@@ -10603,6 +10853,10 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "alternative_urls": [
+      "https://volontariatotorino.it/bandi/circoscrizione-7-invito-a-presentare-progetti-per-iniziative-varie-anno-2027/"
+    ],
+    "public_id": 8,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "9250108f0ee26d9e3f1eab7f63c25ecca816dd065e7761adb350988dc89dd481"
   },
@@ -10635,7 +10889,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -10647,7 +10901,7 @@
     "detail_attempted_at": "2026-11-16T23:40:23+00:00",
     "beneficiaries_excerpt": null,
     "deadline_source": "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
-    "deadline_verified_at": "2026-11-18T08:18:50+00:00",
+    "deadline_verified_at": "2026-11-18T08:51:27+00:00",
     "application_windows": [],
     "link_status": "raggiungibile",
     "link_http_status": 200,
@@ -10666,6 +10920,7 @@
     "reviewed_official_basis": "official_rolling_application_process",
     "rolling_confirmed": true,
     "rolling_evidence": "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
+    "public_id": 177,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c0d9c21378ec6591d769b7cf8cd72670ede9a5282d45bb8ad26be41603f3e3fd"
   },
@@ -10706,7 +10961,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -10730,6 +10985,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 9,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c5dc2299450247f1a1f753d4a065e07d35ea724f3bacf9733dafc9358ae9e0a0"
   },
@@ -10758,7 +11014,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -10775,6 +11031,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 207,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "7f0dcbcd66e68ba1d440a654f36bb640ae94833d2071eab50a96cc8d5d3b9dae"
   },
@@ -10803,7 +11060,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -10820,6 +11077,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 196,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "728d5e2119a43c312ae6a3bd4f5cf2e30e2d4a28ea8eab4c077c241e53196ca7"
   },
@@ -10848,7 +11106,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -10865,6 +11123,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 209,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "86282b69199217ac1268f79f5c6740d32ac729ae3f88badc0c70f4363d0b1909"
   },
@@ -10893,7 +11152,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -10915,6 +11174,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:25:07+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-MARKETNET",
+    "public_id": 70,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d1b94ba4487468e0838e8d9817409cca51d02bc28e038e24bbc37fbf207766b4"
   },
@@ -10966,7 +11226,8 @@
     "link_checked_at": "2026-11-16T23:27:25+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-MARKETNET",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "b0c3156eda0e03b7ebf4fbeb02194baa4956ba24bd370b7250e4d91f2193c23d"
+    "catalog_fingerprint": "b0c3156eda0e03b7ebf4fbeb02194baa4956ba24bd370b7250e4d91f2193c23d",
+    "public_id": 111
   },
   {
     "id": "https://www.erasmusplus.it/programma/per-partecipare/come-fare-domanda",
@@ -10993,7 +11254,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -11010,6 +11271,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 198,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "750630e3c1c28176c33b3fc4e8cf3702642c4116c9d0c4fb868e48baa1335430"
   },
@@ -11071,7 +11333,8 @@
     "link_checked_at": "2026-11-16T21:56:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2026-JOURPART",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "f70aa259c1fe15cd406a46698bf9bd780056cc14d9c548feeecffd80df6b3367"
+    "catalog_fingerprint": "f70aa259c1fe15cd406a46698bf9bd780056cc14d9c548feeecffd80df6b3367",
+    "public_id": 45
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2025-jourpart",
@@ -11098,7 +11361,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -11130,6 +11393,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T21:56:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2025-JOURPART",
+    "public_id": 42,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "259a97b4fe11826b63d9dad8b1300b9f7b1729cb86b15a12f7fd4c6bf39254d1",
     "catalog_updated_at": "2026-11-18T08:18:50+00:00"
@@ -11159,7 +11423,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -11191,6 +11455,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:13:50+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2022-JOURPART",
+    "public_id": 36,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d5b899037a16efeddd482ab2d76006463ca8ad3acc82c47f46119e07e845253e"
   },
@@ -11252,7 +11517,8 @@
     "link_checked_at": "2026-11-16T21:56:03+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2023-JOURPART",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "8ddb159b9d253de790e19480aa3a27fba147891e024a538e2361b77be283cf47"
+    "catalog_fingerprint": "8ddb159b9d253de790e19480aa3a27fba147891e024a538e2361b77be283cf47",
+    "public_id": 39
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2023-cinnet",
@@ -11304,7 +11570,8 @@
     "link_checked_at": "2026-11-16T23:29:11+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-CINNET",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "7dd31d1d72c9f8f10c9c06f6a182472663caf59cd40f8db9d07db65d2ee482e8"
+    "catalog_fingerprint": "7dd31d1d72c9f8f10c9c06f6a182472663caf59cd40f8db9d07db65d2ee482e8",
+    "public_id": 83
   },
   {
     "id": "https://spettacolo.cultura.gov.it/news-avvisi-contributi-fus",
@@ -11331,7 +11598,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -11355,6 +11622,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 173,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "e75c022932759ae0907013ebe4a25541ec431fcc9aaca37f78b397b3829cc39d"
   },
@@ -11383,7 +11651,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -11407,6 +11675,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 168,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "fb47a9b34d48053fd2dd86f0b070b54cab83458d3687759e96e2501069d8fe0e"
   },
@@ -11435,7 +11704,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -11452,6 +11721,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 213,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "8f1e0784dcb75ce887286d9b7eab06b5ff48987eb70d0121ef39f339ac8974a5"
   },
@@ -11480,7 +11750,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -11497,6 +11767,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 212,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "72d9ab53aeff42e7c26a79a972acec5e4359962acb8d69cd6e45dfbc74807a5e"
   },
@@ -11545,7 +11816,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "9b8a87cdd3ef99b94ae13fb6b4893bf200c2a09795659fcdd4809542c754763f"
+    "catalog_fingerprint": "9b8a87cdd3ef99b94ae13fb6b4893bf200c2a09795659fcdd4809542c754763f",
+    "public_id": 235
   },
   {
     "id": "https://erasmus-plus.ec.europa.eu/opportunities",
@@ -11572,7 +11844,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -11589,6 +11861,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 121,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "35e81b88ec3de5e56d4cb4da4ce448826bdd394a82c830b8fe5d863f431c4f03"
   },
@@ -11617,7 +11890,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -11634,6 +11907,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 197,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "7b35a318092d8acc48fd5354fe0f55c18004fc002d6562aa1aefa6ec02fbbd38"
   },
@@ -11686,7 +11960,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "13432734af6dbea0b4cdf4b3f5aec4928dc2c4d6a7048fd7de4c13fdc40f0c9b"
+    "catalog_fingerprint": "13432734af6dbea0b4cdf4b3f5aec4928dc2c4d6a7048fd7de4c13fdc40f0c9b",
+    "public_id": 237
   },
   {
     "id": "https://interreg-alcotra.eu/it/quarto-bando-la-selezione-di-progetti-singoli-finestra-2",
@@ -11713,7 +11988,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -11730,6 +12005,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 157,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "36bf59252d3b5929bf33059b6cc4698e69d97cc0d2d4bf2db483506c1f9a7992"
   },
@@ -11770,7 +12046,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -11797,6 +12073,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 158,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "a6a4b69b6da702e2ccd63b7c45cc7d15c2e36256edcc6e68b4e4dd59d6df6eb3"
   },
@@ -11825,7 +12102,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -11842,6 +12119,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 159,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "e3e46a4f7efbb7fbea7b6fc2ea83ebb0f46badf14f87151d8aa10ac1249a8220"
   },
@@ -11890,7 +12168,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -11919,6 +12197,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 160,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "6d204ddd8ae26514ad672413c078059e0576748a856ee98e7e94ca56db765c96"
   },
@@ -11947,7 +12226,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-17T21:21:28+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -11964,6 +12243,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 21,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "b6e8e387fc543f18c22b22b0e02ae1ffada29a2d504f48a05ce2f27ea91bb6bc"
   },
@@ -12010,7 +12290,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "1717934179db9bc63c34c019cc4498db914e357a97647779c5372cac3be31d49"
+    "catalog_fingerprint": "1717934179db9bc63c34c019cc4498db914e357a97647779c5372cac3be31d49",
+    "public_id": 20
   },
   {
     "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-reti-antigrandine-srd06-intervento-121-bando-2026",
@@ -12037,7 +12318,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-17T21:21:28+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -12054,6 +12335,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 22,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "8e5fd5d06d0cce8edbbb2f159fd2a146ab0fcf0b5e4e64f6aeed292bcc12edc9"
   },
@@ -12135,7 +12417,8 @@
     ],
     "score_explanation_basis": "titolo e contenuti della scheda consultata",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "ec3bf4e9242e13bfca9ec4340ad9dc771386b14cd46da9891979e8a39c888ec5"
+    "catalog_fingerprint": "ec3bf4e9242e13bfca9ec4340ad9dc771386b14cd46da9891979e8a39c888ec5",
+    "public_id": 26
   },
   {
     "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-invecchiamento-attivo-parte-ambiti-territoriali-sociali",
@@ -12182,7 +12465,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-17T21:21:28+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": true,
@@ -12214,6 +12497,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 25,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "421d8c5c57fe08b72a2abb755290cf97cbe0cb4f327969d1e5ac82788d1d44e3"
   },
@@ -12242,7 +12526,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -12270,6 +12554,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 30,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "bdce7ae5450a777f8d4d06bf133b0839c4bf9d0bd97836f324637a320f5dedda"
   },
@@ -12318,7 +12603,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-17T21:21:28+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -12350,6 +12635,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 27,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "e769b00960364af1a6be4bca2cec6add33762598993b1a798119f291da86a617"
   },
@@ -12401,7 +12687,8 @@
     "link_checked_at": "2026-11-16T23:27:25+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2022-PERFORM-EU",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "c48e505deeb062520e02c969f9207eaee9d5790c03d2194fc5d207c23b3af2e9"
+    "catalog_fingerprint": "c48e505deeb062520e02c969f9207eaee9d5790c03d2194fc5d207c23b3af2e9",
+    "public_id": 55
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2026-perform-eu",
@@ -12451,7 +12738,8 @@
     "link_checked_at": "2026-11-16T23:32:16+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2026-PERFORM-EU",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "c8a81e300b681c736cf165ffe04bb0187f211f62111a620b51e71151d3d9d1c5"
+    "catalog_fingerprint": "c8a81e300b681c736cf165ffe04bb0187f211f62111a620b51e71151d3d9d1c5",
+    "public_id": 65
   },
   {
     "id": "https://interreg-alcotra.eu/it/presentazione-generale-del-ciclo-di-vita-di-un-progetto",
@@ -12478,7 +12766,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -12507,6 +12795,7 @@
       "Controllare se il partenariato è obbligatorio e con quali caratteristiche",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 156,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "6dfe1b4732862af19260b2ae6a025c1106492a45081bbc36c4bbd198a556f782"
   },
@@ -12535,7 +12824,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -12560,6 +12849,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 179,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c02887fa0a324c8854dc7b170ef1c4ca1f402556fca6c6820107857b194e142a"
   },
@@ -12592,7 +12882,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-17T22:39:46+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -12617,6 +12907,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 178,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "303d57e4f1d30226138642c527507e6977b97f379a102724fc60f91a2a3e7454"
   },
@@ -12645,7 +12936,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -12669,6 +12960,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 193,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "30d5e9fd151e247ee49065a561fcb63396a993512b57e71316986a1e07c4d2d4"
   },
@@ -12731,7 +13023,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "e69cc8850415097d5b93bd4025580110f08862603cefe3cefe0bdc5f8a62f218"
+    "catalog_fingerprint": "e69cc8850415097d5b93bd4025580110f08862603cefe3cefe0bdc5f8a62f218",
+    "public_id": 239
   },
   {
     "id": "https://spettacolo.cultura.gov.it/progetti-speciali",
@@ -12758,7 +13051,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -12782,6 +13075,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 174,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "983086d74db7a551d04d6ce1f389bc4153f10536931ee5111735f7c75795b1ab"
   },
@@ -12834,7 +13128,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "c75ad3776bab3d6d48d33e26b535e1fbedbc30935db85582cd50cf060598a2f2"
+    "catalog_fingerprint": "c75ad3776bab3d6d48d33e26b535e1fbedbc30935db85582cd50cf060598a2f2",
+    "public_id": 247
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-diderot-click-day-da-record",
@@ -12885,7 +13180,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "0815a0e2034bd6d910bcc38704470b20882eb921802dfd7dc97ccf6eafaeab5c"
+    "catalog_fingerprint": "0815a0e2034bd6d910bcc38704470b20882eb921802dfd7dc97ccf6eafaeab5c",
+    "public_id": 241
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-lagrange-fondazione-crt-al-via-le-10-ricerche",
@@ -12936,7 +13232,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "a7a5a4a6444a2b8b5d806f9547c9866f98ee0a38b3fb18d92a4eeb162fe9bcec"
+    "catalog_fingerprint": "a7a5a4a6444a2b8b5d806f9547c9866f98ee0a38b3fb18d92a4eeb162fe9bcec",
+    "public_id": 243
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-lagrange-borse-2025",
@@ -12987,7 +13284,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "bee4b9b23d11c8453889bafa479d418bd6e81af0ab852a1ed4a70d20b320e80e"
+    "catalog_fingerprint": "bee4b9b23d11c8453889bafa479d418bd6e81af0ab852a1ed4a70d20b320e80e",
+    "public_id": 242
   },
   {
     "id": "https://www.fondazionecrt.it/progetto-lagrange-fondazione-crt-nuovo-bando-per-10-borse-di-ricerca-in-data-science-e-impatto-sociale",
@@ -13038,7 +13336,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "056f138d01f98f0f3a74eb709535d07795919b197a6fb15bb7fd47ecc0dc7ef9"
+    "catalog_fingerprint": "056f138d01f98f0f3a74eb709535d07795919b197a6fb15bb7fd47ecc0dc7ef9",
+    "public_id": 244
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2022-mfp",
@@ -13065,7 +13364,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -13087,6 +13386,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T22:33:01+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2022-MFP",
+    "public_id": 37,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "234ac929d219b739c17b05218d81fa70a237c86c70201be98c779b8e033d2eaf"
   },
@@ -13123,7 +13423,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T20:38:57+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -13150,6 +13450,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 245,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "06c2c736a9a0cfeadd2de37ad3d431fb894e2a47e3ca71caecceb5a47213068f"
   },
@@ -13196,7 +13497,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "97b038bdd8c2ebc16495d4cebc11c8a11f58bc6523c6196228d9c63bdc71a622"
+    "catalog_fingerprint": "97b038bdd8c2ebc16495d4cebc11c8a11f58bc6523c6196228d9c63bdc71a622",
+    "public_id": 189
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-nuovi-spazi-di-partecipazione-attiva",
@@ -13241,7 +13543,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "655a7998c22a49b7c4fc2e4415c138c38c847cce487685df111ea24d140433ab"
+    "catalog_fingerprint": "655a7998c22a49b7c4fc2e4415c138c38c847cce487685df111ea24d140433ab",
+    "public_id": 191
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/impulso-trasformare-le-imprese-con-una-filiera-sostenibile",
@@ -13286,7 +13589,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "03f8a6c94c534cefd2b365b7acb0870c3de10d302094a72041cea5beda732424"
+    "catalog_fingerprint": "03f8a6c94c534cefd2b365b7acb0870c3de10d302094a72041cea5beda732424",
+    "public_id": 186
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura",
@@ -13331,7 +13635,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "a128e6023a5258a8b187cbd5d096983ad9d6c672cd73f2f1b4be5c601e07eeb3"
+    "catalog_fingerprint": "a128e6023a5258a8b187cbd5d096983ad9d6c672cd73f2f1b4be5c601e07eeb3",
+    "public_id": 183
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-06-alleanze-ad-alta-intensita-educativa",
@@ -13376,7 +13681,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "56037faa5a2e40b8b0b619c97ffec3df36b899df9872a8cd61af2330efe480b7"
+    "catalog_fingerprint": "56037faa5a2e40b8b0b619c97ffec3df36b899df9872a8cd61af2330efe480b7",
+    "public_id": 188
   },
   {
     "id": "https://www.compagniadisanpaolo.it/it/contributi/la-bella-stagione-2026",
@@ -13421,7 +13727,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "35eb670b4c5c5d413943df44fa7e9c11a37221cbaa95b5c4d2d29d4613b3992f"
+    "catalog_fingerprint": "35eb670b4c5c5d413943df44fa7e9c11a37221cbaa95b5c4d2d29d4613b3992f",
+    "public_id": 187
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2025-training",
@@ -13448,7 +13755,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -13470,6 +13777,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:25:07+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-TRAINING",
+    "public_id": 107,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "4f037da9e9b06c60a25bc5de74ead38340e53747d57e85149c11273b427bdd7e"
   },
@@ -13523,7 +13831,8 @@
     "link_checked_at": "2026-11-16T23:29:11+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2022-EU-HERITAGE-LABEL",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "2855159abb2f8310f9f90b26db7e050f9e0007421b5fa05853cbb56f7c163d50"
+    "catalog_fingerprint": "2855159abb2f8310f9f90b26db7e050f9e0007421b5fa05853cbb56f7c163d50",
+    "public_id": 53
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2026-eu-heritage-label",
@@ -13550,7 +13859,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -13574,6 +13883,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:52:25+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2026-EU-HERITAGE-LABEL",
+    "public_id": 64,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "7a6b0c522bfad3cc903fe40055bb856b43680c73fdbd0b7b652e855105ed8079"
   },
@@ -13602,7 +13912,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -13624,6 +13934,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:03:12+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-TVONLINE",
+    "public_id": 72,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d88e5d1872f1eccb1367bcefe7857a3eed170cc62e274e879ea92f5fe8b0a3b1"
   },
@@ -13675,7 +13986,8 @@
     "link_checked_at": "2026-11-16T23:29:11+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-TVONLINE",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "ae6cfa4bd6096acb4934308668df9c8b7c7876de6fe833ff32534a14d4f84c1c"
+    "catalog_fingerprint": "ae6cfa4bd6096acb4934308668df9c8b7c7876de6fe833ff32534a14d4f84c1c",
+    "public_id": 108
   },
   {
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2023-tvonline",
@@ -13702,7 +14014,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T22:13:50+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": false,
@@ -13724,6 +14036,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:12:58+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-TVONLINE",
+    "public_id": 92,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "a9024c4a37071c7b0e3e012a0dfa96f8d6790b9233ffccfb080fae9751361c0f"
   },
@@ -13752,7 +14065,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T21:56:03+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": false,
     "source_open_confirmed": true,
@@ -13774,6 +14087,7 @@
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T23:12:58+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-TVONLINE",
+    "public_id": 119,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "c2ec3302e7ddf8fdb924fbb13b296dfc0a1f443c21a39ebb8ff5aea6f88dec02",
     "catalog_updated_at": "2026-11-18T08:18:50+00:00"
@@ -13826,7 +14140,8 @@
     "link_checked_at": "2026-11-16T23:27:25+00:00",
     "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-TRAINING",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "c94ae7fcd038624e86a630b25f8ed03e2e55f0db7f9776d7f50d8a8f435b9c1b"
+    "catalog_fingerprint": "c94ae7fcd038624e86a630b25f8ed03e2e55f0db7f9776d7f50d8a8f435b9c1b",
+    "public_id": 71
   },
   {
     "id": "https://bandi.regione.piemonte.it/crowdfunding",
@@ -13853,7 +14168,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T18:50:43+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -13880,6 +14195,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 28,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "d9b9f9fd817c053639281fe31281adff87c67c43985fc3e8cf63c039a368c7a3"
   },
@@ -13928,7 +14244,8 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "ae4260d3ad05fc3ba0e205288b691603f82129e4a82415c331a4fc1a8f49f80d"
+    "catalog_fingerprint": "ae4260d3ad05fc3ba0e205288b691603f82129e4a82415c331a4fc1a8f49f80d",
+    "public_id": 246
   },
   {
     "id": "https://interreg-alcotra.eu/it/bandi",
@@ -13983,7 +14300,7 @@
     "eligibility": "da verificare",
     "project_potential": "da valutare",
     "first_seen": "2026-11-16T19:13:14+00:00",
-    "last_seen": "2026-11-18T08:18:50+00:00",
+    "last_seen": "2026-11-18T08:51:27+00:00",
     "verified": false,
     "detail_checked": true,
     "source_open_confirmed": false,
@@ -14009,6 +14326,7 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
+    "public_id": 150,
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "f6c704fef978bfef9831ed3a17787eefd7e2b96aac42cfc11f5b7a3dfc2b6e40"
   },
@@ -14057,6 +14375,7 @@
     ],
     "score_explanation_basis": "solo titolo",
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "5db602aa87e7f2981edea7d8548f54b10147987413da4f82459703d481652f85"
+    "catalog_fingerprint": "5db602aa87e7f2981edea7d8548f54b10147987413da4f82459703d481652f85",
+    "public_id": 214
   }
 ]
