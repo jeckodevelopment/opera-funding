@@ -28,6 +28,7 @@ from assessment_reviews import apply_assessment_reviews
 from assessment_coverage import annotate_assessment_coverage, assessment_coverage
 from adequacy import apply_adequacy
 from eligibility_conditions import annotate_conditions
+from eligibility_specific import annotate_specific_requirements
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -299,6 +300,7 @@ def run():
     for row in rows:
         annotate_assessment_coverage(row)
         annotate_conditions(row)
+        annotate_specific_requirements(row)
         apply_adequacy(row)
     rows=track_changes(rows, existing, now)
 
