@@ -9,7 +9,8 @@ from classify import classify
 from status import annotate
 from fit import explain
 from crt_windows import extract_ordinarie_windows
-from detail import extract
+from detail import extract, DETAIL_SCHEMA_VERSION
+from pdf_evidence import official_pdf_evidence
 
 def official_alternative_facts(item, source, session, eligible):
     """Try explicitly curated same-host official page variants only when needed."""
@@ -65,6 +66,13 @@ def check_priority(item, source, session, eligible, now, previous=None):
             if verified_alternative is not None:
                 facts=verified_alternative
         details=extract(response.text,response.url)
+        pdf_facts=official_pdf_evidence(details["documents"],response.url,session,eligible)
+        for field in ("programme_objectives_excerpt","funded_activities_excerpt",
+                      "beneficiaries_excerpt","requirements_excerpt"):
+            if not details.get(field) and pdf_facts.get(field):
+                details[field]=pdf_facts[field]
+        if pdf_facts and not details.get("assessment_evidence_source"):
+            details["assessment_evidence_source"]=pdf_facts["assessment_evidence_source"]
         period_windows=extract_ordinarie_windows(response.text,response.url)
         base=classify(item["title"],"")
         result={
@@ -72,13 +80,18 @@ def check_priority(item, source, session, eligible, now, previous=None):
          "issuer":source["name"],"source_id":source["id"],"source_url":source["url"],"url":url,
          "documents":details["documents"],
          "amount":details["amount"],"eligibility":"da verificare","project_potential":"da valutare",
-         "verified":False,"detail_checked":True,"detail_basis":"Pagina ufficiale verificata con evidenze strutturate",
+         "verified":False,"detail_checked":True,
+         "detail_checked_at":now,"detail_attempted_at":now,"detail_version":DETAIL_SCHEMA_VERSION,
+         "detail_basis":"Pagina ufficiale e allegati disponibili consultati",
          "first_seen":(previous or {}).get("first_seen",now),"last_seen":now,
          "link_status":"raggiungibile","resolved_url":response.url,"link_checked_at":now,
          "link_http_status":200
         }
-        if details.get("beneficiaries_excerpt"):
-            result["beneficiaries_excerpt"]=details["beneficiaries_excerpt"]
+        for field in ("beneficiaries_excerpt","programme_objectives_excerpt",
+                      "funded_activities_excerpt","requirements_excerpt",
+                      "assessment_evidence_source"):
+            if details.get(field):
+                result[field]=details[field]
         for k,v in facts.items():
             if v is not None:
                 result[k]=v
