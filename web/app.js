@@ -554,9 +554,9 @@ function renderOpportunity(o){
 // Never infer novelty from first_seen on the existing catalog.
 function changeBadge(o,now=new Date()){
  const labels=[["catalog_new_at","NUOVA","new"],["catalog_updated_at","AGGIORNATA","updated"]];
- // Version 1 flagged harmless extraction enrichment on hundreds of records.
+ // Versions 1 and 2 flagged harmless extraction enrichment on many records.
  // Never show those obsolete update badges, even before the next catalog scan.
- if(o.catalog_tracking_version!==2){
+ if(o.catalog_tracking_version!==3){
   const fresh={...o};delete fresh.catalog_updated_at;
   o=fresh;
  }

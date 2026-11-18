@@ -19,7 +19,7 @@ class CatalogChangeTests(unittest.TestCase):
         out=track_changes(current,previous,NOW)
         self.assertTrue(all("catalog_new_at" not in x for x in out))
         self.assertTrue(all("catalog_updated_at" not in x for x in out))
-        self.assertTrue(all(x["catalog_tracking_version"]==2 for x in out))
+        self.assertTrue(all(x["catalog_tracking_version"]==3 for x in out))
     def test_new_record_only_after_baseline(self):
         old=track_changes([row("a")],[row("a")],NOW)
         current=[row("a"),row("b")]
@@ -56,7 +56,7 @@ class CatalogChangeTests(unittest.TestCase):
                 catalog_updated_at=NOW)
         fresh=track_changes([row("a")],[old],LATER)
         self.assertNotIn("catalog_updated_at",fresh[0])
-        self.assertEqual(fresh[0]["catalog_tracking_version"],2)
+        self.assertEqual(fresh[0]["catalog_tracking_version"],3)
         second=track_changes([row("a")],fresh,"2026-11-19T07:00:00+00:00")
         self.assertNotIn("catalog_updated_at",second[0])
 
@@ -73,6 +73,15 @@ class CatalogChangeTests(unittest.TestCase):
         latest=track_changes([row("a",deadline="2028-03-20",
                                   deadline_source=None)],old,LATER)
         self.assertNotIn("catalog_updated_at",latest[0])
+
+    def test_shared_previous_row_references_do_not_carry_forward_old_update(self):
+        existing=row("a",catalog_tracking_version=2,
+                     catalog_fingerprint="old",catalog_updated_at=NOW)
+        output=track_changes([existing],[existing],LATER)
+        self.assertEqual(output[0]["catalog_tracking_version"],3)
+        self.assertNotIn("catalog_updated_at",output[0])
+        again=track_changes([existing],[existing],"2026-11-19T07:00:00+00:00")
+        self.assertNotIn("catalog_updated_at",again[0])
 
     def test_never_drops_opportunities(self):
         original=[row(str(i)) for i in range(30)]

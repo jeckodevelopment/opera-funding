@@ -6,7 +6,7 @@ a new official call revision. Tracking version 2 starts a clean baseline.
 import hashlib
 import json
 
-TRACKING_VERSION = 2
+TRACKING_VERSION = 3
 # Only application terms whose updates materially affect a candidate's action.
 TRACKED_FIELDS = (
     "deadline", "opening_date", "application_windows",
@@ -33,7 +33,9 @@ def fingerprint(row):
 
 def track_changes(rows, previous, now):
     """Keep new events, clear old noisy updates and start V2 baseline safely."""
-    prior = {r["id"]:r for r in previous if isinstance(r,dict) and r.get("id")}
+    prior = {r["id"]:dict(r) for r in previous if isinstance(r,dict) and r.get("id")}
+    # The historical rows may be reused in-place by the scanner. Snapshot their
+    # previous tracking fields before changing current records.
     has_baseline = any(p.get("catalog_tracking_version")==TRACKING_VERSION
                        for p in prior.values())
     for row in rows:
@@ -41,10 +43,11 @@ def track_changes(rows, previous, now):
         current=fingerprint(row)
         row["catalog_tracking_version"]=TRACKING_VERSION
         row["catalog_fingerprint"]=current
+        row.pop("catalog_updated_at",None)
         # Existing new tags represent actual discovery, and are preserved.
         if old and old.get("catalog_new_at"):
             row["catalog_new_at"]=old["catalog_new_at"]
-        # Never copy obsolete update labels from v1. Nor compare incompatible hashes.
+        # Never copy obsolete labels from v1/v2. Nor compare incompatible hashes.
         if old and old.get("catalog_tracking_version")==TRACKING_VERSION:
             if old.get("catalog_updated_at"):
                 row["catalog_updated_at"]=old["catalog_updated_at"]
@@ -52,7 +55,4 @@ def track_changes(rows, previous, now):
                 row["catalog_updated_at"]=now
         elif not old and has_baseline:
             row["catalog_new_at"]=now
-        # Ignore any stale incoming update flag from scanning/previous enrichment.
-        if not old or old.get("catalog_tracking_version")!=TRACKING_VERSION:
-            row.pop("catalog_updated_at",None)
     return rows
