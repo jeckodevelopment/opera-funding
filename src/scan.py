@@ -32,6 +32,7 @@ from eligibility_specific import annotate_specific_requirements
 from applicant_comparison import load_applicant_profile, annotate_applicant_comparison
 from open_review_queue import build_open_review_queue
 from funder_registry import load_registry, link_opportunities, public_monitoring
+from programme_monitor import check_programmes, load_programme_state, public_status
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -310,13 +311,19 @@ def run():
     registry_funders=load_registry(ROOT / 'config/funders.json')
     rows=link_opportunities(rows, registry_funders)
     rows=track_changes(rows, existing, now)
+    programme_state_path=ROOT / "data/programme-monitoring.json"
+    previous_programmes=load_programme_state(programme_state_path)
+    with requests.Session() as programme_session:
+        programme_session.headers.update({"User-Agent":AGENT,"Accept":"text/html"})
+        programme_state=check_programmes(registry_funders,previous_programmes,programme_session,eligible_to_fetch,now)
+    programme_state_path.write_text(json.dumps(programme_state,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
     output.parent.mkdir(parents=True, exist_ok=True)
     ids_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows),
                                         "open_eligibility_review":build_open_review_queue(rows,now[:10]),
-                                        "funder_monitoring":public_monitoring(registry_funders,statuses,now)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+                                        "funder_monitoring":public_monitoring(registry_funders,statuses,now,public_status(programme_state))},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
 
 if __name__ == "__main__":
