@@ -50,3 +50,14 @@ La prima verifica crea una **baseline silenziosa**. Solo una variazione successi
 ## Integrità del catalogo
 
 L'ingestione dei nuovi bandi riutilizza le funzioni già presenti in `src/operational_assessment.py` e `src/catalog_reconciliation.py`: valutazioni operative conservative e coperture documentate sono prodotte dal medesimo ciclo di scansione, senza introdurre un modello parallelo.
+
+## Interfaccia compatta
+
+Le pagine **Finanziatori** e **Monitoraggio programmi** visualizzano tabelle HTML semantiche invece delle precedenti schede. Finanziatori mostra nome, tipologia, territorio, numero di programmi e link alla fonte ufficiale; la ricerca per nome/tipologia/territorio rimane attiva. Monitoraggio mostra programma, finanziatore, stato reale, ultima verifica e fonte, segnalando modifiche da controllare separatamente dall'apertura di nuovi bandi. Le tabelle sono navigabili da tastiera e scorrevoli orizzontalmente sui dispositivi stretti. Nessuna modifica alla Dashboard principale, agli identificativi delle opportunità, al motore di scansione o al giudizio di adeguatezza.
+
+### Collaudi UI
+
+- Verificare la disposizione in riga delle tabelle, la ricerca e la corrispondenza fra contatori e righe filtrate.
+- Verificare gli stati monitorato/errore/non configurato, le date, i link ufficiali e la marcatura di pagina modificata.
+- Su smartphone verificare lo scorrimento orizzontale accessibile senza comprimere le colonne.
+- Controllare regressioni: menu a tre pagine, Dashboard con default *Aperte*, scheda opportunità e PDF.
