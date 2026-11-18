@@ -165,9 +165,30 @@ function dateLabel(value){
  const [y,m,d]=value.split("-");return "Scade il "+d+"/"+m+"/"+y;
 }
 function score(o){return Math.max(0,Math.min(100,Number(o.relevance)||0));}
-function affinityRank(o){
- const label=assessmentLabel(o);
- return label==="ALTA AFFINITÀ"?2:label==="MEDIA AFFINITÀ"?1:0;
+function adequacyLevel(o){
+ if(Number.isInteger(o.adequacy_level))return Math.max(0,Math.min(3,o.adequacy_level));
+ const grade=assessmentLabel(o);
+ if(grade==="INFORMATIVA")return 0;
+ let level=grade==="ALTA AFFINITÀ"?3:grade==="MEDIA AFFINITÀ"?2:1;
+ if(!o.assessment_source && !o.assessment_evidence_source)level=Math.min(level,2);
+ if(!o.funded_activities_excerpt || !o.beneficiaries_excerpt)level=Math.min(level,2);
+ const terms=String(o.beneficiaries_excerpt||"")+" "+String(o.requirements_excerpt||"");
+ if(/(?:solo|esclusivamente|only)\\s+(?:persone fisiche|singoli artisti|individual artists|individual applicants|imprese|companies|businesses)/i.test(terms))level=1;
+ return level;
+}
+function adequacyLabel(o){return ["INFORMATIVA","BASSA","MEDIA","ALTA"][adequacyLevel(o)];}
+function affinityRank(o){return adequacyLevel(o);}
+function makeAdequacy(o){
+ const level=adequacyLevel(o),grade=adequacyLabel(o);
+ const surface=el("div",undefined,"adequacy adequacy--"+level);
+ const heading=el("div",undefined,"adequacy-heading");
+ heading.append(el("span","Adeguatezza per Opera+","adequacy-label"),el("strong",grade,"adequacy-value"));
+ const track=el("div",undefined,"adequacy-track");
+ track.setAttribute("role","img");
+ track.setAttribute("aria-label","Adeguatezza per Opera+: "+grade);
+ for(let i=1;i<=3;i++)track.append(el("span",undefined,"adequacy-step"+(i<=level?" active":"")));
+ surface.append(heading,track);
+ return surface;
 }
 function groupOrder(o){return {aperto:0,"in arrivo":1,"non verificato":2,chiuso:3,"altro contenuto":4}[state(o)];}
 function sortRows(rows,order){
@@ -241,7 +262,8 @@ function evidenceSection(o){
  const intro=el("p","Il punteggio indica la coerenza tematica, non l'ammissibilità né le probabilità di ottenere il contributo.");
  section.append(intro);
  const dl=el("dl",undefined,"review-facts");
- dialogField(dl,"Valutazione editoriale",assessmentLabel(o));
+ dialogField(dl,"Adeguatezza per Opera+",adequacyLabel(o));
+ dialogField(dl,"Vincoli dell’adeguatezza",o.adequacy_reason||o.assessment_reason);
  dialogField(dl,"Copertura documentale",o.assessment_review_status||"Non ancora determinata");
  dialogField(dl,"Metodo di valutazione",o.assessment_method||"Valutazione preliminare");
  if(o.assessment_checked_at)dialogField(dl,"Ultima revisione o tentativo",String(o.assessment_checked_at).slice(0,10));
@@ -311,8 +333,8 @@ function evaluationData(o,issued=new Date()){
   amount:String(o.amount||"Non indicato"),
   amountKind:String(o.amount_kind||"Da verificare"),
   type:String(o.application_type||o.opportunity_type||"Non indicata"),
-  fit:assessmentLabel(o),
-  editorialAssessment:assessmentLabel(o),
+  fit:adequacyLabel(o),
+  editorialAssessment:adequacyLabel(o),
   editorialReason:String(o.assessment_reason||"Classificazione tematica preliminare; apertura e ammissibilità richiedono evidenze."),
   confidence:o.assessment_confidence||review.confidence||"Non documentata",
   basis:String(o.assessment_basis||o.score_explanation_basis||"Titolo e informazioni preliminari"),
@@ -354,7 +376,7 @@ function prepareEvaluationSheet(o){
  for(const [label,value] of [
   ["Scadenza",d.deadline],["Apertura candidature",d.opening],
   ["Contributo / dotazione",d.amount],["Natura dell'importo",d.amountKind],
-  ["Tipologia",d.type],["Affinità per Opera+",d.editorialAssessment],
+  ["Tipologia",d.type],["Adeguatezza per Opera+",d.editorialAssessment],
   ["Ammissibilità",d.eligibility],["Affidabilità analisi",d.confidence]
  ])addReportFact(facts,label,value);
  sheet.append(facts);
@@ -362,7 +384,7 @@ function prepareEvaluationSheet(o){
  summary.append(el("h2","Sintesi dell'opportunità"),el("p",d.summary));
  sheet.append(summary);
  const assessment=el("section",undefined,"print-section");
- assessment.append(el("h2","Motivazione dell'affinità"),el("p",d.editorialReason),el("p",d.reasoning),
+ assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.editorialReason),el("p",d.reasoning),
   el("p","Elementi utilizzati: "+d.basis,"print-muted"));
  sheet.append(assessment);
  const beneficiaries=el("section",undefined,"print-section");
@@ -580,7 +602,6 @@ function makeCard(o){
  tags.append(el("span",statusLabel(st),"chip status "+(st==="aperto"?"open":st==="chiuso"?"closed":st==="in arrivo"?"upcoming":"unknown")));
  const change=changeBadge(o);
  if(change)tags.append(el("span",change.label,"chip change "+change.kind));
- tags.append(el("span",assessmentLabel(o),"chip assessment"));
  if(o.assessment_review_status && o.assessment_review_status!=="REVISIONE DOCUMENTALE"){
   tags.append(el("span",o.assessment_review_status==="EVIDENZE RACCOLTE"?"Evidenze raccolte":"Verifica documentale parziale","chip"));
  }
@@ -605,7 +626,7 @@ function makeCard(o){
  else addLink(actions,"Fonte ufficiale ↗",o.resolved_url||o.url,"source-link");
  left.append(actions);
  right.append(makeCalendar(o));
- article.append(left,right);
+ article.append(left,right,makeAdequacy(o));
  return article;
 }
 function updateStateCounts(){
@@ -672,7 +693,7 @@ async function init(){
   all=dataset.opportunities;const status=dataset.status;
   $("total").textContent=all.filter(o=>state(o)==="aperto").length;
   $("potential").textContent=all.length;
-  $("high").textContent=all.filter(o=>state(o)==="aperto"&&assessmentLabel(o)==="ALTA AFFINITÀ").length;
+  $("high").textContent=all.filter(o=>state(o)==="aperto"&&adequacyLevel(o)===3).length;
   $("sources").textContent=status.sources.length;
   const stamp=status.checked_at?new Date(status.checked_at).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"}):"non disponibile";
   $("scan").textContent=(dataset.origin==="github"?"Ultima scansione: ":"Copia locale · Ultima scansione: ")+stamp;
