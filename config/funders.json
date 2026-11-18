@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "funders": [
+    {
+      "id": "sanpaolo",
+      "name": "Fondazione Compagnia di San Paolo",
+      "type": "fondazione bancaria",
+      "territory": "Piemonte",
+      "website": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "crt",
+      "name": "Fondazione CRT",
+      "type": "fondazione bancaria",
+      "territory": "Piemonte",
+      "website": "https://www.fondazionecrt.it/progetti-e-bandi/",
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "piemonte",
+      "name": "Regione Piemonte",
+      "type": "ente pubblico",
+      "territory": "Piemonte",
+      "website": "https://bandi.regione.piemonte.it/",
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "torino",
+      "name": "Città di Torino",
+      "type": "comune",
+      "territory": "Torino",
+      "website": "https://bandi.comune.torino.it/avvisi/contributi",
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "culturatorino",
+      "name": "Fondazione per la Cultura Torino",
+      "type": "fondazione",
+      "territory": "Torino",
+      "website": "https://fpct.it/bandi-avvisi/",
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "lavazza",
+      "name": "Fondazione Giuseppe e Pericle Lavazza ETS",
+      "type": "fondazione d'impresa",
+      "territory": "Piemonte",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "intesasanpaolo",
+      "name": "Intesa Sanpaolo",
+      "type": "impresa",
+      "territory": "Italia",
+      "website": "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "enelcuore",
+      "name": "Enel Cuore",
+      "type": "fondazione d'impresa",
+      "territory": "Italia",
+      "website": "https://www.enelcuore.it/supporto-presentazione-progetti-terzo-settore",
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "reale",
+      "name": "Reale Foundation",
+      "type": "fondazione d'impresa",
+      "territory": "Piemonte",
+      "website": "https://www.realegroup.eu/IT/chi-siamo/sostenibilita/reale-foundation",
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "unicredit",
+      "name": "UniCredit Foundation",
+      "type": "fondazione d'impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "bancobpm",
+      "name": "Banco BPM",
+      "type": "impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "bper",
+      "name": "BPER",
+      "type": "impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "creditagricole",
+      "name": "Crédit Agricole",
+      "type": "impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "generali",
+      "name": "The Human Safety Net / Generali",
+      "type": "fondazione d'impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "allianz",
+      "name": "Fondazione Allianz UMANA MENTE",
+      "type": "fondazione d'impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "stellantis",
+      "name": "Stellantis Philanthropy",
+      "type": "programma aziendale",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "eni",
+      "name": "Eni Foundation",
+      "type": "fondazione d'impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "vodafone",
+      "name": "Fondazione Vodafone Italia",
+      "type": "fondazione d'impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "iren",
+      "name": "Iren",
+      "type": "impresa",
+      "territory": "Piemonte",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "edison",
+      "name": "Fondazione EOS / Edison",
+      "type": "fondazione d'impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "tim",
+      "name": "Fondazione TIM",
+      "type": "fondazione d'impresa",
+      "territory": "Italia",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "hangar",
+      "name": "Hangar Piemonte",
+      "type": "programma di accompagnamento",
+      "territory": "Piemonte",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "crc",
+      "name": "Fondazione CRC",
+      "type": "fondazione bancaria",
+      "territory": "Cuneo",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "crasti",
+      "name": "Fondazione CR Asti",
+      "type": "fondazione bancaria",
+      "territory": "Asti",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "cralessandria",
+      "name": "Fondazione CR Alessandria",
+      "type": "fondazione bancaria",
+      "territory": "Alessandria",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "crbiella",
+      "name": "Fondazione CR Biella",
+      "type": "fondazione bancaria",
+      "territory": "Biella",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "crvercelli",
+      "name": "Fondazione CR Vercelli",
+      "type": "fondazione bancaria",
+      "territory": "Vercelli",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "crtortona",
+      "name": "Fondazione CR Tortona",
+      "type": "fondazione bancaria",
+      "territory": "Tortona",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "crfossano",
+      "name": "Fondazione CR Fossano",
+      "type": "fondazione bancaria",
+      "territory": "Fossano",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "crsaluzzo",
+      "name": "Fondazione CR Saluzzo",
+      "type": "fondazione bancaria",
+      "territory": "Saluzzo",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "crsavigliano",
+      "name": "Fondazione CR Savigliano",
+      "type": "fondazione bancaria",
+      "territory": "Savigliano",
+      "website": null,
+      "verification": "da verificare",
+      "accepts_applications": null
+    }
+  ],
+  "programs": [
+    {
+      "id": "isp-beneficenza",
+      "funder_id": "intesasanpaolo",
+      "name": "Fondo di Beneficenza",
+      "url": "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
+      "submission": "da verificare",
+      "monitoring": "direct"
+    },
+    {
+      "id": "enelcuore-progetti",
+      "funder_id": "enelcuore",
+      "name": "Progetti Terzo Settore",
+      "url": "https://www.enelcuore.it/supporto-presentazione-progetti-terzo-settore",
+      "submission": "da verificare",
+      "monitoring": "direct"
+    },
+    {
+      "id": "crt-bandi",
+      "funder_id": "crt",
+      "name": "Progetti e bandi",
+      "url": "https://www.fondazionecrt.it/progetti-e-bandi/",
+      "source_id": "crt",
+      "submission": "bando",
+      "monitoring": "existing-source"
+    },
+    {
+      "id": "sanpaolo-contributi",
+      "funder_id": "sanpaolo",
+      "name": "Contributi e bandi",
+      "url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
+      "source_id": "sanpaolo",
+      "submission": "bando",
+      "monitoring": "existing-source"
+    },
+    {
+      "id": "regione-bandi",
+      "funder_id": "piemonte",
+      "name": "Bandi regionali",
+      "url": "https://bandi.regione.piemonte.it/",
+      "source_id": "piemonte",
+      "submission": "bando",
+      "monitoring": "existing-source"
+    },
+    {
+      "id": "torino-contributi",
+      "funder_id": "torino",
+      "name": "Contributi comunali",
+      "url": "https://bandi.comune.torino.it/avvisi/contributi",
+      "source_id": "torino",
+      "submission": "bando",
+      "monitoring": "existing-source"
+    },
+    {
+      "id": "culturatorino-bandi",
+      "funder_id": "culturatorino",
+      "name": "Bandi e avvisi",
+      "url": "https://fpct.it/bandi-avvisi/",
+      "source_id": "culturatorino",
+      "submission": "bando",
+      "monitoring": "existing-source"
+    }
+  ]
+}
