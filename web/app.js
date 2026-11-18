@@ -493,13 +493,36 @@ function navigateOpportunity(id){
  window.history.pushState(null,"",target.href);
  renderRoute();
 }
+function activeView(href){
+ const view=new URL(href).searchParams.get("view");
+ return ["dashboard","finanziatori","monitoraggio"].includes(view)?view:"dashboard";
+}
+function renderMainView(href){
+ const detail=!!requestedOpportunity(href);
+ const view=activeView(href);
+ const visible=key=>!detail&&view===key;
+ document.querySelector(".hero").hidden=!visible("dashboard");
+ document.querySelector(".overview").hidden=!visible("dashboard");
+ document.querySelector(".explore").hidden=!visible("dashboard");
+ $("finanziatori").hidden=!visible("finanziatori");
+ $("monitoraggio-programmi").hidden=!visible("monitoraggio");
+ $("source-health").hidden=!visible("monitoraggio");
+ for(const anchor of document.querySelectorAll(".primary-nav a[data-view]")){
+  const selected=anchor.dataset.view===view;
+  if(selected)anchor.setAttribute("aria-current","page");
+  else anchor.removeAttribute("aria-current");
+ }
+ document.querySelector(".primary-nav").hidden=detail;
+ return view;
+}
 function renderRoute(){
  const id=requestedOpportunity(window.location.href);
+ const mainView=renderMainView(window.location.href);
  const page=$("opportunity-page");
  page.hidden=!id;
  document.body.classList.toggle("detail-view",!!id);
  if(!id){
-  document.title="Opera+ Funding · Opportunità per la cultura";
+  document.title=({dashboard:"Opera+ Funding · Opportunità per la cultura",finanziatori:"Finanziatori · Opera+ Funding",monitoraggio:"Monitoraggio programmi · Opera+ Funding"})[mainView];
   return;
  }
  const opportunity=findOpportunity(id,all);
