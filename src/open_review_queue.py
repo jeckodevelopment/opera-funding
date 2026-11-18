@@ -59,6 +59,11 @@ def review_tasks(row):
             break
     if not row.get("assessment_evidence_source") and not row.get("assessment_source"):
         add("Consultare una fonte ufficiale per confermare i requisiti")
+    # Individually reviewed source gaps are the most actionable checks.
+    # Do not drop them just because all four evidence excerpts are populated.
+    for gap in row.get("assessment_gaps") or []:
+        if isinstance(gap,str) and gap.strip():
+            add(" ".join(gap.split())[:380])
     if not tasks:
         add("Confermare i requisiti sulla versione aggiornata del bando")
     return tasks
