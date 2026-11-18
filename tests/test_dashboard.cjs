@@ -6,8 +6,8 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,readWatchlist,isFollowed};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,readWatchlist,isFollowed}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed}=context.exposed;
 assert.equal(PAGE_SIZE,12);
 const short=opportunityUrl({id:"https://volontariatotorino.it/bandi/dora",public_id:143},"https://jeckodevelopment.com/dev/funding/");
 assert.equal(short,"https://jeckodevelopment.com/dev/funding/?opportunity=143");
