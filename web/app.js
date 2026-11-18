@@ -165,9 +165,13 @@ function dateLabel(value){
  const [y,m,d]=value.split("-");return "Scade il "+d+"/"+m+"/"+y;
 }
 function score(o){return Math.max(0,Math.min(100,Number(o.relevance)||0));}
+function affinityRank(o){
+ const label=assessmentLabel(o);
+ return label==="ALTA AFFINITÀ"?2:label==="MEDIA AFFINITÀ"?1:0;
+}
 function groupOrder(o){return {aperto:0,"in arrivo":1,"non verificato":2,chiuso:3,"altro contenuto":4}[state(o)];}
 function sortRows(rows,order){
- const difference=(a,b)=>score(b)-score(a);
+ const difference=(a,b)=>affinityRank(b)-affinityRank(a);
  rows.sort((a,b)=>{
   const group=groupOrder(a)-groupOrder(b);if(group)return group;
   if(order==="score")return difference(a,b)||String(a.deadline||"9999").localeCompare(String(b.deadline||"9999"));
@@ -185,7 +189,7 @@ function filteredRows(){
   if(kind==="funding"&&!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return false;
   if(kind&&kind!=="funding"&&kind!==o.opportunity_type)return false;
   if(issuer&&issuer!==o.issuer)return false;
-  if(score(o)<minimum)return false;
+  if(affinityRank(o)<minimum)return false;
   if(!term)return true;
   return [o.title,o.issuer,o.beneficiaries_excerpt,...(o.themes||[])].filter(Boolean).join(" ").toLocaleLowerCase("it").includes(term);
  }),$("sort").value);
@@ -213,20 +217,6 @@ function makeCalendar(o){
  calendar.append(el("span",monthName,"calendar-month"),el("span",String(Number(day)),"calendar-day"),el("span",year,"calendar-year"));
  return calendar;
 }
-function makeAdequacy(o){
- const value=score(o);
- const footer=el("div",undefined,"adequacy");
- const heading=el("div",undefined,"adequacy-heading");
- heading.append(el("span","Adeguatezza per Opera+","adequacy-label"),el("strong",value+"/100","adequacy-value"));
- const track=el("div",undefined,"adequacy-track");
- track.style.setProperty("--fit",value+"%");
- track.setAttribute("role","progressbar");
- track.setAttribute("aria-label","Adeguatezza del bando per Opera+");
- track.setAttribute("aria-valuemin","0");track.setAttribute("aria-valuemax","100");track.setAttribute("aria-valuenow",String(value));
- track.append(el("span",undefined,"adequacy-mask"),el("span",undefined,"adequacy-marker"));
- footer.append(heading,track);
- return footer;
-}
 function dialogField(parent,label,value){
  if(!value)return;
  const field=el("div",undefined,"dialog-field");
@@ -251,7 +241,6 @@ function evidenceSection(o){
  const intro=el("p","Il punteggio indica la coerenza tematica, non l'ammissibilità né le probabilità di ottenere il contributo.");
  section.append(intro);
  const dl=el("dl",undefined,"review-facts");
- dialogField(dl,"Adeguatezza tematica",score(o)+"/100");
  dialogField(dl,"Valutazione editoriale",assessmentLabel(o));
  dialogField(dl,"Copertura documentale",o.assessment_review_status||"Non ancora determinata");
  dialogField(dl,"Metodo di valutazione",o.assessment_method||"Valutazione preliminare");
@@ -322,7 +311,7 @@ function evaluationData(o,issued=new Date()){
   amount:String(o.amount||"Non indicato"),
   amountKind:String(o.amount_kind||"Da verificare"),
   type:String(o.application_type||o.opportunity_type||"Non indicata"),
-  fit:score(o)+"/100",
+  fit:assessmentLabel(o),
   editorialAssessment:assessmentLabel(o),
   editorialReason:String(o.assessment_reason||"Classificazione tematica preliminare; apertura e ammissibilità richiedono evidenze."),
   confidence:o.assessment_confidence||review.confidence||"Non documentata",
@@ -365,8 +354,7 @@ function prepareEvaluationSheet(o){
  for(const [label,value] of [
   ["Scadenza",d.deadline],["Apertura candidature",d.opening],
   ["Contributo / dotazione",d.amount],["Natura dell'importo",d.amountKind],
-  ["Tipologia",d.type],["Adeguatezza tematica",d.fit],
-  ["Valutazione editoriale",d.editorialAssessment],
+  ["Tipologia",d.type],["Affinità per Opera+",d.editorialAssessment],
   ["Ammissibilità",d.eligibility],["Affidabilità analisi",d.confidence]
  ])addReportFact(facts,label,value);
  sheet.append(facts);
@@ -374,7 +362,7 @@ function prepareEvaluationSheet(o){
  summary.append(el("h2","Sintesi dell'opportunità"),el("p",d.summary));
  sheet.append(summary);
  const assessment=el("section",undefined,"print-section");
- assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.editorialReason),el("p",d.reasoning),
+ assessment.append(el("h2","Motivazione dell'affinità"),el("p",d.editorialReason),el("p",d.reasoning),
   el("p","Elementi utilizzati: "+d.basis,"print-muted"));
  sheet.append(assessment);
  const beneficiaries=el("section",undefined,"print-section");
@@ -402,7 +390,7 @@ function prepareEvaluationSheet(o){
  }
  const disclaimer=el("footer",undefined,"print-disclaimer");
  disclaimer.append(el("strong","Valutazione preliminare, non decisione di candidatura."),
-  el("p","Le informazioni provengono dal catalogo Opera+ Funding e possono essere incomplete o superate. L'adeguatezza tematica non conferma ammissibilità né probabilità di finanziamento. Verificare sempre i documenti ufficiali prima di candidarsi."));
+  el("p","Le informazioni provengono dal catalogo Opera+ Funding e possono essere incomplete o superate. L'affinità tematica non conferma ammissibilità né probabilità di finanziamento. Verificare sempre i documenti ufficiali prima di candidarsi."));
  sheet.append(disclaimer);
  return sheet;
 }
@@ -611,7 +599,7 @@ function makeCard(o){
  else addLink(actions,"Fonte ufficiale ↗",o.resolved_url||o.url,"source-link");
  left.append(actions);
  right.append(makeCalendar(o));
- article.append(left,right,makeAdequacy(o));
+ article.append(left,right);
  return article;
 }
 function updateStateCounts(){
