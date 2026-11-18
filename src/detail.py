@@ -37,7 +37,7 @@ def extract_assessment_evidence(main, page_url):
 
 MAX_DETAIL_LINKS = 8
 MAX_HTML_BYTES = 1_000_000
-DETAIL_SCHEMA_VERSION = 7
+DETAIL_SCHEMA_VERSION = 8
 
 def safe_same_origin(link, origin):
     u = urlparse(link)
