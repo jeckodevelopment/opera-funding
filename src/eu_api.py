@@ -31,6 +31,25 @@ def iso(value):
     try:return date.fromisoformat(m.group(1)).isoformat()
     except ValueError:return None
 
+def metadata_evidence(meta):
+    """Use only explicitly named EU API fields, never infer applicant rules."""
+    fields={
+        "programme_objectives_excerpt":("topicDescription","description","objectives"),
+        "funded_activities_excerpt":("eligibleActivities","scope","supportedActivities"),
+        "beneficiaries_excerpt":("eligibleApplicants","applicantType","eligibleEntities"),
+        "requirements_excerpt":("eligibilityConditions","applicationConditions","requirements"),
+    }
+    evidence={}
+    for dest,names in fields.items():
+        value=first(meta,*names)
+        if not value or len(value)<35:
+            continue
+        clean=re.sub(r"<[^>]*>"," ",value)
+        clean=" ".join(clean.split())[:700]
+        if len(clean)>=35:
+            evidence[dest]=clean
+    return evidence
+
 def api_result_to_opportunity(record,source,now):
     if not isinstance(record,dict):return None
     meta=record.get("metadata") or {}
@@ -60,6 +79,11 @@ def api_result_to_opportunity(record,source,now):
         "opening_date":opening,"opening_evidence":url if opening else None,
         "link_status":"non verificato"
     }
+    evidence=metadata_evidence(meta)
+    if evidence:
+        result.update(evidence)
+        result["assessment_evidence_source"]=url
+        result["detail_basis"]="Metadati espliciti dell'API ufficiale UE"
     return explain(annotate(result))
 
 def fetch_creative_europe(session,source,now):

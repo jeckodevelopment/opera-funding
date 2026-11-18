@@ -144,11 +144,11 @@ def run():
                          else discover(source,session,now))
                 # Prioritize candidate funding calls over general archive entries.
                 checked_count = 0
-                review_limit = (max(250, len(found)+len(backlog)) if args.history_backfill
-                                else 16 if source["id"] in ("volto","torino","mic","alcotra")
-                                else 12 if source.get("tier")=="high" else 10)
                 current_ids={item["id"] for item in found}
                 backlog=backlog_candidates(indexed,source["id"],current_ids)
+                review_limit = (max(250,len(found)+len(backlog)) if args.history_backfill
+                                else 16 if source["id"] in ("volto","torino","mic","alcotra")
+                                else 12 if source.get("tier")=="high" else 10)
                 found=[classify_informational_page(item) for item in found]
                 backlog=[classify_informational_page(item) for item in backlog]
                 # Every newly found opportunity is sent for official-document
