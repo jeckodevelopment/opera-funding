@@ -62,6 +62,9 @@ def ingest_programme_calls(programmes,monitor_state,indexed,session,eligible,now
                 continue
             title=candidate["title"]
             inferred=classify(title,title)
+            if inferred.get("opportunity_type")=="non classificato":
+                inferred["opportunity_type"]="call progettuale da verificare"
+                inferred["classification_reason"]="Titolo di bando specifico; finanziamento e beneficiari da confermare"
             if inferred.get("opportunity_type") not in (
                     "finanziamento potenziale","call progettuale da verificare"):
                 rejected+=1
