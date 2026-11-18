@@ -637,14 +637,26 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
-    "assessment_label": "ALTA AFFINITÀ",
-    "assessment_reason": "Buona corrispondenza tematica per attività culturali o formative; verificare beneficiari e condizioni.",
-    "assessment_basis": "titolo e contenuti della scheda consultata",
-    "assessment_opening_note": "Lo stato di apertura è distinto dalla pertinenza: senza evidenza ufficiale, non è confermato.",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "Finanzia festival culturali partecipativi, con coinvolgimento attivo delle comunità e iniziative territoriali. Opera+ potrebbe proporre attività musicali divulgative all'interno di un festival, ma il corso digitale autonomo non corrisponde al formato richiesto.",
+    "assessment_basis": "Revisione documentale delle condizioni pubblicate dall'ente promotore",
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
     "public_id": 190,
     "public_id_aliases": [],
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "ce3fa7c2dd6526d1c372864d080d20ce75584ae962040d63550e8b110130e9b6"
+    "catalog_fingerprint": "ce3fa7c2dd6526d1c372864d080d20ce75584ae962040d63550e8b110130e9b6",
+    "programme_objectives_excerpt": "Sostegno a festival partecipativi radicati nei territori, attenti a nuovi pubblici e alla costruzione collettiva dell'esperienza culturale.",
+    "funded_activities_excerpt": "Festival con più attività coordinate in luoghi e periodi definiti, frequentemente in spazi pubblici e non convenzionali.",
+    "beneficiaries_excerpt": "Enti che soddisfano i requisiti soggettivi e oggettivi delle Linee applicative del Regolamento delle attività istituzionali della Fondazione.",
+    "requirements_excerpt": "Il progetto deve avere carattere di festival partecipativo e forte relazione con territorio e comunità; verifica dei requisiti dei soggetti ammissibili nelle Linee applicative.",
+    "assessment_gaps": [
+      "Verificare nel regolamento applicativo la piena ammissibilità dell'associazione.",
+      "Verificare risorse proprie, territorio e caratteristiche del festival proposto."
+    ],
+    "assessment_confidence": "documentale — fonte ufficiale consultata; ammissibilità da verificare",
+    "assessment_source": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027/",
+    "assessment_evidence_source": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027/",
+    "assessment_reviewed_at": "2026-11-18"
   },
   {
     "id": "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-pubblico-manifestazione-interesse-utile-allindividuazione-operatori-economici-invitare",
@@ -1135,7 +1147,7 @@
     "opening_evidence": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
     "deadline_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
     "status_evidence": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
-    "beneficiaries_excerpt": "Rivolto a Imprese e liberi professionisti Risorse Risorse statali FESR Procedura Bando a sportello +++ Comunicazioni importanti: con Determinazione Dirigenziale n. 452 del 10.09.2026 è stata incrementata la dotazione finanziaria del bando Aiuti allo spettacolo dal vivo",
+    "beneficiaries_excerpt": "Imprese e liberi professionisti; la misura supporta micro, piccole e medie imprese professionali del settore.",
     "deadline_verified_at": "2026-11-18T11:35:19+00:00",
     "funding_status": "APERTO",
     "score_explanation": "Coerenza con divulgazione musicale e spettacolo (titolo).",
@@ -1148,14 +1160,25 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
-    "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Alcuni temi coerenti con le attività dell'associazione; utilità progettuale da confermare nei requisiti. La tipologia non è ancora accertata: non equivale a un contenuto informativo.",
-    "assessment_basis": "titolo e contenuti della scheda consultata",
-    "assessment_opening_note": "Lo stato di apertura è distinto dalla pertinenza: senza evidenza ufficiale, non è confermato.",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "La misura è destinata a micro, piccole e medie imprese e a investimenti strutturali o tecnologici nello spettacolo dal vivo; non al finanziamento ordinario di corsi o divulgazione musicale di un'associazione culturale. Possibile rilevanza soltanto in presenza di requisiti d'impresa e investimento ammissibile.",
+    "assessment_basis": "Revisione documentale delle condizioni pubblicate dall'ente promotore",
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
     "public_id": 18,
     "public_id_aliases": [],
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "372a1b1fe037f14888df3a8e8cf6fce6436330afe835825ae9c57d0c2d7ddd50"
+    "catalog_fingerprint": "372a1b1fe037f14888df3a8e8cf6fce6436330afe835825ae9c57d0c2d7ddd50",
+    "programme_objectives_excerpt": "Competitività di micro, piccole e medie imprese operanti nella produzione di spettacolo dal vivo in Piemonte.",
+    "funded_activities_excerpt": "Realizzazione o riqualificazione di strutture aperte al pubblico, ammodernamento di impianti e dotazioni tecnologiche per operatori dello spettacolo dal vivo.",
+    "requirements_excerpt": "Unità locale operativa in Piemonte e investimenti ammissibili; procedura a sportello con scadenza ufficiale 31 dicembre 2026.",
+    "assessment_gaps": [
+      "Verificare specifica forma giuridica e requisiti di impresa nel testo del bando.",
+      "La dotazione complessiva di € 5 milioni non coincide con l'importo assegnabile al singolo progetto."
+    ],
+    "assessment_confidence": "documentale — fonte ufficiale consultata; ammissibilità da verificare",
+    "assessment_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
+    "assessment_evidence_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
+    "assessment_reviewed_at": "2026-11-18"
   },
   {
     "id": "https://fpct.it/bandi-avvisi/avviso-di-ricerca-per-il-reperimento-di-sponsorizzazioni-in-materia-di-eventi-culturali-e-musicali-per-lanno-2024-integrazione-di-ottobre-2024",
@@ -2237,13 +2260,25 @@
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
     "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Alcuni temi coerenti con le attività dell'associazione; utilità progettuale da confermare nei requisiti.",
-    "assessment_basis": "titolo e contenuti della scheda consultata",
-    "assessment_opening_note": "Lo stato di apertura è distinto dalla pertinenza: senza evidenza ufficiale, non è confermato.",
+    "assessment_reason": "Il programma sostiene enti che ospitano residenze artistiche, anche nei settori musica e performing arts. Opera+ potrebbe partecipare soltanto sviluppando una vera residenza con artisti esteri, alloggio, spazi e mentorship; la semplice produzione di videolezioni non basta.",
+    "assessment_basis": "Revisione documentale delle condizioni pubblicate dall'ente promotore",
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
     "public_id": 33,
     "public_id_aliases": [],
     "catalog_tracking_version": 1,
-    "catalog_fingerprint": "b231b89e454a23cf2d2bc35086abdb9725f4e882c5b5e3c40d0aa0b5d9469dce"
+    "catalog_fingerprint": "b231b89e454a23cf2d2bc35086abdb9725f4e882c5b5e3c40d0aa0b5d9469dce",
+    "programme_objectives_excerpt": "Supporto a organizzazioni che ospitano artisti e professionisti culturali provenienti da altri paesi di Europa Creativa.",
+    "funded_activities_excerpt": "Un progetto di residenza per 1–5 artisti, con contributi giornalieri all'ente ospitante e ai residenti.",
+    "beneficiaries_excerpt": "Persone giuridiche registrate in un paese di Europa Creativa e attive in settori culturali ammissibili, inclusi musica e performing arts.",
+    "requirements_excerpt": "Capacità di ospitare, fornire alloggio e spazi di lavoro adeguati, almeno un mentor e documenti dell'ente e del progetto. Scadenza 18 gennaio 2027.",
+    "assessment_gaps": [
+      "Verificare capacità concreta di ospitalità e disponibilità di mentor.",
+      "Confermare compatibilità del progetto di residenza con le attività associative."
+    ],
+    "assessment_confidence": "documentale — fonte ufficiale consultata; ammissibilità da verificare",
+    "assessment_source": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
+    "assessment_evidence_source": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
+    "assessment_reviewed_at": "2026-11-18"
   },
   {
     "id": "https://spettacolo.cultura.gov.it/category/attivita/attivita-musica/contributi-musica",
@@ -2436,10 +2471,10 @@
       "Verificare i beneficiari ammessi e la natura giuridica richiesta",
       "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
     ],
-    "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Alcuni temi coerenti con le attività dell'associazione; utilità progettuale da confermare nei requisiti. La tipologia non è ancora accertata: non equivale a un contenuto informativo.",
-    "assessment_basis": "titolo e contenuti della scheda consultata",
-    "assessment_opening_note": "Lo stato di apertura è distinto dalla pertinenza: senza evidenza ufficiale, non è confermato.",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "La misura sovvenziona la mobilità transfrontaliera di singoli artisti e professionisti culturali, o gruppi fino a cinque persone. Non è un finanziamento diretto all'associazione Opera+; potrebbe interessare eventualmente i suoi singoli collaboratori artistici.",
+    "assessment_basis": "Revisione documentale delle condizioni pubblicate dall'ente promotore",
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
     "alternative_urls": [
       "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2"
     ],
@@ -2449,7 +2484,19 @@
     ],
     "catalog_tracking_version": 1,
     "catalog_fingerprint": "240b5a43ee00d2423b9fed6d05ec7758d809be91f5421320c0d3862b6fa1bbcb",
-    "catalog_updated_at": "2026-11-18T09:32:07+00:00"
+    "catalog_updated_at": "2026-11-18T09:32:07+00:00",
+    "programme_objectives_excerpt": "Mobilità per realizzare un progetto artistico o culturale in un altro paese di Europa Creativa, con partner internazionale.",
+    "funded_activities_excerpt": "Diaria, viaggio e integrazioni per artisti e professionisti culturali che realizzano il progetto all'estero.",
+    "beneficiaries_excerpt": "Artisti e professionisti della cultura maggiorenni, candidati come individui o gruppi fino a cinque persone.",
+    "requirements_excerpt": "Progetto in un paese estero, partner internazionale, CV e portfolio artistico, lettera di invito; finestre periodiche fino ad aprile 2027.",
+    "assessment_gaps": [
+      "Non candidabile direttamente da un'associazione in questa linea.",
+      "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso."
+    ],
+    "assessment_confidence": "documentale — fonte ufficiale consultata; ammissibilità da verificare",
+    "assessment_source": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
+    "assessment_evidence_source": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
+    "assessment_reviewed_at": "2026-11-18"
   },
   {
     "id": "https://www.fondazionecrt.it/culture-of-solidarity-fund-progetti-vincitori",
