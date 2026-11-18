@@ -117,6 +117,19 @@ def validate_scan(rows, report, now=None, max_age_minutes=30):
                 part=sections.get(name)
                 if not isinstance(part,dict) or part.get("total")!=total:
                     problems.append("Riconciliazione "+name+" non coerente")
+    audit=report.get("catalog_audit")
+    if isinstance(audit,dict):
+        if audit.get("records_checked")!=len(rows):
+            problems.append("Audit catalogo non coerente con numero schede")
+        if audit.get("unassessed_ids"):
+            problems.append("Audit catalogo: schede senza valutazione")
+        if audit.get("retired_open_ids"):
+            problems.append("Audit catalogo: fonte ritirata ancora marcata APERTA")
+        if audit.get("duplicate_public_ids"):
+            problems.append("Audit catalogo: identificativi pubblici duplicati")
+        status_in_audit=audit.get("status_counts") or {}
+        if status_in_audit!={key:sum(r.get("funding_status")==key for r in rows) for key in status_in_audit}:
+            problems.append("Audit catalogo: riepilogo stati non coerente")
     if incomplete:
         problems.append("Valutazioni/requisiti mancanti su "+str(len(incomplete))+
                         " record; esempi: "+", ".join(str(x) for x in incomplete[:5]))
