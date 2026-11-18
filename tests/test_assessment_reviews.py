@@ -84,6 +84,28 @@ class ReviewedAssessmentTests(unittest.TestCase):
         self.assertNotIn("comune di",record["requirements_excerpt"].lower())
         self.assertNotIn("almeno due anni",record["requirements_excerpt"].lower())
 
+    def test_documented_festival_first_edition_blocker_is_applied(self):
+        import json
+        root=Path(__file__).resolve().parents[1]
+        review=next(x for x in json.loads((root/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+                    if x.get("public_id")==190)
+        row={"public_id":190,"source_id":review["source_id"],"url":review["url"],
+             "title":"Festival partecipativi 2027","funding_status":"APERTO"}
+        out=apply_assessment_reviews([row],[review])[0]
+        self.assertEqual(out["assessment_label"],"BASSA AFFINITÀ")
+        self.assertIn("prime edizioni",out["assessment_reason"])
+        self.assertIn("festival esistente",out["direct_application_blocker"])
+        self.assertTrue(out["assessment_evidence_source"].startswith("https://"))
+
+    def test_circ7_conditions_are_supported_by_official_pdf(self):
+        import json
+        root=Path(__file__).resolve().parents[1]
+        review=next(x for x in json.loads((root/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+                    if x.get("public_id")==8)
+        self.assertIn("comunità locale",review["beneficiaries_excerpt"])
+        self.assertIn("26 novembre 2026",review["requirements_excerpt"])
+        self.assertTrue(review["evidence_url"].endswith("13_Avviso_Eventi_Culturali_2027.pdf"))
+
     def test_different_host_does_not_inherit_review(self):
         row={"url":"https://example.org/bando","source_id":"a"}
         review={"source_id":"a","url":"https://another.org/bando","assessment_label":"MEDIA AFFINITÀ",
