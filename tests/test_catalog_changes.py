@@ -9,6 +9,7 @@ LATER="2026-11-18T07:00:00+00:00"
 
 def row(id="a",**kwargs):
     return {"id":id,"title":"Sostegno alla cultura","deadline":"2027-01-31",
+            "deadline_source":"https://example.org/call",
             "documents":[{"label":"Bando","url":"https://example.org/bando.pdf"}],**kwargs}
 
 class CatalogChangeTests(unittest.TestCase):
@@ -28,6 +29,7 @@ class CatalogChangeTests(unittest.TestCase):
     def test_real_fact_change_gets_updated_at_and_stable_scans_do_not(self):
         previous=track_changes([row("a")],[row("a")],NOW)
         changed=track_changes([{"id":"a","title":"Sostegno alla cultura","deadline":"2027-02-12",
+                  "deadline_source":"https://example.org/call",
                   "documents":[{"label":"Bando","url":"https://example.org/bando.pdf"}]}],previous,LATER)
         self.assertEqual(changed[0]["catalog_updated_at"],LATER)
         again=track_changes([dict(changed[0],last_seen="future",score_explanation="Un'altra spiegazione")],changed,"2026-11-19T07:00:00+00:00")
@@ -49,6 +51,29 @@ class CatalogChangeTests(unittest.TestCase):
         future=track_changes([row("a"),row("b")],introduced,"2026-11-19T07:00:00+00:00")
         self.assertEqual(future[1]["catalog_new_at"],LATER)
         self.assertNotIn("catalog_updated_at",future[1])
+    def test_old_tracking_version_clears_false_mass_update_badge(self):
+        old=row("a",catalog_tracking_version=1,catalog_fingerprint="old",
+                catalog_updated_at=NOW)
+        fresh=track_changes([row("a")],[old],LATER)
+        self.assertNotIn("catalog_updated_at",fresh[0])
+        self.assertEqual(fresh[0]["catalog_tracking_version"],2)
+        second=track_changes([row("a")],fresh,"2026-11-19T07:00:00+00:00")
+        self.assertNotIn("catalog_updated_at",second[0])
+
+    def test_beneficiary_excerpt_and_documents_are_not_call_updates(self):
+        initial=track_changes([row("a")],[row("a")],NOW)
+        enriched=row("a",beneficiaries_excerpt="Associazioni culturali e scuole",
+                     documents=[{"label":"Nuove FAQ","url":"https://example.org/faq.pdf"}])
+        latest=track_changes([enriched],initial,LATER)
+        self.assertNotIn("catalog_updated_at",latest[0])
+
+    def test_uncited_deadline_cannot_trigger_official_change_badge(self):
+        old=track_changes([row("a",deadline_source=None)],
+                          [row("a",deadline_source=None)],NOW)
+        latest=track_changes([row("a",deadline="2028-03-20",
+                                  deadline_source=None)],old,LATER)
+        self.assertNotIn("catalog_updated_at",latest[0])
+
     def test_never_drops_opportunities(self):
         original=[row(str(i)) for i in range(30)]
         tracked=track_changes(original,[],NOW)
