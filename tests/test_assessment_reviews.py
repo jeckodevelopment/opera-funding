@@ -40,6 +40,19 @@ class ReviewedAssessmentTests(unittest.TestCase):
                 "opportunity_type":"non classificato","funding_status":"APERTO"}
         self.assertEqual(pick_for_review([record],{},1),{"x"})
 
+    def test_stable_id_reconciles_review_after_source_url_changes(self):
+        row={"public_id":146,"url":"https://aggregator.example/new-edition","source_id":"volto","title":"Bando"}
+        review={"public_id":146,"source_id":"volto","url":"https://another.example/old-edition",
+                "assessment_label":"MEDIA AFFINITÀ","reviewed_at":"2026-11-18"}
+        result=apply_assessment_reviews([row],[review])[0]
+        self.assertEqual(result["assessment_label"],"MEDIA AFFINITÀ")
+
+    def test_generic_button_title_replaced_with_documented_name(self):
+        row={"public_id":183,"url":"https://example.org/bando","source_id":"issuer","title":"SCOPRI IL BANDO"}
+        review={"public_id":183,"source_id":"issuer","url":"https://example.org/bando",
+                "catalog_title":"Buoni formazione per la cultura","reviewed_at":"2026-11-18"}
+        self.assertEqual(apply_assessment_reviews([row],[review])[0]["title"],"Buoni formazione per la cultura")
+
     def test_different_host_does_not_inherit_review(self):
         row={"url":"https://example.org/bando","source_id":"a"}
         review={"source_id":"a","url":"https://another.org/bando","assessment_label":"MEDIA AFFINITÀ",
