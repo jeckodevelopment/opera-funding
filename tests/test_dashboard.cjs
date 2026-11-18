@@ -6,9 +6,21 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel}=context.exposed;
 assert.equal(PAGE_SIZE,12);
+assert.equal(assessmentLabel({assessment_label:"ALTA AFFINITÀ"}),"ALTA AFFINITÀ");
+assert.equal(assessmentLabel({relevance:65,opportunity_type:"finanziamento potenziale"}),"MEDIA AFFINITÀ");
+assert.equal(assessmentLabel({relevance:9,opportunity_type:"call progettuale da verificare"}),"BASSA AFFINITÀ");
+assert.equal(assessmentLabel({relevance:90,opportunity_type:"altro avviso"}),"INFORMATIVA");
+const workflowInput={phase:"Presentata",owner:"A".repeat(180),next_step:"Inviare allegati",due:"2027-02-28",notes:"Nota"}; 
+const workflowClean=cleanWorkflow(workflowInput);
+assert.equal(workflowClean.phase,"Presentata");
+assert.equal(workflowClean.owner.length,120);
+assert.equal(workflowClean.due,"2027-02-28");
+assert.equal(cleanWorkflow({phase:"Impossibile",due:"non valido"}).phase,"Da valutare");
+assert.equal(cleanWorkflow({due:"non valido"}).due,"");
+
 const short=opportunityUrl({id:"https://volontariatotorino.it/bandi/dora",public_id:143},"https://jeckodevelopment.com/dev/funding/");
 assert.equal(short,"https://jeckodevelopment.com/dev/funding/?opportunity=143");
 assert.equal(requestedOpportunity(short),"143");
@@ -136,6 +148,15 @@ assert.match(css,/\.evidence-review/);
 assert.match(src,/content.append\(evidenceSection\(o\)\)/);
 assert.match(html,/id="opportunity-page"/);
 assert.match(html,/data-value="followed"/);
+assert.match(html,/>Potenziali<\/button>/);
+assert.doesNotMatch(html,/>Da approfondire<\/button>/);
+assert.match(src,/function workflowForm\(o\)/);
+assert.match(src,/function saveWorkflow\(o,record\)/);
+assert.match(src,/WORKFLOW_PHASES/);
+assert.match(src,/localStorage\.setItem\(WORKFLOW_KEY/);
+assert.match(css,/\.workflow-form/);
+assert.match(css,/\.chip\.assessment/);
+
 assert.match(html,/id="followed-note"/);
 assert.match(src,/function toggleFollowed/);
 assert.match(src,/WATCHLIST_KEY/);

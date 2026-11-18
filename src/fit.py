@@ -75,4 +75,27 @@ def explain(row):
         checks.append("Verificare la disponibilità attuale dei fondi e le condizioni della procedura a sportello")
     checks.append("Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale")
     row["eligibility_checks"]=list(dict.fromkeys(checks))
+    # Assign a substantive editorial reading to every record, including
+    # informational pages. This is *not* evidence of current opening or legal
+    # eligibility. Missing official facts remain explicit in the checks.
+    point = max(0,min(100,int(row.get("relevance") or 0)))
+    kind = row.get("opportunity_type") or ""
+    if kind not in ("finanziamento potenziale","call progettuale da verificare"):
+        label = "INFORMATIVA"
+        reason = "Contenuto informativo o avviso non classificato come candidatura a finanziamento."
+    elif point >= 70:
+        label = "ALTA AFFINITÀ"
+        reason = "Buona corrispondenza tematica per attività culturali o formative; verificare beneficiari e condizioni."
+    elif point >= 45:
+        label = "MEDIA AFFINITÀ"
+        reason = "Alcuni temi coerenti con le attività dell'associazione; utilità progettuale da confermare nei requisiti."
+    else:
+        label = "BASSA AFFINITÀ"
+        reason = "Corrispondenza tematica limitata nelle informazioni disponibili; conservata nel catalogo."
+    row["assessment_label"] = label
+    row["assessment_reason"] = reason
+    row["assessment_basis"] = row["score_explanation_basis"]
+    row["assessment_opening_note"] = (
+        "Lo stato di apertura è distinto dalla pertinenza: senza evidenza ufficiale, non è confermato."
+    )
     return row

@@ -11,14 +11,90 @@ function readWatchlist(){
   return new Set(Array.isArray(raw)?raw.filter(x=>typeof x==="string"&&x.length<2500):[]);
  }catch{return new Set();}
 }
+const WORKFLOW_KEY="opera-funding-follow-workflow-v1";
+const WORKFLOW_PHASES=["Da valutare","Interessante","Candidatura in preparazione","Presentata","Non pertinente"];
+function cleanWorkflow(record){
+ const entry=record&&typeof record==="object"?record:{};
+ return {
+  phase:WORKFLOW_PHASES.includes(entry.phase)?entry.phase:WORKFLOW_PHASES[0],
+  owner:typeof entry.owner==="string"?entry.owner.slice(0,120):"",
+  next_step:typeof entry.next_step==="string"?entry.next_step.slice(0,300):"",
+  due:validLocalDate(entry.due)?entry.due:"",
+  notes:typeof entry.notes==="string"?entry.notes.slice(0,3000):""
+ };
+}
+function validLocalDate(value){return typeof value==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&!Number.isNaN(Date.parse(value+"T12:00:00Z"));}
+function readWorkflow(){
+ try{
+  const raw=JSON.parse(localStorage.getItem(WORKFLOW_KEY)||"{}");
+  if(!raw||typeof raw!=="object"||Array.isArray(raw))return Object.create(null);
+  const result=Object.create(null);
+  for(const [id,value] of Object.entries(raw)){
+   if(typeof id==="string"&&id.length<2500)result[id]=cleanWorkflow(value);
+  }
+  return result;
+ }catch{return Object.create(null);}
+}
 let followed=readWatchlist();
+let workflow=readWorkflow();
+function workflowRecord(o){return workflow[o.id]||cleanWorkflow({});}
+function persistWorkflow(){
+ try{
+  if(typeof localStorage==="undefined")return false;
+  localStorage.setItem(WATCHLIST_KEY,JSON.stringify([...followed]));
+  localStorage.setItem(WORKFLOW_KEY,JSON.stringify(workflow));
+  return true;
+ }catch{return false;}
+}
 function isFollowed(o){return followed.has(o.id);}
-function toggleFollowed(o){
- if(isFollowed(o))followed.delete(o.id);else followed.add(o.id);
- try{if(typeof localStorage!=="undefined")localStorage.setItem(WATCHLIST_KEY,JSON.stringify([...followed]));}
- catch{ /* Browser storage may be unavailable; current session remains usable. */ }
+function saveWorkflow(o,record){
+ followed.add(o.id);
+ workflow[o.id]=cleanWorkflow(record);
+ const persisted=persistWorkflow();
  updateStateCounts();
  render();
+ return persisted;
+}
+function toggleFollowed(o){
+ if(isFollowed(o)){
+  followed.delete(o.id);
+  delete workflow[o.id];
+ }else followed.add(o.id);
+ persistWorkflow();
+ updateStateCounts();
+ render();
+}
+function workflowForm(o){
+ const record=workflowRecord(o),section=el("section",undefined,"dialog-section workflow-section");
+ section.append(el("h3","Gestione personale dell'opportunità"));
+ section.append(el("p","Stato, responsabile, note e prossima attività restano soltanto in questo browser: non sono visibili agli altri volontari.","workflow-disclaimer"));
+ const form=el("form",undefined,"workflow-form");
+ function field(label,control){
+  const wrap=el("label",undefined,"workflow-field");
+  wrap.append(el("span",label),control);
+  form.append(wrap);
+  return control;
+ }
+ const stage=el("select");stage.name="phase";
+ for(const phase of WORKFLOW_PHASES){const option=el("option",phase);option.value=phase;stage.append(option);}
+ stage.value=record.phase;field("Stato di lavorazione",stage);
+ const owner=el("input");owner.type="text";owner.maxLength=120;owner.value=record.owner;
+ owner.placeholder="Responsabile (facoltativo)";field("Responsabile",owner);
+ const step=el("input");step.type="text";step.maxLength=300;step.value=record.next_step;
+ step.placeholder="Prossima attività (facoltativa)";field("Prossima attività",step);
+ const due=el("input");due.type="date";due.value=record.due;field("Scadenza interna",due);
+ const notes=el("textarea");notes.maxLength=3000;notes.rows=4;notes.value=record.notes;
+ notes.placeholder="Appunti riservati su questo dispositivo";field("Note operative",notes);
+ const save=el("button","Salva valutazione personale","workflow-save");save.type="submit";
+ const feedback=el("span",undefined,"workflow-feedback");feedback.setAttribute("role","status");
+ form.append(save,feedback);
+ form.addEventListener("submit",event=>{
+  event.preventDefault();
+  const persistent=saveWorkflow(o,{phase:stage.value,owner:owner.value,next_step:step.value,due:due.value,notes:notes.value});
+  feedback.textContent=persistent?"Salvato su questo browser.":"Salvataggio non persistente: spazio del browser non disponibile.";
+ });
+ section.append(form);
+ return section;
 }
 function followButton(o){
  const button=el("button",isFollowed(o)?"✓ Da seguire":"Segui opportunità","follow-button"+(isFollowed(o)?" selected":""));
@@ -124,7 +200,7 @@ function opportunitySummary(o){
  if(o.opportunity_type==="call progettuale da verificare")return "Invito a presentare progetti. Consulta la fonte per approfondire obiettivi, finanziamento e destinatari.";
  return "Avviso pubblicato dall’ente promotore. Consulta la fonte originale per conoscere il contenuto.";
 }
-function statusLabel(s){return {aperto:"APERTA","in arrivo":"IN ARRIVO","non verificato":"STATO NON CONFERMATO",chiuso:"SCADUTA","altro contenuto":"ALTRO CONTENUTO"}[s];}
+function statusLabel(s){return {aperto:"APERTA","in arrivo":"IN ARRIVO","non verificato":"POTENZIALE · APERTURA NON CONFERMATA",chiuso:"SCADUTA","altro contenuto":"ALTRO CONTENUTO"}[s];}
 function makeCalendar(o){
  const date=o.deadline;const calendar=el("div",undefined,"calendar"+(!validDate(date)?" unknown-date":""));
  calendar.setAttribute("role","img");
@@ -175,6 +251,8 @@ function evidenceSection(o){
  section.append(intro);
  const dl=el("dl",undefined,"review-facts");
  dialogField(dl,"Adeguatezza tematica",score(o)+"/100");
+ dialogField(dl,"Valutazione editoriale",assessmentLabel(o));
+ dialogField(dl,"Motivo della valutazione",o.assessment_reason||"Classificazione tematica basata sul punteggio e sulle fonti disponibili");
  dialogField(dl,"Ammissibilità",review.eligibility);
  dialogField(dl,"Affidabilità della valutazione",review.confidence||"Non documentata");
  dialogField(dl,"Elementi utilizzati",o.score_explanation_basis||"Solo titolo (valutazione preliminare)");
@@ -190,7 +268,7 @@ function evidenceSection(o){
   section.append(list);
  }
  if(review.missing.length){
-  section.append(el("h4","Informazioni da approfondire"));
+  section.append(el("h4","Informazioni mancanti o da verificare"));
   const list=el("ul");
   for(const missing of review.missing)list.append(el("li",missing));
   section.append(list);
@@ -226,6 +304,8 @@ function evaluationData(o,issued=new Date()){
   amountKind:String(o.amount_kind||"Da verificare"),
   type:String(o.application_type||o.opportunity_type||"Non indicata"),
   fit:score(o)+"/100",
+  editorialAssessment:assessmentLabel(o),
+  editorialReason:String(o.assessment_reason||"Classificazione tematica preliminare; apertura e ammissibilità richiedono evidenze."),
   confidence:review.confidence||"Non documentata",
   basis:String(o.score_explanation_basis||"Titolo e informazioni preliminari"),
   reasoning:review.explanation||"Motivazione non disponibile",
@@ -267,6 +347,7 @@ function prepareEvaluationSheet(o){
   ["Scadenza",d.deadline],["Apertura candidature",d.opening],
   ["Contributo / dotazione",d.amount],["Natura dell'importo",d.amountKind],
   ["Tipologia",d.type],["Adeguatezza tematica",d.fit],
+  ["Valutazione editoriale",d.editorialAssessment],
   ["Ammissibilità",d.eligibility],["Affidabilità analisi",d.confidence]
  ])addReportFact(facts,label,value);
  sheet.append(facts);
@@ -274,7 +355,7 @@ function prepareEvaluationSheet(o){
  summary.append(el("h2","Sintesi dell'opportunità"),el("p",d.summary));
  sheet.append(summary);
  const assessment=el("section",undefined,"print-section");
- assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.reasoning),
+ assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.editorialReason),el("p",d.reasoning),
   el("p","Elementi utilizzati: "+d.basis,"print-muted"));
  sheet.append(assessment);
  const beneficiaries=el("section",undefined,"print-section");
@@ -389,6 +470,7 @@ function renderOpportunity(o){
  line.append(el("span",statusLabel(state(o)),"chip status "+(state(o)==="aperto"?"open":state(o)==="chiuso"?"closed":state(o)==="in arrivo"?"upcoming":"unknown")));
  const change=changeBadge(o);
  if(change)line.append(el("span",change.label,"chip change "+change.kind));
+ line.append(el("span",assessmentLabel(o),"chip assessment"));
  line.append(el("span",o.issuer||"Ente non indicato"));
  content.append(line);
  content.append(el("p",opportunitySummary(o),"dialog-summary"));
@@ -402,6 +484,7 @@ function renderOpportunity(o){
  dialogField(grid,"Finestra",o.window_label||"");
  content.append(grid);
  content.append(evidenceSection(o));
+ content.append(workflowForm(o));
  if(o.rolling_guidance){
   const rolling=el("section",undefined,"dialog-section rolling-guidance");
   rolling.append(el("h3","Possibile opportunità a sportello"));
@@ -471,6 +554,11 @@ function changeBadge(o,now=new Date()){
  }
  return null;
 }
+function assessmentLabel(o){
+ if(typeof o.assessment_label==="string"&&o.assessment_label.trim())return o.assessment_label;
+ if(!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return "INFORMATIVA";
+ return score(o)>=70?"ALTA AFFINITÀ":score(o)>=45?"MEDIA AFFINITÀ":"BASSA AFFINITÀ";
+}
 function makeCard(o){
  const article=el("article",undefined,"item");
  const left=el("div",undefined,"item-main"),right=el("aside",undefined,"item-side");
@@ -478,6 +566,8 @@ function makeCard(o){
  tags.append(el("span",statusLabel(st),"chip status "+(st==="aperto"?"open":st==="chiuso"?"closed":st==="in arrivo"?"upcoming":"unknown")));
  const change=changeBadge(o);
  if(change)tags.append(el("span",change.label,"chip change "+change.kind));
+ tags.append(el("span",assessmentLabel(o),"chip assessment"));
+ if(isFollowed(o))tags.append(el("span",workflowRecord(o).phase,"chip personal-phase"));
  if(o.application_type)tags.append(el("span",o.application_type+" · "+(o.window_label||"Candidatura"),"chip"));
  const title=el("h3",undefined,"item-title");
  const titleLink=el("a",o.title||"Opportunità senza titolo","item-title-link");

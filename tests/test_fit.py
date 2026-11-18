@@ -59,6 +59,35 @@ class FitTests(unittest.TestCase):
         self.assertEqual(len(item["eligibility_checks"]),len(set(item["eligibility_checks"])))
         self.assertEqual(item["relevance"],25)
 
+    def test_all_types_receive_editorial_assessment_without_eligibility_claim(self):
+        cases=[
+          ("finanziamento potenziale",85,"ALTA AFFINITÀ"),
+          ("call progettuale da verificare",55,"MEDIA AFFINITÀ"),
+          ("finanziamento potenziale",20,"BASSA AFFINITÀ"),
+          ("altro avviso",90,"INFORMATIVA"),
+          ("pagina informativa",25,"INFORMATIVA"),
+        ]
+        for kind,points,label in cases:
+            with self.subTest(kind=kind,points=points):
+                row=explain({"title":"Iniziativa culturale", "relevance":points,
+                             "opportunity_type":kind})
+                self.assertEqual(row["assessment_label"],label)
+                self.assertTrue(row["assessment_reason"])
+                self.assertEqual(row["assessment_basis"],"solo titolo")
+                self.assertEqual(row["relevance"],points)
+                self.assertEqual(row["eligibility"],"da verificare")
+                self.assertIn("non è confermato",row["assessment_opening_note"])
+
+    def test_full_existing_catalog_gets_evaluated_without_dropping_rows(self):
+        import json
+        source=Path(__file__).resolve().parents[1]/"data/opportunities.json"
+        catalog=json.loads(source.read_text(encoding="utf-8"))
+        evaluated=[explain(dict(row)) for row in catalog]
+        self.assertEqual(len(evaluated),len(catalog))
+        self.assertEqual({r["id"] for r in evaluated},{r["id"] for r in catalog})
+        self.assertTrue(all(r.get("assessment_label") and r.get("assessment_reason")
+                            and r.get("assessment_basis") for r in evaluated))
+
     def test_irrelevant_title_has_no_invented_project(self):
         item=explain({"title":"Avviso selezione del personale tecnico","relevance":20})
         self.assertEqual(item["project_ideas"],[])
