@@ -16,10 +16,10 @@ BENEFICIARY_LABEL = re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammiss
 # Field-specific headings avoid interpreting unrelated prose as eligibility rules.
 # A heading alone never proves that an applicant or expense is eligible.
 EVIDENCE_HEADINGS = (
-    ("programme_objectives_excerpt", re.compile(r"(?i)^(?:obiettiv[io]|finalit[aà]|purpose|aims?|priorit[aà]|objectives?|scope del (?:programma|bando))\\b")),
+    ("programme_objectives_excerpt", re.compile(r"(?i)^(?:obiettivi|obiettivo|finalit[aà]|purpose|aims?|priorit[aà]|objectives?|scope del (?:programma|bando))\\b")),
     ("funded_activities_excerpt", re.compile(r"(?i)^(?:attivit[aà]|interventi|progetti|spese|costi)\\s+(?:ammissibil|finanziabil|sostenut|eleggibil)|^eligible activities\\b|^supported activities\\b")),
-    ("beneficiaries_excerpt", re.compile(r"(?i)^(?:beneficiar|destinatar|soggetti ammessi|soggetti ammissibili|chi pu[oò] partecipare|eligible applicants|who can apply)\\b")),
-    ("requirements_excerpt", re.compile(r"(?i)^(?:requisit|condizion[ie]|criteri di ammissibilit[aà]|eligibility criteria|mandatory partners|obblighi di partenariato|cofinanziamento)\\b")),
+    ("beneficiaries_excerpt", re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammessi|soggetti ammissibili|chi pu[oò] partecipare|eligible applicants|who can apply)\\b")),
+    ("requirements_excerpt", re.compile(r"(?i)^(?:requisiti|condizioni|criteri di ammissibilit[aà]|eligibility criteria|mandatory partners|obblighi di partenariato|cofinanziamento)\\b")),
 )
 EVIDENCE_INLINE = (
     ("programme_objectives_excerpt", re.compile(r"(?i)^(?:il (?:bando|programma|progetto) (?:ha (?:lo scopo|l.obiettivo)|mira a)|l.obiettivo (?:del bando|è))\\b")),
