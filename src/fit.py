@@ -4,23 +4,33 @@ Never infer eligibility, award probability, funding amounts or mandatory partner
 """
 import re
 
+# Possible Opera+ formats, not keyword matches for the art form alone.
+# A cultural, educational or community call may support a project even when it
+# does not mention music or opera in its title.
 PROJECTS = [
-    (re.compile(r"opera|liric|music|spettacol|teatr|festival|performing art",re.I),
-     "Divulgazione dell'opera lirica con lezioni, incontri o attività dal vivo",
-     "Coerenza con divulgazione musicale e spettacolo"),
-    (re.compile(r"formazion|educazion|scuol|student|giovan|didattic|learning|education",re.I),
-     "Percorso didattico digitale con il coinvolgimento di studenti e scuole",
-     "Coerenza con formazione e coinvolgimento dei giovani"),
+    (re.compile(r"cultur|artistic|heritage|patrimon|muse|bibliotec|creative|audience",re.I),
+     "Incontri e percorsi di divulgazione culturale per ampliare i pubblici",
+     "Coerenza con accesso e promozione della cultura"),
+    (re.compile(r"educazion|formazion|scuol|student|giovan|didattic|learning|education|pcto|pon\\b|pn\\s*scuola|fse\\+?|erasmus",re.I),
+     "Laboratori nelle scuole, percorsi formativi e progetti educativi con partner",
+     "Coerenza con didattica e attività culturali nelle scuole"),
+    (re.compile(r"adult|lifelong|apprendimento permanente|educazione permanente|invecchiamento attivo",re.I),
+     "Percorsi culturali per adulti, educazione permanente e incontri introduttivi",
+     "Coerenza con formazione culturale degli adulti"),
+    (re.compile(r"comunit|territor|partecip|inclus|fragilit|accessib|rigeneraz|cittadin|coesion",re.I),
+     "Eventi di divulgazione, laboratori partecipativi e progetti culturali inclusivi",
+     "Coerenza con partecipazione territoriale e inclusione"),
+    (re.compile(r"music|opera|liric|spettacol|teatr|festival|performing art",re.I),
+     "Workshop, masterclass e preparazione all'opera in collaborazione con teatri",
+     "Coerenza con attività culturali e spettacolo dal vivo"),
     (re.compile(r"digit|video|audiovis|media|podcast|innova",re.I),
-     "Videolezioni e videopodcast per ampliare l'accesso alla cultura",
-     "Coerenza con contenuti digitali e innovazione culturale"),
-    (re.compile(r"accessib|inclus|partecip|comunit|pubblic|audience",re.I),
-     "Attività divulgative per ampliare i pubblici dell'opera",
-     "Coerenza con accesso, partecipazione e inclusione culturale"),
-    (re.compile(r"interreg|cooperazion|transfront|europ|partner|partenariat",re.I),
-     "Collaborazione culturale o formativa con enti partner",
-     "Potenziale per una progettazione in partenariato")
+     "Videolezioni, videopodcast e strumenti di accesso digitale alla cultura",
+     "Coerenza con contenuti culturali digitali"),
+    (re.compile(r"partner|partenariat|cooperazion|transfront|europ|network",re.I),
+     "Progetti culturali con scuole, teatri, enti locali o altri partner",
+     "Possibilità progettuale in partenariato")
 ]
+
 PARTNER_PATTERN = re.compile(r"(?i)(?:obbligatori[oa]?)?\s*(?:partenariat|partner|partnership|consorzio|coordinatore|co-applicant)")
 SPECIFIC = re.compile(r"(?i)\b(associazion|enti del terzo settore|ets|non profit|ong|fondazion)\b")
 
@@ -92,10 +102,18 @@ def explain(row):
     informational = kind not in ("finanziamento potenziale", "call progettuale da verificare", "non classificato")
     # Never use title-derived themes to fabricate evidence in the source text.
     matches = [
-        ("musica, opera e spettacolo", r"opera liric|\bliric|\boperist|\bmusic|spettacol|\bteatr|performing arts"),
-        ("educazione e formazione", r"formazion|didattic|educazion|education|learning|student|scuol"),
-        ("produzione audiovisiva e digitale", r"digit|audiovis|videolezion|videopodcast|podcast|multimedia"),
-        ("accesso alla cultura e partecipazione", r"accessib|inclus|partecip|pubblic|audience|comunit"),
+        ("promozione e accesso alla cultura",
+         r"cultur|heritage|patrimon|artistic|creative|audience|muse|bibliotec"),
+        ("educazione, scuole e giovani",
+         r"formazion|didattic|educazion|education|learning|student|scuol|giovan|youth|pcto|\\bpon\\b|fse\\+"),
+        ("formazione e attività culturali per adulti",
+         r"adult|lifelong|apprendimento permanente|educazione permanente|invecchiamento attivo"),
+        ("comunità, inclusione e partecipazione",
+         r"accessib|inclus|partecip|pubblic|comunit|territor|rigeneraz|coesion"),
+        ("musica, teatro e spettacolo",
+         r"opera liric|\\bliric|\\boperist|\\bmusic|spettacol|\\bteatr|performing arts"),
+        ("produzione audiovisiva e digitale",
+         r"digit|audiovis|videolezion|videopodcast|podcast|multimedia"),
     ]
     supported = [label for label, pattern in matches if re.search(pattern, evidence_text, re.I)]
     unsupported = [label for label, pattern in matches if re.search(pattern, title, re.I)
@@ -127,7 +145,7 @@ def explain(row):
         else:
             label = "BASSA AFFINITÀ"
         reason = ("Dalla documentazione consultata emergono: " + ", ".join(supported) + "."
-                  if supported else "Nei contenuti disponibili non emergono attività direttamente coerenti con Opera+.")
+                  if supported else "Nelle evidenze disponibili non emergono attività finanziabili compatibili con i possibili progetti culturali ed educativi di Opera+.")
     else:
         # Explicitly provisional judgement, not a fake full assessment.
         point = max(0, min(100, int(row.get("relevance") or 0)))
