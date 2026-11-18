@@ -12,7 +12,7 @@ from urllib.parse import urljoin, urlparse, urldefrag
 from bs4 import BeautifulSoup
 import requests
 
-CALL_TERMS = re.compile(r"\\b(?:band[oi]|avvis[oi]|call|contribut[oi]|liberalit[aà]|candidatur[ae]|finanziament[oi])\\b", re.I)
+CALL_TERMS = re.compile(r"\b(?:band[oi]|avvis[oi]|call|contribut[oi]|liberalit[aà]|candidatur[ae]|finanziament[oi])\b", re.I)
 SKIP_PATH = re.compile(r"(?:privacy|cookie|faq|contatti|login|accedi|registrazione|rendicontazione)", re.I)
 
 def _snapshot(html, official_url):
@@ -21,7 +21,7 @@ def _snapshot(html, official_url):
         part.decompose()
     body=soup.select_one("main") or soup.select_one("article") or soup.body or soup
     text=" ".join(body.stripped_strings)
-    text=re.sub(r"\\s+"," ",text).strip()[:80000]
+    text=re.sub(r"\s+"," ",text).strip()[:80000]
     origin=urlparse(official_url).hostname
     links=[]
     for a in body.select("a[href]"):
