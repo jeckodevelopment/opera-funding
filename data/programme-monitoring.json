@@ -1,22 +1,22 @@
 {
   "enelcuore-progetti": {
-    "baseline_created": true,
+    "baseline_created": false,
     "candidate_links": [],
     "changed": false,
     "cursor": 0,
     "digest": "6473a20b9fd4feb223c51f4f7169162cfe4a1cf29486ee0458e3282c2f4e6fbb",
-    "last_checked_at": "2026-11-18T22:42:48+00:00",
-    "last_success_at": "2026-11-18T22:42:48+00:00",
+    "last_checked_at": "2026-11-18T22:46:15+00:00",
+    "last_success_at": "2026-11-18T22:46:15+00:00",
     "status": "ok"
   },
   "isp-beneficenza": {
-    "baseline_created": true,
+    "baseline_created": false,
     "candidate_links": [],
     "changed": false,
     "cursor": 0,
     "digest": "1df7919d4bcfebf203903da8b8f3891fbd2f28254c8b08ddc50021230ea30c70",
-    "last_checked_at": "2026-11-18T22:42:48+00:00",
-    "last_success_at": "2026-11-18T22:42:48+00:00",
+    "last_checked_at": "2026-11-18T22:46:15+00:00",
+    "last_success_at": "2026-11-18T22:46:15+00:00",
     "status": "ok"
   }
 }

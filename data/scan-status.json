@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T22:42:48+00:00",
+  "checked_at": "2026-11-18T22:46:15+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 15,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "torino",
@@ -31,23 +31,23 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "culturatorino",
       "source_name": "Fondazione per la Cultura Torino",
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
-      "discovered": 21,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "discovered": 0,
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "volto",
       "source_name": "Vol.To",
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
-      "discovered": 16,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "discovered": 0,
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "checked_at": "2026-11-18T22:46:15+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:42:48+00:00",
+      "checked_at": "2026-11-18T22:46:15+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-18T22:42:48+00:00",
+      "checked_at": "2026-11-18T22:46:15+00:00",
       "error": "robots.txt: risposta HTTP 503; verifica automatica non disponibile",
       "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
       "institutional_reference_label": "Regione Piemonte — bando ALCOTRA",
@@ -111,7 +111,7 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T22:42:48+00:00"
+      "checked_at": "2026-11-18T22:46:15+00:00"
     }
   ],
   "coverage": {
@@ -272,12 +272,12 @@
     "with_editorial_label": 255,
     "by_review_status": {
       "PARZIALE": 101,
-      "EVIDENZE RACCOLTE": 16,
-      "REVISIONE DOCUMENTALE": 24,
+      "EVIDENZE RACCOLTE": 14,
+      "REVISIONE DOCUMENTALE": 26,
       "FONTE NON SUFFICIENTE": 114
     },
     "completely_verified_applicability": 0,
-    "open_without_individual_review": 12,
+    "open_without_individual_review": 10,
     "new_pending": 0
   },
   "open_eligibility_review": {
@@ -292,11 +292,11 @@
     "specific_requirement_category_counts": {
       "natura_giuridica": 3,
       "partenariato": 1,
-      "territorio": 2
+      "territorio": 3
     },
     "application_path_counts": {
-      "bassa_priorita_progettuale": 18,
-      "integrare_verifica_documentale": 14,
+      "bassa_priorita_progettuale": 19,
+      "integrare_verifica_documentale": 13,
       "verificare_candidatura_diretta": 1,
       "verificare_candidatura_in_partenariato": 1
     },
@@ -982,20 +982,23 @@
         "title": "Supporto a organizzazioni della società civile per promuovere i valori dell’UE Il bando intende selezionare un numero limitato di intermediari negli Stati membri dell’UE, in grado di rafforzare le capacità di un ampio nu",
         "deadline": "2027-02-24",
         "days_remaining": 98,
-        "adequacy": "ALTA",
-        "application_path": "integrare_verifica_documentale",
-        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
-          "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Non considerare la presente call come sovvenzione diretta per corsi Opera+; monitorare eventuali futuri bandi a cascata degli intermediari finanziati.",
+          "Per consorzi: verificare separatamente requisiti di esperienza aggregata nel documento ufficiale e possibilità di partecipazione, senza assumerla."
         ],
         "condition_status": "informazioni_insufficienti",
-        "review_status": "EVIDENZE RACCOLTE",
+        "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Non considerare la presente call come sovvenzione diretta per corsi Opera+; monitorare eventuali futuri bandi a cascata degli intermediari finanziati.",
+          "Per consorzi: verificare separatamente requisiti di esperienza aggregata nel documento ufficiale e possibilità di partecipazione, senza assumerla."
         ],
         "sources": [
+          "https://cervitalia.info/call/bando-union-values-per-le-organizzazioni-della-societa-civile-attive-nella-tutela-e-nella-promozione-dei-valori-dellunione-bando-per-intermediari/",
           "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue"
         ]
       },
@@ -1159,18 +1162,22 @@
         "title": "SCOPRI IL BANDO",
         "deadline": null,
         "days_remaining": null,
-        "adequacy": "ALTA",
+        "adequacy": "MEDIA",
         "application_path": "integrare_verifica_documentale",
         "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare sede e ambito territoriale",
+          "Accertare se Opera+ abbia dipendenti o collaboratori continuativi con documentazione appropriata, oppure possa progettare un tirocinio extracurricolare regolare.",
+          "Non confondere la formazione professionale interna dei destinatari ammissibili con il corso pubblico di divulgazione operistica; valutare esclusivamente un progetto coerente con le tre linee."
         ],
         "condition_status": "informazioni_insufficienti",
-        "review_status": "EVIDENZE RACCOLTE",
-        "pending_conditions": 0,
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 1,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare sede e ambito territoriale",
+          "Accertare se Opera+ abbia dipendenti o collaboratori continuativi con documentazione appropriata, oppure possa progettare un tirocinio extracurricolare regolare.",
+          "Non confondere la formazione professionale interna dei destinatari ammissibili con il corso pubblico di divulgazione operistica; valutare esclusivamente un progetto coerente con le tre linee."
         ],
         "sources": [
           "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/"
@@ -1183,10 +1190,10 @@
       "catalogo": {
         "total": 255,
         "adequacy_counts": {
-          "ALTA": 11,
-          "BASSA": 83,
+          "ALTA": 9,
+          "BASSA": 84,
           "INFORMATIVA": 101,
-          "MEDIA": 60
+          "MEDIA": 61
         },
         "missing_documentation": {
           "finalita": 138,
@@ -1195,15 +1202,14 @@
           "requisiti": 173
         },
         "with_document_issues": 34,
-        "with_unresolved_applicant_checks": 8,
-        "source_not_attributed": 63
+        "with_unresolved_applicant_checks": 9,
+        "source_not_attributed": 62
       },
       "aperte": {
         "total": 34,
         "adequacy_counts": {
-          "ALTA": 2,
-          "BASSA": 18,
-          "MEDIA": 14
+          "BASSA": 19,
+          "MEDIA": 15
         },
         "missing_documentation": {
           "finalita": 8,
@@ -1212,14 +1218,13 @@
           "requisiti": 9
         },
         "with_document_issues": 0,
-        "with_unresolved_applicant_checks": 5,
+        "with_unresolved_applicant_checks": 6,
         "source_not_attributed": 0
       },
       "aperte_alta_media": {
-        "total": 16,
+        "total": 15,
         "adequacy_counts": {
-          "ALTA": 2,
-          "MEDIA": 14
+          "MEDIA": 15
         },
         "missing_documentation": {
           "finalita": 3,
@@ -1228,7 +1233,7 @@
           "requisiti": 4
         },
         "with_document_issues": 0,
-        "with_unresolved_applicant_checks": 4,
+        "with_unresolved_applicant_checks": 5,
         "source_not_attributed": 0
       }
     },
@@ -1245,7 +1250,6 @@
       183,
       143,
       255,
-      149,
       254,
       146,
       148
@@ -1253,7 +1257,7 @@
     "notes": "I conteggi indicano copertura delle evidenze, non ammissibilità certificata."
   },
   "funder_monitoring": {
-    "checked_at": "2026-11-18T22:42:48+00:00",
+    "checked_at": "2026-11-18T22:46:15+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -1544,7 +1548,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:42:48+00:00",
+        "last_checked_at": "2026-11-18T22:46:15+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1556,7 +1560,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:42:48+00:00",
+        "last_checked_at": "2026-11-18T22:46:15+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1569,7 +1573,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:42:48+00:00",
+        "last_checked_at": "2026-11-18T22:46:15+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1582,7 +1586,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:42:48+00:00",
+        "last_checked_at": "2026-11-18T22:46:15+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1595,7 +1599,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:42:48+00:00",
+        "last_checked_at": "2026-11-18T22:46:15+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1608,7 +1612,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:42:48+00:00",
+        "last_checked_at": "2026-11-18T22:46:15+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1621,7 +1625,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:42:48+00:00",
+        "last_checked_at": "2026-11-18T22:46:15+00:00",
         "changed": false,
         "candidate_count": null
       }
