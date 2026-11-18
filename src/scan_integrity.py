@@ -88,6 +88,35 @@ def validate_scan(rows, report, now=None, max_age_minutes=30):
             or any(not isinstance(row.get(key),list) for key in REQUIRED_LISTS)
             or not isinstance(row.get("applicant_comparison_counts"),dict)):
             incomplete.append(identifier)
+    missing_operational=[]
+    for row in rows:
+        if not isinstance(row,dict):
+            continue
+        if (not isinstance(row.get("application_path"),str)
+            or not row.get("application_path")
+            or not isinstance(row.get("application_next_actions"),list)
+            or not row["application_next_actions"]
+            or row.get("application_eligibility_verified") is not False):
+            missing_operational.append(row.get("public_id"))
+    if missing_operational:
+        problems.append("Percorso operativo mancante o non prudenziale su "
+                        +str(len(missing_operational))+" record")
+    reconciliation=report.get("catalog_reconciliation")
+    if not isinstance(reconciliation,dict):
+        problems.append("Riconciliazione catalogo assente")
+    else:
+        sections=reconciliation.get("coverage")
+        if not isinstance(sections,dict):
+            problems.append("Riconciliazione catalogo priva di coperture")
+        else:
+            expected={"catalogo":len(rows),
+                      "aperte":sum(isinstance(r,dict) and r.get("funding_status")=="APERTO" for r in rows),
+                      "aperte_alta_media":sum(isinstance(r,dict) and r.get("funding_status")=="APERTO"
+                                              and r.get("adequacy_label") in ("ALTA","MEDIA") for r in rows)}
+            for name,total in expected.items():
+                part=sections.get(name)
+                if not isinstance(part,dict) or part.get("total")!=total:
+                    problems.append("Riconciliazione "+name+" non coerente")
     if incomplete:
         problems.append("Valutazioni/requisiti mancanti su "+str(len(incomplete))+
                         " record; esempi: "+", ".join(str(x) for x in incomplete[:5]))
