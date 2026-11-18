@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T23:04:01+00:00",
+  "checked_at": "2026-11-18T23:12:06+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 15,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "torino",
@@ -31,7 +31,7 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "culturatorino",
@@ -39,7 +39,7 @@
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "volto",
@@ -47,7 +47,7 @@
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T23:04:01+00:00",
+      "checked_at": "2026-11-18T23:12:06+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-18T23:04:01+00:00",
+      "checked_at": "2026-11-18T23:12:06+00:00",
       "error": "robots.txt: risposta HTTP 503; verifica automatica non disponibile",
       "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
       "institutional_reference_label": "Regione Piemonte — bando ALCOTRA",
@@ -111,7 +111,7 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T23:04:01+00:00"
+      "checked_at": "2026-11-18T23:12:06+00:00"
     }
   ],
   "coverage": {
@@ -130,6 +130,17 @@
       "candidate_missing_deadline": 9
     },
     "by_source": {
+      "programme:cmtorino-giovani": {
+        "total": 8,
+        "open": 0,
+        "unverified": 6,
+        "dated": 2,
+        "dated_with_source": 2,
+        "detail_checked": 8,
+        "candidate_unverified": 6,
+        "informational_unverified": 0,
+        "candidate_missing_deadline": 6
+      },
       "culturatorino": {
         "total": 20,
         "open": 0,
@@ -239,17 +250,6 @@
         "candidate_unverified": 0,
         "informational_unverified": 7,
         "candidate_missing_deadline": 0
-      },
-      "programme:cmtorino-giovani": {
-        "total": 8,
-        "open": 0,
-        "unverified": 6,
-        "dated": 2,
-        "dated_with_source": 2,
-        "detail_checked": 8,
-        "candidate_unverified": 6,
-        "informational_unverified": 0,
-        "candidate_missing_deadline": 6
       },
       "alcotra": {
         "total": 11,
@@ -1176,7 +1176,7 @@
         },
         "with_document_issues": 34,
         "with_unresolved_applicant_checks": 11,
-        "source_not_attributed": 63
+        "source_not_attributed": 64
       },
       "aperte": {
         "total": 34,
@@ -1227,7 +1227,7 @@
     "notes": "I conteggi indicano copertura delle evidenze, non ammissibilità certificata."
   },
   "funder_monitoring": {
-    "checked_at": "2026-11-18T23:04:01+00:00",
+    "checked_at": "2026-11-18T23:12:06+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -1669,6 +1669,60 @@
         "website": "https://comune.biella.it/",
         "verification": "fonte istituzionale individuata; ammissibilità da verificare",
         "accepts_applications": null
+      },
+      {
+        "id": "fedora",
+        "name": "FEDORA – European Circle of Philanthropists of Opera and Ballet",
+        "type": "rete filantropica per opera e balletto",
+        "territory": "Europa",
+        "website": "https://www.fedora-platform.com/prizes-and-grants/apply-for-funding",
+        "verification": "fonte istituzionale individuata; requisiti e prossima edizione da verificare",
+        "accepts_applications": null
+      },
+      {
+        "id": "operaeuropa",
+        "name": "Opera Europa",
+        "type": "rete professionale e partenariati",
+        "territory": "Europa",
+        "website": "https://opera-europa.org/next-generation",
+        "verification": "rete di settore; non presumere erogazione diretta di contributi",
+        "accepts_applications": null
+      },
+      {
+        "id": "efa",
+        "name": "European Festivals Association",
+        "type": "rete e programma di sostegno ai festival",
+        "territory": "Europa",
+        "website": "https://www.effea.eu/",
+        "verification": "programma EFFEA individuato; prossima finestra e partenariati da verificare",
+        "accepts_applications": null
+      },
+      {
+        "id": "ecf",
+        "name": "European Cultural Foundation",
+        "type": "fondazione filantropica",
+        "territory": "Europa",
+        "website": "https://culturalfoundation.eu/communities/open-calls/",
+        "verification": "bandi tematici; ammissibilità da verificare per ciascuna call",
+        "accepts_applications": null
+      },
+      {
+        "id": "eucreative",
+        "name": "Creative Europe – Commissione europea",
+        "type": "programma europeo",
+        "territory": "Europa",
+        "website": "https://culture.ec.europa.eu/funding/calls",
+        "verification": "programma esistente tra le fonti; ammissibilità in base alla specifica call",
+        "accepts_applications": null
+      },
+      {
+        "id": "torino2033",
+        "name": "Torino Capitale Europea della Cultura 2033",
+        "type": "iniziativa di candidatura culturale",
+        "territory": "Torino",
+        "website": "https://torino2033.com/",
+        "verification": "percorso strategico, non finanziatore diretto; monitorare iniziative e manifestazioni di interesse",
+        "accepts_applications": null
       }
     ],
     "programs": [
@@ -1680,7 +1734,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1692,7 +1746,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1705,7 +1759,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1718,7 +1772,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1731,7 +1785,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1744,7 +1798,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1757,7 +1811,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1770,7 +1824,7 @@
         "monitoring": "direct",
         "eligibility_note": "Bandi comunali, eleggibilità legata a sede o attività ad Alba",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -1783,7 +1837,7 @@
         "monitoring": "direct",
         "eligibility_note": "Contributi territoriali: verificare operatività a Bra e finestra annuale",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -1796,7 +1850,7 @@
         "monitoring": "direct",
         "eligibility_note": "Verificare l'edizione e la ricaduta sul territorio",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 11
       },
@@ -1809,7 +1863,7 @@
         "monitoring": "direct",
         "eligibility_note": "Avviso 2026; non presumerne la riapertura negli anni successivi",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -1822,7 +1876,7 @@
         "monitoring": "direct",
         "eligibility_note": "Richiesta spesso condizionata a albo e attività comunali",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -1848,7 +1902,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni bandi sono riservati ai Comuni: non presumere ammissibilità associazioni",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 10
       },
@@ -1874,7 +1928,7 @@
         "monitoring": "direct",
         "eligibility_note": "Finestre e bandi da verificare per edizione",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -1887,7 +1941,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni programmi rivolti a ricercatori o scuole: eleggibilità da verificare",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 2
       },
@@ -2030,7 +2084,7 @@
         "monitoring": "direct",
         "eligibility_note": "Monitorare nuove edizioni; bando eventi secondo semestre 2026 risulta scaduto",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -2044,6 +2098,98 @@
         "eligibility_note": "Pagina di trasparenza: non equivale a domanda di contributo aperta",
         "monitoring_status": "reference_only",
         "last_checked_at": null,
+        "changed": false,
+        "candidate_count": null
+      },
+      {
+        "id": "torino2033-iniziative",
+        "funder_id": "torino2033",
+        "name": "Torino 2033 – iniziative, avvisi e partenariati",
+        "url": "https://torino2033.com/",
+        "submission": "da verificare",
+        "monitoring": "direct",
+        "eligibility_note": "La candidatura non è automaticamente un bando; verificare singoli avvisi e possibilità per associazioni culturali",
+        "monitoring_status": "ok",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
+        "changed": false,
+        "candidate_count": 0
+      },
+      {
+        "id": "culturatorino-2033",
+        "funder_id": "culturatorino",
+        "name": "Fondazione per la Cultura Torino – candidatura Torino 2033",
+        "url": "https://fpct.it/progetti/torino-capitale-europea-della-cultura-2033/",
+        "submission": "da verificare",
+        "monitoring": "direct",
+        "eligibility_note": "Monitorare avvisi e partecipazione, senza presumere contributi economici",
+        "monitoring_status": "ok",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
+        "changed": false,
+        "candidate_count": 1
+      },
+      {
+        "id": "fedora-prizes",
+        "funder_id": "fedora",
+        "name": "FEDORA Prizes & Grants – Education, Digital e opera",
+        "url": "https://www.fedora-platform.com/prizes-and-grants/apply-for-funding",
+        "submission": "edizione da verificare",
+        "monitoring": "direct",
+        "eligibility_note": "Verificare appartenenza alla rete, natura del progetto e regole dell'edizione; non equiparare la pagina premi a call aperta",
+        "monitoring_status": "ok",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
+        "changed": false,
+        "candidate_count": 0
+      },
+      {
+        "id": "operaeuropa-nextgen",
+        "funder_id": "operaeuropa",
+        "name": "Opera Europa – Next Generation e partenariati",
+        "url": "https://opera-europa.org/next-generation",
+        "submission": "da verificare",
+        "monitoring": "direct",
+        "eligibility_note": "Rete e programmi di collaborazione, non contributo automatico a una associazione",
+        "monitoring_status": "ok",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
+        "changed": false,
+        "candidate_count": 0
+      },
+      {
+        "id": "effea-calls",
+        "funder_id": "efa",
+        "name": "EFFEA – European Festivals Fund for Emerging Artists",
+        "url": "https://www.effea.eu/",
+        "submission": "edizione da verificare",
+        "monitoring": "direct",
+        "eligibility_note": "Richiede partenariati fra festival di diversi Paesi; verificare ruolo del capofila e ammissibilità dell'opera",
+        "monitoring_status": "ok",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
+        "changed": false,
+        "candidate_count": 1
+      },
+      {
+        "id": "ecf-open-calls",
+        "funder_id": "ecf",
+        "name": "European Cultural Foundation – Open Calls",
+        "url": "https://culturalfoundation.eu/communities/open-calls/",
+        "submission": "edizione da verificare",
+        "monitoring": "direct",
+        "eligibility_note": "Ogni bando ha criteri e tematiche propri; non presumere apertura o accessibilità",
+        "monitoring_status": "ok",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
+        "changed": false,
+        "candidate_count": 9
+      },
+      {
+        "id": "creative-europe-culture",
+        "funder_id": "eucreative",
+        "name": "Creative Europe – call cultura e cooperazione",
+        "url": "https://culture.ec.europa.eu/funding/calls",
+        "source_id": "eucreative",
+        "submission": "bando",
+        "monitoring": "existing-source",
+        "eligibility_note": "Verificare requisiti di partenariato e inclusione della musica/opera nella specifica call",
+        "monitoring_status": "ok",
+        "last_checked_at": "2026-11-18T23:12:06+00:00",
         "changed": false,
         "candidate_count": null
       }
@@ -2066,7 +2212,7 @@
       "program_id": "alba-cultura",
       "new": 0,
       "existing": 0,
-      "rejected": 7
+      "rejected": 8
     },
     {
       "program_id": "bra-associazioni",
@@ -2083,8 +2229,8 @@
     {
       "program_id": "rivoli-associazioni",
       "new": 0,
-      "existing": 2,
-      "rejected": 5
+      "existing": 1,
+      "rejected": 7
     },
     {
       "program_id": "moncalieri-eventi",
@@ -2094,8 +2240,8 @@
     },
     {
       "program_id": "cmtorino-giovani",
-      "new": 2,
-      "existing": 4,
+      "new": 0,
+      "existing": 6,
       "rejected": 2
     },
     {
@@ -2115,6 +2261,42 @@
       "new": 0,
       "existing": 0,
       "rejected": 2
+    },
+    {
+      "program_id": "torino2033-iniziative",
+      "new": 0,
+      "existing": 0,
+      "rejected": 0
+    },
+    {
+      "program_id": "culturatorino-2033",
+      "new": 0,
+      "existing": 0,
+      "rejected": 2
+    },
+    {
+      "program_id": "fedora-prizes",
+      "new": 0,
+      "existing": 0,
+      "rejected": 0
+    },
+    {
+      "program_id": "operaeuropa-nextgen",
+      "new": 0,
+      "existing": 0,
+      "rejected": 0
+    },
+    {
+      "program_id": "effea-calls",
+      "new": 0,
+      "existing": 0,
+      "rejected": 2
+    },
+    {
+      "program_id": "ecf-open-calls",
+      "new": 0,
+      "existing": 0,
+      "rejected": 8
     }
   ]
 }
