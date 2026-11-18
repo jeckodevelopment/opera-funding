@@ -32,7 +32,7 @@ AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding
 INCLUDE = re.compile(r"bando|bandi|call|contribut|finanziament|avvis|grant|funding|progett|candidatur|partnership|opportunit", re.I)
 IGNORE = re.compile(r"privacy|cookie|login|accesso|newsletter|contatt|instagram|facebook|linkedin|youtube|lavora con|whatsapp", re.I)
 TOPICS = [
-    (re.compile(r"cultur|cultural|patrimon|heritage|arts?|creative|muse|bibliotec",re.I),
+    (re.compile(r"cultur|patrimon|heritage|\\barts?\\b|artistic|creative|muse|bibliotec",re.I),
      35,"cultura e patrimonio"),
     (re.compile(r"formazion|education|educazion|learning|student|scuol|giovan|youth|pcto|\\bpon\\b|fse\\+|erasmus",re.I),
      25,"educazione, scuola e giovani"),
