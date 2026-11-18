@@ -31,6 +31,7 @@ from eligibility_conditions import annotate_conditions
 from eligibility_specific import annotate_specific_requirements
 from applicant_comparison import load_applicant_profile, annotate_applicant_comparison
 from open_review_queue import build_open_review_queue
+from operational_assessment import annotate_operational_assessment
 from funder_registry import load_registry, link_opportunities, public_monitoring
 from programme_monitor import check_programmes, load_programme_state, public_status
 
@@ -308,6 +309,7 @@ def run():
         annotate_specific_requirements(row)
         annotate_applicant_comparison(row, applicant_profile, now[:10])
         apply_adequacy(row)
+        annotate_operational_assessment(row)
     registry_funders=load_registry(ROOT / 'config/funders.json')
     rows=link_opportunities(rows, registry_funders)
     rows=track_changes(rows, existing, now)
