@@ -44,3 +44,22 @@ def assign_public_ids(rows, registry):
     registry["next_id"] = next_id
     registry["version"] = 1
     return rows
+
+def attach_public_aliases(rows, registry):
+    """Preserve old numeric URLs when a syndicated/duplicate URL is retained as
+    an alias of another surviving opportunity.
+
+    The registry is append-only, so these old IDs are never reassigned.
+    Do not merge or infer equivalence here: accept only explicitly maintained
+    alternative_urls from the catalog reconciliation layer.
+    """
+    ids=registry.get("ids") or {}
+    current={row["public_id"] for row in rows}
+    for row in rows:
+        aliases=set(row.get("public_id_aliases") or [])
+        for old_url in row.get("alternative_urls") or []:
+            old_id=ids.get(old_url)
+            if type(old_id) is int and old_id>0 and old_id!=row["public_id"] and old_id not in current:
+                aliases.add(old_id)
+        row["public_id_aliases"]=sorted(aliases)
+    return rows
