@@ -235,6 +235,25 @@ class NotifyTests(unittest.TestCase):
         self.assertLess(body.index("Bando high"),body.index("Bando med"))
         self.assertLess(body.index("Bando med"),body.index("Bando low"))
 
+    def test_one_unavailable_source_does_not_block_new_digest(self):
+        from notify import main
+        import os
+        import sys as system
+        with tempfile.TemporaryDirectory() as tmp:
+            catalog=Path(tmp)/"catalog.json"
+            report=Path(tmp)/"report.json"
+            catalog.write_text(json.dumps([item("new-high",adequacy_label="ALTA")]))
+            report.write_text(json.dumps({"sources":[
+                {"source_id":"working","ok":True},
+                {"source_id":"alcotra","ok":False}]}))
+            with patch.object(system,"argv",["notify.py","--catalog",str(catalog),
+                                            "--report",str(report),"--state",str(self.path)]), \
+                 patch("notify.run") as mocked, \\
+                 patch.dict(os.environ,{"RESEND_API_KEY":"dummy",
+                                        "FUNDING_ALERT_RECIPIENT":"user@example.org"}):
+                main()
+                self.assertEqual(mocked.call_count,1)
+
     def test_failure_with_corrupt_state_is_explicit(self):
         self.path.write_text('{"version": 999, "statuses": {}}')
         with self.assertRaises(RuntimeError):
