@@ -413,7 +413,8 @@ function findOpportunity(key,rows){
  if(/^[1-9]\d*$/.test(key)){
   const numeric=Number(key);
   if(!Number.isSafeInteger(numeric))return null;
-  return rows.find(row=>row.public_id===numeric)||null;
+  return rows.find(row=>row.public_id===numeric)||
+   rows.find(row=>Array.isArray(row.public_id_aliases)&&row.public_id_aliases.includes(numeric))||null;
  }
  // Preserve links shared before numeric identifiers were introduced.
  return rows.find(row=>row.id===key||(Array.isArray(row.alternative_urls)&&row.alternative_urls.includes(key)))||null;
