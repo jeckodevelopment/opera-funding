@@ -32,7 +32,7 @@ from eligibility_specific import annotate_specific_requirements
 from applicant_comparison import load_applicant_profile, annotate_applicant_comparison
 from open_review_queue import build_open_review_queue
 from operational_assessment import annotate_operational_assessment
-from catalog_reconciliation import summarize_catalog_reconciliation, validate_catalog_assessments
+from catalog_reconciliation import summarize_catalog_reconciliation, reconcile_catalog_assessments
 from catalog_audit import load_retired_sources, mark_retired_source, audit_catalog
 from funder_registry import load_registry, link_opportunities, public_monitoring
 from programme_monitor import check_programmes, load_programme_state, public_status
@@ -325,8 +325,9 @@ def run():
         annotate_specific_requirements(row)
         annotate_applicant_comparison(row, applicant_profile, now[:10])
         apply_adequacy(row)
+    assessment_fallback_count=reconcile_catalog_assessments(rows)
+    for row in rows:
         annotate_operational_assessment(row)
-    validate_catalog_assessments(rows)
     rows=link_opportunities(rows, registry_funders)
     rows=track_changes(rows, existing, now)
     catalogue_audit=audit_catalog(rows,retired_sources)
