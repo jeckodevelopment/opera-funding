@@ -15,7 +15,7 @@ from quality import check_link, reconcile_status
 from status import annotate
 from fit import explain
 from catalog_changes import track_changes
-from public_ids import assign_public_ids
+from public_ids import assign_public_ids, attach_public_aliases
 from priority import check_priority
 from verification import pick_for_review, coverage, backlog_candidates, classify_crt_information, classify_informational_page
 from crt_windows import guidance_for_window
@@ -224,6 +224,7 @@ def run():
     ids_path=ROOT / "data/opportunity-ids.json"
     registry=json.loads(ids_path.read_text(encoding="utf-8"))
     rows=assign_public_ids(rows, registry)
+    rows=attach_public_aliases(rows, registry)
     rows=track_changes(rows, existing, now)
 
     output.parent.mkdir(parents=True, exist_ok=True)
