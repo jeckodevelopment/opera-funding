@@ -121,3 +121,21 @@ Il registro è ampliato a **49 finanziatori e 29 programmi/canali** (11 `direct`
 ## Revisione impaginazione tabelle
 
 Le colonne non hanno più una larghezza minima imposta indipendentemente dalla finestra. Su desktop usano proporzioni specifiche per ciascuna tabella, consentendo il ritorno a capo di denominazioni lunghe. Fino a 640 px le intestazioni rimangono disponibili alla struttura semantica della tabella e ogni record dispone i cinque campi in righe compatte con etichette leggibili. Controllare anche nomi lunghi, link, indicatori di stato e date su schermi stretti.
+
+
+## Monitoraggio tematico: Torino 2033 e opera lirica europea (novembre 2026)
+
+Sono censiti i canali istituzionali Torino 2033, Fondazione per la Cultura Torino (pagina dedicata), FEDORA, Opera Europa, European Festivals Association/EFFEA, European Cultural Foundation e Creative Europe. L'elenco è configurato in `config/funders.json`; Comune di Torino, Fondazione per la Cultura e Creative Europe preesistenti sono riutilizzati, evitando doppie fonti di scoperta.
+
+- `monitoring=direct`: controllo periodico condizionato da robots.txt, HTTPS e riuscita del fetch, con baseline silenziosa. Una modifica pagina **non** corrisponde a un bando aperto. Il crawler considera solo collegamenti candidati sullo stesso host; collegamenti verso portali esterni richiedono un'integrazione distinta.
+- `monitoring=existing-source`: Creative Europe riutilizza la fonte `eucreative`; le nuove call passano attraverso valutazione e notifiche già implementate.
+- Torino 2033 e Opera Europa sono soprattutto **programmi e canali di partenariato**: non attribuire loro erogazioni dirette senza un avviso ufficiale. FEDORA, EFFEA ed ECF richiedono verifica per ogni edizione, incluso il ruolo associativo e gli eventuali partner.
+- Gli interessi tematici da usare nelle verifiche sono opera lirica, educazione musicale, giovani e scuole, diffusione culturale, accessibilità, digitale e cooperazione europea. Non attribuire un punteggio di adeguatezza a una semplice pagina di programma: valutare le singole opportunità con le regole operative esistenti.
+- Non generare opportunità aperte dalle pagine istituzionali né comunicazioni email per semplici variazioni. Solo nuove opportunità effettive, valutate e riconciliate, passano nelle notifiche periodiche esistenti.
+
+### Collaudi specifici
+1. Verificare nella pagina Finanziatori le nuove organizzazioni e nella pagina Monitoraggio i sette programmi senza duplicati per Comune/Fondazione/Creative Europe.
+2. Eseguire la suite `tests/test_funder_registry.py` e `tests/test_programme_monitor.py` e verificare che lo schema e gli ID restino validi.
+3. Dopo il workflow di scansione verificare gli stati effettivi delle nuove pagine: `ok`, `error` o baseline; non presentare come monitorato un fetch fallito.
+4. Controllare che la prima scansione non crei opportunità fittizie, che i link generici siano scartati e che i risultati siano deduplicati.
+5. Controllare che le notifiche non partano per una sola variazione del contenuto e che opportunità vere seguano la valutazione di adeguatezza corrente.
