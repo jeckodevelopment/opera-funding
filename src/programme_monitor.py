@@ -50,7 +50,8 @@ def check_programmes(registry, previous, session, eligible_to_fetch, now):
         if not eligible_to_fetch(url,session):
             results[p["id"]]={"status":"error","error":"robots.txt: verifica automatica non consentita",
                               "last_checked_at":now,"last_success_at":old.get("last_success_at"),
-                              "digest":old.get("digest"),"candidate_links":old.get("candidate_links",[])}
+                              "digest":old.get("digest"),"candidate_links":old.get("candidate_links",[]),
+                              "cursor":old.get("cursor",0)}
             continue
         response=None
         try:
@@ -72,6 +73,7 @@ def check_programmes(registry, previous, session, eligible_to_fetch, now):
             had_baseline=bool(old.get("digest"))
             results[p["id"]]={"status":"ok","last_checked_at":now,"last_success_at":now,
                               "digest":snap["digest"],"candidate_links":snap["candidate_links"],
+                              "cursor":old.get("cursor",0),
                               "changed":bool(had_baseline and old["digest"]!=snap["digest"]),
                               "baseline_created":not had_baseline}
         except (requests.RequestException,ValueError,UnicodeError) as exc:
