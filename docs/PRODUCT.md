@@ -206,3 +206,9 @@ La vista iniziale e il reset dei filtri selezionano sempre **Aperte**. La vista 
 - A parità di campo, prevale il primo documento nella lista: l'estrattore non stabilisce automaticamente quale versione del bando sia prevalente. Un eventuale conflitto richiede verifica; non si deduce l'ammissibilità legale da parole chiave.
 - Si mantengono i limiti preesistenti di documenti, pagine, byte, timeout, controllo robots e origine. Non viene salvata una copia dei PDF; i PDF scannerizzati senza testo ricercabile rimangono non leggibili senza un processo specifico.
 - La mappa di provenienza viene mantenuta nei successivi cicli di scansione, anche quando una scheda non è riletta. La dashboard non cambia graficamente.
+
+## Evidenze HTML pertinenti al requisito (18 novembre 2026)
+- Il parser delle schede HTML (schema dettaglio v9) non considera più una semplice occorrenza di parole come "requisiti", "partnership" o "attività" una prova sufficiente di candidabilità. Acquisisce invece i passaggi da sezioni esplicitamente etichettate (obiettivi, attività finanziabili, beneficiari, requisiti), oppure da affermazioni puntuali riguardanti l'accesso e le condizioni del bando.
+- Una sezione o una parola chiave senza contenuto sostanziale non valorizza i quattro campi documentali; il campo resta mancante. La revisione automatica v9 riprende progressivamente le schede acquisite con versioni precedenti.
+- Gli estratti riportano contenuti della fonte, non certificazioni di ammissibilità; la valutazione resta prudente e separata dalle date di apertura.
+- Limite dell'incremento: i PDF rimangono soggetti al parser documentale dedicato; gli estratti storici acquisiti in passato vanno riconciliati nelle scansioni successive, anche quando le pagine non sono più accessibili. Il criterio selettivo potrebbe recuperare meno campi, ma con minore rischio di falsi positivi.
