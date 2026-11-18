@@ -177,16 +177,30 @@ function adequacyLevel(o){
  return level;
 }
 function adequacyLabel(o){return ["INFORMATIVA","BASSA","MEDIA","ALTA"][adequacyLevel(o)];}
-function affinityRank(o){return adequacyLevel(o);}
+function adequacyPercent(o){
+ const level=adequacyLevel(o);
+ if(level===0)return 0;
+ const value=Number(o.adequacy_score ?? o.relevance);
+ const fraction=Number.isFinite(value)?Math.max(0,Math.min(100,value))/100:0.5;
+ const bands={1:[1,39],2:[40,74],3:[75,100]};
+ const [minimum,maximum]=bands[level];
+ return Math.round(minimum+(maximum-minimum)*fraction);
+}
+function affinityRank(o){return adequacyPercent(o);}
 function makeAdequacy(o){
- const level=adequacyLevel(o),grade=adequacyLabel(o);
- const surface=el("div",undefined,"adequacy adequacy--"+level);
+ const percent=adequacyPercent(o);
+ const surface=el("div",undefined,"adequacy");
  const heading=el("div",undefined,"adequacy-heading");
- heading.append(el("span","Adeguatezza per Opera+","adequacy-label"),el("strong",grade,"adequacy-value"));
+ heading.append(el("span","Adeguatezza per Opera+","adequacy-label"),el("strong",percent+"%","adequacy-value"));
  const track=el("div",undefined,"adequacy-track");
- track.setAttribute("role","img");
- track.setAttribute("aria-label","Adeguatezza per Opera+: "+grade);
- for(let i=1;i<=3;i++)track.append(el("span",undefined,"adequacy-step"+(i<=level?" active":"")));
+ track.setAttribute("role","progressbar");
+ track.setAttribute("aria-label","Adeguatezza per Opera+");
+ track.setAttribute("aria-valuemin","0");
+ track.setAttribute("aria-valuemax","100");
+ track.setAttribute("aria-valuenow",String(percent));
+ const fill=el("div",undefined,"adequacy-fill");
+ fill.style.width=percent+"%";
+ track.append(fill);
  surface.append(heading,track);
  return surface;
 }
@@ -258,11 +272,11 @@ function reviewSignals(o){
 }
 function evidenceSection(o){
  const review=reviewSignals(o),section=el("section",undefined,"dialog-section evidence-review");
- section.append(el("h3","Valutazione preliminare"));
- const intro=el("p","Il punteggio indica la coerenza tematica, non l'ammissibilità né le probabilità di ottenere il contributo.");
+ section.append(el("h3","Motivazioni dell’adeguatezza"));
+ const intro=el("p","La percentuale sintetizza l’adeguatezza preliminare per Opera+, tenendo conto di vincoli ed evidenze. Non garantisce l’ammissibilità né l’ottenimento del contributo.");
  section.append(intro);
  const dl=el("dl",undefined,"review-facts");
- dialogField(dl,"Adeguatezza per Opera+",adequacyLabel(o));
+ dialogField(dl,"Adeguatezza per Opera+",adequacyPercent(o)+"%");
  dialogField(dl,"Vincoli dell’adeguatezza",o.adequacy_reason||o.assessment_reason);
  dialogField(dl,"Copertura documentale",o.assessment_review_status||"Non ancora determinata");
  dialogField(dl,"Metodo di valutazione",o.assessment_method||"Valutazione preliminare");
@@ -333,8 +347,8 @@ function evaluationData(o,issued=new Date()){
   amount:String(o.amount||"Non indicato"),
   amountKind:String(o.amount_kind||"Da verificare"),
   type:String(o.application_type||o.opportunity_type||"Non indicata"),
-  fit:adequacyLabel(o),
-  editorialAssessment:adequacyLabel(o),
+  fit:adequacyPercent(o)+"%",
+  editorialAssessment:adequacyPercent(o)+"%",
   editorialReason:String(o.assessment_reason||"Classificazione tematica preliminare; apertura e ammissibilità richiedono evidenze."),
   confidence:o.assessment_confidence||review.confidence||"Non documentata",
   basis:String(o.assessment_basis||o.score_explanation_basis||"Titolo e informazioni preliminari"),
