@@ -2,7 +2,7 @@ const $ = id => document.getElementById(id);
 const PAGE_SIZE = 12;
 const DATA_ORIGIN = "https://raw.githubusercontent.com/jeckodevelopment/opera-funding/main/data/";
 const FALLBACK_ORIGIN = "data/";
-let all=[], visibleCount=PAGE_SIZE,loadSequence=0;
+let all=[], visibleCount=PAGE_SIZE,loadSequence=0,currentFundingStatus=null;
 const WATCHLIST_KEY="opera-funding-watchlist-v1";
 function readWatchlist(){
  try{
@@ -715,6 +715,56 @@ function syncControls(){
  }
 }
 function resetPagination(){visibleCount=PAGE_SIZE;render();}
+function renderFundingRegistry(status){
+ const registry=status&&status.funder_monitoring;
+ const funderList=$("funder-list"),programmeList=$("programme-list");
+ if(!registry||!Array.isArray(registry.funders)||!Array.isArray(registry.programs)){
+  $("funder-count").textContent="Non disponibile";
+  $("programme-count").textContent="Non disponibile";
+  const message="Anagrafica non ancora presente nei dati pubblicati; sarà disponibile dopo la prossima scansione.";
+  funderList.replaceChildren(el("p",message,"registry-empty"));
+  programmeList.replaceChildren(el("p",message,"registry-empty"));
+  return;
+ }
+ const funders=registry.funders,programs=registry.programs;
+ const byFunder=new Map(),lookup=new Map(funders.map(f=>[f.id,f]));
+ for(const p of programs){if(!byFunder.has(p.funder_id))byFunder.set(p.funder_id,[]);byFunder.get(p.funder_id).push(p);}
+ $("funder-count").textContent=funders.length+" censiti";
+ $("programme-count").textContent=programs.length+" programmi";
+ const term=$("funder-search").value.trim().toLocaleLowerCase("it");
+ funderList.replaceChildren();
+ let shown=0;
+ for(const f of [...funders].sort((a,b)=>String(a.name).localeCompare(String(b.name),"it"))){
+  if(![f.name,f.type,f.territory].some(s=>String(s||"").toLocaleLowerCase("it").includes(term)))continue;
+  shown++;
+  const item=el("article",undefined,"registry-card");
+  item.append(el("h3",f.name||"Finanziatore"),el("p",[f.type,f.territory].filter(Boolean).join(" · "),"registry-metadata"));
+  if(f.website)addLink(item,"Sito o pagina contributi",f.website);
+  const related=byFunder.get(f.id)||[];
+  item.append(el("p",related.length+" programmi registrati","registry-metadata"));
+  for(const p of related){
+   const line=el("p",p.name,"registry-programme");
+   line.append(document.createTextNode(" "),el("span",({ok:"Monitorato",error:"Errore scansione",not_configured:"Non monitorato"}[p.monitoring_status]||"Non verificato"),"registry-status "+(p.monitoring_status||"")));
+   item.append(line);
+  }
+  funderList.append(item);
+ }
+ if(!shown)funderList.append(el("p","Nessun finanziatore corrispondente.","registry-empty"));
+ programmeList.replaceChildren();
+ for(const p of [...programs].sort((a,b)=>String(a.name).localeCompare(String(b.name),"it"))){
+  const item=el("article",undefined,"registry-card"),f=lookup.get(p.funder_id);
+  item.append(el("h3",p.name),el("p",f?f.name:"Finanziatore non trovato"));
+  item.append(el("span",({ok:"Fonte controllata",error:"Errore ultima scansione",not_configured:"Controllo non configurato"}[p.monitoring_status]||"Stato non disponibile"),"registry-status "+(p.monitoring_status||"")));
+  if(p.last_checked_at){
+   const d=new Date(p.last_checked_at);
+   item.append(el("p","Ultima verifica: "+(Number.isNaN(d.getTime())?"non disponibile":d.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"})),"registry-metadata"));
+  }
+  if(p.url)addLink(item,"Pagina del programma",p.url);
+  programmeList.append(item);
+ }
+ if(!programs.length)programmeList.append(el("p","Nessun programma censito.","registry-empty"));
+}
+
 async function init(){
  const sequence=++loadSequence;
  const button=$("refresh");button.disabled=true;button.textContent="Aggiornamento…";
@@ -735,7 +785,7 @@ async function init(){
    const option=el("option",name);option.value=name;selector.append(option);
   }
   selector.value=[...selector.options].some(x=>x.value===oldValue)?oldValue:"";
-  renderSourceHealth(status,all);updateStateCounts();syncControls();render();renderRoute();
+  renderSourceHealth(status,all);currentFundingStatus=status;renderFundingRegistry(status);updateStateCounts();syncControls();render();renderRoute();
  }catch(e){
   if(sequence!==loadSequence)return;
   $("scan").textContent="Dati non disponibili";$("items").replaceChildren(el("p","Impossibile caricare le opportunità. Riprova con Aggiorna.","empty"));
@@ -752,6 +802,7 @@ $("reset").addEventListener("click",()=>{
 });
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
 $("refresh").addEventListener("click",init);
+$("funder-search").addEventListener("input",()=>{if(currentFundingStatus)renderFundingRegistry(currentFundingStatus);});
 $("dialog-close").addEventListener("click",()=>{navigateOpportunity(null);window.scrollTo(0,0);});
 window.addEventListener("popstate",renderRoute);
 window.addEventListener("afterprint",()=>{$("print-sheet").hidden=true;});
