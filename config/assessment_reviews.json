@@ -62,5 +62,88 @@
       "La dotazione complessiva di € 5 milioni non coincide con l'importo assegnabile al singolo progetto."
     ],
     "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 177,
+    "source_id": "volto",
+    "url": "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo/",
+    "evidence_url": "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "Fondo rivolto a enti non profit registrati, con sostegno a progetti a impatto sociale. Opera+ potrebbe candidare un progetto di accessibilità e inclusione culturale con benefici sociali espliciti; un corso d'opera privo di obiettivi sociali documentati è meno coerente.",
+    "programme_objectives_excerpt": "Erogazioni liberali per iniziative non profit, valutate in base al potenziale impatto sociale.",
+    "funded_activities_excerpt": "Liberalità territoriali fino a 5.000 euro e liberalità centrali superiori a 5.000 euro per progetti coerenti con regolamento e linee guida.",
+    "beneficiaries_excerpt": "Enti senza fine di lucro legalmente costituiti, iscritti in un registro pubblico e con sede in Italia.",
+    "requirements_excerpt": "Procedure contabili adeguate; verificare Regolamento e Linee guida; la valutazione considera impatto sociale. Le domande sono valutate durante l'anno e le disponibilità possono esaurirsi.",
+    "assessment_gaps": [
+      "Verificare se il progetto Opera+ soddisfa le priorità sociali della versione corrente delle Linee guida.",
+      "Verificare condizioni contabili dell'associazione e disponibilità residua dei fondi."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 175,
+    "source_id": "volto",
+    "url": "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord/",
+    "evidence_url": "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord/",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "Finanzia interventi educativi e di cittadinanza di ETS radicati a Torino nord o Settimo Torinese. Opera+ avrebbe coerenza solo proponendo un progetto di formazione e inclusione rivolto alle comunità di queste aree, non la semplice pubblicazione online di un corso.",
+    "programme_objectives_excerpt": "Sviluppo delle comunità di Aurora, Porta Palazzo, Barriera di Milano e Settimo Torinese attraverso progetti educativi, occupazionali, sociali e ambientali.",
+    "funded_activities_excerpt": "Percorsi educativi e formativi e iniziative di partecipazione della comunità; sostegno massimo indicato di 40.000 euro per progetto.",
+    "beneficiaries_excerpt": "Enti del Terzo settore attivi nei territori interessati dal bando.",
+    "requirements_excerpt": "Intervento radicato nelle aree territoriali definite; presentazione candidatura entro il 20 novembre 2026.",
+    "assessment_gaps": [
+      "Verificare l'effettiva attività territoriale dell'associazione nelle aree ammesse.",
+      "Confermare i requisiti ETS e la compatibilità dei costi progettuali nel bando integrale."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 182,
+    "source_id": "sanpaolo",
+    "url": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "Il bando sostiene l'adozione organizzativa responsabile dell'intelligenza artificiale negli enti non profit. Può interessare Opera+ se sviluppa un progetto specifico di AI per accessibilità, gestione contenuti o servizi formativi; non è un finanziamento generale per produrre il corso Rigoletto.",
+    "programme_objectives_excerpt": "Sviluppo di strategie di adozione etica e sicura dell'AI negli enti dell'economia sociale e rafforzamento delle competenze interne.",
+    "funded_activities_excerpt": "Formazione, accompagnamento e sperimentazione di soluzioni AI per migliorare processi, servizi e impatto degli enti.",
+    "beneficiaries_excerpt": "Enti privati non profit attivi anche in ambito culturale con almeno una sede operativa in Piemonte, Liguria o Valle d'Aosta.",
+    "requirements_excerpt": "Rispetto dei requisiti della Fondazione e proposta orientata alla trasformazione organizzativa; scadenza indicata 18 dicembre 2026.",
+    "assessment_gaps": [
+      "Verificare sede operativa e requisiti formali del richiedente.",
+      "Definire uno specifico progetto di AI, distinguendolo dal normale sviluppo e-learning."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 8,
+    "source_id": "torino",
+    "url": "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "La Circoscrizione 7 sostiene anche eventi culturali e iniziative rivolte a giovani e formazione. Opera+ potrebbe presentare incontri divulgativi o laboratori musicali rivolti al territorio, scegliendo il corretto avviso settoriale; bisogna verificare l'allegato pertinente e i vincoli territoriali.",
+    "programme_objectives_excerpt": "Promozione di progetti per la cittadinanza da realizzare nel 2027 nei diversi ambiti circoscrizionali.",
+    "funded_activities_excerpt": "Tra le aree previste figurano eventi culturali, giovani, formazione e occupabilità; esistono avvisi PDF specifici.",
+    "beneficiaries_excerpt": "I beneficiari variano secondo l'avviso settoriale: da verificare nel PDF pertinente.",
+    "requirements_excerpt": "Progetto nell'ambito della Circoscrizione 7 e conforme all'avviso settoriale, scadenza generale 26 novembre 2026.",
+    "assessment_gaps": [
+      "Leggere l'avviso PDF 'Eventi culturali 2027' e quello su giovani/formazione per individuare soggetti ammessi.",
+      "Confermare soglia di contributo e obblighi di rendicontazione."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 143,
+    "source_id": "volto",
+    "url": "https://infobandi.csvnet.it/bando-fabbrica-spazi-civici-per-la-gioventu/?utm_source=rss&utm_medium=rss&utm_campaign=bando-fabbrica-spazi-civici-per-la-gioventu",
+    "evidence_url": "https://www.sportesalute.eu/fabbrica.html",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "Sono ammissibili laboratori artistici e percorsi formativi per giovani, ma il bando finanzia la gestione continuativa di uno spazio civico fisico per 18–24 mesi e richiede un partenariato minimo con presenza sportiva. Opera+ potrebbe essere un partner culturale, non candidare semplicemente le sue videolezioni.",
+    "programme_objectives_excerpt": "Creazione e rafforzamento di spazi civici per giovani fra 14 e 35 anni, con attività gratuite di inclusione, partecipazione e formazione.",
+    "funded_activities_excerpt": "Laboratori espressivi e artistici, percorsi formativi e creativi integrati in uno spazio civico stabile, con continuità annuale.",
+    "beneficiaries_excerpt": "Capofila ASD/SSD iscritta al RASD oppure ETS iscritto al RUNTS; partenariato con almeno tre soggetti.",
+    "requirements_excerpt": "Partenariato di almeno tre soggetti, comprendente un ASD/SSD e un ETS; sede fisica stabile; attività gratuite; durata 18–24 mesi; finanziamento fra 150.000 e 250.000 euro.",
+    "assessment_gaps": [
+      "Verificare iscrizione RUNTS e possibilità di aderire a un partenariato con soggetto sportivo.",
+      "Verificare la disponibilità di uno spazio civico e la sostenibilità delle attività continuative."
+    ],
+    "reviewed_at": "2026-11-18"
   }
 ]
