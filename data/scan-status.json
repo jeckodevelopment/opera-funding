@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T20:19:28+00:00",
+  "checked_at": "2026-11-18T20:25:45+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 3,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 15,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "torino",
@@ -31,23 +31,23 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "culturatorino",
       "source_name": "Fondazione per la Cultura Torino",
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
-      "discovered": 21,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "discovered": 0,
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "volto",
       "source_name": "Vol.To",
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
-      "discovered": 16,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "discovered": 0,
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "checked_at": "2026-11-18T20:25:45+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T20:19:28+00:00",
+      "checked_at": "2026-11-18T20:25:45+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-18T20:19:28+00:00",
+      "checked_at": "2026-11-18T20:25:45+00:00",
       "error": "robots.txt: risposta HTTP 503; verifica automatica non disponibile",
       "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
       "institutional_reference_label": "Regione Piemonte — bando ALCOTRA",
@@ -111,23 +111,23 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T20:19:28+00:00"
+      "checked_at": "2026-11-18T20:25:45+00:00"
     }
   ],
   "coverage": {
     "totals": {
       "all": 255,
-      "open": 32,
+      "open": 34,
       "closed": 138,
       "upcoming": 2,
-      "unverified": 83,
+      "unverified": 81,
       "dated": 171,
       "dated_with_source": 171,
       "detail_checked": 184,
       "reachable": 254,
-      "candidate_unverified": 3,
-      "informational_unverified": 80,
-      "candidate_missing_deadline": 3
+      "candidate_unverified": 0,
+      "informational_unverified": 81,
+      "candidate_missing_deadline": 2
     },
     "by_source": {
       "culturatorino": {
@@ -159,18 +159,18 @@
         "dated": 14,
         "dated_with_source": 14,
         "detail_checked": 19,
-        "candidate_unverified": 1,
-        "informational_unverified": 3,
-        "candidate_missing_deadline": 2
+        "candidate_unverified": 0,
+        "informational_unverified": 4,
+        "candidate_missing_deadline": 1
       },
       "eufunding": {
         "total": 85,
-        "open": 5,
-        "unverified": 1,
+        "open": 6,
+        "unverified": 0,
         "dated": 85,
         "dated_with_source": 85,
         "detail_checked": 18,
-        "candidate_unverified": 1,
+        "candidate_unverified": 0,
         "informational_unverified": 0,
         "candidate_missing_deadline": 0
       },
@@ -220,12 +220,12 @@
       },
       "volto": {
         "total": 15,
-        "open": 10,
-        "unverified": 3,
+        "open": 11,
+        "unverified": 2,
         "dated": 13,
         "dated_with_source": 13,
         "detail_checked": 14,
-        "candidate_unverified": 1,
+        "candidate_unverified": 0,
         "informational_unverified": 2,
         "candidate_missing_deadline": 0
       },
@@ -276,7 +276,7 @@
       "FONTE NON SUFFICIENTE": 115
     },
     "completely_verified_applicability": 0,
-    "open_without_individual_review": 10,
+    "open_without_individual_review": 12,
     "new_pending": 0
   }
 }
