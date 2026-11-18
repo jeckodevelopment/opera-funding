@@ -109,9 +109,10 @@ def extract(html, page_url):
             break
     facts=official_evidence(html,page_url)
     assessment_evidence=extract_assessment_evidence(main,page_url)
+    matched_beneficiaries = beneficiaries or facts["beneficiaries_excerpt"] or assessment_evidence.get("beneficiaries_excerpt")
     return {**assessment_evidence,"deadline":deadline,"amount":amount or facts["amount"],
-            "beneficiaries_excerpt":beneficiaries or facts["beneficiaries_excerpt"],
-            "beneficiaries_source":page_url if (beneficiaries or facts["beneficiaries_excerpt"]) else None,
+            "beneficiaries_excerpt":matched_beneficiaries,
+            "beneficiaries_source":page_url if matched_beneficiaries else None,
             "amount_kind":facts["amount_kind"],"amount_source":facts["amount_source"] if facts["amount"] else (page_url if amount else None),
             "rolling_guidance":facts["rolling_guidance"],
             "rolling_guidance_source":facts["rolling_guidance_source"],
