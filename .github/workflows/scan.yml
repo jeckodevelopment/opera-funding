@@ -30,7 +30,9 @@ on:
       - 'config/sources.json'
       - '.github/workflows/scan.yml'
   schedule:
-    - cron: '0 6 * * 1,3,5'
+    # Avoid the top-of-hour GitHub Actions scheduling congestion.
+    # 06:23 UTC = 07:23 CET / 08:23 CEST; Monday, Wednesday, Friday.
+    - cron: '23 6 * * 1,3,5'
 permissions:
   contents: write
 concurrency:
