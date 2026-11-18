@@ -95,7 +95,8 @@
       "Verificare l'effettiva attività territoriale dell'associazione nelle aree ammesse.",
       "Confermare i requisiti ETS e la compatibilità dei costi progettuali nel bando integrale."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-18",
+    "direct_application_blocker": "Il bando si rivolge a ETS territorialmente attivi: per Opera+ l'iscrizione RUNTS è ancora dichiarata in corso e l'operatività nelle aree del bando non è dimostrata."
   },
   {
     "public_id": 182,
@@ -144,7 +145,8 @@
       "Verificare iscrizione RUNTS e possibilità di aderire a un partenariato con soggetto sportivo.",
       "Verificare la disponibilità di uno spazio civico e la sostenibilità delle attività continuative."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-18",
+    "direct_application_blocker": "Il bando ufficiale richiede un capofila ASD/SSD iscritto al RASD o ETS iscritto al RUNTS; l'iscrizione RUNTS di Opera+ risulta dichiarata in corso e non completata."
   },
   {
     "public_id": 145,
@@ -320,7 +322,8 @@
     "assessment_gaps": [
       "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-18",
+    "catalog_title": "Linee guida Medtech"
   },
   {
     "public_id": 188,
@@ -336,7 +339,8 @@
     "assessment_gaps": [
       "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-18",
+    "catalog_title": "Linee guida 0–6: alleanze ad alta intensità educativa"
   },
   {
     "public_id": 119,
@@ -436,7 +440,8 @@
       "Accertare se Opera+ abbia dipendenti o collaboratori continuativi con documentazione appropriata, oppure possa progettare un tirocinio extracurricolare regolare.",
       "Non confondere la formazione professionale interna dei destinatari ammissibili con il corso pubblico di divulgazione operistica; valutare esclusivamente un progetto coerente con le tre linee."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-18",
+    "catalog_title": "Buoni formazione per la cultura"
   },
   {
     "public_id": 113,
