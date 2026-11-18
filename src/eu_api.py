@@ -16,7 +16,7 @@ CREATIVE_EUROPE="43251814"
 STATUSES=("31094501","31094502","31094503")
 TOPIC=re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{5,160}$")
 DATE=re.compile(r"^(20\d{2}-\d{2}-\d{2})")
-OPEN_LABELS=("open","open for submission","forthcoming","31094501","31094502")
+OPEN_LABELS=("open","open for submission","31094501","31094502")
 
 def first(meta,*names):
     for name in names:
