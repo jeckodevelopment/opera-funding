@@ -116,6 +116,8 @@ def run():
     parser.add_argument("--sources", default=str(ROOT / "config/sources.json"))
     parser.add_argument("--output", default=str(ROOT / "data/opportunities.json"))
     parser.add_argument("--report", default=str(ROOT / "data/scan-status.json"))
+    parser.add_argument("--history-backfill", action="store_true",
+                        help="Inspect all pending historical records in one bounded sweep")
     args = parser.parse_args()
     sources = json.loads(Path(args.sources).read_text(encoding="utf-8"))
     output = Path(args.output)
@@ -142,7 +144,8 @@ def run():
                          else discover(source,session,now))
                 # Prioritize candidate funding calls over general archive entries.
                 checked_count = 0
-                review_limit = (16 if source["id"] in ("volto","torino","mic","alcotra")
+                review_limit = (max(250, len(found)+len(backlog)) if args.history_backfill
+                                else 16 if source["id"] in ("volto","torino","mic","alcotra")
                                 else 12 if source.get("tier")=="high" else 10)
                 current_ids={item["id"] for item in found}
                 backlog=backlog_candidates(indexed,source["id"],current_ids)
@@ -153,6 +156,8 @@ def run():
                 new_ids={item["id"] for item in found if item["id"] not in indexed}
                 review_ids=pick_for_review(found+backlog,indexed,review_limit)
                 review_ids.update(new_ids)
+                if args.history_backfill:
+                    print(f"BACKFILL {source['id']}: {len(review_ids)} historical pages queued", flush=True)
                 found.sort(key=lambda x: (x.get("opportunity_type") not in ("finanziamento potenziale","call progettuale da verificare","non classificato"),
                                           "2026" not in x.get("title","") and "2027" not in x.get("title",""),
                                           -x.get("relevance",0)))
