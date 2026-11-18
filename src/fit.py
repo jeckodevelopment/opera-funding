@@ -148,6 +148,6 @@ def explain(row):
     row["assessment_gaps"] = issues
     row["assessment_source"] = row.get("assessment_evidence_source") or (row.get("url") if supplied else None)
     row["assessment_opening_note"] = (
-        "L'affinità non implica ammissibilità o apertura: verificare i requisiti e lo stato sulla fonte ufficiale."
+        "L'affinità non implica ammissibilità; senza evidenza ufficiale lo stato di apertura non è confermato."
     )
     return row
