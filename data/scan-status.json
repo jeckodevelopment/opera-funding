@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T22:18:16+00:00",
+  "checked_at": "2026-11-18T22:24:15+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 15,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "torino",
@@ -31,23 +31,23 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "culturatorino",
       "source_name": "Fondazione per la Cultura Torino",
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
-      "discovered": 21,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "discovered": 0,
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "volto",
       "source_name": "Vol.To",
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
-      "discovered": 16,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "discovered": 0,
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "checked_at": "2026-11-18T22:24:15+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:18:16+00:00",
+      "checked_at": "2026-11-18T22:24:15+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-18T22:18:16+00:00",
+      "checked_at": "2026-11-18T22:24:15+00:00",
       "error": "robots.txt: risposta HTTP 503; verifica automatica non disponibile",
       "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
       "institutional_reference_label": "Regione Piemonte — bando ALCOTRA",
@@ -111,21 +111,21 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T22:18:16+00:00"
+      "checked_at": "2026-11-18T22:24:15+00:00"
     }
   ],
   "coverage": {
     "totals": {
       "all": 255,
-      "open": 34,
+      "open": 33,
       "closed": 138,
       "upcoming": 2,
-      "unverified": 81,
+      "unverified": 82,
       "dated": 171,
       "dated_with_source": 171,
       "detail_checked": 183,
       "reachable": 254,
-      "candidate_unverified": 0,
+      "candidate_unverified": 1,
       "informational_unverified": 81,
       "candidate_missing_deadline": 2
     },
@@ -220,12 +220,12 @@
       },
       "volto": {
         "total": 15,
-        "open": 11,
-        "unverified": 2,
+        "open": 10,
+        "unverified": 3,
         "dated": 13,
         "dated_with_source": 13,
         "detail_checked": 14,
-        "candidate_unverified": 0,
+        "candidate_unverified": 1,
         "informational_unverified": 2,
         "candidate_missing_deadline": 0
       },
@@ -277,20 +277,25 @@
       "FONTE NON SUFFICIENTE": 114
     },
     "completely_verified_applicability": 0,
-    "open_without_individual_review": 13,
+    "open_without_individual_review": 12,
     "new_pending": 0
   },
   "open_eligibility_review": {
     "as_of": "2026-11-18",
-    "open_total": 34,
-    "in_queue": 34,
+    "open_total": 33,
+    "in_queue": 33,
     "condition_status_counts": {
       "compatibilita_documentata": 2,
-      "informazioni_insufficienti": 32
+      "informazioni_insufficienti": 31
     },
     "specific_requirement_category_counts": {
       "natura_giuridica": 2,
       "territorio": 2
+    },
+    "application_path_counts": {
+      "bassa_priorita_progettuale": 18,
+      "integrare_verifica_documentale": 14,
+      "verificare_candidatura_diretta": 1
     },
     "items": [
       {
@@ -299,6 +304,12 @@
         "deadline": "2026-11-20",
         "days_remaining": 2,
         "adequacy": "MEDIA",
+        "application_path": "verificare_candidatura_diretta",
+        "application_path_reason": "La fonte menziona associazioni fra i possibili beneficiari, ma l'ammissibilità effettiva e tutte le condizioni vanno ancora confermate",
+        "application_next_actions": [
+          "Confermare nello statuto e nel bando la possibilità di domanda diretta",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "compatibilita_documentata",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -315,6 +326,12 @@
         "deadline": "2026-11-23",
         "days_remaining": 5,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -331,6 +348,13 @@
         "deadline": "2026-11-23",
         "days_remaining": 5,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "PARZIALE",
         "pending_conditions": 0,
@@ -348,6 +372,12 @@
         "deadline": "2026-11-24",
         "days_remaining": 6,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Verificare sede e ambito territoriale"
+        ],
         "condition_status": "compatibilita_documentata",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 1,
@@ -364,6 +394,12 @@
         "deadline": "2026-11-26",
         "days_remaining": 8,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -380,6 +416,12 @@
         "deadline": "2026-11-28",
         "days_remaining": 10,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -397,6 +439,14 @@
         "deadline": "2026-12-01",
         "days_remaining": 13,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
         "pending_conditions": 0,
@@ -415,6 +465,12 @@
         "deadline": "2026-12-03",
         "days_remaining": 15,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -431,6 +487,12 @@
         "deadline": "2026-12-04",
         "days_remaining": 16,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Verificare natura giuridica e iscrizioni richieste"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 1,
@@ -447,6 +509,13 @@
         "deadline": "2026-12-04",
         "days_remaining": 16,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "PARZIALE",
         "pending_conditions": 0,
@@ -464,6 +533,13 @@
         "deadline": "2026-12-10",
         "days_remaining": 22,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "PARZIALE",
         "pending_conditions": 0,
@@ -481,6 +557,12 @@
         "deadline": "2026-12-10",
         "days_remaining": 22,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -497,6 +579,12 @@
         "deadline": "2026-12-18",
         "days_remaining": 30,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Verificare natura giuridica e iscrizioni richieste"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 1,
@@ -514,6 +602,12 @@
         "deadline": "2026-12-18",
         "days_remaining": 30,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Verificare sede e ambito territoriale"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 1,
@@ -530,6 +624,12 @@
         "deadline": "2026-12-31",
         "days_remaining": 43,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -546,6 +646,12 @@
         "deadline": "2026-12-31",
         "days_remaining": 43,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -563,6 +669,12 @@
         "deadline": "2027-01-18",
         "days_remaining": 61,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -579,6 +691,14 @@
         "deadline": "2027-01-21",
         "days_remaining": 64,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
         "pending_conditions": 0,
@@ -597,6 +717,14 @@
         "deadline": "2027-01-27",
         "days_remaining": 70,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
         "pending_conditions": 0,
@@ -615,6 +743,12 @@
         "deadline": "2027-01-28",
         "days_remaining": 71,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -631,6 +765,13 @@
         "deadline": "2027-01-31",
         "days_remaining": 74,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "PARZIALE",
         "pending_conditions": 0,
@@ -648,6 +789,12 @@
         "deadline": "2027-01-31",
         "days_remaining": 74,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -664,6 +811,14 @@
         "deadline": "2027-02-02",
         "days_remaining": 76,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
         "pending_conditions": 0,
@@ -682,6 +837,12 @@
         "deadline": "2027-02-10",
         "days_remaining": 84,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -694,29 +855,17 @@
         ]
       },
       {
-        "public_id": 146,
-        "title": "Bando Una mano a chi sostiene – nuova edizione 2026/27 Il bando mette a disposizione 500 mila euro per sostenere sul territorio italiano progetti in grado di generare impatto sociale duraturo attraverso la coesione socia",
-        "deadline": "2027-02-16",
-        "days_remaining": 90,
-        "adequacy": "MEDIA",
-        "condition_status": "informazioni_insufficienti",
-        "review_status": "PARZIALE",
-        "pending_conditions": 0,
-        "tasks": [
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
-        ],
-        "sources": [
-          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/",
-          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026"
-        ]
-      },
-      {
         "public_id": 22,
         "title": "Per saperne di più su CSR 2023-2027. Reti antigrandine (SRD06 intervento 1.2.1). Bando 2026",
         "deadline": "2027-02-22",
         "days_remaining": 96,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -733,6 +882,12 @@
         "deadline": "2027-02-24",
         "days_remaining": 98,
         "adequacy": "ALTA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "EVIDENZE RACCOLTE",
         "pending_conditions": 0,
@@ -749,6 +904,14 @@
         "deadline": "2027-03-02",
         "days_remaining": 104,
         "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
         "pending_conditions": 0,
@@ -767,6 +930,14 @@
         "deadline": "2027-03-02",
         "days_remaining": 104,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
         "pending_conditions": 0,
@@ -785,6 +956,12 @@
         "deadline": "2027-03-04",
         "days_remaining": 106,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -802,6 +979,12 @@
         "deadline": "2027-03-30",
         "days_remaining": 132,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -818,6 +1001,12 @@
         "deadline": "2027-04-30",
         "days_remaining": 163,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -834,6 +1023,12 @@
         "deadline": "2029-06-30",
         "days_remaining": 955,
         "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
@@ -850,6 +1045,12 @@
         "deadline": null,
         "days_remaining": null,
         "adequacy": "ALTA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Confermare i requisiti sulla versione aggiornata del bando"
+        ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "EVIDENZE RACCOLTE",
         "pending_conditions": 0,
@@ -862,8 +1063,81 @@
       }
     ]
   },
+  "catalog_reconciliation": {
+    "coverage": {
+      "catalogo": {
+        "total": 255,
+        "adequacy_counts": {
+          "ALTA": 11,
+          "BASSA": 83,
+          "INFORMATIVA": 101,
+          "MEDIA": 60
+        },
+        "missing_documentation": {
+          "finalita": 138,
+          "attivita_finanziabili": 216,
+          "beneficiari": 149,
+          "requisiti": 174
+        },
+        "with_document_issues": 34,
+        "with_unresolved_applicant_checks": 7,
+        "source_not_attributed": 19
+      },
+      "aperte": {
+        "total": 33,
+        "adequacy_counts": {
+          "ALTA": 2,
+          "BASSA": 18,
+          "MEDIA": 13
+        },
+        "missing_documentation": {
+          "finalita": 7,
+          "attivita_finanziabili": 10,
+          "beneficiari": 7,
+          "requisiti": 9
+        },
+        "with_document_issues": 0,
+        "with_unresolved_applicant_checks": 4,
+        "source_not_attributed": 0
+      },
+      "aperte_alta_media": {
+        "total": 15,
+        "adequacy_counts": {
+          "ALTA": 2,
+          "MEDIA": 13
+        },
+        "missing_documentation": {
+          "finalita": 2,
+          "attivita_finanziabili": 5,
+          "beneficiari": 2,
+          "requisiti": 4
+        },
+        "with_document_issues": 0,
+        "with_unresolved_applicant_checks": 3,
+        "source_not_attributed": 0
+      }
+    },
+    "priority_open_ids": [
+      190,
+      113,
+      33,
+      176,
+      175,
+      182,
+      23,
+      8,
+      177,
+      183,
+      143,
+      255,
+      149,
+      254,
+      148
+    ],
+    "notes": "I conteggi indicano copertura delle evidenze, non ammissibilità certificata."
+  },
   "funder_monitoring": {
-    "checked_at": "2026-11-18T22:18:16+00:00",
+    "checked_at": "2026-11-18T22:24:15+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -1154,7 +1428,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:18:16+00:00",
+        "last_checked_at": "2026-11-18T22:24:15+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1166,7 +1440,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:18:16+00:00",
+        "last_checked_at": "2026-11-18T22:24:15+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1179,7 +1453,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:18:16+00:00",
+        "last_checked_at": "2026-11-18T22:24:15+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1192,7 +1466,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:18:16+00:00",
+        "last_checked_at": "2026-11-18T22:24:15+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1205,7 +1479,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:18:16+00:00",
+        "last_checked_at": "2026-11-18T22:24:15+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1218,7 +1492,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:18:16+00:00",
+        "last_checked_at": "2026-11-18T22:24:15+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1231,7 +1505,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:18:16+00:00",
+        "last_checked_at": "2026-11-18T22:24:15+00:00",
         "changed": false,
         "candidate_count": null
       }
