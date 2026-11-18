@@ -84,6 +84,26 @@ class ReviewedAssessmentTests(unittest.TestCase):
         self.assertNotIn("comune di",record["requirements_excerpt"].lower())
         self.assertNotIn("almeno due anni",record["requirements_excerpt"].lower())
 
+    def test_23_and_183_are_conditionally_relevant_without_invented_projects(self):
+        import json
+        reviews=json.loads((Path(__file__).resolve().parents[1]/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        for public_id in (23,183):
+            with self.subTest(public_id=public_id):
+                item=next(r for r in reviews if r.get("public_id")==public_id)
+                self.assertEqual(item["assessment_label"],"MEDIA AFFINITÀ")
+                self.assertTrue(item.get("assessment_gaps"))
+                self.assertTrue(item.get("requirements_excerpt"))
+                self.assertNotIn("23/04/2026",item["assessment_reason"])
+        event=next(r for r in reviews if r.get("public_id")==23)
+        self.assertIn("24/11/2026",event["requirements_excerpt"])
+        self.assertIn("FINDOM",event["requirements_excerpt"])
+        self.assertIn("non ha documentato",event["assessment_reason"])
+        voucher=next(r for r in reviews if r.get("public_id")==183)
+        self.assertIn("Linea A",voucher["requirements_excerpt"])
+        self.assertIn("ROL",voucher["requirements_excerpt"])
+        self.assertIn("2.000-10.000",voucher["requirements_excerpt"])
+        self.assertIn("non ha documentato",voucher["assessment_reason"])
+
     def test_different_host_does_not_inherit_review(self):
         row={"url":"https://example.org/bando","source_id":"a"}
         review={"source_id":"a","url":"https://another.org/bando","assessment_label":"MEDIA AFFINITÀ",
