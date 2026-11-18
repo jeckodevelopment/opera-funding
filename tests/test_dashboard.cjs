@@ -75,8 +75,9 @@ assert.equal(incompleteEvaluation.fit,"BASSA AFFINITÀ");
 
 const now=new Date("2026-11-20T08:00:00Z");
 assert.equal(changeBadge({catalog_new_at:"2026-11-18T07:00:00Z"},now).label,"NUOVA");
-assert.equal(changeBadge({catalog_updated_at:"2026-11-18T07:00:00Z"},now).label,"AGGIORNATA");
-assert.equal(changeBadge({catalog_new_at:"2026-11-18T07:00:00Z",catalog_updated_at:"2026-11-19T07:00:00Z"},now).label,"NUOVA");
+assert.equal(changeBadge({catalog_updated_at:"2026-11-18T07:00:00Z",catalog_tracking_version:2},now).label,"AGGIORNATA");
+assert.equal(changeBadge({catalog_updated_at:"2026-11-18T07:00:00Z",catalog_tracking_version:1},now),null);
+assert.equal(changeBadge({catalog_new_at:"2026-11-18T07:00:00Z",catalog_updated_at:"2026-11-19T07:00:00Z",catalog_tracking_version:2},now).label,"NUOVA");
 assert.equal(changeBadge({first_seen:"2026-11-18T07:00:00Z"},now),null);
 assert.equal(changeBadge({catalog_updated_at:"2026-11-10T07:00:00Z"},now),null);
 assert.equal(changeBadge({catalog_new_at:"2026-11-22T07:00:00Z"},now),null);
