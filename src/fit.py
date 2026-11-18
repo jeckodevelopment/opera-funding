@@ -8,7 +8,7 @@ import re
 # A cultural, educational or community call may support a project even when it
 # does not mention music or opera in its title.
 PROJECTS = [
-    (re.compile(r"cultur|artistic|heritage|patrimon|muse|bibliotec|creative|audience",re.I),
+    (re.compile(r"cultur|artistic|\\barts?\\b|heritage|patrimon|muse|bibliotec|creative|audience",re.I),
      "Incontri e percorsi di divulgazione culturale per ampliare i pubblici",
      "Coerenza con accesso e promozione della cultura"),
     (re.compile(r"educazion|formazion|scuol|student|giovan|didattic|learning|education|pcto|pon\\b|pn\\s*scuola|fse\\+?|erasmus",re.I),
@@ -138,7 +138,7 @@ def explain(row):
     elif supplied:
         # Source-supported thematic overlap outweighs title-only hints; a generic
         # introductory paragraph cannot by itself justify an 'alta affinità'.
-        if len(supported) >= 2 and (row.get("funded_activities_excerpt") or row.get("programme_objectives_excerpt")):
+        if len(supported) >= 2 and row.get("funded_activities_excerpt") and row.get("beneficiaries_excerpt"):
             label = "ALTA AFFINITÀ"
         elif supported:
             label = "MEDIA AFFINITÀ"
