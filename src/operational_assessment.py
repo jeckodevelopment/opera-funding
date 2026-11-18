@@ -38,7 +38,14 @@ def operational_assessment(row):
         "funded_activities_excerpt","beneficiaries_excerpt","requirements_excerpt"))
     strong_source=bool(row.get("assessment_source") or row.get("assessment_evidence_source"))
     disputes=bool(row.get("assessment_document_discrepancies"))
-    if adequacy=="BASSA":
+    territorial_risk=any(isinstance(x,dict) and x.get("category")=="territorio"
+                         and x.get("status")=="potenzialmente_incompatibile"
+                         for x in comparison)
+    if territorial_risk:
+        path=DOCUMENTS
+        reason="Requisito comunale di sede apparentemente non soddisfatto; l'ammissibilità diretta non è dimostrata"
+        tasks.insert(0,"Verificare l'avviso integrale e le eventuali alternative territoriali o modalità di partenariato")
+    elif adequacy=="BASSA":
         path=LOW
         reason=("Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile "
                 "e verificare soltanto eventuali motivi concreti per rivalutarla")
