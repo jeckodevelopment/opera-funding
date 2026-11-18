@@ -41,3 +41,18 @@ def summarize_catalog_reconciliation(rows):
                              if isinstance(r.get("public_id"),int) and r["public_id"]>0],
         "notes":"I conteggi indicano copertura delle evidenze, non ammissibilità certificata.",
     }
+
+
+VALID_ADEQUACY = {"ALTA", "MEDIA", "BASSA", "INFORMATIVA"}
+
+def validate_catalog_assessments(rows):
+    """Require a reasoned judgement for every record before publication."""
+    missing=[]
+    for row in rows:
+        if (row.get("adequacy_label") not in VALID_ADEQUACY or
+            not str(row.get("adequacy_reason") or "").strip() or
+            not str(row.get("assessment_reason") or "").strip()):
+            missing.append(str(row.get("public_id") or row.get("id") or "?"))
+    if missing:
+        raise ValueError("Opportunità prive di valutazione: "+", ".join(missing[:30]))
+    return len(rows)
