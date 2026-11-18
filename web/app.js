@@ -631,13 +631,32 @@ function makeCard(o){
  return article;
 }
 function updateStateCounts(){
+ const counts=new Map();
+ for(const opportunity of all){
+  const current=state(opportunity);
+  counts.set(current,(counts.get(current)||0)+1);
+  if(isFollowed(opportunity))counts.set("followed",(counts.get("followed")||0)+1);
+ }
  for(const tab of document.querySelectorAll(".quick-tab")){
   const key=tab.dataset.value;
-  if(!key){tab.textContent="Tutti ("+all.length+")";continue;}
+  if(!key){
+   tab.textContent="Tutti ("+all.length+")";
+   tab.hidden=false;
+   continue;
+  }
   const title=tab.dataset.label||tab.textContent.replace(/\\s*\\(\\d+\\)$/,"").trim();
   tab.dataset.label=title;
-  const number=all.filter(o=>key==="followed"?isFollowed(o):state(o)===key).length;
+  const number=counts.get(key)||0;
   tab.textContent=title+" ("+number+")";
+  tab.hidden=number===0;
+ }
+ // A refresh can remove all results for the currently selected status.
+ // Select the default OPEN tab when possible, otherwise the first nonempty tab.
+ const active=document.querySelector('.quick-tab[data-value="'+$("status").value+'"]');
+ if(active?.hidden){
+  const preferred=document.querySelector('.quick-tab[data-value="aperto"]');
+  const fallback=[...document.querySelectorAll(".quick-tab")].find(tab=>!tab.hidden&&tab.dataset.value);
+  $("status").value=!preferred?.hidden?"aperto":fallback?.dataset.value||"";
  }
 }
 function render(){
