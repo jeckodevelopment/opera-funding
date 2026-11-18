@@ -315,11 +315,27 @@ function printEvaluation(o){
 }
 
 // Static-hosting-friendly deep links: the same index.html serves every page.
-function opportunityUrl(id,base=window.location.href){
+// Numeric public_id is permanent; internal id remains the source URL for
+// scanner identity, legacy shared links and browser-only saved opportunities.
+function opportunityUrl(row,base=window.location.href){
  const target=new URL(base);
- target.searchParams.set("opportunity",String(id));
+ const id=(row&&typeof row==="object")?row.public_id:row;
+ if(Number.isSafeInteger(id)&&id>0)
+  target.searchParams.set("opportunity",String(id));
+ else
+  target.searchParams.set("opportunity",String(row?.id||id));
  target.hash="";
  return target.href;
+}
+function findOpportunity(key,rows){
+ if(typeof key!=="string")return null;
+ if(/^[1-9]\d*$/.test(key)){
+  const numeric=Number(key);
+  if(!Number.isSafeInteger(numeric))return null;
+  return rows.find(row=>row.public_id===numeric)||null;
+ }
+ // Preserve links shared before numeric identifiers were introduced.
+ return rows.find(row=>row.id===key||(Array.isArray(row.alternative_urls)&&row.alternative_urls.includes(key)))||null;
 }
 function requestedOpportunity(href){
  const id=new URL(href).searchParams.get("opportunity");
@@ -340,18 +356,22 @@ function renderRoute(){
   document.title="Opera+ Funding · Opportunità per la cultura";
   return;
  }
- const opportunity=all.find(o=>o.id===id);
+ const opportunity=findOpportunity(id,all);
  if(!opportunity){
   $("dialog-content").replaceChildren(el("h2","Opportunità non trovata","dialog-title"),
    el("p","Questa opportunità non è disponibile nel catalogo attuale. Puoi tornare alla dashboard e cercare altre iniziative."));
   document.title="Opportunità non trovata · Opera+ Funding";
   return;
  }
+ // A legacy shared URL still resolves, then silently becomes the concise URL.
+ if(opportunity.public_id&&id!==String(opportunity.public_id)){
+  window.history.replaceState(null,"",opportunityUrl(opportunity));
+ }
  renderOpportunity(opportunity);
  document.title=(opportunity.title||"Opportunità")+" · Opera+ Funding";
 }
 async function copyOpportunityUrl(o,button){
- const url=opportunityUrl(o.id);
+ const url=opportunityUrl(o);
  try{
   await navigator.clipboard.writeText(url);
   button.textContent="Link copiato";
@@ -459,14 +479,18 @@ function makeCard(o){
  const change=changeBadge(o);
  if(change)tags.append(el("span",change.label,"chip change "+change.kind));
  if(o.application_type)tags.append(el("span",o.application_type+" · "+(o.window_label||"Candidatura"),"chip"));
- left.append(tags,el("h3",o.title||"Opportunità senza titolo","item-title"),el("p",opportunitySummary(o),"item-summary"));
+ const title=el("h3",undefined,"item-title");
+ const titleLink=el("a",o.title||"Opportunità senza titolo","item-title-link");
+ titleLink.href=opportunityUrl(o);
+ title.append(titleLink);
+ left.append(tags,title,el("p",opportunitySummary(o),"item-summary"));
  const meta=el("div",undefined,"item-meta");
  meta.append(el("span",o.issuer||"Ente non indicato","issuer-name"));
  if(o.themes?.length)meta.append(el("span",o.themes[0]));
  left.append(meta);
  const actions=el("div",undefined,"item-actions");
  const detailLink=el("a","Esamina opportunità","details-toggle");
- detailLink.href=opportunityUrl(o.id);
+ detailLink.href=opportunityUrl(o);
  // Use native anchor navigation for reliable click, keyboard and new-tab behavior.
  detailLink.setAttribute("aria-label","Esamina opportunità: "+(o.title||"scheda"));
  actions.append(detailLink,followButton(o));

@@ -18,6 +18,7 @@ on:
       - 'src/detail.py'
       - 'src/evidence.py'
       - 'src/catalog_changes.py'
+      - 'src/public_ids.py'
       - 'src/quality.py'
       - 'src/status.py'
       - 'src/fit.py'
@@ -59,7 +60,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/opportunities.json data/scan-status.json
+          git add data/opportunities.json data/scan-status.json data/opportunity-ids.json
           if [ -f data/notification-state.json ]; then git add data/notification-state.json; fi
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh funding discovery"

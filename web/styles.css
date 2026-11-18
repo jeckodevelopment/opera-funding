@@ -141,3 +141,8 @@ body.detail-view .source-health{display:none}
  padding:9px 12px;font-size:11px;font-weight:750;text-decoration:none;line-height:normal}
 .item-actions a.details-toggle:hover{background:#f9f7f1;text-decoration:none}
 .item-actions a.details-toggle:focus-visible{outline:3px solid #d2a34f;outline-offset:2px}
+
+/* The opportunity title navigates to its own permanent numeric public URL. */
+.item-title-link{color:inherit!important;text-decoration:none!important}
+.item-title-link:hover{text-decoration:underline!important;text-decoration-color:#b98936!important}
+.item-title-link:focus-visible{outline:3px solid #d2a34f;outline-offset:3px;border-radius:3px}

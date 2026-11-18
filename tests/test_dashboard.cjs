@@ -6,9 +6,20 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,readWatchlist,isFollowed};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,readWatchlist,isFollowed}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed}=context.exposed;
 assert.equal(PAGE_SIZE,12);
+const short=opportunityUrl({id:"https://volontariatotorino.it/bandi/dora",public_id:143},"https://jeckodevelopment.com/dev/funding/");
+assert.equal(short,"https://jeckodevelopment.com/dev/funding/?opportunity=143");
+assert.equal(requestedOpportunity(short),"143");
+const catalog=[{id:"https://volontariatotorino.it/bandi/dora",public_id:143,title:"Dora"},
+ {id:"https://example.org/other",public_id:144,alternative_urls:["https://example.org/old"]}];
+assert.equal(findOpportunity("143",catalog).title,"Dora");
+assert.equal(findOpportunity("https://volontariatotorino.it/bandi/dora",catalog).public_id,143);
+assert.equal(findOpportunity("https://example.org/old",catalog).public_id,144);
+assert.equal(findOpportunity("9999999",catalog),null);
+assert.equal(findOpportunity("143foo",catalog),null);
+
 assert.equal(readWatchlist().size,0);
 assert.equal(isFollowed({id:"https://example.org/call"}),false);
 
@@ -136,7 +147,12 @@ assert.match(src,/function renderOpportunity/);
 assert.match(src,/window\.history\.pushState/);
 assert.match(src,/popstate/);
 assert.match(src,/Copia link della scheda/);
-assert.match(src,/detailLink\.href=opportunityUrl\(o\.id\)/);
+assert.match(src,/titleLink\.href=opportunityUrl\(o\)/);
+assert.match(src,/detailLink\.href=opportunityUrl\(o\)/);
+assert.match(src,/window\.history\.replaceState/);
+assert.match(css,/\.item-title-link/);
+
+assert.match(src,/detailLink\.href=opportunityUrl\(o\)/);
 assert.doesNotMatch(src,/detailLink\.addEventListener\("click"/);
 assert.match(css,/\.item-actions a\.details-toggle\{display:inline-flex/);
 
