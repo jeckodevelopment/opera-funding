@@ -1,0 +1,66 @@
+[
+  {
+    "public_id": 190,
+    "source_id": "sanpaolo",
+    "url": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027/",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "Finanzia festival culturali partecipativi, con coinvolgimento attivo delle comunità e iniziative territoriali. Opera+ potrebbe proporre attività musicali divulgative all'interno di un festival, ma il corso digitale autonomo non corrisponde al formato richiesto.",
+    "programme_objectives_excerpt": "Sostegno a festival partecipativi radicati nei territori, attenti a nuovi pubblici e alla costruzione collettiva dell'esperienza culturale.",
+    "funded_activities_excerpt": "Festival con più attività coordinate in luoghi e periodi definiti, frequentemente in spazi pubblici e non convenzionali.",
+    "beneficiaries_excerpt": "Enti che soddisfano i requisiti soggettivi e oggettivi delle Linee applicative del Regolamento delle attività istituzionali della Fondazione.",
+    "requirements_excerpt": "Il progetto deve avere carattere di festival partecipativo e forte relazione con territorio e comunità; verifica dei requisiti dei soggetti ammissibili nelle Linee applicative.",
+    "assessment_gaps": [
+      "Verificare nel regolamento applicativo la piena ammissibilità dell'associazione.",
+      "Verificare risorse proprie, territorio e caratteristiche del festival proposto."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 33,
+    "source_id": "eucreative",
+    "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "Il programma sostiene enti che ospitano residenze artistiche, anche nei settori musica e performing arts. Opera+ potrebbe partecipare soltanto sviluppando una vera residenza con artisti esteri, alloggio, spazi e mentorship; la semplice produzione di videolezioni non basta.",
+    "programme_objectives_excerpt": "Supporto a organizzazioni che ospitano artisti e professionisti culturali provenienti da altri paesi di Europa Creativa.",
+    "funded_activities_excerpt": "Un progetto di residenza per 1–5 artisti, con contributi giornalieri all'ente ospitante e ai residenti.",
+    "beneficiaries_excerpt": "Persone giuridiche registrate in un paese di Europa Creativa e attive in settori culturali ammissibili, inclusi musica e performing arts.",
+    "requirements_excerpt": "Capacità di ospitare, fornire alloggio e spazi di lavoro adeguati, almeno un mentor e documenti dell'ente e del progetto. Scadenza 18 gennaio 2027.",
+    "assessment_gaps": [
+      "Verificare capacità concreta di ospitalità e disponibilità di mentor.",
+      "Confermare compatibilità del progetto di residenza con le attività associative."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 32,
+    "source_id": "eucreative",
+    "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "La misura sovvenziona la mobilità transfrontaliera di singoli artisti e professionisti culturali, o gruppi fino a cinque persone. Non è un finanziamento diretto all'associazione Opera+; potrebbe interessare eventualmente i suoi singoli collaboratori artistici.",
+    "programme_objectives_excerpt": "Mobilità per realizzare un progetto artistico o culturale in un altro paese di Europa Creativa, con partner internazionale.",
+    "funded_activities_excerpt": "Diaria, viaggio e integrazioni per artisti e professionisti culturali che realizzano il progetto all'estero.",
+    "beneficiaries_excerpt": "Artisti e professionisti della cultura maggiorenni, candidati come individui o gruppi fino a cinque persone.",
+    "requirements_excerpt": "Progetto in un paese estero, partner internazionale, CV e portfolio artistico, lettera di invito; finestre periodiche fino ad aprile 2027.",
+    "assessment_gaps": [
+      "Non candidabile direttamente da un'associazione in questa linea.",
+      "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 18,
+    "source_id": "piemonte",
+    "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "La misura è destinata a micro, piccole e medie imprese e a investimenti strutturali o tecnologici nello spettacolo dal vivo; non al finanziamento ordinario di corsi o divulgazione musicale di un'associazione culturale. Possibile rilevanza soltanto in presenza di requisiti d'impresa e investimento ammissibile.",
+    "programme_objectives_excerpt": "Competitività di micro, piccole e medie imprese operanti nella produzione di spettacolo dal vivo in Piemonte.",
+    "funded_activities_excerpt": "Realizzazione o riqualificazione di strutture aperte al pubblico, ammodernamento di impianti e dotazioni tecnologiche per operatori dello spettacolo dal vivo.",
+    "beneficiaries_excerpt": "Imprese e liberi professionisti; la misura supporta micro, piccole e medie imprese professionali del settore.",
+    "requirements_excerpt": "Unità locale operativa in Piemonte e investimenti ammissibili; procedura a sportello con scadenza ufficiale 31 dicembre 2026.",
+    "assessment_gaps": [
+      "Verificare specifica forma giuridica e requisiti di impresa nel testo del bando.",
+      "La dotazione complessiva di € 5 milioni non coincide con l'importo assegnabile al singolo progetto."
+    ],
+    "reviewed_at": "2026-11-18"
+  }
+]
