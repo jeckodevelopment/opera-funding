@@ -554,6 +554,12 @@ function renderOpportunity(o){
 // Never infer novelty from first_seen on the existing catalog.
 function changeBadge(o,now=new Date()){
  const labels=[["catalog_new_at","NUOVA","new"],["catalog_updated_at","AGGIORNATA","updated"]];
+ // Version 1 flagged harmless extraction enrichment on hundreds of records.
+ // Never show those obsolete update badges, even before the next catalog scan.
+ if(o.catalog_tracking_version!==2){
+  const fresh={...o};delete fresh.catalog_updated_at;
+  o=fresh;
+ }
  for(const [key,label,kind] of labels){
   const value=o[key];
   if(typeof value!=="string"||!/^\d{4}-\d{2}-\d{2}T/.test(value))continue;
