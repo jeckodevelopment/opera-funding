@@ -18,28 +18,37 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
-PROJECT_TYPES={"finanziamento potenziale","call progettuale da verificare"}
+PROJECT_TYPES={"finanziamento potenziale","call progettuale da verificare","non classificato"}
 FROM_ADDRESS="Opera+ Funding <notifiche@updates.opera.plus>"
 DASHBOARD="https://jeckodevelopment.com/dev/funding/"
 MAX_DAILY=10
 MAX_MONTHLY=100
 MAX_ITEMS=12
-MIN_RELEVANCE=50
+NOTIFIABLE_STATES={"APERTO","IN ARRIVO","DA VERIFICARE"}
+ADEQUACY={"ALTA":0,"MEDIA":1,"BASSA":2}
 
 def is_open(row):
+    """Strict actual-open classification for backwards compatibility."""
     return (row.get("funding_status")=="APERTO" and
+            row.get("opportunity_type") in PROJECT_TYPES)
+
+def is_notifiable(row):
+    """Include all newly tracked genuine calls, including BASSA and upcoming.
+
+    A notice with unconfirmed opening is clearly described as TO VERIFY,
+    never as an open call.
+    """
+    return (row.get("funding_status") in NOTIFIABLE_STATES and
             row.get("opportunity_type") in PROJECT_TYPES and
-            row.get("source_open_confirmed") is True and
-            row.get("link_status")=="raggiungibile" and
-            int(row.get("relevance") or 0)>=MIN_RELEVANCE)
+            row.get("adequacy_label") in ADEQUACY and
+            row.get("link_status")!="non disponibile")
 
 def identity(row):
-    # IDs are canonicalized by catalog reconciliation. No broad title matching:
-    # different call editions must not be merged.
+    # Immutable canonical opportunity identity, independent of presentation ID.
     return str(row.get("id") or row.get("url") or "").strip()
 
 def snapshot(rows):
-    return {identity(r): ("APERTO" if is_open(r) else "ALTRO")
+    return {identity(r): (r.get("funding_status") if is_notifiable(r) else "ALTRO")
             for r in rows if identity(r)}
 
 def candidates(rows, previous, alerted):
@@ -48,7 +57,7 @@ def candidates(rows, previous, alerted):
     for r in rows:
         key=identity(r)
         if (not key or key in seen or key in alerted or
-                not is_open(r) or previous.get(key)=="APERTO"):
+                not is_notifiable(r) or previous.get(key)==r.get("funding_status")):
             continue
         link=r.get("url")
         parsed=urlparse(link or "")
@@ -56,7 +65,12 @@ def candidates(rows, previous, alerted):
             continue
         seen.add(key)
         out.append(r)
-    return sorted(out,key=lambda r:(-int(r.get("relevance") or 0),str(r.get("deadline") or ""),r.get("title") or ""))
+    return sorted(out,key=lambda r:(
+        ADEQUACY.get(r.get("adequacy_label"),99),
+        0 if r.get("funding_status")=="APERTO" else 1,
+        str(r.get("deadline") or "9999-12-31"),
+        r.get("title") or ""))
+
 
 def post_resend(key,recipient,subject,html,text_body,idempotency):
     payload=json.dumps({"from":FROM_ADDRESS,"to":[recipient],"subject":subject,
@@ -107,21 +121,29 @@ def run(rows,state_path,now,api_key=None,recipient=None,sender=post_resend):
     current=snapshot(rows)
     stored=json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else None
     if stored is None:
-        state={"version":1,"statuses":current,"alerted_ids":[],
+        state={"version":2,"statuses":current,"alerted_ids":[],
                "sent_days":{},"sent_months":{}}
         persist(state_path,state)
         print("Notifiche: prima esecuzione; catalogo iniziale registrato senza inviare email")
         return "bootstrapped"
-    if stored.get("version")!=1:
+    if stored.get("version")==1:
+        # Migrate the historical strict-OPEN baseline without treating all
+        # previously indexed opportunities as newly discovered at rollout.
+        previous=stored.get("statuses") or {}
+        stored["statuses"]={
+            ident: (current.get(ident) if ident in current else old)
+            for ident,old in previous.items()
+        }
+        stored["version"]=2
+        persist(state_path,stored)
+    if stored.get("version")!=2:
         raise RuntimeError("Versione del registro notifiche non supportata")
     alerted=set(stored.get("alerted_ids") or [])
     found=candidates(rows,stored.get("statuses") or {},alerted)
     day=now[:10]
     month=day[:7]
     if not api_key or not recipient:
-        stored["statuses"]=current
-        persist(state_path,stored)
-        print("Notifiche disattivate: servono RESEND_API_KEY e FUNDING_ALERT_RECIPIENT")
+        print("Notifiche non inviate: mancano credenziali o destinatari; lo storico non avanza")
         return "disabled"
     recipients=parse_recipients(recipient)
     if not recipients:
@@ -147,15 +169,22 @@ def run(rows,state_path,now,api_key=None,recipient=None,sender=post_resend):
                 stored.get("sent_months",{}).get(month,0)>=MAX_MONTHLY):
             print("Notifiche: limite gratuito raggiunto; invii restanti rinviati")
             return "quota"
-        subject,html,text_body=make_message(pending)
-        event_ids=sorted(identity(r) for r in pending)
-        digest=sha256((token+"|"+",".join(event_ids)).encode("utf-8")).hexdigest()[:40]
-        sender(api_key,address,subject,html,text_body,"opera-funding-"+digest)
-        delivered[token]=sorted(already.union(event_ids))
-        stored.setdefault("sent_days",{})[day]=stored.get("sent_days",{}).get(day,0)+1
-        stored.setdefault("sent_months",{})[month]=stored.get("sent_months",{}).get(month,0)+1
-        persist(state_path,stored)
-        sent+=1
+        for offset in range(0,len(pending),MAX_ITEMS):
+            batch=pending[offset:offset+MAX_ITEMS]
+            if (stored.get("sent_days",{}).get(day,0)>=MAX_DAILY or
+                    stored.get("sent_months",{}).get(month,0)>=MAX_MONTHLY):
+                print("Notifiche: limite gratuito raggiunto; invii restanti rinviati")
+                return "quota"
+            subject,html,text_body=make_message(batch)
+            event_ids=sorted(identity(r) for r in batch)
+            digest=sha256((token+"|"+",".join(event_ids)).encode("utf-8")).hexdigest()[:40]
+            sender(api_key,address,subject,html,text_body,"opera-funding-"+digest)
+            already.update(event_ids)
+            delivered[token]=sorted(already)
+            stored.setdefault("sent_days",{})[day]=stored.get("sent_days",{}).get(day,0)+1
+            stored.setdefault("sent_months",{})[month]=stored.get("sent_months",{}).get(month,0)+1
+            persist(state_path,stored)
+            sent+=1
 
     # Only mark the opportunities globally complete when every configured
     # destination has received them. Outstanding calls remain retryable.
@@ -176,9 +205,13 @@ def main():
     rows=json.loads(Path(args.catalog).read_text(encoding="utf-8"))
     report=json.loads(Path(args.report).read_text(encoding="utf-8"))
     sources=report.get("sources") or []
-    if not sources or not all(source.get("ok") is True for source in sources):
-        print("Notifiche non inviate: una o più fonti non sono state acquisite correttamente")
-        return
+    if not sources:
+        raise RuntimeError("Impossibile inviare notifiche senza report delle fonti")
+    failed=[x.get("source_id") for x in sources if x.get("ok") is not True]
+    if failed:
+        print("Notifiche parziali: fonti non aggiornate "+
+              ", ".join(str(x) for x in failed)+
+              "; il digest usa le opportunità verificate nel catalogo")
     now=datetime.now(timezone.utc).isoformat(timespec="seconds")
     run(rows,Path(args.state),now,os.getenv("RESEND_API_KEY"),os.getenv("FUNDING_ALERT_RECIPIENT"))
 

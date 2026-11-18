@@ -16,6 +16,7 @@ def item(key, status="APERTO", relevance=80, **kw):
         "source_open_confirmed":status=="APERTO",
         "link_status":"raggiungibile",
         "relevance":relevance,
+        "adequacy_label":"MEDIA",
         "deadline":"2027-01-15",
         **kw,
     }
@@ -54,18 +55,25 @@ class NotifyTests(unittest.TestCase):
         self.assertEqual(self.check([item("x"),item("y")]),"no-news")
         self.assertEqual(len(self.sent),1)
 
-    def test_filter_information_low_relevance_and_unconfirmed(self):
+    def test_includes_all_new_grades_and_early_stage_without_inventing_opening(self):
         self.check([])
         rows=[item("info",opportunity_type="altro avviso"),
-              item("low",relevance=40),
+              item("low",relevance=40,adequacy_label="BASSA"),
               item("unconfirmed",source_open_confirmed=False),
               item("broken",link_status="non disponibile"),
+              item("upcoming",status="IN ARRIVO",adequacy_label="ALTA"),
+              item("verify",status="DA VERIFICARE",adequacy_label="MEDIA"),
               item("valid")]
         self.assertEqual(self.check(rows),"sent")
         self.assertEqual(len(self.sent),1)
-        self.assertIn("valid",self.sent[0][4])
-        for bad in ("info","low","unconfirmed","broken"):
-            self.assertNotIn("Bando "+bad,self.sent[0][4])
+        text_body=self.sent[0][4]
+        for expected in ("low","unconfirmed","upcoming","verify","valid"):
+            self.assertIn("Bando "+expected,text_body)
+        for excluded in ("info","broken"):
+            self.assertNotIn("Bando "+excluded,text_body)
+        self.assertIn("IN ARRIVO",text_body)
+        self.assertIn("Adeguatezza: ALTA",text_body)
+        self.assertIn("DA VERIFICARE",text_body)
 
     def test_failure_never_marks_events_notified(self):
         self.check([])
@@ -76,11 +84,11 @@ class NotifyTests(unittest.TestCase):
                 "key","person@example.org",fail)
         self.assertEqual(self.check([item("new")]),"sent")
 
-    def test_disabled_secrets_never_send_and_advance_baseline(self):
+    def test_disabled_secrets_do_not_lose_pending_notification(self):
         self.check([])
         self.assertEqual(self.check([item("not-announced")],key="",recipient=""),"disabled")
-        self.assertEqual(self.check([item("not-announced")]),"no-news")
-        self.assertEqual(self.sent,[])
+        self.assertEqual(self.check([item("not-announced")]),"sent")
+        self.assertEqual(len(self.sent),1)
 
     def test_free_quota_guard_does_not_mark_unsent(self):
         self.check([])
@@ -194,6 +202,57 @@ class NotifyTests(unittest.TestCase):
         self.assertIn("Da verificare",html)
         self.assertNotIn("javascript:",html)
         self.assertIn("https://jeckodevelopment.com/dev/funding/",html)
+
+    def test_digest_includes_every_item_not_just_first_twelve(self):
+        self.check([])
+        rows=[item(f"extra-{i}",adequacy_label="ALTA" if i==14 else "MEDIA")
+              for i in range(15)]
+        self.assertEqual(self.check(rows),"sent")
+        self.assertEqual(len(self.sent),2)
+        bodies="\\n".join(call[4] for call in self.sent)
+        for i in range(15):
+            self.assertIn("Bando extra-"+str(i),bodies)
+        self.assertEqual(self.check(rows),"no-news")
+
+    def test_historical_v1_ledger_does_not_mass_alert_old_calls(self):
+        historical=item("old")
+        self.check([historical])
+        state=json.loads(self.path.read_text())
+        state["version"]=1
+        state["statuses"][historical["id"]]="ALTRO"
+        self.path.write_text(json.dumps(state))
+        self.assertEqual(self.check([historical,item("brand-new")]),"sent")
+        self.assertIn("Bando brand-new",self.sent[0][4])
+        self.assertNotIn("Bando old",self.sent[0][4])
+
+    def test_email_sorts_high_before_medium_before_low(self):
+        self.check([])
+        calls=[item("low",adequacy_label="BASSA"),
+               item("med",adequacy_label="MEDIA"),
+               item("high",adequacy_label="ALTA")]
+        self.assertEqual(self.check(calls),"sent")
+        body=self.sent[0][4]
+        self.assertLess(body.index("Bando high"),body.index("Bando med"))
+        self.assertLess(body.index("Bando med"),body.index("Bando low"))
+
+    def test_one_unavailable_source_does_not_block_new_digest(self):
+        from notify import main
+        import os
+        import sys as system
+        with tempfile.TemporaryDirectory() as tmp:
+            catalog=Path(tmp)/"catalog.json"
+            report=Path(tmp)/"report.json"
+            catalog.write_text(json.dumps([item("new-high",adequacy_label="ALTA")]))
+            report.write_text(json.dumps({"sources":[
+                {"source_id":"working","ok":True},
+                {"source_id":"alcotra","ok":False}]}))
+            with (patch.object(system,"argv",["notify.py","--catalog",str(catalog),
+                                              "--report",str(report),"--state",str(self.path)]),
+                  patch("notify.run") as mocked,
+                  patch.dict(os.environ,{"RESEND_API_KEY":"dummy",
+                                         "FUNDING_ALERT_RECIPIENT":"user@example.org"})):
+                main()
+                self.assertEqual(mocked.call_count,1)
 
     def test_failure_with_corrupt_state_is_explicit(self):
         self.path.write_text('{"version": 999, "statuses": {}}')
