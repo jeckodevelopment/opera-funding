@@ -98,7 +98,7 @@ assert.equal(fullReport.assessmentGaps[0],"Confermare la sede del partner");
 assert.equal(evaluationData({title:"Incomplete"},new Date("2026-11-18T12:00:00Z")).requirementFacts.length,0);
 assert.match(src,/for\(const fact of d\.requirementFacts\)addReportFact\(detailFacts,fact\.label,fact\.value\)/);
 assert.match(src,/print-conditions/);
-assert.match(css,/\.print-detail-facts/);
+assert.match(fs.readFileSync("web/styles.css","utf8"),/\.print-detail-facts/);
 
 assert.equal(evaluation.links.length,2);
 assert.ok(evaluation.links.every(x=>x.href.startsWith("https://")));
