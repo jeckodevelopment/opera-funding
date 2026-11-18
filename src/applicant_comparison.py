@@ -25,6 +25,15 @@ RUNTS_MANDATORY = re.compile(
     r"solo\s+(?:gli\s+)?iscritt[ieo]\s+(?:al|nel)\s+runts)\b"
 )
 MAX_SUMMARY_LENGTH = 240
+# Narrow recognition: an explicit, mandatory municipal seat, without alternative
+# territorial benefit, operational presence, or partner eligibility clauses.
+MUNICIPAL_SEAT = re.compile(
+    r"(?i)\bsede\s+(?:legale|operativa)\s+(?:nel\s+comune\s+di|nel\s+territorio\s+del\s+comune\s+di|a|in)\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ' -]{1,45})"
+)
+ALTERNATIVE_ROUTE = re.compile(
+    r"(?i)\b(?:oppure|ovvero|in\s+alternativa|ricadut[ae]\s+(?:sul|nel)\s+territorio|"
+    r"operativit[aà]\s+(?:sul|nel)\s+territorio|partner|partenariat[io])\b"
+)
 
 
 def load_applicant_profile(path=DEFAULT_PROFILE):
@@ -77,6 +86,17 @@ def _declared_context(category, excerpt, profile, as_of):
             except (ValueError,StopIteration):
                 pass
     if category == "territorio":
+        seat = MUNICIPAL_SEAT.search(excerpt)
+        declared = _declared_value(profile, "registered_municipality")
+        if seat and declared and not ALTERNATIVE_ROUTE.search(excerpt):
+            target = seat.group(1).strip(" .,;:").lower()
+            # Accept only a short, unambiguous municipality name in a mandatory
+            # seat clause. Longer text and 'territorio' references remain pending.
+            if len(target.split()) <= 3 and target not in REGIONS and target != str(declared).strip().lower():
+                return ("potenzialmente_incompatibile",
+                        "La fonte sembra richiedere una sede nel Comune di " +
+                        seat.group(1).strip() + "; il Comune della sede dichiarata è " +
+                        str(declared) + ". Verificare condizioni integrali ed eventuali eccezioni")
         region = _declared_value(profile, "registered_region")
         municipality = _declared_value(profile, "registered_municipality")
         if region or municipality:

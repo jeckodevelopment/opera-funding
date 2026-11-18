@@ -66,6 +66,19 @@ class ApplicantComparisonTests(unittest.TestCase):
         self.assertEqual([x["status"] for x in compare_applicant_requirements(row,p)],
                          ["da_verificare"]*3)
 
+    def test_mandatory_different_municipal_seat_flags_risk(self):
+        row={"eligibility_specific_requirements":[
+            requirement("territorio","I beneficiari devono avere sede legale nel Comune di Rivoli.")]}
+        p=profile(registered_municipality=("Torino","dichiarato","Dichiarazione"))
+        result=compare_applicant_requirements(row,p)[0]
+        self.assertEqual(result["status"],"potenzialmente_incompatibile")
+
+    def test_territorial_alternative_requires_review_not_exclusion(self):
+        row={"eligibility_specific_requirements":[
+            requirement("territorio","Sede legale nel Comune di Rivoli oppure ricadute sul territorio.")]}
+        p=profile(registered_municipality=("Torino","dichiarato","Dichiarazione"))
+        self.assertEqual(compare_applicant_requirements(row,p)[0]["status"],"da_verificare")
+
     def test_profile_validation_rejects_unattributed_documented_fact(self):
         with tempfile.TemporaryDirectory() as directory:
             p=Path(directory)/"profile.json"

@@ -82,6 +82,14 @@ def apply_adequacy(row):
     elif ("scuol" in beneficiaries.lower() or "school" in beneficiaries.lower()) and not PARTNERS_ALLOWED.search(terms):
         reasons.append("Verificare se Opera+ può partecipare come partner di un ente scolastico")
 
+    territorial_risk=any(
+        x.get("category")=="territorio" and x.get("status")=="potenzialmente_incompatibile"
+        for x in (row.get("applicant_requirement_comparison") or []) if isinstance(x,dict)
+    )
+    if territorial_risk:
+        level=min(level,1)
+        row["adequacy_verification_flags"].append("sede_territoriale_potenzialmente_esclusa")
+        reasons.append("Requisito territoriale apparentemente incompatibile con la sede dichiarata; non considerare la candidatura diretta ammissibile senza prova di eccezioni")
     discrepancies=unresolved_eligibility_documents(row)
     if discrepancies:
         # A higher assessment must not depend on applicant rules that differ

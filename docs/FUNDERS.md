@@ -139,3 +139,10 @@ Sono censiti i canali istituzionali Torino 2033, Fondazione per la Cultura Torin
 3. Dopo il workflow di scansione verificare gli stati effettivi delle nuove pagine: `ok`, `error` o baseline; non presentare come monitorato un fetch fallito.
 4. Controllare che la prima scansione non crei opportunità fittizie, che i link generici siano scartati e che i risultati siano deduplicati.
 5. Controllare che le notifiche non partano per una sola variazione del contenuto e che opportunità vere seguano la valutazione di adeguatezza corrente.
+
+
+## Verifica territoriale e distinzione dagli stati personali
+
+Le opportunità comunali e provinciali non sono automaticamente compatibili con una associazione avente sede in un territorio diverso: occorre verificare il requisito **testuale e documentato** del bando per sede legale, sede operativa, attività pregressa, ricadute territoriali e partner. Quando il requisito esplicito di sede comunale indica un Comune differente da quello dichiarato nel profilo e il passo citato non ammette alternative, il confronto marca `potenzialmente_incompatibile`, limita l'adeguatezza a BASSA e impedisce di suggerire una candidatura diretta. Non è una certificazione legale: se il bando menziona ricadute locali o alternative, lo stato rimane `da_verificare` finché la prova specifica non è acquisita. Il caso Rivoli richiede quindi verifica delle diverse categorie ammesse, non un sì automatico e non un'esclusione basata sul solo ente emittente.
+
+Lo stato iniziale del workflow personale è denominato «Da esaminare» (precedente «Da valutare»); riguarda soltanto la lavorazione delle opportunità seguite sul browser, **non** la copertura delle valutazioni del catalogo. I dati locali precedenti sono normalizzati in lettura.
