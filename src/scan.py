@@ -316,7 +316,7 @@ def run():
     with requests.Session() as programme_session:
         programme_session.headers.update({"User-Agent":AGENT,"Accept":"text/html"})
         programme_state=check_programmes(registry_funders,previous_programmes,programme_session,eligible_to_fetch,now)
-    programme_state_path.write_text(json.dumps(programme_state,ensure_ascii=False,indent=2,sort_keys=True)+"\\n",encoding="utf-8")
+    programme_state_path.write_text(json.dumps(programme_state,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
     output.parent.mkdir(parents=True, exist_ok=True)
     ids_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
