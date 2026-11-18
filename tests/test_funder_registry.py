@@ -9,7 +9,9 @@ ROOT=Path(__file__).resolve().parents[1]
 class TestFunderRegistry(unittest.TestCase):
  def test_registry(self):
   data=load_registry(ROOT/"config/funders.json")
-  self.assertGreaterEqual(len(data["funders"]),30)
+  self.assertGreaterEqual(len(data["funders"]),41)
+  self.assertGreaterEqual(len(data["programs"]),21)
+  self.assertEqual(len([p for p in data["programs"] if p["monitoring"]=="direct"]),10)
   self.assertTrue(all(p["funder_id"] for p in data["programs"]))
  def test_links_are_strict(self):
   data=load_registry(ROOT/"config/funders.json")
@@ -23,4 +25,6 @@ class TestFunderRegistry(unittest.TestCase):
   by_id={p["id"]:p for p in results["programs"]}
   self.assertEqual(by_id["crt-bandi"]["monitoring_status"],"ok")
   self.assertEqual(by_id["enelcuore-progetti"]["monitoring_status"],"not_configured")
+  self.assertEqual(by_id["iren-contributi"]["monitoring_status"],"reference_only")
+  self.assertIsNone(by_id["iren-contributi"]["last_checked_at"])
 if __name__=="__main__":unittest.main()

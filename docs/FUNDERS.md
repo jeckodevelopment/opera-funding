@@ -3,7 +3,7 @@
 La gerarchia canonica è **finanziatore → programma → opportunità**. La fonte di verità versionata è `config/funders.json`; gli elementi già presenti in `config/sources.json` sono fonti di scoperta, non necessariamente erogatori.
 
 - Ogni finanziatore ha un ID permanente, tipologia, territorio e stato di verifica. Un nome nel registro **non dimostra** che Opera+ sia ammissibile.
-- Ogni programma identifica l'eventuale pagina ufficiale e un canale di candidatura; `monitoring=existing-source` indica il crawler già attivo. `monitoring=direct` è una **pagina censita ma non ancora scandita** e non deve essere visualizzata come controllata.
+- Ogni programma identifica l'eventuale pagina ufficiale e un canale di candidatura; `monitoring=existing-source` indica il crawler già attivo. `monitoring=direct` viene sottoposto a scansione periodica, ma risulta **monitorato** soltanto dopo un controllo riuscito. `monitoring=reference-only` rappresenta un canale ufficiale documentato che non pubblica necessariamente bandi: è mostrato come **Solo riferimento**, senza richieste automatiche e senza falsi stati di scansione.
 - Le opportunità vengono associate solo mediante `source_id` esplicito. Le opportunità provenienti da aggregatori (Vol.To) **non vengono attribuite** all'aggregatore come finanziatore; richiedono riconciliazione su fonte ufficiale.
 - `scan-status.json` contiene il registro pubblico `funder_monitoring` con stato effettivo di controllo, senza dati riservati. I dati dell'associazione e le note operative restano fuori dal registro.
 - I programmi senza un canale pubblico verificato sono anagrafica da approfondire, **non opportunità aperte**. Non inventare scadenze o creare schede opportunità da semplici pagine istituzionali.
@@ -61,3 +61,33 @@ Le pagine **Finanziatori** e **Monitoraggio programmi** visualizzano tabelle HTM
 - Verificare gli stati monitorato/errore/non configurato, le date, i link ufficiali e la marcatura di pagina modificata.
 - Su smartphone verificare lo scorrimento orizzontale accessibile senza comprimere le colonne.
 - Controllare regressioni: menu a tre pagine, Dashboard con default *Aperte*, scheda opportunità e PDF.
+
+## Ampliamento censimento — 18 novembre 2026
+
+Sono stati aggiunti **10 finanziatori** (Comuni di Alba, Bra, Pinerolo, Rivoli, Moncalieri, Asti, Chivasso, Città Metropolitana di Torino e Province di Novara e Alessandria) e **14 programmi/canali** istituzionali e aziendali. Totale: **41 finanziatori, 21 programmi**; **10** programmi di tipo `direct`, **5** già monitorati dalle fonti tradizionali e **6** `reference-only`. Questi sono valori di configurazione: lo stato operativo reale è letto dall'ultima scansione.
+
+La copertura diretta comprende pagine ufficiali di contributi culturali dei Comuni di Alba, Bra, Pinerolo, Rivoli, Moncalieri, bandi delle politiche giovanili della Città Metropolitana e liste di Fondazione TIM e UniCredit Foundation. I nuovi programmi possono generare schede solo quando vengono individuate pagine specifiche con dati verificabili e superano la pipeline esistente: non si genera automaticamente un bando dalla pagina generica del programma.
+
+- **Alba:** https://www.comune.alba.cn.it/it/page/bando-per-le-associazioni-area-cultura-2023 — attenzione a bandi territoriali e edizioni annuali; la pagina di riferimento può mantenere un vecchio slug.
+- **Bra:** https://www.comune.bra.cn.it/it/page/richiesta-di-contributi — contributi alle associazioni con sede o operatività territoriale.
+- **Pinerolo:** https://www.comune.pinerolo.to.it/schede-informative/bando-pubblico-per-selezione-proposte-per-lassegnazione-contributi-economici
+- **Rivoli:** https://www.comune.rivoli.to.it/Novita/Avvisi/Avviso-pubblico-per-la-concessione-di-contributi-economici-alle-associazioni-del-territorio
+- **Moncalieri:** https://www.comune.moncalieri.to.it/servizi/bando-manifestazioni — verificare anche iscrizione albo comunale.
+- **Città Metropolitana di Torino:** https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/politiche-giovanili/avvisi-e-bandi — alcune misure sono riservate ai Comuni.
+- **Fondazione TIM:** https://www.fondazionetim.it/bandi — bandi anche per Cultura e Arte.
+- **UniCredit Foundation:** https://www.unicreditfoundation.org/it/bandi-aperti — possibili bandi rivolti a singoli ricercatori o istituzioni specifiche.
+- **Iren:** https://sponsorizzazioni.gruppoiren.it/ — portale richieste contributi: **Solo riferimento**, non bando.
+- **Reale Foundation:** https://www.realegroup.eu/IT/chi-siamo/sostenibilita/reale-foundation — **Solo riferimento**, non prova di candidatura libera.
+- **Asti, Chivasso, Novara e Alessandria:** pagine ufficiali informative o regolamenti censiti come **Solo riferimento**; l'apertura di un bando non è implicita.
+
+### Regole di qualità
+
+Non classificare come `APERTO` un canale solo perché riceve richieste o mostra bandi storici. Non identificare il beneficiario di un contributo provinciale come finanziatore. Per i bandi comunali verificare la ricaduta territoriale, l'eventuale iscrizione all'albo e le finestre annuali; per le aziende distinguere sponsorizzazioni dirette da selezioni pubbliche. Sono ancora da ricercare e qualificare Province e Comuni non coperti e fondazioni/aziende senza una pagina ufficiale candidabile.
+
+### Collaudi
+
+- Validare `config/funders.json` e la suite completa.
+- Dopo la scansione verificare i 10 programmi `direct`, il loro stato reale, i contatori di importazione e gli eventuali errori robots/redirect.
+- Verificare che i 6 programmi `reference-only` siano indicati **Solo riferimento** e non falsamente come monitorati.
+- Verificare che bandi comunali senza reale candidatura o di soggetti non ammissibili non generino falsi alert e che nuovi bandi verificati siano assegnati alla fonte e al programma corretti.
+- Non alterare il filtro iniziale *Aperte*, le viste tabellari, i link numerici e le notifiche esistenti.

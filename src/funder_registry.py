@@ -43,6 +43,7 @@ def public_monitoring(registry,source_statuses,checked_at,direct_status=None):
         status=by_source.get(p.get("source_id"))
         direct=direct_status.get(p["id"]) if p.get("monitoring")=="direct" else None
         public_programs.append({**p,"monitoring_status":(
+            "reference_only" if p.get("monitoring")=="reference-only" else
             direct["status"] if direct else
             "ok" if status and status.get("ok") else
             "error" if status and not status.get("ok") else

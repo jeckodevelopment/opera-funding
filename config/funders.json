@@ -87,8 +87,8 @@
       "name": "UniCredit Foundation",
       "type": "fondazione d'impresa",
       "territory": "Italia",
-      "website": null,
-      "verification": "da verificare",
+      "website": "https://www.unicreditfoundation.org/it/bandi-aperti",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
       "accepts_applications": null
     },
     {
@@ -168,8 +168,8 @@
       "name": "Iren",
       "type": "impresa",
       "territory": "Piemonte",
-      "website": null,
-      "verification": "da verificare",
+      "website": "https://sponsorizzazioni.gruppoiren.it/",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
       "accepts_applications": null
     },
     {
@@ -186,8 +186,8 @@
       "name": "Fondazione TIM",
       "type": "fondazione d'impresa",
       "territory": "Italia",
-      "website": null,
-      "verification": "da verificare",
+      "website": "https://www.fondazionetim.it/bandi",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
       "accepts_applications": null
     },
     {
@@ -279,6 +279,96 @@
       "website": null,
       "verification": "da verificare",
       "accepts_applications": null
+    },
+    {
+      "id": "alba",
+      "name": "Comune di Alba",
+      "type": "comune",
+      "territory": "Alba (CN)",
+      "website": "https://www.comune.alba.cn.it/it/page/bando-per-le-associazioni-area-cultura-2023",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
+      "accepts_applications": null
+    },
+    {
+      "id": "bra",
+      "name": "Comune di Bra",
+      "type": "comune",
+      "territory": "Bra (CN)",
+      "website": "https://www.comune.bra.cn.it/it/page/richiesta-di-contributi",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
+      "accepts_applications": null
+    },
+    {
+      "id": "pinerolo",
+      "name": "Città di Pinerolo",
+      "type": "comune",
+      "territory": "Pinerolo (TO)",
+      "website": "https://www.comune.pinerolo.to.it/schede-informative/bando-pubblico-per-selezione-proposte-per-lassegnazione-contributi-economici",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
+      "accepts_applications": null
+    },
+    {
+      "id": "rivoli",
+      "name": "Città di Rivoli",
+      "type": "comune",
+      "territory": "Rivoli (TO)",
+      "website": "https://www.comune.rivoli.to.it/Novita/Avvisi/Avviso-pubblico-per-la-concessione-di-contributi-economici-alle-associazioni-del-territorio",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
+      "accepts_applications": null
+    },
+    {
+      "id": "moncalieri",
+      "name": "Città di Moncalieri",
+      "type": "comune",
+      "territory": "Moncalieri (TO)",
+      "website": "https://www.comune.moncalieri.to.it/servizi/bando-manifestazioni",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
+      "accepts_applications": null
+    },
+    {
+      "id": "asti",
+      "name": "Città di Asti",
+      "type": "comune",
+      "territory": "Asti (AT)",
+      "website": "https://www.comune.asti.it/servizi/patrocinio-benefici-economici-eo-contributi-eventi",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
+      "accepts_applications": null
+    },
+    {
+      "id": "cmtorino",
+      "name": "Città Metropolitana di Torino",
+      "type": "ente pubblico",
+      "territory": "Torino (TO)",
+      "website": "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/politiche-giovanili/avvisi-e-bandi",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
+      "accepts_applications": null
+    },
+    {
+      "id": "chivasso",
+      "name": "Comune di Chivasso",
+      "type": "comune",
+      "territory": "Chivasso (TO)",
+      "website": "https://comune.chivasso.to.it/it/topics/patrimonio-culturale",
+      "verification": "fonte istituzionale reperita; ammissibilità non verificata",
+      "accepts_applications": null
+    },
+    {
+      "id": "provincia-novara",
+      "name": "Provincia di Novara",
+      "type": "provincia",
+      "territory": "Novara (NO)",
+      "website": "https://www.provincia.novara.it/it/page/sovvenzioni-contributi-sussidi-vantaggi-economici-criteri-e-modalita-atti-di-concessione",
+      "verification": "ente e riferimenti ufficiali verificati; nuovi bandi e ammissibilità da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "provincia-alessandria",
+      "name": "Provincia di Alessandria",
+      "type": "provincia",
+      "territory": "Alessandria (AL)",
+      "website": "https://provincia.alessandria.it/",
+      "verification": "ente e riferimenti ufficiali verificati; nuovi bandi e ammissibilità da verificare",
+      "accepts_applications": null
     }
   ],
   "programs": [
@@ -342,6 +432,132 @@
       "source_id": "culturatorino",
       "submission": "bando",
       "monitoring": "existing-source"
+    },
+    {
+      "id": "alba-cultura",
+      "funder_id": "alba",
+      "name": "Bandi cultura e contributi alle associazioni",
+      "url": "https://www.comune.alba.cn.it/it/page/bando-per-le-associazioni-area-cultura-2023",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Bandi comunali, eleggibilità legata a sede o attività ad Alba"
+    },
+    {
+      "id": "bra-associazioni",
+      "funder_id": "bra",
+      "name": "Contributi alle associazioni culturali",
+      "url": "https://www.comune.bra.cn.it/it/page/richiesta-di-contributi",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Contributi territoriali: verificare operatività a Bra e finestra annuale"
+    },
+    {
+      "id": "pinerolo-cultura",
+      "funder_id": "pinerolo",
+      "name": "Contributi ordinari per progetti culturali",
+      "url": "https://www.comune.pinerolo.to.it/schede-informative/bando-pubblico-per-selezione-proposte-per-lassegnazione-contributi-economici",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Verificare l'edizione e la ricaduta sul territorio"
+    },
+    {
+      "id": "rivoli-associazioni",
+      "funder_id": "rivoli",
+      "name": "Contributi a fondo perduto alle associazioni",
+      "url": "https://www.comune.rivoli.to.it/Novita/Avvisi/Avviso-pubblico-per-la-concessione-di-contributi-economici-alle-associazioni-del-territorio",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Avviso 2026; non presumerne la riapertura negli anni successivi"
+    },
+    {
+      "id": "moncalieri-eventi",
+      "funder_id": "moncalieri",
+      "name": "Bando manifestazioni culturali",
+      "url": "https://www.comune.moncalieri.to.it/servizi/bando-manifestazioni",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Richiesta spesso condizionata a albo e attività comunali"
+    },
+    {
+      "id": "asti-eventi",
+      "funder_id": "asti",
+      "name": "Patrocinio e contributi per eventi",
+      "url": "https://www.comune.asti.it/servizi/patrocinio-benefici-economici-eo-contributi-eventi",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Canale procedurale, non un elenco di bandi con calendario"
+    },
+    {
+      "id": "cmtorino-giovani",
+      "funder_id": "cmtorino",
+      "name": "Avvisi e bandi delle politiche giovanili",
+      "url": "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/politiche-giovanili/avvisi-e-bandi",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Alcuni bandi sono riservati ai Comuni: non presumere ammissibilità associazioni"
+    },
+    {
+      "id": "chivasso-cultura",
+      "funder_id": "chivasso",
+      "name": "Contributi ed eventi culturali",
+      "url": "https://comune.chivasso.to.it/it/topics/patrimonio-culturale",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Indice informativo generale: da verificare una pagina di bandi dedicata"
+    },
+    {
+      "id": "tim-bandi",
+      "funder_id": "tim",
+      "name": "Bandi Arte e Cultura e altre aree",
+      "url": "https://www.fondazionetim.it/bandi",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Finestre e bandi da verificare per edizione"
+    },
+    {
+      "id": "unicredit-bandi",
+      "funder_id": "unicredit",
+      "name": "Bandi UniCredit Foundation",
+      "url": "https://www.unicreditfoundation.org/it/bandi-aperti",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Alcuni programmi rivolti a ricercatori o scuole: eleggibilità da verificare"
+    },
+    {
+      "id": "iren-contributi",
+      "funder_id": "iren",
+      "name": "Richieste contributi e sponsorizzazioni",
+      "url": "https://sponsorizzazioni.gruppoiren.it/",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Canale di candidatura a progetto, non elenco di bandi automaticamente aperti"
+    },
+    {
+      "id": "reale-progetti",
+      "funder_id": "reale",
+      "name": "Interventi Reale Foundation",
+      "url": "https://www.realegroup.eu/IT/chi-siamo/sostenibilita/reale-foundation",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Fondazione e progetti documentati; candidature spontanee da verificare"
+    },
+    {
+      "id": "provincia-novara-contributi",
+      "funder_id": "provincia-novara",
+      "name": "Criteri e atti di concessione contributi",
+      "url": "https://www.provincia.novara.it/it/page/sovvenzioni-contributi-sussidi-vantaggi-economici-criteri-e-modalita-atti-di-concessione",
+      "monitoring": "reference-only",
+      "submission": "da verificare",
+      "eligibility_note": "Registro delle erogazioni: non costituisce un bando aperto"
+    },
+    {
+      "id": "provincia-alessandria-regolamento",
+      "funder_id": "provincia-alessandria",
+      "name": "Regolamento per la concessione di contributi",
+      "url": "https://provincia.alessandria.it/wp-content/uploads/sites/757/2023/12/regolamentocontributi.pdf",
+      "monitoring": "reference-only",
+      "submission": "da verificare",
+      "eligibility_note": "Regolamento PDF: nessuna candidatura aperta automaticamente"
     }
   ]
 }
