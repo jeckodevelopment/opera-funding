@@ -329,7 +329,7 @@ function opportunityUrl(row,base=window.location.href){
 }
 function findOpportunity(key,rows){
  if(typeof key!=="string")return null;
- if(/^[1-9]\\d*$/.test(key)){
+ if(/^[1-9]\d*$/.test(key)){
   const numeric=Number(key);
   if(!Number.isSafeInteger(numeric))return null;
   return rows.find(row=>row.public_id===numeric)||null;
