@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#f7f6f3">
 <meta name="description" content="Opera+ Funding: trova bandi e opportunità culturali, con scadenze e pertinenza a colpo d'occhio.">
 <title>Opera+ Funding · Opportunità per la cultura</title>
-<link rel="stylesheet" href="styles.css?v=20261118-07">
-<script src="app.js?v=20261118-07" defer></script>
+<link rel="stylesheet" href="styles.css?v=20261118-08">
+<script src="app.js?v=20261118-08" defer></script>
 </head>
 <body>
 <div class="shell">
@@ -17,10 +17,11 @@
     </a>
     <span class="brand-divider" aria-hidden="true"></span>
     <div class="brand-name"><strong>Funding</strong><span>Osservatorio opportunità</span></div>
-    <a class="health-indicator" href="#source-health" aria-label="Consulta lo stato delle fonti">
+    <a class="health-indicator" href="?view=monitoraggio#source-health" aria-label="Consulta lo stato delle fonti">
       <span id="health-dot" class="health-dot neutral" aria-hidden="true"></span><span id="health-label">Controllo fonti…</span>
     </a>
   </header>
+  <nav class="primary-nav" aria-label="Navigazione principale"><a href="?view=dashboard" data-view="dashboard" aria-current="page">Dashboard</a><a href="?view=finanziatori" data-view="finanziatori">Finanziatori</a><a href="?view=monitoraggio" data-view="monitoraggio">Monitoraggio programmi</a></nav>
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div>
@@ -83,20 +84,19 @@
       </div>
       <div id="dialog-content" class="dialog-content"></div>
     </section>
-    <nav class="registry-nav" aria-label="Sezioni aggiuntive"><a href="#finanziatori">Finanziatori</a><a href="#monitoraggio-programmi">Monitoraggio programmi</a></nav>
-    <section class="funding-registry" id="finanziatori" aria-labelledby="funding-registry-title">
+    <section class="funding-registry" id="finanziatori" hidden aria-labelledby="funding-registry-title">
       <div class="section-head"><div><p class="eyebrow">ANAGRAFICA</p><h2 id="funding-registry-title">Finanziatori e programmi</h2></div><span id="funder-count" class="registry-count">—</span></div>
       <p class="registry-intro">Finanziatori censiti anche senza bandi aperti. La presenza non dimostra che l'associazione possa candidarsi.</p>
       <label class="registry-search-label" for="funder-search">Cerca finanziatore</label>
       <input id="funder-search" type="search" placeholder="Nome, territorio, tipologia…" autocomplete="off">
       <div id="funder-list" class="registry-list" aria-live="polite">Caricamento…</div>
     </section>
-    <section class="funding-registry" id="monitoraggio-programmi" aria-labelledby="programme-monitoring-title">
+    <section class="funding-registry" id="monitoraggio-programmi" hidden aria-labelledby="programme-monitoring-title">
       <div class="section-head"><div><p class="eyebrow">COPERTURA</p><h2 id="programme-monitoring-title">Monitoraggio programmi</h2></div><span id="programme-count" class="registry-count">—</span></div>
       <p class="registry-intro">Le fonti non ancora configurate sono distinte da quelle effettivamente scandite.</p>
       <div id="programme-list" class="registry-list" aria-live="polite">Caricamento…</div>
     </section>
-    <section class="source-health" id="source-health" aria-labelledby="source-health-title">
+    <section class="source-health" id="source-health" hidden aria-labelledby="source-health-title">
       <div class="source-head">
         <div><p class="eyebrow">MONITORAGGIO</p><h2 id="source-health-title">Stato delle fonti</h2><p>Eventuali problemi di accesso o elaborazione dei portali monitorati.</p></div>
         <span id="health-count" class="health-count">—</span>
