@@ -98,7 +98,7 @@ assert.equal(statusLabel("chiuso"),"SCADUTA");
 assert.equal(statusLabel("in arrivo"),"IN ARRIVO");
 assert.equal(statusLabel("altro contenuto"),"ALTRO CONTENUTO");
 assert.equal(state({opportunity_type:"altro avviso",title:"Archived news"}),"altro contenuto");
-assert.equal(state({opportunity_type:"non classificato",title:"Guidance"}),"altro contenuto");
+assert.equal(state({opportunity_type:"non classificato",title:"Guidance"}),"non verificato");
 assert.equal(state({opportunity_type:"finanziamento potenziale",title:"Grant"}),"non verificato");
 assert.equal(state({opportunity_type:"call progettuale da verificare",title:"Call"}),"non verificato");
 
@@ -131,10 +131,10 @@ assert.match(src,/loadSequence/);
 assert.match(html,/>Aperte<\/button>/);
 assert.match(html,/>Scadute<\/button>/);
 assert.match(html,/data-value="altro contenuto"/);
-assert.match(html,/<input id="status" type="hidden" value="aperto">/);
-assert.match(html,/<button class="quick-tab active" type="button" data-value="aperto" aria-pressed="true">Aperte<\/button>/);
+assert.match(html,/<input id="status" type="hidden" value="">/);
+assert.match(html,/<button class="quick-tab active" type="button" data-value="" aria-pressed="true">Tutti<\/button>/);
 assert.match(src,/updateStateCounts\(\)/);
-assert.match(src,/\$\("status"\)\.value="aperto";\$\("sort"\)\.value="deadline";/);
+assert.match(src,/\$\("status"\)\.value="";\$\("sort"\)\.value="deadline";/);
 
 assert.match(html,/data-sort="deadline"/);
 assert.match(html,/data-sort="score"/);

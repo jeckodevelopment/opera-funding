@@ -151,12 +151,13 @@ const validDate=value=>typeof value==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(value
 const today=()=>new Date().toISOString().slice(0,10);
 const daysLeft=date=>Math.ceil((Date.parse(date+"T00:00:00Z")-Date.parse(today()+"T00:00:00Z"))/86400000);
 function state(o){
+ if(o.opportunity_type==="altro avviso")return "altro contenuto";
  const end=o.deadline,start=o.opening_date;
  if((validDate(end)&&end<today())||o.closure_confirmed||(["chiuso","scaduto"].includes(o.status)&&!o.reopened_confirmed))return "chiuso";
  if(validDate(start)&&start>today()&&o.opening_evidence)return "in arrivo";
  const window=(validDate(end)&&end>=today())||(o.rolling_confirmed===true&&!!o.rolling_evidence);
  if(o.source_open_confirmed===true&&o.link_status==="raggiungibile"&&window&&(!validDate(start)||start<=today()))return "aperto";
- if(!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return "altro contenuto";
+ if(!["finanziamento potenziale","call progettuale da verificare","non classificato"].includes(o.opportunity_type))return "altro contenuto";
  return "non verificato";
 }
 function dateLabel(value){
@@ -616,7 +617,7 @@ function makeCard(o){
 function updateStateCounts(){
  for(const tab of document.querySelectorAll(".quick-tab")){
   const key=tab.dataset.value;
-  if(!key)continue;
+  if(!key){tab.textContent="Tutti ("+all.length+")";continue;}
   const title=tab.dataset.label||tab.textContent.replace(/\\s*\\(\\d+\\)$/,"").trim();
   tab.dataset.label=title;
   const number=all.filter(o=>key==="followed"?isFollowed(o):state(o)===key).length;
@@ -674,8 +675,8 @@ async function init(){
   if(sequence!==loadSequence)return;
   all=dataset.opportunities;const status=dataset.status;
   $("total").textContent=all.filter(o=>state(o)==="aperto").length;
-  $("potential").textContent=all.filter(o=>["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type)).length;
-  $("high").textContent=all.filter(o=>state(o)==="aperto"&&score(o)>=60).length;
+  $("potential").textContent=all.length;
+  $("high").textContent=all.filter(o=>state(o)==="aperto"&&assessmentLabel(o)==="ALTA AFFINITÀ").length;
   $("sources").textContent=status.sources.length;
   const stamp=status.checked_at?new Date(status.checked_at).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"}):"non disponibile";
   $("scan").textContent=(dataset.origin==="github"?"Ultima scansione: ":"Copia locale · Ultima scansione: ")+stamp;
@@ -698,7 +699,7 @@ for(const id of ["search","issuer","kind","level"])$(id).addEventListener(id==="
 for(const node of document.querySelectorAll(".quick-tab"))node.addEventListener("click",()=>{$("status").value=node.dataset.value;syncControls();resetPagination();});
 for(const node of document.querySelectorAll(".sort-button"))node.addEventListener("click",()=>{$("sort").value=node.dataset.sort;syncControls();resetPagination();});
 $("reset").addEventListener("click",()=>{
- $("search").value="";$("issuer").value="";$("kind").value="";$("level").value="0";$("status").value="aperto";$("sort").value="deadline";
+ $("search").value="";$("issuer").value="";$("kind").value="";$("level").value="0";$("status").value="";$("sort").value="deadline";
  syncControls();resetPagination();
 });
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
