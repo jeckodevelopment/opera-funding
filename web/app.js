@@ -739,10 +739,7 @@ function syncControls(){
 }
 function resetPagination(){visibleCount=PAGE_SIZE;render();}
 function registryTable(headers){
- const scroll=el("div",undefined,"registry-scroll");
- scroll.tabIndex=0;
- scroll.setAttribute("role","region");
- scroll.setAttribute("aria-label",headers.join(", "));
+ const scroll=el("div",undefined,"registry-table-wrap");
  const table=el("table",undefined,"registry-table");
  const head=el("thead"),row=el("tr");
  for(const title of headers){
