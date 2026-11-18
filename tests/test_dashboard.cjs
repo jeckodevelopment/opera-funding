@@ -152,7 +152,7 @@ assert.match(src,/detailLink\.href=opportunityUrl\(o\)/);
 assert.match(src,/window\.history\.replaceState/);
 assert.match(css,/\.item-title-link/);
 
-assert.match(src,/detailLink\.href=opportunityUrl\(o\.id\)/);
+assert.match(src,/detailLink\.href=opportunityUrl\(o\)/);
 assert.doesNotMatch(src,/detailLink\.addEventListener\("click"/);
 assert.match(css,/\.item-actions a\.details-toggle\{display:inline-flex/);
 
