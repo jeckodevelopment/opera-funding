@@ -19,7 +19,7 @@ class CatalogChangeTests(unittest.TestCase):
         out=track_changes(current,previous,NOW)
         self.assertTrue(all("catalog_new_at" not in x for x in out))
         self.assertTrue(all("catalog_updated_at" not in x for x in out))
-        self.assertTrue(all(x["catalog_tracking_version"]==1 for x in out))
+        self.assertTrue(all(x["catalog_tracking_version"]==2 for x in out))
     def test_new_record_only_after_baseline(self):
         old=track_changes([row("a")],[row("a")],NOW)
         current=[row("a"),row("b")]
