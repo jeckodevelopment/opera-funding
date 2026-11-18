@@ -124,7 +124,7 @@ class VerificationTests(unittest.TestCase):
              "other":row("other",source_id="crt",funding_status="DA VERIFICARE")}
         pending=backlog_candidates(old,"volto",set())
         self.assertEqual([x["id"] for x in pending],["one","expired"])
-        self.assertEqual(backlog_candidates(old,"volto",{"one"}),[])
+        self.assertEqual([x["id"] for x in backlog_candidates(old,"volto",{"one"})],["expired"])
     def test_crt_news_is_not_an_application(self):
         old=row("press",source_id="crt",url="https://www.fondazionecrt.it/fondazione-crt-per-la-scuola/")
         result=classify_crt_information(old)
