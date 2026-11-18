@@ -412,7 +412,7 @@ function prepareEvaluationSheet(o){
  }
  const disclaimer=el("footer",undefined,"print-disclaimer");
  disclaimer.append(el("strong","Valutazione preliminare, non decisione di candidatura."),
-  el("p","Le informazioni provengono dal catalogo Opera+ Funding e possono essere incomplete o superate. L'affinità tematica non conferma ammissibilità né probabilità di finanziamento. Verificare sempre i documenti ufficiali prima di candidarsi."));
+  el("p","Le informazioni provengono dal catalogo Opera+ Funding e possono essere incomplete o superate. L'adeguatezza progettuale non conferma ammissibilità né probabilità di finanziamento. Verificare sempre i documenti ufficiali prima di candidarsi."));
  sheet.append(disclaimer);
  return sheet;
 }
@@ -500,9 +500,9 @@ function renderOpportunity(o){
  line.append(el("span",statusLabel(state(o)),"chip status "+(state(o)==="aperto"?"open":state(o)==="chiuso"?"closed":state(o)==="in arrivo"?"upcoming":"unknown")));
  const change=changeBadge(o);
  if(change)line.append(el("span",change.label,"chip change "+change.kind));
- line.append(el("span",assessmentLabel(o),"chip assessment"));
  line.append(el("span",o.issuer||"Ente non indicato"));
  content.append(line);
+ content.append(makeAdequacy(o));
  content.append(el("p",opportunitySummary(o),"dialog-summary"));
  const grid=el("dl",undefined,"dialog-grid");
  dialogField(grid,"Scadenza",validDate(o.deadline)?dateLabel(o.deadline).replace("Scade il ",""):"Non indicata");

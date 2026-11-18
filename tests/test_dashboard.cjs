@@ -203,6 +203,8 @@ assert.equal(adequacyLevel({adequacy_level:3}),3);
 assert.equal(adequacyLabel({adequacy_level:1}),"BASSA");
 assert.equal(adequacyLabel({adequacy_level:0}),"INFORMATIVA");
 assert.doesNotMatch(src,/tags\.append\(el\("span",assessmentLabel\(o\)/);
+assert.doesNotMatch(src,/line\.append\(el\("span",assessmentLabel\(o\)/);
+assert.match(src,/content\.append\(makeAdequacy\(o\)\)/);
 assert.match(src,/Adeguatezza per Opera\+/);
 assert.match(src,/article\.append\(left,right,makeAdequacy\(o\)\)/);
 assert.doesNotMatch(src,/dialogField\(dl,"Adeguatezza tematica"/);
