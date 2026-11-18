@@ -4,26 +4,24 @@ Signals describe explicit source wording, never legal eligibility certification.
 Do not infer applicant requirements from titles, themes or generic descriptions.
 """
 import re
-from adequacy import restricted_applicants, PARTNERS_REQUIRED, PARTNERS_ALLOWED
+from adequacy import restricted_applicants
 
 DIRECT_ASSOCIATION = re.compile(
-    r"(?i)\\b(?:associazioni?\\s+culturali?|associazioni?\\s+senza\\s+scopo\\s+di\\s+lucro|"
-    r"enti\\s+del\\s+terzo\\s+settore|organizzazioni?\\s+non[ -]?profit|"
-    r"non[ -]?profit\\s+organisations?|cultural\\s+associations?)\\b"
+    r"(?i)\b(?:associazioni?\s+culturali?|associazioni?\s+senza\s+scopo\s+di\s+lucro|"
+    r"enti\s+del\s+terzo\s+settore|organizzazioni?\s+non[ -]?profit|"
+    r"non[ -]?profit\s+organisations?|cultural\s+associations?)\b"
 )
 ELIGIBILITY_CONTEXT = re.compile(
-    r"(?i)\\b(?:beneficiari|destinatari|soggetti\\s+ammissibili|eligible\\s+applicants|"
-    r"who\\s+can\\s+apply|possono\\s+(?:partecipare|candidarsi|presentare\\s+domanda)|"
-    r"applicants?\\s+(?:must|may)|sono\\s+ammess[ie])\\b"
+    r"(?i)\b(?:beneficiari|destinatari|soggetti\s+ammissibili|eligible\s+applicants|"
+    r"who\s+can\s+apply|possono\s+(?:partecipare|candidarsi|presentare\s+domanda)|"
+    r"applicants?\s+(?:must|may)|sono\s+ammess[ie])\b"
 )
 CONDITIONAL_REQUIREMENTS = re.compile(
-    r"(?i)\\b(?:partenariato\\s+obbligatorio|partner\\s+obbligatori|mandatory\\s+partners?|"
-    r"consortium\\s+required|consorzio\\s+obbligatorio|"
-    r"cofinanziamento\\s+(?:obbligatorio|richiesto)|"
-    r"mandatory\\s+co[ -]?financing)\\b"
+    r"(?i)\b(?:partenariato\s+(?:è\s+)?obbligatorio|partner\s+obbligatori|mandatory\s+partners?|"
+    r"consortium\s+required|consorzio\s+obbligatorio|"
+    r"cofinanziamento\s+(?:obbligatorio|richiesto)|"
+    r"mandatory\s+co[ -]?financing)\b"
 )
-NEGATION = re.compile(r"(?i)\\b(?:non|not|senza|without)\\s+$")
-
 
 def condition_signals(row):
     """Four mutually exclusive review signals, not four legal verdicts."""
