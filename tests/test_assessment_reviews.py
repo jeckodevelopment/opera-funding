@@ -93,7 +93,8 @@ class ReviewedAssessmentTests(unittest.TestCase):
              "title":"Festival partecipativi 2027","funding_status":"APERTO"}
         out=apply_assessment_reviews([row],[review])[0]
         self.assertEqual(out["assessment_label"],"BASSA AFFINITÀ")
-        self.assertIn("prime edizioni",out["assessment_reason"])\n        self.assertIn("precedente",out["direct_application_blocker"])
+        self.assertIn("prime edizioni",out["assessment_reason"])
+        self.assertIn("precedente",out["direct_application_blocker"])
         self.assertTrue(out["assessment_evidence_source"].startswith("https://"))
 
     def test_circ7_conditions_are_supported_by_official_pdf(self):
