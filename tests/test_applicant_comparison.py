@@ -73,6 +73,44 @@ class ApplicantComparisonTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 load_applicant_profile(p)
 
+    def test_operaplus_declared_facts_inform_checks_without_certifying_eligibility(self):
+        actual=load_applicant_profile()
+        fields=actual["profile_fields"]
+        self.assertEqual(fields["constitution_date"]["value"],"2026-04-23")
+        self.assertEqual(fields["registered_municipality"]["value"],"Torino")
+        self.assertEqual(fields["registered_region"]["value"],"Piemonte")
+        self.assertEqual(fields["runts_registration"]["value"],"in_corso")
+        self.assertEqual(fields["tax_code_exists"]["value"],True)
+        self.assertEqual(fields["completed_activities"]["value"],False)
+        self.assertEqual(fields["partnership_willingness"]["value"],True)
+        self.assertEqual(fields["cofinancing_policy"]["value"],"da_valutare_per_progetto")
+        self.assertTrue(all(v["verification"]=="dichiarato" for v in fields.values()
+                            if v.get("value") is not None))
+        row={"eligibility_specific_requirements":[
+            requirement("natura_giuridica","Iscrizione al RUNTS obbligatoria"),
+            requirement("anzianita","Costituiti da almeno 2 anni"),
+            requirement("territorio","Sede legale in Piemonte"),
+            requirement("condizioni_economiche","Cofinanziamento obbligatorio del 10%"),
+            requirement("partenariato","Partenariato obbligatorio"),
+            requirement("esperienza_pregressa","Esperienza pregressa obbligatoria")
+        ]}
+        out=annotate_applicant_comparison(row,actual,"2026-11-18")
+        self.assertEqual(out["applicant_comparison_counts"]["da_verificare"],6)
+        reasons=" ".join(x["reason"] for x in out["applicant_requirement_comparison"])
+        for phrase in ("in corso","anzianità dichiarata","Torino","singolo progetto",
+                       "partner e accordi","Nessuna attività precedente"):
+            self.assertIn(phrase,reasons)
+        self.assertEqual(out["applicant_comparison_counts"]["compatibile"],0)
+        self.assertEqual(out["applicant_comparison_counts"]["potenzialmente_incompatibile"],0)
+
+    def test_preliminary_age_warning_does_not_reject_future_deadline(self):
+        actual=load_applicant_profile()
+        row={"eligibility_specific_requirements":[
+            requirement("anzianita","Costituiti da almeno 1 anno")]}
+        result=compare_applicant_requirements(row,actual,"2026-11-18")[0]
+        self.assertEqual(result["status"],"da_verificare")
+        self.assertIn("inferiore al minimo",result["reason"])
+
     def test_record_keeps_opportunity_and_adequacy_unchanged(self):
         row={"adequacy_label":"ALTA","funding_status":"APERTO",
              "eligibility_specific_requirements":[requirement("territorio","Sede legale in Piemonte")]}
