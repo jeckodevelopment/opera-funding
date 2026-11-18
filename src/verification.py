@@ -19,21 +19,27 @@ def needs_review(item, now=None):
     return last is None or last < now-timedelta(days=3)
 
 def queue_key(item, now=None):
-    """Unvisited first; avoid repeating failed candidates every scan."""
-    attempted=_when(item.get("detail_attempted_at"))
+    """New and never-inspected records ahead of routine refreshes; archive included."""
     now=now or datetime.now(timezone.utc)
+    attempted=_when(item.get("detail_attempted_at"))
+    state=item.get("funding_status") or ""
     deadline=str(item.get("deadline") or "")
     expired=bool(deadline and deadline[:10]<now.date().isoformat())
-    closed=expired or item.get("funding_status")=="CHIUSO" or item.get("status")=="chiuso"
+    closed=expired or state=="CHIUSO" or item.get("status")=="chiuso"
     project=item.get("opportunity_type") in PROJECT_TYPES
-    # First unattempted funding calls, then least recently checked, then archives.
-    return (
-        0 if project and not closed else 1 if project else 2,
-        0 if attempted is None else 1,
-        attempted.isoformat() if attempted else "",
-        -int(item.get("relevance") or 0),
-        item.get("id") or item.get("url") or ""
-    )
+    if not item.get("_already_indexed"):
+        tier=0
+    elif attempted is None:
+        tier=1 if project and not closed else 2
+    elif project and not closed:
+        tier=3
+    elif project:
+        tier=4
+    else:
+        tier=5
+    return (tier, attempted.isoformat() if attempted else "",
+            -int(item.get("relevance") or 0), item.get("id") or item.get("url") or "")
+
 
 def classify_crt_information(record):
     """Exclude CRT press articles from grant candidates, without falsifying status."""
@@ -105,33 +111,37 @@ def classify_informational_page(record):
     return record
 
 def backlog_candidates(existing, source_id, discovered_ids):
-    """Revisit persisted opportunities no longer linked from the current index.
+    """Every retained historical record is eventually inspected, not just open calls.
 
-    Do not waste the document budget on confirmed closed calls, parent records
-    superseded by individual funding windows, or informational notices.
+    Individually generated application windows are evaluated via their official
+    parent page and kept as records; don't fetch synthetic #window URLs.
     """
     return [dict(item) for item in existing.values()
             if item.get("source_id")==source_id
             and item.get("id") not in discovered_ids
-            and not item.get("parent_id")
-            and item.get("funding_status")!="CHIUSO"
-            and item.get("opportunity_type") in PROJECT_TYPES]
+            and not item.get("parent_id")]
+
 
 def pick_for_review(found, existing, limit, now=None):
+    """Fair bounded queue across all kinds, with new records first."""
     now=now or datetime.now(timezone.utc)
     eligible=[]
+    seen=set()
     for item in found:
-        if item.get("opportunity_type") not in PROJECT_TYPES:
+        if item["id"] in seen:
             continue
+        seen.add(item["id"])
         old=existing.get(item["id"],{})
-        combined={**old,**item}
-        # Preserve actual review metadata when source index rediscovery resets it.
-        for k in ("detail_checked","detail_checked_at","detail_version","detail_attempted_at","funding_status"):
-            if k in old:combined[k]=old[k]
+        combined={**old,**item,"_already_indexed":bool(old)}
+        for key in ("detail_checked","detail_checked_at","detail_version",
+                    "detail_attempted_at","funding_status"):
+            if key in old:
+                combined[key]=old[key]
         if needs_review(combined,now):
             eligible.append(combined)
     eligible.sort(key=lambda x:queue_key(x,now))
     return {x["id"] for x in eligible[:limit]}
+
 
 def coverage(rows, sources):
     totals={"all":len(rows),"open":0,"closed":0,"upcoming":0,"unverified":0,
