@@ -268,14 +268,15 @@
     "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni",
     "evidence_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni",
     "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "L'avviso 2026 ammette esplicitamente associazioni senza scopo di lucro con sede legale in Piemonte: Opera+ risponde a questi due criteri dichiarati. Tuttavia finanzia esclusivamente comunicazione e promo-pubblicità nell'ambito di una concreta manifestazione/evento turistico piemontese 2026, con ricadute di promozione e attrazione; il corso online non corrisponde. Non risulta un evento già organizzato da Opera+ e non è certificata una candidatura.",
+    "assessment_reason": "La tipologia di associazione non profit con sede in Piemonte è ammessa dalla Regione. La misura però copre solo la comunicazione e promo-pubblicità di una manifestazione turistica effettiva nel 2026, con ricaduta territoriale: non un corso e-learning isolato. Opera+ non ha documentato alcun evento realizzato o programmato e non dispone quindi, allo stato, di un progetto candidabile. Adeguatezza MEDIA soltanto per un progetto turistico-culturale concreto, non come dichiarazione di ammissibilità sostanziale.",
     "programme_objectives_excerpt": "Promozione turistica e valorizzazione delle eccellenze, della storia e delle tradizioni piemontesi.",
-    "funded_activities_excerpt": "Solo iniziative di comunicazione e promo-pubblicità connesse a manifestazioni ed eventi di valenza turistica organizzati in località del Piemonte nel 2026, con eventuale completamento entro il 10 gennaio 2027.",
+    "funded_activities_excerpt": "Comunicazione e promo-pubblicità di eventi turistici organizzati in Piemonte dal 01/01/2026 al 31/12/2026; eventi a cavallo dell'anno completabili entro 10/01/2027. Una sola manifestazione per beneficiario; rilevanza anche locale se non riconosciuta ufficialmente come superiore.",
     "beneficiaries_excerpt": "Enti pubblici o di diritto pubblico piemontesi e associazioni senza scopo di lucro con sede legale in Piemonte.",
-    "requirements_excerpt": "Una sola manifestazione per richiedente; domanda tramite FINDOM dal 2 novembre 2026 al 24 novembre 2026 ore 12:00; occorre dimostrare la manifestazione e la ricaduta turistica delle attività promozionali.",
+    "requirements_excerpt": "Domanda FINDOM esclusivamente a cura del legale rappresentante o delegato entro il 24/11/2026 alle ore 12. Allegati secondo DD 603/2026: testo del bando, schema domanda e relazione di dettaglio Allegato B da compilare nel formato richiesto dalla piattaforma. La promozione deve generare attrattività turistica e ricadute economiche sul territorio; sede legale piemontese e natura non profit sono requisiti del soggetto, ma non attestano che un evento esista.",
     "assessment_gaps": [
-      "Individuare un evento territoriale realmente realizzato o programmato da Opera+ nel 2026 e la sua specifica campagna di promozione; non è stato dichiarato alcun evento.",
-      "Verificare costi, preventivi, documenti richiesti su FINDOM e ammissibilità di una iniziativa concreta prima di predisporre domanda."
+      "Non esiste nel profilo una manifestazione turistico-culturale di Opera+ nel 2026 documentata: senza evento concreto non predisporre una domanda.",
+      "Occorrerebbero programma e luogo dell'evento, evidenza della ricaduta turistica, preventivo di comunicazione/promo-pubblicità, relazione di dettaglio Allegato B e procedura FINDOM.",
+      "Scadenza inderogabile 24/11/2026 ore 12:00: senza un evento già organizzato non avviare una candidatura improvvisata."
     ],
     "reviewed_at": "2026-11-19"
   },
@@ -435,15 +436,16 @@
     "url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
     "evidence_url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
     "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Lo strumento a sportello è aperto a enti non profit culturali piemontesi, quindi la forma e il territorio dichiarati da Opera+ sono coerenti. Finanzia però la formazione professionale di lavoratori o collaboratori direttamente contrattualizzati, neoassunti oppure un tirocinio extracurricolare strutturato con promotore, non corsi rivolti al pubblico. I destinatari nominativi e un progetto formativo effettivo non risultano documentati: candidatura solo ipotetica, non immediatamente operativa.",
+    "assessment_reason": "Soggettivamente coerente come ente culturale non profit con sede piemontese, ma finanzia esclusivamente formazione professionale di lavoratori e collaboratori contrattualizzati o tirocini extracurricolari qualificati; Opera+ non ha documentato personale o tirocinanti idonei. Linea A richiede almeno un anno presso l'ente, temporalmente impossibile per un ente costituito il 23/04/2026 alla data attuale. Linea B richiede neoassunti entro un anno; linea C tirocinanti con soggetto promotore. Giudizio MEDIA condizionato a un progetto concreto, senza fare passare il corso Rigoletto come beneficiario.",
     "programme_objectives_excerpt": "Sviluppo delle competenze professionali dei lavoratori culturali e sostegno agli enti nella formazione del proprio personale e nell'avvio delle carriere dei giovani.",
     "funded_activities_excerpt": "Voucher fino a 10.000 euro, con contributo fino al 100% per percorsi di formazione qualificante di dipendenti e collaboratori continuativi degli enti culturali e tirocini extracurricolari di giovani; non per formazione amatoriale o destinatari generici.",
     "beneficiaries_excerpt": "Enti non profit operanti nella cultura con sede legale o operativa in Piemonte, Liguria o Valle d'Aosta ed enti pubblici per propri servizi culturali. I destinatari devono essere dipendenti, soci o collaboratori continuativi contrattualizzati dall'ente o giovani tirocinanti in percorsi previsti.",
-    "requirements_excerpt": "Una domanda a sportello per organizzazione sino a esaurimento fondi, con destinatari identificati, fabbisogni formativi e programma dettagliati. Linea A: collaboratori/lavoratori attivi nell'ente da almeno 1 anno; linea B: dipendenti assunti da non più di 1 anno; linea C: tirocinio extracurricolare conforme alle regole regionali con soggetto promotore, senza finanziare i rimborsi obbligatori. Escluse formazione amatoriale e corsi rivolti a destinatari generici.",
+    "requirements_excerpt": "Strumento a sportello sino a esaurimento fondi, domanda ROL modulo 'Buoni formazione per la cultura', una per ente. Destinatari e posizioni individuati, fabbisogni, relazione descrittiva con programma e tempi e piano economico obbligatori. Linea A: lavoratori/collaboratori attivi da almeno un anno (impossibile oggi per un ente costituito il 23/04/2026). Linea B: dipendenti neoassunti entro un anno. Linea C: tirocinio extracurricolare con promotore, giovani con studi terminati da non oltre 12 mesi; rimborso obbligatorio non finanziabile. Interventi dopo il 30/04/2026 e conclusi entro settembre 2027. Contributo 2.000-10.000 EUR, sino al 100% delle spese; cofinanziamento criterio preferenziale, non obbligo generale.",
     "assessment_gaps": [
-      "Non risultano contratti individuali di lavoro o collaborazione né destinatari ammissibili nominativamente identificati.",
-      "Possibile solo progettando concretamente una linea B oppure un tirocinio extracurricolare linea C con promotore; non ipotizzare che Opera+ abbia già i destinatari.",
-      "Non candidare l'attuale corso pubblico su Rigoletto come formazione interna."
+      "Linea A non percorribile nel novembre 2026 per l'anzianità dell'associazione: nessuno può esservi attivo da almeno un anno.",
+      "Verificare l'esistenza effettiva di dipendenti neoassunti per linea B; non è documentata nel profilo.",
+      "Linea C ipotizzabile solo predisponendo un tirocinio extracurricolare regolare, con giovane eleggibile, promotore e budget aggiuntivo, non il rimborso obbligatorio.",
+      "Per candidarsi su ROL servono destinatari nominativi, analisi fabbisogni, relazione formativa dettagliata e piano economico; senza questi elementi il progetto non è operativo."
     ],
     "reviewed_at": "2026-11-19",
     "catalog_title": "Buoni formazione per la cultura"
