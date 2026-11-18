@@ -28,6 +28,10 @@ PATTERNS = (
         r"(?:obbligo|quota\s+minima)\s+di\s+cofinanziamento|"
         r"(?:budget|fatturato|bilancio)\s+(?:minimo|di\s+almeno|non\s+inferiore)|"
         r"(?:mandatory|minimum)\s+(?:co[ -]?funding|co[ -]?financing|turnover))\b")),
+    ("esperienza_pregressa", re.compile(
+        r"(?i)\b(?:esperienza\s+(?:pregressa|precedente)\s+(?:obbligatoria|richiesta)|"
+        r"(?:almeno|minimo)\s+\d+\s+(?:progetti|iniziative|attivit[àa])\s+(?:realizzat[ie]|completat[ie])|"
+        r"previous\s+(?:project\s+)?experience\s+(?:required|mandatory))\b")),
     ("partenariato", re.compile(
         r"(?i)\b(?:partenariato\s+(?:obbligatorio|richiesto)|"
         r"(?:partner|partenariati)\s+obbligatori|"
