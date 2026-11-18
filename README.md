@@ -117,3 +117,10 @@ La coda non esclude più le schede **scadute, non classificate o informative**; 
 
 I campi `assessment_review_status`, `assessment_method`, `assessment_checked_at`, `assessment_evidence_count` e `assessment_missing_fields` sono conservati per **tutti** i record, inclusi quelli storici. La dashboard dichiara esplicitamente la copertura e le lacune nella scheda e la scansione pubblica il conteggio aggregato in `data/scan-status.json` → `assessment_coverage`. **Tutti i record ricevono un giudizio**, ma non è corretto dichiarare 250 revisioni complete quando alcune fonti non sono consultabili. La pubblicazione delle informazioni e la scansione restano processi distinti.
 
+
+### Passata straordinaria sullo storico (18 novembre 2026)
+
+Il comando `python src/scan.py --history-backfill` riesamina **tutte le schede archiviate con evidenze mancanti o parziali**, inclusi record scaduti e informativi, anche se una scansione recente aveva già tentato l'estrazione. Non sospende la scoperta di nuovi bandi e preserva le revisioni individuali documentate. Esegue un solo ciclo di recupero: le opportunità rimaste senza testo verificabile per dinieghi del sito, PDF scansioniti o allegati assenti **rimangono marcate come incomplete**, invece di risultare artificialmente verificate.
+
+Il workflow `.github/workflows/history-backfill.yml` parte una volta all'integrazione del file su `main`, può essere rilanciato manualmente e pubblica un report aggiornato di tutte le 250 schede, con il conteggio per livello di evidenza. Usa lo stesso gruppo di concorrenza della scansione ordinaria, così le due elaborazioni non sovrascrivono contemporaneamente i dati. Dopo la prima esecuzione, le scansioni quotidiane continuano a riesaminare le opportunità nuove e quelle storiche rimaste in coda.
+
