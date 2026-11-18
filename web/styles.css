@@ -201,3 +201,6 @@ body.detail-view .source-health{display:none}
  .detail-primary-actions>*{flex:1 1 auto}
 }
 @media(max-width:410px){.opportunity-page .detail-highlights{grid-template-columns:1fr}}
+
+/* Only display status filters with matching opportunities; keep Tutti visible. */
+.quick-tab[hidden]{display:none!important}
