@@ -10,7 +10,7 @@ from pathlib import Path
 
 DEFAULT_PROFILE = Path(__file__).resolve().parents[1] / "config/applicant_profile.json"
 CATEGORIES = ("territorio", "natura_giuridica", "anzianita",
-              "condizioni_economiche", "partenariato")
+              "condizioni_economiche", "partenariato", "esperienza_pregressa")
 REGIONS = (
     "piemonte", "lombardia", "liguria", "valle d'aosta", "veneto",
     "emilia-romagna", "toscana", "lazio", "puglia", "campania", "sicilia",
@@ -84,6 +84,9 @@ def _declared_context(category, excerpt, profile, as_of):
     if category == "condizioni_economiche":
         if _declared_value(profile, "cofinancing_policy") == "da_valutare_per_progetto":
             return ("da_verificare", "Cofinanziamento da valutare per il singolo progetto: importo e disponibilità non attestati")
+    if category == "esperienza_pregressa":
+        if _declared_value(profile, "completed_activities") is False:
+            return ("da_verificare", "Nessuna attività precedente dichiarata: verificare se il bando richiede progetti già realizzati o ammette nuovi enti")
     if category == "partenariato":
         if _declared_value(profile, "partnership_willingness") is True:
             return ("da_verificare", "Disponibilità dichiarata al partenariato, ma partner e accordi idonei non ancora confermati")
