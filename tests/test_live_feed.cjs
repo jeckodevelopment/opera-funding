@@ -6,6 +6,7 @@ async function scenario(remoteAvailable){
  const calls=[];
  const context={
   URL,Date,console,window:{addEventListener(){}},
+  setTimeout,clearTimeout,AbortController,
   document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
   fetch:async (url,opts)=>{
    calls.push({url,opts});
@@ -21,6 +22,7 @@ async function scenario(remoteAvailable){
  assert.equal(result.status.sources.length,0);
  assert.equal(calls.length,remoteAvailable?2:4);
  assert(calls.every(x=>x.opts.credentials==="omit"&&x.opts.cache==="no-store"));
+ assert(calls.every(x=>x.opts.signal instanceof AbortSignal));
  assert(calls[0].url.startsWith("https://raw.githubusercontent.com/jeckodevelopment/opera-funding/main/data/"));
  const versions=calls.map(x=>new URL(x.url,"https://local.example/dev/funding/").searchParams.get("v"));
  assert(versions.every(v=>v&&/^\d+$/.test(v)));
@@ -31,4 +33,33 @@ async function scenario(remoteAvailable){
  }
  
 }
-(async()=>{await scenario(true);await scenario(false);console.log("Live GitHub JSON and local fallback tests passed");})().catch(e=>{console.error(e);process.exitCode=1;});
+
+async function timeoutScenario(){
+ const calls=[];
+ const context={
+  URL,Date,console,window:{addEventListener(){}},setTimeout,clearTimeout,AbortController,
+  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
+  fetch:(url,opts)=>{
+   calls.push(url);
+   if(url.startsWith("https://raw.githubusercontent.com/"))return new Promise(()=>{});
+   return Promise.resolve({ok:true,json:async()=>url.includes("opportunities.json?")?[]:{checked_at:"2026-11-18T08:00:00Z",sources:[]}});
+  }
+ };
+ vm.runInNewContext(source+"\nglobalThis.getFeed=loadDataset;globalThis.getTimed=fetchWithDeadline;",context);
+ const started=Date.now();
+ const dataset=await context.getTimed("data/",120);
+ assert.equal(dataset.opportunities.length,0);
+ assert(Date.now()-started<1000);
+ // The remote request times out, then a same-origin JSON snapshot is loaded.
+ // Shorten the remote deadline without changing production timeouts.
+ const original=fs.readFileSync("web/app.js","utf8")
+   .replace(/fetchWithDeadline\(DATA_ORIGIN\)/g,"fetchWithDeadline(DATA_ORIGIN,80)")
+   .replace(/fetchWithDeadline\(FALLBACK_ORIGIN\)/g,"fetchWithDeadline(FALLBACK_ORIGIN,80)")
+   .replace(/\ninit\(\);\s*$/,"\n");
+ vm.runInNewContext(original+"\nglobalThis.getFeed=loadDataset;",context);
+ const result=await context.getFeed();
+ assert.equal(result.origin,"local");
+ assert(calls.some(url=>url.startsWith("data/opportunities.json?")));
+}
+
+(async()=>{await scenario(true);await scenario(false);await timeoutScenario();console.log("Live GitHub JSON and local fallback tests passed");})().catch(e=>{console.error(e);process.exitCode=1;});
