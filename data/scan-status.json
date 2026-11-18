@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T22:50:15+00:00",
+  "checked_at": "2026-11-18T22:54:33+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 15,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "torino",
@@ -31,23 +31,23 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "culturatorino",
       "source_name": "Fondazione per la Cultura Torino",
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "discovered": 21,
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "volto",
       "source_name": "Vol.To",
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "discovered": 16,
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "checked_at": "2026-11-18T22:54:33+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:50:15+00:00",
+      "checked_at": "2026-11-18T22:54:33+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-18T22:50:15+00:00",
+      "checked_at": "2026-11-18T22:54:33+00:00",
       "error": "robots.txt: risposta HTTP 503; verifica automatica non disponibile",
       "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
       "institutional_reference_label": "Regione Piemonte — bando ALCOTRA",
@@ -111,7 +111,7 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T22:50:15+00:00"
+      "checked_at": "2026-11-18T22:54:33+00:00"
     }
   ],
   "coverage": {
@@ -273,11 +273,11 @@
     "by_review_status": {
       "PARZIALE": 98,
       "EVIDENZE RACCOLTE": 14,
-      "REVISIONE DOCUMENTALE": 30,
-      "FONTE NON SUFFICIENTE": 113
+      "REVISIONE DOCUMENTALE": 35,
+      "FONTE NON SUFFICIENTE": 108
     },
     "completely_verified_applicability": 0,
-    "open_without_individual_review": 6,
+    "open_without_individual_review": 1,
     "new_pending": 0
   },
   "open_eligibility_review": {
@@ -461,25 +461,18 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "Un corso video di Opera+ non corrisponde a uno slate cinematografico commerciale.",
+          "Verificare il documento ufficiale completo solo in presenza di una distinta impresa/struttura audiovisiva con i precedenti richiesti."
         ],
         "condition_status": "informazioni_insufficienti",
-        "review_status": "FONTE NON SUFFICIENTE",
+        "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "Un corso video di Opera+ non corrisponde a uno slate cinematografico commerciale.",
+          "Verificare il documento ufficiale completo solo in presenza di una distinta impresa/struttura audiovisiva con i precedenti richiesti."
         ],
         "sources": [
+          "https://www.creativeeuropeireland.eu/funding-opportunities/call/european-slate-funding",
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVSLATE"
         ]
       },
@@ -741,25 +734,18 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "L'offerta di corsi online Opera+ non equivale a distribuzione internazionale di film tramite sales agent.",
+          "Verificare solo eventuali progetti cinematografici distinti e relativi accordi con produttori e distributori."
         ],
         "condition_status": "informazioni_insufficienti",
-        "review_status": "FONTE NON SUFFICIENTE",
+        "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "L'offerta di corsi online Opera+ non equivale a distribuzione internazionale di film tramite sales agent.",
+          "Verificare solo eventuali progetti cinematografici distinti e relativi accordi con produttori e distributori."
         ],
         "sources": [
+          "https://www.creativeeuropeireland.eu/funding-opportunities/call/films-on-the-move",
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMOVE"
         ]
       },
@@ -773,25 +759,18 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "Verificare il documento della call 2027 prima di considerare un progetto editoriale completamente distinto dall'e-learning.",
+          "La produzione di PDF divulgativi dei libretti non dimostra attività editoriale di traduzione e distribuzione internazionale di almeno cinque opere."
         ],
         "condition_status": "informazioni_insufficienti",
-        "review_status": "FONTE NON SUFFICIENTE",
+        "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "Verificare il documento della call 2027 prima di considerare un progetto editoriale completamente distinto dall'e-learning.",
+          "La produzione di PDF divulgativi dei libretti non dimostra attività editoriale di traduzione e distribuzione internazionale di almeno cinque opere."
         ],
         "sources": [
+          "https://www.creativeeuropeireland.eu/funding-opportunities/call/circulation-of-european-literary-works",
           "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5"
         ]
       },
@@ -874,25 +853,18 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "Consultare il testo definitivo della call sul Funding & Tenders Portal se Opera+ decidesse di avviare un distinto progetto commerciale videoludico.",
+          "Non promuovere automaticamente un corso e-learning a videogioco commerciale."
         ],
         "condition_status": "informazioni_insufficienti",
-        "review_status": "FONTE NON SUFFICIENTE",
+        "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "Consultare il testo definitivo della call sul Funding & Tenders Portal se Opera+ decidesse di avviare un distinto progetto commerciale videoludico.",
+          "Non promuovere automaticamente un corso e-learning a videogioco commerciale."
         ],
         "sources": [
+          "https://www.creativeeuropeireland.eu/funding-opportunities/call/video-games-immersive-content",
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVVGIM"
         ]
       },
@@ -1030,25 +1002,18 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "Non ritenere ammissibile Opera+ sulla sola base del contenuto culturale dei corsi o della disponibilità a collaborare.",
+          "Verificare condizioni ufficiali solo nell'ipotesi di un progetto con imprese audiovisive effettivamente ammissibili."
         ],
         "condition_status": "informazioni_insufficienti",
-        "review_status": "FONTE NON SUFFICIENTE",
+        "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando",
-          "Beneficiari ammessi non documentati.",
-          "Attività finanziabili non documentate.",
-          "Vincoli di candidatura non documentati."
+          "Non ritenere ammissibile Opera+ sulla sola base del contenuto culturale dei corsi o della disponibilità a collaborare.",
+          "Verificare condizioni ufficiali solo nell'ipotesi di un progetto con imprese audiovisive effettivamente ammissibili."
         ],
         "sources": [
+          "https://www.creativeeuropeireland.eu/funding-opportunities/call/european-co-development",
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV"
         ]
       },
@@ -1182,10 +1147,10 @@
           "MEDIA": 58
         },
         "missing_documentation": {
-          "finalita": 136,
-          "attivita_finanziabili": 211,
-          "beneficiari": 147,
-          "requisiti": 170
+          "finalita": 131,
+          "attivita_finanziabili": 206,
+          "beneficiari": 142,
+          "requisiti": 165
         },
         "with_document_issues": 34,
         "with_unresolved_applicant_checks": 10,
@@ -1198,10 +1163,10 @@
           "MEDIA": 12
         },
         "missing_documentation": {
-          "finalita": 6,
-          "attivita_finanziabili": 6,
-          "beneficiari": 5,
-          "requisiti": 6
+          "finalita": 1,
+          "attivita_finanziabili": 1,
+          "beneficiari": 0,
+          "requisiti": 1
         },
         "with_document_issues": 0,
         "with_unresolved_applicant_checks": 7,
@@ -1240,7 +1205,7 @@
     "notes": "I conteggi indicano copertura delle evidenze, non ammissibilità certificata."
   },
   "funder_monitoring": {
-    "checked_at": "2026-11-18T22:50:15+00:00",
+    "checked_at": "2026-11-18T22:54:33+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -1531,7 +1496,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:50:15+00:00",
+        "last_checked_at": "2026-11-18T22:54:33+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1543,7 +1508,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:50:15+00:00",
+        "last_checked_at": "2026-11-18T22:54:33+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1556,7 +1521,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:50:15+00:00",
+        "last_checked_at": "2026-11-18T22:54:33+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1569,7 +1534,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:50:15+00:00",
+        "last_checked_at": "2026-11-18T22:54:33+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1582,7 +1547,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:50:15+00:00",
+        "last_checked_at": "2026-11-18T22:54:33+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1595,7 +1560,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:50:15+00:00",
+        "last_checked_at": "2026-11-18T22:54:33+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1608,7 +1573,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:50:15+00:00",
+        "last_checked_at": "2026-11-18T22:54:33+00:00",
         "changed": false,
         "candidate_count": null
       }
