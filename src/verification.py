@@ -1,5 +1,5 @@
 """Fair queue and factual coverage reporting for grant verification."""
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone, timedelta, date
 
 PROJECT_TYPES={"finanziamento potenziale","call progettuale da verificare","non classificato"}
 SCHEMA_VERSION=9
@@ -11,12 +11,40 @@ def _when(raw):
     except (TypeError, ValueError):
         return None
 
+EVIDENCE_FIELDS = ("funded_activities_excerpt", "beneficiaries_excerpt",
+                   "requirements_excerpt")
+
+
+def open_evidence_gap(item):
+    """Specific missing essentials, never a substitute for legal review."""
+    return (item.get("funding_status") == "APERTO"
+            and item.get("opportunity_type") in PROJECT_TYPES
+            and any(not isinstance(item.get(field), str) or not item[field].strip()
+                    for field in EVIDENCE_FIELDS))
+
+
+def _open_review_priority(item, now):
+    """Prioritize urgent OPEN records with evidence gaps within the existing tier."""
+    if item.get("funding_status") != "APERTO":
+        return 3
+    if not open_evidence_gap(item):
+        return 2
+    try:
+        deadline=date.fromisoformat(str(item.get("deadline") or ""))
+        if now.date() <= deadline <= now.date()+timedelta(days=14):
+            return 0
+    except ValueError:
+        pass
+    return 1
+
+
 def needs_review(item, now=None):
     now=now or datetime.now(timezone.utc)
     if item.get("detail_version")!=SCHEMA_VERSION or not item.get("detail_checked"):
         return True
     last=_when(item.get("detail_checked_at"))
-    return last is None or last < now-timedelta(days=3)
+    interval=timedelta(days=1 if open_evidence_gap(item) else 3)
+    return last is None or last < now-interval
 
 def queue_key(item, now=None):
     """New and never-inspected records ahead of routine refreshes; archive included."""
@@ -37,7 +65,8 @@ def queue_key(item, now=None):
         tier=4
     else:
         tier=5
-    return (tier, attempted.isoformat() if attempted else "",
+    return (tier, _open_review_priority(item,now) if tier==3 else 0,
+            attempted.isoformat() if attempted else "",
             -int(item.get("relevance") or 0), item.get("id") or item.get("url") or "")
 
 
