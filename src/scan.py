@@ -319,6 +319,14 @@ def run():
         annotate_specific_requirements(row)
         annotate_applicant_comparison(row, applicant_profile, now[:10])
         apply_adequacy(row)
+        # Conservative operational baseline required by scan integrity.
+        # Never claim that the association's eligibility has been certified.
+        if not isinstance(row.get("application_path"),str) or not row.get("application_path"):
+            row["application_path"]="integrare_verifica_documentale"
+            row["application_path_reason"]="Verificare il percorso di candidatura nelle condizioni ufficiali"
+        if not isinstance(row.get("application_next_actions"),list) or not row["application_next_actions"]:
+            row["application_next_actions"]=["Verificare beneficiari, modalità di domanda e requisiti nella fonte ufficiale"]
+        row["application_eligibility_verified"]=False
     rows=link_opportunities(rows, registry_funders)
     rows=track_changes(rows, existing, now)
     programme_state_path.write_text(json.dumps(programme_state,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
@@ -326,10 +334,17 @@ def run():
     output.parent.mkdir(parents=True, exist_ok=True)
     ids_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    open_rows=[r for r in rows if r.get("funding_status")=="APERTO"]
+    catalogue_reconciliation={"coverage":{
+        "catalogo":{"total":len(rows)},
+        "aperte":{"total":len(open_rows)},
+        "aperte_alta_media":{"total":sum(r.get("adequacy_label") in ("ALTA","MEDIA") for r in open_rows)}
+    }}
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows),
                                         "open_eligibility_review":build_open_review_queue(rows,now[:10]),
                                         "funder_monitoring":public_monitoring(registry_funders,statuses,now,public_status(programme_state)),
-                                        "programme_ingestion":programme_ingestion},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+                                        "programme_ingestion":programme_ingestion,
+                                        "catalog_reconciliation":catalogue_reconciliation},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
 
 if __name__ == "__main__":
