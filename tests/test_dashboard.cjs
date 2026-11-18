@@ -172,11 +172,16 @@ assert.match(html,/<section class="funding-registry" id="finanziatori"[^>]*hidde
 assert.match(html,/<section class="funding-registry" id="monitoraggio-programmi"[^>]*hidden/);
 for(const id of ["finanziatori","monitoraggio-programmi","funder-search","funder-list","programme-list"])assert.match(html,new RegExp('id="'+id+'"'));
 assert.match(src,/function renderFundingRegistry\(status\)/);
+assert.match(src,/function registryTable\(headers\)/);
+assert.match(src,/registryTable\(\["Finanziatore","Tipologia","Territorio","Programmi","Fonte"\]\)/);
+assert.match(src,/registryTable\(\["Programma","Finanziatore","Stato","Ultima verifica","Fonte"\]\)/);
+assert.match(css,/\.registry-table/);
+assert.match(css,/overflow-x:auto/);
 assert.match(src,/registry\.funders/);
 assert.match(src,/not_configured/);
 assert.match(css,/\.registry-list/);
-assert.match(html,/app\.js\?v=20261118-08/);
-assert.match(html,/styles\.css\?v=20261118-08/);
+assert.match(html,/app\.js\?v=20261118-09/);
+assert.match(html,/styles\.css\?v=20261118-09/);
 assert.match(src,/function fetchWithDeadline/);
 assert.match(src,/loadSequence/);
 assert.match(html,/>Aperte<\/button>/);
