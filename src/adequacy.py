@@ -28,7 +28,7 @@ def restricted_applicants(terms):
     for pattern in (INDIVIDUAL_ONLY, FIRMS_ONLY):
         for match in pattern.finditer(terms):
             prefix=terms[max(0,match.start()-12):match.start()].lower()
-            if re.search(r"(?:non|not)\\s+$",prefix):
+            if re.search(r"(?:non|not)\s+$",prefix):
                 continue
             return True
     return False
