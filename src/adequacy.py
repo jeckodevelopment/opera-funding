@@ -90,6 +90,10 @@ def apply_adequacy(row):
         level=min(level,1)
         row["adequacy_verification_flags"].append("sede_territoriale_potenzialmente_esclusa")
         reasons.append("Requisito territoriale apparentemente incompatibile con la sede dichiarata; non considerare la candidatura diretta ammissibile senza prova di eccezioni")
+    if row.get("direct_application_blocker"):
+        level=min(level,1)
+        row["adequacy_verification_flags"].append("candidatura_diretta_non_dimostrata")
+        reasons.append("Requisito documentato attualmente non soddisfatto per la candidatura diretta: "+str(row["direct_application_blocker"])[:220])
     discrepancies=unresolved_eligibility_documents(row)
     if discrepancies:
         # A higher assessment must not depend on applicant rules that differ
