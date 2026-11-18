@@ -16,6 +16,14 @@ class ReviewedAssessmentTests(unittest.TestCase):
         self.assertEqual(result["funding_status"],"APERTO")
         self.assertEqual(result["assessment_source"],url)
 
+    def test_review_can_cite_primary_source_when_catalog_uses_aggregator(self):
+        row={"url":"https://aggregator.example/bandi/one?ref=rss","source_id":"volto"}
+        review={"source_id":"volto","url":"https://aggregator.example/bandi/one",
+                "evidence_url":"https://issuer.example/official-bando",
+                "assessment_label":"MEDIA AFFINITÀ","reviewed_at":"2026-11-18"}
+        result=apply_assessment_reviews([row],[review])[0]
+        self.assertEqual(result["assessment_source"],"https://issuer.example/official-bando")
+
     def test_unclassified_records_are_assessed_in_queue(self):
         record={"id":"x","title":"Grant","relevance":65,
                 "opportunity_type":"non classificato","funding_status":"APERTO"}
