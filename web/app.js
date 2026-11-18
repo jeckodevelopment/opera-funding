@@ -699,7 +699,7 @@ for(const id of ["search","issuer","kind","level"])$(id).addEventListener(id==="
 for(const node of document.querySelectorAll(".quick-tab"))node.addEventListener("click",()=>{$("status").value=node.dataset.value;syncControls();resetPagination();});
 for(const node of document.querySelectorAll(".sort-button"))node.addEventListener("click",()=>{$("sort").value=node.dataset.sort;syncControls();resetPagination();});
 $("reset").addEventListener("click",()=>{
- $("search").value="";$("issuer").value="";$("kind").value="";$("level").value="0";$("status").value="aperto";$("sort").value="deadline";
+ $("search").value="";$("issuer").value="";$("kind").value="";$("level").value="0";$("status").value="";$("sort").value="deadline";
  syncControls();resetPagination();
 });
 $("more").addEventListener("click",()=>{visibleCount+=PAGE_SIZE;render();});
