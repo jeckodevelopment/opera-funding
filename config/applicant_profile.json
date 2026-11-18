@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "organization": "Opera+",
+  "profile_fields": {
+    "legal_form": {"value": "associazione culturale", "verification": "dichiarato", "source": "Informazione di progetto; non sostituisce documenti costitutivi"},
+    "registered_region": {"value": null, "verification": "non_verificato", "source": null},
+    "registered_municipality": {"value": null, "verification": "non_verificato", "source": null},
+    "runts_registration": {"value": null, "verification": "non_verificato", "source": null},
+    "constitution_date": {"value": null, "verification": "non_verificato", "source": null},
+    "annual_budget_eur": {"value": null, "verification": "non_verificato", "source": null},
+    "available_cofinancing_eur": {"value": null, "verification": "non_verificato", "source": null},
+    "confirmed_partners": {"value": null, "verification": "non_verificato", "source": null}
+  }
+}

@@ -29,6 +29,7 @@ from assessment_coverage import annotate_assessment_coverage, assessment_coverag
 from adequacy import apply_adequacy
 from eligibility_conditions import annotate_conditions
 from eligibility_specific import annotate_specific_requirements
+from applicant_comparison import load_applicant_profile, annotate_applicant_comparison
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -297,10 +298,12 @@ def run():
     rows=assign_public_ids(rows, registry)
     rows=attach_public_aliases(rows, registry)
     rows=apply_assessment_reviews(rows, assessment_reviews)
+    applicant_profile = load_applicant_profile()
     for row in rows:
         annotate_assessment_coverage(row)
         annotate_conditions(row)
         annotate_specific_requirements(row)
+        annotate_applicant_comparison(row, applicant_profile, now[:10])
         apply_adequacy(row)
     rows=track_changes(rows, existing, now)
 
