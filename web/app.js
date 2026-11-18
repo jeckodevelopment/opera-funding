@@ -193,6 +193,7 @@ function makeAdequacy(o){
  const heading=el("div",undefined,"adequacy-heading");
  heading.append(el("span","Adeguatezza per Opera+","adequacy-label"),el("strong",percent+"%","adequacy-value"));
  const track=el("div",undefined,"adequacy-track");
+ track.style.setProperty("--adequacy-percent",percent+"%");
  track.setAttribute("role","progressbar");
  track.setAttribute("aria-label","Adeguatezza per Opera+");
  track.setAttribute("aria-valuemin","0");
