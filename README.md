@@ -103,3 +103,17 @@ La seconda verifica del 18 novembre aggiunge le schede 177 (Fondo di Beneficenza
 ### Chiusura della revisione delle candidature attualmente aperte — 18 novembre 2026
 
 Il registro `config/assessment_reviews.json` contiene 22 revisioni individuali sulle 22 opportunità che risultavano aperte nello snapshot del catalogo del 18 novembre 2026. La revisione comprende beneficiari, attività, requisiti e coerenza con un progetto Opera+, anche quando il giudizio conclusivo è bassa affinità. L'eventuale presenza di nuove opportunità aperte in scansioni successive richiederà nuove verifiche, e le categorie chiuse/informative rimangono valutate dal motore con livello di prova esplicito. La revisione documentale non costituisce certificazione formale di ammissibilità dell'associazione.
+
+### Regola obbligatoria di valutazione per tutte le opportunità (18/11/2026)
+
+**Ogni nuova opportunità entra nella coda di acquisizione documentale nel medesimo scan in cui viene scoperta**, indipendentemente dal titolo, dal settore o dalla classificazione preliminare. La sua priorità prevale sui ricaricamenti di archivio. Il motore esamina la scheda HTML e, quando disponibili e consentiti, gli allegati PDF, raccogliendo finalità, attività finanziabili, beneficiari e requisiti. L'estrazione è limitata per sicurezza e rispetto dei siti: in caso di documento non accessibile **non si fabbrica una revisione completa**.
+
+La coda non esclude più le schede **scadute, non classificate o informative**; uno scan giornaliero assegna una quota di lettura a ciascuna fonte, dando precedenza ai record mai esaminati e recuperando lo storico. Le nuove opportunità vengono esaminate subito anche se il loro numero supera la quota ordinaria della fonte. La verifica automatica di allegati e condizioni può non riuscire, per limiti del sito o PDF scansioniti: la scheda conserva comunque la valutazione esplicitamente **preliminare**, e il nuovo registro di copertura distingue:
+- `REVISIONE DOCUMENTALE` — revisione individuale registrata con fonte;
+- `EVIDENZE RACCOLTE` — acquisiti tutti e quattro gli elementi documentali richiesti, **senza attestare l'ammissibilità legale**;
+- `PARZIALE` — acquisita una parte dei dati documentali;
+- `FONTE NON SUFFICIENTE` — accesso/tentativo eseguito senza prove utili;
+- `NON ESAMINATA` — la lettura della fonte non è stata ancora tentata.
+
+I campi `assessment_review_status`, `assessment_method`, `assessment_checked_at`, `assessment_evidence_count` e `assessment_missing_fields` sono conservati per **tutti** i record, inclusi quelli storici. La dashboard dichiara esplicitamente la copertura e le lacune nella scheda e la scansione pubblica il conteggio aggregato in `data/scan-status.json` → `assessment_coverage`. **Tutti i record ricevono un giudizio**, ma non è corretto dichiarare 250 revisioni complete quando alcune fonti non sono consultabili. La pubblicazione delle informazioni e la scansione restano processi distinti.
+
