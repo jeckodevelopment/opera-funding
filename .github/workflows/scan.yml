@@ -6,6 +6,7 @@ on:
     paths:
       - 'src/scan.py'
       - 'src/programme_monitor.py'
+      - 'src/programme_ingest.py'
       - 'src/funder_registry.py'
       - 'config/funders.json'
       - 'src/scan_integrity.py'
