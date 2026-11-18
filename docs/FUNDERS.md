@@ -146,3 +146,16 @@ Sono censiti i canali istituzionali Torino 2033, Fondazione per la Cultura Torin
 Le opportunità comunali e provinciali non sono automaticamente compatibili con una associazione avente sede in un territorio diverso: occorre verificare il requisito **testuale e documentato** del bando per sede legale, sede operativa, attività pregressa, ricadute territoriali e partner. Quando il requisito esplicito di sede comunale indica un Comune differente da quello dichiarato nel profilo e il passo citato non ammette alternative, il confronto marca `potenzialmente_incompatibile`, limita l'adeguatezza a BASSA e impedisce di suggerire una candidatura diretta. Non è una certificazione legale: se il bando menziona ricadute locali o alternative, lo stato rimane `da_verificare` finché la prova specifica non è acquisita. Il caso Rivoli richiede quindi verifica delle diverse categorie ammesse, non un sì automatico e non un'esclusione basata sul solo ente emittente.
 
 Lo stato iniziale del workflow personale è denominato «Da esaminare» (precedente «Da valutare»); riguarda soltanto la lavorazione delle opportunità seguite sul browser, **non** la copertura delle valutazioni del catalogo. I dati locali precedenti sono normalizzati in lettura.
+
+
+## Riconciliazione catalogo del 19/11/2026
+
+Snapshot preliminare (18/11 23:21 UTC): 264 schede, 34 aperte, 34 con workflow di controllo ammissibilità ancora aperto, 11 aperte di adeguatezza MEDIA, 23 BASSA; nessuna candidatura certificata come pienamente ammissibile. Gli altri giudizi editoriali non equivalgono a verifica puntuale di requisiti. La presenza di 1 scheda aperta con revisione incompleta è oggetto della riconciliazione automatica per ID pubblico stabile, con vincolo sull'ID della fonte; non si ricopia una recensione su un'altra opportunità.
+
+- Schede con titoli generici «SCOPRI IL BANDO»: usare esclusivamente un titolo specifico già documentato in `config/assessment_reviews.json`, preservando identificativi e URL ufficiali.
+- Fabbrica (#143): candidatura diretta non sostenibile allo stato documentato del RUNTS; possibile ruolo di partner solo secondo condizioni dell'avviso ufficiale. Non presentare come candidata diretta.
+- Dora in Avanti (#175): verifica del requisito ETS e dell'operatività locale prima di consigliare candidatura; attenzione alla scadenza ravvicinata del 20/11/2026.
+- Opportunità con sede obbligatoria in Comune diverso da Torino: rischio di incompatibilità, salvo alternative documentate (ricadute locali, progetto sul territorio, partner). Non dedurre vincoli provinciali dal solo nome dell'ente.
+- Gli elementi rimasti privi di prova sui requisiti restano nella coda documentale, senza trasformare automaticamente in ammissibili record di adeguatezza ALTA/MEDIA.
+
+**Verifica:** eseguire quality checks e la successiva scansione su `main`; confrontare `data/scan-status.json > catalog_reconciliation`, `assessment_coverage` e i record #143, #146, #175, #183, #188 e #189. La scansione aggiorna i dati, non può sostituire documenti non disponibili o una verifica giuridica della posizione dell'associazione.

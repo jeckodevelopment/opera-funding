@@ -41,7 +41,11 @@ def operational_assessment(row):
     territorial_risk=any(isinstance(x,dict) and x.get("category")=="territorio"
                          and x.get("status")=="potenzialmente_incompatibile"
                          for x in comparison)
-    if territorial_risk:
+    if row.get("direct_application_blocker"):
+        path=DOCUMENTS
+        reason="Candidatura diretta non ammissibile alle condizioni documentate: "+str(row["direct_application_blocker"])[:250]
+        tasks.insert(0,"Verificare eventuale adesione futura ai requisiti o un ruolo partner esplicitamente ammesso")
+    elif territorial_risk:
         path=DOCUMENTS
         reason="Requisito comunale di sede apparentemente non soddisfatto; l'ammissibilità diretta non è dimostrata"
         tasks.insert(0,"Verificare l'avviso integrale e le eventuali alternative territoriali o modalità di partenariato")
