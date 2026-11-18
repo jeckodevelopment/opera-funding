@@ -36,6 +36,17 @@ def pdf_extract_evidence(data):
                 return found
     return found
 
+def pdf_text_status(data):
+    """Distinguish image-only PDFs from readable PDFs lacking labeled facts."""
+    try:
+        reader = PdfReader(BytesIO(data), strict=False)
+        for page in reader.pages[:MAX_PAGES]:
+            if (page.extract_text() or "").strip():
+                return "nessuna_evidenza_estratta"
+        return "testo_non_estratto"
+    except Exception:
+        return "pdf_non_interpretabile"
+
 def official_pdf_evidence(documents, source_url, session, allowed_to_fetch):
     host = urlparse(source_url).hostname
     inspected = 0
@@ -84,7 +95,7 @@ def official_pdf_evidence(documents, source_url, session, allowed_to_fetch):
             if not extracted:
                 # Could be image-only, or a text PDF without recognized facts.
                 # Do not assert it was scanned without checking text extraction.
-                diagnostics.append({"url":url,"status":"nessuna_evidenza_estratta"})
+                diagnostics.append({"url":url,"status":pdf_text_status(bytes(data))})
             else:
                 diagnostics.append({"url":url,"status":"evidenze_estratte"})
             for field, value in extracted.items():
