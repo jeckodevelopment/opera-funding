@@ -369,6 +369,78 @@
       "website": "https://provincia.alessandria.it/",
       "verification": "ente e riferimenti ufficiali verificati; nuovi bandi e ammissibilità da verificare",
       "accepts_applications": null
+    },
+    {
+      "id": "provincia-asti",
+      "name": "Provincia di Asti",
+      "type": "provincia",
+      "territory": "Asti (AT)",
+      "website": "https://www.provincia.asti.it/it",
+      "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "provincia-biella",
+      "name": "Provincia di Biella",
+      "type": "provincia",
+      "territory": "Biella (BI)",
+      "website": "https://www.provincia.biella.it/",
+      "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "provincia-cuneo",
+      "name": "Provincia di Cuneo",
+      "type": "provincia",
+      "territory": "Cuneo (CN)",
+      "website": "https://www.provincia.cuneo.it/",
+      "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "provincia-vercelli",
+      "name": "Provincia di Vercelli",
+      "type": "provincia",
+      "territory": "Vercelli (VC)",
+      "website": "https://www.provincia.vercelli.it/it",
+      "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "provincia-vco",
+      "name": "Provincia del Verbano-Cusio-Ossola",
+      "type": "provincia",
+      "territory": "Verbania (VB)",
+      "website": "https://www.provincia.verbano-cusio-ossola.it/",
+      "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "ivrea",
+      "name": "Città di Ivrea",
+      "type": "comune",
+      "territory": "Ivrea (TO)",
+      "website": "https://www.comune.ivrea.to.it/",
+      "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "settimo-torinese",
+      "name": "Città di Settimo Torinese",
+      "type": "comune",
+      "territory": "Settimo Torinese (TO)",
+      "website": "https://www.comune.settimo-torinese.to.it/",
+      "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "biella",
+      "name": "Città di Biella",
+      "type": "comune",
+      "territory": "Biella (BI)",
+      "website": "https://comune.biella.it/",
+      "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+      "accepts_applications": null
     }
   ],
   "programs": [
@@ -558,6 +630,78 @@
       "monitoring": "reference-only",
       "submission": "da verificare",
       "eligibility_note": "Regolamento PDF: nessuna candidatura aperta automaticamente"
+    },
+    {
+      "id": "provincia-asti-avvisi",
+      "funder_id": "provincia-asti",
+      "name": "Portale istituzionale e avvisi",
+      "url": "https://www.provincia.asti.it/it",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Nessun bando culturale aperto per associazioni accertato; ricercare una pagina dedicata"
+    },
+    {
+      "id": "provincia-biella-avvisi",
+      "funder_id": "provincia-biella",
+      "name": "Portale istituzionale e avvisi",
+      "url": "https://www.provincia.biella.it/",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Nessuna specifica procedura di finanziamento culturale verificata"
+    },
+    {
+      "id": "provincia-cuneo-contributi",
+      "funder_id": "provincia-cuneo",
+      "name": "Criteri e modalità per contributi",
+      "url": "https://albo.provincia.cuneo.it/amministrazione-trasparente/sovvenzioni-contributi-sussidi-vantaggi-economici/criteri-modalita",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Il portale indica assenza di erogazioni nel periodo di riferimento: non è un bando"
+    },
+    {
+      "id": "provincia-vercelli-concessioni",
+      "funder_id": "provincia-vercelli",
+      "name": "Atti di concessione dei contributi",
+      "url": "https://servizi.provincia.vercelli.it/L190/contributo/lista?activePage=&idSezione=73&search=&sort=",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Elenco storico di concessioni; gli avvisi regionali ripubblicati vanno attribuiti alla Regione Piemonte"
+    },
+    {
+      "id": "provincia-vco-istruzione",
+      "funder_id": "provincia-vco",
+      "name": "Contributi a enti e associazioni per progetti di istruzione",
+      "url": "https://www.provincia.verbano-cusio-ossola.it/servizio/erogazione-contributi-ad-enti-ed-associazioni-per-progetti-ed-iniziative-nel-campo-dellistruzione/",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Contributi educativi: accessibilità a progetti culturali non dimostrata"
+    },
+    {
+      "id": "ivrea-cultura",
+      "funder_id": "ivrea",
+      "name": "Contributi ai progetti culturali",
+      "url": "https://servizionline.comune.ivrea.to.it/cmsivrea/portale/trasparenza/trasparenzaamministrativadettaglio.aspx?CDOC=956&CP=191&R=1",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Pagina di precedente edizione: non presume bando attualmente aperto; requisiti storici di anzianità"
+    },
+    {
+      "id": "settimo-associazioni",
+      "funder_id": "settimo-torinese",
+      "name": "Avvisi e bandi per le associazioni",
+      "url": "https://www.comune.settimo-torinese.to.it/it/news-category/133558?type=0",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Monitorare nuove edizioni; bando eventi secondo semestre 2026 risulta scaduto"
+    },
+    {
+      "id": "biella-contributi",
+      "funder_id": "biella",
+      "name": "Sovvenzioni e contributi — trasparenza",
+      "url": "https://comune.biella.it/trasparenza/sovvenzioni-contributi-sussidi-vantaggi-economici/",
+      "submission": "da verificare",
+      "monitoring": "reference-only",
+      "eligibility_note": "Pagina di trasparenza: non equivale a domanda di contributo aperta"
     }
   ]
 }
