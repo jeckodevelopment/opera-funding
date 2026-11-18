@@ -156,6 +156,13 @@ def run():
                 new_ids={item["id"] for item in found if item["id"] not in indexed}
                 review_ids=pick_for_review(found+backlog,indexed,review_limit)
                 review_ids.update(new_ids)
+                if source["id"]=="eufunding":
+                    # The F&T Portal is a dynamic SPA. Drain every EU topic that
+                    # has never been queried through the official per-topic API
+                    # in this scan, rather than making the archive wait for
+                    # several daily batches of ten.
+                    review_ids.update(item["id"] for item in found+backlog
+                                      if indexed.get(item["id"],{}).get("assessment_review_status")=="NON ESAMINATA")
                 if args.history_backfill:
                     # Revisit every incomplete historic record even if a prior
                     # partial HTML/PDF extraction was performed recently.
