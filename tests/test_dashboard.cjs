@@ -30,6 +30,7 @@ assert.equal(findOpportunity("143",catalog).title,"Dora");
 assert.equal(findOpportunity("https://volontariatotorino.it/bandi/dora",catalog).public_id,143);
 assert.equal(findOpportunity("https://example.org/old",catalog).public_id,144);
 assert.equal(findOpportunity("9999999",catalog),null);
+assert.equal(findOpportunity("147",[{id:"official",public_id:32,public_id_aliases:[147],title:"Culture Moves"}]).title,"Culture Moves");
 assert.equal(findOpportunity("143foo",catalog),null);
 
 assert.equal(readWatchlist().size,0);
