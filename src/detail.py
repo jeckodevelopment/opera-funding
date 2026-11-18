@@ -5,6 +5,7 @@ from datetime import date, datetime, timezone
 from bs4 import BeautifulSoup
 from classify import parse_deadline
 from pdf_dates import pdf_deadline_from_documents
+from pdf_evidence import official_pdf_evidence
 from structured import structured_facts
 from evidence import official_evidence
 
@@ -100,6 +101,14 @@ def enrich(item, source, session, eligible_to_fetch):
             [{"label":"Documento ufficiale","url":url}],
             url, session, eligible_to_fetch, include_first=True
         )
+        pdf_facts = official_pdf_evidence([{"url":url}], url, session, eligible_to_fetch)
+        for key, value in pdf_facts.items():
+            item[key] = value
+        if pdf_facts:
+            item["detail_checked"] = True
+            item["detail_checked_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            item["detail_version"] = DETAIL_SCHEMA_VERSION
+            item["detail_basis"] = "Contenuti estratti dal documento PDF ufficiale"
         if deadline:
             item["deadline"]=deadline
             item["deadline_source"]=pdf_url
@@ -142,6 +151,14 @@ def enrich(item, source, session, eligible_to_fetch):
             if deadline:
                 parsed["deadline"] = deadline
                 parsed["deadline_source"] = document_url
+        pdf_facts = official_pdf_evidence(parsed["documents"], url, session, eligible_to_fetch)
+        for key, value in pdf_facts.items():
+            if key == "assessment_evidence_source":
+                continue
+            if not parsed.get(key):
+                parsed[key] = value
+        if pdf_facts and not parsed.get("assessment_evidence_source"):
+            parsed["assessment_evidence_source"] = pdf_facts.get("assessment_evidence_source")
         parsed["detail_checked_at"]=datetime.now(timezone.utc).isoformat(timespec="seconds")
         parsed["detail_version"]=DETAIL_SCHEMA_VERSION
         for key in ("amount","beneficiaries_excerpt","beneficiaries_source","amount_kind","amount_source","rolling_guidance","rolling_guidance_source","documents","detail_checked","detail_basis","detail_checked_at","detail_version","programme_objectives_excerpt","funded_activities_excerpt","requirements_excerpt","assessment_evidence_source"):
