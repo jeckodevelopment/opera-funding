@@ -27,7 +27,7 @@ class DetailTests(unittest.TestCase):
             result=enrich(item,source,Mock(),lambda u,s:True)
         self.assertEqual(result["deadline"],"2027-04-02")
         self.assertEqual(result["deadline_source"],item["url"])
-        self.assertEqual(result["detail_version"],8)
+        self.assertEqual(result["detail_version"],9)
         self.assertTrue(result["detail_checked"])
         self.assertTrue(read.call_args.kwargs["include_first"])
     def test_rejects_external_pdf_host_without_allowlisting(self):
