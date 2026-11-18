@@ -10584,8 +10584,8 @@
     "opportunity_type": "non classificato",
     "type_reason": "Informazioni insufficienti per determinare la tipologia",
     "deadline": "2027-02-24",
-    "status": "non verificato",
-    "status_basis": "stato non confermato",
+    "status": "aperto (fonte istituzionale)",
+    "status_basis": "CERV 2026 aperto dal 27/10/2026 al 24/02/2027, fonte istituzionale 18/11/2026",
     "issuer": "Vol.To",
     "source_id": "volto",
     "source_url": "https://volontariatotorino.it/bandi/",
@@ -10594,6 +10594,10 @@
       {
         "label": "Pagina del bando",
         "url": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue"
+      },
+      {
+        "label": "Conferma istituzionale apertura CERV",
+        "url": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/"
       }
     ],
     "amount": null,
@@ -10603,7 +10607,7 @@
     "last_seen": "2026-11-18T20:19:28+00:00",
     "verified": false,
     "detail_checked": true,
-    "source_open_confirmed": false,
+    "source_open_confirmed": true,
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked_at": "2026-11-18T11:46:39+00:00",
     "detail_version": 8,
@@ -10618,15 +10622,15 @@
     "funded_activities_excerpt": "Il sostegno finanziario alle organizzazioni della società civile che dovrà comprendere la pubblicazione e la gestione di appositi bandi, la selezione dei beneficiari, l’assegnazione dei contributi e il monitoraggio dei progetti finanziati. Tra le attività finanziabili figurano campagne di sensibilizzazione sui diritti e sui valori dell’UE, iniziative di partecipazione civica e dialogo democratico, attività di advocacy e monitoraggio delle politiche pubbliche, ricerca, cooperazione tra organizzazioni e servizi di supporto alle vittime di minacce e attacchi.",
     "requirements_excerpt": "Il contributo europeo richiesto per ciascun progetto dovrà essere compreso tra 2,5 e 6 milioni di euro. Ogni OSC destinataria selezionata potrà ricevere un contributo massimo di 60.000 euro , senza obbligo di cofinanziamento.",
     "assessment_evidence_source": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
-    "deadline_source": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
-    "deadline_verified_at": "2026-11-18T11:46:39+00:00",
+    "deadline_source": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/",
+    "deadline_verified_at": "2026-11-18T20:20:00+00:00",
     "application_windows": [],
     "closure_confirmed": false,
     "link_status": "raggiungibile",
     "link_http_status": 200,
     "link_checked_at": "2026-11-16T19:29:54+00:00",
     "resolved_url": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
-    "funding_status": "DA VERIFICARE",
+    "funding_status": "APERTO",
     "score_explanation": "Coerenza con partecipazione territoriale e inclusione (contenuto della scheda); Coerenza con contenuti culturali digitali (titolo).",
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
     "score_explanation_basis": "titolo e contenuti della scheda consultata",
@@ -10657,7 +10661,12 @@
     "adequacy_reason": "Dalla documentazione consultata emergono: educazione, scuole e giovani, comunità, inclusione e partecipazione. La tipologia della procedura non è ancora accertata.",
     "adequacy_basis": "Evidenze di fonte",
     "catalog_tracking_version": 3,
-    "catalog_fingerprint": "2e3628b0a29e677e4bfa6233ff8fa43d113238cca23ce8b7e488d8e678d1a993"
+    "catalog_fingerprint": "2e3628b0a29e677e4bfa6233ff8fa43d113238cca23ce8b7e488d8e678d1a993",
+    "opening_date": "2026-10-27",
+    "opening_evidence": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/",
+    "status_evidence": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/",
+    "reviewed_official_at": "2026-11-18",
+    "reviewed_official_basis": "official_active_application_window"
   },
   {
     "id": "https://bandi.comune.torino.it/avviso/terzo-avviso-pubblico-concessione-lerogazione-contributi-ordinari-altri-benefici-economici",
