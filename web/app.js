@@ -254,12 +254,21 @@ function evidenceSection(o){
  dialogField(dl,"Valutazione editoriale",assessmentLabel(o));
  dialogField(dl,"Motivo della valutazione",o.assessment_reason||"Classificazione tematica basata sul punteggio e sulle fonti disponibili");
  dialogField(dl,"Ammissibilità",review.eligibility);
- dialogField(dl,"Affidabilità della valutazione",review.confidence||"Non documentata");
- dialogField(dl,"Elementi utilizzati",o.score_explanation_basis||"Solo titolo (valutazione preliminare)");
+ dialogField(dl,"Affidabilità della valutazione",o.assessment_confidence||review.confidence||"Non documentata");
+ dialogField(dl,"Elementi utilizzati",o.assessment_basis||o.score_explanation_basis||"Solo titolo (valutazione preliminare)");
+ for(const [label,key] of [["Finalità del programma","programme_objectives_excerpt"],["Attività finanziabili","funded_activities_excerpt"],["Beneficiari","beneficiaries_excerpt"],["Vincoli e requisiti","requirements_excerpt"]]){
+  if(typeof o[key]==="string"&&o[key].trim())dialogField(dl,label,o[key]);
+ }
  section.append(dl);
  if(review.explanation){
   section.append(el("h4","Perché questa opportunità può interessare"));
   section.append(el("p",review.explanation));
+ }
+ if(Array.isArray(o.assessment_gaps)&&o.assessment_gaps.length){
+  section.append(el("h4","Informazioni non documentate o condizioni da verificare"));
+  const gaps=el("ul");
+  for(const gap of o.assessment_gaps)gaps.append(el("li",gap));
+  section.append(gaps);
  }
  if(review.checks.length){
   section.append(el("h4","Verifiche prima di decidere"));
@@ -306,8 +315,8 @@ function evaluationData(o,issued=new Date()){
   fit:score(o)+"/100",
   editorialAssessment:assessmentLabel(o),
   editorialReason:String(o.assessment_reason||"Classificazione tematica preliminare; apertura e ammissibilità richiedono evidenze."),
-  confidence:review.confidence||"Non documentata",
-  basis:String(o.score_explanation_basis||"Titolo e informazioni preliminari"),
+  confidence:o.assessment_confidence||review.confidence||"Non documentata",
+  basis:String(o.assessment_basis||o.score_explanation_basis||"Titolo e informazioni preliminari"),
   reasoning:review.explanation||"Motivazione non disponibile",
   eligibility:review.eligibility,
   beneficiaries:String(o.beneficiaries_excerpt||"Non documentati"),
