@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#f7f6f3">
 <meta name="description" content="Opera+ Funding: trova bandi e opportunità culturali, con scadenze e pertinenza a colpo d'occhio.">
 <title>Opera+ Funding · Opportunità per la cultura</title>
-<link rel="stylesheet" href="styles.css?v=20261118-06">
-<script src="app.js?v=20261118-06" defer></script>
+<link rel="stylesheet" href="styles.css?v=20261118-07">
+<script src="app.js?v=20261118-07" defer></script>
 </head>
 <body>
 <div class="shell">
@@ -82,6 +82,19 @@
         <span class="dialog-eyebrow">SCHEDA OPPORTUNITÀ</span>
       </div>
       <div id="dialog-content" class="dialog-content"></div>
+    </section>
+    <nav class="registry-nav" aria-label="Sezioni aggiuntive"><a href="#finanziatori">Finanziatori</a><a href="#monitoraggio-programmi">Monitoraggio programmi</a></nav>
+    <section class="funding-registry" id="finanziatori" aria-labelledby="funding-registry-title">
+      <div class="section-head"><div><p class="eyebrow">ANAGRAFICA</p><h2 id="funding-registry-title">Finanziatori e programmi</h2></div><span id="funder-count" class="registry-count">—</span></div>
+      <p class="registry-intro">Finanziatori censiti anche senza bandi aperti. La presenza non dimostra che l'associazione possa candidarsi.</p>
+      <label class="registry-search-label" for="funder-search">Cerca finanziatore</label>
+      <input id="funder-search" type="search" placeholder="Nome, territorio, tipologia…" autocomplete="off">
+      <div id="funder-list" class="registry-list" aria-live="polite">Caricamento…</div>
+    </section>
+    <section class="funding-registry" id="monitoraggio-programmi" aria-labelledby="programme-monitoring-title">
+      <div class="section-head"><div><p class="eyebrow">COPERTURA</p><h2 id="programme-monitoring-title">Monitoraggio programmi</h2></div><span id="programme-count" class="registry-count">—</span></div>
+      <p class="registry-intro">Le fonti non ancora configurate sono distinte da quelle effettivamente scandite.</p>
+      <div id="programme-list" class="registry-list" aria-live="polite">Caricamento…</div>
     </section>
     <section class="source-health" id="source-health" aria-labelledby="source-health-title">
       <div class="source-head">
