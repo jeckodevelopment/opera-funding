@@ -33,6 +33,16 @@ def annotate_assessment_coverage(row):
         stage = "FONTE NON SUFFICIENTE"
     else:
         stage = "NON ESAMINATA"
+    issues = []
+    for diagnostic in row.get("assessment_document_diagnostics") or []:
+        if isinstance(diagnostic, dict) and diagnostic.get("status") not in ("evidenze_estratte",):
+            issues.append({"source": diagnostic.get("url"), "reason": diagnostic.get("status")})
+    for discrepancy in row.get("assessment_document_discrepancies") or []:
+        if isinstance(discrepancy, dict):
+            issues.append({"source": discrepancy.get("other_source"),
+                           "reason": "testi_diversi_da_verificare",
+                           "field": discrepancy.get("field")})
+    row["assessment_document_issues"] = issues
     row["assessment_review_status"] = stage
     row["assessment_evidence_count"] = len(present)
     row["assessment_missing_fields"] = missing
@@ -54,6 +64,7 @@ def assessment_coverage(rows):
         status[stage]=status.get(stage,0)+1
     return {
         "total":len(rows),
+        "with_document_issues":sum(bool(r.get("assessment_document_issues")) for r in rows),
         "with_editorial_label":sum(bool(r.get("assessment_label")) for r in rows),
         "by_review_status":status,
         "completely_verified_applicability":0,  # legal eligibility never certified
