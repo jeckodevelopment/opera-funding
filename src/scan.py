@@ -31,6 +31,8 @@ from eligibility_conditions import annotate_conditions
 from eligibility_specific import annotate_specific_requirements
 from applicant_comparison import load_applicant_profile, annotate_applicant_comparison
 from open_review_queue import build_open_review_queue
+from operational_assessment import annotate_operational_assessment
+from catalog_reconciliation import summarize_catalog_reconciliation
 from funder_registry import load_registry, link_opportunities, public_monitoring
 from programme_monitor import check_programmes, load_programme_state, public_status
 
@@ -308,6 +310,7 @@ def run():
         annotate_specific_requirements(row)
         annotate_applicant_comparison(row, applicant_profile, now[:10])
         apply_adequacy(row)
+        annotate_operational_assessment(row)
     registry_funders=load_registry(ROOT / 'config/funders.json')
     rows=link_opportunities(rows, registry_funders)
     rows=track_changes(rows, existing, now)
@@ -323,6 +326,7 @@ def run():
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows),
                                         "open_eligibility_review":build_open_review_queue(rows,now[:10]),
+                                        "catalog_reconciliation":summarize_catalog_reconciliation(rows),
                                         "funder_monitoring":public_monitoring(registry_funders,statuses,now,public_status(programme_state))},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
 
