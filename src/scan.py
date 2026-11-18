@@ -24,6 +24,7 @@ from eu_api import fetch_creative_europe
 from catalog import deduplicate_catalog, reconcile_official_equivalents
 from issuer_sources import apply_issuer_evidence
 from reviewed_official import apply_reviewed_facts
+from assessment_reviews import apply_assessment_reviews
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -104,6 +105,7 @@ def run():
     priority_pages = json.loads((ROOT / "config/priority_pages.json").read_text(encoding="utf-8"))
     issuer_checks = json.loads((ROOT / "config/issuer_checks.json").read_text(encoding="utf-8"))
     reviewed_facts = json.loads((ROOT / "config/reviewed_official_facts.json").read_text(encoding="utf-8"))
+    assessment_reviews = json.loads((ROOT / "config/assessment_reviews.json").read_text(encoding="utf-8"))
     statuses = []
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     with requests.Session() as session:
@@ -225,6 +227,7 @@ def run():
     registry=json.loads(ids_path.read_text(encoding="utf-8"))
     rows=assign_public_ids(rows, registry)
     rows=attach_public_aliases(rows, registry)
+    rows=apply_assessment_reviews(rows, assessment_reviews)
     rows=track_changes(rows, existing, now)
 
     output.parent.mkdir(parents=True, exist_ok=True)
