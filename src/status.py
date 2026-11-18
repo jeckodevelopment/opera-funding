@@ -17,6 +17,10 @@ def effective_status(record, today=None):
         return "CHIUSO"
     if str(record.get("status","")).lower() in ("chiuso","chiusa","scaduto","scaduta") and not record.get("reopened_confirmed"):
         return "CHIUSO"
+    # Archive/category pages do not accept applications even if their text
+    # mentions an open grant elsewhere; do not display them as open calls.
+    if record.get("opportunity_type")=="altro avviso":
+        return "DA VERIFICARE"
     if start and start>today and record.get("opening_evidence"):
         return "IN ARRIVO"
     source_open = record.get("source_open_confirmed") is True
