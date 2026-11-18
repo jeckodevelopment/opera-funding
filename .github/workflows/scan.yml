@@ -23,6 +23,7 @@ on:
       - 'src/status.py'
       - 'src/fit.py'
       - 'src/pdf_dates.py'
+      - 'src/pdf_evidence.py'
       - 'src/structured.py'
       - 'src/priority.py'
       - 'src/crt_windows.py'
