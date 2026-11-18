@@ -755,6 +755,7 @@ function renderFundingRegistry(status){
   const item=el("article",undefined,"registry-card"),f=lookup.get(p.funder_id);
   item.append(el("h3",p.name),el("p",f?f.name:"Finanziatore non trovato"));
   item.append(el("span",({ok:"Fonte controllata",error:"Errore ultima scansione",not_configured:"Controllo non configurato"}[p.monitoring_status]||"Stato non disponibile"),"registry-status "+(p.monitoring_status||"")));
+  if(p.changed===true)item.append(el("p","Pagina modificata: verificare eventuali nuove opportunità.","registry-metadata"));
   if(p.last_checked_at){
    const d=new Date(p.last_checked_at);
    item.append(el("p","Ultima verifica: "+(Number.isNaN(d.getTime())?"non disponibile":d.toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"})),"registry-metadata"));
