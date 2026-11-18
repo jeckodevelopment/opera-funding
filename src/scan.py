@@ -39,19 +39,37 @@ TOPICS = [
 ]
 
 def eligible_to_fetch(url, session):
+    """Respect robots.txt, retrieving it at most once per origin in a scan.
+
+    Cache all responses only within this scan session, including access denial:
+    retrying an unavailable robots endpoint for every PDF would turn a failed
+    source into hundreds of redundant requests. Per-path allow rules still
+    use RobotFileParser.can_fetch on every individual URL.
+    """
     parts = urlparse(url)
-    robots_url = f"{parts.scheme}://{parts.netloc}/robots.txt"
-    try:
-        response = session.get(robots_url, timeout=12)
-        if response.status_code == 404:
-            return True
-        if response.status_code != 200:
-            return False  # conservative
-        robot = RobotFileParser()
-        robot.parse(response.text.splitlines())
-        return robot.can_fetch(AGENT, url)
-    except requests.RequestException:
+    if parts.scheme!="https" or not parts.hostname:
         return False
+    robots_url = f"{parts.scheme}://{parts.netloc}/robots.txt"
+    cache=getattr(session,"_funding_robots_cache",None)
+    if not isinstance(cache,dict):
+        cache={}
+        setattr(session,"_funding_robots_cache",cache)
+    key=(parts.scheme,parts.netloc)
+    if key not in cache:
+        try:
+            response=session.get(robots_url,timeout=12)
+            if response.status_code==404:
+                cache[key]=True
+            elif response.status_code!=200:
+                cache[key]=False
+            else:
+                parser=RobotFileParser()
+                parser.parse(response.text.splitlines())
+                cache[key]=parser
+        except requests.RequestException:
+            cache[key]=False
+    policy=cache[key]
+    return policy if isinstance(policy,bool) else policy.can_fetch(AGENT,url)
 
 def score(title):
     themes = [name for pattern, _, name in TOPICS if pattern.search(title)]
