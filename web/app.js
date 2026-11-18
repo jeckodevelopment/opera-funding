@@ -557,7 +557,7 @@ function changeBadge(o,now=new Date()){
 }
 function assessmentLabel(o){
  if(typeof o.assessment_label==="string"&&o.assessment_label.trim())return o.assessment_label;
- if(!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return "INFORMATIVA";
+ if(!["finanziamento potenziale","call progettuale da verificare","non classificato"].includes(o.opportunity_type))return "INFORMATIVA";
  return score(o)>=70?"ALTA AFFINITÀ":score(o)>=45?"MEDIA AFFINITÀ":"BASSA AFFINITÀ";
 }
 function makeCard(o){
