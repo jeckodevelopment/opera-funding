@@ -111,7 +111,9 @@
     "tier": "medium",
     "region": "Piemonte/Francia",
     "type": "europeo",
-    "approved": true
+    "approved": true,
+    "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
+    "institutional_reference_label": "Regione Piemonte — bando ALCOTRA"
   },
   {
     "id": "erasmusitalia",
