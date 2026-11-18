@@ -119,5 +119,15 @@
     "evidence": "official_rolling_application_process",
     "review_valid_until": "2026-11-25",
     "rolling": true
+  },
+  {
+    "source_id": "eufunding",
+    "match_host": "ec.europa.eu",
+    "match_path": "/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2027-codev",
+    "official_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "deadline": "2027-03-02",
+    "opening_date": "2026-09-30",
+    "evidence": "official_active_application_window",
+    "review_valid_until": "2026-11-25"
   }
 ]
