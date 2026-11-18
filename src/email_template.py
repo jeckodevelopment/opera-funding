@@ -29,9 +29,9 @@ def _safe_https(value):
 def make_message(items):
     shown=items[:MAX_ITEMS]
     count=len(items)
-    subject=f"Opera+ Funding — {count} {'nuova opportunità aperta' if count==1 else 'nuove opportunità aperte'}"
+    subject=f"Opera+ Funding — {count} {'nuova opportunità' if count==1 else 'nuove opportunità'}"
     intro=(f"Abbiamo individuato {count} "
-           f"{'nuova opportunità aperta' if count==1 else 'nuove opportunità aperte'} "
+           f"{'nuova opportunità' if count==1 else 'nuove opportunità'} "
            "potenzialmente interessanti per i progetti culturali e formativi di Opera+.")
     entries=[]
     plain=[intro,""]
@@ -40,6 +40,14 @@ def make_message(items):
         issuer=escape(str(item.get("issuer") or item.get("source_name") or "Ente da verificare"))
         deadline=escape(_date_label(item.get("deadline")))
         url=escape(_safe_https(item.get("url")),quote=True)
+        adequacy=str(item.get("adequacy_label") or "DA VERIFICARE").upper()
+        if adequacy not in ("ALTA","MEDIA","BASSA"):
+            adequacy="DA VERIFICARE"
+        funding=str(item.get("funding_status") or "DA VERIFICARE").upper()
+        if funding not in ("APERTO","IN ARRIVO","DA VERIFICARE"):
+            funding="DA VERIFICARE"
+        adequacy_html=escape("Adeguatezza "+adequacy)
+        funding_html=escape(funding)
         # An unavailable summary is better omitted than fabricated.
         summary=str(item.get("summary") or "").strip()
         summary_html=(
@@ -55,8 +63,9 @@ def make_message(items):
             '<tr><td style="font:700 12px Arial,Helvetica,sans-serif;color:#626a6d;padding-bottom:12px;">'
             +issuer+'</td><td align="right" style="padding-bottom:12px;">'
             '<span style="display:inline-block;border:1px solid #b7dfc5;background:#e8f6ee;'
-            'color:#167046;border-radius:4px;padding:5px 9px;font:700 10px Arial,Helvetica,sans-serif;">APERTA</span>'
+            'color:#167046;border-radius:4px;padding:5px 9px;font:700 10px Arial,Helvetica,sans-serif;">'+funding_html+'</span>'
             '</td></tr>'
+            '<tr><td colspan="2" style="font:700 11px/1.5 Arial,Helvetica,sans-serif;color:#5b654d;padding-bottom:8px;">'+adequacy_html+'</td></tr>'
             '<tr><td colspan="2" style="padding:0 0 11px;font:normal 21px/1.3 Georgia,Times New Roman,serif;'
             'color:#25282a;">'+title+'</td></tr>'
             +summary_html+
@@ -71,6 +80,7 @@ def make_message(items):
         )
         plain.append(f"- {item.get('title') or 'Opportunità'}")
         plain.append(f"  Ente: {item.get('issuer') or item.get('source_name') or 'Da verificare'}")
+        plain.append(f"  Stato: {funding} | Adeguatezza: {adequacy}")
         plain.append(f"  Scadenza: {_date_label(item.get('deadline'))}")
         plain.append(f"  Fonte: {_safe_https(item.get('url'))}")
         plain.append("")
