@@ -23,3 +23,17 @@ La gerarchia canonica è **finanziatore → programma → opportunità**. La fon
 - Con un `scan-status.json` precedente all'introduzione del registro, verificare il messaggio di assenza dati.
 - Verificare su smartphone il layout a una colonna, il filtro iniziale `Aperte`, le schede e i link PDF già esistenti.
 - **Il merge di questa PR non avvia un deploy**: la pubblicazione frontend resta demandata al publisher di `jeckodevsite`.
+
+## Controllo diretto delle pagine aziendali
+
+Le pagine dei programmi con `monitoring=direct` (inizialmente Fondo di Beneficenza Intesa Sanpaolo ed Enel Cuore) sono controllate durante la scansione ordinaria. Il modulo `src/programme_monitor.py` verifica robots.txt, HTTPS e identità dell'host dopo eventuali redirect; impone limiti di download e mantiene impronte della pagina e collegamenti candidati appartenenti al dominio ufficiale.
+
+La prima verifica crea una **baseline silenziosa**. Solo una variazione successiva genera `changed=true`, che significa **pagina da ricontrollare**, non "bando aperto". L'errore non cancella la baseline precedente e non è etichettato come controllo riuscito. I digest sono conservati in `data/programme-monitoring.json` nel repository, ma non esposti dal report della dashboard. Il workflow registra il file insieme a `scan-status.json`.
+
+**Limite di questa iterazione:** vengono monitorate le modifiche e individuati i link candidati, ma non viene ancora generata automaticamente una nuova scheda dal solo mutamento della pagina. Per creare un'opportunità serve un collegamento ufficiale, la verifica delle condizioni e il normale pipeline di adeguatezza, senza attribuire aperture fittizie. Non vengono inviate notifiche email per semplici variazioni della pagina.
+
+### Collaudi aggiuntivi
+- Eseguire `python -m unittest tests/test_programme_monitor.py` oppure la suite completa.
+- Prima scansione: `baseline_created=true`, `changed=false` per pagine raggiungibili.
+- Scansione successiva: `changed=true` solo se il contenuto rilevante cambia.
+- Simulare robots.txt negato e verificare `error` senza cancellare la baseline.
