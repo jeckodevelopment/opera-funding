@@ -353,5 +353,37 @@
       "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
     ],
     "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 65,
+    "source_id": "eufunding",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2026-PERFORM-EU",
+    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/crea/wp-call/2026/call-fiche_crea-cult-2026-perform_en.pdf",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "Bando UE rivolto alla gestione di un programma paneuropeo di tournée sostenibili e distribuzione digitale dello spettacolo dal vivo, con selezione di un solo progetto che eroghi almeno 25 sovvenzioni a terzi. Una piattaforma didattica sull'opera lirica non soddisfa questo formato; eventuali piccoli progetti dovrebbero cercare le successive sotto-call di Perform Europe, non questa gara principale.",
+    "programme_objectives_excerpt": "Sperimentare nuovi modelli di tournée transfrontaliere sostenibili, inclusive e diversificate per le arti performative.",
+    "funded_activities_excerpt": "Gestione e coordinamento di un programma europeo, almeno 25 sovvenzioni a terzi per tournée e distribuzione digitale, mentoring, piattaforma, networking, analisi e report.",
+    "beneficiaries_excerpt": "Persone giuridiche pubbliche o private stabilite nei paesi partecipanti a Europa Creativa; un candidato singolo oppure consorzio di almeno tre beneficiari.",
+    "requirements_excerpt": "Almeno il 70% dei fondi a sostegno finanziario di terzi; un solo progetto selezionato; scadenza originaria 15 gennaio 2026 ore 17 CET; budget complessivo 2 milioni di euro, non sovvenzione liberamente destinabile a singoli corsi.",
+    "assessment_gaps": [
+      "L'ammissibilità statutaria e la capacità gestionale di Opera+ andrebbero valutate soltanto per un futuro ruolo di gestore europeo; bando 2026 scaduto."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 64,
+    "source_id": "eufunding",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2026-EU-HERITAGE-LABEL",
+    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/crea/wp-call/2026/call-fiche_crea-cult-2026-eu-heritage-label_en.pdf",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "Il finanziamento riguarda la gestione paneuropea della rete di siti riconosciuti European Heritage Label, inclusi coordinamento, promozione, formazione dei siti e cascading grants. Non finanzia genericamente videolezioni musicali di una associazione non appartenente alla rete; possibile interesse soltanto come eventuale fornitore di contenuti a un progetto vincitore.",
+    "programme_objectives_excerpt": "Rafforzare la comunità di pratica, la cooperazione e la visibilità europea dei siti European Heritage Label per il periodo 2026-2029.",
+    "funded_activities_excerpt": "Coordinamento della rete EHL, comunicazione, formazione dei siti, supporto multilingue, collaborazione transfrontaliera e sovvenzioni a terzi destinate ai siti.",
+    "beneficiaries_excerpt": "Persone giuridiche stabilite nei paesi Europa Creativa; candidatura singola oppure consorzio di almeno due soggetti indipendenti di paesi ammissibili.",
+    "requirements_excerpt": "Selezione di un unico progetto per la rete EHL; capacità tecnica e finanziaria di gestire la rete e gli interventi ai siti; budget della call 3 milioni di euro; scadenza 11 febbraio 2026 alle 17 CET.",
+    "assessment_gaps": [
+      "Un eventuale progetto Opera+ dovrebbe essere collegato a siti EHL effettivamente riconosciuti; il bando diretto 2026 è scaduto."
+    ],
+    "reviewed_at": "2026-11-18"
   }
 ]
