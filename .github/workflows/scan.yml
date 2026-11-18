@@ -24,6 +24,7 @@ on:
       - 'src/fit.py'
       - 'src/assessment_reviews.py'
       - 'src/assessment_coverage.py'
+      - 'src/adequacy.py'
       - 'config/assessment_reviews.json'
       - 'src/pdf_dates.py'
       - 'src/pdf_evidence.py'
