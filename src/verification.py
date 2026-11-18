@@ -95,7 +95,7 @@ def classify_informational_page(record):
         # Pre-information is an announcement, not an application that can be submitted.
         is_information=(path.rstrip("/") in ("/contributi-finanziamenti", "/crowdfunding")
                         or path.startswith("/pre-informazione-fondi-ue"))
-        is_information=is_information or path.rstrip("/") in ("/bandi-pnrr-per-enti-locali",)
+        is_information=is_information or path.rstrip("/") in ("/web/bandi-pnrr-per-enti-locali",)
     if source=="eucreative":
         # Thematic funding overview is a guide, not a specific call for proposals.
         is_information=path.rstrip("/") in ("/cultural-heritage/funding-opportunities-for-cultural-heritage",)
