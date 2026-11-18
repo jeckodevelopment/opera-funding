@@ -15,6 +15,7 @@ from quality import check_link, reconcile_status
 from status import annotate
 from fit import explain
 from catalog_changes import track_changes
+from public_ids import assign_public_ids
 from priority import check_priority
 from verification import pick_for_review, coverage, backlog_candidates, classify_crt_information, classify_informational_page
 from crt_windows import guidance_for_window
@@ -220,9 +221,13 @@ def run():
     for row in rows:
         explain(annotate(reconcile_status(row)))
 
+    ids_path=ROOT / "data/opportunity-ids.json"
+    registry=json.loads(ids_path.read_text(encoding="utf-8"))
+    rows=assign_public_ids(rows, registry)
     rows=track_changes(rows, existing, now)
 
     output.parent.mkdir(parents=True, exist_ok=True)
+    ids_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+"\\n",encoding="utf-8")
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
