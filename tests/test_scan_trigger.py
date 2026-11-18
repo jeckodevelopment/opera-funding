@@ -14,6 +14,8 @@ class ScanTriggerTests(unittest.TestCase):
             "src/eligibility_specific.py",
             "src/applicant_comparison.py",
             "src/open_review_queue.py",
+            "src/operational_assessment.py",
+            "src/catalog_reconciliation.py",
             "config/applicant_profile.json",
             "src/assessment_coverage.py",
             "src/assessment_reviews.py",
