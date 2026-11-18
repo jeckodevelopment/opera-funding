@@ -23,11 +23,11 @@ function cleanWorkflow(record){
   notes:typeof entry.notes==="string"?entry.notes.slice(0,3000):""
  };
 }
-function validLocalDate(value){return typeof value==="string"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(value)&&!Number.isNaN(Date.parse(value+"T12:00:00Z"));}
+function validLocalDate(value){return typeof value==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&!Number.isNaN(Date.parse(value+"T12:00:00Z"));}
 function readWorkflow(){
  try{
   const raw=JSON.parse(localStorage.getItem(WORKFLOW_KEY)||"{}");
-  if(!raw||typeof raw!=="object"||Array.isArray(raw))return {};
+  if(!raw||typeof raw!=="object"||Array.isArray(raw))return Object.create(null);
   const result=Object.create(null);
   for(const [id,value] of Object.entries(raw)){
    if(typeof id==="string"&&id.length<2500)result[id]=cleanWorkflow(value);
@@ -268,7 +268,7 @@ function evidenceSection(o){
   section.append(list);
  }
  if(review.missing.length){
-  section.append(el("h4","Informazioni da approfondire"));
+  section.append(el("h4","Informazioni mancanti o da verificare"));
   const list=el("ul");
   for(const missing of review.missing)list.append(el("li",missing));
   section.append(list);
