@@ -2,7 +2,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-from public_ids import assign_public_ids
+from public_ids import assign_public_ids, attach_public_aliases
 
 class PublicIdTests(unittest.TestCase):
     def test_initial_ids_are_deterministic_and_positive(self):
@@ -36,6 +36,16 @@ class PublicIdTests(unittest.TestCase):
     def test_duplicate_registry_rejected(self):
         with self.assertRaises(ValueError):
             assign_public_ids([{"id":"a"}],{"ids":{"a":1,"b":1},"next_id":2})
+    def test_alias_redirects_old_numeric_id_without_reassignment(self):
+        registry={"ids":{"old-rss":146,"old-syndicated":147,"official":32,
+                           "new-rss":252},"next_id":253}
+        rows=[{"id":"official","public_id":32,"alternative_urls":["old-syndicated"]},
+              {"id":"new-rss","public_id":252,"alternative_urls":["old-rss"]}]
+        attach_public_aliases(rows,registry)
+        self.assertEqual(rows[0]["public_id_aliases"],[147])
+        self.assertEqual(rows[1]["public_id_aliases"],[146])
+        self.assertEqual(registry["ids"]["old-rss"],146)
+
     def test_no_rows_removed(self):
         registry={"ids":{},"next_id":1}
         rows=[{"id":f"entry-{i}"} for i in range(250)]
