@@ -1,49 +1,58 @@
-"""Conservative catalog change detection with an explicit first-run baseline.
+"""User-facing, evidence-based change events for actual amendments to calls.
 
-Only changes to user-facing official facts generate "Aggiornata". Routine scans,
-timestamps, score explanations and transient health/status checks do not.
+A scanner enriching old descriptions, attachments or beneficiary snippets is NOT
+a new official call revision. Tracking version 2 starts a clean baseline.
 """
 import hashlib
 import json
 
-TRACKING_VERSION = 1
+TRACKING_VERSION = 2
+# Only application terms whose updates materially affect a candidate's action.
 TRACKED_FIELDS = (
-    "title", "issuer", "opportunity_type", "deadline", "opening_date",
-    "application_windows", "amount", "amount_kind", "beneficiaries_excerpt",
-    "summary", "rolling_guidance", "documents", "application_type",
-    "window_label", "edition_year",
+    "deadline", "opening_date", "application_windows",
+    "rolling_confirmed", "rolling_guidance",
 )
 
+def _verified(row, field):
+    # Structured dates require a cited source. Do not issue update badges for
+    # guessed or uncited values from a generic index snippet.
+    if field == "deadline":
+        return row.get("deadline") if row.get("deadline_source") else None
+    if field == "opening_date":
+        return row.get("opening_date") if row.get("opening_evidence") else None
+    if field == "application_windows":
+        return row.get("application_windows") if row.get("deadline_source") else None
+    if field in ("rolling_confirmed","rolling_guidance"):
+        return row.get(field) if row.get("rolling_evidence") or row.get("rolling_guidance_source") else None
+    return None
+
 def fingerprint(row):
-    facts = {key: row.get(key) for key in TRACKED_FIELDS}
-    # Document order is not meaningful; a changed document URL or label is.
-    docs = facts.get("documents")
-    if isinstance(docs, list):
-        facts["documents"] = sorted(
-            ({"label": d.get("label"), "url": d.get("url")}
-             for d in docs if isinstance(d, dict)),
-            key=lambda d: (str(d["url"]), str(d["label"])),
-        )
+    facts = {field:_verified(row, field) for field in TRACKED_FIELDS}
     payload = json.dumps(facts, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 def track_changes(rows, previous, now):
-    """Annotate, never filter; establish baseline without retroactive novelty."""
-    prior = {r["id"]: r for r in previous if isinstance(r, dict) and r.get("id")}
-    has_baseline = any(p.get("catalog_tracking_version") == TRACKING_VERSION
+    """Keep new events, clear old noisy updates and start V2 baseline safely."""
+    prior = {r["id"]:r for r in previous if isinstance(r,dict) and r.get("id")}
+    has_baseline = any(p.get("catalog_tracking_version")==TRACKING_VERSION
                        for p in prior.values())
     for row in rows:
-        old = prior.get(row["id"])
-        current = fingerprint(row)
-        row["catalog_tracking_version"] = TRACKING_VERSION
-        row["catalog_fingerprint"] = current
-        if old:
-            for key in ("catalog_new_at", "catalog_updated_at"):
-                if old.get(key):
-                    row[key] = old[key]
-            old_fp = old.get("catalog_fingerprint")
-            if old_fp and old_fp != current:
-                row["catalog_updated_at"] = now
-        elif has_baseline:
-            row["catalog_new_at"] = now
+        old=prior.get(row["id"])
+        current=fingerprint(row)
+        row["catalog_tracking_version"]=TRACKING_VERSION
+        row["catalog_fingerprint"]=current
+        # Existing new tags represent actual discovery, and are preserved.
+        if old and old.get("catalog_new_at"):
+            row["catalog_new_at"]=old["catalog_new_at"]
+        # Never copy obsolete update labels from v1. Nor compare incompatible hashes.
+        if old and old.get("catalog_tracking_version")==TRACKING_VERSION:
+            if old.get("catalog_updated_at"):
+                row["catalog_updated_at"]=old["catalog_updated_at"]
+            if old.get("catalog_fingerprint") and old["catalog_fingerprint"]!=current:
+                row["catalog_updated_at"]=now
+        elif not old and has_baseline:
+            row["catalog_new_at"]=now
+        # Ignore any stale incoming update flag from scanning/previous enrichment.
+        if not old or old.get("catalog_tracking_version")!=TRACKING_VERSION:
+            row.pop("catalog_updated_at",None)
     return rows
