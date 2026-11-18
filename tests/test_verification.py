@@ -61,6 +61,20 @@ class VerificationTests(unittest.TestCase):
                 self.assertEqual(classify_informational_page(row_in)["opportunity_type"],"altro avviso")
         actual=row("y",source_id="alcotra",url="https://interreg-alcotra.eu/it/terzo-bando-progetti-singoli",title="Terzo bando progetti singoli")
         self.assertEqual(classify_informational_page(actual)["opportunity_type"],"finanziamento potenziale")
+    def test_navigation_and_awards_cannot_be_open_applications(self):
+        cases=[
+          ("mic","https://spettacolo.cultura.gov.it/bando-festival-cori-e-bande-2026-assegnazione-dei-contributi/","Bando FESTIVAL, CORI E BANDE / 2026 – Assegnazione dei contributi"),
+          ("mic","https://spettacolo.cultura.gov.it/bando-teatro-urbano-sociale-e-di-strada-2026-assegnazione-dei-contributi/","Bando TEATRO URBANO / 2026"),
+          ("piemonte","https://bandi.regione.piemonte.it/pre-informazione-fondi-ue","Pre informazione"),
+          ("piemonte","https://www.regione.piemonte.it/web/bandi-pnrr-per-enti-locali","Bandi Enti Locali"),
+          ("torino","https://bandi.comune.torino.it/","Bandi - Appalti"),
+          ("erasmus","https://erasmus-plus.ec.europa.eu/opportunities","Opportunities"),
+        ]
+        for sid,url,title in cases:
+            with self.subTest(url=url):
+                result=classify_informational_page(row("x",source_id=sid,url=url,title=title))
+                self.assertEqual(result["opportunity_type"],"altro avviso")
+
     def test_erasmus_documentation_is_not_an_open_call(self):
         cases=[
             ("https://www.erasmusplus.it/wp-content/uploads/2024/05/CORRIGENDUM-Disposizioni-nazionali-HE_2024.pdf", "Corrigendum Disposizioni Nazionali 2024"),
