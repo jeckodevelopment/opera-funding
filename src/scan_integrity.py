@@ -1,0 +1,153 @@
+#!/usr/bin/env python3
+"""Fail closed when the output of a funding scan is incomplete or inconsistent.
+
+Runs after scanning and before notifications/publication. This verifies integrity,
+not the truth of source websites or the legal eligibility of applicants.
+"""
+import argparse
+import json
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+REQUIRED_REVIEW=("assessment_review_status","adequacy_label",
+                 "eligibility_condition_status")
+REQUIRED_LISTS=("eligibility_specific_requirements",
+                "applicant_requirement_comparison")
+VALID_STATES={"APERTO","CHIUSO","IN ARRIVO","DA VERIFICARE"}
+
+
+def _integer(value):
+    return isinstance(value,int) and not isinstance(value,bool)
+
+
+def validate_scan(rows, report, now=None, max_age_minutes=30):
+    """Return actionable errors; no network and no mutation of source data."""
+    problems=[]
+    now=now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        raise ValueError("now must be timezone aware")
+    if not isinstance(rows,list) or not rows:
+        return ["Catalogo assente, vuoto o non valido"]
+    if not isinstance(report,dict):
+        return ["Report scansione mancante o non valido"]
+    stamp=report.get("checked_at")
+    try:
+        checked=datetime.fromisoformat(stamp.replace("Z","+00:00"))
+        if checked.tzinfo is None:
+            raise ValueError("timestamp senza timezone")
+        age=(now-checked).total_seconds()/60
+        if age < -5 or age > max_age_minutes:
+            problems.append("Timestamp scansione non recente: "+str(stamp))
+    except (ValueError,TypeError,AttributeError):
+        problems.append("Timestamp scansione mancante o non interpretabile")
+
+    coverage=report.get("coverage")
+    coverage_totals=coverage.get("totals") if isinstance(coverage,dict) else None
+    assessment=report.get("assessment_coverage")
+    queue=report.get("open_eligibility_review")
+    if not isinstance(coverage_totals,dict):
+        problems.append("Copertura del catalogo assente")
+        coverage_totals={}
+    if not isinstance(assessment,dict):
+        problems.append("Copertura documentale assente")
+        assessment={}
+    if not isinstance(queue,dict):
+        problems.append("Coda di verifica ammissibilità assente")
+        queue={}
+
+    for label,reported in (
+        ("coverage.totals.all",coverage_totals.get("all")),
+        ("assessment_coverage.total",assessment.get("total")),
+    ):
+        if not _integer(reported) or reported!=len(rows):
+            problems.append(label+": atteso "+str(len(rows))+", trovato "+str(reported))
+
+    seen=set()
+    open_ids=set()
+    state_totals={}
+    incomplete=[]
+    for i,row in enumerate(rows):
+        if not isinstance(row,dict):
+            problems.append("Record non valido in posizione "+str(i))
+            continue
+        identifier=row.get("public_id")
+        if not _integer(identifier) or identifier<=0 or identifier in seen:
+            problems.append("ID numerico pubblico mancante, errato o duplicato: "+str(identifier))
+        else:
+            seen.add(identifier)
+        status=row.get("funding_status")
+        state_totals[status]=state_totals.get(status,0)+1
+        if status not in VALID_STATES:
+            problems.append("Stato temporale sconosciuto per "+str(identifier)+": "+str(status))
+        if status=="APERTO" and _integer(identifier) and identifier>0:
+            open_ids.add(identifier)
+        if (any(not isinstance(row.get(key),str) or not row[key].strip()
+                for key in REQUIRED_REVIEW)
+            or any(not isinstance(row.get(key),list) for key in REQUIRED_LISTS)
+            or not isinstance(row.get("applicant_comparison_counts"),dict)):
+            incomplete.append(identifier)
+    if incomplete:
+        problems.append("Valutazioni/requisiti mancanti su "+str(len(incomplete))+
+                        " record; esempi: "+", ".join(str(x) for x in incomplete[:5]))
+
+    for label,state in (("open","APERTO"),("closed","CHIUSO"),
+                        ("upcoming","IN ARRIVO"),("unverified","DA VERIFICARE")):
+        count=coverage_totals.get(label)
+        if not _integer(count) or count!=state_totals.get(state,0):
+            problems.append("coverage.totals."+label+" non coerente con le righe")
+    if _integer(coverage_totals.get("all")) and sum(
+        state_totals.get(x,0) for x in VALID_STATES)!=len(rows):
+        problems.append("Ripartizione stati non esaustiva")
+
+    if queue:
+        items=queue.get("items")
+        if not isinstance(items,list):
+            problems.append("Coda operativa priva di items")
+        else:
+            queue_ids=[x.get("public_id") for x in items if isinstance(x,dict)]
+            if len(items)!=len(queue_ids) or len(set(queue_ids))!=len(queue_ids):
+                problems.append("Coda operativa contiene elementi non validi o duplicati")
+            if set(queue_ids)!=open_ids:
+                problems.append("Coda operativa non coincide con le opportunità APERTO")
+            for entry in items:
+                if not isinstance(entry,dict):
+                    continue
+                if not isinstance(entry.get("tasks"),list) or not entry["tasks"]:
+                    problems.append("Coda operativa senza verifiche per "+str(entry.get("public_id")))
+        for label,expected in (("open_total",len(open_ids)),("in_queue",len(open_ids))):
+            if queue.get(label)!=expected:
+                problems.append("Coda "+label+" non coerente con opportunità APERTO")
+        status_counts=queue.get("condition_status_counts")
+        if not isinstance(status_counts,dict) or sum(
+            x for x in status_counts.values() if _integer(x))!=len(open_ids):
+            problems.append("Totali dei segnali di ammissibilità non coerenti")
+    return problems
+
+
+def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--catalog",type=Path,default=ROOT/"data/opportunities.json")
+    parser.add_argument("--report",type=Path,default=ROOT/"data/scan-status.json")
+    parser.add_argument("--max-age-minutes",type=int,default=30)
+    args=parser.parse_args()
+    try:
+        rows=json.loads(args.catalog.read_text(encoding="utf-8"))
+        report=json.loads(args.report.read_text(encoding="utf-8"))
+        problems=validate_scan(rows,report,max_age_minutes=args.max_age_minutes)
+    except (OSError,UnicodeError,json.JSONDecodeError,ValueError) as exc:
+        problems=["Impossibile leggere o validare i dati: "+str(exc)]
+    if problems:
+        print("INTEGRITÀ SCANSIONE FALLITA:",file=sys.stderr)
+        for p in problems:
+            print(" - "+p,file=sys.stderr)
+        return 1
+    print("Integrità scansione OK: "+str(len(rows))+" record, "
+          +str(sum(r.get("funding_status")=="APERTO" for r in rows))+
+          " aperti, valutazioni complete e coda coerente")
+    return 0
+
+
+if __name__=="__main__":
+    raise SystemExit(main())

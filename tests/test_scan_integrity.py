@@ -1,0 +1,103 @@
+"""Regression coverage for post-scan integrity gate."""
+import sys
+import unittest
+from datetime import datetime, timezone
+from pathlib import Path
+
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
+from scan_integrity import validate_scan
+
+NOW=datetime(2026,11,18,22,0,tzinfo=timezone.utc)
+
+def example():
+    rows=[
+        {"public_id":1,"funding_status":"APERTO","adequacy_label":"ALTA",
+         "assessment_review_status":"PARZIALE",
+         "eligibility_condition_status":"informazioni_insufficienti",
+         "eligibility_specific_requirements":[],
+         "applicant_requirement_comparison":[],
+         "applicant_comparison_counts":{"compatibile":0,"potenzialmente_incompatibile":0,"da_verificare":0}},
+        {"public_id":2,"funding_status":"CHIUSO","adequacy_label":"BASSA",
+         "assessment_review_status":"FONTE NON SUFFICIENTE",
+         "eligibility_condition_status":"informazioni_insufficienti",
+         "eligibility_specific_requirements":[],
+         "applicant_requirement_comparison":[],
+         "applicant_comparison_counts":{"compatibile":0,"potenzialmente_incompatibile":0,"da_verificare":0}},
+    ]
+    report={"checked_at":"2026-11-18T21:55:30+00:00",
+            "coverage":{"totals":{"all":2,"open":1,"closed":1,"upcoming":0,"unverified":0}},
+            "assessment_coverage":{"total":2},
+            "open_eligibility_review":{
+                "open_total":1,"in_queue":1,
+                "condition_status_counts":{"informazioni_insufficienti":1},
+                "items":[{"public_id":1,"tasks":["Verificare beneficiari"]}]
+            }}
+    return rows,report
+
+class ScanIntegrityTests(unittest.TestCase):
+    def check(self, rows, report):
+        return validate_scan(rows,report,now=NOW)
+
+    def test_consistent_report_passes(self):
+        self.assertEqual(self.check(*example()),[])
+
+    def test_stale_report_fails(self):
+        rows,report=example()
+        report["checked_at"]="2026-11-17T21:55:30+00:00"
+        self.assertTrue(any("Timestamp" in x for x in self.check(rows,report)))
+
+    def test_missing_queue_fails(self):
+        rows,report=example()
+        del report["open_eligibility_review"]
+        self.assertTrue(any("Coda" in x for x in self.check(rows,report)))
+
+    def test_missing_assessment_fails(self):
+        rows,report=example()
+        del rows[0]["adequacy_label"]
+        self.assertTrue(any("Valutazioni" in x for x in self.check(rows,report)))
+
+    def test_missing_applicant_comparison_fails(self):
+        rows,report=example()
+        del rows[0]["applicant_requirement_comparison"]
+        self.assertTrue(any("Valutazioni" in x for x in self.check(rows,report)))
+
+    def test_public_id_duplicate_fails(self):
+        rows,report=example()
+        rows[1]["public_id"]=1
+        self.assertTrue(any("duplicato" in x for x in self.check(rows,report)))
+
+    def test_open_queue_mismatch_fails(self):
+        rows,report=example()
+        report["open_eligibility_review"]["items"][0]["public_id"]=2
+        self.assertTrue(any("non coincide" in x for x in self.check(rows,report)))
+
+    def test_counts_mismatch_fails(self):
+        rows,report=example()
+        report["coverage"]["totals"]["open"]=2
+        self.assertTrue(any("coverage.totals.open" in x for x in self.check(rows,report)))
+
+    def test_unknown_state_fails(self):
+        rows,report=example()
+        rows[1]["funding_status"]="BOH"
+        self.assertTrue(any("Stato temporale" in x for x in self.check(rows,report)))
+
+    def test_empty_catalog_fails(self):
+        _,report=example()
+        self.assertTrue(self.check([],report))
+
+    def test_queue_missing_tasks_fails(self):
+        rows,report=example()
+        report["open_eligibility_review"]["items"][0]["tasks"]=[]
+        self.assertTrue(any("senza verifiche" in x for x in self.check(rows,report)))
+
+    def test_gate_runs_before_notification_and_commit(self):
+        workflow=(Path(__file__).resolve().parents[1]/".github/workflows/scan.yml").read_text()
+        integrity=workflow.index("run: python src/scan_integrity.py")
+        notify=workflow.index("run: python src/notify.py")
+        commit=workflow.index("name: Commit updated public data")
+        self.assertLess(integrity,notify)
+        self.assertLess(integrity,commit)
+        self.assertIn("steps.integrity.outcome == 'success'",workflow)
+
+if __name__=="__main__":
+    unittest.main()
