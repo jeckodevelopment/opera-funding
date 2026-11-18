@@ -9,10 +9,10 @@ import re
 RANK={"BASSA AFFINITÀ":1,"MEDIA AFFINITÀ":2,"ALTA AFFINITÀ":3}
 NAMES={1:"BASSA",2:"MEDIA",3:"ALTA"}
 INDIVIDUAL_ONLY=re.compile(
-    r"(?i)(?:solo|esclusivamente|only)\\s+(?:persone fisiche|singoli artisti|individual artists|individual applicants)"
+    r"(?i)(?:solo|esclusivamente|only)\s+(?:persone fisiche|singoli artisti|individual artists|individual applicants)"
 )
 FIRMS_ONLY=re.compile(
-    r"(?i)(?:solo|esclusivamente|only)\\s+(?:imprese|società commerciali|companies|businesses|for-profit)"
+    r"(?i)(?:solo|esclusivamente|only)\s+(?:imprese|società commerciali|companies|businesses|for-profit)"
 )
 PARTNERS_ALLOWED=re.compile(
     r"(?i)partner ammessi|partenariato ammesso|scuole e associazioni|associazioni.*partner|"
