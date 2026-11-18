@@ -16,17 +16,21 @@ def example():
          "eligibility_condition_status":"informazioni_insufficienti",
          "eligibility_specific_requirements":[],
          "applicant_requirement_comparison":[],
-         "applicant_comparison_counts":{"compatibile":0,"potenzialmente_incompatibile":0,"da_verificare":0}},
+         "applicant_comparison_counts":{"compatibile":0,"potenzialmente_incompatibile":0,"da_verificare":0},"application_path":"integrare_verifica_documentale",
+         "application_next_actions":["Verificare condizioni"],"application_eligibility_verified":False},
         {"public_id":2,"funding_status":"CHIUSO","adequacy_label":"BASSA",
          "assessment_review_status":"FONTE NON SUFFICIENTE",
          "eligibility_condition_status":"informazioni_insufficienti",
          "eligibility_specific_requirements":[],
          "applicant_requirement_comparison":[],
-         "applicant_comparison_counts":{"compatibile":0,"potenzialmente_incompatibile":0,"da_verificare":0}},
+         "applicant_comparison_counts":{"compatibile":0,"potenzialmente_incompatibile":0,"da_verificare":0},"application_path":"integrare_verifica_documentale",
+         "application_next_actions":["Verificare condizioni"],"application_eligibility_verified":False},
     ]
     report={"checked_at":"2026-11-18T21:55:30+00:00",
             "coverage":{"totals":{"all":2,"open":1,"closed":1,"upcoming":0,"unverified":0}},
             "assessment_coverage":{"total":2},
+            "catalog_reconciliation":{"coverage":{"catalogo":{"total":2},"aperte":{"total":1},
+                "aperte_alta_media":{"total":1}}},
             "open_eligibility_review":{
                 "open_total":1,"in_queue":1,
                 "condition_status_counts":{"informazioni_insufficienti":1},
@@ -40,6 +44,16 @@ class ScanIntegrityTests(unittest.TestCase):
 
     def test_consistent_report_passes(self):
         self.assertEqual(self.check(*example()),[])
+
+    def test_missing_operational_path_fails(self):
+        rows,report=example()
+        del rows[0]["application_path"]
+        self.assertTrue(any("Percorso operativo" in x for x in self.check(rows,report)))
+
+    def test_reconciliation_mismatch_fails(self):
+        rows,report=example()
+        report["catalog_reconciliation"]["coverage"]["aperte_alta_media"]["total"]=2
+        self.assertTrue(any("Riconciliazione" in x for x in self.check(rows,report)))
 
     def test_stale_report_fails(self):
         rows,report=example()
