@@ -29,7 +29,7 @@ def link_opportunities(rows,registry):
         if p:
             row["funder_id"]=p["funder_id"]
             row["program_id"]=p["id"]
-        else:
+        elif not str(row.get("source_id") or "").startswith("programme:"):
             row.pop("funder_id",None)
             row.pop("program_id",None)
     return rows
