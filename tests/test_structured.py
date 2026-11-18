@@ -240,6 +240,26 @@ class StructuredTests(unittest.TestCase):
         self.assertIsNone(facts)
         session.get.assert_called_once_with(localized,timeout=16,stream=True,allow_redirects=True)
 
+    def test_priority_call_keeps_objectives_eligibility_and_requirements(self):
+        html=("<main><p>Obiettivi del programma: promuovere l'educazione musicale nelle comunità.</p>"
+              "<p>Attività finanziabili: laboratori didattici e percorsi audiovisivi per i giovani.</p>"
+              "<p>Beneficiari ammessi: associazioni culturali senza scopo di lucro registrate.</p>"
+              "<p>Requisiti: attività documentate, bilancio e partecipazione nella regione.</p>"
+              "<p>Data scadenza 24/11/2026; Stato Aperto.</p></main>")
+        response=Mock(url=URL,headers={"Content-Type":"text/html"},text=html)
+        response.raise_for_status.return_value=None
+        response.iter_content.return_value=[html.encode()]
+        session=Mock()
+        session.get.return_value=response
+        target={"url":URL,"title":"Bando per attività musicali"}
+        source={"name":"Regione Piemonte","id":"piemonte","url":"https://bandi.regione.piemonte.it/"}
+        result=check_priority(target,source,session,lambda u,s:True,"2026-11-16T00:00:00+00:00")
+        self.assertIsNotNone(result)
+        self.assertIn("laboratori",result.get("funded_activities_excerpt",""))
+        self.assertIn("associazioni",result.get("beneficiaries_excerpt",""))
+        self.assertIn("Requisiti",result.get("requirements_excerpt",""))
+        self.assertEqual(result["detail_version"],8)
+
     def test_verified_priority_page(self):
         response=Mock(url=URL,status_code=200,headers={"Content-Type":"text/html"},text=PAGE)
         response.iter_content.return_value=[PAGE.encode()]
