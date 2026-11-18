@@ -676,7 +676,7 @@ async function init(){
   all=dataset.opportunities;const status=dataset.status;
   $("total").textContent=all.filter(o=>state(o)==="aperto").length;
   $("potential").textContent=all.length;
-  $("high").textContent=all.filter(o=>state(o)==="aperto"&&score(o)>=60).length;
+  $("high").textContent=all.filter(o=>state(o)==="aperto"&&assessmentLabel(o)==="ALTA AFFINITÀ").length;
   $("sources").textContent=status.sources.length;
   const stamp=status.checked_at?new Date(status.checked_at).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"}):"non disponibile";
   $("scan").textContent=(dataset.origin==="github"?"Ultima scansione: ":"Copia locale · Ultima scansione: ")+stamp;
