@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T22:24:15+00:00",
+  "checked_at": "2026-11-18T22:31:54+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 15,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "torino",
@@ -31,23 +31,23 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "culturatorino",
       "source_name": "Fondazione per la Cultura Torino",
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "discovered": 21,
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "volto",
       "source_name": "Vol.To",
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "discovered": 16,
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "checked_at": "2026-11-18T22:31:54+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:24:15+00:00",
+      "checked_at": "2026-11-18T22:31:54+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-18T22:24:15+00:00",
+      "checked_at": "2026-11-18T22:31:54+00:00",
       "error": "robots.txt: risposta HTTP 503; verifica automatica non disponibile",
       "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
       "institutional_reference_label": "Regione Piemonte — bando ALCOTRA",
@@ -111,21 +111,21 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T22:24:15+00:00"
+      "checked_at": "2026-11-18T22:31:54+00:00"
     }
   ],
   "coverage": {
     "totals": {
       "all": 255,
-      "open": 33,
+      "open": 34,
       "closed": 138,
       "upcoming": 2,
-      "unverified": 82,
+      "unverified": 81,
       "dated": 171,
       "dated_with_source": 171,
       "detail_checked": 183,
       "reachable": 254,
-      "candidate_unverified": 1,
+      "candidate_unverified": 0,
       "informational_unverified": 81,
       "candidate_missing_deadline": 2
     },
@@ -220,12 +220,12 @@
       },
       "volto": {
         "total": 15,
-        "open": 10,
-        "unverified": 3,
+        "open": 11,
+        "unverified": 2,
         "dated": 13,
         "dated_with_source": 13,
         "detail_checked": 14,
-        "candidate_unverified": 1,
+        "candidate_unverified": 0,
         "informational_unverified": 2,
         "candidate_missing_deadline": 0
       },
@@ -271,9 +271,9 @@
     "with_document_issues": 34,
     "with_editorial_label": 255,
     "by_review_status": {
-      "PARZIALE": 102,
+      "PARZIALE": 101,
       "EVIDENZE RACCOLTE": 16,
-      "REVISIONE DOCUMENTALE": 23,
+      "REVISIONE DOCUMENTALE": 24,
       "FONTE NON SUFFICIENTE": 114
     },
     "completely_verified_applicability": 0,
@@ -282,22 +282,58 @@
   },
   "open_eligibility_review": {
     "as_of": "2026-11-18",
-    "open_total": 33,
-    "in_queue": 33,
+    "open_total": 34,
+    "in_queue": 34,
     "condition_status_counts": {
       "compatibilita_documentata": 2,
+      "condizionata": 1,
       "informazioni_insufficienti": 31
     },
     "specific_requirement_category_counts": {
-      "natura_giuridica": 2,
+      "natura_giuridica": 3,
+      "partenariato": 1,
       "territorio": 2
     },
     "application_path_counts": {
       "bassa_priorita_progettuale": 18,
       "integrare_verifica_documentale": 14,
-      "verificare_candidatura_diretta": 1
+      "verificare_candidatura_diretta": 1,
+      "verificare_candidatura_in_partenariato": 1
     },
     "items": [
+      {
+        "public_id": 176,
+        "title": "Educazione alla Cittadinanza Globale per la sostenibilità e la solidarietà internazionale - bando 2026 Scadenza: 23 Novembre 2026 Ente promotore: Regione Piemonte e Fondazione Compagnia di San Paolo Territorio: Piemonte",
+        "deadline": "2026-11-23",
+        "days_remaining": 5,
+        "adequacy": "MEDIA",
+        "application_path": "verificare_candidatura_in_partenariato",
+        "application_path_reason": "La fonte indica un partenariato obbligatorio o una possibile partecipazione tramite partner; disponibilità a collaborare non equivale a un accordo formalizzato",
+        "application_next_actions": [
+          "Individuare capofila e partner idonei e verificare ruoli e accordi",
+          "Verificare requisiti e accordi di partenariato",
+          "Verificare natura giuridica e iscrizioni richieste",
+          "Chiarire gli obblighi di partenariato o cofinanziamento",
+          "Verificare i requisiti esatti per partecipare come partner non capofila, dato che Opera+ è costituita dal 23 aprile 2026, il RUNTS è in corso e non ha attività pregresse.",
+          "Individuare un capofila OSC ammissibile ed un'Autorità Locale piemontese co-proponente; verificare il cofinanziamento residuo e la documentazione.",
+          "Verificare condizioni e differenze tra elenco dei beneficiari, partner ed enti co-proponenti nel PDF ufficiale."
+        ],
+        "condition_status": "condizionata",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 2,
+        "tasks": [
+          "Verificare requisiti e accordi di partenariato",
+          "Verificare natura giuridica e iscrizioni richieste",
+          "Chiarire gli obblighi di partenariato o cofinanziamento",
+          "Verificare i requisiti esatti per partecipare come partner non capofila, dato che Opera+ è costituita dal 23 aprile 2026, il RUNTS è in corso e non ha attività pregresse.",
+          "Individuare un capofila OSC ammissibile ed un'Autorità Locale piemontese co-proponente; verificare il cofinanziamento residuo e la documentazione.",
+          "Verificare condizioni e differenze tra elenco dei beneficiari, partner ed enti co-proponenti nel PDF ufficiale."
+        ],
+        "sources": [
+          "https://bandi.regione.piemonte.it/contributi-finanziamenti/bando-educazione-alla-cittadinanza-globale-sostenibilita-solidarieta-internazionale-anno-2026",
+          "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026/"
+        ]
+      },
       {
         "public_id": 175,
         "title": "Dora in Avanti: bando per lo sviluppo delle comunità a Torino nord Scadenza: 20 Novembre 2026 Ente promotore: Fondazione Lavazza Territorio: Torino e Settimo Torinese Ambito: Ambiente , Cittadinanza attiva , Salute , Soc",
@@ -308,13 +344,15 @@
         "application_path_reason": "La fonte menziona associazioni fra i possibili beneficiari, ma l'ammissibilità effettiva e tutte le condizioni vanno ancora confermate",
         "application_next_actions": [
           "Confermare nello statuto e nel bando la possibilità di domanda diretta",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare l'effettiva attività territoriale dell'associazione nelle aree ammesse.",
+          "Confermare i requisiti ETS e la compatibilità dei costi progettuali nel bando integrale."
         ],
         "condition_status": "compatibilita_documentata",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare l'effettiva attività territoriale dell'associazione nelle aree ammesse.",
+          "Confermare i requisiti ETS e la compatibilità dei costi progettuali nel bando integrale."
         ],
         "sources": [
           "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord/"
@@ -330,40 +368,16 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://erasmus-plus.ec.europa.eu/funding-opportunities/european-literacy-coalition-consortium-fpa-sga"
-        ]
-      },
-      {
-        "public_id": 176,
-        "title": "Educazione alla Cittadinanza Globale per la sostenibilità e la solidarietà internazionale - bando 2026 Scadenza: 23 Novembre 2026 Ente promotore: Regione Piemonte e Fondazione Compagnia di San Paolo Territorio: Piemonte",
-        "deadline": "2026-11-23",
-        "days_remaining": 5,
-        "adequacy": "MEDIA",
-        "application_path": "integrare_verifica_documentale",
-        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
-        "application_next_actions": [
-          "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
-        ],
-        "condition_status": "informazioni_insufficienti",
-        "review_status": "PARZIALE",
-        "pending_conditions": 0,
-        "tasks": [
-          "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
-        ],
-        "sources": [
-          "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026/"
         ]
       },
       {
@@ -376,13 +390,15 @@
         "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Verificare sede e ambito territoriale"
+          "Verificare sede e ambito territoriale",
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "compatibilita_documentata",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 1,
         "tasks": [
-          "Verificare sede e ambito territoriale"
+          "Verificare sede e ambito territoriale",
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni"
@@ -398,13 +414,15 @@
         "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Leggere l'avviso PDF 'Eventi culturali 2027' e quello su giovani/formazione per individuare soggetti ammessi.",
+          "Confermare soglia di contributo e obblighi di rendicontazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Leggere l'avviso PDF 'Eventi culturali 2027' e quello su giovani/formazione per individuare soggetti ammessi.",
+          "Confermare soglia di contributo e obblighi di rendicontazione."
         ],
         "sources": [
           "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7"
@@ -420,13 +438,13 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://infobandi.csvnet.it/bando-lo-sport-e-vita/",
@@ -445,7 +463,10 @@
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
@@ -453,7 +474,10 @@
         "tasks": [
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "sources": [
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVSLATE"
@@ -469,13 +493,15 @@
         "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare nel regolamento applicativo la piena ammissibilità dell'associazione.",
+          "Verificare risorse proprie, territorio e caratteristiche del festival proposto."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare nel regolamento applicativo la piena ammissibilità dell'associazione.",
+          "Verificare risorse proprie, territorio e caratteristiche del festival proposto."
         ],
         "sources": [
           "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-i-festival-partecipativi-2027/"
@@ -491,13 +517,15 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Verificare natura giuridica e iscrizioni richieste"
+          "Verificare natura giuridica e iscrizioni richieste",
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 1,
         "tasks": [
-          "Verificare natura giuridica e iscrizioni richieste"
+          "Verificare natura giuridica e iscrizioni richieste",
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://bandi.regione.piemonte.it/contributi-finanziamenti/avviso-pubblico-finanziamento-alle-associazioni-turistiche-pro-loco-piemonte-anno-2026"
@@ -514,14 +542,18 @@
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "PARZIALE",
         "pending_conditions": 0,
         "tasks": [
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "sources": [
           "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026"
@@ -538,14 +570,18 @@
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili"
+          "Verificare le attività effettivamente finanziabili",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "PARZIALE",
         "pending_conditions": 0,
         "tasks": [
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
-          "Verificare le attività effettivamente finanziabili"
+          "Verificare le attività effettivamente finanziabili",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate."
         ],
         "sources": [
           "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente"
@@ -561,13 +597,13 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-invecchiamento-attivo-parte-ambiti-territoriali-sociali"
@@ -583,13 +619,17 @@
         "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Verificare natura giuridica e iscrizioni richieste"
+          "Verificare natura giuridica e iscrizioni richieste",
+          "Verificare iscrizione RUNTS e possibilità di aderire a un partenariato con soggetto sportivo.",
+          "Verificare la disponibilità di uno spazio civico e la sostenibilità delle attività continuative."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 1,
         "tasks": [
-          "Verificare natura giuridica e iscrizioni richieste"
+          "Verificare natura giuridica e iscrizioni richieste",
+          "Verificare iscrizione RUNTS e possibilità di aderire a un partenariato con soggetto sportivo.",
+          "Verificare la disponibilità di uno spazio civico e la sostenibilità delle attività continuative."
         ],
         "sources": [
           "https://www.sportesalute.eu/fabbrica.html",
@@ -606,13 +646,17 @@
         "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Verificare sede e ambito territoriale"
+          "Verificare sede e ambito territoriale",
+          "Verificare sede operativa e requisiti formali del richiedente.",
+          "Definire uno specifico progetto di AI, distinguendolo dal normale sviluppo e-learning."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 1,
         "tasks": [
-          "Verificare sede e ambito territoriale"
+          "Verificare sede e ambito territoriale",
+          "Verificare sede operativa e requisiti formali del richiedente.",
+          "Definire uno specifico progetto di AI, distinguendolo dal normale sviluppo e-learning."
         ],
         "sources": [
           "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/"
@@ -628,13 +672,15 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare specifica forma giuridica e requisiti di impresa nel testo del bando.",
+          "La dotazione complessiva di € 5 milioni non coincide con l'importo assegnabile al singolo progetto."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare specifica forma giuridica e requisiti di impresa nel testo del bando.",
+          "La dotazione complessiva di € 5 milioni non coincide con l'importo assegnabile al singolo progetto."
         ],
         "sources": [
           "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo"
@@ -650,13 +696,15 @@
         "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare se il progetto Opera+ soddisfa le priorità sociali della versione corrente delle Linee guida.",
+          "Verificare condizioni contabili dell'associazione e disponibilità residua dei fondi."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare se il progetto Opera+ soddisfa le priorità sociali della versione corrente delle Linee guida.",
+          "Verificare condizioni contabili dell'associazione e disponibilità residua dei fondi."
         ],
         "sources": [
           "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
@@ -673,13 +721,15 @@
         "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare capacità concreta di ospitalità e disponibilità di mentor.",
+          "Confermare compatibilità del progetto di residenza con le attività associative."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Verificare capacità concreta di ospitalità e disponibilità di mentor.",
+          "Confermare compatibilità del progetto di residenza con le attività associative."
         ],
         "sources": [
           "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts"
@@ -697,7 +747,10 @@
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
@@ -705,7 +758,10 @@
         "tasks": [
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "sources": [
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMOVE"
@@ -723,7 +779,10 @@
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
@@ -731,7 +790,10 @@
         "tasks": [
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "sources": [
           "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5"
@@ -747,13 +809,13 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-medtech/"
@@ -770,14 +832,18 @@
         "application_next_actions": [
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "PARZIALE",
         "pending_conditions": 0,
         "tasks": [
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "sources": [
           "https://infobandi.csvnet.it/bando-2027-del-fondo-nazionale-per-la-rievocazione-storica/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-del-fondo-nazionale-per-la-rievocazione-storica"
@@ -793,13 +859,13 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/"
@@ -817,7 +883,10 @@
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
@@ -825,7 +894,10 @@
         "tasks": [
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "sources": [
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVVGIM"
@@ -841,17 +913,46 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?callIdentifier=CREA-MEDIA-2027-TVONLINE&isExactMatch=true&order=DESC&pageNumber=1&pageSize=50&sortBy=startDate&status=31094501%2C31094502%2C31094503",
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-TVONLINE"
+        ]
+      },
+      {
+        "public_id": 146,
+        "title": "Bando Una mano a chi sostiene – nuova edizione 2026/27 Il bando mette a disposizione 500 mila euro per sostenere sul territorio italiano progetti in grado di generare impatto sociale duraturo attraverso la coesione socia",
+        "deadline": "2027-02-16",
+        "days_remaining": 90,
+        "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
+        ],
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "PARZIALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Verificare le attività effettivamente finanziabili",
+          "Leggere condizioni e requisiti completi del bando",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
+        ],
+        "sources": [
+          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/",
+          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026"
         ]
       },
       {
@@ -864,13 +965,13 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-reti-antigrandine-srd06-intervento-121-bando-2026"
@@ -910,7 +1011,10 @@
           "Recuperare bando integrale e requisiti ufficiali di candidatura",
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
@@ -918,7 +1022,10 @@
         "tasks": [
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "sources": [
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-AUDFILMEDU"
@@ -936,7 +1043,10 @@
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "FONTE NON SUFFICIENTE",
@@ -944,7 +1054,10 @@
         "tasks": [
           "Accertare quali soggetti possono presentare domanda e in quale ruolo",
           "Verificare le attività effettivamente finanziabili",
-          "Leggere condizioni e requisiti completi del bando"
+          "Leggere condizioni e requisiti completi del bando",
+          "Beneficiari ammessi non documentati.",
+          "Attività finanziabili non documentate.",
+          "Vincoli di candidatura non documentati."
         ],
         "sources": [
           "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV"
@@ -960,13 +1073,13 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://european-training-platform.e-justice.europa.eu/about-platform",
@@ -983,13 +1096,13 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://www.compagniadisanpaolo.it/it/contributi/call-for-partnership-promozione-delliniziativa-scelte-future/"
@@ -1005,13 +1118,15 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Non candidabile direttamente da un'associazione in questa linea.",
+          "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Non candidabile direttamente da un'associazione in questa linea.",
+          "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso."
         ],
         "sources": [
           "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility"
@@ -1027,13 +1142,13 @@
         "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
         "application_next_actions": [
           "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confermare i requisiti sulla versione aggiornata del bando"
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
         ],
         "sources": [
           "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-06-alleanze-ad-alta-intensita-educativa/"
@@ -1075,45 +1190,45 @@
         },
         "missing_documentation": {
           "finalita": 138,
-          "attivita_finanziabili": 216,
+          "attivita_finanziabili": 215,
           "beneficiari": 149,
-          "requisiti": 174
+          "requisiti": 173
         },
         "with_document_issues": 34,
-        "with_unresolved_applicant_checks": 7,
+        "with_unresolved_applicant_checks": 8,
         "source_not_attributed": 19
       },
       "aperte": {
-        "total": 33,
+        "total": 34,
         "adequacy_counts": {
           "ALTA": 2,
           "BASSA": 18,
-          "MEDIA": 13
+          "MEDIA": 14
         },
         "missing_documentation": {
-          "finalita": 7,
+          "finalita": 8,
           "attivita_finanziabili": 10,
           "beneficiari": 7,
           "requisiti": 9
         },
         "with_document_issues": 0,
-        "with_unresolved_applicant_checks": 4,
+        "with_unresolved_applicant_checks": 5,
         "source_not_attributed": 0
       },
       "aperte_alta_media": {
-        "total": 15,
+        "total": 16,
         "adequacy_counts": {
           "ALTA": 2,
-          "MEDIA": 13
+          "MEDIA": 14
         },
         "missing_documentation": {
-          "finalita": 2,
+          "finalita": 3,
           "attivita_finanziabili": 5,
           "beneficiari": 2,
           "requisiti": 4
         },
         "with_document_issues": 0,
-        "with_unresolved_applicant_checks": 3,
+        "with_unresolved_applicant_checks": 4,
         "source_not_attributed": 0
       }
     },
@@ -1132,12 +1247,13 @@
       255,
       149,
       254,
+      146,
       148
     ],
     "notes": "I conteggi indicano copertura delle evidenze, non ammissibilità certificata."
   },
   "funder_monitoring": {
-    "checked_at": "2026-11-18T22:24:15+00:00",
+    "checked_at": "2026-11-18T22:31:54+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -1428,7 +1544,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:24:15+00:00",
+        "last_checked_at": "2026-11-18T22:31:54+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1440,7 +1556,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:24:15+00:00",
+        "last_checked_at": "2026-11-18T22:31:54+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1453,7 +1569,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:24:15+00:00",
+        "last_checked_at": "2026-11-18T22:31:54+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1466,7 +1582,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:24:15+00:00",
+        "last_checked_at": "2026-11-18T22:31:54+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1479,7 +1595,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:24:15+00:00",
+        "last_checked_at": "2026-11-18T22:31:54+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1492,7 +1608,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:24:15+00:00",
+        "last_checked_at": "2026-11-18T22:31:54+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1505,10 +1621,24 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:24:15+00:00",
+        "last_checked_at": "2026-11-18T22:31:54+00:00",
         "changed": false,
         "candidate_count": null
       }
     ]
-  }
+  },
+  "programme_ingestion": [
+    {
+      "program_id": "isp-beneficenza",
+      "new": 0,
+      "existing": 0,
+      "rejected": 0
+    },
+    {
+      "program_id": "enelcuore-progetti",
+      "new": 0,
+      "existing": 0,
+      "rejected": 0
+    }
+  ]
 }
