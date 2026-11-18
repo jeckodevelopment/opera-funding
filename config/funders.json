@@ -351,6 +351,24 @@
       "website": "https://comune.chivasso.to.it/it/topics/patrimonio-culturale",
       "verification": "fonte istituzionale reperita; ammissibilità non verificata",
       "accepts_applications": null
+    },
+    {
+      "id": "provincia-novara",
+      "name": "Provincia di Novara",
+      "type": "provincia",
+      "territory": "Novara (NO)",
+      "website": "https://www.provincia.novara.it/it/page/sovvenzioni-contributi-sussidi-vantaggi-economici-criteri-e-modalita-atti-di-concessione",
+      "verification": "ente e riferimenti ufficiali verificati; nuovi bandi e ammissibilità da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "provincia-alessandria",
+      "name": "Provincia di Alessandria",
+      "type": "provincia",
+      "territory": "Alessandria (AL)",
+      "website": "https://provincia.alessandria.it/",
+      "verification": "ente e riferimenti ufficiali verificati; nuovi bandi e ammissibilità da verificare",
+      "accepts_applications": null
     }
   ],
   "programs": [
@@ -522,6 +540,24 @@
       "submission": "da verificare",
       "monitoring": "reference-only",
       "eligibility_note": "Fondazione e progetti documentati; candidature spontanee da verificare"
+    },
+    {
+      "id": "provincia-novara-contributi",
+      "funder_id": "provincia-novara",
+      "name": "Criteri e atti di concessione contributi",
+      "url": "https://www.provincia.novara.it/it/page/sovvenzioni-contributi-sussidi-vantaggi-economici-criteri-e-modalita-atti-di-concessione",
+      "monitoring": "reference-only",
+      "submission": "da verificare",
+      "eligibility_note": "Registro delle erogazioni: non costituisce un bando aperto"
+    },
+    {
+      "id": "provincia-alessandria-regolamento",
+      "funder_id": "provincia-alessandria",
+      "name": "Regolamento per la concessione di contributi",
+      "url": "https://provincia.alessandria.it/wp-content/uploads/sites/757/2023/12/regolamentocontributi.pdf",
+      "monitoring": "reference-only",
+      "submission": "da verificare",
+      "eligibility_note": "Regolamento PDF: nessuna candidatura aperta automaticamente"
     }
   ]
 }
