@@ -38,11 +38,11 @@ class VerifiedFactsTests(unittest.TestCase):
         checked=[row(f) for f in FACTS[5:]]
         apply_reviewed_facts(checked,FACTS,"2026-11-18T20:00:00+00:00")
         states=[effective_status(r,date(2026,11,18)) for r in checked]
-        self.assertEqual(states,["CHIUSO","APERTO","IN ARRIVO","APERTO","APERTO","APERTO","APERTO","APERTO"])
-        self.assertIsNone(checked[-1].get("deadline"))
-        self.assertTrue(checked[-1]["rolling_confirmed"])
+        self.assertEqual(states,["CHIUSO","APERTO","IN ARRIVO","APERTO","APERTO","APERTO","APERTO","APERTO","APERTO","APERTO"])
+        self.assertIsNone(checked[7].get("deadline"))
+        self.assertTrue(checked[7]["rolling_confirmed"])
         self.assertEqual(checked[2]["opening_date"],"2027-01-07")
-        self.assertIn("buoni-formazione",checked[-1]["rolling_evidence"])
+        self.assertIn("buoni-formazione",checked[7]["rolling_evidence"])
 
     def test_actual_volto_bandi_urls_are_matched(self):
         rows=[

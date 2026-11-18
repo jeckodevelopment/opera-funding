@@ -119,5 +119,25 @@
     "evidence": "official_rolling_application_process",
     "review_valid_until": "2026-11-25",
     "rolling": true
+  },
+  {
+    "source_id": "eufunding",
+    "match_host": "ec.europa.eu",
+    "match_path": "/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2027-codev",
+    "official_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "deadline": "2027-03-02",
+    "opening_date": "2026-09-30",
+    "evidence": "official_active_application_window",
+    "review_valid_until": "2026-11-25"
+  },
+  {
+    "source_id": "volto",
+    "match_host": "infobandi.csvnet.it",
+    "match_path": "/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
+    "official_url": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/",
+    "opening_date": "2026-10-27",
+    "deadline": "2027-02-24",
+    "evidence": "official_active_application_window",
+    "review_valid_until": "2026-11-25"
   }
 ]
