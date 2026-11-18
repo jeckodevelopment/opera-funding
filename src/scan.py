@@ -30,6 +30,7 @@ from adequacy import apply_adequacy
 from eligibility_conditions import annotate_conditions
 from eligibility_specific import annotate_specific_requirements
 from applicant_comparison import load_applicant_profile, annotate_applicant_comparison
+from open_review_queue import build_open_review_queue
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -310,7 +311,8 @@ def run():
     output.parent.mkdir(parents=True, exist_ok=True)
     ids_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
-    Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows),
+                                        "open_eligibility_review":build_open_review_queue(rows,now[:10])},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
 
 if __name__ == "__main__":
