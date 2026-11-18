@@ -102,17 +102,18 @@
     "public_id": 182,
     "source_id": "sanpaolo",
     "url": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/",
-    "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Il bando sostiene l'adozione organizzativa responsabile dell'intelligenza artificiale negli enti non profit. Può interessare Opera+ se sviluppa un progetto specifico di AI per accessibilità, gestione contenuti o servizi formativi; non è un finanziamento generale per produrre il corso Rigoletto.",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "Il bando AI ed economia sociale esclude Opera+ dalla candidatura: richiede costituzione antecedente al 1 gennaio 2024, proventi 2025 di almeno 200.000 euro, patrimonio netto e almeno due figure professionali stabili; non ammette partenariati. Opera+ è stata costituita nell'aprile 2026 e non dispone di un bilancio consuntivo 2025, quindi non può soddisfare i primi due requisiti. Non rileva la possibile affinità del tema digitale.",
     "programme_objectives_excerpt": "Sviluppo di strategie di adozione etica e sicura dell'AI negli enti dell'economia sociale e rafforzamento delle competenze interne.",
     "funded_activities_excerpt": "Formazione, accompagnamento e sperimentazione di soluzioni AI per migliorare processi, servizi e impatto degli enti.",
-    "beneficiaries_excerpt": "Enti privati non profit attivi anche in ambito culturale con almeno una sede operativa in Piemonte, Liguria o Valle d'Aosta.",
-    "requirements_excerpt": "Rispetto dei requisiti della Fondazione e proposta orientata alla trasformazione organizzativa; scadenza indicata 18 dicembre 2026.",
+    "beneficiaries_excerpt": "Enti privati senza scopo di lucro attivi in ambito sociale, culturale o ambientale con sede operativa in Piemonte, Liguria o Valle d'Aosta, costituiti prima del 1/1/2024 (salvo specifiche trasformazioni di enti preesistenti).",
+    "requirements_excerpt": "Requisiti cumulativi: costituzione prima del 1/1/2024, bilancio 2025 con proventi/valore produzione >= 200.000 euro, patrimonio netto positivo o ricapitalizzato e almeno due profili professionali stabili. Nessuna candidatura in partenariato. Termine 18/12/2026.",
     "assessment_gaps": [
-      "Verificare sede operativa e requisiti formali del richiedente.",
-      "Definire uno specifico progetto di AI, distinguendolo dal normale sviluppo e-learning."
+      "Esclusione documentata per data di costituzione e assenza di bilancio 2025 richiesto: nessuna candidatura diretta o in partenariato per questa edizione."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "evidence_url": "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale/",
+    "direct_application_blocker": "Opera+ costituita il 23/04/2026, dunque non prima del 01/01/2024, e senza bilancio 2025 da 200.000 euro; inoltre il bando non ammette partenariati."
   },
   {
     "public_id": 8,
@@ -135,18 +136,18 @@
     "source_id": "volto",
     "url": "https://infobandi.csvnet.it/bando-fabbrica-spazi-civici-per-la-gioventu/?utm_source=rss&utm_medium=rss&utm_campaign=bando-fabbrica-spazi-civici-per-la-gioventu",
     "evidence_url": "https://www.sportesalute.eu/fabbrica.html",
-    "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Sono ammissibili laboratori artistici e percorsi formativi per giovani, ma il bando finanzia la gestione continuativa di uno spazio civico fisico per 18–24 mesi e richiede un partenariato minimo con presenza sportiva. Opera+ potrebbe essere un partner culturale, non candidare semplicemente le sue videolezioni.",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "La candidatura Fabbrica 2026 richiede ASD/SSD iscritta al RASD oppure ETS iscritto al RUNTS come capofila e un partenariato di soggetti ammessi, con componente sportiva e sociale. Le FAQ ufficiali chiariscono che anche le associazioni/fondazioni partner devono essere ETS iscritte al RUNTS salvo categorie pubbliche o sportive distinte. Opera+ dichiara RUNTS in corso: né capofila né partner culturale ammissibile in questa situazione. Non basta che un'altra organizzazione sia il capofila.",
     "programme_objectives_excerpt": "Creazione e rafforzamento di spazi civici per giovani fra 14 e 35 anni, con attività gratuite di inclusione, partecipazione e formazione.",
     "funded_activities_excerpt": "Laboratori espressivi e artistici, percorsi formativi e creativi integrati in uno spazio civico stabile, con continuità annuale.",
-    "beneficiaries_excerpt": "Capofila ASD/SSD iscritta al RASD oppure ETS iscritto al RUNTS; partenariato con almeno tre soggetti.",
-    "requirements_excerpt": "Partenariato di almeno tre soggetti, comprendente un ASD/SSD e un ETS; sede fisica stabile; attività gratuite; durata 18–24 mesi; finanziamento fra 150.000 e 250.000 euro.",
+    "beneficiaries_excerpt": "Capofila ASD/SSD iscritta al RASD o ETS iscritto al RUNTS; i partner associativi devono appartenere alle categorie elencate nell'avviso, inclusi ETS iscritti al RUNTS. Presenza di componente sportiva (RASD) e sociale (RUNTS) richiesta nel partenariato.",
+    "requirements_excerpt": "Partenariato con componenti sportiva ASD/SSD iscritta RASD e sociale ETS iscritto RUNTS; per associazioni/fondazioni partner il RUNTS è richiesto. Il progetto è uno spazio civico fisico e continuativo, non soltanto un corso online. Presentazione entro 18/12/2026 ore 12:00.",
     "assessment_gaps": [
-      "Verificare iscrizione RUNTS e possibilità di aderire a un partenariato con soggetto sportivo.",
-      "Verificare la disponibilità di uno spazio civico e la sostenibilità delle attività continuative."
+      "Verificare un'eventuale futura iscrizione RUNTS solo per nuove edizioni: in questa fase non risulta ammissibile neppure come partner associativo.",
+      "Per un progetto successivo servirebbero anche rete sportiva iscritta RASD e spazio civico fisico stabile."
     ],
-    "reviewed_at": "2026-11-18",
-    "direct_application_blocker": "Il bando ufficiale richiede un capofila ASD/SSD iscritto al RASD o ETS iscritto al RUNTS; l'iscrizione RUNTS di Opera+ risulta dichiarata in corso e non completata."
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "Con RUNTS ancora in corso Opera+ non risulta ammessa né come ETS capofila né come partner associativo; l'avviso richiede iscrizione effettiva RUNTS per tali ruoli."
   },
   {
     "public_id": 145,
@@ -170,15 +171,16 @@
     "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/avviso-pubblico-finanziamento-alle-associazioni-turistiche-pro-loco-piemonte-anno-2026",
     "evidence_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/avviso-pubblico-finanziamento-alle-associazioni-turistiche-pro-loco-piemonte-anno-2026",
     "assessment_label": "BASSA AFFINITÀ",
-    "assessment_reason": "Riservato esclusivamente a Pro Loco piemontesi: un'associazione culturale ordinaria non può candidarsi soltanto in quanto ente non profit.",
+    "assessment_reason": "L'avviso 2026 è destinato esclusivamente alle associazioni turistiche Pro Loco del Piemonte iscritte all'albo regionale oppure al RUNTS alla data del 1 gennaio 2026. Opera+ è un'associazione culturale costituita solo il 23 aprile 2026, non è una Pro Loco e non era iscritta ai registri alla data richiesta. Candidatura diretta esclusa per questa edizione.",
     "programme_objectives_excerpt": "Sostegno alle attività programmate dalle associazioni turistiche Pro Loco piemontesi.",
     "funded_activities_excerpt": "Contributi per il programma di attività delle Pro Loco nell'anno 2026.",
     "beneficiaries_excerpt": "Esclusivamente Pro Loco piemontesi iscritte all'albo regionale o al RUNTS alla data prescritta.",
-    "requirements_excerpt": "Domande dal 13 novembre al 4 dicembre 2026; requisito specifico della qualifica Pro Loco.",
+    "requirements_excerpt": "Possono presentare domanda esclusivamente le Pro Loco del Piemonte iscritte al 1/1/2026 all'albo regionale di cui alla LR 36/2000 o al RUNTS. Apertura 13/11/2026, termine 04/12/2026 ore 12:00.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Per questa edizione non c'è un percorso di candidatura diretta; conservare la scheda per informazione senza suggerire un'adesione imminente."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "Requisito esclusivo di associazione turistica Pro Loco iscritta entro il 1 gennaio 2026 all'albo regionale o al RUNTS; Opera+ non è una Pro Loco ed è costituita il 23 aprile 2026."
   },
   {
     "public_id": 162,
@@ -266,15 +268,16 @@
     "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni",
     "evidence_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni",
     "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Le associazioni senza scopo di lucro con sede legale piemontese possono richiedere contributi per comunicazione e promozione di manifestazioni turistiche. Opera+ sarebbe coerente solo organizzando un evento territoriale con reale valenza turistica e relativa campagna promozionale, non per un corso online.",
+    "assessment_reason": "L'avviso 2026 ammette esplicitamente associazioni senza scopo di lucro con sede legale in Piemonte: Opera+ risponde a questi due criteri dichiarati. Tuttavia finanzia esclusivamente comunicazione e promo-pubblicità nell'ambito di una concreta manifestazione/evento turistico piemontese 2026, con ricadute di promozione e attrazione; il corso online non corrisponde. Non risulta un evento già organizzato da Opera+ e non è certificata una candidatura.",
     "programme_objectives_excerpt": "Promozione turistica e valorizzazione delle eccellenze, della storia e delle tradizioni piemontesi.",
-    "funded_activities_excerpt": "Comunicazione e pubblicità di manifestazioni/eventi turistici realizzati nel 2026.",
-    "beneficiaries_excerpt": "Enti pubblici piemontesi e associazioni senza scopo di lucro con sede legale in Piemonte.",
-    "requirements_excerpt": "Una manifestazione per richiedente; domanda FINDOM dal 2 al 24 novembre 2026.",
+    "funded_activities_excerpt": "Solo iniziative di comunicazione e promo-pubblicità connesse a manifestazioni ed eventi di valenza turistica organizzati in località del Piemonte nel 2026, con eventuale completamento entro il 10 gennaio 2027.",
+    "beneficiaries_excerpt": "Enti pubblici o di diritto pubblico piemontesi e associazioni senza scopo di lucro con sede legale in Piemonte.",
+    "requirements_excerpt": "Una sola manifestazione per richiedente; domanda tramite FINDOM dal 2 novembre 2026 al 24 novembre 2026 ore 12:00; occorre dimostrare la manifestazione e la ricaduta turistica delle attività promozionali.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Individuare un evento territoriale realmente realizzato o programmato da Opera+ nel 2026 e la sua specifica campagna di promozione; non è stato dichiarato alcun evento.",
+      "Verificare costi, preventivi, documenti richiesti su FINDOM e ammissibilità di una iniziativa concreta prima di predisporre domanda."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19"
   },
   {
     "public_id": 22,
@@ -395,18 +398,19 @@
     "source_id": "volto",
     "url": "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026/",
     "evidence_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/bando-educazione-alla-cittadinanza-globale-sostenibilita-solidarieta-internazionale-anno-2026",
-    "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Temi educativi e formativi potenzialmente pertinenti, ma la candidatura diretta di Opera+ come capofila non soddisfa i requisiti espliciti di presenza in Piemonte da almeno tre anni e precedente esperienza ECG negli ultimi tre anni. Il bando permette a una OSC di partecipare come partner: verificare se Opera+ possa ricoprire tale ruolo in un progetto con OSC capofila idonea e un'Autorità Locale piemontese co-proponente obbligatoria; confermare requisiti specifici dei partner.",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "Il bando 2026 per ECG riguarda reti fra OSC e autorità locali; Opera+ è costituita da aprile 2026, priva di tre anni di presenza ed esperienza ECG e con iscrizione RUNTS in corso. Pertanto non può candidarsi direttamente come capofila. Il testo consente OSC come partner, ma non prova che una nuova associazione non iscritta al RUNTS sia ammessa in quel ruolo: partner/capofila e condizioni da confermare prima di considerare una candidatura.",
     "programme_objectives_excerpt": "Educazione alla Cittadinanza Globale e Agenda 2030; rafforzamento delle reti tra autorità locali, OSC e istituti scolastici nella comunità educante piemontese.",
     "funded_activities_excerpt": "Percorsi didattici in scuole ed enti formativi, attività di educazione non formale, sensibilizzazione su Agenda 2030, solidarietà e sostenibilità, realizzate insieme all'Autorità Locale co-proponente.",
     "beneficiaries_excerpt": "Le domande possono essere presentate esclusivamente come capofila da OSC con sede legale/operativa in Piemonte da almeno 3 anni e specifica esperienza ECG negli ultimi 3 anni, secondo le categorie ammesse (incluse associazioni senza fini di lucro iscritte al RUNTS). Una OSC può partecipare come capofila o partner a una sola proposta.",
-    "requirements_excerpt": "Per il capofila: sede legale/operativa in Piemonte da almeno 3 anni ed esperienza specifica ECG negli ultimi 3 anni. Per le tipologie di associazioni senza fini di lucro previste, iscrizione RUNTS. Partenariato obbligatorio con almeno una Autorità Locale piemontese in ruolo di co-proponente. Contributo massimo regionale di 15.000 euro e non oltre il 90% del costo del progetto. Scadenza 23 novembre 2026.",
+    "requirements_excerpt": "Il capofila OSC deve essere insediato in Piemonte da almeno 3 anni, avere esperienza specifica ECG negli ultimi 3 anni e iscrizione RUNTS (o altra categoria specificamente ammessa); serve un'Autorità Locale piemontese co-proponente. Una OSC può essere capofila o partner di un solo progetto, ma la categoria e i requisiti del partner vanno verificati. Contributo massimo regionale 15.000 euro, non oltre 90% del costo; scadenza 23/11/2026.",
     "assessment_gaps": [
-      "Verificare i requisiti esatti per partecipare come partner non capofila, dato che Opera+ è costituita dal 23 aprile 2026, il RUNTS è in corso e non ha attività pregresse.",
-      "Individuare un capofila OSC ammissibile ed un'Autorità Locale piemontese co-proponente; verificare il cofinanziamento residuo e la documentazione.",
-      "Verificare condizioni e differenze tra elenco dei beneficiari, partner ed enti co-proponenti nel PDF ufficiale."
+      "Opera+ esclusa come capofila alle condizioni 2026; verificare esclusivamente se ammissibile come partner in un progetto già strutturato da OSC qualificata.",
+      "Richiede Autorità Locale piemontese co-proponente; nessun accordo documentato.",
+      "Non dedurre ammissibilità dei partner dal generico riferimento a OSC partner."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "Capofila riservato a OSC con sede legale/operativa in Piemonte da almeno tre anni, esperienza ECG negli ultimi tre anni e specifiche iscrizioni; Opera+ (aprile 2026, nessuna esperienza pregressa, RUNTS in corso) non soddisfa i requisiti."
   },
   {
     "public_id": 149,
@@ -431,16 +435,17 @@
     "url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
     "evidence_url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
     "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Lo strumento sostiene la formazione professionale di lavoratori, collaboratori continuativi e giovani tirocinanti di enti culturali con sede nel Nord-Ovest; non finanzia corsi di divulgazione lirica rivolti genericamente al pubblico. Opera+ dichiara sede a Torino, ma non ha dichiarato rapporti di lavoro o collaborazioni continuative documentabili né un progetto di tirocinio: la disponibilità di destinatari ammissibili è da verificare. Il giudizio rimane MEDIA per un futuro progetto di rafforzamento professionale interno, non per l'offerta didattica rivolta al pubblico.",
+    "assessment_reason": "Lo strumento a sportello è aperto a enti non profit culturali piemontesi, quindi la forma e il territorio dichiarati da Opera+ sono coerenti. Finanzia però la formazione professionale di lavoratori o collaboratori direttamente contrattualizzati, neoassunti oppure un tirocinio extracurricolare strutturato con promotore, non corsi rivolti al pubblico. I destinatari nominativi e un progetto formativo effettivo non risultano documentati: candidatura solo ipotetica, non immediatamente operativa.",
     "programme_objectives_excerpt": "Sviluppo delle competenze professionali dei lavoratori culturali e sostegno agli enti nella formazione del proprio personale e nell'avvio delle carriere dei giovani.",
     "funded_activities_excerpt": "Voucher fino a 10.000 euro, con contributo fino al 100% per percorsi di formazione qualificante di dipendenti e collaboratori continuativi degli enti culturali e tirocini extracurricolari di giovani; non per formazione amatoriale o destinatari generici.",
     "beneficiaries_excerpt": "Enti non profit operanti nella cultura con sede legale o operativa in Piemonte, Liguria o Valle d'Aosta ed enti pubblici per propri servizi culturali. I destinatari devono essere dipendenti, soci o collaboratori continuativi contrattualizzati dall'ente o giovani tirocinanti in percorsi previsti.",
-    "requirements_excerpt": "Una richiesta a sportello per organizzazione; identificazione nominativa di destinatari e ruoli, analisi strutturata dei fabbisogni formativi; per la linea A, lavoratori o collaboratori attivi da almeno un anno presso l'ente; per le linee B/C, specifici vincoli su neoassunti o tirocini. Interventi da svolgersi in Piemonte, Liguria o Valle d'Aosta e conclusi entro settembre 2027.",
+    "requirements_excerpt": "Una domanda a sportello per organizzazione sino a esaurimento fondi, con destinatari identificati, fabbisogni formativi e programma dettagliati. Linea A: collaboratori/lavoratori attivi nell'ente da almeno 1 anno; linea B: dipendenti assunti da non più di 1 anno; linea C: tirocinio extracurricolare conforme alle regole regionali con soggetto promotore, senza finanziare i rimborsi obbligatori. Escluse formazione amatoriale e corsi rivolti a destinatari generici.",
     "assessment_gaps": [
-      "Accertare se Opera+ abbia dipendenti o collaboratori continuativi con documentazione appropriata, oppure possa progettare un tirocinio extracurricolare regolare.",
-      "Non confondere la formazione professionale interna dei destinatari ammissibili con il corso pubblico di divulgazione operistica; valutare esclusivamente un progetto coerente con le tre linee."
+      "Non risultano contratti individuali di lavoro o collaborazione né destinatari ammissibili nominativamente identificati.",
+      "Possibile solo progettando concretamente una linea B oppure un tirocinio extracurricolare linea C con promotore; non ipotizzare che Opera+ abbia già i destinatari.",
+      "Non candidare l'attuale corso pubblico su Rigoletto come formazione interna."
     ],
-    "reviewed_at": "2026-11-18",
+    "reviewed_at": "2026-11-19",
     "catalog_title": "Buoni formazione per la cultura"
   },
   {
@@ -515,18 +520,19 @@
     "public_id": 255,
     "source_id": "volto",
     "url": "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente",
-    "evidence_url": "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/",
-    "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "La call di Fondazione Allianz UMANA MENTE è destinata a enti non profit italiani per progetti di inclusione e accessibilità a favore di persone in condizione di fragilità, anche con laboratori artistici, cultura e sensibilizzazione. Opera+ potrebbe proporre attività musicali realmente inclusive per un target fragile, ma il normale corso lirico online non è sufficiente. La fonte divulgativa indica esperienza nel settore e capacità organizzativa/economica: l'associazione appena costituita senza attività pregresse dovrà verificare questi requisiti e considerare il partenariato con un ente esperto.",
+    "evidence_url": "https://umanamente.allianz.it/content/dam/onemarketing/azit/faum-it/call-for-ideas-2026/Call-for-Ideas-2026_FINAL2.pdf",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "Il testo ufficiale Allianz ammette enti non profit legalmente costituiti con sede italiana, anche in partenariato: non prevede un minimo generale esplicito di anni di costituzione. Tuttavia richiede esperienza diretta o adeguatamente documentata nel settore, capacità organizzativa ed economica e un progetto preciso per persone fragili. Opera+ dichiara nessuna attività pregressa: la candidatura come capofila non è dimostrata; si può valutare una collaborazione con ente esperto senza supporre che sia stata già concordata. Nessuna esclusione geografica comunale è prevista.",
     "programme_objectives_excerpt": "Sostegno a idee progettuali che aumentano inclusione, autonomia e partecipazione sociale di persone in condizioni di fragilità e svantaggio.",
     "funded_activities_excerpt": "Progetti nazionali di uno o due anni: aiuti mirati, inserimento lavorativo, sport inclusivo e attività artistiche/culturali e di sensibilizzazione rivolte a persone fragili. Contributo massimo indicato 150.000 euro.",
-    "beneficiaries_excerpt": "Enti non profit o ETS con sede legale in Italia, regolarmente costituiti, con missione coerente; proposta possibile in partenariato con ruoli e responsabilità definiti.",
-    "requirements_excerpt": "Scadenza 10 dicembre 2026 ore 12:00; esperienza nel settore di attività, adeguata capacità organizzativa/economica e progetti indirizzati a persone fragili; verificare criteri nel testo originale della fondazione e ammissibilità del ruolo di partner.",
+    "beneficiaries_excerpt": "Enti Non Profit / ETS regolarmente costituiti con sede legale in Italia; sono ammesse anche proposte in partenariato con capofila e ruoli chiaramente indicati.",
+    "requirements_excerpt": "Dimostrare missione coerente, esperienza diretta o adeguatamente documentata, capacità amministrativa e organizzativa, solidità economica e tutela dei beneficiari; destinatari persone fragili e specifico progetto inclusivo. Termine 10/12/2026 ore 12:00. Il testo ufficiale non indica un minimo generale di anzianità dell'ente.",
     "assessment_gaps": [
-      "Verificare requisiti di anzianità/esperienza nel bando PDF originale della Fondazione Allianz UMANA MENTE; l'estratto disponibile è pubblicato da un aggregatore.",
-      "Individuare partner con esperienza documentata nel lavoro con persone fragili e formulare un progetto di inclusione culturale con destinatari e misurazione d'impatto."
+      "Documentare esperienza pertinente di responsabili e partner: l'associazione non dichiara attività pregresse.",
+      "Formulare intervento di inclusione culturale rivolto a destinatari fragili con obiettivi e budget credibili, anziché finanziare genericamente il corso d'opera.",
+      "Verificare capofila, responsabilità e partenariato prima di candidarsi."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19"
   },
   {
     "public_id": 116,

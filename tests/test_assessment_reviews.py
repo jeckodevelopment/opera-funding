@@ -53,6 +53,37 @@ class ReviewedAssessmentTests(unittest.TestCase):
                 "catalog_title":"Buoni formazione per la cultura","reviewed_at":"2026-11-18"}
         self.assertEqual(apply_assessment_reviews([row],[review])[0]["title"],"Buoni formazione per la cultura")
 
+    def test_seven_priority_calls_have_current_documented_assessments(self):
+        import json
+        from adequacy import apply_adequacy
+        reviews=json.loads((Path(__file__).resolve().parents[1]/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        expected={176:"BASSA",23:"MEDIA",182:"BASSA",183:"MEDIA",19:"BASSA",143:"BASSA",255:"BASSA"}
+        blocked={176,182,19,143}
+        for number,label in expected.items():
+            with self.subTest(public_id=number):
+                record=next(r for r in reviews if r.get("public_id")==number)
+                self.assertEqual(record["reviewed_at"],"2026-11-19")
+                self.assertTrue(record.get("evidence_url","").startswith("https://"))
+                self.assertTrue(record.get("requirements_excerpt"))
+                self.assertTrue(record.get("assessment_gaps"))
+                row={"source_id":record["source_id"],"url":record["url"],"public_id":number,
+                     "opportunity_type":"finanziamento potenziale","funding_status":"APERTO",
+                     "applicant_requirement_comparison":[]}
+                result=apply_assessment_reviews([row],reviews)[0]
+                apply_adequacy(result)
+                self.assertEqual(result["adequacy_label"],label)
+                self.assertEqual(bool(result.get("direct_application_blocker")),number in blocked)
+                self.assertEqual(result["funding_status"],"APERTO")
+
+    def test_official_allianz_review_does_not_invent_local_seat_or_minimum_age(self):
+        import json
+        reviews=json.loads((Path(__file__).resolve().parents[1]/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        record=next(r for r in reviews if r.get("public_id")==255)
+        self.assertEqual(record["source_id"],"volto")
+        self.assertIn("umanamente.allianz.it",record["evidence_url"])
+        self.assertNotIn("comune di",record["requirements_excerpt"].lower())
+        self.assertNotIn("almeno due anni",record["requirements_excerpt"].lower())
+
     def test_different_host_does_not_inherit_review(self):
         row={"url":"https://example.org/bando","source_id":"a"}
         review={"source_id":"a","url":"https://another.org/bando","assessment_label":"MEDIA AFFINITÀ",

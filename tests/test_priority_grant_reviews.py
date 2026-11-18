@@ -1,4 +1,8 @@
-"""Source-based corrections for five priority calls and Opera+ applicability."""
+"""Source-based corrections for five priority calls and Opera+ applicability.
+
+Allianz 2026 is a legitimate open call but Opera+ lacks demonstrated sector experience
+and financial/operational capability: editorial suitability stays LOW, not legal exclusion.
+"""
 import json
 import sys
 import unittest
@@ -15,7 +19,7 @@ CALLS={
 146:("volto","https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/","MEDIA"),
 148:("volto","https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026","BASSA"),
 254:("volto","https://infobandi.csvnet.it/bando-2027-del-fondo-nazionale-per-la-rievocazione-storica/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-del-fondo-nazionale-per-la-rievocazione-storica","BASSA"),
-255:("volto","https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente","MEDIA"),
+255:("volto","https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente","BASSA"),
 }
 
 class PriorityGrantReviewsTests(unittest.TestCase):

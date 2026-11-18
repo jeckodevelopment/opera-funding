@@ -73,6 +73,15 @@ class ApplicantComparisonTests(unittest.TestCase):
         result=compare_applicant_requirements(row,p)[0]
         self.assertEqual(result["status"],"potenzialmente_incompatibile")
 
+    def test_national_seat_is_not_a_municipal_restriction(self):
+        row={"eligibility_specific_requirements":[
+            requirement("territorio","Enti non profit con sede legale in Italia, regolarmente costituiti")]}
+        p=profile(registered_municipality=("Torino","dichiarato","Dichiarazione"),
+                  registered_region=("Piemonte","dichiarato","Dichiarazione"))
+        status=compare_applicant_requirements(row,p)[0]
+        self.assertEqual(status["status"],"da_verificare")
+        self.assertNotIn("Comune di",status["reason"])
+
     def test_territorial_alternative_requires_review_not_exclusion(self):
         row={"eligibility_specific_requirements":[
             requirement("territorio","Sede legale nel Comune di Rivoli oppure ricadute sul territorio.")]}
