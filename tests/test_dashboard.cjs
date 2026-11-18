@@ -184,7 +184,7 @@ assert.match(src,/detailLink\.href=opportunityUrl\(o\)/);
 assert.doesNotMatch(src,/detailLink\.addEventListener\("click"/);
 assert.match(css,/\.item-actions a\.details-toggle\{display:inline-flex/);
 
-assert.match(src,/Possibile opportunità a sportello/);
+assert.match(src,/Procedura a sportello/);
 assert.match(src,/Natura dell’importo/);
 assert.match(css,/\.rolling-guidance/);
 assert.match(css,/\.chip\.change/);
