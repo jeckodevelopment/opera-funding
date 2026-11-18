@@ -88,7 +88,8 @@ class PdfEvidenceMergeTests(unittest.TestCase):
             {"url": "https://external.org/bando.pdf"},
             {"url": "https://example.org/bando.pdf"},
         ], "https://example.org/info", session, lambda url, s: False)
-        self.assertEqual(facts, {})
+        self.assertEqual(facts, {"assessment_document_diagnostics":[
+            {"url":"https://example.org/bando.pdf","status":"accesso_non_consentito"}]})
         session.get.assert_not_called()
 
 
