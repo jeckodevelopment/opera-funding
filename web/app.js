@@ -818,7 +818,7 @@ function renderFundingRegistry(status){
    registryCell(tr,p.name||"—","registry-name");
    registryCell(tr,f?f.name:"—");
    const statusCell=registryCell(tr,null);
-   const statusLabel={ok:"Monitorato",error:"Errore di scansione",not_configured:"Da configurare"}[p.monitoring_status]||"Da verificare";
+   const statusLabel={ok:"Monitorato",error:"Errore di scansione",not_configured:"Da configurare",reference_only:"Solo riferimento"}[p.monitoring_status]||"Da verificare";
    statusCell.append(el("span",statusLabel,"registry-status "+(p.monitoring_status||"")));
    if(p.changed===true){
     const change=el("span","Pagina modificata","registry-change");
