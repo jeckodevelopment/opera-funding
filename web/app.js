@@ -201,7 +201,7 @@ function opportunitySummary(o){
  if(o.opportunity_type==="call progettuale da verificare")return "Invito a presentare progetti. Consulta la fonte per approfondire obiettivi, finanziamento e destinatari.";
  return "Avviso pubblicato dall’ente promotore. Consulta la fonte originale per conoscere il contenuto.";
 }
-function statusLabel(s){return {aperto:"APERTA","in arrivo":"IN ARRIVO","non verificato":"POTENZIALE · APERTURA NON CONFERMATA",chiuso:"SCADUTA","altro contenuto":"ALTRO CONTENUTO"}[s];}
+function statusLabel(s){return {aperto:"APERTA","in arrivo":"IN ARRIVO","non verificato":"APERTURA DA VERIFICARE",chiuso:"SCADUTA","altro contenuto":"ALTRO CONTENUTO"}[s];}
 function makeCalendar(o){
  const date=o.deadline;const calendar=el("div",undefined,"calendar"+(!validDate(date)?" unknown-date":""));
  calendar.setAttribute("role","img");
@@ -640,7 +640,7 @@ function sourceHealth(status,opportunities){
  const level=!sources.length?"red":!failed.length?"green":failed.length>=3||ratio>=.25?"red":"yellow";
  const names=new Map(opportunities.map(x=>[x.source_id,x.issuer]));
  return {level,ok:sources.length-failed.length,total:sources.length,
-  incidents:failed.map(x=>({name:x.source_name||names.get(x.source_id)||x.source_id,reason:x.error||"Impossibile completare la lettura della fonte",url:x.source_url||""}))};
+  incidents:failed.map(x=>({name:x.source_name||names.get(x.source_id)||x.source_id,reason:x.error||"Impossibile completare la lettura della fonte",url:x.source_url||"",referenceUrl:x.institutional_reference_url||"",referenceLabel:x.institutional_reference_label||"Fonte istituzionale integrativa",coverageNote:x.coverage_note||""}))};
 }
 function renderSourceHealth(status,opportunities){
  const h=sourceHealth(status,opportunities);
@@ -653,6 +653,8 @@ function renderSourceHealth(status,opportunities){
   const row=el("div",undefined,"source-incident");
   if(issue.url)addLink(row,issue.name,issue.url);else row.append(el("strong",issue.name));
   row.append(el("span",issue.reason));
+  if(issue.coverageNote)row.append(el("span",issue.coverageNote));
+  if(issue.referenceUrl)addLink(row,issue.referenceLabel,issue.referenceUrl,"source-link");
   list.append(row);
  }
 }
