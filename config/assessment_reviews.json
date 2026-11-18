@@ -403,5 +403,39 @@
       "Verificare condizioni e differenze tra elenco dei beneficiari, partner ed enti co-proponenti nel PDF ufficiale."
     ],
     "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 149,
+    "source_id": "volto",
+    "url": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
+    "evidence_url": "https://cervitalia.info/call/bando-union-values-per-le-organizzazioni-della-societa-civile-attive-nella-tutela-e-nella-promozione-dei-valori-dellunione-bando-per-intermediari/",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "Il bando CERV-2026-CITIZENS-VALUES NON finanzia direttamente un progetto didattico culturale di un piccolo ente: seleziona intermediari per assegnare e gestire sovvenzioni a terzi, con budget progettuale di 2,5–6 milioni di euro ed esperienza documentata di almeno tre anni nella formazione/capacity building delle OSC e gestione di contributi. Opera+ è stata costituita il 23/04/2026 e dichiara nessuna attività precedente: non ha i requisiti dichiarati per candidarsi come intermediario singolo. Possibile futura partecipazione a bandi a cascata indetti dagli intermediari selezionati, non equivalenti alla presente call.",
+    "programme_objectives_excerpt": "Rafforzare organizzazioni della società civile a tutela dei valori UE attraverso intermediari che finanziano e accompagnano terzi.",
+    "funded_activities_excerpt": "Obbligatori sia sostegno finanziario a terze OSC, con selezione/assegnazione/monitoraggio dei contributi, sia capacity building. Progetti intermediari da 2,5 a 6 milioni euro, durata 36–48 mesi.",
+    "beneficiaries_excerpt": "Proponenti: organizzazioni della società civile legalmente costituite UE che operano da intermediari; devono dimostrare almeno 3 anni di esperienza comprovata nel capacity building delle OSC e esperienza recente nella gestione di sovvenzioni. Le OSC locali possono essere eventuali destinatarie di bandi a cascata successivi, non richiedenti diretti della presente call.",
+    "requirements_excerpt": "CERV-2026-CITIZENS-VALUES: esperienza recente di almeno 3 anni nella capacità di rafforzare OSC e dimostrata esperienza nella gestione e assegnazione di contributi; finanziamento 2,5–6 milioni euro; sostegno finanziario a terzi obbligatorio.",
+    "assessment_gaps": [
+      "Non considerare la presente call come sovvenzione diretta per corsi Opera+; monitorare eventuali futuri bandi a cascata degli intermediari finanziati.",
+      "Per consorzi: verificare separatamente requisiti di esperienza aggregata nel documento ufficiale e possibilità di partecipazione, senza assumerla."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 183,
+    "source_id": "sanpaolo",
+    "url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "evidence_url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "Lo strumento sostiene la formazione professionale di lavoratori, collaboratori continuativi e giovani tirocinanti di enti culturali con sede nel Nord-Ovest; non finanzia corsi di divulgazione lirica rivolti genericamente al pubblico. Opera+ dichiara sede a Torino, ma non ha dichiarato rapporti di lavoro o collaborazioni continuative documentabili né un progetto di tirocinio: la disponibilità di destinatari ammissibili è da verificare. Il giudizio rimane MEDIA per un futuro progetto di rafforzamento professionale interno, non per l'offerta didattica rivolta al pubblico.",
+    "programme_objectives_excerpt": "Sviluppo delle competenze professionali dei lavoratori culturali e sostegno agli enti nella formazione del proprio personale e nell'avvio delle carriere dei giovani.",
+    "funded_activities_excerpt": "Voucher fino a 10.000 euro, con contributo fino al 100% per percorsi di formazione qualificante di dipendenti e collaboratori continuativi degli enti culturali e tirocini extracurricolari di giovani; non per formazione amatoriale o destinatari generici.",
+    "beneficiaries_excerpt": "Enti non profit operanti nella cultura con sede legale o operativa in Piemonte, Liguria o Valle d'Aosta ed enti pubblici per propri servizi culturali. I destinatari devono essere dipendenti, soci o collaboratori continuativi contrattualizzati dall'ente o giovani tirocinanti in percorsi previsti.",
+    "requirements_excerpt": "Una richiesta a sportello per organizzazione; identificazione nominativa di destinatari e ruoli, analisi strutturata dei fabbisogni formativi; per la linea A, lavoratori o collaboratori attivi da almeno un anno presso l'ente; per le linee B/C, specifici vincoli su neoassunti o tirocini. Interventi da svolgersi in Piemonte, Liguria o Valle d'Aosta e conclusi entro settembre 2027.",
+    "assessment_gaps": [
+      "Accertare se Opera+ abbia dipendenti o collaboratori continuativi con documentazione appropriata, oppure possa progettare un tirocinio extracurricolare regolare.",
+      "Non confondere la formazione professionale interna dei destinatari ammissibili con il corso pubblico di divulgazione operistica; valutare esclusivamente un progetto coerente con le tre linee."
+    ],
+    "reviewed_at": "2026-11-18"
   }
 ]
