@@ -20,6 +20,42 @@ class VerificationTests(unittest.TestCase):
         self.assertEqual(subsequent,{"b"})
         previous["b"]=row("b",detail_attempted_at=NOW.isoformat())
         self.assertEqual(pick_for_review(found,previous,1,NOW),{"c"})
+    def test_open_urgent_incomplete_outweighs_older_routine_refresh(self):
+        old_date=(NOW-timedelta(days=6)).isoformat()
+        def old(key,**kwargs):
+            return row(key,detail_checked=True,detail_version=9,
+                       detail_checked_at=old_date,detail_attempted_at=old_date,
+                       **kwargs)
+        older=old("routine",funding_status="APERTO",deadline="2027-01-20",
+                  funded_activities_excerpt="Attività",beneficiaries_excerpt="Associazioni",
+                  requirements_excerpt="Requisiti documentati")
+        urgent=old("urgent",funding_status="APERTO",deadline="2026-11-20",
+                   beneficiaries_excerpt="Associazioni")
+        previous={x["id"]:x for x in (older,urgent)}
+        self.assertEqual(pick_for_review([row("routine"),row("urgent")],previous,1,NOW),{"urgent"})
+
+    def test_open_incomplete_revisited_daily_not_complete(self):
+        yesterday=(NOW-timedelta(hours=26)).isoformat()
+        incomplete=row("incomplete",detail_checked=True,detail_version=9,
+                       detail_checked_at=yesterday,funding_status="APERTO",
+                       beneficiaries_excerpt="Associazioni")
+        complete={**incomplete,"funded_activities_excerpt":"Laboratori",
+                  "requirements_excerpt":"Regolamento"}
+        self.assertTrue(needs_review(incomplete,NOW))
+        self.assertFalse(needs_review(complete,NOW))
+
+    def test_new_opportunities_still_first_and_archived_not_accelerated(self):
+        old_date=(NOW-timedelta(days=5)).isoformat()
+        existing={"old":row("old",funding_status="APERTO",
+                            deadline="2026-11-18",
+                            detail_checked=True,detail_version=9,
+                            detail_checked_at=old_date,detail_attempted_at=old_date)}
+        self.assertEqual(pick_for_review([row("old"),row("new")],existing,1,NOW),{"new"})
+        closed=row("closed",funding_status="CHIUSO",
+                   detail_checked=True,detail_version=9,
+                   detail_checked_at=(NOW-timedelta(hours=26)).isoformat())
+        self.assertFalse(needs_review(closed,NOW))
+
     def test_previous_source_schema_is_refreshed(self):
         previous={"old":row("old",detail_checked=True,detail_version=5,
                               detail_checked_at=NOW.isoformat())}
