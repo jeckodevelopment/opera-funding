@@ -24,6 +24,23 @@ Disallow: /private/
         self.assertFalse(eligible_to_fetch("https://example.org/b",session))
         self.assertEqual(session.get.call_count,1)
 
+    def test_403_is_reported_as_http_failure_not_a_confirmed_disallow(self):
+        session=Mock()
+        session.get.return_value=Mock(status_code=403)
+        self.assertFalse(eligible_to_fetch("https://example.org/bandi",session))
+        diagnostic=session._funding_robots_diagnostics[("https","example.org")]
+        self.assertIn("HTTP 403",diagnostic)
+        self.assertNotIn("non consentito",diagnostic)
+
+    def test_explicit_disallow_is_distinguished_from_unreachable_robots(self):
+        session=Mock()
+        session.get.return_value=Mock(status_code=200,text="""User-agent: *
+Disallow: /private/
+""")
+        self.assertFalse(eligible_to_fetch("https://example.org/private/doc.pdf",session))
+        diagnostic=session._funding_robots_diagnostics[("https","example.org")]
+        self.assertIn("non consentito",diagnostic)
+
     def test_new_origin_requires_separate_policy(self):
         session=Mock()
         session.get.return_value=Mock(status_code=404)
