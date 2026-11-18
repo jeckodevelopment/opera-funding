@@ -246,11 +246,11 @@ class NotifyTests(unittest.TestCase):
             report.write_text(json.dumps({"sources":[
                 {"source_id":"working","ok":True},
                 {"source_id":"alcotra","ok":False}]}))
-            with patch.object(system,"argv",["notify.py","--catalog",str(catalog),
-                                            "--report",str(report),"--state",str(self.path)]), \
-                 patch("notify.run") as mocked, \\
-                 patch.dict(os.environ,{"RESEND_API_KEY":"dummy",
-                                        "FUNDING_ALERT_RECIPIENT":"user@example.org"}):
+            with (patch.object(system,"argv",["notify.py","--catalog",str(catalog),
+                                              "--report",str(report),"--state",str(self.path)]),
+                  patch("notify.run") as mocked,
+                  patch.dict(os.environ,{"RESEND_API_KEY":"dummy",
+                                         "FUNDING_ALERT_RECIPIENT":"user@example.org"})):
                 main()
                 self.assertEqual(mocked.call_count,1)
 
