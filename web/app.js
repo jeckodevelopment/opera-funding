@@ -12,11 +12,11 @@ function readWatchlist(){
  }catch{return new Set();}
 }
 const WORKFLOW_KEY="opera-funding-follow-workflow-v1";
-const WORKFLOW_PHASES=["Da valutare","Interessante","Candidatura in preparazione","Presentata","Non pertinente"];
+const WORKFLOW_PHASES=["Da esaminare","Interessante","Candidatura in preparazione","Presentata","Non pertinente"];
 function cleanWorkflow(record){
  const entry=record&&typeof record==="object"?record:{};
  return {
-  phase:WORKFLOW_PHASES.includes(entry.phase)?entry.phase:WORKFLOW_PHASES[0],
+  phase:entry.phase==="Da valutare"?"Da esaminare":WORKFLOW_PHASES.includes(entry.phase)?entry.phase:WORKFLOW_PHASES[0],
   owner:typeof entry.owner==="string"?entry.owner.slice(0,120):"",
   next_step:typeof entry.next_step==="string"?entry.next_step.slice(0,300):"",
   due:validLocalDate(entry.due)?entry.due:"",
