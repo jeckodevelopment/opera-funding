@@ -80,7 +80,7 @@ def explain(row):
     # eligibility. Missing official facts remain explicit in the checks.
     point = max(0,min(100,int(row.get("relevance") or 0)))
     kind = row.get("opportunity_type") or ""
-    if kind not in ("finanziamento potenziale","call progettuale da verificare"):
+    if kind not in ("finanziamento potenziale", "call progettuale da verificare", "non classificato"):
         label = "INFORMATIVA"
         reason = "Contenuto informativo o avviso non classificato come candidatura a finanziamento."
     elif point >= 70:
@@ -92,6 +92,8 @@ def explain(row):
     else:
         label = "BASSA AFFINITÀ"
         reason = "Corrispondenza tematica limitata nelle informazioni disponibili; conservata nel catalogo."
+    if kind == "non classificato":
+        reason += " La tipologia non è ancora accertata: non equivale a un contenuto informativo."
     row["assessment_label"] = label
     row["assessment_reason"] = reason
     row["assessment_basis"] = row["score_explanation_basis"]
