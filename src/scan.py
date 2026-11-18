@@ -25,6 +25,7 @@ from catalog import deduplicate_catalog, reconcile_official_equivalents
 from issuer_sources import apply_issuer_evidence
 from reviewed_official import apply_reviewed_facts
 from assessment_reviews import apply_assessment_reviews
+from assessment_coverage import annotate_assessment_coverage, assessment_coverage
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "OperaFundingBot/0.1 (+https://github.com/jeckodevelopment/opera-funding)"
@@ -123,14 +124,18 @@ def run():
                          else discover(source,session,now))
                 # Prioritize candidate funding calls over general archive entries.
                 checked_count = 0
-                review_limit = (9 if source["id"] in ("volto","torino","mic","alcotra")
-                                else 6 if source.get("tier")=="high" else 3)
+                review_limit = (16 if source["id"] in ("volto","torino","mic","alcotra")
+                                else 12 if source.get("tier")=="high" else 10)
                 current_ids={item["id"] for item in found}
                 backlog=backlog_candidates(indexed,source["id"],current_ids)
                 found=[classify_informational_page(item) for item in found]
                 backlog=[classify_informational_page(item) for item in backlog]
+                # Every newly found opportunity is sent for official-document
+                # inspection in its discovery scan, not merely classified by title.
+                new_ids={item["id"] for item in found if item["id"] not in indexed}
                 review_ids=pick_for_review(found+backlog,indexed,review_limit)
-                found.sort(key=lambda x: (x.get("opportunity_type") not in ("finanziamento potenziale","call progettuale da verificare"),
+                review_ids.update(new_ids)
+                found.sort(key=lambda x: (x.get("opportunity_type") not in ("finanziamento potenziale","call progettuale da verificare","non classificato"),
                                           "2026" not in x.get("title","") and "2027" not in x.get("title",""),
                                           -x.get("relevance",0)))
                 for item in found:
@@ -228,12 +233,14 @@ def run():
     rows=assign_public_ids(rows, registry)
     rows=attach_public_aliases(rows, registry)
     rows=apply_assessment_reviews(rows, assessment_reviews)
+    for row in rows:
+        annotate_assessment_coverage(row)
     rows=track_changes(rows, existing, now)
 
     output.parent.mkdir(parents=True, exist_ok=True)
     ids_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
-    Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
 
 if __name__ == "__main__":
