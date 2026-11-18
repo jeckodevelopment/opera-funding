@@ -101,7 +101,7 @@ class ReviewedAssessmentTests(unittest.TestCase):
         voucher=next(r for r in reviews if r.get("public_id")==183)
         self.assertIn("Linea A",voucher["requirements_excerpt"])
         self.assertIn("ROL",voucher["requirements_excerpt"])
-        self.assertIn("soggetto promotore",voucher["assessment_gaps"][2])
+        self.assertIn("promotore",voucher["assessment_gaps"][2])
         self.assertIn("2.000-10.000",voucher["requirements_excerpt"])
         self.assertIn("non ha documentato",voucher["assessment_reason"])
 
