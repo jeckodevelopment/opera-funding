@@ -67,17 +67,24 @@ def eligible_to_fetch(url, session):
         try:
             response=session.get(robots_url,timeout=12)
             if response.status_code==404:
-                cache[key]=True
+                cache[key]=(True,"")
             elif response.status_code!=200:
-                cache[key]=False
+                cache[key]=(False,f"robots.txt: risposta HTTP {response.status_code}; verifica automatica non disponibile")
             else:
                 parser=RobotFileParser()
                 parser.parse(response.text.splitlines())
-                cache[key]=parser
+                cache[key]=(parser,"")
         except requests.RequestException:
-            cache[key]=False
-    policy=cache[key]
-    return policy if isinstance(policy,bool) else policy.can_fetch(AGENT,url)
+            cache[key]=(False,"robots.txt non raggiungibile; verifica automatica non disponibile")
+    policy, diagnostic=cache[key]
+    permitted = policy if isinstance(policy,bool) else policy.can_fetch(AGENT,url)
+    if not permitted:
+        diagnostics=getattr(session,"_funding_robots_diagnostics",None)
+        if not isinstance(diagnostics,dict):
+            diagnostics={}
+            setattr(session,"_funding_robots_diagnostics",diagnostics)
+        diagnostics[key]=diagnostic or "Accesso alla pagina non consentito dalle regole robots.txt"
+    return permitted
 
 def score(title):
     themes = [name for pattern, _, name in TOPICS if pattern.search(title)]
@@ -88,7 +95,9 @@ def score(title):
 def discover(source, session, now):
     url = source["url"]
     if not eligible_to_fetch(url, session):
-        raise RuntimeError("robots.txt unavailable/disallows access")
+        parsed=urlparse(url)
+        reason=getattr(session,"_funding_robots_diagnostics",{}).get((parsed.scheme,parsed.netloc))
+        raise RuntimeError(reason or "Regole robots.txt non verificabili; fonte non aggiornata")
     response = session.get(url, timeout=20)
     response.raise_for_status()
     if "text/html" not in response.headers.get("Content-Type", ""):
@@ -255,7 +264,12 @@ def run():
                             indexed[key]=verified
                 statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":True,"discovered":len(found),"checked_at":now})
             except (requests.RequestException, RuntimeError, ValueError) as exc:
-                statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]})
+                failure={"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]}
+                if source.get("institutional_reference_url"):
+                    failure["institutional_reference_url"]=source["institutional_reference_url"]
+                    failure["institutional_reference_label"]=source.get("institutional_reference_label","Fonte istituzionale integrativa")
+                    failure["coverage_note"]="Storico conservato; la fonte integrativa non sostituisce la scansione ufficiale non riuscita."
+                statuses.append(failure)
     # Reconcile retained historical links too; do not keep outdated open flags.
     for entry in indexed.values():
         explain(annotate(reconcile_status(entry)))
