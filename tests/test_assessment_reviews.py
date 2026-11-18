@@ -24,6 +24,17 @@ class ReviewedAssessmentTests(unittest.TestCase):
         result=apply_assessment_reviews([row],[review])[0]
         self.assertEqual(result["assessment_source"],"https://issuer.example/official-bando")
 
+    def test_open_catalog_snapshot_has_individual_review(self):
+        import json
+        root=Path(__file__).resolve().parents[1]
+        catalog=json.loads((root/"data/opportunities.json").read_text(encoding="utf-8"))
+        reviews=json.loads((root/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        reviewed={(x["source_id"],x["url"].split("?")[0].rstrip("/")) for x in reviews}
+        missing=[str(x.get("public_id")) for x in catalog
+                 if x.get("funding_status")=="APERTO"
+                 and (x.get("source_id"),x.get("url","").split("?")[0].rstrip("/")) not in reviewed]
+        self.assertFalse(missing,"Open opportunities with no evidence review: "+", ".join(missing))
+
     def test_unclassified_records_are_assessed_in_queue(self):
         record={"id":"x","title":"Grant","relevance":65,
                 "opportunity_type":"non classificato","funding_status":"APERTO"}
