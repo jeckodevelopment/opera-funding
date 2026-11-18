@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "retired_sources": [
+    {
+      "id": "alcotra",
+      "name": "Interreg ALCOTRA",
+      "original_url": "https://interreg-alcotra.eu/it/bandi-0",
+      "reason": "Il controllo robots.txt del canale dedicato restituisce HTTP 503 nelle scansioni ripetute. La fonte viene disattivata senza bypassare il controllo.",
+      "alternative_official_source_id": "piemonte",
+      "alternative_official_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/programma-interreg-francia-italia-alcotra-2021-2027",
+      "alternative_coverage": "informativa, non equivalente a una scansione completa dei bandi ALCOTRA",
+      "retired_on": "2026-11-19",
+      "preserve_history": true
+    }
+  ]
+}

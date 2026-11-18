@@ -36,6 +36,8 @@ on:
       - 'src/open_review_queue.py'
       - 'src/operational_assessment.py'
       - 'src/catalog_reconciliation.py'
+      - 'src/catalog_audit.py'
+      - 'config/retired_sources.json'
       - 'config/applicant_profile.json'
       - 'config/assessment_reviews.json'
       - 'src/pdf_dates.py'

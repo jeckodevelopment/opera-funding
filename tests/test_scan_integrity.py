@@ -70,6 +70,22 @@ class ScanIntegrityTests(unittest.TestCase):
         del rows[0]["adequacy_label"]
         self.assertTrue(any("Valutazioni" in x for x in self.check(rows,report)))
 
+    def test_catalog_audit_detects_stale_retired_open(self):
+        rows,report=example()
+        report["catalog_audit"]={
+            "records_checked":2,"status_counts":{"APERTO":1,"CHIUSO":1},
+            "unassessed_ids":[],"duplicate_public_ids":[],
+            "retired_open_ids":[1]}
+        self.assertTrue(any("fonte ritirata" in x for x in self.check(rows,report)))
+
+    def test_catalog_audit_reconciles_all_records(self):
+        rows,report=example()
+        report["catalog_audit"]={
+            "records_checked":3,"status_counts":{"APERTO":1,"CHIUSO":1},
+            "unassessed_ids":[],"duplicate_public_ids":[],
+            "retired_open_ids":[]}
+        self.assertTrue(any("Audit catalogo" in x for x in self.check(rows,report)))
+
     def test_missing_applicant_comparison_fails(self):
         rows,report=example()
         del rows[0]["applicant_requirement_comparison"]

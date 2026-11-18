@@ -105,17 +105,6 @@
     "official_alternative_note": "Bandi dal servizio pubblico ufficiale Funding & Tenders della Commissione europea, anziché dal sito Desk Italia."
   },
   {
-    "id": "alcotra",
-    "name": "Interreg ALCOTRA",
-    "url": "https://interreg-alcotra.eu/it/bandi-0",
-    "tier": "medium",
-    "region": "Piemonte/Francia",
-    "type": "europeo",
-    "approved": true,
-    "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
-    "institutional_reference_label": "Regione Piemonte — bando ALCOTRA"
-  },
-  {
     "id": "erasmusitalia",
     "name": "Erasmus+ Agenzia nazionale Italia",
     "url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
