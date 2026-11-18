@@ -67,6 +67,21 @@ class OpenReviewQueueTests(unittest.TestCase):
         self.assertIn("https://example.org/bando.pdf",entry["sources"])
         self.assertEqual(result["specific_requirement_category_counts"]["partenariato"],1)
 
+    def test_reviewed_source_gaps_are_preserved_as_actions(self):
+        item=row(175,assessment_gaps=[
+            "Verificare l'effettiva attività territoriale dell'associazione.",
+            "Confermare i requisiti ETS e la compatibilità dei costi progettuali."])
+        result=build_open_review_queue([item],"2026-11-18")
+        tasks=result["items"][0]["tasks"]
+        self.assertTrue(any("requisiti ETS" in t for t in tasks))
+        self.assertTrue(any("attività territoriale" in t for t in tasks))
+
+    def test_sector_specific_documents_still_appear_after_full_review(self):
+        item=row(8,assessment_gaps=[
+            "Leggere l'avviso PDF 'Eventi culturali 2027' e quello su giovani/formazione."])
+        tasks=review_tasks(item)
+        self.assertTrue(any("Eventi culturali 2027" in t for t in tasks))
+
     def test_limit_never_changes_aggregate_counts(self):
         result=build_open_review_queue([row(1),row(2),row(3)],"2026-11-18",limit=1)
         self.assertEqual(result["open_total"],3)
