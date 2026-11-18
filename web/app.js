@@ -319,6 +319,22 @@ function evidenceSection(o){
 }
 // Evaluation handout is built with text nodes and HTTPS-only links to avoid
 // interpreting text supplied by external funding sites as HTML.
+// Shared facts used by the detail disclosure and the printable report.
+function opportunityRequirementFacts(o){
+ return [
+  ["Finalità del programma",o.programme_objectives_excerpt],
+  ["Attività finanziabili",o.funded_activities_excerpt],
+  ["Destinatari e beneficiari",o.beneficiaries_excerpt],
+  ["Vincoli e requisiti",o.requirements_excerpt],
+  ["Ambito del bando",o.funding_scope_note],
+  ["Apertura candidature",validDate(o.opening_date)?dateLabel(o.opening_date).replace("Scade il ",""):""],
+  ["Natura dell’importo",o.amount_kind],
+  ["Edizione",o.edition_year],
+  ["Finestra di candidatura",o.window_label],
+  ["Finestre successive",Array.isArray(o.application_windows)&&o.application_windows.length>1?o.application_windows.filter(validDate).map(d=>dateLabel(d).replace("Scade il ","")).join(" · "):""],
+  ["Procedura a sportello",o.rolling_guidance]
+ ].filter(([,value])=>value!==null&&value!==undefined&&String(value).trim());
+}
 function evaluationData(o,issued=new Date()){
  const review=reviewSignals(o),links=[];
  const seen=new Set();
@@ -354,6 +370,14 @@ function evaluationData(o,issued=new Date()){
   eligibility:review.eligibility,
   beneficiaries:String(o.beneficiaries_excerpt||"Non documentati"),
   rolling:String(o.rolling_guidance||""),
+  requirementFacts:opportunityRequirementFacts(o).map(([label,value])=>({label,value:String(value)})),
+  coverage:String(o.assessment_review_status||"Non determinata"),
+  methodology:String(o.assessment_method||"Valutazione preliminare"),
+  adequacyReason:String(o.adequacy_reason||o.assessment_reason||"Motivazione da approfondire"),
+  assessmentGaps:uniqueStatements([
+   ...(Array.isArray(o.assessment_gaps)?o.assessment_gaps:[]),
+   ...(Array.isArray(o.assessment_missing_fields)?o.assessment_missing_fields:[])
+  ]),
   summary:opportunitySummary(o),
   checks:review.checks,
   missing:review.missing,
@@ -396,17 +420,18 @@ function prepareEvaluationSheet(o){
  summary.append(el("h2","Sintesi dell'opportunità"),el("p",d.summary));
  sheet.append(summary);
  const assessment=el("section",undefined,"print-section");
- assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.editorialReason),el("p",d.reasoning),
+ assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.adequacyReason),
+  el("p","Copertura documentale: "+d.coverage+" · Metodo: "+d.methodology,"print-muted"),
   el("p","Elementi utilizzati: "+d.basis,"print-muted"));
  sheet.append(assessment);
- const beneficiaries=el("section",undefined,"print-section");
- beneficiaries.append(el("h2","Destinatari / beneficiari"),el("p",d.beneficiaries));
- sheet.append(beneficiaries);
- if(d.rolling){
-  const rolling=el("section",undefined,"print-section");
-  rolling.append(el("h2","Possibile procedura a sportello"),el("p",d.rolling));
-  sheet.append(rolling);
- }
+ const details=el("section",undefined,"print-section print-conditions");
+ details.append(el("h2","Requisiti, condizioni e informazioni aggiuntive"));
+ const detailFacts=el("dl",undefined,"print-detail-facts");
+ for(const fact of d.requirementFacts)addReportFact(detailFacts,fact.label,fact.value);
+ if(detailFacts.childElementCount)details.append(detailFacts);
+ else details.append(el("p","Informazioni non ancora documentate.","print-muted"));
+ sheet.append(details);
+ appendReportList(sheet,"Criticità e informazioni da verificare",d.assessmentGaps);
  appendReportList(sheet,"Verifiche prima della decisione",d.checks);
  appendReportList(sheet,"Informazioni mancanti o da approfondire",d.missing);
  appendReportList(sheet,"Spunti progettuali",d.ideas);
@@ -529,19 +554,7 @@ function renderOpportunity(o){
  const information=el("section",undefined,"dialog-section detail-information");
  information.append(el("h3","Informazioni sul bando"));
  const requirementFacts=el("dl",undefined,"detail-facts");
- for(const [label,value] of [
-  ["Finalità del programma",o.programme_objectives_excerpt],
-  ["Attività finanziabili",o.funded_activities_excerpt],
-  ["Destinatari e beneficiari",o.beneficiaries_excerpt],
-  ["Vincoli e requisiti",o.requirements_excerpt],
-  ["Ambito del bando",o.funding_scope_note],
-  ["Apertura candidature",validDate(o.opening_date)?dateLabel(o.opening_date).replace("Scade il ",""):""],
-  ["Natura dell’importo",o.amount_kind],
-  ["Edizione",o.edition_year],
-  ["Finestra di candidatura",o.window_label],
-  ["Finestre successive",Array.isArray(o.application_windows)&&o.application_windows.length>1?o.application_windows.filter(validDate).map(d=>dateLabel(d).replace("Scade il ","")).join(" · "):""],
-  ["Procedura a sportello",o.rolling_guidance]
- ])dialogField(requirementFacts,label,value);
+ for(const [label,value] of opportunityRequirementFacts(o))dialogField(requirementFacts,label,value);
  information.append(detailDisclosure("Requisiti, condizioni e informazioni aggiuntive",requirementFacts,"requirements-disclosure"));
  const documents=el("div",undefined,"dialog-links detail-document-links"),used=new Set();
  const appendDocument=(label,url)=>{
