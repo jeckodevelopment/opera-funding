@@ -129,5 +129,15 @@
     "opening_date": "2026-09-30",
     "evidence": "official_active_application_window",
     "review_valid_until": "2026-11-25"
+  },
+  {
+    "source_id": "volto",
+    "match_host": "infobandi.csvnet.it",
+    "match_path": "/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
+    "official_url": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/",
+    "opening_date": "2026-10-27",
+    "deadline": "2027-02-24",
+    "evidence": "official_active_application_window",
+    "review_valid_until": "2026-11-25"
   }
 ]
