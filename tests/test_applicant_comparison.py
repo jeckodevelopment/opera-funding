@@ -24,7 +24,7 @@ class ApplicantComparisonTests(unittest.TestCase):
         actual=load_applicant_profile()
         self.assertEqual(actual["profile_fields"]["legal_form"]["verification"],"dichiarato")
         row={"eligibility_specific_requirements":[
-            requirement("natura_giuridica","Iscritti al RUNTS sono ammessi"),
+            requirement("natura_giuridica","Iscrizione al RUNTS obbligatoria"),
             requirement("territorio","Sede legale in Piemonte"),
             requirement("partenariato","Partenariato obbligatorio"),
         ]}
@@ -34,7 +34,7 @@ class ApplicantComparisonTests(unittest.TestCase):
 
     def test_documented_registration_only_for_exact_runts_obligation(self):
         row={"eligibility_specific_requirements":[
-            requirement("natura_giuridica","Iscritti al RUNTS sono ammessi")]}
+            requirement("natura_giuridica","Iscrizione al RUNTS obbligatoria")]}
         yes=profile(runts_registration=(True,"documentato","Registro RUNTS"))
         no=profile(runts_registration=(False,"documentato","Registro RUNTS"))
         unknown=profile(runts_registration=(True,"dichiarato","Autodichiarazione"))
@@ -42,11 +42,17 @@ class ApplicantComparisonTests(unittest.TestCase):
         self.assertEqual(compare_applicant_requirements(row,no)[0]["status"],"potenzialmente_incompatibile")
         self.assertEqual(compare_applicant_requirements(row,unknown)[0]["status"],"da_verificare")
 
+    def test_runts_mentioned_as_optional_does_not_imply_exclusion(self):
+        row={"eligibility_specific_requirements":[
+            requirement("natura_giuridica","Iscritti al RUNTS sono ammessi")]}
+        no=profile(runts_registration=(False,"documentato","Registro RUNTS"))
+        self.assertEqual(compare_applicant_requirements(row,no)[0]["status"],"da_verificare")
+
     def test_age_uses_verified_date_at_specific_day(self):
         row={"eligibility_specific_requirements":[
             requirement("anzianita","Costituiti da almeno 2 anni")]}
         p=profile(constitution_date=("2024-11-19","documentato","Atto costitutivo"))
-        self.assertEqual(compare_applicant_requirements(row,p,date(2026,11,18))[0]["status"],"potenzialmente_incompatibile")
+        self.assertEqual(compare_applicant_requirements(row,p,date(2026,11,18))[0]["status"],"da_verificare")
         self.assertEqual(compare_applicant_requirements(row,p,date(2026,11,19))[0]["status"],"compatibile")
 
     def test_unknown_territory_cofinancing_partners_remain_open_even_with_some_profile(self):
