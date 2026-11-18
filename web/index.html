@@ -59,7 +59,7 @@
         <label class="search-label"><span>Cerca un'opportunità</span><span class="input-wrap"><span aria-hidden="true" class="search-icon">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Titolo, ente, tema…"></span></label>
         <label><span>Ente finanziatore</span><select id="issuer"><option value="">Tutti gli enti</option></select></label>
         <label><span>Tipologia</span><select id="kind"><option value="">Tutte le tipologie</option><option value="funding">Finanziamenti e call</option><option value="finanziamento potenziale">Finanziamenti</option><option value="call progettuale da verificare">Call progettuali</option><option value="altro avviso">Altri avvisi</option></select></label>
-        <label><span>Affinità minima</span><select id="level"><option value="0">Tutte</option><option value="60">60/100</option><option value="80">80/100</option></select></label>
+        <label><span>Affinità minima</span><select id="level"><option value="0">Tutte</option><option value="1">Media o alta</option><option value="2">Alta</option></select></label>
       </div>
       <p class="followed-note" id="followed-note" hidden>La lista e le valutazioni operative sono salvate soltanto su questo browser. Responsabili, note e attività non sono condivisi fra volontari.</p>
       <div class="results-toolbar">
@@ -68,7 +68,7 @@
           <span>Ordina per</span>
           <div class="sort-buttons" role="group" aria-label="Ordina risultati">
             <button type="button" class="sort-button active" data-sort="deadline" aria-pressed="true">Scadenza <span aria-hidden="true">↑</span></button>
-            <button type="button" class="sort-button" data-sort="score" aria-pressed="false">Punteggio <span aria-hidden="true">↓</span></button>
+            <button type="button" class="sort-button" data-sort="score" aria-pressed="false">Affinità <span aria-hidden="true">↓</span></button>
           </div>
         </div>
       </div>
