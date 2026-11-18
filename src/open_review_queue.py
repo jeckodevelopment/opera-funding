@@ -75,10 +75,12 @@ def build_open_review_queue(rows, as_of=None, limit=None):
     items=[]
     statuses=Counter()
     categories=Counter()
+    paths=Counter()
     for row in rows:
         if row.get("funding_status")!="APERTO":
             continue
         status=row.get("eligibility_condition_status") or "informazioni_insufficienti"
+        paths[row.get("application_path") or "integrare_verifica_documentale"]+=1
         statuses[status]+=1
         comparisons=row.get("applicant_requirement_comparison") or []
         for c in comparisons:
@@ -100,6 +102,9 @@ def build_open_review_queue(rows, as_of=None, limit=None):
             "deadline":row.get("deadline") if days is not None else None,
             "days_remaining":days,
             "adequacy":row.get("adequacy_label") or "NON DETERMINATA",
+            "application_path":row.get("application_path") or "integrare_verifica_documentale",
+            "application_path_reason":row.get("application_path_reason") or "Modalità di candidatura non ancora valutata",
+            "application_next_actions":row.get("application_next_actions") or tasks,
             "condition_status":status,
             "review_status":row.get("assessment_review_status") or "NON ESAMINATA",
             "pending_conditions":sum(1 for c in comparisons if isinstance(c,dict) and c.get("status")=="da_verificare"),
@@ -122,5 +127,6 @@ def build_open_review_queue(rows, as_of=None, limit=None):
         "in_queue":len(items),
         "condition_status_counts":dict(sorted(statuses.items())),
         "specific_requirement_category_counts":dict(sorted(categories.items())),
+        "application_path_counts":dict(sorted(paths.items())),
         "items":items,
     }
