@@ -244,19 +244,56 @@ body.detail-view .primary-nav{display:none}
 @media(max-width:600px){.primary-nav{gap:3px}.primary-nav a{font-size:11px;padding:8px 10px}}
 @media print{.primary-nav,.funding-registry,.registry-nav{display:none!important}}
 
-/* Compact register: meaningful rows rather than large cards. */
-.registry-scroll{width:100%;max-width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper);box-shadow:var(--shadow)}
-.registry-scroll:focus-visible{outline:3px solid #d2a34f;outline-offset:2px}
-.registry-table{width:100%;border-collapse:collapse;table-layout:auto;font-size:12px;line-height:1.4}
-.registry-table th{text-align:left;background:#f4f2ed;border-bottom:1px solid var(--line);font-size:11px;font-weight:750;color:#565e62;padding:10px 12px;white-space:nowrap}
-.registry-table td{padding:10px 12px;border-bottom:1px solid #efede8;vertical-align:middle;color:#495156}
+/* Content-sized registry tables. No forced width or horizontal scrolling. */
+.registry-table-wrap{width:100%;border:1px solid var(--line);border-radius:10px;background:var(--paper);box-shadow:var(--shadow);overflow:hidden}
+.registry-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px;line-height:1.45}
+.registry-table th{text-align:left;background:#f4f2ed;border-bottom:1px solid var(--line);font-size:11px;font-weight:750;color:#565e62;padding:10px 11px}
+.registry-table td{padding:10px 11px;border-bottom:1px solid #efede8;vertical-align:middle;color:#495156;overflow-wrap:anywhere;word-break:normal}
 .registry-table tbody tr:last-child td{border-bottom:0}
 .registry-table tbody tr:hover{background:#fbf9f4}
-.registry-table .registry-name{font-weight:700;color:var(--ink);min-width:170px}
+.registry-table .registry-name{font-weight:700;color:var(--ink)}
 .registry-table .registry-number{text-align:center;font-variant-numeric:tabular-nums}
-.registry-table .registry-date{font-variant-numeric:tabular-nums;white-space:nowrap}
-.registry-table td a{white-space:nowrap;text-decoration:none;font-weight:700}
+.registry-table .registry-date{font-variant-numeric:tabular-nums}
+.registry-table td a{text-decoration:none;font-weight:700;overflow-wrap:anywhere}
 .registry-table td a:hover{text-decoration:underline}
-.registry-table .registry-status{white-space:nowrap}
-.registry-change{display:inline-block;margin-left:5px;font-size:10px;font-weight:700;color:#885e1b;white-space:nowrap}
-@media(max-width:700px){.registry-table{min-width:690px}.registry-table th,.registry-table td{padding:9px 10px}}
+.registry-table .registry-status{white-space:normal}
+.registry-change{display:block;margin-top:4px;font-size:10px;font-weight:700;color:#885e1b}
+#funder-list .registry-table th:nth-child(1),#funder-list .registry-table td:nth-child(1){width:31%}
+#funder-list .registry-table th:nth-child(2),#funder-list .registry-table td:nth-child(2){width:23%}
+#funder-list .registry-table th:nth-child(3),#funder-list .registry-table td:nth-child(3){width:25%}
+#funder-list .registry-table th:nth-child(4),#funder-list .registry-table td:nth-child(4){width:11%;text-align:center}
+#funder-list .registry-table th:nth-child(5),#funder-list .registry-table td:nth-child(5){width:10%}
+#programme-list .registry-table th:nth-child(1),#programme-list .registry-table td:nth-child(1){width:29%}
+#programme-list .registry-table th:nth-child(2),#programme-list .registry-table td:nth-child(2){width:24%}
+#programme-list .registry-table th:nth-child(3),#programme-list .registry-table td:nth-child(3){width:18%}
+#programme-list .registry-table th:nth-child(4),#programme-list .registry-table td:nth-child(4){width:17%}
+#programme-list .registry-table th:nth-child(5),#programme-list .registry-table td:nth-child(5){width:12%}
+@media(max-width:850px){
+  .registry-table th,.registry-table td{padding:9px 8px}
+  #funder-list .registry-table th:nth-child(1),#funder-list .registry-table td:nth-child(1){width:29%}
+  #funder-list .registry-table th:nth-child(2),#funder-list .registry-table td:nth-child(2){width:24%}
+  #funder-list .registry-table th:nth-child(3),#funder-list .registry-table td:nth-child(3){width:24%}
+  #funder-list .registry-table th:nth-child(4),#funder-list .registry-table td:nth-child(4){width:12%}
+  #funder-list .registry-table th:nth-child(5),#funder-list .registry-table td:nth-child(5){width:11%}
+}
+@media(max-width:640px){
+  .registry-table{display:block;table-layout:auto}
+  .registry-table thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .registry-table tbody{display:block}
+  .registry-table tbody tr{display:block;padding:9px 12px;border-bottom:1px solid var(--line)}
+  .registry-table tbody tr:last-child{border-bottom:0}
+  .registry-table td,.registry-table .registry-name{display:grid;grid-template-columns:minmax(96px,32%) minmax(0,1fr);gap:8px;align-items:start;width:auto!important;text-align:left!important;padding:4px 0;border:0;min-width:0}
+  .registry-table td::before{display:block;font-size:10px;font-weight:700;color:var(--muted);line-height:1.5}
+  #funder-list .registry-table td:nth-child(1)::before{content:"Finanziatore"}
+  #funder-list .registry-table td:nth-child(2)::before{content:"Tipologia"}
+  #funder-list .registry-table td:nth-child(3)::before{content:"Territorio"}
+  #funder-list .registry-table td:nth-child(4)::before{content:"Programmi"}
+  #funder-list .registry-table td:nth-child(5)::before{content:"Fonte"}
+  #programme-list .registry-table td:nth-child(1)::before{content:"Programma"}
+  #programme-list .registry-table td:nth-child(2)::before{content:"Finanziatore"}
+  #programme-list .registry-table td:nth-child(3)::before{content:"Stato"}
+  #programme-list .registry-table td:nth-child(4)::before{content:"Ultima verifica"}
+  #programme-list .registry-table td:nth-child(5)::before{content:"Fonte"}
+  .registry-table .registry-number{font-variant-numeric:tabular-nums}
+  .registry-change{margin-top:3px}
+}

@@ -53,13 +53,13 @@ L'ingestione dei nuovi bandi riutilizza le funzioni già presenti in `src/operat
 
 ## Interfaccia compatta
 
-Le pagine **Finanziatori** e **Monitoraggio programmi** visualizzano tabelle HTML semantiche invece delle precedenti schede. Finanziatori mostra nome, tipologia, territorio, numero di programmi e link alla fonte ufficiale; la ricerca per nome/tipologia/territorio rimane attiva. Monitoraggio mostra programma, finanziatore, stato reale, ultima verifica e fonte, segnalando modifiche da controllare separatamente dall'apertura di nuovi bandi. Le tabelle sono navigabili da tastiera e scorrevoli orizzontalmente sui dispositivi stretti. Nessuna modifica alla Dashboard principale, agli identificativi delle opportunità, al motore di scansione o al giudizio di adeguatezza.
+Le pagine **Finanziatori** e **Monitoraggio programmi** visualizzano tabelle HTML semantiche invece delle precedenti schede. Finanziatori mostra nome, tipologia, territorio, numero di programmi e link alla fonte ufficiale; la ricerca per nome/tipologia/territorio rimane attiva. Monitoraggio mostra programma, finanziatore, stato reale, ultima verifica e fonte, segnalando modifiche da controllare separatamente dall'apertura di nuovi bandi. Le tabelle sfruttano larghezze proporzionali ai contenuti sui dispositivi ampi. Su schermi stretti ogni record resta una riga logica, presentata con campi e relative etichette disposti verticalmente, senza scorrimento orizzontale imposto. Nessuna modifica alla Dashboard principale, agli identificativi delle opportunità, al motore di scansione o al giudizio di adeguatezza.
 
 ### Collaudi UI
 
 - Verificare la disposizione in riga delle tabelle, la ricerca e la corrispondenza fra contatori e righe filtrate.
 - Verificare gli stati monitorato/errore/non configurato, le date, i link ufficiali e la marcatura di pagina modificata.
-- Su smartphone verificare lo scorrimento orizzontale accessibile senza comprimere le colonne.
+- Su smartphone verificare che ogni riga mostri etichette e valori senza scrolling orizzontale o contenuti tagliati.
 - Controllare regressioni: menu a tre pagine, Dashboard con default *Aperte*, scheda opportunità e PDF.
 
 ## Ampliamento censimento — 18 novembre 2026
@@ -116,4 +116,8 @@ Il registro è ampliato a **49 finanziatori e 29 programmi/canali** (11 `direct`
 - Confermare 49 finanziatori e 29 programmi, di cui 13 `reference-only`, senza erronee etichette di controllo riuscito.
 - Verificare la prima scansione `direct` di Settimo Torinese, con gestione robots/redirect, eventuali link candidati e importazioni realmente verificate.
 - Confermare che schede e-mail non siano create per concessioni pregresse, avvisi regionali ripubblicati o bandi comunali già scaduti.
-- Testare ricerca e scorrimento orizzontale nella pagina Finanziatori e Monitoraggio programmi senza regressioni sulla Dashboard.
+- Testare ricerca e layout adattivo senza scroll orizzontale nella pagina Finanziatori e Monitoraggio programmi, senza regressioni sulla Dashboard.
+
+## Revisione impaginazione tabelle
+
+Le colonne non hanno più una larghezza minima imposta indipendentemente dalla finestra. Su desktop usano proporzioni specifiche per ciascuna tabella, consentendo il ritorno a capo di denominazioni lunghe. Fino a 640 px le intestazioni rimangono disponibili alla struttura semantica della tabella e ogni record dispone i cinque campi in righe compatte con etichette leggibili. Controllare anche nomi lunghi, link, indicatori di stato e date su schermi stretti.
