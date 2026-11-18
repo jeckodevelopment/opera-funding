@@ -304,6 +304,8 @@ function evaluationData(o,issued=new Date()){
   amountKind:String(o.amount_kind||"Da verificare"),
   type:String(o.application_type||o.opportunity_type||"Non indicata"),
   fit:score(o)+"/100",
+  editorialAssessment:assessmentLabel(o),
+  editorialReason:String(o.assessment_reason||"Classificazione tematica preliminare; apertura e ammissibilità richiedono evidenze."),
   confidence:review.confidence||"Non documentata",
   basis:String(o.score_explanation_basis||"Titolo e informazioni preliminari"),
   reasoning:review.explanation||"Motivazione non disponibile",
@@ -345,6 +347,7 @@ function prepareEvaluationSheet(o){
   ["Scadenza",d.deadline],["Apertura candidature",d.opening],
   ["Contributo / dotazione",d.amount],["Natura dell'importo",d.amountKind],
   ["Tipologia",d.type],["Adeguatezza tematica",d.fit],
+  ["Valutazione editoriale",d.editorialAssessment],
   ["Ammissibilità",d.eligibility],["Affidabilità analisi",d.confidence]
  ])addReportFact(facts,label,value);
  sheet.append(facts);
@@ -352,7 +355,7 @@ function prepareEvaluationSheet(o){
  summary.append(el("h2","Sintesi dell'opportunità"),el("p",d.summary));
  sheet.append(summary);
  const assessment=el("section",undefined,"print-section");
- assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.reasoning),
+ assessment.append(el("h2","Motivazione dell'adeguatezza"),el("p",d.editorialReason),el("p",d.reasoning),
   el("p","Elementi utilizzati: "+d.basis,"print-muted"));
  sheet.append(assessment);
  const beneficiaries=el("section",undefined,"print-section");
