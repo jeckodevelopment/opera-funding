@@ -1,7 +1,7 @@
 """Fair queue and factual coverage reporting for grant verification."""
 from datetime import datetime, timezone, timedelta
 
-PROJECT_TYPES={"finanziamento potenziale","call progettuale da verificare"}
+PROJECT_TYPES={"finanziamento potenziale","call progettuale da verificare","non classificato"}
 SCHEMA_VERSION=8
 
 def _when(raw):
