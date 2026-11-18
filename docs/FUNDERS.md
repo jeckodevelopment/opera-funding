@@ -91,3 +91,29 @@ Non classificare come `APERTO` un canale solo perché riceve richieste o mostra 
 - Verificare che i 6 programmi `reference-only` siano indicati **Solo riferimento** e non falsamente come monitorati.
 - Verificare che bandi comunali senza reale candidatura o di soggetti non ammissibili non generino falsi alert e che nuovi bandi verificati siano assegnati alla fonte e al programma corretti.
 - Non alterare il filtro iniziale *Aperte*, le viste tabellari, i link numerici e le notifiche esistenti.
+
+## Completamento censimento provinciale e altri Comuni (19 novembre 2026)
+
+Il registro è ampliato a **49 finanziatori e 29 programmi/canali** (11 `direct`, 5 `existing-source`, 13 `reference-only`). Il censimento ora comprende tutti gli enti provinciali piemontesi (inclusa Città Metropolitana), ma **non dimostra che tutti pubblichino bandi a cui Opera+ possa presentare domanda**. I portali di trasparenza censiscono spesso contributi già deliberati, senza possibilità di candidatura.
+
+### Fonti istituzionali aggiunte e modalità
+
+| Ente | Fonte ufficiale | Classificazione | Motivazione |
+| --- | --- | --- | --- |
+| Provincia di Asti | https://www.provincia.asti.it/it | Solo riferimento | Portale istituzionale, senza bando culturale specifico verificato |
+| Provincia di Biella | https://www.provincia.biella.it/ | Solo riferimento | Portale istituzionale; verificare eventuali avvisi pertinenti |
+| Provincia di Cuneo | https://albo.provincia.cuneo.it/amministrazione-trasparente/sovvenzioni-contributi-sussidi-vantaggi-economici/criteri-modalita | Solo riferimento | Criteri/trasparenza; la pagina segnala assenza erogazioni nel periodo indicato |
+| Provincia di Vercelli | https://servizi.provincia.vercelli.it/L190/contributo/lista?activePage=&idSezione=73&search=&sort= | Solo riferimento | Registro delle concessioni, non bandi aperti. Gli avvisi della Regione riportati dal sito non sono finanziamenti provinciali |
+| Provincia del Verbano-Cusio-Ossola | https://www.provincia.verbano-cusio-ossola.it/servizio/erogazione-contributi-ad-enti-ed-associazioni-per-progetti-ed-iniziative-nel-campo-dellistruzione/ | Solo riferimento | Possibile canale per progetti educativi, requisiti da verificare |
+| Città di Ivrea | https://servizionline.comune.ivrea.to.it/cmsivrea/portale/trasparenza/trasparenzaamministrativadettaglio.aspx?CDOC=956&CP=191&R=1 | Solo riferimento | Bando storico, non riapertura verificata; requisiti di anzianità presenti nelle edizioni passate |
+| Città di Settimo Torinese | https://www.comune.settimo-torinese.to.it/it/news-category/133558?type=0 | Scansione diretta | Monitoraggio della pagina degli avvisi alle associazioni; il bando per eventi 2026 aveva scadenza già trascorsa |
+| Città di Biella | https://comune.biella.it/trasparenza/sovvenzioni-contributi-sussidi-vantaggi-economici/ | Solo riferimento | Portale trasparenza non assimilabile a bando |
+
+**Regole di riconciliazione:** una segnalazione della Provincia di Vercelli relativa a un bando regionale deve rimanere attribuita alla Regione Piemonte, e una pagina di trasparenza non può generare da sola nuove opportunità. Un titolo storico non prova che ci sia una finestra attiva. Quando vengono individuati veri bandi per enti senza sede nel Comune, valutare condizioni territoriali, destinatari e ricaduta dei progetti.
+
+### Collaudi
+
+- Confermare 49 finanziatori e 29 programmi, di cui 13 `reference-only`, senza erronee etichette di controllo riuscito.
+- Verificare la prima scansione `direct` di Settimo Torinese, con gestione robots/redirect, eventuali link candidati e importazioni realmente verificate.
+- Confermare che schede e-mail non siano create per concessioni pregresse, avvisi regionali ripubblicati o bandi comunali già scaduti.
+- Testare ricerca e scorrimento orizzontale nella pagina Finanziatori e Monitoraggio programmi senza regressioni sulla Dashboard.
