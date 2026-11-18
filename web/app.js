@@ -271,53 +271,50 @@ function reviewSignals(o){
   confidence:typeof o.score_confidence==="string"?o.score_confidence.trim():"",
   eligibility:typeof o.eligibility==="string"?o.eligibility.trim():"da verificare"};
 }
+function uniqueStatements(values){
+ const seen=new Set(),result=[];
+ for(const entry of values){
+  if(typeof entry!=="string"||!entry.trim())continue;
+  const value=entry.trim(),key=value.toLocaleLowerCase("it").replace(/\\s+/g," ");
+  if(!seen.has(key)){seen.add(key);result.push(value);}
+ }
+ return result;
+}
+function detailDisclosure(title,body,extraClass=""){
+ const details=el("details",undefined,"detail-disclosure "+extraClass);
+ details.append(el("summary",title),body);
+ return details;
+}
 function evidenceSection(o){
  const review=reviewSignals(o),section=el("section",undefined,"dialog-section evidence-review");
- section.append(el("h3","Motivazioni dell’adeguatezza"));
- const intro=el("p","La percentuale sintetizza l’adeguatezza preliminare per Opera+, tenendo conto di vincoli ed evidenze. Non garantisce l’ammissibilità né l’ottenimento del contributo.");
- section.append(intro);
- const dl=el("dl",undefined,"review-facts");
- dialogField(dl,"Adeguatezza per Opera+",adequacyPercent(o)+"%");
- dialogField(dl,"Vincoli dell’adeguatezza",o.adequacy_reason||o.assessment_reason);
- dialogField(dl,"Copertura documentale",o.assessment_review_status||"Non ancora determinata");
- dialogField(dl,"Metodo di valutazione",o.assessment_method||"Valutazione preliminare");
- if(o.assessment_checked_at)dialogField(dl,"Ultima revisione o tentativo",String(o.assessment_checked_at).slice(0,10));
- dialogField(dl,"Motivo della valutazione",o.assessment_reason||"Classificazione tematica basata sul punteggio e sulle fonti disponibili");
- dialogField(dl,"Ammissibilità",review.eligibility);
- dialogField(dl,"Affidabilità della valutazione",o.assessment_confidence||review.confidence||"Non documentata");
- dialogField(dl,"Elementi utilizzati",o.assessment_basis||o.score_explanation_basis||"Solo titolo (valutazione preliminare)");
- for(const [label,key] of [["Finalità del programma","programme_objectives_excerpt"],["Attività finanziabili","funded_activities_excerpt"],["Beneficiari","beneficiaries_excerpt"],["Vincoli e requisiti","requirements_excerpt"]]){
-  if(typeof o[key]==="string"&&o[key].trim())dialogField(dl,label,o[key]);
+ section.append(el("h3","Adeguatezza per Opera+"),makeAdequacy(o));
+ const reasons=uniqueStatements([o.adequacy_reason,o.assessment_reason,review.explanation]);
+ if(reasons.length){
+  section.append(el("h4","Perché questo giudizio"));
+  section.append(el("p",reasons[0],"assessment-rationale"));
  }
- section.append(dl);
- if(review.explanation){
-  section.append(el("h4","Perché questa opportunità può interessare"));
-  section.append(el("p",review.explanation));
- }
- if(Array.isArray(o.assessment_missing_fields)&&o.assessment_missing_fields.length){
-  section.append(el("h4","Elementi del bando ancora non acquisiti"));
-  const missingFields=el("ul");
-  for(const field of o.assessment_missing_fields)missingFields.append(el("li",field));
-  section.append(missingFields);
- }
- if(Array.isArray(o.assessment_gaps)&&o.assessment_gaps.length){
-  section.append(el("h4","Informazioni non documentate o condizioni da verificare"));
-  const gaps=el("ul");
-  for(const gap of o.assessment_gaps)gaps.append(el("li",gap));
-  section.append(gaps);
- }
- if(review.checks.length){
-  section.append(el("h4","Verifiche prima di decidere"));
+ const notes=uniqueStatements([
+  ...reasons.slice(1),
+  ...(Array.isArray(o.assessment_gaps)?o.assessment_gaps:[]),
+  ...(Array.isArray(o.assessment_missing_fields)?o.assessment_missing_fields:[]),
+  ...review.checks,...review.missing
+ ]).filter(note=>!reasons[0]||note!==reasons[0]);
+ if(notes.length){
+  const noteBox=el("div",undefined,"assessment-notes");
+  noteBox.append(el("h4","Criticità e verifiche"));
   const list=el("ul");
-  for(const check of review.checks)list.append(el("li",check));
-  section.append(list);
+  for(const note of notes)list.append(el("li",note));
+  noteBox.append(list);section.append(noteBox);
  }
- if(review.missing.length){
-  section.append(el("h4","Informazioni mancanti o da verificare"));
-  const list=el("ul");
-  for(const missing of review.missing)list.append(el("li",missing));
-  section.append(list);
- }
+ const technical=el("dl",undefined,"review-facts");
+ dialogField(technical,"Ammissibilità",review.eligibility);
+ dialogField(technical,"Copertura documentale",o.assessment_review_status||"Non determinata");
+ dialogField(technical,"Affidabilità",o.assessment_confidence||review.confidence||"Non documentata");
+ dialogField(technical,"Metodo",o.assessment_method||"Valutazione preliminare");
+ dialogField(technical,"Evidenze utilizzate",o.assessment_basis||o.score_explanation_basis||"Informazioni preliminari");
+ if(o.assessment_checked_at)dialogField(technical,"Ultima verifica",String(o.assessment_checked_at).slice(0,10));
+ section.append(detailDisclosure("Come è stata calcolata l’adeguatezza?",technical,"assessment-method"));
+ section.append(el("p","La valutazione è indicativa: non certifica l’ammissibilità né garantisce il contributo.","assessment-disclaimer"));
  return section;
 }
 // Evaluation handout is built with text nodes and HTTPS-only links to avoid
@@ -516,76 +513,65 @@ function renderOpportunity(o){
  const change=changeBadge(o);
  if(change)line.append(el("span",change.label,"chip change "+change.kind));
  line.append(el("span",o.issuer||"Ente non indicato"));
- content.append(line);
- content.append(makeAdequacy(o));
- content.append(el("p",opportunitySummary(o),"dialog-summary"));
- const grid=el("dl",undefined,"dialog-grid");
- dialogField(grid,"Scadenza",validDate(o.deadline)?dateLabel(o.deadline).replace("Scade il ",""):"Non indicata");
- dialogField(grid,"Apertura candidature",validDate(o.opening_date)?dateLabel(o.opening_date).replace("Scade il ",""):"");
- dialogField(grid,"Contributo / dotazione",o.amount?String(o.amount).replace(" (da verificare)",""):"Non indicato nella scheda");
- dialogField(grid,"Natura dell’importo",o.amount_kind||"");
- dialogField(grid,"Tipologia candidatura",o.application_type||o.opportunity_type||"");
- dialogField(grid,"Edizione",o.edition_year||"");
- dialogField(grid,"Finestra",o.window_label||"");
+ content.append(line,el("p",opportunitySummary(o),"dialog-summary"));
+ const grid=el("dl",undefined,"dialog-grid detail-highlights");
+ dialogField(grid,"Scadenza",validDate(o.deadline)?dateLabel(o.deadline).replace("Scade il ",""):o.rolling_confirmed===true?"A sportello":"Non indicata");
+ dialogField(grid,"Contributo / dotazione",o.amount?String(o.amount).replace(" (da verificare)",""):"Non indicato");
+ dialogField(grid,"Beneficiari",o.beneficiaries_excerpt||"Da verificare nella documentazione");
+ dialogField(grid,"Tipologia",o.application_type||o.opportunity_type||"Non indicata");
  content.append(grid);
+ const actions=el("div",undefined,"detail-primary-actions");
+ addLink(actions,"Apri il bando ufficiale ↗",o.link_status==="non disponibile"?o.source_url:(o.resolved_url||o.url),"detail-official-link");
+ actions.append(followButton(o));
+ content.append(actions);
  content.append(evidenceSection(o));
- content.append(workflowForm(o));
- if(o.rolling_guidance){
-  const rolling=el("section",undefined,"dialog-section rolling-guidance");
-  rolling.append(el("h3","Possibile opportunità a sportello"));
-  rolling.append(el("p",o.rolling_guidance));
-  content.append(rolling);
- }
- if(o.beneficiaries_excerpt){
-  const section=el("section",undefined,"dialog-section");
-  section.append(el("h3","Destinatari"),el("p",o.beneficiaries_excerpt));
-  content.append(section);
- }
- if(o.application_windows?.length>1){
-  const section=el("section",undefined,"dialog-section");
-  section.append(el("h3","Finestre di candidatura"),el("p",o.application_windows.filter(validDate).map(d=>dateLabel(d).replace("Scade il ","")).join(" · ")));
-  content.append(section);
- }
- if(o.funding_scope_note){
-  const section=el("section",undefined,"dialog-section");
-  section.append(el("h3","Ambito del bando"),el("p",o.funding_scope_note));
-  content.append(section);
- }
- if(o.project_ideas?.length){
-  const section=el("section",undefined,"dialog-section");
-  section.append(el("h3","Spunti per Opera+"));
+
+ const information=el("section",undefined,"dialog-section detail-information");
+ information.append(el("h3","Informazioni sul bando"));
+ const requirementFacts=el("dl",undefined,"detail-facts");
+ for(const [label,value] of [
+  ["Finalità del programma",o.programme_objectives_excerpt],
+  ["Attività finanziabili",o.funded_activities_excerpt],
+  ["Destinatari e beneficiari",o.beneficiaries_excerpt],
+  ["Vincoli e requisiti",o.requirements_excerpt],
+  ["Ambito del bando",o.funding_scope_note],
+  ["Apertura candidature",validDate(o.opening_date)?dateLabel(o.opening_date).replace("Scade il ",""):""],
+  ["Natura dell’importo",o.amount_kind],
+  ["Edizione",o.edition_year],
+  ["Finestra di candidatura",o.window_label],
+  ["Finestre successive",Array.isArray(o.application_windows)&&o.application_windows.length>1?o.application_windows.filter(validDate).map(d=>dateLabel(d).replace("Scade il ","")).join(" · "):""],
+  ["Procedura a sportello",o.rolling_guidance]
+ ])dialogField(requirementFacts,label,value);
+ information.append(detailDisclosure("Requisiti, condizioni e informazioni aggiuntive",requirementFacts,"requirements-disclosure"));
+ const documents=el("div",undefined,"dialog-links detail-document-links"),used=new Set();
+ const appendDocument=(label,url)=>{
+  const href=safeUrl(url);
+  if(href&&!used.has(href)){used.add(href);addLink(documents,label,href);}
+ };
+ appendDocument("Scheda ufficiale ↗",o.link_status==="non disponibile"?o.source_url:(o.resolved_url||o.url));
+ for(const [label,url] of [
+  ["Fonte scadenza ↗",o.deadline_source],
+  ["Fonte beneficiari ↗",o.beneficiaries_source],
+  ["Fonte importo ↗",o.amount_source],
+  ["Fonte sportello ↗",o.rolling_guidance_source]
+ ])appendDocument(label,url);
+ for(const document of o.documents||[])appendDocument((document.label||"Documento")+" ↗",document.url);
+ if(documents.childElementCount)information.append(detailDisclosure("Documenti e fonti ufficiali",documents,"sources-disclosure"));
+ if(Array.isArray(o.project_ideas)&&o.project_ideas.length){
   const ideas=el("ul");
-  for(const idea of o.project_ideas.slice(0,4))ideas.append(el("li",idea));
-  section.append(ideas);content.append(section);
+  for(const idea of uniqueStatements(o.project_ideas).slice(0,4))ideas.append(el("li",idea));
+  if(ideas.childElementCount)information.append(detailDisclosure("Spunti progettuali per Opera+",ideas,"ideas-disclosure"));
  }
- const links=el("div",undefined,"dialog-links");
- addLink(links,"Apri la scheda ufficiale ↗",o.link_status==="non disponibile"?o.source_url:(o.resolved_url||o.url));
- if(o.deadline_source&&o.deadline_source!==(o.resolved_url||o.url))addLink(links,"Fonte della scadenza ↗",o.deadline_source);
- // Link to distinct evidence sources only; avoid repeating the main official page.
- for(const [label,url] of [["Fonte beneficiari ↗",o.beneficiaries_source],
-                           ["Fonte importo ↗",o.amount_source],
-                           ["Fonte indicazione sportello ↗",o.rolling_guidance_source]]){
-  if(url&&![o.url,o.resolved_url,o.deadline_source,o.source_url].includes(url))
-   addLink(links,label,url);
- }
- const used=new Set([o.url,o.resolved_url,o.deadline_source]);
- for(const d of o.documents||[]){
-  if(!used.has(d.url)){addLink(links,(d.label||"Documento")+" ↗",d.url);used.add(d.url);}
- }
- content.append(links);
- const exportBar=el("div",undefined,"dialog-export");
- const pdfButton=el("button","Esporta scheda PDF","export-pdf-button");
- pdfButton.type="button";
- pdfButton.title="Apri la stampa: seleziona Salva come PDF";
+ content.append(information);
+ content.append(workflowForm(o));
+ const utilities=el("div",undefined,"detail-utilities");
+ const pdfButton=el("button","Esporta PDF","export-pdf-button");
+ pdfButton.type="button";pdfButton.title="Stampa o salva come PDF";
  pdfButton.addEventListener("click",()=>printEvaluation(o));
- exportBar.append(pdfButton,el("span","Si apre la stampa del browser: scegli Salva come PDF.","export-hint"));
- const shareBar=el("div",undefined,"share-opportunity");
  const share=el("button","Copia link della scheda","share-link-button");
- share.type="button";
- share.addEventListener("click",()=>copyOpportunityUrl(o,share));
- shareBar.append(share,followButton(o),el("span","Il salvataggio «Da seguire» è personale su questo browser.","export-hint"));
- content.append(shareBar);
- content.append(exportBar);
+ share.type="button";share.addEventListener("click",()=>copyOpportunityUrl(o,share));
+ utilities.append(pdfButton,share);
+ content.append(utilities);
 }
 // Subtle recent-change badges only when the scan recorded a material change.
 // Never infer novelty from first_seen on the existing catalog.
