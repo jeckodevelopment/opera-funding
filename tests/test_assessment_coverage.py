@@ -40,6 +40,22 @@ class AssessmentCoverageTests(unittest.TestCase):
         self.assertEqual(row["assessment_review_status"],"EVIDENZE RACCOLTE")
         self.assertEqual(assessment_coverage([row])["completely_verified_applicability"],0)
 
+    def test_document_failures_are_distinct_from_missing_requirements(self):
+        row=annotate_assessment_coverage({
+            "detail_attempted_at":"2026-11-18T18:00:00Z",
+            "assessment_document_diagnostics":[
+                {"url":"https://example.org/bando.pdf","status":"testo_non_estratto"},
+                {"url":"https://example.org/faq.pdf","status":"evidenze_estratte"}],
+            "assessment_document_discrepancies":[
+                {"field":"requirements_excerpt","first_source":"https://example.org/bando.pdf",
+                 "other_source":"https://example.org/faq.pdf","status":"testi_diversi_da_verificare"}]
+        })
+        self.assertEqual(row["assessment_review_status"],"FONTE NON SUFFICIENTE")
+        self.assertEqual(row["assessment_evidence_count"],0)
+        self.assertEqual(len(row["assessment_missing_fields"]),4)
+        self.assertEqual(len(row["assessment_document_issues"]),2)
+        self.assertEqual(assessment_coverage([row])["with_document_issues"],1)
+
     def test_manual_source_review_remains_traceable(self):
         row=annotate_assessment_coverage({"assessment_reviewed_at":"2026-11-18",
                                            "assessment_label":"MEDIA AFFINITÀ"})
