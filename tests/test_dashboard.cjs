@@ -6,8 +6,8 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy}=context.exposed;
 assert.equal(PAGE_SIZE,12);
 assert.equal(assessmentLabel({assessment_label:"ALTA AFFINITÀ"}),"ALTA AFFINITÀ");
 assert.equal(assessmentLabel({relevance:65,opportunity_type:"finanziamento potenziale"}),"MEDIA AFFINITÀ");
@@ -59,7 +59,7 @@ const evaluation=evaluationData({
  ],
  url:"https://example.org/opportunita"
 },new Date("2026-11-17T12:00:00Z"));
-assert.equal(evaluation.fit,"ALTA AFFINITÀ");
+assert.equal(evaluation.fit,"MEDIA");
 assert.equal(evaluation.deadline,"12/03/2027");
 assert.equal(evaluation.eligibility,"da verificare");
 assert.equal(evaluation.amountKind,"dotazione finanziaria");
@@ -71,7 +71,7 @@ const incompleteEvaluation=evaluationData({title:"Avviso",opportunity_type:"call
 assert.equal(incompleteEvaluation.deadline,"Non indicata");
 assert.ok(incompleteEvaluation.missing.some(x=>x.includes("Beneficiari")));
 assert.equal(incompleteEvaluation.eligibility,"da verificare");
-assert.equal(incompleteEvaluation.fit,"BASSA AFFINITÀ");
+assert.equal(incompleteEvaluation.fit,"BASSA");
 
 const now=new Date("2026-11-20T08:00:00Z");
 assert.equal(changeBadge({catalog_new_at:"2026-11-18T07:00:00Z"},now).label,"NUOVA");
@@ -149,7 +149,7 @@ assert.ok(html.indexOf('<option value="">Tutte le tipologie</option>')<html.inde
 assert.match(src,/\$\("kind"\)\.value="";/);
 assert.match(css,/\.calendar-month/);
 assert.match(css,/\.adequacy-track/);
-assert.match(css,/\.adequacy-mask/);
+assert.match(css,/\.adequacy-step/);
 assert.match(css,/\.opportunity-page/);
 assert.match(css,/\.evidence-review/);
 assert.match(src,/content.append\(evidenceSection\(o\)\)/);
@@ -198,9 +198,15 @@ assert.match(css,/@media print/);
 assert.match(css,/#print-sheet:not\(\[hidden\]\)/);
 
 assert.match(src,/changeBadge\(o\)/);
-assert.doesNotMatch(src,/article\.append\(left,right,makeAdequacy\(o\)\)/);
+assert.equal(adequacyLevel({assessment_label:"ALTA AFFINITÀ"}),2);
+assert.equal(adequacyLevel({adequacy_level:3}),3);
+assert.equal(adequacyLabel({adequacy_level:1}),"BASSA");
+assert.equal(adequacyLabel({adequacy_level:0}),"INFORMATIVA");
+assert.doesNotMatch(src,/tags\.append\(el\("span",assessmentLabel\(o\)/);
+assert.match(src,/Adeguatezza per Opera\+/);
+assert.match(src,/article\.append\(left,right,makeAdequacy\(o\)\)/);
 assert.doesNotMatch(src,/dialogField\(dl,"Adeguatezza tematica"/);
-assert.doesNotMatch(src,/function makeAdequacy/);
+assert.match(src,/function makeAdequacy/);
 assert.match(css,/\.health-dot\.red/);
 assert.doesNotMatch(src,/Controlli prima della candidatura:/);
 console.log("Opera+ editorial dashboard tests passed");
