@@ -59,7 +59,7 @@ const evaluation=evaluationData({
  ],
  url:"https://example.org/opportunita"
 },new Date("2026-11-17T12:00:00Z"));
-assert.equal(evaluation.fit,"MEDIA");
+assert.equal(evaluation.fit,"64%");
 assert.equal(evaluation.deadline,"12/03/2027");
 assert.equal(evaluation.eligibility,"da verificare");
 assert.equal(evaluation.amountKind,"dotazione finanziaria");
@@ -71,7 +71,7 @@ const incompleteEvaluation=evaluationData({title:"Avviso",opportunity_type:"call
 assert.equal(incompleteEvaluation.deadline,"Non indicata");
 assert.ok(incompleteEvaluation.missing.some(x=>x.includes("Beneficiari")));
 assert.equal(incompleteEvaluation.eligibility,"da verificare");
-assert.equal(incompleteEvaluation.fit,"BASSA");
+assert.equal(incompleteEvaluation.fit,"5%");
 
 const now=new Date("2026-11-20T08:00:00Z");
 assert.equal(changeBadge({catalog_new_at:"2026-11-18T07:00:00Z"},now).label,"NUOVA");
@@ -130,8 +130,8 @@ const html=fs.readFileSync("web/index.html","utf8");
 const css=fs.readFileSync("web/styles.css","utf8");
 for(const id of ["status","search","issuer","kind","level","sort","reset","more","items","health-dot","source-incidents","total","potential","high","sources"])assert.match(html,new RegExp('id="'+id+'"'));
 assert.match(html,/assets\/operaplus-logo\.png/);
-assert.match(html,/app\.js\?v=20261118-01/);
-assert.match(html,/styles\.css\?v=20261118-01/);
+assert.match(html,/app\.js\?v=20261118-02/);
+assert.match(html,/styles\.css\?v=20261118-02/);
 assert.match(src,/function fetchWithDeadline/);
 assert.match(src,/loadSequence/);
 assert.match(html,/>Aperte<\/button>/);
@@ -149,7 +149,7 @@ assert.ok(html.indexOf('<option value="">Tutte le tipologie</option>')<html.inde
 assert.match(src,/\$\("kind"\)\.value="";/);
 assert.match(css,/\.calendar-month/);
 assert.match(css,/\.adequacy-track/);
-assert.match(css,/\.adequacy-step/);
+assert.match(css,/\.adequacy-fill/);
 assert.match(css,/\.opportunity-page/);
 assert.match(css,/\.evidence-review/);
 assert.match(src,/content.append\(evidenceSection\(o\)\)/);

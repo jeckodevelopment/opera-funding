@@ -21,11 +21,12 @@ footer{border-top:1px solid var(--line);margin:30px 0 0;padding:20px 0 30px;disp
 .adequacy-heading{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:9px}
 .adequacy-label{font-size:11px;font-weight:700;color:#626a6e}
 .adequacy-value{font-size:13px;font-weight:800;letter-spacing:.04em;color:#4a5354}
-.adequacy-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;height:9px}
-.adequacy-step{border-radius:30px;background:#ecece9}
-.adequacy--1 .adequacy-step.active{background:#b9847c}
-.adequacy--2 .adequacy-step.active{background:#bda46d}
-.adequacy--3 .adequacy-step.active{background:#619b80}
+.adequacy-track{position:relative;height:10px;border-radius:999px;overflow:hidden;background:linear-gradient(90deg,#c46e69,#d6a35d 48%,#56a181);box-shadow:inset 0 1px 2px #25332a18}
+.adequacy-track::after{content:"";position:absolute;top:0;bottom:0;left:var(--adequacy-percent,0%);right:0;background:#eaece8;transition:left .25s ease}
+.adequacy-fill{height:100%;border-radius:999px;background:transparent;transition:width .25s ease}
+.opportunity-page .adequacy{border-top:0;border-bottom:1px solid #eeeae3;padding:4px 0 17px;margin:6px 0 16px}
+.opportunity-page .adequacy-track{height:13px}
+.opportunity-page .adequacy-value{font-size:20px;color:#374e48}
 .item .item-actions{margin-top:13px}
 .item .details-toggle{color:#8a6027;font-weight:800;text-align:left}
 .opportunity-dialog{width:min(680px,calc(100% - 26px));max-height:min(85vh,900px);margin:auto;border:1px solid #ddd6ca;border-radius:17px;background:#fff;color:#242a2b;padding:0;box-shadow:0 24px 90px #14171938}
