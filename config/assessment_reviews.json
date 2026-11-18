@@ -522,5 +522,90 @@
       "Individuare partner con esperienza documentata nel lavoro con persone fragili e formulare un progetto di inclusione culturale con destinatari e misurazione d'impatto."
     ],
     "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 116,
+    "source_id": "eufunding",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVVGIM",
+    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/video-games-immersive-content",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "Il programma MEDIA finanzia lo sviluppo commerciale di videogiochi narrativi ed esperienze immersive, richiedendo produttori specializzati e precedenti titoli distribuiti commercialmente. Opera+ è un'associazione culturale impegnata nella divulgazione dell'opera, non una società di sviluppo videogiochi con esperienza documentata. Non va confuso il carattere digitale dei corsi con l'ammissibilità di prodotti commerciali videoludici.",
+    "programme_objectives_excerpt": "Rafforzare la competitività delle imprese europee che sviluppano videogiochi ed esperienze immersive interattive narrative per i mercati internazionali.",
+    "funded_activities_excerpt": "Preproduzione e sviluppo di concept e prototipi di videogiochi narrativi o esperienze immersive interattive destinate allo sfruttamento commerciale.",
+    "beneficiaries_excerpt": "Società europee di produzione videoludica, studi XR e imprese di produzione audiovisiva con attività principale coerente; ammessi singoli o consorzi nelle condizioni della call.",
+    "requirements_excerpt": "CREA-MEDIA-2027-DEVVGIM: il coordinatore deve dimostrare precedente videogioco o esperienza immersiva commercialmente distribuita dal 1 gennaio 2024 alla scadenza; bando con massimo 200.000 euro e finanziamento al 60%.",
+    "assessment_gaps": [
+      "Consultare il testo definitivo della call sul Funding & Tenders Portal se Opera+ decidesse di avviare un distinto progetto commerciale videoludico.",
+      "Non promuovere automaticamente un corso e-learning a videogioco commerciale."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 34,
+    "source_id": "eucreative",
+    "url": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/circulation-of-european-literary-works",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "La call CULT finanzia traduzione, pubblicazione, distribuzione e promozione transnazionale di almeno cinque opere letterarie europee presso operatori del settore editoriale. La semplice riproduzione di libretti d'opera o la divulgazione del patrimonio lirico senza una catena editoriale, un piano di traduzione e distribuzione di opere letterarie non corrisponde al programma di finanziamento Opera+. Un progetto editoriale internazionale distinto richiederebbe partner e capacità specifiche.",
+    "programme_objectives_excerpt": "Circolazione transnazionale e diversità della letteratura europea, promozione di opere letterarie e professionalizzazione della filiera della traduzione e dell'editoria.",
+    "funded_activities_excerpt": "Traduzione, pubblicazione, distribuzione e promozione di almeno 5 opere letterarie europee all'interno di una strategia editoriale e distributiva.",
+    "beneficiaries_excerpt": "Enti giuridici ammissibili nei paesi Creative Europe che operano nel settore della pubblicazione e del libro, singoli o consorzi.",
+    "requirements_excerpt": "CREA-CULT-2027-LIT: attività nel settore editoriale, almeno cinque opere letterarie europee da tradurre/pubblicare/promuovere, cofinanziamento europeo massimo 60% e documentazione della filiera editoriale.",
+    "assessment_gaps": [
+      "Verificare il documento della call 2027 prima di considerare un progetto editoriale completamente distinto dall'e-learning.",
+      "La produzione di PDF divulgativi dei libretti non dimostra attività editoriale di traduzione e distribuzione internazionale di almeno cinque opere."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 114,
+    "source_id": "eufunding",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/european-co-development",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "European Co-development finanzia la coproduzione e lo sviluppo di un'opera audiovisiva commerciale tra società europee di produzione indipendente di almeno due diversi Paesi MEDIA, con accordo di cosviluppo. Opera+ non è una società di produzione audiovisiva e non possiede tali accordi: lo sviluppo di un corso lirico non soddisfa il perimetro della call.",
+    "programme_objectives_excerpt": "Sostenere la collaborazione tra società di produzione audiovisiva europee per lo sviluppo di opere con potenziale di sfruttamento commerciale internazionale.",
+    "funded_activities_excerpt": "Cosviluppo di un'opera di fiction, animazione o documentario creativo destinato a sale, televisione o piattaforme digitali.",
+    "beneficiaries_excerpt": "Società europee indipendenti di produzione audiovisiva in consorzio di almeno due beneficiari di Paesi MEDIA differenti, con accordo di cosviluppo.",
+    "requirements_excerpt": "CREA-MEDIA-2027-CODEV: consorzio di almeno due società di produzione indipendenti di Paesi diversi, accordo di cosviluppo firmato e opera audiovisiva commerciale ammissibile.",
+    "assessment_gaps": [
+      "Non ritenere ammissibile Opera+ sulla sola base del contenuto culturale dei corsi o della disponibilità a collaborare.",
+      "Verificare condizioni ufficiali solo nell'ipotesi di un progetto con imprese audiovisive effettivamente ammissibili."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 115,
+    "source_id": "eufunding",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVSLATE",
+    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/european-slate-funding",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "European Slate Development richiede una società audiovisiva indipendente con esperienza in opere commercialmente distribuite e un pacchetto di 3–5 progetti audiovisivi. Opera+ non ha un catalogo professionale di produzione cinematografica e dichiara nessuna attività pregressa: la partecipazione come produttore non è praticabile nelle condizioni attuali.",
+    "programme_objectives_excerpt": "Rafforzare capacità e competitività delle società europee di produzione audiovisiva indipendenti e la circolazione internazionale delle loro opere.",
+    "funded_activities_excerpt": "Sviluppo di uno slate commerciale di 3–5 opere di fiction, animazione o documentario creativo, con possibile cortometraggio aggiuntivo di talento emergente.",
+    "beneficiaries_excerpt": "Società di produzione audiovisiva europee indipendenti che possono dimostrare precedenti opere commercialmente distribuite a livello internazionale.",
+    "requirements_excerpt": "CREA-MEDIA-2027-DEVSLATE: comprovata esperienza su almeno due opere precedenti dal 2020 distribuite commercialmente in almeno 3 altri paesi; progetto di sviluppo commerciale di 3–5 opere audiovisive.",
+    "assessment_gaps": [
+      "Un corso video di Opera+ non corrisponde a uno slate cinematografico commerciale.",
+      "Verificare il documento ufficiale completo solo in presenza di una distinta impresa/struttura audiovisiva con i precedenti richiesti."
+    ],
+    "reviewed_at": "2026-11-18"
+  },
+  {
+    "public_id": 117,
+    "source_id": "eufunding",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMOVE",
+    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/films-on-the-move",
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_reason": "Films on the Move finanzia campagne di distribuzione cinematografica paneuropea organizzate da agenti di vendita internazionali di film europei; richiede accordi commerciali con il produttore e una rete di distributori. Opera+ non opera come sales agent audiovisivo e non dispone dei diritti o della rete dichiarati: la pubblicazione di video didattici non è un'attività ammissibile alla call.",
+    "programme_objectives_excerpt": "Ampliare la distribuzione transnazionale cinematografica e online di film europei non nazionali attraverso agenti di vendita e distributori.",
+    "funded_activities_excerpt": "Campagne commerciali di distribuzione cinematografica e online di film europei coordinate dall'agente di vendita, con distributori in più Paesi.",
+    "beneficiaries_excerpt": "Agenti europei di vendita cinematografica direttamente incaricati dal produttore del film.",
+    "requirements_excerpt": "CREA-MEDIA-2027-FILMOVE: accordo internazionale di vendita per almeno 15 Paesi MEDIA e almeno 7 distributori in progetto, inclusi 2 da Paesi a minore capacità audiovisiva.",
+    "assessment_gaps": [
+      "L'offerta di corsi online Opera+ non equivale a distribuzione internazionale di film tramite sales agent.",
+      "Verificare solo eventuali progetti cinematografici distinti e relativi accordi con produttori e distributori."
+    ],
+    "reviewed_at": "2026-11-18"
   }
 ]
