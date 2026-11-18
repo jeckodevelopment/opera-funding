@@ -92,7 +92,7 @@ def explain(row):
     informational = kind not in ("finanziamento potenziale", "call progettuale da verificare", "non classificato")
     # Never use title-derived themes to fabricate evidence in the source text.
     matches = [
-        ("musica, opera e spettacolo", r"opera liric|\\bliric|\\boperist|\\bmusic|spettacol|\\bteatr|performing arts"),
+        ("musica, opera e spettacolo", r"opera liric|\bliric|\boperist|\bmusic|spettacol|\bteatr|performing arts"),
         ("educazione e formazione", r"formazion|didattic|educazion|education|learning|student|scuol"),
         ("produzione audiovisiva e digitale", r"digit|audiovis|videolezion|videopodcast|podcast|multimedia"),
         ("accesso alla cultura e partecipazione", r"accessib|inclus|partecip|pubblic|audience|comunit"),
