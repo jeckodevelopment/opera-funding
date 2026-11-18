@@ -441,6 +441,60 @@
       "website": "https://comune.biella.it/",
       "verification": "fonte istituzionale individuata; ammissibilità da verificare",
       "accepts_applications": null
+    },
+    {
+      "id": "fedora",
+      "name": "FEDORA – European Circle of Philanthropists of Opera and Ballet",
+      "type": "rete filantropica per opera e balletto",
+      "territory": "Europa",
+      "website": "https://www.fedora-platform.com/prizes-and-grants/apply-for-funding",
+      "verification": "fonte istituzionale individuata; requisiti e prossima edizione da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "operaeuropa",
+      "name": "Opera Europa",
+      "type": "rete professionale e partenariati",
+      "territory": "Europa",
+      "website": "https://opera-europa.org/next-generation",
+      "verification": "rete di settore; non presumere erogazione diretta di contributi",
+      "accepts_applications": null
+    },
+    {
+      "id": "efa",
+      "name": "European Festivals Association",
+      "type": "rete e programma di sostegno ai festival",
+      "territory": "Europa",
+      "website": "https://www.effea.eu/",
+      "verification": "programma EFFEA individuato; prossima finestra e partenariati da verificare",
+      "accepts_applications": null
+    },
+    {
+      "id": "ecf",
+      "name": "European Cultural Foundation",
+      "type": "fondazione filantropica",
+      "territory": "Europa",
+      "website": "https://culturalfoundation.eu/communities/open-calls/",
+      "verification": "bandi tematici; ammissibilità da verificare per ciascuna call",
+      "accepts_applications": null
+    },
+    {
+      "id": "eucreative",
+      "name": "Creative Europe – Commissione europea",
+      "type": "programma europeo",
+      "territory": "Europa",
+      "website": "https://culture.ec.europa.eu/funding/calls",
+      "verification": "programma esistente tra le fonti; ammissibilità in base alla specifica call",
+      "accepts_applications": null
+    },
+    {
+      "id": "torino2033",
+      "name": "Torino Capitale Europea della Cultura 2033",
+      "type": "iniziativa di candidatura culturale",
+      "territory": "Torino",
+      "website": "https://torino2033.com/",
+      "verification": "percorso strategico, non finanziatore diretto; monitorare iniziative e manifestazioni di interesse",
+      "accepts_applications": null
     }
   ],
   "programs": [
@@ -702,6 +756,70 @@
       "submission": "da verificare",
       "monitoring": "reference-only",
       "eligibility_note": "Pagina di trasparenza: non equivale a domanda di contributo aperta"
+    },
+    {
+      "id": "torino2033-iniziative",
+      "funder_id": "torino2033",
+      "name": "Torino 2033 – iniziative, avvisi e partenariati",
+      "url": "https://torino2033.com/",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "La candidatura non è automaticamente un bando; verificare singoli avvisi e possibilità per associazioni culturali"
+    },
+    {
+      "id": "culturatorino-2033",
+      "funder_id": "culturatorino",
+      "name": "Fondazione per la Cultura Torino – candidatura Torino 2033",
+      "url": "https://fpct.it/progetti/torino-capitale-europea-della-cultura-2033/",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Monitorare avvisi e partecipazione, senza presumere contributi economici"
+    },
+    {
+      "id": "fedora-prizes",
+      "funder_id": "fedora",
+      "name": "FEDORA Prizes & Grants – Education, Digital e opera",
+      "url": "https://www.fedora-platform.com/prizes-and-grants/apply-for-funding",
+      "submission": "edizione da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Verificare appartenenza alla rete, natura del progetto e regole dell'edizione; non equiparare la pagina premi a call aperta"
+    },
+    {
+      "id": "operaeuropa-nextgen",
+      "funder_id": "operaeuropa",
+      "name": "Opera Europa – Next Generation e partenariati",
+      "url": "https://opera-europa.org/next-generation",
+      "submission": "da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Rete e programmi di collaborazione, non contributo automatico a una associazione"
+    },
+    {
+      "id": "effea-calls",
+      "funder_id": "efa",
+      "name": "EFFEA – European Festivals Fund for Emerging Artists",
+      "url": "https://www.effea.eu/",
+      "submission": "edizione da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Richiede partenariati fra festival di diversi Paesi; verificare ruolo del capofila e ammissibilità dell'opera"
+    },
+    {
+      "id": "ecf-open-calls",
+      "funder_id": "ecf",
+      "name": "European Cultural Foundation – Open Calls",
+      "url": "https://culturalfoundation.eu/communities/open-calls/",
+      "submission": "edizione da verificare",
+      "monitoring": "direct",
+      "eligibility_note": "Ogni bando ha criteri e tematiche propri; non presumere apertura o accessibilità"
+    },
+    {
+      "id": "creative-europe-culture",
+      "funder_id": "eucreative",
+      "name": "Creative Europe – call cultura e cooperazione",
+      "url": "https://culture.ec.europa.eu/funding/calls",
+      "source_id": "eucreative",
+      "submission": "bando",
+      "monitoring": "existing-source",
+      "eligibility_note": "Verificare requisiti di partenariato e inclusione della musica/opera nella specifica call"
     }
   ]
 }
