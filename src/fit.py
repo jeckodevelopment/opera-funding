@@ -139,7 +139,7 @@ def explain(row):
         reason += " Temi presenti solo nel titolo: " + ", ".join(unsupported) + "."
     row["assessment_label"] = label
     row["assessment_reason"] = reason
-    row["assessment_basis"] = ("fonte ufficiale: " + ", ".join(evidence_kinds) if supplied else "solo titolo, evidenze insufficienti")
+    row["assessment_basis"] = ("fonte ufficiale: " + ", ".join(evidence_kinds) if supplied else "solo titolo")
     row["assessment_confidence"] = (
         "alta" if (row.get("funded_activities_excerpt") and row.get("beneficiaries_excerpt") and row.get("requirements_excerpt"))
         else "media" if (row.get("funded_activities_excerpt") and row.get("beneficiaries_excerpt"))
