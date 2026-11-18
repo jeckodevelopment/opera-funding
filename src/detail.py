@@ -16,16 +16,16 @@ BENEFICIARY_LABEL = re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammiss
 # Field-specific headings avoid interpreting unrelated prose as eligibility rules.
 # A heading alone never proves that an applicant or expense is eligible.
 EVIDENCE_HEADINGS = (
-    ("programme_objectives_excerpt", re.compile(r"(?i)^(?:obiettivi|obiettivo|finalit[aà]|purpose|aims?|priorit[aà]|objectives?|scope del (?:programma|bando))\\b")),
-    ("funded_activities_excerpt", re.compile(r"(?i)^(?:attivit[aà]|interventi|progetti|spese|costi)\\s+(?:ammissibil|finanziabil|sostenut|eleggibil)|^eligible activities\\b|^supported activities\\b")),
-    ("beneficiaries_excerpt", re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammessi|soggetti ammissibili|chi pu[oò] partecipare|eligible applicants|who can apply)\\b")),
-    ("requirements_excerpt", re.compile(r"(?i)^(?:requisiti|condizioni|criteri di ammissibilit[aà]|eligibility criteria|mandatory partners|obblighi di partenariato|cofinanziamento)\\b")),
+    ("programme_objectives_excerpt", re.compile(r"(?i)^(?:obiettivi|obiettivo|finalit[aà]|purpose|aims?|priorit[aà]|objectives?|scope del (?:programma|bando))\b")),
+    ("funded_activities_excerpt", re.compile(r"(?i)^(?:attivit[aà]|interventi|progetti|spese|costi)\s+(?:ammissibil|finanziabil|sostenut|eleggibil)|^eligible activities\b|^supported activities\b")),
+    ("beneficiaries_excerpt", re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammessi|soggetti ammissibili|chi pu[oò] partecipare|eligible applicants|who can apply)\b")),
+    ("requirements_excerpt", re.compile(r"(?i)^(?:requisiti|condizioni|criteri di ammissibilit[aà]|eligibility criteria|mandatory partners|obblighi di partenariato|cofinanziamento)\b")),
 )
 EVIDENCE_INLINE = (
-    ("programme_objectives_excerpt", re.compile(r"(?i)^(?:il (?:bando|programma|progetto) (?:ha (?:lo scopo|l.obiettivo)|mira a)|l.obiettivo (?:del bando|è))\\b")),
-    ("funded_activities_excerpt", re.compile(r"(?i)^(?:sono (?:finanziabili|ammissibili|sostenute) le (?:seguenti )?(?:attivit[aà]|spese)|(?:il bando|il contributo) finanzia\\b|eligible activities include\\b)")),
-    ("beneficiaries_excerpt", re.compile(r"(?i)^(?:possono (?:presentare domanda|partecipare|candidarsi)|sono ammessi (?:a partecipare|alla candidatura)|eligible applicants include\\b)")),
-    ("requirements_excerpt", re.compile(r"(?i)^(?:è (?:obbligatorio|richiesto|necessario) (?:un |il )?(?:partenariato|cofinanziamento)|(?:i candidati|i richiedenti) devono\\b|applicants must\\b)")),
+    ("programme_objectives_excerpt", re.compile(r"(?i)^(?:il (?:bando|programma|progetto) (?:ha (?:lo scopo|l.obiettivo)|mira a)|l.obiettivo (?:del bando|è))\b")),
+    ("funded_activities_excerpt", re.compile(r"(?i)^(?:sono (?:finanziabili|ammissibili|sostenute) le (?:seguenti )?(?:attivit[aà]|spese)|(?:il bando|il contributo) finanzia\b|eligible activities include\b)")),
+    ("beneficiaries_excerpt", re.compile(r"(?i)^(?:possono (?:presentare domanda|partecipare|candidarsi)|sono ammessi (?:a partecipare|alla candidatura)|eligible applicants include\b)")),
+    ("requirements_excerpt", re.compile(r"(?i)^(?:è (?:obbligatorio|richiesto|necessario) (?:un |il )?(?:partenariato|cofinanziamento)|(?:i candidati|i richiedenti) devono\b|applicants must\b)")),
 )
 
 def _evidence_field(value, patterns):
@@ -53,7 +53,7 @@ def extract_assessment_evidence(main, page_url):
             active_field = _evidence_field(node.find_previous_sibling("dt").get_text(" ", strip=True), EVIDENCE_HEADINGS)
         if len(snippet) < 35:
             continue
-        inline = _evidence_field(snippet, EVIDENCE_INLINE)
+        inline = _evidence_field(snippet, EVIDENCE_INLINE) or _evidence_field(snippet, EVIDENCE_HEADINGS)
         field = inline or active_field
         if not field or field in found:
             continue
