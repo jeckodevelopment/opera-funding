@@ -48,6 +48,48 @@ def _profile_value(profile, key):
     return value["value"]
 
 
+def _declared_value(profile, key):
+    record = profile.get("profile_fields", {}).get(key) or {}
+    return record.get("value") if record.get("verification") in ("dichiarato", "documentato") else None
+
+
+def _declared_context(category, excerpt, profile, as_of):
+    """Useful preliminary context, never a certified positive or negative result."""
+    if category == "natura_giuridica":
+        if RUNTS_MANDATORY.search(excerpt) and _declared_value(profile, "runts_registration") == "in_corso":
+            return ("da_verificare", "Iscrizione RUNTS dichiarata in corso: verificare completamento e data richiesta dal bando")
+        legal = _declared_value(profile, "legal_form")
+        if legal:
+            return ("da_verificare", "Forma giuridica dichiarata: " + str(legal) + "; verificare la categoria ammessa e gli eventuali registri")
+    if category == "anzianita":
+        age = AGE_PATTERN.search(excerpt)
+        established = _declared_value(profile, "constitution_date")
+        if age and isinstance(established, str):
+            try:
+                born = date.fromisoformat(established)
+                minimum = int(next(x for x in age.groups() if x))
+                if minimum > 0 and born <= as_of:
+                    anniversary = (as_of.year-born.year -
+                                   ((as_of.month,as_of.day) < (born.month,born.day)))
+                    if anniversary < minimum:
+                        return ("da_verificare", "Alla data del controllo l'anzianità dichiarata è inferiore al minimo: verificare la data di riferimento del bando e l'atto costitutivo")
+                    return ("da_verificare", "Anzianità dichiarata apparentemente sufficiente alla data del controllo: verificare atto costitutivo e data richiesta dal bando")
+            except (ValueError,StopIteration):
+                pass
+    if category == "territorio":
+        region = _declared_value(profile, "registered_region")
+        municipality = _declared_value(profile, "registered_municipality")
+        if region or municipality:
+            return ("da_verificare", "Sede dichiarata: " + ", ".join(str(x) for x in (municipality,region) if x) + "; verificare se la regola riguarda sede legale, operativa o sede del partner")
+    if category == "condizioni_economiche":
+        if _declared_value(profile, "cofinancing_policy") == "da_valutare_per_progetto":
+            return ("da_verificare", "Cofinanziamento da valutare per il singolo progetto: importo e disponibilità non attestati")
+    if category == "partenariato":
+        if _declared_value(profile, "partnership_willingness") is True:
+            return ("da_verificare", "Disponibilità dichiarata al partenariato, ma partner e accordi idonei non ancora confermati")
+    return None
+
+
 def _safe_compare(condition, profile, as_of):
     category = condition.get("category")
     excerpt = str(condition.get("excerpt") or "")
@@ -85,6 +127,8 @@ def compare_applicant_requirements(row, profile, as_of=None):
         if not isinstance(item, dict) or item.get("category") not in CATEGORIES:
             continue
         outcome = _safe_compare(item, profile, as_of)
+        if not outcome:
+            outcome = _declared_context(item["category"], str(item.get("excerpt") or ""), profile, as_of)
         if outcome:
             status, reason = outcome
         else:
