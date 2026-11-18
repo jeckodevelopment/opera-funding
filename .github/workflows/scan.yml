@@ -22,6 +22,8 @@ on:
       - 'src/quality.py'
       - 'src/status.py'
       - 'src/fit.py'
+      - 'src/assessment_reviews.py'
+      - 'config/assessment_reviews.json'
       - 'src/pdf_dates.py'
       - 'src/pdf_evidence.py'
       - 'src/structured.py'
