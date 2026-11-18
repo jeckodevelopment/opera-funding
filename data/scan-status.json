@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T11:38:28+00:00",
+  "checked_at": "2026-11-18T11:44:48+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "torino",
@@ -31,7 +31,7 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "culturatorino",
@@ -39,7 +39,7 @@
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "volto",
@@ -47,7 +47,7 @@
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T11:38:28+00:00",
+      "checked_at": "2026-11-18T11:44:48+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     },
     {
       "source_id": "erasmusitalia",
@@ -107,77 +107,77 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T11:38:28+00:00"
+      "checked_at": "2026-11-18T11:44:48+00:00"
     }
   ],
   "coverage": {
     "totals": {
       "all": 250,
-      "open": 24,
-      "closed": 118,
+      "open": 22,
+      "closed": 124,
       "upcoming": 1,
-      "unverified": 107,
-      "dated": 142,
-      "dated_with_source": 132,
-      "detail_checked": 89,
+      "unverified": 103,
+      "dated": 151,
+      "dated_with_source": 144,
+      "detail_checked": 111,
       "reachable": 249,
-      "candidate_unverified": 1,
-      "informational_unverified": 106,
-      "candidate_missing_deadline": 1
+      "candidate_unverified": 18,
+      "informational_unverified": 85,
+      "candidate_missing_deadline": 13
     },
     "by_source": {
       "volto": {
         "total": 12,
         "open": 6,
         "unverified": 5,
-        "dated": 7,
-        "dated_with_source": 7,
-        "detail_checked": 8,
-        "candidate_unverified": 0,
-        "informational_unverified": 5,
+        "dated": 10,
+        "dated_with_source": 10,
+        "detail_checked": 11,
+        "candidate_unverified": 3,
+        "informational_unverified": 2,
         "candidate_missing_deadline": 0
       },
       "culturatorino": {
         "total": 20,
         "open": 0,
-        "unverified": 2,
-        "dated": 17,
-        "dated_with_source": 7,
-        "detail_checked": 7,
+        "unverified": 1,
+        "dated": 18,
+        "dated_with_source": 11,
+        "detail_checked": 11,
         "candidate_unverified": 0,
-        "informational_unverified": 2,
+        "informational_unverified": 1,
         "candidate_missing_deadline": 0
       },
       "sanpaolo": {
         "total": 14,
-        "open": 3,
-        "unverified": 8,
-        "dated": 6,
-        "dated_with_source": 6,
-        "detail_checked": 6,
-        "candidate_unverified": 0,
-        "informational_unverified": 8,
-        "candidate_missing_deadline": 0
+        "open": 4,
+        "unverified": 5,
+        "dated": 9,
+        "dated_with_source": 9,
+        "detail_checked": 10,
+        "candidate_unverified": 3,
+        "informational_unverified": 2,
+        "candidate_missing_deadline": 3
       },
       "piemonte": {
         "total": 18,
         "open": 4,
-        "unverified": 11,
-        "dated": 7,
-        "dated_with_source": 7,
-        "detail_checked": 8,
-        "candidate_unverified": 0,
-        "informational_unverified": 11,
-        "candidate_missing_deadline": 0
+        "unverified": 8,
+        "dated": 9,
+        "dated_with_source": 9,
+        "detail_checked": 12,
+        "candidate_unverified": 3,
+        "informational_unverified": 5,
+        "candidate_missing_deadline": 4
       },
       "eufunding": {
         "total": 85,
-        "open": 6,
-        "unverified": 0,
+        "open": 3,
+        "unverified": 3,
         "dated": 85,
         "dated_with_source": 85,
-        "detail_checked": 9,
-        "candidate_unverified": 0,
+        "detail_checked": 12,
+        "candidate_unverified": 3,
         "informational_unverified": 0,
         "candidate_missing_deadline": 0
       },
@@ -187,10 +187,10 @@
         "unverified": 30,
         "dated": 7,
         "dated_with_source": 7,
-        "detail_checked": 20,
-        "candidate_unverified": 0,
-        "informational_unverified": 30,
-        "candidate_missing_deadline": 0
+        "detail_checked": 21,
+        "candidate_unverified": 1,
+        "informational_unverified": 29,
+        "candidate_missing_deadline": 1
       },
       "erasmusitalia": {
         "total": 20,
@@ -209,10 +209,10 @@
         "unverified": 13,
         "dated": 1,
         "dated_with_source": 1,
-        "detail_checked": 13,
-        "candidate_unverified": 1,
-        "informational_unverified": 12,
-        "candidate_missing_deadline": 1
+        "detail_checked": 14,
+        "candidate_unverified": 2,
+        "informational_unverified": 11,
+        "candidate_missing_deadline": 2
       },
       "eucreative": {
         "total": 4,
@@ -221,9 +221,9 @@
         "dated": 2,
         "dated_with_source": 2,
         "detail_checked": 1,
-        "candidate_unverified": 0,
-        "informational_unverified": 2,
-        "candidate_missing_deadline": 0
+        "candidate_unverified": 1,
+        "informational_unverified": 1,
+        "candidate_missing_deadline": 1
       },
       "torino": {
         "total": 13,
@@ -231,10 +231,10 @@
         "unverified": 7,
         "dated": 6,
         "dated_with_source": 6,
-        "detail_checked": 8,
-        "candidate_unverified": 0,
-        "informational_unverified": 7,
-        "candidate_missing_deadline": 0
+        "detail_checked": 9,
+        "candidate_unverified": 1,
+        "informational_unverified": 6,
+        "candidate_missing_deadline": 1
       },
       "alcotra": {
         "total": 11,
@@ -253,10 +253,10 @@
         "unverified": 1,
         "dated": 1,
         "dated_with_source": 1,
-        "detail_checked": 0,
-        "candidate_unverified": 0,
-        "informational_unverified": 1,
-        "candidate_missing_deadline": 0
+        "detail_checked": 1,
+        "candidate_unverified": 1,
+        "informational_unverified": 0,
+        "candidate_missing_deadline": 1
       }
     },
     "sources_ok": 13,
