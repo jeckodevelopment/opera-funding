@@ -9,7 +9,9 @@ from scan import eligible_to_fetch
 class RobotsPolicyTests(unittest.TestCase):
     def test_one_robots_request_for_many_pages_and_pdfs(self):
         session=Mock()
-        session.get.return_value=Mock(status_code=200,text="User-agent: *\\nDisallow: /private/\\nAllow: /")
+        session.get.return_value=Mock(status_code=200,text="""User-agent: *
+Disallow: /private/
+""")
         self.assertTrue(eligible_to_fetch("https://example.org/bandi/call",session))
         self.assertFalse(eligible_to_fetch("https://example.org/private/bando.pdf",session))
         self.assertTrue(eligible_to_fetch("https://example.org/bandi/other",session))
