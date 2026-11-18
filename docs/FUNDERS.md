@@ -159,3 +159,8 @@ Snapshot preliminare (18/11 23:21 UTC): 264 schede, 34 aperte, 34 con workflow d
 - Gli elementi rimasti privi di prova sui requisiti restano nella coda documentale, senza trasformare automaticamente in ammissibili record di adeguatezza ALTA/MEDIA.
 
 **Verifica:** eseguire quality checks e la successiva scansione su `main`; confrontare `data/scan-status.json > catalog_reconciliation`, `assessment_coverage` e i record #143, #146, #175, #183, #188 e #189. La scansione aggiorna i dati, non può sostituire documenti non disponibili o una verifica giuridica della posizione dell'associazione.
+
+
+## Valutazione obbligatoria all'acquisizione
+
+Ogni scheda censita deve ricevere durante la stessa scansione un giudizio di adeguatezza (ALTA, MEDIA, BASSA o INFORMATIVA) e una motivazione. La pubblicazione viene interrotta se anche una sola scheda non ha una valutazione motivata. Evidenze parziali producono un giudizio prudente, **non** uno stato editoriale «Da valutare». La verifica dei vincoli giuridici e dei beneficiari rimane separata e può essere indicata come non dimostrata, senza simulare l'ammissibilità. Lo stato personale «Da esaminare» riguarda esclusivamente la gestione del lavoro sulle opportunità seguite, non la valutazione del catalogo.
