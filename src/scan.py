@@ -227,7 +227,7 @@ def run():
     rows=track_changes(rows, existing, now)
 
     output.parent.mkdir(parents=True, exist_ok=True)
-    ids_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+"\\n",encoding="utf-8")
+    ids_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses)},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
