@@ -66,6 +66,8 @@ def classify_informational_page(record):
     if source=="mic":
         is_information=(
             "assegnazione contribut" in title or
+            "assegnazione dei contributi" in title or
+            "assegnazione-dei-contributi" in path or
             "consuntiv" in title or "rendicont" in title or
             "concessione dei contributi" in title or
             "consuntiv" in path or
@@ -92,7 +94,8 @@ def classify_informational_page(record):
     if source=="piemonte":
         # Pre-information is an announcement, not an application that can be submitted.
         is_information=(path.rstrip("/") in ("/contributi-finanziamenti", "/crowdfunding")
-                        or path.startswith("/pre-informazione-fondi-ue/"))
+                        or path.startswith("/pre-informazione-fondi-ue"))
+        is_information=is_information or path.rstrip("/") in ("/bandi-pnrr-per-enti-locali",)
     if source=="eucreative":
         # Thematic funding overview is a guide, not a specific call for proposals.
         is_information=path.rstrip("/") in ("/cultural-heritage/funding-opportunities-for-cultural-heritage",)
@@ -100,8 +103,10 @@ def classify_informational_page(record):
         is_information=True
     if source=="volto":
         is_information=(path.rstrip("/") in ("/progetti-volto","/progetti-servizio-civile"))
+    if source=="erasmus":
+        is_information=path.rstrip("/") in ("/opportunities",)
     if source=="torino":
-        is_information=("linee-guida-concessione-lerogazione-contributi-ordinari-altri-benefici-economici-lanno-2027" in path or
+        is_information=(path.rstrip("/")=="" or "linee-guida-concessione-lerogazione-contributi-ordinari-altri-benefici-economici-lanno-2027" in path or
                         "approvazione contributo" in title or
                         "contributo in servizi all" in title or
                         path.lower().endswith((".pdf",".docx")))
