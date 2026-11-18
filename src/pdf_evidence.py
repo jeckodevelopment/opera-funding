@@ -36,11 +36,24 @@ def pdf_extract_evidence(data):
                 return found
     return found
 
+def pdf_text_status(data):
+    """Distinguish image-only PDFs from readable PDFs lacking labeled facts."""
+    try:
+        reader = PdfReader(BytesIO(data), strict=False)
+        for page in reader.pages[:MAX_PAGES]:
+            if (page.extract_text() or "").strip():
+                return "nessuna_evidenza_estratta"
+        return "testo_non_estratto"
+    except Exception:
+        return "pdf_non_interpretabile"
+
 def official_pdf_evidence(documents, source_url, session, allowed_to_fetch):
     host = urlparse(source_url).hostname
     inspected = 0
     found_fields = {}
     field_sources = {}
+    diagnostics = []
+    discrepancies = []
     # Complementary official documents (call and FAQ) may contain different
     # applicant requirements. Keep the first source for conflicting passages.
     for item in documents:
@@ -53,6 +66,7 @@ def official_pdf_evidence(documents, source_url, session, allowed_to_fetch):
         if inspected >= MAX_DOCUMENTS:
             break
         if not allowed_to_fetch(url, session):
+            diagnostics.append({"url":url,"status":"accesso_non_consentito"})
             continue
         inspected += 1
         response = None
@@ -63,6 +77,7 @@ def official_pdf_evidence(documents, source_url, session, allowed_to_fetch):
             if (final.scheme != "https" or final.hostname != host or
                     final.port not in (None, 443) or
                     "pdf" not in response.headers.get("Content-Type", "").lower()):
+                diagnostics.append({"url":url,"status":"risposta_non_pdf_o_redirect_non_valido"})
                 continue
             data = bytearray()
             for chunk in response.iter_content(chunk_size=32768):
@@ -70,19 +85,42 @@ def official_pdf_evidence(documents, source_url, session, allowed_to_fetch):
                 if len(data) > MAX_BYTES:
                     break
             if len(data) > MAX_BYTES:
+                diagnostics.append({"url":url,"status":"documento_troppo_grande"})
                 continue
-            extracted = pdf_extract_evidence(bytes(data))
+            try:
+                extracted = pdf_extract_evidence(bytes(data))
+            except Exception:
+                diagnostics.append({"url":url,"status":"pdf_non_interpretabile"})
+                continue
+            if not extracted:
+                # Could be image-only, or a text PDF without recognized facts.
+                # Do not assert it was scanned without checking text extraction.
+                diagnostics.append({"url":url,"status":pdf_text_status(bytes(data))})
+            else:
+                diagnostics.append({"url":url,"status":"evidenze_estratte"})
             for field, value in extracted.items():
-                if field not in found_fields and value:
+                if not value:
+                    continue
+                if field not in found_fields:
                     found_fields[field] = value
                     field_sources[field] = url
+                elif " ".join(found_fields[field].casefold().split()) != " ".join(value.casefold().split()):
+                    # Different passages are NOT necessarily contradictory.
+                    # A reviewer must resolve document priority and meaning.
+                    discrepancies.append({"field":field,"first_source":field_sources[field],
+                                          "other_source":url,"status":"testi_diversi_da_verificare"})
             if len(found_fields) == len(LABELS):
                 break
         except Exception:
+            diagnostics.append({"url":url,"status":"download_non_riuscito"})
             continue
         finally:
             if response is not None:
                 response.close()
+    if diagnostics:
+        found_fields["assessment_document_diagnostics"] = diagnostics
+    if discrepancies:
+        found_fields["assessment_document_discrepancies"] = discrepancies
     if field_sources:
         found_fields["assessment_evidence_source"] = next(iter(field_sources.values()))
         found_fields["assessment_field_sources"] = field_sources
