@@ -197,7 +197,7 @@ def run():
                         item["first_seen"] = previous.get("first_seen", now)
                         item["source_open_confirmed"] = item.get("status","").startswith("aperto")
                         # The verified detail page is stronger than an index snippet.
-                        if previous.get("status_evidence"):
+                        if previous.get("status_evidence") and source["id"]!="eufunding":
                             item["source_open_confirmed"] = previous.get("source_open_confirmed",False)
                             item["closure_confirmed"] = previous.get("closure_confirmed",False)
                             item["status_evidence"] = previous["status_evidence"]

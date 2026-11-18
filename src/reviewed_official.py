@@ -19,12 +19,15 @@ def apply_reviewed_facts(rows, facts, now):
             evidence=urlparse(fact["official_url"])
             if evidence.scheme!="https" or not evidence.hostname:
                 continue
-            deadline=date.fromisoformat(fact["deadline"])
-            # Preserve fresher live facts and do not overwrite contradictory dates.
-            if row.get("deadline") and row["deadline"]!=deadline.isoformat():
+            deadline=date.fromisoformat(fact["deadline"]) if fact.get("deadline") else None
+            if deadline is None and not fact.get("rolling"):
                 continue
-            row["deadline"]=deadline.isoformat()
-            row["deadline_source"]=fact["official_url"]
+            # Preserve fresher live facts and do not overwrite contradictory dates.
+            if deadline and row.get("deadline") and row["deadline"]!=deadline.isoformat():
+                continue
+            if deadline:
+                row["deadline"]=deadline.isoformat()
+                row["deadline_source"]=fact["official_url"]
             row["reviewed_official_at"]="2026-11-17"
             row["reviewed_official_basis"]=fact["evidence"]
             row["status_evidence"]=fact["official_url"]
@@ -33,9 +36,10 @@ def apply_reviewed_facts(rows, facts, now):
                 row["opening_date"]=fact["opening_date"]
                 row["opening_evidence"]=fact["official_url"]
             recent=not fact.get("review_valid_until") or today<=date.fromisoformat(fact["review_valid_until"])
-            open_confirmed=bool(recent and today<=deadline and fact["evidence"]!="official_expired_application_deadline")
+            open_confirmed=bool(recent and (deadline is None or today<=deadline)
+                                and fact["evidence"]!="official_expired_application_deadline")
             row["source_open_confirmed"]=open_confirmed
-            row["closure_confirmed"]=today>deadline
+            row["closure_confirmed"]=bool(deadline and today>deadline)
             if fact.get("rolling"):
                 row["rolling_confirmed"]=bool(open_confirmed)
                 row["rolling_evidence"]=fact["official_url"] if open_confirmed else None
