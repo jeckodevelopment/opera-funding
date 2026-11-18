@@ -97,3 +97,5 @@ La revisione di merito distingue le valutazioni generate automaticamente dalle *
 
 La coda di lettura comprende anche la tipologia `non classificato`: il fatto che la denominazione non contenga esplicitamente la parola «bando» non esclude che si tratti di una call reale. La copertura documentale deve crescere tramite scansioni successive, senza far passare automaticamente tutte le schede per revisionate.
 
+
+La seconda verifica del 18 novembre aggiunge le schede 177 (Fondo di Beneficenza), 175 (Dora in Avanti), 182 (AI nell'economia sociale), 8 (iniziative 2027 della Circoscrizione 7) e 143 (Fabbrica — Spazi Civici). Il registro documenta ora **9 valutazioni individuali**. Per opportunità originate su aggregatori, `evidence_url` distingue l'URL della fonte consultata dall'indirizzo della scheda indicizzata; non si presenta un aggregatore come fonte primaria ufficiale.

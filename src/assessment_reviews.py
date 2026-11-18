@@ -18,10 +18,10 @@ def apply_assessment_reviews(rows, reviews):
         for field in REVIEW_FIELDS:
             if field in review:
                 row[field]=review[field]
-        row["assessment_basis"]="Revisione documentale delle condizioni pubblicate dall'ente promotore"
-        row["assessment_confidence"]="documentale — fonte ufficiale consultata; ammissibilità da verificare"
-        row["assessment_source"]=review["url"]
-        row["assessment_evidence_source"]=review["url"]
+        row["assessment_basis"]="Revisione documentale della fonte indicata nella scheda"
+        row["assessment_confidence"]="documentale — fonte consultata; ammissibilità da verificare"
+        row["assessment_source"]=review.get("evidence_url") or review["url"]
+        row["assessment_evidence_source"]=review.get("evidence_url") or review["url"]
         row["assessment_reviewed_at"]=review["reviewed_at"]
         row["assessment_opening_note"]="Valutazione di pertinenza indipendente dallo stato di apertura ufficiale."
     return rows
