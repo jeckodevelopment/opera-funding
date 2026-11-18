@@ -29,7 +29,7 @@ class VerificationTests(unittest.TestCase):
                   detail_checked_at=NOW.isoformat())}
         self.assertEqual(pick_for_review([row("a")],previous,1,NOW),{"a"})
     def test_three_day_revisit(self):
-        old=row("a",detail_checked=True,detail_version=8,
+        old=row("a",detail_checked=True,detail_version=9,
                 detail_checked_at=(NOW-timedelta(days=4)).isoformat())
         fresh={**old,"detail_checked_at":NOW.isoformat()}
         self.assertTrue(needs_review(old,NOW))

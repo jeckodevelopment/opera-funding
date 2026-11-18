@@ -13,24 +13,55 @@ DEADLINE_PATTERN = re.compile(r"(?i)(?:scadenza|termine (?:di |per (?:la )?)?(?:
 EUR_PATTERN = re.compile(r"(?i)(?:contributo massimo|finanziamento massimo|importo massimo|dotazione finanziaria|budget complessivo)\s*[:–-]?\s*(?:€|euro|eur)?\s*([\d.]+(?:,\d{2})?)\s*(?:€|euro|eur)?")
 DOC_PATTERN = re.compile(r"(?i)\b(bando|avviso|faq|frequently asked|allegat|modulistic|domanda|regolamento|linee guida|document|application)\b")
 BENEFICIARY_LABEL = re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammissibili|chi può partecipare|eligible applicants)\s*[:–-]?")
-# Capture short, source-attributed factual passages, not the entire document.
-EVIDENCE_LABELS = (
-    ("programme_objectives_excerpt", re.compile(r"(?i)obiettiv|finalit|purpose|aims|priorit|scope|programma")),
-    ("funded_activities_excerpt", re.compile(r"(?i)attivit.{0,30}(?:ammissib|finanziab|sostenut|previst)|progett.{0,25}(?:finanziab|ammissib)|eligible activities|supported activities|interventi ammissibili")),
-    ("beneficiaries_excerpt", re.compile(r"(?i)beneficiar|destinatar|soggetti ammissibili|chi pu.{0,3} partecipare|eligible applicants|applicant organisations|who can apply")),
-    ("requirements_excerpt", re.compile(r"(?i)requisit|condizion|partenariat|cofinanziament|ammissibilit|eligibility criteria|mandatory partners|consortium")),
+# Field-specific headings avoid interpreting unrelated prose as eligibility rules.
+# A heading alone never proves that an applicant or expense is eligible.
+EVIDENCE_HEADINGS = (
+    ("programme_objectives_excerpt", re.compile(r"(?i)^(?:obiettivi|obiettivo|finalit[aà]|purpose|aims?|priorit[aà]|objectives?|scope del (?:programma|bando))\b")),
+    ("funded_activities_excerpt", re.compile(r"(?i)^(?:attivit[aà]|interventi|progetti|spese|costi)\s+(?:ammissibil|finanziabil|sostenut|eleggibil)|^eligible activities\b|^supported activities\b")),
+    ("beneficiaries_excerpt", re.compile(r"(?i)^(?:beneficiari|destinatari|soggetti ammessi|soggetti ammissibili|chi pu[oò] partecipare|eligible applicants|who can apply)\b")),
+    ("requirements_excerpt", re.compile(r"(?i)^(?:requisiti|condizioni|criteri di ammissibilit[aà]|eligibility criteria|mandatory partners|obblighi di partenariato|cofinanziamento)\b")),
 )
+EVIDENCE_INLINE = (
+    ("programme_objectives_excerpt", re.compile(r"(?i)^(?:il (?:bando|programma|progetto) (?:ha (?:lo scopo|l.obiettivo)|mira a)|l.obiettivo (?:del bando|è))\b")),
+    ("funded_activities_excerpt", re.compile(r"(?i)^(?:sono (?:finanziabili|ammissibili|sostenute) le (?:seguenti )?(?:attivit[aà]|spese)|(?:il bando|il contributo) finanzia\b|eligible activities include\b)")),
+    ("beneficiaries_excerpt", re.compile(r"(?i)^(?:possono (?:presentare domanda|partecipare|candidarsi)|sono ammessi (?:a partecipare|alla candidatura)|eligible applicants include\b)")),
+    ("requirements_excerpt", re.compile(r"(?i)^(?:è (?:obbligatorio|richiesto|necessario) (?:un |il )?(?:partenariato|cofinanziamento)|(?:i candidati|i richiedenti) devono\b|applicants must\b)")),
+)
+
+def _evidence_field(value, patterns):
+    normalized = " ".join(value.split()).strip(" :–-")
+    return next((field for field, pattern in patterns if pattern.search(normalized)), None)
+
 def extract_assessment_evidence(main, page_url):
+    """Extract factual text only from a labeled section or explicit assertion.
+
+    A stray mention of 'partnership', 'requirements' or 'activities' in
+    unrelated text is not enough to fill an evidence field.
+    """
     found = {}
-    for node in main.select("h1, h2, h3, h4, p, li, dt, dd"):
+    active_field = None
+    for node in main.select("h2, h3, h4, p, li, dt, dd"):
         snippet = " ".join(node.stripped_strings)
-        if not (45 <= len(snippet) <= 3000):
+        if not snippet or len(snippet) > 3000:
             continue
-        snippet = snippet[:700]
-        for field, pattern in EVIDENCE_LABELS:
-            if field not in found and pattern.search(snippet):
-                found[field] = snippet
-        if len(found) == len(EVIDENCE_LABELS):
+        tag = node.name.lower()
+        heading = _evidence_field(snippet, EVIDENCE_HEADINGS)
+        if tag in ("h2", "h3", "h4", "dt"):
+            active_field = heading
+            continue
+        if tag == "dd" and node.find_previous_sibling("dt"):
+            active_field = _evidence_field(node.find_previous_sibling("dt").get_text(" ", strip=True), EVIDENCE_HEADINGS)
+        if len(snippet) < 35:
+            continue
+        inline = _evidence_field(snippet, EVIDENCE_INLINE) or _evidence_field(snippet, EVIDENCE_HEADINGS)
+        field = inline or active_field
+        if not field or field in found:
+            continue
+        # Require the actual explanation rather than a heading or navigation.
+        if len(snippet.split()) < 7:
+            continue
+        found[field] = snippet[:700]
+        if len(found) == len(EVIDENCE_HEADINGS):
             break
     if found:
         found["assessment_evidence_source"] = page_url
@@ -38,7 +69,7 @@ def extract_assessment_evidence(main, page_url):
 
 MAX_DETAIL_LINKS = 8
 MAX_HTML_BYTES = 1_000_000
-DETAIL_SCHEMA_VERSION = 8
+DETAIL_SCHEMA_VERSION = 9
 
 def safe_same_origin(link, origin):
     u = urlparse(link)
@@ -78,9 +109,10 @@ def extract(html, page_url):
             break
     facts=official_evidence(html,page_url)
     assessment_evidence=extract_assessment_evidence(main,page_url)
+    matched_beneficiaries = beneficiaries or facts["beneficiaries_excerpt"] or assessment_evidence.get("beneficiaries_excerpt")
     return {**assessment_evidence,"deadline":deadline,"amount":amount or facts["amount"],
-            "beneficiaries_excerpt":beneficiaries or facts["beneficiaries_excerpt"],
-            "beneficiaries_source":page_url if (beneficiaries or facts["beneficiaries_excerpt"]) else None,
+            "beneficiaries_excerpt":matched_beneficiaries,
+            "beneficiaries_source":page_url if matched_beneficiaries else None,
             "amount_kind":facts["amount_kind"],"amount_source":facts["amount_source"] if facts["amount"] else (page_url if amount else None),
             "rolling_guidance":facts["rolling_guidance"],
             "rolling_guidance_source":facts["rolling_guidance_source"],

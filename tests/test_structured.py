@@ -258,7 +258,7 @@ class StructuredTests(unittest.TestCase):
         self.assertIn("laboratori",result.get("funded_activities_excerpt",""))
         self.assertIn("associazioni",result.get("beneficiaries_excerpt",""))
         self.assertIn("Requisiti",result.get("requirements_excerpt",""))
-        self.assertEqual(result["detail_version"],8)
+        self.assertEqual(result["detail_version"],9)
 
     def test_verified_priority_page(self):
         response=Mock(url=URL,status_code=200,headers={"Content-Type":"text/html"},text=PAGE)

@@ -12,6 +12,37 @@ class DetailTests(unittest.TestCase):
         self.assertEqual(info["deadline"],"2027-12-25")
         self.assertEqual(len(info["documents"]),3)
         self.assertIn("20.000",info["amount"])
+    def test_labeled_sections_capture_actual_applicant_and_activities(self):
+        html = """<main>
+        <h2>Attività finanziabili</h2>
+        <p>Sono ammesse iniziative di formazione musicale e laboratori teatrali destinati alle scuole del territorio.</p>
+        <h2>Beneficiari</h2>
+        <p>Possono candidarsi associazioni culturali senza scopo di lucro con sede operativa nella regione.</p>
+        <h2>Requisiti</h2>
+        <p>Occorre garantire un cofinanziamento privato pari al venti per cento della spesa prevista.</p>
+        </main>"""
+        info=extract(html,"https://example.org/bando")
+        self.assertIn("formazione musicale",info["funded_activities_excerpt"])
+        self.assertIn("associazioni culturali",info["beneficiaries_excerpt"])
+        self.assertIn("cofinanziamento",info["requirements_excerpt"])
+        self.assertEqual(info["assessment_evidence_source"],"https://example.org/bando")
+
+    def test_unrelated_keywords_do_not_become_official_requirements(self):
+        html = """<main><h2>Notizie</h2>
+        <p>Il nostro sito presenta programmi, obiettivi e attività di ricerca per tutti i visitatori.</p>
+        <p>Consulta la sezione requisiti generali e partnership nella navigazione del portale.</p>
+        <p>Le attività commerciali del museo sono illustrate nelle pagine informative.</p>
+        </main>"""
+        info=extract(html,"https://example.org/bando")
+        for field in ("programme_objectives_excerpt","requirements_excerpt","funded_activities_excerpt"):
+            self.assertNotIn(field,info)
+
+    def test_inline_factual_statement_without_heading_is_usable(self):
+        html = """<main><p>Possono partecipare le associazioni culturali costituite da almeno due anni
+        e regolarmente iscritte al registro regionale.</p></main>"""
+        info=extract(html,"https://example.org/bando")
+        self.assertIn("associazioni culturali",info["beneficiaries_excerpt"])
+
     def test_publication_date_is_not_deadline(self):
         info=extract("<main>Pubblicato il 02/03/2026</main>","https://example.org/bando")
         self.assertIsNone(info["deadline"])
@@ -27,7 +58,7 @@ class DetailTests(unittest.TestCase):
             result=enrich(item,source,Mock(),lambda u,s:True)
         self.assertEqual(result["deadline"],"2027-04-02")
         self.assertEqual(result["deadline_source"],item["url"])
-        self.assertEqual(result["detail_version"],8)
+        self.assertEqual(result["detail_version"],9)
         self.assertTrue(result["detail_checked"])
         self.assertTrue(read.call_args.kwargs["include_first"])
     def test_rejects_external_pdf_host_without_allowlisting(self):
