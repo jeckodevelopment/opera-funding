@@ -6,8 +6,8 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy}=context.exposed;
 assert.equal(PAGE_SIZE,12);
 assert.equal(assessmentLabel({assessment_label:"ALTA AFFINITÀ"}),"ALTA AFFINITÀ");
 assert.equal(assessmentLabel({relevance:65,opportunity_type:"finanziamento potenziale"}),"MEDIA AFFINITÀ");
@@ -65,6 +65,41 @@ assert.equal(evaluation.eligibility,"da verificare");
 assert.equal(evaluation.amountKind,"dotazione finanziaria");
 assert.equal(evaluation.checks[0],"Verificare sede legale");
 assert.equal(evaluation.reasoning,"Coerenza con formazione e giovani (scheda).");
+const detailInput={
+ title:"Bando pilota",url:"https://example.org/opportunity",relevance:62,
+ opportunity_type:"finanziamento potenziale",
+ programme_objectives_excerpt:"Sostenere la cultura nelle scuole",
+ funded_activities_excerpt:"Laboratori e attività musicali",
+ beneficiaries_excerpt:"Associazioni culturali",
+ requirements_excerpt:"Partenariato scolastico obbligatorio",
+ funding_scope_note:"Progetti con impatto regionale",
+ opening_date:"2026-11-15",amount_kind:"contributo massimo",
+ edition_year:"2027",window_label:"Prima finestra",
+ application_windows:["2027-03-01","2027-05-15"],
+ rolling_guidance:"Presentazione continuativa",
+ assessment_review_status:"PARZIALE",
+ assessment_method:"Revisione documentale automatica",
+ adequacy_reason:"Compatibile, con partenariato richiesto",
+ assessment_gaps:["Confermare la sede del partner"]
+};
+const detailFacts=opportunityRequirementFacts(detailInput);
+const fullReport=evaluationData(detailInput,new Date("2026-11-18T12:00:00Z"));
+assert.equal(fullReport.requirementFacts.length,detailFacts.length);
+for(const [label,value] of detailFacts){
+ const fact=fullReport.requirementFacts.find(x=>x.label===label);
+ assert.ok(fact,"Campo mancante nel PDF: "+label);
+ assert.equal(fact.value,String(value));
+}
+assert.equal(fullReport.requirementFacts.find(x=>x.label==="Attività finanziabili").value,"Laboratori e attività musicali");
+assert.equal(fullReport.requirementFacts.find(x=>x.label==="Vincoli e requisiti").value,"Partenariato scolastico obbligatorio");
+assert.ok(fullReport.requirementFacts.some(x=>x.label==="Finestre successive"&&x.value.includes("15/05/2027")));
+assert.equal(fullReport.adequacyReason,"Compatibile, con partenariato richiesto");
+assert.equal(fullReport.assessmentGaps[0],"Confermare la sede del partner");
+assert.equal(evaluationData({title:"Incomplete"},new Date("2026-11-18T12:00:00Z")).requirementFacts.length,0);
+assert.match(src,/for\(const fact of d\.requirementFacts\)addReportFact\(detailFacts,fact\.label,fact\.value\)/);
+assert.match(src,/print-conditions/);
+assert.match(css,/\.print-detail-facts/);
+
 assert.equal(evaluation.links.length,2);
 assert.ok(evaluation.links.every(x=>x.href.startsWith("https://")));
 const incompleteEvaluation=evaluationData({title:"Avviso",opportunity_type:"call progettuale da verificare",relevance:10},new Date("2026-11-17T12:00:00Z"));
