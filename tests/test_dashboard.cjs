@@ -59,7 +59,7 @@ const evaluation=evaluationData({
  ],
  url:"https://example.org/opportunita"
 },new Date("2026-11-17T12:00:00Z"));
-assert.equal(evaluation.fit,"72/100");
+assert.equal(evaluation.fit,"ALTA AFFINITÀ");
 assert.equal(evaluation.deadline,"12/03/2027");
 assert.equal(evaluation.eligibility,"da verificare");
 assert.equal(evaluation.amountKind,"dotazione finanziaria");
@@ -71,7 +71,7 @@ const incompleteEvaluation=evaluationData({title:"Avviso",opportunity_type:"call
 assert.equal(incompleteEvaluation.deadline,"Non indicata");
 assert.ok(incompleteEvaluation.missing.some(x=>x.includes("Beneficiari")));
 assert.equal(incompleteEvaluation.eligibility,"da verificare");
-assert.equal(incompleteEvaluation.fit,"10/100");
+assert.equal(incompleteEvaluation.fit,"BASSA AFFINITÀ");
 
 const now=new Date("2026-11-20T08:00:00Z");
 assert.equal(changeBadge({catalog_new_at:"2026-11-18T07:00:00Z"},now).label,"NUOVA");
@@ -114,7 +114,7 @@ const rows=[
  {title:"Alto",relevance:99,deadline:"2027-04-02",source_open_confirmed:true,link_status:"raggiungibile"}
 ];
 assert.deepEqual(Array.from(sortRows([...rows],"deadline"),x=>x.title),["Presto","Alto","Tardi"]);
-assert.deepEqual(Array.from(sortRows([...rows],"score"),x=>x.title),["Alto","Tardi","Presto"]);
+assert.deepEqual(Array.from(sortRows([...rows],"score"),x=>x.title),["Presto","Alto","Tardi"]);
 assert.equal(sourceHealth({sources:[{ok:true,discovered:0},{ok:true,discovered:0}]},[]).level,"green");
 assert.equal(sourceHealth({sources:[{ok:false,source_name:"Desk Italia",error:"robots"},{ok:true},{ok:true},{ok:true},{ok:true}]},[]).level,"yellow");
 assert.equal(sourceHealth({sources:[{ok:false},{ok:false},{ok:false},{ok:true},{ok:true}]},[]).level,"red");
@@ -196,7 +196,9 @@ assert.match(css,/@media print/);
 assert.match(css,/#print-sheet:not\(\[hidden\]\)/);
 
 assert.match(src,/changeBadge\(o\)/);
-assert.match(src,/function makeAdequacy/);
+assert.doesNotMatch(src,/article\.append\(left,right,makeAdequacy\(o\)\)/);
+assert.doesNotMatch(src,/dialogField\(dl,"Adeguatezza tematica"/);
+assert.doesNotMatch(src,/function makeAdequacy/);
 assert.match(css,/\.health-dot\.red/);
 assert.doesNotMatch(src,/Controlli prima della candidatura:/);
 console.log("Opera+ editorial dashboard tests passed");
