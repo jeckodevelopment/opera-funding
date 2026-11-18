@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-18T22:56:17+00:00",
+  "checked_at": "2026-11-18T23:04:01+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 15,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "torino",
@@ -31,7 +31,7 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "culturatorino",
@@ -39,7 +39,7 @@
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "volto",
@@ -47,7 +47,7 @@
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-18T22:56:17+00:00",
+      "checked_at": "2026-11-18T23:04:01+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://interreg-alcotra.eu/it/bandi-0",
       "ok": false,
       "discovered": 0,
-      "checked_at": "2026-11-18T22:56:17+00:00",
+      "checked_at": "2026-11-18T23:04:01+00:00",
       "error": "robots.txt: risposta HTTP 503; verifica automatica non disponibile",
       "institutional_reference_url": "https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/quarto-bando-francia-italia-alcotra-per-progetti-singoli-2a-finestra",
       "institutional_reference_label": "Regione Piemonte — bando ALCOTRA",
@@ -111,23 +111,23 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-18T22:56:17+00:00"
+      "checked_at": "2026-11-18T23:04:01+00:00"
     }
   ],
   "coverage": {
     "totals": {
-      "all": 262,
+      "all": 264,
       "open": 34,
       "closed": 140,
       "upcoming": 2,
-      "unverified": 86,
+      "unverified": 88,
       "dated": 173,
       "dated_with_source": 173,
-      "detail_checked": 190,
-      "reachable": 261,
-      "candidate_unverified": 5,
+      "detail_checked": 192,
+      "reachable": 263,
+      "candidate_unverified": 7,
       "informational_unverified": 81,
-      "candidate_missing_deadline": 7
+      "candidate_missing_deadline": 9
     },
     "by_source": {
       "culturatorino": {
@@ -240,6 +240,17 @@
         "informational_unverified": 7,
         "candidate_missing_deadline": 0
       },
+      "programme:cmtorino-giovani": {
+        "total": 8,
+        "open": 0,
+        "unverified": 6,
+        "dated": 2,
+        "dated_with_source": 2,
+        "detail_checked": 8,
+        "candidate_unverified": 6,
+        "informational_unverified": 0,
+        "candidate_missing_deadline": 6
+      },
       "alcotra": {
         "total": 11,
         "open": 0,
@@ -249,17 +260,6 @@
         "detail_checked": 11,
         "candidate_unverified": 0,
         "informational_unverified": 6,
-        "candidate_missing_deadline": 0
-      },
-      "erasmus": {
-        "total": 2,
-        "open": 1,
-        "unverified": 1,
-        "dated": 1,
-        "dated_with_source": 1,
-        "detail_checked": 2,
-        "candidate_unverified": 0,
-        "informational_unverified": 1,
         "candidate_missing_deadline": 0
       },
       "programme:rivoli-associazioni": {
@@ -273,28 +273,28 @@
         "informational_unverified": 0,
         "candidate_missing_deadline": 1
       },
-      "programme:cmtorino-giovani": {
-        "total": 6,
-        "open": 0,
-        "unverified": 4,
-        "dated": 2,
-        "dated_with_source": 2,
-        "detail_checked": 6,
-        "candidate_unverified": 4,
-        "informational_unverified": 0,
-        "candidate_missing_deadline": 4
+      "erasmus": {
+        "total": 2,
+        "open": 1,
+        "unverified": 1,
+        "dated": 1,
+        "dated_with_source": 1,
+        "detail_checked": 2,
+        "candidate_unverified": 0,
+        "informational_unverified": 1,
+        "candidate_missing_deadline": 0
       }
     },
     "sources_ok": 12,
     "sources_total": 13
   },
   "assessment_coverage": {
-    "total": 262,
+    "total": 264,
     "with_document_issues": 34,
-    "with_editorial_label": 262,
+    "with_editorial_label": 264,
     "by_review_status": {
-      "PARZIALE": 101,
-      "EVIDENZE RACCOLTE": 17,
+      "PARZIALE": 102,
+      "EVIDENZE RACCOLTE": 18,
       "REVISIONE DOCUMENTALE": 35,
       "FONTE NON SUFFICIENTE": 109
     },
@@ -1161,22 +1161,22 @@
   "catalog_reconciliation": {
     "coverage": {
       "catalogo": {
-        "total": 262,
+        "total": 264,
         "adequacy_counts": {
-          "ALTA": 10,
+          "ALTA": 11,
           "BASSA": 88,
           "INFORMATIVA": 101,
-          "MEDIA": 63
+          "MEDIA": 64
         },
         "missing_documentation": {
-          "finalita": 132,
-          "attivita_finanziabili": 210,
-          "beneficiari": 143,
+          "finalita": 133,
+          "attivita_finanziabili": 211,
+          "beneficiari": 144,
           "requisiti": 167
         },
         "with_document_issues": 34,
         "with_unresolved_applicant_checks": 11,
-        "source_not_attributed": 65
+        "source_not_attributed": 63
       },
       "aperte": {
         "total": 34,
@@ -1227,7 +1227,7 @@
     "notes": "I conteggi indicano copertura delle evidenze, non ammissibilità certificata."
   },
   "funder_monitoring": {
-    "checked_at": "2026-11-18T22:56:17+00:00",
+    "checked_at": "2026-11-18T23:04:01+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -1597,6 +1597,78 @@
         "website": "https://provincia.alessandria.it/",
         "verification": "ente e riferimenti ufficiali verificati; nuovi bandi e ammissibilità da verificare",
         "accepts_applications": null
+      },
+      {
+        "id": "provincia-asti",
+        "name": "Provincia di Asti",
+        "type": "provincia",
+        "territory": "Asti (AT)",
+        "website": "https://www.provincia.asti.it/it",
+        "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+        "accepts_applications": null
+      },
+      {
+        "id": "provincia-biella",
+        "name": "Provincia di Biella",
+        "type": "provincia",
+        "territory": "Biella (BI)",
+        "website": "https://www.provincia.biella.it/",
+        "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+        "accepts_applications": null
+      },
+      {
+        "id": "provincia-cuneo",
+        "name": "Provincia di Cuneo",
+        "type": "provincia",
+        "territory": "Cuneo (CN)",
+        "website": "https://www.provincia.cuneo.it/",
+        "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+        "accepts_applications": null
+      },
+      {
+        "id": "provincia-vercelli",
+        "name": "Provincia di Vercelli",
+        "type": "provincia",
+        "territory": "Vercelli (VC)",
+        "website": "https://www.provincia.vercelli.it/it",
+        "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+        "accepts_applications": null
+      },
+      {
+        "id": "provincia-vco",
+        "name": "Provincia del Verbano-Cusio-Ossola",
+        "type": "provincia",
+        "territory": "Verbania (VB)",
+        "website": "https://www.provincia.verbano-cusio-ossola.it/",
+        "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+        "accepts_applications": null
+      },
+      {
+        "id": "ivrea",
+        "name": "Città di Ivrea",
+        "type": "comune",
+        "territory": "Ivrea (TO)",
+        "website": "https://www.comune.ivrea.to.it/",
+        "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+        "accepts_applications": null
+      },
+      {
+        "id": "settimo-torinese",
+        "name": "Città di Settimo Torinese",
+        "type": "comune",
+        "territory": "Settimo Torinese (TO)",
+        "website": "https://www.comune.settimo-torinese.to.it/",
+        "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+        "accepts_applications": null
+      },
+      {
+        "id": "biella",
+        "name": "Città di Biella",
+        "type": "comune",
+        "territory": "Biella (BI)",
+        "website": "https://comune.biella.it/",
+        "verification": "fonte istituzionale individuata; ammissibilità da verificare",
+        "accepts_applications": null
       }
     ],
     "programs": [
@@ -1608,7 +1680,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1620,7 +1692,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -1633,7 +1705,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1646,7 +1718,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1659,7 +1731,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1672,7 +1744,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1685,7 +1757,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -1698,7 +1770,7 @@
         "monitoring": "direct",
         "eligibility_note": "Bandi comunali, eleggibilità legata a sede o attività ad Alba",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -1711,7 +1783,7 @@
         "monitoring": "direct",
         "eligibility_note": "Contributi territoriali: verificare operatività a Bra e finestra annuale",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -1724,7 +1796,7 @@
         "monitoring": "direct",
         "eligibility_note": "Verificare l'edizione e la ricaduta sul territorio",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 11
       },
@@ -1737,7 +1809,7 @@
         "monitoring": "direct",
         "eligibility_note": "Avviso 2026; non presumerne la riapertura negli anni successivi",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -1750,7 +1822,7 @@
         "monitoring": "direct",
         "eligibility_note": "Richiesta spesso condizionata a albo e attività comunali",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -1776,7 +1848,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni bandi sono riservati ai Comuni: non presumere ammissibilità associazioni",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 10
       },
@@ -1802,7 +1874,7 @@
         "monitoring": "direct",
         "eligibility_note": "Finestre e bandi da verificare per edizione",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -1815,7 +1887,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni programmi rivolti a ricercatori o scuole: eleggibilità da verificare",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-18T22:56:17+00:00",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
         "changed": false,
         "candidate_count": 2
       },
@@ -1870,6 +1942,110 @@
         "last_checked_at": null,
         "changed": false,
         "candidate_count": null
+      },
+      {
+        "id": "provincia-asti-avvisi",
+        "funder_id": "provincia-asti",
+        "name": "Portale istituzionale e avvisi",
+        "url": "https://www.provincia.asti.it/it",
+        "submission": "da verificare",
+        "monitoring": "reference-only",
+        "eligibility_note": "Nessun bando culturale aperto per associazioni accertato; ricercare una pagina dedicata",
+        "monitoring_status": "reference_only",
+        "last_checked_at": null,
+        "changed": false,
+        "candidate_count": null
+      },
+      {
+        "id": "provincia-biella-avvisi",
+        "funder_id": "provincia-biella",
+        "name": "Portale istituzionale e avvisi",
+        "url": "https://www.provincia.biella.it/",
+        "submission": "da verificare",
+        "monitoring": "reference-only",
+        "eligibility_note": "Nessuna specifica procedura di finanziamento culturale verificata",
+        "monitoring_status": "reference_only",
+        "last_checked_at": null,
+        "changed": false,
+        "candidate_count": null
+      },
+      {
+        "id": "provincia-cuneo-contributi",
+        "funder_id": "provincia-cuneo",
+        "name": "Criteri e modalità per contributi",
+        "url": "https://albo.provincia.cuneo.it/amministrazione-trasparente/sovvenzioni-contributi-sussidi-vantaggi-economici/criteri-modalita",
+        "submission": "da verificare",
+        "monitoring": "reference-only",
+        "eligibility_note": "Il portale indica assenza di erogazioni nel periodo di riferimento: non è un bando",
+        "monitoring_status": "reference_only",
+        "last_checked_at": null,
+        "changed": false,
+        "candidate_count": null
+      },
+      {
+        "id": "provincia-vercelli-concessioni",
+        "funder_id": "provincia-vercelli",
+        "name": "Atti di concessione dei contributi",
+        "url": "https://servizi.provincia.vercelli.it/L190/contributo/lista?activePage=&idSezione=73&search=&sort=",
+        "submission": "da verificare",
+        "monitoring": "reference-only",
+        "eligibility_note": "Elenco storico di concessioni; gli avvisi regionali ripubblicati vanno attribuiti alla Regione Piemonte",
+        "monitoring_status": "reference_only",
+        "last_checked_at": null,
+        "changed": false,
+        "candidate_count": null
+      },
+      {
+        "id": "provincia-vco-istruzione",
+        "funder_id": "provincia-vco",
+        "name": "Contributi a enti e associazioni per progetti di istruzione",
+        "url": "https://www.provincia.verbano-cusio-ossola.it/servizio/erogazione-contributi-ad-enti-ed-associazioni-per-progetti-ed-iniziative-nel-campo-dellistruzione/",
+        "submission": "da verificare",
+        "monitoring": "reference-only",
+        "eligibility_note": "Contributi educativi: accessibilità a progetti culturali non dimostrata",
+        "monitoring_status": "reference_only",
+        "last_checked_at": null,
+        "changed": false,
+        "candidate_count": null
+      },
+      {
+        "id": "ivrea-cultura",
+        "funder_id": "ivrea",
+        "name": "Contributi ai progetti culturali",
+        "url": "https://servizionline.comune.ivrea.to.it/cmsivrea/portale/trasparenza/trasparenzaamministrativadettaglio.aspx?CDOC=956&CP=191&R=1",
+        "submission": "da verificare",
+        "monitoring": "reference-only",
+        "eligibility_note": "Pagina di precedente edizione: non presume bando attualmente aperto; requisiti storici di anzianità",
+        "monitoring_status": "reference_only",
+        "last_checked_at": null,
+        "changed": false,
+        "candidate_count": null
+      },
+      {
+        "id": "settimo-associazioni",
+        "funder_id": "settimo-torinese",
+        "name": "Avvisi e bandi per le associazioni",
+        "url": "https://www.comune.settimo-torinese.to.it/it/news-category/133558?type=0",
+        "submission": "da verificare",
+        "monitoring": "direct",
+        "eligibility_note": "Monitorare nuove edizioni; bando eventi secondo semestre 2026 risulta scaduto",
+        "monitoring_status": "ok",
+        "last_checked_at": "2026-11-18T23:04:01+00:00",
+        "changed": false,
+        "candidate_count": 1
+      },
+      {
+        "id": "biella-contributi",
+        "funder_id": "biella",
+        "name": "Sovvenzioni e contributi — trasparenza",
+        "url": "https://comune.biella.it/trasparenza/sovvenzioni-contributi-sussidi-vantaggi-economici/",
+        "submission": "da verificare",
+        "monitoring": "reference-only",
+        "eligibility_note": "Pagina di trasparenza: non equivale a domanda di contributo aperta",
+        "monitoring_status": "reference_only",
+        "last_checked_at": null,
+        "changed": false,
+        "candidate_count": null
       }
     ]
   },
@@ -1890,7 +2066,7 @@
       "program_id": "alba-cultura",
       "new": 0,
       "existing": 0,
-      "rejected": 8
+      "rejected": 7
     },
     {
       "program_id": "bra-associazioni",
@@ -1906,9 +2082,9 @@
     },
     {
       "program_id": "rivoli-associazioni",
-      "new": 1,
-      "existing": 0,
-      "rejected": 7
+      "new": 0,
+      "existing": 2,
+      "rejected": 5
     },
     {
       "program_id": "moncalieri-eventi",
@@ -1918,8 +2094,8 @@
     },
     {
       "program_id": "cmtorino-giovani",
-      "new": 6,
-      "existing": 0,
+      "new": 2,
+      "existing": 4,
       "rejected": 2
     },
     {
@@ -1933,6 +2109,12 @@
       "new": 0,
       "existing": 0,
       "rejected": 4
+    },
+    {
+      "program_id": "settimo-associazioni",
+      "new": 0,
+      "existing": 0,
+      "rejected": 2
     }
   ]
 }

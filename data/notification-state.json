@@ -6,13 +6,15 @@
     "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico%20amare.pdf",
     "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico.pdf",
     "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20amare.pdf",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/festival%20giovani/avviso%20di%20manifestazione%20di%20interesse%20festival%20giovani.pdf",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/guida%20sicura%2026/dd_363_2026%20-%20determina%20approvazione%20avviso.pdf",
     "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/c8fede5d77292d746efa498315c98a33.pdf/file/avviso%2bcontributi.pdf"
   ],
   "sent_days": {
-    "2026-11-18": 4
+    "2026-11-18": 6
   },
   "sent_months": {
-    "2026-11": 4
+    "2026-11": 6
   },
   "statuses": {
     "https://bandi.comune.torino.it": "ALTRO",
@@ -204,6 +206,8 @@
     "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico.pdf": "DA VERIFICARE",
     "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20amare.pdf": "DA VERIFICARE",
     "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20guida%20sicura.pdf": "ALTRO",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/festival%20giovani/avviso%20di%20manifestazione%20di%20interesse%20festival%20giovani.pdf": "DA VERIFICARE",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/guida%20sicura%2026/dd_363_2026%20-%20determina%20approvazione%20avviso.pdf": "DA VERIFICARE",
     "https://www.compagniadisanpaolo.it/it/contributi/bando-per-la-promozione-della-salute-mentale-delle-giovani-generazioni": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lattrattivita-e-la-professionalizzazione-di-artisti-e-creativi": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale": "APERTO",
