@@ -57,6 +57,40 @@ class APITests(unittest.TestCase):
   self.assertEqual(kwargs["params"]["apiKey"],"SEDIA")
   self.assertIn("43251814",kwargs["files"]["query"][1])
   self.assertLessEqual(kwargs["timeout"],30)
+ def test_archived_topic_is_consulted_via_official_details_api(self):
+  from eu_api import fetch_topic_evidence
+  topic="CREA-CULT-2024-LIT"
+  item={"url":"https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/"+topic,
+        "title":"Circulation of European literary works","source_id":"eufunding"}
+  record={"metadata":{"topicAbbreviation":[topic],
+       "topicDescription":["Support for circulation of translated literary works across Europe."],
+       "eligibleApplicants":["Publishing organisations capable of translating and distributing European literature."]}}
+  session=Mock()
+  session.post.return_value.json.return_value={"results":[record]}
+  result=fetch_topic_evidence(item,session,NOW)
+  self.assertIn("translated literary works",result["programme_objectives_excerpt"])
+  self.assertIn("Publishing organisations",result["beneficiaries_excerpt"])
+  self.assertTrue(result["detail_checked"])
+  self.assertEqual(result["detail_attempted_at"],NOW)
+  self.assertEqual(session.post.call_args.kwargs["params"]["text"],'"'+topic+'"')
+
+ def test_topic_missing_from_official_response_is_marked_insufficient(self):
+  from eu_api import fetch_topic_evidence
+  item={"url":"https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-TRAINING"}
+  session=Mock()
+  session.post.return_value.json.return_value={"results":[]}
+  result=fetch_topic_evidence(item,session,NOW)
+  self.assertEqual(result["detail_attempted_at"],NOW)
+  self.assertFalse(result["detail_checked"])
+  self.assertFalse(result.get("beneficiaries_excerpt"))
+
+ def test_eu_service_failure_remains_eligible_for_retry(self):
+  from eu_api import fetch_topic_evidence
+  item={"url":"https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2021-TRAINING"}
+  session=Mock()
+  session.post.side_effect=RuntimeError("offline")
+  self.assertNotIn("detail_attempted_at",fetch_topic_evidence(item,session,NOW))
+
  def test_invalid_response_fails_loudly(self):
   session=Mock()
   session.post.return_value.json.return_value={"unexpected":[]}
