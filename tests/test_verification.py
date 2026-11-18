@@ -67,6 +67,7 @@ class VerificationTests(unittest.TestCase):
           ("mic","https://spettacolo.cultura.gov.it/bando-teatro-urbano-sociale-e-di-strada-2026-assegnazione-dei-contributi/","Bando TEATRO URBANO / 2026"),
           ("piemonte","https://bandi.regione.piemonte.it/pre-informazione-fondi-ue","Pre informazione"),
           ("piemonte","https://www.regione.piemonte.it/web/bandi-pnrr-per-enti-locali","Bandi Enti Locali"),
+          ("piemonte","https://www.regione.piemonte.it/web/bandi-per-enti-locali","Bandi Enti Locali"),
           ("torino","https://bandi.comune.torino.it/","Bandi - Appalti"),
           ("erasmus","https://erasmus-plus.ec.europa.eu/opportunities","Opportunities"),
         ]
