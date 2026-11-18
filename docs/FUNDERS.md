@@ -49,4 +49,4 @@ La prima verifica crea una **baseline silenziosa**. Solo una variazione successi
 
 ## Integrità del catalogo
 
-Per non interrompere la pubblicazione dopo il rilevamento di nuove schede, il processo di scansione completa per tutti i record i campi prudenziali `application_path`, `application_next_actions` e `application_eligibility_verified=false` quando non disponibili, senza affermare un'ammissibilità accertata. Genera inoltre il riepilogo `catalog_reconciliation.coverage` richiesto dal controllo d'integrità. Questo allinea il report e i record alle verifiche già presenti in `src/scan_integrity.py`.
+L'ingestione dei nuovi bandi riutilizza le funzioni già presenti in `src/operational_assessment.py` e `src/catalog_reconciliation.py`: valutazioni operative conservative e coperture documentate sono prodotte dal medesimo ciclo di scansione, senza introdurre un modello parallelo.
