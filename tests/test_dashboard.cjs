@@ -18,7 +18,8 @@ const workflowClean=cleanWorkflow(workflowInput);
 assert.equal(workflowClean.phase,"Presentata");
 assert.equal(workflowClean.owner.length,120);
 assert.equal(workflowClean.due,"2027-02-28");
-assert.equal(cleanWorkflow({phase:"Impossibile",due:"non valido"}).phase,"Da valutare");
+assert.equal(cleanWorkflow({phase:"Impossibile",due:"non valido"}).phase,"Da esaminare");
+assert.equal(cleanWorkflow({phase:"Da valutare"}).phase,"Da esaminare");
 assert.equal(cleanWorkflow({due:"non valido"}).due,"");
 
 const short=opportunityUrl({id:"https://volontariatotorino.it/bandi/dora",public_id:143},"https://jeckodevelopment.com/dev/funding/");
