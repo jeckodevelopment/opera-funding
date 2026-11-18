@@ -157,6 +157,11 @@ def run():
                 review_ids=pick_for_review(found+backlog,indexed,review_limit)
                 review_ids.update(new_ids)
                 if args.history_backfill:
+                    # Revisit every incomplete historic record even if a prior
+                    # partial HTML/PDF extraction was performed recently.
+                    review_ids.update(item["id"] for item in found+backlog
+                                      if indexed.get(item["id"],{}).get("assessment_review_status")
+                                      not in ("REVISIONE DOCUMENTALE","EVIDENZE RACCOLTE"))
                     print(f"BACKFILL {source['id']}: {len(review_ids)} historical pages queued", flush=True)
                 found.sort(key=lambda x: (x.get("opportunity_type") not in ("finanziamento potenziale","call progettuale da verificare","non classificato"),
                                           "2026" not in x.get("title","") and "2027" not in x.get("title",""),
