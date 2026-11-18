@@ -12,7 +12,7 @@ from quality import check_link, reconcile_status
 from status import annotate
 from fit import explain
 
-SPECIFIC_CALL=re.compile(r"(?i)\\b(?:bando|bandi|call|avviso|avvisi|contribut[oi]\\s+per|finanziament[oi]\\s+per|sostegno\\s+(?:a|di|per)\\s+progett[oi])\\b")
+SPECIFIC_CALL=re.compile(r"(?i)\b(?:bando|bandi|call|avviso|avvisi|contribut[oi]\s+per|finanziament[oi]\s+per|sostegno\s+(?:a|di|per)\s+progett[oi])\b")
 GENERIC_URL=re.compile(r"(?i)/(?:come-richiedere|contatti|faq|progetti-terzo-settore|supporto-presentazione-progetti-terzo-settore|beneficenza|bandi|contributi)/?$")
 VERIFIABLE_FIELDS=("deadline","opening_date","beneficiaries_excerpt","funded_activities_excerpt",
                    "amount","requirements_excerpt","programme_objectives_excerpt")
