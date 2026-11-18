@@ -252,6 +252,9 @@ function evidenceSection(o){
  const dl=el("dl",undefined,"review-facts");
  dialogField(dl,"Adeguatezza tematica",score(o)+"/100");
  dialogField(dl,"Valutazione editoriale",assessmentLabel(o));
+ dialogField(dl,"Copertura documentale",o.assessment_review_status||"Non ancora determinata");
+ dialogField(dl,"Metodo di valutazione",o.assessment_method||"Valutazione preliminare");
+ if(o.assessment_checked_at)dialogField(dl,"Ultima revisione o tentativo",String(o.assessment_checked_at).slice(0,10));
  dialogField(dl,"Motivo della valutazione",o.assessment_reason||"Classificazione tematica basata sul punteggio e sulle fonti disponibili");
  dialogField(dl,"Ammissibilità",review.eligibility);
  dialogField(dl,"Affidabilità della valutazione",o.assessment_confidence||review.confidence||"Non documentata");
@@ -263,6 +266,12 @@ function evidenceSection(o){
  if(review.explanation){
   section.append(el("h4","Perché questa opportunità può interessare"));
   section.append(el("p",review.explanation));
+ }
+ if(Array.isArray(o.assessment_missing_fields)&&o.assessment_missing_fields.length){
+  section.append(el("h4","Elementi del bando ancora non acquisiti"));
+  const missingFields=el("ul");
+  for(const field of o.assessment_missing_fields)missingFields.append(el("li",field));
+  section.append(missingFields);
  }
  if(Array.isArray(o.assessment_gaps)&&o.assessment_gaps.length){
   section.append(el("h4","Informazioni non documentate o condizioni da verificare"));
@@ -577,6 +586,9 @@ function makeCard(o){
  const change=changeBadge(o);
  if(change)tags.append(el("span",change.label,"chip change "+change.kind));
  tags.append(el("span",assessmentLabel(o),"chip assessment"));
+ if(o.assessment_review_status && o.assessment_review_status!=="REVISIONE DOCUMENTALE"){
+  tags.append(el("span",o.assessment_review_status==="EVIDENZE RACCOLTE"?"Evidenze raccolte":"Verifica documentale parziale","chip"));
+ }
  if(isFollowed(o))tags.append(el("span",workflowRecord(o).phase,"chip personal-phase"));
  if(o.application_type)tags.append(el("span",o.application_type+" · "+(o.window_label||"Candidatura"),"chip"));
  const title=el("h3",undefined,"item-title");
