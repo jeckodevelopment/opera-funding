@@ -28,11 +28,11 @@ MAX_SUMMARY_LENGTH = 240
 # Narrow recognition: an explicit, mandatory municipal seat, without alternative
 # territorial benefit, operational presence, or partner eligibility clauses.
 MUNICIPAL_SEAT = re.compile(
-    r"(?i)\\bsede\\s+(?:legale|operativa)\\s+(?:nel\\s+comune\\s+di|nel\\s+territorio\\s+del\\s+comune\\s+di|a|in)\\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ' -]{1,45})"
+    r"(?i)\bsede\s+(?:legale|operativa)\s+(?:nel\s+comune\s+di|nel\s+territorio\s+del\s+comune\s+di|a|in)\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ' -]{1,45})"
 )
 ALTERNATIVE_ROUTE = re.compile(
-    r"(?i)\\b(?:oppure|ovvero|in\\s+alternativa|ricadut[ae]\\s+(?:sul|nel)\\s+territorio|"
-    r"operativit[aà]\\s+(?:sul|nel)\\s+territorio|partner|partenariat[io])\\b"
+    r"(?i)\b(?:oppure|ovvero|in\s+alternativa|ricadut[ae]\s+(?:sul|nel)\s+territorio|"
+    r"operativit[aà]\s+(?:sul|nel)\s+territorio|partner|partenariat[io])\b"
 )
 
 
