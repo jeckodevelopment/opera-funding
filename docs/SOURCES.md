@@ -16,7 +16,7 @@ Non aggirare sistemi anti-bot e rispettare robots.txt, termini d'uso e limiti di
 
 ## Nuove fonti europee (16/11/2026)
 - Desk Italia Europa Creativa: https://europacreativa.cultura.gov.it/ — pagina nazionale con notizie e aggiornamenti sulle call.
-- Interreg ALCOTRA: https://interreg-alcotra.eu/it/bandi-0 — progetti transfrontalieri Italia–Francia, potenzialmente utili per collaborazioni culturali e formative.
+- Interreg ALCOTRA: **fonte disattivata dalla scansione automatica** (robots.txt HTTP 503 persistente). Le schede storiche restano nel catalogo; la Regione Piemonte è riferimento istituzionale complementare, non sostituto esaustivo.
 - Agenzia nazionale Erasmus+ Italia: https://www.erasmusplus.it/programma/documenti-ufficiali/ — testi ufficiali e guide, non lista strutturata dei singoli bandi.
 
 Attenzione: il crawler generico legge ancora soltanto gli indici HTML; per i portali europei che mostrano bandi via JavaScript o documenti aggregati sono necessari adapter dedicati. L'aggiunta di una fonte non prova che tutte le sue call siano già coperte. Nessuna opportunità viene attribuita a Opera+ senza verifica dei requisiti.
@@ -114,3 +114,13 @@ Per la sostenibilità delle informazioni, il registro non mantiene uno stato ape
 
 ### Correzione delle ultime due schede (17/11/2026)
 Le schede Vol.To **Dora in Avanti** e **Linee Guida Fondo beneficenza Intesa Sanpaolo** hanno URL canonici sotto `/bandi/`. Il registro editoriale PR #46 era configurato erroneamente senza il segmento `/bandi/`, quindi il matching conservativo per host + percorso esatto non trasferiva mai le evidenze. Ora i due `match_path` corrispondono agli indirizzi realmente acquisiti. Un test riproduce gli URL integrali delle due opportunità e un secondo verifica che l'algoritmo non accetti percorsi simili ma estranei. Il registro mantiene il carattere **temporaneo** delle conferme di apertura, mentre il sito Intesa precisa che si tratta di una raccolta di domande nel corso dell'anno, non di una scadenza puntuale il 31 dicembre.
+
+## Disattivazione sorgente ALCOTRA e audit catalogo (19/11/2026)
+
+Il connettore `alcotra` non è più presente in `config/sources.json`, perché il controllo `robots.txt` continua a restituire HTTP 503 e impedisce una lettura automatica rispettosa delle regole. La pagina bandi può essere visibile manualmente o indicizzata, **ma questo non autorizza ad aggirare il blocco tecnico del nostro scanner**. La pagina istituzionale della [Regione Piemonte](https://www.regione.piemonte.it/web/temi/fondi-progetti-europei/programmi-progetti-europei/cooperazione-territoriale-europea-piemonte/programma-interreg-francia-italia-alcotra-2021-2027) resta un riferimento informativo; non equivale a un feed verificato di tutti i bandi ALCOTRA.
+
+L'identità della fonte ritirata è conservata in `config/retired_sources.json`, mentre la relativa pagina è rimossa anche dai controlli prioritari. Lo storico delle opportunità non viene cancellato e mantiene gli URL/ID; tutte le vecchie conferme di apertura vengono invalidate e lo stato temporale viene riconciliato conservativamente. Nessuna nuova richiesta è inviata al portale ritirato.
+
+La scansione produce `catalog_audit` in `data/scan-status.json`, che controlla **ogni scheda**, riporta il totale riconciliato, la distribuzione per stato e adeguatezza, gli ID senza valutazione, le possibili collisioni URL per stessa edizione e le schede aperte con evidenze/requisiti ancora da approfondire. Non corregge per ipotesi le date o attribuisce finanziatori dagli aggregatori senza prova. L'integrità blocca la pubblicazione in caso di valutazioni mancanti, fonte ritirata ancora APERTA o conteggi incoerenti.
+
+Il prossimo controllo manuale va concentrato sulle schede aperte con `priority_open_review`, in particolare quelle di adeguatezza media/alta che richiedono beneficiari, requisiti o verifiche dell'associazione. Le schede informative e i bandi scaduti rimangono consultabili come storico, senza essere etichettati APERTI.
