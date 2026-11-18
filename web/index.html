@@ -36,7 +36,7 @@
     <section class="overview" aria-label="Riepilogo bandi">
       <div class="metric metric-primary"><span class="metric-value" id="total">—</span><span class="metric-caption">Opportunità aperte</span></div>
       <div class="metric"><span class="metric-value" id="potential">—</span><span class="metric-caption">Totale schede nel catalogo</span></div>
-      <div class="metric"><span class="metric-value" id="high">—</span><span class="metric-caption">Affinità alta, da 60/100</span></div>
+      <div class="metric"><span class="metric-value" id="high">—</span><span class="metric-caption">Alta affinità fra le aperte</span></div>
       <div class="metric"><span class="metric-value" id="sources">—</span><span class="metric-caption">Fonti monitorate</span></div>
     </section>
     <section class="explore" aria-labelledby="results-title">
@@ -46,15 +46,15 @@
       </div>
       <p class="catalog-count-note" id="catalog-count-note" role="status">Le schede sono suddivise per stato: aperte, in arrivo, potenziali, scadute e altri contenuti. I contatori per affinità sono invece trasversali.</p>
       <div class="quick-tabs" role="group" aria-label="Filtra per stato della candidatura">
-        <button class="quick-tab active" type="button" data-value="aperto" aria-pressed="true">Aperte</button>
+        <button class="quick-tab" type="button" data-value="aperto" aria-pressed="false">Aperte</button>
         <button class="quick-tab" type="button" data-value="in arrivo" aria-pressed="false">In arrivo</button>
         <button class="quick-tab" type="button" data-value="non verificato" aria-pressed="false">Potenziali</button>
         <button class="quick-tab" type="button" data-value="chiuso" aria-pressed="false">Scadute</button>
         <button class="quick-tab" type="button" data-value="altro contenuto" aria-pressed="false">Altri contenuti</button>
         <button class="quick-tab" type="button" data-value="followed" aria-pressed="false">Da seguire</button>
-        <button class="quick-tab" type="button" data-value="" aria-pressed="false">Tutti</button>
+        <button class="quick-tab active" type="button" data-value="" aria-pressed="true">Tutti</button>
       </div>
-      <input id="status" type="hidden" value="aperto">
+      <input id="status" type="hidden" value="">
       <div class="filter-panel">
         <label class="search-label"><span>Cerca un'opportunità</span><span class="input-wrap"><span aria-hidden="true" class="search-icon">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Titolo, ente, tema…"></span></label>
         <label><span>Ente finanziatore</span><select id="issuer"><option value="">Tutti gli enti</option></select></label>
