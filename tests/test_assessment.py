@@ -30,6 +30,38 @@ class EditorialAssessmentTests(unittest.TestCase):
         self.assertIn("fonte ufficiale", row["assessment_basis"])
         self.assertEqual(row["assessment_source"], "https://example.org/bando")
 
+    def test_school_cultural_workshops_high_affinity_without_opera_word(self):
+        row = explain({
+            "title": "Progetti educativi e culturali nelle scuole",
+            "opportunity_type": "finanziamento potenziale", "relevance": 20,
+            "programme_objectives_excerpt": "Accesso alla cultura per gli studenti.",
+            "funded_activities_excerpt": "Laboratori culturali con scuole e associazioni.",
+            "beneficiaries_excerpt": "Associazioni culturali e istituti scolastici.",
+            "requirements_excerpt": "Partenariato educativo ammesso.",
+        })
+        self.assertEqual(row["assessment_label"], "ALTA AFFINITÀ")
+        self.assertTrue(any("scuole" in p for p in row["project_ideas"]))
+
+    def test_adult_cultural_education_can_be_relevant(self):
+        row = explain({
+            "title": "Educazione permanente per adulti",
+            "opportunity_type": "finanziamento potenziale",
+            "programme_objectives_excerpt": "Percorsi culturali accessibili alla popolazione adulta.",
+            "funded_activities_excerpt": "Incontri di formazione culturale e workshop.",
+        })
+        self.assertEqual(row["assessment_label"], "MEDIA AFFINITÀ")
+        self.assertTrue(any("adulti" in p for p in row["project_ideas"]))
+
+    def test_generic_training_is_not_certified_high_without_beneficiaries(self):
+        row = explain({
+            "title": "Formazione",
+            "opportunity_type": "finanziamento potenziale",
+            "funded_activities_excerpt": "Laboratori culturali e didattici per giovani.",
+            "programme_objectives_excerpt": "Educazione e inclusione territoriale.",
+        })
+        self.assertEqual(row["assessment_label"], "MEDIA AFFINITÀ")
+        self.assertTrue(any("Beneficiari" in p for p in row["assessment_gaps"]))
+
     def test_title_only_high_score_does_not_override_evidence(self):
         row = explain({
             "title": "Musica e formazione per tutti",
