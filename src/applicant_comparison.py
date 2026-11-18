@@ -92,7 +92,9 @@ def _declared_context(category, excerpt, profile, as_of):
             target = seat.group(1).strip(" .,;:").lower()
             # Accept only a short, unambiguous municipality name in a mandatory
             # seat clause. Longer text and 'territorio' references remain pending.
-            if len(target.split()) <= 3 and target not in REGIONS and target != str(declared).strip().lower():
+            if (len(target.split()) <= 3 and target not in REGIONS
+                    and target.split()[0] not in ("italia", "italy", "piemonte", "liguria")
+                    and target != str(declared).strip().lower()):
                 return ("potenzialmente_incompatibile",
                         "La fonte sembra richiedere una sede nel Comune di " +
                         seat.group(1).strip() + "; il Comune della sede dichiarata è " +
