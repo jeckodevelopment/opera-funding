@@ -45,5 +45,79 @@
     "evidence": "official_rolling_application_process",
     "review_valid_until": "2026-11-24",
     "match_host": "volontariatotorino.it"
+  },
+  {
+    "source_id": "crt",
+    "match_host": "www.fondazionecrt.it",
+    "match_path": "/bandi-progetti/bando-unito",
+    "official_url": "https://www.fondazionecrt.it/bandi-progetti/bando-unito/",
+    "evidence": "official_expired_application_deadline",
+    "deadline": "2026-09-15"
+  },
+  {
+    "source_id": "volto",
+    "match_host": "volontariatotorino.it",
+    "match_path": "/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026",
+    "official_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/bando-educazione-alla-cittadinanza-globale-sostenibilita-solidarieta-internazionale-anno-2026",
+    "evidence": "official_active_application_window",
+    "deadline": "2026-11-23",
+    "review_valid_until": "2026-11-23"
+  },
+  {
+    "source_id": "volto",
+    "match_host": "infobandi.csvnet.it",
+    "match_path": "/bando-2027-otto-per-mille-valdese",
+    "official_url": "https://chiesavaldese.org/bando-otto-per-mille-valdese-2027/",
+    "evidence": "official_active_application_window",
+    "deadline": "2027-01-29",
+    "opening_date": "2027-01-07",
+    "review_valid_until": "2027-01-29"
+  },
+  {
+    "source_id": "volto",
+    "match_host": "infobandi.csvnet.it",
+    "match_path": "/bando-2027-del-fondo-nazionale-per-la-rievocazione-storica",
+    "official_url": "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/",
+    "evidence": "official_active_application_window",
+    "deadline": "2027-01-31",
+    "opening_date": "2026-11-03",
+    "review_valid_until": "2026-11-25"
+  },
+  {
+    "source_id": "volto",
+    "match_host": "infobandi.csvnet.it",
+    "match_path": "/call-for-ideas-2026-di-fondazione-allianz-umanamente",
+    "official_url": "https://umanamente.allianz.it/",
+    "evidence": "official_active_application_window",
+    "deadline": "2026-12-10",
+    "opening_date": "2026-11-11",
+    "review_valid_until": "2026-11-25"
+  },
+  {
+    "source_id": "volto",
+    "match_host": "infobandi.csvnet.it",
+    "match_path": "/erase-indifference-challenge-2026",
+    "official_url": "https://www.eraseindifference.org/challenge/",
+    "evidence": "official_active_application_window",
+    "deadline": "2026-12-04",
+    "review_valid_until": "2026-11-25"
+  },
+  {
+    "source_id": "eucreative",
+    "match_host": "culture.ec.europa.eu",
+    "match_path": "/funding/calls/circulation-of-european-literary-works-5",
+    "official_url": "https://culture.ec.europa.eu/whats-new/news/creative-europe-opens-2027-call-for-literary-translation-and-promotion",
+    "evidence": "official_active_application_window",
+    "deadline": "2027-01-27",
+    "review_valid_until": "2026-11-25"
+  },
+  {
+    "source_id": "sanpaolo",
+    "match_host": "www.compagniadisanpaolo.it",
+    "match_path": "/it/contributi/buoni-formazione-per-la-cultura",
+    "official_url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "evidence": "official_rolling_application_process",
+    "review_valid_until": "2026-11-25",
+    "rolling": true
   }
 ]
