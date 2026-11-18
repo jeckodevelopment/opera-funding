@@ -34,15 +34,20 @@ def link_opportunities(rows,registry):
             row.pop("program_id",None)
     return rows
 
-def public_monitoring(registry,source_statuses,checked_at):
+def public_monitoring(registry,source_statuses,checked_at,direct_status=None):
     by_source={s["source_id"]:s for s in source_statuses}
+    direct_status=direct_status or {}
     public_funders=[dict(f) for f in registry["funders"]]
     public_programs=[]
     for p in registry["programs"]:
         status=by_source.get(p.get("source_id"))
+        direct=direct_status.get(p["id"]) if p.get("monitoring")=="direct" else None
         public_programs.append({**p,"monitoring_status":(
+            direct["status"] if direct else
             "ok" if status and status.get("ok") else
             "error" if status and not status.get("ok") else
             "not_configured"
-        ),"last_checked_at":status.get("checked_at") if status else None})
+        ),"last_checked_at":(direct.get("last_checked_at") if direct else status.get("checked_at") if status else None),
+            "changed":bool(direct.get("changed")) if direct else False,
+            "candidate_count":len(direct.get("candidate_links",[])) if direct else None})
     return {"checked_at":checked_at,"funders":public_funders,"programs":public_programs}
