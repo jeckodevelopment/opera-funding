@@ -127,6 +127,19 @@ class ReviewedAssessmentTests(unittest.TestCase):
         self.assertIn("2.000-10.000",voucher["requirements_excerpt"])
         self.assertIn("non ha documentato",voucher["assessment_reason"])
 
+    def test_official_eligibility_for_medium_calls(self):
+        import json
+        root=Path(__file__).resolve().parents[1]
+        reviews={x.get("public_id"):x for x in json.loads(
+            (root/"config/assessment_reviews.json").read_text(encoding="utf-8"))}
+        self.assertIn("anche di recente costituzione",reviews[33]["beneficiaries_excerpt"])
+        self.assertIn("RUNTS non è obbligatorio",reviews[177]["beneficiaries_excerpt"])
+        self.assertIn("enti privati senza scopo di lucro",reviews[252]["beneficiaries_excerpt"])
+        self.assertIn("20%",reviews[252]["assessment_reason"])
+        for ident in (33,177,252):
+            self.assertTrue(reviews[ident]["evidence_url"].startswith("https://"))
+            self.assertGreaterEqual(len(reviews[ident]["assessment_gaps"]),3)
+
     def test_different_host_does_not_inherit_review(self):
         row={"url":"https://example.org/bando","source_id":"a"}
         review={"source_id":"a","url":"https://another.org/bando","assessment_label":"MEDIA AFFINITÀ",
