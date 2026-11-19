@@ -12,6 +12,12 @@ class ClassificationTests(unittest.TestCase):
         self.assertEqual(item["opportunity_type"],"altro avviso")
         self.assertGreaterEqual(item["relevance"],45)
 
+    def test_rural_land_lease_auction_is_not_grant(self):
+        result=classify("AVVISO DI GARA PER L’ASSEGNAZIONE IN AFFITTO DI FONDI RUSTICI")
+        self.assertEqual(result["opportunity_type"],"altro avviso")
+        result=classify("Assegnazione in affitto terreni agricoli regionali")
+        self.assertEqual(result["opportunity_type"],"altro avviso")
+
     def test_financing_and_dates(self):
         item=classify("Contributi per festival musicali",
             "Contributi per festival musicali Attivo Pubblicato il 12/10/2026 Scadenza 05/04/2027 12:00")
