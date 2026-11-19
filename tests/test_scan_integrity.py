@@ -120,6 +120,16 @@ class ScanIntegrityTests(unittest.TestCase):
         report["open_eligibility_review"]["items"][0]["tasks"]=[]
         self.assertTrue(any("senza verifiche" in x for x in self.check(rows,report)))
 
+    def test_ordinary_scan_resyncs_after_queue_before_processing(self):
+        workflow=(Path(__file__).resolve().parents[1]/".github/workflows/scan.yml").read_text()
+        self.assertIn("group: funding-scan",workflow)
+        self.assertIn("git fetch origin main",workflow)
+        self.assertIn("git reset --hard origin/main",workflow)
+        self.assertLess(workflow.index("git reset --hard origin/main"),
+                        workflow.index("run: python src/scan.py"))
+        self.assertLess(workflow.index("git reset --hard origin/main"),
+                        workflow.index("run: python src/notify.py"))
+
     def test_historical_backfill_uses_fresh_main_and_stages_generated_data(self):
         workflow=(Path(__file__).resolve().parents[1]/".github/workflows/history-backfill.yml").read_text()
         self.assertIn("git reset --hard origin/main",workflow)
