@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-19T00:35:59+00:00",
+  "checked_at": "2026-11-19T09:49:57+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,23 +7,23 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "crt",
       "source_name": "Fondazione CRT",
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
-      "discovered": 2,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "discovered": 3,
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "piemonte",
       "source_name": "Regione Piemonte",
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
-      "discovered": 15,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "discovered": 14,
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "torino",
@@ -31,23 +31,23 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "culturatorino",
       "source_name": "Fondazione per la Cultura Torino",
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "discovered": 21,
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "volto",
       "source_name": "Vol.To",
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
-      "discovered": 0,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "discovered": 16,
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "eucreative",
@@ -63,7 +63,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "erasmus",
@@ -71,7 +71,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "eufunding",
@@ -79,7 +79,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "checked_at": "2026-11-19T09:49:57+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-19T00:35:59+00:00",
+      "checked_at": "2026-11-19T09:49:57+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,20 +99,20 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-19T00:35:59+00:00"
+      "checked_at": "2026-11-19T09:49:57+00:00"
     }
   ],
   "coverage": {
     "totals": {
-      "all": 264,
-      "open": 34,
-      "closed": 140,
+      "all": 268,
+      "open": 35,
+      "closed": 143,
       "upcoming": 2,
       "unverified": 88,
-      "dated": 173,
-      "dated_with_source": 173,
-      "detail_checked": 192,
-      "reachable": 263,
+      "dated": 177,
+      "dated_with_source": 177,
+      "detail_checked": 196,
+      "reachable": 267,
       "candidate_unverified": 7,
       "informational_unverified": 81,
       "candidate_missing_deadline": 9
@@ -152,12 +152,12 @@
         "candidate_missing_deadline": 1
       },
       "piemonte": {
-        "total": 20,
-        "open": 5,
+        "total": 24,
+        "open": 6,
         "unverified": 4,
-        "dated": 14,
-        "dated_with_source": 14,
-        "detail_checked": 19,
+        "dated": 18,
+        "dated_with_source": 18,
+        "detail_checked": 23,
         "candidate_unverified": 0,
         "informational_unverified": 4,
         "candidate_missing_deadline": 1
@@ -277,37 +277,67 @@
     "sources_total": 12
   },
   "assessment_coverage": {
-    "total": 264,
-    "with_document_issues": 34,
-    "with_editorial_label": 264,
+    "total": 268,
+    "with_document_issues": 38,
+    "with_editorial_label": 268,
     "by_review_status": {
-      "PARZIALE": 101,
-      "EVIDENZE RACCOLTE": 18,
+      "PARZIALE": 103,
+      "EVIDENZE RACCOLTE": 20,
       "REVISIONE DOCUMENTALE": 36,
       "FONTE NON SUFFICIENTE": 109
     },
     "completely_verified_applicability": 0,
-    "open_without_individual_review": 0,
+    "open_without_individual_review": 1,
     "new_pending": 0
   },
   "open_eligibility_review": {
     "as_of": "2026-11-19",
-    "open_total": 34,
-    "in_queue": 34,
+    "open_total": 35,
+    "in_queue": 35,
     "condition_status_counts": {
       "compatibilita_documentata": 3,
+      "condizionata": 1,
       "informazioni_insufficienti": 31
     },
     "specific_requirement_category_counts": {
       "condizioni_economiche": 1,
       "natura_giuridica": 6,
+      "partenariato": 1,
       "territorio": 4
     },
     "application_path_counts": {
-      "bassa_priorita_progettuale": 22,
-      "integrare_verifica_documentale": 12
+      "bassa_priorita_progettuale": 17,
+      "integrare_verifica_documentale": 18
     },
     "items": [
+      {
+        "public_id": 120,
+        "title": "Call for proposals: European Literacy Coalition consortium",
+        "deadline": "2026-11-23",
+        "days_remaining": 4,
+        "adequacy": "BASSA",
+        "application_path": "bassa_priorita_progettuale",
+        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_next_actions": [
+          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Verificare requisiti e accordi di partenariato",
+          "Chiarire gli obblighi di partenariato o cofinanziamento",
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione.",
+          "Accertare la disponibilità di cinque enti indipendenti di cinque paesi distinti, i ruoli formali del consorzio e le prove di capacità gestionale prima di ipotizzare una candidatura."
+        ],
+        "condition_status": "condizionata",
+        "review_status": "REVISIONE DOCUMENTALE",
+        "pending_conditions": 1,
+        "tasks": [
+          "Verificare requisiti e accordi di partenariato",
+          "Chiarire gli obblighi di partenariato o cofinanziamento",
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione.",
+          "Accertare la disponibilità di cinque enti indipendenti di cinque paesi distinti, i ruoli formali del consorzio e le prove di capacità gestionale prima di ipotizzare una candidatura."
+        ],
+        "sources": [
+          "https://erasmus-plus.ec.europa.eu/funding-opportunities/european-literacy-coalition-consortium-fpa-sga"
+        ]
+      },
       {
         "public_id": 175,
         "title": "Dora in Avanti: bando per lo sviluppo delle comunità a Torino nord Scadenza: 20 Novembre 2026 Ente promotore: Fondazione Lavazza Territorio: Torino e Settimo Torinese Ambito: Ambiente , Cittadinanza attiva , Salute , Soc",
@@ -359,28 +389,6 @@
         "sources": [
           "https://bandi.regione.piemonte.it/contributi-finanziamenti/bando-educazione-alla-cittadinanza-globale-sostenibilita-solidarieta-internazionale-anno-2026",
           "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026/"
-        ]
-      },
-      {
-        "public_id": 120,
-        "title": "Call for proposals: European Literacy Coalition consortium",
-        "deadline": "2026-11-23",
-        "days_remaining": 4,
-        "adequacy": "BASSA",
-        "application_path": "bassa_priorita_progettuale",
-        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
-        "application_next_actions": [
-          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
-        ],
-        "condition_status": "informazioni_insufficienti",
-        "review_status": "REVISIONE DOCUMENTALE",
-        "pending_conditions": 0,
-        "tasks": [
-          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
-        ],
-        "sources": [
-          "https://erasmus-plus.ec.europa.eu/funding-opportunities/european-literacy-coalition-consortium-fpa-sga"
         ]
       },
       {
@@ -438,6 +446,33 @@
         "sources": [
           "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4576/13_Avviso_Eventi_Culturali_2027.pdf",
           "https://bandi.comune.torino.it/avviso/invito-presentare-progetti-iniziative-varie-anno-2027-circoscrizione-7"
+        ]
+      },
+      {
+        "public_id": 270,
+        "title": "Per saperne di più su AVVISO DI GARA PER L’ASSEGNAZIONE IN AFFITTO DI FONDI RUSTICI IN BUTTIGLIERA ALTA E ROSTA (TO)",
+        "deadline": "2026-11-27",
+        "days_remaining": 8,
+        "adequacy": "MEDIA",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+        "application_next_actions": [
+          "Recuperare bando integrale e requisiti ufficiali di candidatura",
+          "Verificare le attività effettivamente finanziabili",
+          "Recuperare documentazione ufficiale non letta completamente",
+          "Attività finanziabili non documentate."
+        ],
+        "condition_status": "informazioni_insufficienti",
+        "review_status": "PARZIALE",
+        "pending_conditions": 0,
+        "tasks": [
+          "Verificare le attività effettivamente finanziabili",
+          "Recuperare documentazione ufficiale non letta completamente",
+          "Attività finanziabili non documentate."
+        ],
+        "sources": [
+          "https://bandi.regione.piemonte.it/system/files/Avviso_gara_0.pdf",
+          "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to"
         ]
       },
       {
@@ -544,19 +579,21 @@
         "deadline": "2026-12-04",
         "days_remaining": 15,
         "adequacy": "BASSA",
-        "application_path": "bassa_priorita_progettuale",
-        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Candidatura diretta non ammissibile alle condizioni documentate: Il Challenge 2026 ammette soltanto iniziative già realizzate o in corso con impatto concreto dimostrabile contro l'indifferenza alla discriminazione. Opera+ dichiara nessuna attività svolta e non risulta avere un progetto già attuato conforme.",
         "application_next_actions": [
-          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Verificare eventuale adesione futura ai requisiti o un ruolo partner esplicitamente ammesso",
           "Opera+ dichiara nessun progetto già realizzato: non presentare un progetto solo futuro come già completato.",
-          "Verificare la possibilità di partecipare come partner a un progetto preesistente condotto da altra organizzazione, nel rispetto delle regole del premio."
+          "Verificare la possibilità di partecipare come partner a un progetto preesistente condotto da altra organizzazione, nel rispetto delle regole del premio.",
+          "Non presentare un progetto ancora da avviare come se avesse già risultati misurabili; verificare solo eventuale progetto effettivamente esistente e documentato."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
           "Opera+ dichiara nessun progetto già realizzato: non presentare un progetto solo futuro come già completato.",
-          "Verificare la possibilità di partecipare come partner a un progetto preesistente condotto da altra organizzazione, nel rispetto delle regole del premio."
+          "Verificare la possibilità di partecipare come partner a un progetto preesistente condotto da altra organizzazione, nel rispetto delle regole del premio.",
+          "Non presentare un progetto ancora da avviare come se avesse già risultati misurabili; verificare solo eventuale progetto effettivamente esistente e documentato."
         ],
         "sources": [
           "https://www.eraseindifference.org/challenge/",
@@ -598,17 +635,19 @@
         "deadline": "2026-12-10",
         "days_remaining": 21,
         "adequacy": "BASSA",
-        "application_path": "bassa_priorita_progettuale",
-        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Candidatura diretta non ammissibile alle condizioni documentate: La Regione Piemonte ammette alla candidatura soltanto gli Ambiti Territoriali Sociali (ATS), mentre Opera+ è un'associazione culturale e non un ATS. Un eventuale contributo operativo a un progetto di un ATS richiede accordo e verifica distinta.",
         "application_next_actions": [
-          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+          "Verificare eventuale adesione futura ai requisiti o un ruolo partner esplicitamente ammesso",
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione.",
+          "Candidatura diretta riservata agli ATS: verificare soltanto un eventuale ruolo esecutivo o partenariato formalmente ammesso."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione.",
+          "Candidatura diretta riservata agli ATS: verificare soltanto un eventuale ruolo esecutivo o partenariato formalmente ammesso."
         ],
         "sources": [
           "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-invecchiamento-attivo-parte-ambiti-territoriali-sociali"
@@ -827,19 +866,21 @@
         "deadline": "2027-01-31",
         "days_remaining": 73,
         "adequacy": "BASSA",
-        "application_path": "bassa_priorita_progettuale",
-        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Candidatura diretta non ammissibile alle condizioni documentate: Per il Fondo 2027 la fonte ministeriale richiede una manifestazione di rievocazione storica svolta con continuità da almeno cinque anni e una specifica categoria di richiedente. Opera+ non dispone di eventi quinquennali documentati.",
         "application_next_actions": [
-          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Verificare eventuale adesione futura ai requisiti o un ruolo partner esplicitamente ammesso",
           "Per Opera+ verificare solo un eventuale contributo progettuale non da capofila presso un ente idoneo con manifestazione quinquennale.",
-          "Non usare l'eventuale pertinenza di opera lirica storica per inferire automaticamente una rievocazione storica ammissibile."
+          "Non usare l'eventuale pertinenza di opera lirica storica per inferire automaticamente una rievocazione storica ammissibile.",
+          "La scheda del portale aggregatore non sostituisce il bando ministeriale; candidatura autonoma non praticabile sulla base dei requisiti documentati."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
           "Per Opera+ verificare solo un eventuale contributo progettuale non da capofila presso un ente idoneo con manifestazione quinquennale.",
-          "Non usare l'eventuale pertinenza di opera lirica storica per inferire automaticamente una rievocazione storica ammissibile."
+          "Non usare l'eventuale pertinenza di opera lirica storica per inferire automaticamente una rievocazione storica ammissibile.",
+          "La scheda del portale aggregatore non sostituisce il bando ministeriale; candidatura autonoma non praticabile sulla base dei requisiti documentati."
         ],
         "sources": [
           "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/",
@@ -852,17 +893,19 @@
         "deadline": "2027-01-31",
         "days_remaining": 73,
         "adequacy": "BASSA",
-        "application_path": "bassa_priorita_progettuale",
-        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Candidatura diretta non ammissibile alle condizioni documentate: Il Fondo 2027 finanzia esclusivamente manifestazioni di rievocazione storica svolte con continuità da almeno cinque anni, da soggetti pubblici o enti di rievocazione ammessi; Opera+ è nata nel 2026 e non ha manifestazioni quinquennali.",
         "application_next_actions": [
-          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
-          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+          "Verificare eventuale adesione futura ai requisiti o un ruolo partner esplicitamente ammesso",
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione.",
+          "Non usare un nuovo corso o evento lirico come prova di rievocazione storica continuativa quinquennale; valutare solo un eventuale ruolo distinto presso ente idoneo."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
-          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+          "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione.",
+          "Non usare un nuovo corso o evento lirico come prova di rievocazione storica continuativa quinquennale; valutare solo un eventuale ruolo distinto presso ente idoneo."
         ],
         "sources": [
           "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/"
@@ -1091,19 +1134,21 @@
         "deadline": "2027-04-30",
         "days_remaining": 162,
         "adequacy": "BASSA",
-        "application_path": "bassa_priorita_progettuale",
-        "application_path_reason": "Adeguatezza progettuale BASSA; mantenere l'opportunità consultabile e verificare soltanto eventuali motivi concreti per rivalutarla",
+        "application_path": "integrare_verifica_documentale",
+        "application_path_reason": "Candidatura diretta non ammissibile alle condizioni documentate: La linea Culture Moves Europe per mobilità individuale ammette artisti e professionisti come persone fisiche, singolarmente o in gruppi fino a cinque; non finanzia una candidatura presentata direttamente dall'associazione Opera+.",
         "application_next_actions": [
-          "Valutare se esiste un progetto coerente prima di investire nella candidatura",
+          "Verificare eventuale adesione futura ai requisiti o un ruolo partner esplicitamente ammesso",
           "Non candidabile direttamente da un'associazione in questa linea.",
-          "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso."
+          "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso.",
+          "Verificare l'eventuale interesse di singoli professionisti culturali e il partner estero; non presentare Opera+ come beneficiario diretto."
         ],
         "condition_status": "informazioni_insufficienti",
         "review_status": "REVISIONE DOCUMENTALE",
         "pending_conditions": 0,
         "tasks": [
           "Non candidabile direttamente da un'associazione in questa linea.",
-          "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso."
+          "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso.",
+          "Verificare l'eventuale interesse di singoli professionisti culturali e il partner estero; non presentare Opera+ come beneficiario diretto."
         ],
         "sources": [
           "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility"
@@ -1166,51 +1211,51 @@
   "catalog_reconciliation": {
     "coverage": {
       "catalogo": {
-        "total": 264,
+        "total": 268,
         "adequacy_counts": {
           "ALTA": 11,
           "BASSA": 94,
           "INFORMATIVA": 101,
-          "MEDIA": 58
+          "MEDIA": 62
         },
         "missing_documentation": {
-          "finalita": 132,
-          "attivita_finanziabili": 210,
+          "finalita": 133,
+          "attivita_finanziabili": 212,
           "beneficiari": 144,
-          "requisiti": 166
+          "requisiti": 167
         },
-        "with_document_issues": 34,
-        "with_unresolved_applicant_checks": 15,
+        "with_document_issues": 38,
+        "with_unresolved_applicant_checks": 16,
         "source_not_attributed": 65
       },
       "aperte": {
-        "total": 34,
+        "total": 35,
         "adequacy_counts": {
           "BASSA": 28,
-          "MEDIA": 6
+          "MEDIA": 7
         },
         "missing_documentation": {
           "finalita": 0,
-          "attivita_finanziabili": 0,
+          "attivita_finanziabili": 1,
           "beneficiari": 0,
           "requisiti": 0
         },
-        "with_document_issues": 0,
-        "with_unresolved_applicant_checks": 11,
+        "with_document_issues": 1,
+        "with_unresolved_applicant_checks": 12,
         "source_not_attributed": 0
       },
       "aperte_alta_media": {
-        "total": 6,
+        "total": 7,
         "adequacy_counts": {
-          "MEDIA": 6
+          "MEDIA": 7
         },
         "missing_documentation": {
           "finalita": 0,
-          "attivita_finanziabili": 0,
+          "attivita_finanziabili": 1,
           "beneficiari": 0,
           "requisiti": 0
         },
-        "with_document_issues": 0,
+        "with_document_issues": 1,
         "with_unresolved_applicant_checks": 6,
         "source_not_attributed": 0
       }
@@ -1221,6 +1266,7 @@
       23,
       8,
       177,
+      270,
       146
     ],
     "notes": "I conteggi indicano copertura delle evidenze, non ammissibilità certificata."
@@ -1228,43 +1274,43 @@
   "requirement_reconciliation": {
     "coverage": {
       "catalogo": {
-        "total": 264,
+        "total": 268,
         "coverage_status_counts": {
-          "confronti_documentati": 15,
-          "ostacolo_documentato": 2,
-          "senza_requisiti_confrontabili": 146,
+          "confronti_documentati": 16,
+          "ostacolo_documentato": 7,
+          "senza_requisiti_confrontabili": 144,
           "avviso_informativo": 101
         },
-        "requirements_compared": 18,
+        "requirements_compared": 19,
         "comparison_status_counts": {
           "compatibile": 0,
           "potenzialmente_incompatibile": 0,
-          "da_verificare": 18
+          "da_verificare": 19
         },
-        "with_explicit_direct_blocker": 6
+        "with_explicit_direct_blocker": 11
       },
       "aperte": {
-        "total": 34,
+        "total": 35,
         "coverage_status_counts": {
-          "confronti_documentati": 11,
-          "ostacolo_documentato": 2,
-          "senza_requisiti_confrontabili": 21,
+          "confronti_documentati": 12,
+          "ostacolo_documentato": 7,
+          "senza_requisiti_confrontabili": 16,
           "avviso_informativo": 0
         },
-        "requirements_compared": 12,
+        "requirements_compared": 13,
         "comparison_status_counts": {
           "compatibile": 0,
           "potenzialmente_incompatibile": 0,
-          "da_verificare": 12
+          "da_verificare": 13
         },
-        "with_explicit_direct_blocker": 6
+        "with_explicit_direct_blocker": 11
       },
       "aperte_alta_media": {
-        "total": 6,
+        "total": 7,
         "coverage_status_counts": {
           "confronti_documentati": 6,
           "ostacolo_documentato": 0,
-          "senza_requisiti_confrontabili": 0,
+          "senza_requisiti_confrontabili": 1,
           "avviso_informativo": 0
         },
         "requirements_compared": 7,
@@ -1278,8 +1324,8 @@
     },
     "open_without_comparable_requirements": [
       {
-        "public_id": 120,
-        "adequacy": "BASSA",
+        "public_id": 270,
+        "adequacy": "MEDIA",
         "has_requirements_excerpt": true,
         "has_beneficiaries_excerpt": true,
         "has_attributed_assessment_source": true
@@ -1293,20 +1339,6 @@
       },
       {
         "public_id": 115,
-        "adequacy": "BASSA",
-        "has_requirements_excerpt": true,
-        "has_beneficiaries_excerpt": true,
-        "has_attributed_assessment_source": true
-      },
-      {
-        "public_id": 148,
-        "adequacy": "BASSA",
-        "has_requirements_excerpt": true,
-        "has_beneficiaries_excerpt": true,
-        "has_attributed_assessment_source": true
-      },
-      {
-        "public_id": 25,
         "adequacy": "BASSA",
         "has_requirements_excerpt": true,
         "has_beneficiaries_excerpt": true,
@@ -1335,20 +1367,6 @@
       },
       {
         "public_id": 189,
-        "adequacy": "BASSA",
-        "has_requirements_excerpt": true,
-        "has_beneficiaries_excerpt": true,
-        "has_attributed_assessment_source": true
-      },
-      {
-        "public_id": 162,
-        "adequacy": "BASSA",
-        "has_requirements_excerpt": true,
-        "has_beneficiaries_excerpt": true,
-        "has_attributed_assessment_source": true
-      },
-      {
-        "public_id": 254,
         "adequacy": "BASSA",
         "has_requirements_excerpt": true,
         "has_beneficiaries_excerpt": true,
@@ -1411,13 +1429,6 @@
         "has_attributed_assessment_source": true
       },
       {
-        "public_id": 32,
-        "adequacy": "BASSA",
-        "has_requirements_excerpt": true,
-        "has_beneficiaries_excerpt": true,
-        "has_attributed_assessment_source": true
-      },
-      {
         "public_id": 188,
         "adequacy": "BASSA",
         "has_requirements_excerpt": true,
@@ -1428,10 +1439,10 @@
     "notes": "Nessun requisito rilevato non equivale a requisito assente o soddisfatto. La copertura non certifica ammissibilità e non esclude opportunità."
   },
   "catalog_audit": {
-    "records_checked": 264,
+    "records_checked": 268,
     "status_counts": {
-      "APERTO": 34,
-      "CHIUSO": 140,
+      "APERTO": 35,
+      "CHIUSO": 143,
       "DA VERIFICARE": 88,
       "IN ARRIVO": 2
     },
@@ -1439,7 +1450,7 @@
       "ALTA": 11,
       "BASSA": 94,
       "INFORMATIVA": 101,
-      "MEDIA": 58
+      "MEDIA": 62
     },
     "unassessed_ids": [],
     "duplicate_public_ids": [],
@@ -1449,6 +1460,15 @@
     },
     "retired_open_ids": [],
     "priority_open_review": [
+      {
+        "public_id": 270,
+        "adequacy": "MEDIA",
+        "missing_evidence": [
+          "attivita_finanziabili"
+        ],
+        "unresolved_checks": 0,
+        "document_issues": true
+      },
       {
         "public_id": 33,
         "adequacy": "MEDIA",
@@ -1499,6 +1519,13 @@
         "document_issues": false
       },
       {
+        "public_id": 120,
+        "adequacy": "BASSA",
+        "missing_evidence": [],
+        "unresolved_checks": 1,
+        "document_issues": false
+      },
+      {
         "public_id": 143,
         "adequacy": "BASSA",
         "missing_evidence": [],
@@ -1527,11 +1554,11 @@
         "document_issues": false
       }
     ],
-    "priority_open_review_count": 11,
+    "priority_open_review_count": 13,
     "coverage_note": "Controllo automatico dell'intero catalogo: non certifica ammissibilità o contenuti non disponibili."
   },
   "funder_monitoring": {
-    "checked_at": "2026-11-19T00:35:59+00:00",
+    "checked_at": "2026-11-19T09:49:57+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -2037,8 +2064,8 @@
         "url": "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
         "submission": "da verificare",
         "monitoring": "direct",
-        "monitoring_status": "error",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "monitoring_status": "ok",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2050,7 +2077,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2063,7 +2090,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2076,7 +2103,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2089,7 +2116,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2102,7 +2129,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2115,7 +2142,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2128,7 +2155,7 @@
         "monitoring": "direct",
         "eligibility_note": "Bandi comunali, eleggibilità legata a sede o attività ad Alba",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -2141,7 +2168,7 @@
         "monitoring": "direct",
         "eligibility_note": "Contributi territoriali: verificare operatività a Bra e finestra annuale",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -2154,7 +2181,7 @@
         "monitoring": "direct",
         "eligibility_note": "Verificare l'edizione e la ricaduta sul territorio",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 11
       },
@@ -2167,7 +2194,7 @@
         "monitoring": "direct",
         "eligibility_note": "Avviso 2026; non presumerne la riapertura negli anni successivi",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -2180,7 +2207,7 @@
         "monitoring": "direct",
         "eligibility_note": "Richiesta spesso condizionata a albo e attività comunali",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -2206,7 +2233,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni bandi sono riservati ai Comuni: non presumere ammissibilità associazioni",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 10
       },
@@ -2232,7 +2259,7 @@
         "monitoring": "direct",
         "eligibility_note": "Finestre e bandi da verificare per edizione",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -2245,7 +2272,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni programmi rivolti a ricercatori o scuole: eleggibilità da verificare",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 2
       },
@@ -2388,7 +2415,7 @@
         "monitoring": "direct",
         "eligibility_note": "Monitorare nuove edizioni; bando eventi secondo semestre 2026 risulta scaduto",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -2414,7 +2441,7 @@
         "monitoring": "direct",
         "eligibility_note": "La candidatura non è automaticamente un bando; verificare singoli avvisi e possibilità per associazioni culturali",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": true,
         "candidate_count": 0
       },
@@ -2427,7 +2454,7 @@
         "monitoring": "direct",
         "eligibility_note": "Monitorare avvisi e partecipazione, senza presumere contributi economici",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": true,
         "candidate_count": 0
       },
@@ -2440,7 +2467,7 @@
         "monitoring": "direct",
         "eligibility_note": "Verificare appartenenza alla rete, natura del progetto e regole dell'edizione; non equiparare la pagina premi a call aperta",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2453,7 +2480,7 @@
         "monitoring": "direct",
         "eligibility_note": "Rete e programmi di collaborazione, non contributo automatico a una associazione",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2466,7 +2493,7 @@
         "monitoring": "direct",
         "eligibility_note": "Richiede partenariati fra festival di diversi Paesi; verificare ruolo del capofila e ammissibilità dell'opera",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -2479,9 +2506,9 @@
         "monitoring": "direct",
         "eligibility_note": "Ogni bando ha criteri e tematiche propri; non presumere apertura o accessibilità",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": true,
-        "candidate_count": 0
+        "candidate_count": 9
       },
       {
         "id": "creative-europe-culture",
@@ -2493,7 +2520,7 @@
         "monitoring": "existing-source",
         "eligibility_note": "Verificare requisiti di partenariato e inclusione della musica/opera nella specifica call",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-19T00:35:59+00:00",
+        "last_checked_at": "2026-11-19T09:49:57+00:00",
         "changed": false,
         "candidate_count": null
       }
@@ -2516,7 +2543,7 @@
       "program_id": "alba-cultura",
       "new": 0,
       "existing": 0,
-      "rejected": 8
+      "rejected": 7
     },
     {
       "program_id": "bra-associazioni",
@@ -2533,8 +2560,8 @@
     {
       "program_id": "rivoli-associazioni",
       "new": 0,
-      "existing": 1,
-      "rejected": 7
+      "existing": 2,
+      "rejected": 5
     },
     {
       "program_id": "moncalieri-eventi",
@@ -2600,7 +2627,7 @@
       "program_id": "ecf-open-calls",
       "new": 0,
       "existing": 0,
-      "rejected": 0
+      "rejected": 8
     }
   ]
 }

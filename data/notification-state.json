@@ -1,5 +1,6 @@
 {
   "alerted_ids": [
+    "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to",
     "https://infobandi.csvnet.it/bando-2027-otto-per-mille-valdese/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-otto-per-mille-valdese",
     "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026",
     "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27",
@@ -12,10 +13,11 @@
     "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/c8fede5d77292d746efa498315c98a33.pdf/file/avviso%2bcontributi.pdf"
   ],
   "sent_days": {
-    "2026-11-18": 8
+    "2026-11-18": 8,
+    "2026-11-19": 2
   },
   "sent_months": {
-    "2026-11": 8
+    "2026-11": 10
   },
   "statuses": {
     "https://bandi.comune.torino.it": "ALTRO",
@@ -32,7 +34,9 @@
     "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4352/all.2_scheda_progetto_0.docx": "ALTRO",
     "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4353/avviso_torino_ycaf.pdf": "ALTRO",
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali": "ALTRO",
+    "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-manifestazione-interesse-provvista-bei-selezione-intermediari-bancari": "ALTRO",
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-pubblico-manifestazione-interesse-utile-allindividuazione-operatori-economici-invitare": "ALTRO",
+    "https://bandi.regione.piemonte.it/concorsi-incarichi-stage/avviso-mobilita-esterna-aree-funzionari-eq-istruttori-avviso-12026": "ALTRO",
     "https://bandi.regione.piemonte.it/concorsi-incarichi-stage/avviso-selezione-pubblica-un-incarico-dirigenziale": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo": "APERTO",
@@ -42,11 +46,13 @@
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-reti-antigrandine-srd06-intervento-121-bando-2026": "APERTO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/formazione-individuale-continua-permanente-2023-2027-avviso-aggiornato": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni": "APERTO",
+    "https://bandi.regione.piemonte.it/contributi-finanziamenti/mercati-rionali-concessione-contributi-sostegno-progetti-investimento": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/patrimonio-linguistico-dialettale-piemonte-avviso-pubblico-finanziamento-invito-alla-presentazione": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-invecchiamento-attivo-parte-ambiti-territoriali-sociali": "APERTO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-servizio-civile-regionale-volontario-quarta-edizione-annualita-2027": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/sostegno-progetti-favore-dei-minori-vittime-violenza-assistita-azione-5": "ALTRO",
     "https://bandi.regione.piemonte.it/crowdfunding": "ALTRO",
+    "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to": "APERTO",
     "https://bandi.regione.piemonte.it/nomine/avviso-nomina-n-4-2026-agenzia-accoglienza-promozione-turistica-locale-turismo-torino-provincia-scrl": "ALTRO",
     "https://bandi.regione.piemonte.it/pre-informazione-fondi-ue": "ALTRO",
     "https://bandi.regione.piemonte.it/pre-informazione-fondi-ue/sistema-regionale-standard-formativi-contributo-funzionamento-commissioni-tecniche": "ALTRO",
