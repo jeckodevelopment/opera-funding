@@ -32,7 +32,8 @@ from eligibility_specific import annotate_specific_requirements
 from applicant_comparison import load_applicant_profile, annotate_applicant_comparison
 from open_review_queue import build_open_review_queue
 from operational_assessment import annotate_operational_assessment
-from catalog_reconciliation import summarize_catalog_reconciliation, reconcile_catalog_assessments
+from catalog_reconciliation import (summarize_catalog_reconciliation, reconcile_catalog_assessments,
+                                    annotate_requirement_coverage, summarize_requirement_coverage)
 from catalog_audit import load_retired_sources, mark_retired_source, audit_catalog
 from funder_registry import load_registry, link_opportunities, public_monitoring
 from programme_monitor import check_programmes, load_programme_state, public_status
@@ -328,6 +329,7 @@ def run():
         apply_adequacy(row)
     assessment_fallback_count=reconcile_catalog_assessments(rows)
     for row in rows:
+        annotate_requirement_coverage(row)
         annotate_operational_assessment(row)
     rows=link_opportunities(rows, registry_funders)
     rows=track_changes(rows, existing, now)
@@ -340,6 +342,7 @@ def run():
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows),
                                         "open_eligibility_review":build_open_review_queue(rows,now[:10]),
                                         "catalog_reconciliation":summarize_catalog_reconciliation(rows),
+                                        "requirement_reconciliation":summarize_requirement_coverage(rows),
                                         "catalog_audit":catalogue_audit,
                                         "funder_monitoring":public_monitoring(registry_funders,statuses,now,public_status(programme_state)),
                                         "programme_ingestion":programme_ingestion},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")

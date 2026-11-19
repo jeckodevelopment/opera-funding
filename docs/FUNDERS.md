@@ -219,3 +219,12 @@ La scheda di dettaglio presenta, **immediatamente prima dei pulsanti d'azione**,
 Il contenuto utilizza esclusivamente `applicant_requirement_comparison` con categorie, motivazioni e fonti `https`; il blocco esplicito `direct_application_blocker`, ove presente, è segnalato distintamente come ostacolo alla candidatura diretta. Uno stato `compatibile` è descritto come verifica con fonte documentale, `potenzialmente_incompatibile` come criticità, `da_verificare` come verifica aperta. La classificazione resta **preliminare, mai attestazione di ammissibilità complessiva**; dati dichiarati non sono promossi a conferme e non si rimuovono opportunità. I link ufficiali sono filtrati tramite URL sicuri.
 
 Non si aggiungono colonne alla tabella, non si modifica il motore di scansione e non si espongono dati privati del profilo Opera+ nel frontend. Dopo il merge è necessario pubblicare il frontend con il publisher unico di `jeckodevsite`, verificando vista mobile, apertura/chiusura via tastiera, fonti, conteggi e posizione rispetto alle azioni.
+
+
+## Riconciliazione dei requisiti sull'intero catalogo (19/11/2026)
+
+La scansione ricalcola `requirement_coverage_status` e `requirement_evidence_count` per **ogni scheda**, incluse quelle storiche e informative. Il report `requirement_reconciliation` contiene copertura per catalogo completo, opportunità aperte e aperte ALTA/MEDIA, oltre alla coda prioritaria `open_without_comparable_requirements`. Stati distinti: `confronti_documentati`, `ostacolo_documentato`, `senza_requisiti_confrontabili`, `avviso_informativo`.
+
+Le lacune restano lacune: **nessuna spunta inventata**, nessuna eliminazione di opportunità, nessuna modifica alle valutazioni editoriali. Solo un confronto con requisito esplicito e URL HTTPS può essere contato come documentato. Un blocco di candidatura diretta già motivato è rilevato separatamente. Il controllo integrità riconcilia i conteggi con tutti i record; la mancanza di informazioni di fonte non blocca la pubblicazione.
+
+Collaudo: suite qualità, scanner, conteggi coerenti, zero ID persi/duplicati, controllo della coda aperta senza requisiti confrontabili e dell'accordion nei casi con e senza evidenze. Il frontend già pubblicato legge il feed JSON GitHub, quindi non richiede nuovo SFTP.

@@ -62,6 +62,12 @@ class SpecificRequirementTests(unittest.TestCase):
             "requirements_excerpt":"Il progetto valorizza le esperienze culturali e la creatività."})
         self.assertEqual(generic["eligibility_specific_unchecked"],0)
 
+    def test_public_register_explicit_requirement(self):
+        row=annotate_specific_requirements({**BASE,
+            "beneficiaries_excerpt":"Enti non profit iscritti ad almeno un registro pubblico."})
+        self.assertEqual([x["category"] for x in row["eligibility_specific_requirements"]],
+                         ["natura_giuridica"])
+
     def test_informational_records_not_assessed(self):
         row=annotate_specific_requirements({**BASE,"opportunity_type":"altro avviso",
             "requirements_excerpt":"Partenariato obbligatorio."})

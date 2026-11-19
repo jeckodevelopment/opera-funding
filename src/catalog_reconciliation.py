@@ -87,3 +87,67 @@ def validate_catalog_assessments(rows):
     """Backward-compatible non-blocking reconciliation entry point."""
     reconcile_catalog_assessments(rows)
     return len(rows)
+
+# Documented evidence accounting never infers eligibility or deletes records.
+REQUIREMENT_STATUSES=("compatibile","potenzialmente_incompatibile","da_verificare")
+REQUIREMENT_COVERAGE=("confronti_documentati","ostacolo_documentato",
+                      "senza_requisiti_confrontabili","avviso_informativo")
+
+def annotate_requirement_coverage(row):
+    checks=[c for c in (row.get("applicant_requirement_comparison") or [])
+            if isinstance(c,dict) and c.get("status") in REQUIREMENT_STATUSES
+            and str(c.get("requirement") or "").strip()
+            and str(c.get("source") or "").startswith("https://")]
+    blocker=bool(str(row.get("direct_application_blocker") or "").strip())
+    if row.get("opportunity_type")=="altro avviso":
+        status="avviso_informativo"
+    elif checks:
+        status="confronti_documentati"
+    elif blocker:
+        status="ostacolo_documentato"
+    else:
+        status="senza_requisiti_confrontabili"
+    row["requirement_coverage_status"]=status
+    row["requirement_evidence_count"]=len(checks)
+    return row
+
+def summarize_requirement_coverage(rows):
+    """Measure full-catalog documentable requirements and actionable open gaps."""
+    records=list(rows)
+    groups=(
+        ("catalogo",records),
+        ("aperte",[r for r in records if r.get("funding_status")=="APERTO"]),
+        ("aperte_alta_media",[r for r in records if r.get("funding_status")=="APERTO"
+                             and r.get("adequacy_label") in ("ALTA","MEDIA")]),
+    )
+    coverage={}
+    for name,subset in groups:
+        counts=Counter(r.get("requirement_coverage_status") for r in subset)
+        comparisons=[c for r in subset for c in
+                     (r.get("applicant_requirement_comparison") or []) if isinstance(c,dict)]
+        coverage[name]={
+            "total":len(subset),
+            "coverage_status_counts":{s:counts[s] for s in REQUIREMENT_COVERAGE},
+            "requirements_compared":len(comparisons),
+            "comparison_status_counts":{s:sum(c.get("status")==s for c in comparisons)
+                                        for s in REQUIREMENT_STATUSES},
+            "with_explicit_direct_blocker":sum(bool(str(
+                r.get("direct_application_blocker") or "").strip()) for r in subset),
+        }
+    missing=[r for r in groups[1][1]
+             if r.get("requirement_coverage_status")=="senza_requisiti_confrontabili"]
+    missing.sort(key=lambda r:(
+        0 if r.get("adequacy_label") in ("ALTA","MEDIA") else 1,
+        str(r.get("deadline") or "9999-12-31"),int(r.get("public_id") or 0)))
+    return {
+        "coverage":coverage,
+        "open_without_comparable_requirements":[
+            {"public_id":r.get("public_id"),"adequacy":r.get("adequacy_label"),
+             "has_requirements_excerpt":bool(str(r.get("requirements_excerpt") or "").strip()),
+             "has_beneficiaries_excerpt":bool(str(r.get("beneficiaries_excerpt") or "").strip()),
+             "has_attributed_assessment_source":bool(
+                 r.get("assessment_source") or r.get("assessment_evidence_source"))}
+            for r in missing],
+        "notes":("Nessun requisito rilevato non equivale a requisito assente o soddisfatto. "
+                 "La copertura non certifica ammissibilità e non esclude opportunità."),
+    }
