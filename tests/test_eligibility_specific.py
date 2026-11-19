@@ -87,6 +87,23 @@ class SpecificRequirementTests(unittest.TestCase):
                 self.assertEqual(len(comparisons),len(found))
                 self.assertTrue(all(x["status"]=="da_verificare" for x in comparisons))
 
+    def test_curated_requirements_reject_untrusted_sources_and_invalid_categories(self):
+        row=annotate_specific_requirements({
+            "opportunity_type":"finanziamento potenziale",
+            "reviewed_requirements":[
+                {"category":"partenariato","excerpt":"Partner richiesto",
+                 "source":"javascript:alert(1)"},
+                {"category":"inventata","excerpt":"Inventato",
+                 "source":"https://example.org"},
+                {"category":"capacita_operativa","excerpt":"Opera audiovisiva professionale",
+                 "source":"https://example.org/official"}
+            ]})
+        self.assertEqual(len(row["eligibility_specific_requirements"]),1)
+        self.assertEqual(row["eligibility_specific_requirements"][0]["category"],
+                         "capacita_operativa")
+        self.assertEqual(row["eligibility_specific_requirements"][0]["status"],
+                         "requisito_documentato_da_verificare")
+
     def test_informational_records_not_assessed(self):
         row=annotate_specific_requirements({**BASE,"opportunity_type":"altro avviso",
             "requirements_excerpt":"Partenariato obbligatorio."})
