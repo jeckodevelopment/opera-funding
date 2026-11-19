@@ -120,6 +120,18 @@ class ScanIntegrityTests(unittest.TestCase):
         report["open_eligibility_review"]["items"][0]["tasks"]=[]
         self.assertTrue(any("senza verifiche" in x for x in self.check(rows,report)))
 
+    def test_historical_backfill_uses_fresh_main_and_stages_generated_data(self):
+        workflow=(Path(__file__).resolve().parents[1]/".github/workflows/history-backfill.yml").read_text()
+        self.assertIn("git reset --hard origin/main",workflow)
+        self.assertIn("git add -A -- data/",workflow)
+        self.assertLess(workflow.index("git reset --hard origin/main"),
+                        workflow.index("python -u src/scan.py --history-backfill"))
+        self.assertLess(workflow.index("git add -A -- data/"),
+                        workflow.index("git rebase origin/main"))
+        self.assertIn("group: funding-scan",workflow)
+        # The one-off scan must not fire again on every ordinary src/scan.py edit.
+        self.assertNotIn("      - 'src/scan.py'",workflow)
+
     def test_gate_runs_before_notification_and_commit(self):
         workflow=(Path(__file__).resolve().parents[1]/".github/workflows/scan.yml").read_text()
         integrity=workflow.index("run: python src/scan_integrity.py")
