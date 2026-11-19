@@ -211,3 +211,11 @@ La classificazione serve a orientare le decisioni senza attestare ammissibilità
 - **#252 Una mano a chi sostiene 2026/27** (https://www.unamanoachisostiene.it/ e https://www.unamanoachisostiene.it/fondazione-cattolica-una-mano-a-chi-sostiene-faqs-2026/): ammessi anche enti privati senza fini di lucro, non solo ETS. È richiesto un progetto **nuovo** con impatto sociale misurabile. Il contributo massimo è 20.000 euro, entro l'80% del budget, e viene liquidato dopo rendicontazione: occorrono copertura residua e liquidità anticipata. Termine fase iniziale 16/02/2027. Non attribuire falsamente inammissibilità per RUNTS in corso.
 
 Conservare i giudizi editoriali MEDIA come pertinenza progettuale condizionata: i vincoli operativi non certificano ammissibilità. Tutte le opportunità rimangono censite anche se richiedono documenti aggiuntivi.
+
+## Scheda opportunità: verifica requisiti Opera+ (19/11/2026)
+
+La scheda di dettaglio presenta, **immediatamente prima dei pulsanti d'azione**, una sezione nativa `<details>` «Verifica requisiti Opera+», **chiusa per impostazione predefinita**. Anche da chiusa mostra il conteggio dei requisiti verificati, delle criticità e delle condizioni da verificare; quando non ci sono condizioni estratte, segnala la mancanza di documentazione, senza inventare requisiti o spunte.
+
+Il contenuto utilizza esclusivamente `applicant_requirement_comparison` con categorie, motivazioni e fonti `https`; il blocco esplicito `direct_application_blocker`, ove presente, è segnalato distintamente come ostacolo alla candidatura diretta. Uno stato `compatibile` è descritto come verifica con fonte documentale, `potenzialmente_incompatibile` come criticità, `da_verificare` come verifica aperta. La classificazione resta **preliminare, mai attestazione di ammissibilità complessiva**; dati dichiarati non sono promossi a conferme e non si rimuovono opportunità. I link ufficiali sono filtrati tramite URL sicuri.
+
+Non si aggiungono colonne alla tabella, non si modifica il motore di scansione e non si espongono dati privati del profilo Opera+ nel frontend. Dopo il merge è necessario pubblicare il frontend con il publisher unico di `jeckodevsite`, verificando vista mobile, apertura/chiusura via tastiera, fonti, conteggi e posizione rispetto alle azioni.
