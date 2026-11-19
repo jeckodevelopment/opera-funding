@@ -114,6 +114,31 @@ class ReviewedAssessmentTests(unittest.TestCase):
         self.assertEqual(result["funding_status"],"APERTO")
         self.assertIn("NON un bando",result["assessment_reason"])
 
+    def test_last_twelve_open_calls_have_individually_attributed_requirements(self):
+        import json
+        from eligibility_specific import extract_specific_requirements
+        from applicant_comparison import compare_applicant_requirements
+        path=Path(__file__).resolve().parents[1]/"config/assessment_reviews.json"
+        reviews=json.loads(path.read_text(encoding="utf-8"))
+        ids=(144,115,18,117,34,189,116,119,149,113,114,145)
+        for ident in ids:
+            with self.subTest(public_id=ident):
+                review=next(x for x in reviews if x.get("public_id")==ident)
+                self.assertGreaterEqual(len(review["reviewed_requirements"]),1)
+                self.assertEqual(review["assessment_label"],"BASSA AFFINITÀ")
+                row=apply_assessment_reviews([{
+                    "public_id":ident,"source_id":review["source_id"],
+                    "url":review["url"],"funding_status":"APERTO",
+                    "opportunity_type":"finanziamento potenziale"
+                }],[review])[0]
+                extracted=extract_specific_requirements(row)
+                self.assertGreaterEqual(len(extracted),1)
+                self.assertTrue(all(x["source"].startswith("https://") for x in extracted))
+                row["eligibility_specific_requirements"]=extracted
+                outcomes=compare_applicant_requirements(row,{"profile_fields":{}})
+                self.assertGreaterEqual(len(outcomes),1)
+                self.assertTrue(all(x["status"]=="da_verificare" for x in outcomes))
+
     def test_generic_button_title_replaced_with_documented_name(self):
         row={"public_id":183,"url":"https://example.org/bando","source_id":"issuer","title":"SCOPRI IL BANDO"}
         review={"public_id":183,"source_id":"issuer","url":"https://example.org/bando",

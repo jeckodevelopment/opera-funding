@@ -71,7 +71,19 @@
       "Non presentare lo sviluppo di un corso digitale come investimento in strutture o impianti per spettacolo dal vivo."
     ],
     "reviewed_at": "2026-11-19",
-    "evidence_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo"
+    "evidence_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo",
+    "reviewed_requirements": [
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Beneficiario qualificabile come micro, piccola o media impresa operante nel settore dello spettacolo dal vivo.",
+        "source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo"
+      },
+      {
+        "category": "territorio",
+        "excerpt": "Unità locale operativa in Piemonte per il progetto di investimento in strutture o attrezzature professionali.",
+        "source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo"
+      }
+    ]
   },
   {
     "public_id": 177,
@@ -174,9 +186,22 @@
     "beneficiaries_excerpt": "La fonte consultata non chiarisce qui tutti i requisiti giuridici dei candidati.",
     "requirements_excerpt": "Proposta coerente con la formazione giudiziaria transnazionale; scadenza 4 marzo 2027.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Il portale ufficiale descrive la finalità transnazionale della formazione dei professionisti della giustizia, ma non documenta integralmente le condizioni giuridiche degli enti ammessi: consultare il documento JUST-2027-JTRA prima di giudicare la candidatura.",
+      "Un corso sull'opera non è formazione giudiziaria."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Progetto di formazione transnazionale di professionisti della giustizia in diritto civile, penale o diritti fondamentali dell'Unione.",
+        "source": "https://european-training-platform.e-justice.europa.eu/about-platform"
+      },
+      {
+        "category": "partenariato",
+        "excerpt": "Verificare soggetti idonei, ruoli e rete transnazionale nel bando JUST-2027-JTRA, non assumere che un generico corso online sia ammissibile.",
+        "source": "https://european-training-platform.e-justice.europa.eu/about-platform"
+      }
+    ]
   },
   {
     "public_id": 19,
@@ -237,17 +262,30 @@
     "public_id": 144,
     "source_id": "volto",
     "url": "https://infobandi.csvnet.it/bando-lo-sport-e-vita/?utm_source=rss&utm_medium=rss&utm_campaign=bando-lo-sport-e-vita",
-    "evidence_url": "https://infobandi.csvnet.it/bando-lo-sport-e-vita/",
+    "evidence_url": "https://bandi.sportesalute.eu/bandi/6ada1286094ef4c0128626b6",
     "assessment_label": "BASSA AFFINITÀ",
     "assessment_reason": "Il finanziamento riguarda sport continuativo e ricerca clinico-sportiva, non attività culturali. Per la linea 1 il ruolo di eventuali ETS è soltanto in raggruppamento con organismi sportivi.",
     "programme_objectives_excerpt": "Prevenzione, salute e benessere psicologico mediante attività fisica e sportiva.",
     "funded_activities_excerpt": "Programmi sportivi e attività fisica adattata; ricerca medica e riabilitativa legata allo sport.",
-    "beneficiaries_excerpt": "Linea 1: organismi sportivi CONI, eventualmente associati ad altri enti; linea 2: enti di ricerca e sanitari.",
-    "requirements_excerpt": "Domande entro 28 novembre 2026; progetti da realizzare entro giugno 2028.",
+    "beneficiaries_excerpt": "Linea 1: organismi sportivi riconosciuti dal CONI, singoli o in raggruppamento con altri organismi sportivi, ETS, ASD/SSD, fondazioni, università, enti di ricerca o strutture sanitarie ammesse. Linea 2: verificare le specifiche categorie di richiedenti per la ricerca clinico-sportiva.",
+    "requirements_excerpt": "Candidatura tramite piattaforma Sport e Salute entro le ore 12 del 28 novembre 2026. La candidatura in linea 1 come capofila è riservata a organismi sportivi riconosciuti dal CONI; altri enti possono concorrere soltanto nel raggruppamento previsto.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Per la linea 1 Opera+ non è un organismo sportivo CONI: verificare soltanto un ruolo in partenariato con capofila sportivo ammissibile.",
+      "Per la linea 2 verificare separatamente ruolo, capacità scientifica e requisiti dell'ente proponente."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Linea 1: capofila ammesso solo se organismo sportivo riconosciuto dal CONI; altri enti, fra cui ETS, possono partecipare soltanto nei raggruppamenti consentiti.",
+        "source": "https://bandi.sportesalute.eu/bandi/6ada1286094ef4c0128626b6"
+      },
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Progetto effettivo di attività fisica e promozione della salute, non un corso culturale indipendente.",
+        "source": "https://bandi.sportesalute.eu/bandi/6ada1286094ef4c0128626b6"
+      }
+    ]
   },
   {
     "public_id": 185,
@@ -351,8 +389,20 @@
     "assessment_gaps": [
       "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
     ],
-    "reviewed_at": "2026-11-18",
-    "catalog_title": "Linee guida Medtech"
+    "reviewed_at": "2026-11-19",
+    "catalog_title": "Linee guida Medtech",
+    "reviewed_requirements": [
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Progetto di ricerca e sperimentazione in tecnologie mediche con competenze scientifiche e cliniche documentabili.",
+        "source": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-medtech/"
+      },
+      {
+        "category": "partenariato",
+        "excerpt": "Definire partner e competenze cliniche, tecnologiche e di ricerca necessari al progetto, senza presumere obblighi societari non verificati.",
+        "source": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-medtech/"
+      }
+    ]
   },
   {
     "public_id": 188,
@@ -377,7 +427,7 @@
     "public_id": 119,
     "source_id": "eufunding",
     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-TVONLINE",
-    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?callIdentifier=CREA-MEDIA-2027-TVONLINE&isExactMatch=true&order=DESC&pageNumber=1&pageSize=50&sortBy=startDate&status=31094501%2C31094502%2C31094503",
+    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-TVONLINE",
     "assessment_label": "BASSA AFFINITÀ",
     "assessment_reason": "La call MEDIA riguarda opere animate professionali destinate a TV e piattaforme online, non il normale e-learning o i videopodcast d'opera. Solo un progetto di produzione audiovisiva animata professionale potrebbe essere pertinente.",
     "programme_objectives_excerpt": "Finanziamento MEDIA per contenuti audiovisivi professionali europei destinati a TV e online.",
@@ -387,7 +437,19 @@
     "assessment_gaps": [
       "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Progetto originale di produzione professionale di animazione per TV o piattaforme online conforme alla call MEDIA.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-TVONLINE"
+      },
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Verificare natura, indipendenza e precedenti dell'organizzazione di produzione audiovisiva richiedente.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-TVONLINE"
+      }
+    ]
   },
   {
     "public_id": 65,
@@ -444,7 +506,7 @@
     "public_id": 149,
     "source_id": "volto",
     "url": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
-    "evidence_url": "https://cervitalia.info/call/bando-union-values-per-le-organizzazioni-della-societa-civile-attive-nella-tutela-e-nella-promozione-dei-valori-dellunione-bando-per-intermediari/",
+    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES",
     "assessment_label": "BASSA AFFINITÀ",
     "assessment_reason": "Il bando CERV-2026-CITIZENS-VALUES NON finanzia direttamente un progetto didattico culturale di un piccolo ente: seleziona intermediari per assegnare e gestire sovvenzioni a terzi, con budget progettuale di 2,5–6 milioni di euro ed esperienza documentata di almeno tre anni nella formazione/capacity building delle OSC e gestione di contributi. Opera+ è stata costituita il 23/04/2026 e dichiara nessuna attività precedente: non ha i requisiti dichiarati per candidarsi come intermediario singolo. Possibile futura partecipazione a bandi a cascata indetti dagli intermediari selezionati, non equivalenti alla presente call.",
     "programme_objectives_excerpt": "Rafforzare organizzazioni della società civile a tutela dei valori UE attraverso intermediari che finanziano e accompagnano terzi.",
@@ -455,7 +517,19 @@
       "Non considerare la presente call come sovvenzione diretta per corsi Opera+; monitorare eventuali futuri bandi a cascata degli intermediari finanziati.",
       "Per consorzi: verificare separatamente requisiti di esperienza aggregata nel documento ufficiale e possibilità di partecipazione, senza assumerla."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "esperienza_pregressa",
+        "excerpt": "Intermediario con almeno tre anni di esperienza documentata nel rafforzamento delle organizzazioni della società civile e nella gestione di sovvenzioni.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES"
+      },
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Capacità di finanziare e assistere organizzazioni terze, non semplice proposta di corso culturale diretto.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES"
+      }
+    ]
   },
   {
     "public_id": 183,
@@ -481,7 +555,7 @@
     "public_id": 113,
     "source_id": "eufunding",
     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-AUDFILMEDU",
-    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/audience-development-film-education",
+    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-AUDFILMEDU",
     "assessment_label": "BASSA AFFINITÀ",
     "assessment_reason": "La call Creative Europe MEDIA 2027 finanzia iniziative di audience development e film education su cinema europeo, patrimonio filmico e opere audiovisive, non la divulgazione di opere liriche. La sovrapposizione generica con il termine 'educazione' non giustifica MEDIA per Opera+; occorrerebbe un progetto autenticamente cinematografico e transnazionale, fuori dalle attività attualmente dichiarate.",
     "programme_objectives_excerpt": "Aumentare la conoscenza del cinema e delle opere audiovisive europee, sviluppare il pubblico soprattutto giovanile e rafforzare la cooperazione paneuropea nella film education.",
@@ -492,7 +566,19 @@
       "Non proporre i corsi di Opera+ come film education senza un effettivo progetto cinematografico.",
       "Verificare l'ultima versione del documento ufficiale CREA-MEDIA-2027-AUDFILMEDU, non solo la pagina Creative Europe Desk."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Progetto di educazione cinematografica o sviluppo del pubblico delle opere audiovisive europee con effettiva dimensione europea.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-AUDFILMEDU"
+      },
+      {
+        "category": "partenariato",
+        "excerpt": "Verificare eventuali collaborazioni e ruoli previsti dal topic per il progetto filmico, senza considerarle già acquisite.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-AUDFILMEDU"
+      }
+    ]
   },
   {
     "public_id": 146,
@@ -571,7 +657,7 @@
     "public_id": 116,
     "source_id": "eufunding",
     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVVGIM",
-    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/video-games-immersive-content",
+    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVVGIM",
     "assessment_label": "BASSA AFFINITÀ",
     "assessment_reason": "Il programma MEDIA finanzia lo sviluppo commerciale di videogiochi narrativi ed esperienze immersive, richiedendo produttori specializzati e precedenti titoli distribuiti commercialmente. Opera+ è un'associazione culturale impegnata nella divulgazione dell'opera, non una società di sviluppo videogiochi con esperienza documentata. Non va confuso il carattere digitale dei corsi con l'ammissibilità di prodotti commerciali videoludici.",
     "programme_objectives_excerpt": "Rafforzare la competitività delle imprese europee che sviluppano videogiochi ed esperienze immersive interattive narrative per i mercati internazionali.",
@@ -582,13 +668,25 @@
       "Consultare il testo definitivo della call sul Funding & Tenders Portal se Opera+ decidesse di avviare un distinto progetto commerciale videoludico.",
       "Non promuovere automaticamente un corso e-learning a videogioco commerciale."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Soggetto produttore europeo di videogiochi, esperienze immersive o contenuti audiovisivi ammissibile alle condizioni MEDIA.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVVGIM"
+      },
+      {
+        "category": "esperienza_pregressa",
+        "excerpt": "Verificare le precedenti opere videoludiche o immersive distribuite commercialmente e le prove richieste dall'invito.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVVGIM"
+      }
+    ]
   },
   {
     "public_id": 34,
     "source_id": "eucreative",
     "url": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
-    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/circulation-of-european-literary-works",
+    "evidence_url": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
     "assessment_label": "BASSA AFFINITÀ",
     "assessment_reason": "La call CULT finanzia traduzione, pubblicazione, distribuzione e promozione transnazionale di almeno cinque opere letterarie europee presso operatori del settore editoriale. La semplice riproduzione di libretti d'opera o la divulgazione del patrimonio lirico senza una catena editoriale, un piano di traduzione e distribuzione di opere letterarie non corrisponde al programma di finanziamento Opera+. Un progetto editoriale internazionale distinto richiederebbe partner e capacità specifiche.",
     "programme_objectives_excerpt": "Circolazione transnazionale e diversità della letteratura europea, promozione di opere letterarie e professionalizzazione della filiera della traduzione e dell'editoria.",
@@ -599,13 +697,25 @@
       "Verificare il documento della call 2027 prima di considerare un progetto editoriale completamente distinto dall'e-learning.",
       "La produzione di PDF divulgativi dei libretti non dimostra attività editoriale di traduzione e distribuzione internazionale di almeno cinque opere."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Progetto editoriale di traduzione, pubblicazione, distribuzione e promozione di opere letterarie europee in traduzione, non semplici dispense formative.",
+        "source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5"
+      },
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Capacità operativa documentabile nel settore editoriale e della filiera del libro.",
+        "source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5"
+      }
+    ]
   },
   {
     "public_id": 114,
     "source_id": "eufunding",
     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
-    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/european-co-development",
+    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
     "assessment_label": "BASSA AFFINITÀ",
     "assessment_reason": "European Co-development finanzia la coproduzione e lo sviluppo di un'opera audiovisiva commerciale tra società europee di produzione indipendente di almeno due diversi Paesi MEDIA, con accordo di cosviluppo. Opera+ non è una società di produzione audiovisiva e non possiede tali accordi: lo sviluppo di un corso lirico non soddisfa il perimetro della call.",
     "programme_objectives_excerpt": "Sostenere la collaborazione tra società di produzione audiovisiva europee per lo sviluppo di opere con potenziale di sfruttamento commerciale internazionale.",
@@ -616,13 +726,25 @@
       "Non ritenere ammissibile Opera+ sulla sola base del contenuto culturale dei corsi o della disponibilità a collaborare.",
       "Verificare condizioni ufficiali solo nell'ipotesi di un progetto con imprese audiovisive effettivamente ammissibili."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Società europee indipendenti di produzione audiovisiva ammissibili, non generici produttori di video didattici.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV"
+      },
+      {
+        "category": "partenariato",
+        "excerpt": "Accordo effettivo di cosviluppo con un'altra società di produzione indipendente di un diverso paese MEDIA.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV"
+      }
+    ]
   },
   {
     "public_id": 115,
     "source_id": "eufunding",
     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVSLATE",
-    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/european-slate-funding",
+    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVSLATE",
     "assessment_label": "BASSA AFFINITÀ",
     "assessment_reason": "European Slate Development richiede una società audiovisiva indipendente con esperienza in opere commercialmente distribuite e un pacchetto di 3–5 progetti audiovisivi. Opera+ non ha un catalogo professionale di produzione cinematografica e dichiara nessuna attività pregressa: la partecipazione come produttore non è praticabile nelle condizioni attuali.",
     "programme_objectives_excerpt": "Rafforzare capacità e competitività delle società europee di produzione audiovisiva indipendenti e la circolazione internazionale delle loro opere.",
@@ -633,13 +755,25 @@
       "Un corso video di Opera+ non corrisponde a uno slate cinematografico commerciale.",
       "Verificare il documento ufficiale completo solo in presenza di una distinta impresa/struttura audiovisiva con i precedenti richiesti."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "natura_giuridica",
+        "excerpt": "La proposta deve essere presentata da un'impresa europea indipendente di produzione audiovisiva ammissibile.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVSLATE"
+      },
+      {
+        "category": "esperienza_pregressa",
+        "excerpt": "Documentare produzioni audiovisive pregresse e la loro distribuzione commerciale internazionale nei termini dell'invito.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-DEVSLATE"
+      }
+    ]
   },
   {
     "public_id": 117,
     "source_id": "eufunding",
     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMOVE",
-    "evidence_url": "https://www.creativeeuropeireland.eu/funding-opportunities/call/films-on-the-move",
+    "evidence_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMOVE",
     "assessment_label": "BASSA AFFINITÀ",
     "assessment_reason": "Films on the Move finanzia campagne di distribuzione cinematografica paneuropea organizzate da agenti di vendita internazionali di film europei; richiede accordi commerciali con il produttore e una rete di distributori. Opera+ non opera come sales agent audiovisivo e non dispone dei diritti o della rete dichiarati: la pubblicazione di video didattici non è un'attività ammissibile alla call.",
     "programme_objectives_excerpt": "Ampliare la distribuzione transnazionale cinematografica e online di film europei non nazionali attraverso agenti di vendita e distributori.",
@@ -650,7 +784,19 @@
       "L'offerta di corsi online Opera+ non equivale a distribuzione internazionale di film tramite sales agent.",
       "Verificare solo eventuali progetti cinematografici distinti e relativi accordi con produttori e distributori."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "reviewed_requirements": [
+      {
+        "category": "natura_giuridica",
+        "excerpt": "La candidatura appartiene all'attività professionale di agente internazionale di vendita cinematografica incaricato dal produttore.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMOVE"
+      },
+      {
+        "category": "partenariato",
+        "excerpt": "Dimostrare accordi di distribuzione e rete di distributori europei effettivi per il film proposto.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-FILMOVE"
+      }
+    ]
   },
   {
     "public_id": 270,

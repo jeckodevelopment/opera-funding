@@ -53,7 +53,7 @@ class PriorityGrantReviewsTests(unittest.TestCase):
     def test_film_only_grant_is_not_generic_education(self):
         entry=next(x for x in REVIEWS if x.get("public_id")==113)
         self.assertIn("film education",entry["assessment_reason"])
-        self.assertIn("creativeeuropeireland.eu",entry["evidence_url"])
+        self.assertIn("ec.europa.eu",entry["evidence_url"])
 
     def test_experience_required_for_implemented_initiatives(self):
         entry=next(x for x in REVIEWS if x.get("public_id")==148)

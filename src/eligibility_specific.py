@@ -72,6 +72,28 @@ def extract_specific_requirements(row):
     if row.get("opportunity_type") == "altro avviso":
         return []
     found = []
+    # Individually reviewed requirements carry official attribution and a
+    # conservative pending state; automatic textual heuristics only supplement
+    # categories not already documented by a human review.
+    curated=row.get("reviewed_requirements")
+    if isinstance(curated,list):
+        for item in curated:
+            if not isinstance(item,dict):
+                continue
+            category=item.get("category")
+            excerpt=str(item.get("excerpt") or "").strip()
+            source=item.get("source")
+            parsed=urlparse(source) if isinstance(source,str) else None
+            if (category not in {entry[0] for entry in PATTERNS}
+                    or not excerpt or len(excerpt)>MAX_EXCERPT
+                    or not parsed or parsed.scheme!="https" or not parsed.hostname
+                    or parsed.username or parsed.password
+                    or any(x["category"]==category for x in found)):
+                continue
+            found.append({"category":category,
+                          "status":"requisito_documentato_da_verificare",
+                          "excerpt":excerpt,"source":source,
+                          "field":"revisione_documentale"})
     for field in FIELDS:
         raw = row.get(field)
         if not isinstance(raw, str) or not raw.strip():
