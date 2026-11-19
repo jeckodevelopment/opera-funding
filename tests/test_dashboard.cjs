@@ -6,8 +6,8 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy,requirementChecklist};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy,requirementChecklist}=context.exposed;
 assert.equal(PAGE_SIZE,12);
 assert.equal(assessmentLabel({assessment_label:"ALTA AFFINITÀ"}),"ALTA AFFINITÀ");
 assert.equal(assessmentLabel({relevance:65,opportunity_type:"finanziamento potenziale"}),"MEDIA AFFINITÀ");
@@ -272,6 +272,30 @@ assert.doesNotMatch(src,/dialogField\(dl,"Motivo della valutazione"/);
 assert.match(src,/article\.append\(left,right,makeAdequacy\(o\)\)/);
 assert.doesNotMatch(src,/dialogField\(dl,"Adeguatezza tematica"/);
 assert.match(src,/function makeAdequacy/);
+assert.match(src,/function requirementChecklist\(o\)/);
+assert.match(src,/function requirementAccordion\(o\)/);
+assert.match(src,/content\.append\(requirementAccordion\(o\),actions,workflowForm\(o\)\)/);
+assert.match(css,/\.requirements-checklist/);
+assert.match(css,/\.requirement-item\.risk/);
+const evidenceCases=[
+ {input:{applicant_requirement_comparison:[
+  {category:"territorio",status:"compatibile",requirement:"Sede in Piemonte",source:"https://example.org/a",reason:"Sede verificata"},
+  {category:"anzianita",status:"potenzialmente_incompatibile",requirement:"Almeno tre anni",reason:"Data da controllare"},
+  {category:"partenariato",status:"da_verificare",source:"javascript:alert(1)",reason:"Partner da trovare"}
+ ]},expected:{verified:1,risk:1,pending:1}},
+ {input:{direct_application_blocker:"RUNTS richiesto per capofila"},expected:{verified:0,risk:1,pending:0}},
+ {input:{},expected:{verified:0,risk:0,pending:0}}
+];
+for(const entry of evidenceCases){
+ const result=requirementChecklist(entry.input);
+ assert.equal(result.counts.verified,entry.expected.verified);
+ assert.equal(result.counts.risk,entry.expected.risk);
+ assert.equal(result.counts.pending,entry.expected.pending);
+ if(entry.input.applicant_requirement_comparison){
+  assert.equal(result.items[2].source,null);
+ }
+}
+
 assert.match(css,/\.health-dot\.red/);
 assert.doesNotMatch(src,/Controlli prima della candidatura:/);
 console.log("Opera+ editorial dashboard tests passed");

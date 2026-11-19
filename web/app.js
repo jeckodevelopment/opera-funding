@@ -285,6 +285,65 @@ function detailDisclosure(title,body,extraClass=""){
  details.append(el("summary",title),body);
  return details;
 }
+// Show only assessed requirements: an unknown is never a green check.
+const REQUIREMENT_NAMES={
+ territorio:"Sede e territorio",natura_giuridica:"Forma giuridica e registri",
+ anzianita:"Anzianità dell'ente",condizioni_economiche:"Condizioni economiche",
+ partenariato:"Partenariato",esperienza_pregressa:"Esperienza pregressa"
+};
+function requirementChecklist(o){
+ const raw=Array.isArray(o.applicant_requirement_comparison)?o.applicant_requirement_comparison:[];
+ const items=raw.filter(item=>item&&typeof item==="object").map(item=>{
+  const state=item.status==="compatibile"?"verified":
+              item.status==="potenzialmente_incompatibile"?"risk":"pending";
+  return {state,label:REQUIREMENT_NAMES[item.category]||"Requisito del bando",
+   requirement:String(item.requirement||"Requisito da documentare"),
+   reason:String(item.reason||"Verifica non conclusiva"),source:safeUrl(item.source)};
+ });
+ if(typeof o.direct_application_blocker==="string"&&o.direct_application_blocker.trim()){
+  items.unshift({state:"risk",label:"Ostacolo alla candidatura diretta",
+   requirement:"Condizione obbligatoria rilevata nella valutazione documentale",
+   reason:o.direct_application_blocker.trim(),
+   source:safeUrl(o.assessment_evidence_source||o.assessment_source||o.url)});
+ }
+ const counts={verified:0,risk:0,pending:0};
+ for(const item of items)counts[item.state]++;
+ return {items,counts};
+}
+function requirementAccordion(o){
+ const {items,counts}=requirementChecklist(o);
+ const container=el("div",undefined,"requirements-checklist");
+ const details=el("details",undefined,"requirement-accordion");
+ const summary=el("summary",undefined,"requirement-summary");
+ const heading=el("span","Verifica requisiti Opera+","requirement-heading");
+ const fragments=[];
+ if(counts.verified)fragments.push(counts.verified+" verificati");
+ if(counts.risk)fragments.push(counts.risk+" critici");
+ if(counts.pending)fragments.push(counts.pending+" da verificare");
+ summary.append(heading,el("span",fragments.join(" · ")||"Documentazione da verificare","requirement-counts"));
+ details.append(summary);
+ const body=el("div",undefined,"requirement-body");
+ if(!items.length)body.append(el("p","Non sono disponibili requisiti individuali confrontabili: consultare il bando ufficiale. L'ammissibilità non è verificata.","requirement-empty"));
+ for(const item of items){
+  const line=el("div",undefined,"requirement-item "+item.state);
+  const mark=el("span",item.state==="verified"?"✓":item.state==="risk"?"!":"?","requirement-mark");
+  mark.setAttribute("aria-hidden","true");
+  const content=el("div",undefined,"requirement-description");
+  const status=item.state==="verified"?"Verificato con fonte documentale":item.state==="risk"?"Criticità da verificare":"Da verificare";
+  content.append(el("strong",item.label),el("span",status,"requirement-status"),
+                 el("p",item.requirement,"requirement-clause"),
+                 el("p",item.reason,"requirement-reason"));
+  if(item.source){
+   const link=el("a","Fonte del requisito ↗","requirement-source");
+   link.href=item.source;link.target="_blank";link.rel="noopener noreferrer";
+   content.append(link);
+  }
+  line.append(mark,content);body.append(line);
+ }
+ body.append(el("p","Un segnale compatibile non certifica l'ammissibilità complessiva. Le criticità possono dipendere da dati dichiarati e richiedono conferma documentale.","requirement-caveat"));
+ details.append(body);container.append(details);
+ return container;
+}
 function evidenceSection(o){
  const review=reviewSignals(o),section=el("section",undefined,"dialog-section evidence-review");
  section.append(el("h3","Adeguatezza per Opera+"),makeAdequacy(o));
@@ -569,7 +628,6 @@ function renderOpportunity(o){
  const actions=el("div",undefined,"detail-primary-actions");
  addLink(actions,"Apri il bando ufficiale ↗",o.link_status==="non disponibile"?o.source_url:(o.resolved_url||o.url),"detail-official-link");
  actions.append(followButton(o));
- content.append(actions);
  content.append(evidenceSection(o));
 
  const information=el("section",undefined,"dialog-section detail-information");
@@ -597,7 +655,7 @@ function renderOpportunity(o){
   if(ideas.childElementCount)information.append(detailDisclosure("Spunti progettuali per Opera+",ideas,"ideas-disclosure"));
  }
  content.append(information);
- content.append(workflowForm(o));
+ content.append(requirementAccordion(o),actions,workflowForm(o));
  const utilities=el("div",undefined,"detail-utilities");
  const pdfButton=el("button","Esporta PDF","export-pdf-button");
  pdfButton.type="button";pdfButton.title="Stampa o salva come PDF";
