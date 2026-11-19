@@ -117,6 +117,28 @@ class NotifyTests(unittest.TestCase):
         self.assertNotIn("<script>",html)
         self.assertEqual(candidates([item("bad",url="javascript:alert(1)")],{},set()),[])
 
+    def test_title_links_to_numeric_detail_and_preserves_official_source(self):
+        entry=item("linked",public_id=143,
+                   title='Progetto <Rigoletto> & laboratorio')
+        _,html,plain=make_message([entry])
+        detail="https://jeckodevelopment.com/dev/funding/?opportunity=143"
+        self.assertIn('href="'+detail+'"',html)
+        self.assertIn("&lt;Rigoletto&gt; &amp; laboratorio</a>",html)
+        self.assertIn("Scheda: "+detail,plain)
+        self.assertIn('href="https://example.org/call/linked"',html)
+        self.assertIn("Fonte ufficiale",html)
+
+    def test_title_link_never_invents_public_id(self):
+        _,html,plain=make_message([
+            item("missing",public_id=None),
+            item("unsafe",public_id="<script>alert(1)</script>"),
+            item("bool",public_id=True),
+        ])
+        self.assertNotIn("opportunity=",html)
+        self.assertNotIn("opportunity=",plain)
+        self.assertNotIn("<script>",html)
+        self.assertEqual(plain.count("Scheda: https://jeckodevelopment.com/dev/funding/"),3)
+
     def test_multiple_recipients_each_get_private_email(self):
         self.check([])
         addresses="one@example.org, two@example.org; THREE@example.org\nOne@example.org"

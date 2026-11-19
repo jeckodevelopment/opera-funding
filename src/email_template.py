@@ -26,6 +26,16 @@ def _safe_https(value):
         return DASHBOARD
     return str(value)
 
+def _detail_link(item):
+    """Use the published stable numeric opportunity ID, never a source URL as ID."""
+    number=item.get("public_id")
+    if type(number) is int and number>0:
+        return f"{DASHBOARD}?opportunity={number}"
+    # Non-catalog test rows or old records: link to the dashboard, not an
+    # invented detail ID. The official source remains a separate link.
+    return DASHBOARD
+
+
 def make_message(items):
     shown=items[:MAX_ITEMS]
     count=len(items)
@@ -40,6 +50,7 @@ def make_message(items):
         issuer=escape(str(item.get("issuer") or item.get("source_name") or "Ente da verificare"))
         deadline=escape(_date_label(item.get("deadline")))
         url=escape(_safe_https(item.get("url")),quote=True)
+        detail=escape(_detail_link(item),quote=True)
         adequacy=str(item.get("adequacy_label") or "DA VERIFICARE").upper()
         if adequacy not in ("ALTA","MEDIA","BASSA"):
             adequacy="DA VERIFICARE"
@@ -67,7 +78,9 @@ def make_message(items):
             '</td></tr>'
             '<tr><td colspan="2" style="font:700 11px/1.5 Arial,Helvetica,sans-serif;color:#5b654d;padding-bottom:8px;">'+adequacy_html+'</td></tr>'
             '<tr><td colspan="2" style="padding:0 0 11px;font:normal 21px/1.3 Georgia,Times New Roman,serif;'
-            'color:#25282a;">'+title+'</td></tr>'
+            'color:#25282a;">'
+            '<a href="'+detail+'" style="color:#25282a;text-decoration:underline;text-decoration-color:#c4ab82;'
+            'text-underline-offset:3px;">'+title+'</a></td></tr>'
             +summary_html+
             '<tr><td colspan="2" style="padding-top:13px;border-top:1px solid #eeeae4;">'
             '<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>'
@@ -79,6 +92,7 @@ def make_message(items):
             '</table></td></tr></table></td></tr>'
         )
         plain.append(f"- {item.get('title') or 'Opportunità'}")
+        plain.append(f"  Scheda: {_detail_link(item)}")
         plain.append(f"  Ente: {item.get('issuer') or item.get('source_name') or 'Da verificare'}")
         plain.append(f"  Stato: {funding} | Adeguatezza: {adequacy}")
         plain.append(f"  Scadenza: {_date_label(item.get('deadline'))}")
