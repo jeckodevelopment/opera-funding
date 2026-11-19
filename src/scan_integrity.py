@@ -117,6 +117,23 @@ def validate_scan(rows, report, now=None, max_age_minutes=30):
                 part=sections.get(name)
                 if not isinstance(part,dict) or part.get("total")!=total:
                     problems.append("Riconciliazione "+name+" non coerente")
+    requirements=report.get("requirement_reconciliation")
+    if requirements is not None:
+        sections=requirements.get("coverage") if isinstance(requirements,dict) else None
+        if not isinstance(sections,dict):
+            problems.append("Riconciliazione requisiti priva di coperture")
+        else:
+            from catalog_reconciliation import summarize_requirement_coverage
+            expected=summarize_requirement_coverage(rows)
+            for name,section in expected["coverage"].items():
+                if sections.get(name)!=section:
+                    problems.append("Riconciliazione requisiti incoerente: "+name)
+            if requirements.get("open_without_comparable_requirements")!=expected[
+                "open_without_comparable_requirements"]:
+                problems.append("Coda requisiti non confrontabili incoerente")
+        if any(not isinstance(r.get("requirement_coverage_status"),str)
+               for r in rows if isinstance(r,dict)):
+            problems.append("Stato di copertura requisiti mancante")
     audit=report.get("catalog_audit")
     if isinstance(audit,dict):
         if audit.get("records_checked")!=len(rows):
