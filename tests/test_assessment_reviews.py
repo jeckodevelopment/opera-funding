@@ -134,6 +134,7 @@ class ReviewedAssessmentTests(unittest.TestCase):
                 extracted=extract_specific_requirements(row)
                 self.assertGreaterEqual(len(extracted),1)
                 self.assertTrue(all(x["source"].startswith("https://") for x in extracted))
+                row["eligibility_specific_requirements"]=extracted
                 outcomes=compare_applicant_requirements(row,{"profile_fields":{}})
                 self.assertGreaterEqual(len(outcomes),1)
                 self.assertTrue(all(x["status"]=="da_verificare" for x in outcomes))
