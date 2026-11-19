@@ -47,6 +47,32 @@ class ReviewedAssessmentTests(unittest.TestCase):
         result=apply_assessment_reviews([row],[review])[0]
         self.assertEqual(result["assessment_label"],"MEDIA AFFINITÀ")
 
+    def test_five_source_verified_direct_application_blockers(self):
+        import json
+        from operational_assessment import operational_assessment
+        reviews=json.loads((Path(__file__).resolve().parents[1]/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        for public_id in (25,32,148,162,254):
+            with self.subTest(public_id=public_id):
+                review=next(r for r in reviews if r.get("public_id")==public_id)
+                self.assertTrue(review["evidence_url"].startswith("https://"))
+                self.assertTrue(review["direct_application_blocker"])
+                row={"public_id":public_id,"source_id":review["source_id"],
+                     "url":review["url"],"funding_status":"APERTO",
+                     "adequacy_label":"BASSA"}
+                applied=apply_assessment_reviews([row],[review])[0]
+                self.assertEqual(operational_assessment(applied)["path"],
+                                 "integrare_verifica_documentale")
+
+    def test_european_literacy_consortium_has_source_backed_requirement(self):
+        import json
+        from eligibility_specific import extract_specific_requirements
+        reviews=json.loads((Path(__file__).resolve().parents[1]/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        review=next(r for r in reviews if r.get("public_id")==120)
+        row=apply_assessment_reviews([{"public_id":120,"source_id":review["source_id"],"url":review["url"]}],[review])[0]
+        extracted=extract_specific_requirements(row)
+        self.assertIn("partenariato",{r["category"] for r in extracted})
+        self.assertTrue(all(r["source"].startswith("https://") for r in extracted))
+
     def test_generic_button_title_replaced_with_documented_name(self):
         row={"public_id":183,"url":"https://example.org/bando","source_id":"issuer","title":"SCOPRI IL BANDO"}
         review={"public_id":183,"source_id":"issuer","url":"https://example.org/bando",
