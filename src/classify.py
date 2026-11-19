@@ -14,7 +14,8 @@ NON_GRANT = re.compile(
     r"graduatori[ea]|conferimento di incarich|ricerca (?:di |per )personale|"
     r"assunzion|posizion[ei] lavorativ|personale amministrativ|"
     r"avviso (?:di |pubblico per la )?selezione|"
-    r"avviso di gara|assegnazione in affitto|locazione di fondi rustici|"\n    r"indagine di mercato|affidamento (?:di |del |dei |della )|"
+    r"avviso di gara|assegnazione in affitto|locazione di fondi rustici|"
+    r"indagine di mercato|affidamento (?:di |del |dei |della )|"
     r"fornitura di |acquisizione (?:di |della )|"
     r"concorso pubblico|procedura (?:di |aperta |negoziata )|"
     r"avviso di sponsorizzazion|ricerca per il reperimento di sponsorizzazion",
