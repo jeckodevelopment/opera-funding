@@ -62,6 +62,14 @@ class AssessmentCompletenessTests(unittest.TestCase):
         self.assertEqual(rows[1]["requirement_coverage_status"],"senza_requisiti_confrontabili")
         self.assertEqual(rows[3]["requirement_coverage_status"],"ostacolo_documentato")
 
+    def test_informative_editorial_review_has_no_grant_coverage(self):
+        row={"public_id":270,"funding_status":"APERTO",
+             "opportunity_type":"finanziamento potenziale",
+             "adequacy_label":"INFORMATIVA",
+             "applicant_requirement_comparison":[]}
+        annotate_requirement_coverage(row)
+        self.assertEqual(row["requirement_coverage_status"],"avviso_informativo")
+
     def test_unverified_eligibility_is_not_automatically_ineligible(self):
         row={"public_id":20,"eligibility":"da verificare"}
         reconcile_catalog_assessments([row])

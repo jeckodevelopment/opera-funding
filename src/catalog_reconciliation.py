@@ -99,7 +99,7 @@ def annotate_requirement_coverage(row):
             and str(c.get("requirement") or "").strip()
             and str(c.get("source") or "").startswith("https://")]
     blocker=bool(str(row.get("direct_application_blocker") or "").strip())
-    if row.get("opportunity_type")=="altro avviso":
+    if row.get("opportunity_type")=="altro avviso" or row.get("adequacy_label")=="INFORMATIVA":
         status="avviso_informativo"
     elif checks:
         status="confronti_documentati"

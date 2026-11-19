@@ -254,3 +254,8 @@ Fonti ufficiali: https://bandi.regione.piemonte.it/contributi-finanziamenti/pres
 - **#18 Aiuti allo spettacolo dal vivo**: misura FESR per MPMI operanti professionalmente nello spettacolo dal vivo con unità locale in Piemonte e investimenti in infrastrutture o dotazioni. Non presumere che la sola forma associativa implichi qualifica di impresa.
 
 Fonti: https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-reti-antigrandine-srd06-intervento-121-bando-2026 ; https://www.compagniadisanpaolo.it/it/contributi/call-for-partnership-promozione-delliniziativa-scelte-future/ ; https://www.compagniadisanpaolo.it/it/contributi/linee-guida-06-alleanze-ad-alta-intensita-educativa/ ; https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo .
+
+
+### Correzione falso positivo: avviso di gara agricola #270 (19/11/2026)
+
+L'avviso Regione Piemonte per l'affitto di fondi rustici a Buttigliera Alta/Rosta è una **gara economica al rialzo su canoni d'affitto**, non un contributo per iniziative culturali. È mantenuto in catalogo con **adeguatezza INFORMATIVA** e motivazione individuale, senza confondere lo stato aperto delle offerte con un'opportunità finanziabile per Opera+. La classificazione preliminare riconosce ora in modo esplicito `avviso di gara` e `assegnazione in affitto` come `altro avviso`; gli elementi già classificati come finanziamenti veri non vengono alterati da un filtro generico. Fonte: https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to .

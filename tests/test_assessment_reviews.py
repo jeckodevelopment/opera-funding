@@ -101,6 +101,19 @@ class ReviewedAssessmentTests(unittest.TestCase):
         extracted=extract_specific_requirements(row)
         self.assertIn("esperienza_pregressa",{x["category"] for x in extracted})
 
+    def test_rural_lease_auction_kept_as_informative_notice(self):
+        import json
+        from adequacy import apply_adequacy
+        reviews=json.loads((Path(__file__).resolve().parents[1]/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        entry=next(x for x in reviews if x.get("public_id")==270)
+        row={"public_id":270,"source_id":entry["source_id"],"url":entry["url"],
+             "funding_status":"APERTO","opportunity_type":"finanziamento potenziale"}
+        result=apply_assessment_reviews([row],[entry])[0]
+        apply_adequacy(result)
+        self.assertEqual(result["adequacy_label"],"INFORMATIVA")
+        self.assertEqual(result["funding_status"],"APERTO")
+        self.assertIn("NON un bando",result["assessment_reason"])
+
     def test_generic_button_title_replaced_with_documented_name(self):
         row={"public_id":183,"url":"https://example.org/bando","source_id":"issuer","title":"SCOPRI IL BANDO"}
         review={"public_id":183,"source_id":"issuer","url":"https://example.org/bando",
