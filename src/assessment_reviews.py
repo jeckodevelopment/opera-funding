@@ -3,7 +3,7 @@ from urllib.parse import urlparse
 
 REVIEW_FIELDS = ("assessment_label", "assessment_reason", "programme_objectives_excerpt",
                  "funded_activities_excerpt", "beneficiaries_excerpt", "requirements_excerpt",
-                 "assessment_gaps")
+                 "assessment_gaps", "reviewed_requirements")
 
 def apply_assessment_reviews(rows, reviews):
     index = {(v.get("source_id"), urlparse(v.get("url", "")).path.rstrip("/").lower()):v
