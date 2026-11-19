@@ -73,6 +73,34 @@ class ReviewedAssessmentTests(unittest.TestCase):
         self.assertIn("partenariato",{r["category"] for r in extracted})
         self.assertTrue(all(r["source"].startswith("https://") for r in extracted))
 
+    def test_agricultural_and_regional_direct_blockers(self):
+        import json
+        from operational_assessment import operational_assessment
+        reviews=json.loads((Path(__file__).resolve().parents[1]/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        for ident in (22,185):
+            with self.subTest(public_id=ident):
+                review=next(x for x in reviews if x.get("public_id")==ident)
+                row={"public_id":ident,"source_id":review["source_id"],
+                     "url":review["url"],"funding_status":"APERTO",
+                     "adequacy_label":"BASSA"}
+                applied=apply_assessment_reviews([row],[review])[0]
+                self.assertEqual(operational_assessment(applied)["path"],
+                                 "integrare_verifica_documentale")
+                self.assertTrue(review["evidence_url"].startswith("https://"))
+
+    def test_partnership_experience_for_early_childhood_is_not_absolute_blocker(self):
+        import json
+        from eligibility_specific import extract_specific_requirements
+        reviews=json.loads((Path(__file__).resolve().parents[1]/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        review=next(x for x in reviews if x.get("public_id")==188)
+        self.assertFalse(review.get("direct_application_blocker"))
+        self.assertIn("almeno un partner",review["requirements_excerpt"])
+        row=apply_assessment_reviews([{
+            "public_id":188,"source_id":review["source_id"],"url":review["url"],
+            "opportunity_type":"finanziamento potenziale"}],[review])[0]
+        extracted=extract_specific_requirements(row)
+        self.assertIn("esperienza_pregressa",{x["category"] for x in extracted})
+
     def test_generic_button_title_replaced_with_documented_name(self):
         row={"public_id":183,"url":"https://example.org/bando","source_id":"issuer","title":"SCOPRI IL BANDO"}
         review={"public_id":183,"source_id":"issuer","url":"https://example.org/bando",

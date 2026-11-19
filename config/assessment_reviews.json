@@ -64,13 +64,14 @@
     "assessment_reason": "La misura è destinata a micro, piccole e medie imprese e a investimenti strutturali o tecnologici nello spettacolo dal vivo; non al finanziamento ordinario di corsi o divulgazione musicale di un'associazione culturale. Possibile rilevanza soltanto in presenza di requisiti d'impresa e investimento ammissibile.",
     "programme_objectives_excerpt": "Competitività di micro, piccole e medie imprese operanti nella produzione di spettacolo dal vivo in Piemonte.",
     "funded_activities_excerpt": "Realizzazione o riqualificazione di strutture aperte al pubblico, ammodernamento di impianti e dotazioni tecnologiche per operatori dello spettacolo dal vivo.",
-    "beneficiaries_excerpt": "Imprese e liberi professionisti; la misura supporta micro, piccole e medie imprese professionali del settore.",
-    "requirements_excerpt": "Unità locale operativa in Piemonte e investimenti ammissibili; procedura a sportello con scadenza ufficiale 31 dicembre 2026.",
+    "beneficiaries_excerpt": "Micro, piccole e medie imprese operanti nello spettacolo dal vivo, con unità locale sita e operativa in Piemonte e requisiti specifici di impresa previsti dal bando.",
+    "requirements_excerpt": "La misura sostiene investimenti per nuove strutture, riqualificazione o ammodernamento di spazi per spettacolo dal vivo aperti al pubblico e dotazioni professionali. Beneficiari MPMI con unità locale operativa in Piemonte; scadenza ufficiale 31 dicembre 2026.",
     "assessment_gaps": [
-      "Verificare specifica forma giuridica e requisiti di impresa nel testo del bando.",
-      "La dotazione complessiva di € 5 milioni non coincide con l'importo assegnabile al singolo progetto."
+      "Verificare se Opera+ possa qualificarsi effettivamente come MPMI ai fini del bando e possieda un'unità locale professionale attiva in Piemonte; la sola forma associativa non dimostra un'attività d'impresa.",
+      "Non presentare lo sviluppo di un corso digitale come investimento in strutture o impianti per spettacolo dal vivo."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "evidence_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo"
   },
   {
     "public_id": 177,
@@ -257,12 +258,14 @@
     "assessment_reason": "La call cerca organizzazioni che aiutino famiglie con figli 0-6 anni a partecipare a un programma di risparmio incentivato ed educazione finanziaria; non finanzia percorsi culturali di Opera+. Esclusi anche enti operativi nella città di Torino e prima cintura.",
     "programme_objectives_excerpt": "Accesso delle famiglie piemontesi al programma di risparmio e formazione Scelte Future.",
     "funded_activities_excerpt": "Promozione territoriale, incontri informativi e supporto operativo alle famiglie per aderire all'iniziativa.",
-    "beneficiaries_excerpt": "Enti non profit radicati nelle province piemontesi ammesse, con esclusioni territoriali previste.",
-    "requirements_excerpt": "Attività sul territorio e supporto alle famiglie; esclusa Torino città e prima cintura.",
+    "beneficiaries_excerpt": "Organizzazioni private ammesse ai contributi della Fondazione, con una o più sedi operative in Piemonte, esperienza diretta almeno quinquennale con famiglie con bambini 0–6 nell'area proposta e di coordinamento e lavoro di rete. Sono escluse le organizzazioni operative nella Città di Torino e prima cintura.",
+    "requirements_excerpt": "Esperienza almeno quinquennale del capofila con famiglie 0–6 e lavoro di rete; progetti di orientamento e accompagnamento delle famiglie nell'ambito Scelte Future in province piemontesi ammesse, esclusa operatività a Torino città e prima cintura. Entro il 30 marzo 2027, con possibili chiusure anticipate.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Non presumere che la sola costituzione di Opera+ nel 2026 soddisfi l'esperienza quinquennale richiesta al capofila.",
+      "Verificare eventualmente una collaborazione non beneficiaria presso un'organizzazione territoriale già ammissibile: i partner devono soddisfare i requisiti istituzionali della Fondazione."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "La Call Scelte Future esclude le organizzazioni operative nella Città di Torino e nei comuni della prima cintura e richiede al soggetto capofila almeno cinque anni di attività con famiglie con bambini 0–6 nell'area candidata. Opera+ è stata costituita nel 2026, non dichiara attività pregresse e ha sede dichiarata a Torino."
   },
   {
     "public_id": 120,
@@ -309,11 +312,12 @@
     "programme_objectives_excerpt": "Prevenzione dei danni da grandine alle colture.",
     "funded_activities_excerpt": "Installazione e miglioramento di reti antigrandine e relative spese tecniche.",
     "beneficiaries_excerpt": "Imprenditori agricoli coltivatori diretti o IAP registrati in Piemonte.",
-    "requirements_excerpt": "Spese tra 5.000 e 150.000 euro; contributo al 50%; termine 22 febbraio 2027.",
+    "requirements_excerpt": "Candidatura riservata a imprenditori agricoli coltivatori diretti o IAP; iscrizione all'Anagrafe agricola regionale e fascicolo aziendale aggiornato; investimento antigrandine tra 5.000 e 150.000 euro, contributo pari al 50%; termine 22/02/2027.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Verificare soltanto se una distinta impresa agricola ammissibile sia coinvolta, senza presentare Opera+ come beneficiaria diretta."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "Il bando finanzia solo imprenditori agricoli qualificati come Coltivatori diretti o IAP, iscritti all'Anagrafe agricola del Piemonte e titolari di fascicolo aziendale attivo; Opera+ non dichiara alcuna delle qualifiche necessarie."
   },
   {
     "public_id": 25,
@@ -359,12 +363,14 @@
     "assessment_reason": "Programma centrato su servizi e alleanze educative per bambini da 0 a 6 anni a Torino; un corso di opera lirica rivolto a pubblici generali non corrisponde al servizio educativo integrato richiesto.",
     "programme_objectives_excerpt": "Accessibilità e qualità dei servizi di cura ed educazione per la prima infanzia 0-6 anni.",
     "funded_activities_excerpt": "Co-progettazione di esperienze e servizi educativi continuativi per la fascia 0-6.",
-    "beneficiaries_excerpt": "Organizzazioni del Terzo Settore ed enti pubblici, secondo le linee guida.",
-    "requirements_excerpt": "Radicamento nella rete educativa locale e partecipazione alla co-progettazione per servizi 0-6.",
+    "beneficiaries_excerpt": "Enti pubblici e organizzazioni private formalmente riconosciute senza scopo di lucro con almeno una sede operativa a Torino; esperienza almeno biennale su servizi e attività per bambini 0–6 e famiglie dimostrata dal proponente individuale o, nei partenariati, da almeno uno degli enti partecipanti.",
+    "requirements_excerpt": "Esperienza pregressa richiesta: almeno due anni nella gestione di servizi e attività socioeducative per bambini 0–6 e famiglie, requisito che può essere soddisfatto da almeno un partner se la proposta è in partenariato. Organizzazione non profit formalmente riconosciuta, sede operativa nella Città di Torino e attività per bambini 0–6 nel medesimo territorio. Presentazione di un'idea progettuale entro 30 giugno 2029.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Verificare la natura di organizzazione formalmente riconosciuta di Opera+, oltre alla sede operativa effettiva in Torino.",
+      "L'esperienza di almeno due anni non risulta documentata da Opera+; verificare un ente partner con esperienza valida e ruolo conforme.",
+      "Progettare servizi effettivi 0–6 e una rete educativa sul territorio: non basta la divulgazione musicale online."
     ],
-    "reviewed_at": "2026-11-18",
+    "reviewed_at": "2026-11-19",
     "catalog_title": "Linee guida 0–6: alleanze ad alta intensità educativa"
   },
   {
