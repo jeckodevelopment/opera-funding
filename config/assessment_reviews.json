@@ -23,16 +23,19 @@
     "source_id": "eucreative",
     "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
     "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Il programma sostiene enti che ospitano residenze artistiche, anche nei settori musica e performing arts. Opera+ potrebbe partecipare soltanto sviluppando una vera residenza con artisti esteri, alloggio, spazi e mentorship; la semplice produzione di videolezioni non basta.",
+    "assessment_reason": "La Commissione europea ammette espressamente anche enti di recente costituzione, purché legalmente registrati in un paese Europa Creativa e attivi in un settore culturale ammesso. Opera+ non è esclusa per l'anzianità: musica e performing arts sono ammesse. La candidatura richiede però una reale residenza internazionale, con 1–5 artisti/professionisti provenienti da altri paesi, alloggio e spazi di lavoro adeguati, almeno un mentor e portfolio artistico/promozionale dell'ente. Non sono documentati questi elementi; il semplice corso digitale non soddisfa il programma.",
     "programme_objectives_excerpt": "Supporto a organizzazioni che ospitano artisti e professionisti culturali provenienti da altri paesi di Europa Creativa.",
     "funded_activities_excerpt": "Un progetto di residenza per 1–5 artisti, con contributi giornalieri all'ente ospitante e ai residenti.",
-    "beneficiaries_excerpt": "Persone giuridiche registrate in un paese di Europa Creativa e attive in settori culturali ammissibili, inclusi musica e performing arts.",
-    "requirements_excerpt": "Capacità di ospitare, fornire alloggio e spazi di lavoro adeguati, almeno un mentor e documenti dell'ente e del progetto. Scadenza 18 gennaio 2027.",
+    "beneficiaries_excerpt": "Enti legalmente registrati e con sede in un paese aderente a Europa Creativa, anche di recente costituzione, attivi in musica, performing arts o altri settori culturali ammessi.",
+    "requirements_excerpt": "Progetto di residenza con 1–5 artisti o professionisti culturali residenti in altri paesi Europa Creativa; almeno due degli obiettivi create/learn/explore/connect/transform; alloggio e spazi di lavoro idonei; almeno un mentor; prova della registrazione dell'ente, portfolio artistico/promozionale e CV del mentor. Candidatura in inglese tramite Goethe-Application Portal entro 18/01/2027; fase 2 per residenti selezionati.",
     "assessment_gaps": [
-      "Verificare capacità concreta di ospitalità e disponibilità di mentor.",
-      "Confermare compatibilità del progetto di residenza con le attività associative."
+      "Documentare sede e capacità concreta di alloggio/spazi di lavoro per una residenza internazionale, non semplicemente un corso online.",
+      "Identificare almeno un mentor con CV e predisporre portfolio artistico/promozionale dell'ente, oltre a dimostrare la registrazione legale.",
+      "Definire progetto con 1–5 residenti da altri paesi Europa Creativa e almeno due obiettivi previsti; prima fase entro il 18 gennaio 2027.",
+      "Non penalizzare l'ente per costituzione recente: la fonte ammette espressamente organizzazioni nuove."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "evidence_url": "https://culture.ec.europa.eu/it/culture-moves-europe/call-for-residency-hosts"
   },
   {
     "public_id": 32,
@@ -72,16 +75,17 @@
     "url": "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo/",
     "evidence_url": "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
     "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Fondo rivolto a enti non profit registrati, con sostegno a progetti a impatto sociale. Opera+ potrebbe candidare un progetto di accessibilità e inclusione culturale con benefici sociali espliciti; un corso d'opera privo di obiettivi sociali documentati è meno coerente.",
+    "assessment_reason": "Il Fondo di Beneficenza ammette enti senza fini di lucro legalmente costituiti, con sede in Italia e iscritti ad almeno un registro pubblico: il RUNTS non è obbligatorio in sé, secondo le FAQ ufficiali. Il codice fiscale di Opera+ non dimostra un'iscrizione a un registro pubblico; occorre verificare l'esistenza di un registro idoneo, statuto, atto costitutivo e procedure contabili. Sono pertinenti progetti con impatto sociale documentabile, non un corso di divulgazione privo di destinatari e risultati sociali definiti.",
     "programme_objectives_excerpt": "Erogazioni liberali per iniziative non profit, valutate in base al potenziale impatto sociale.",
     "funded_activities_excerpt": "Liberalità territoriali fino a 5.000 euro e liberalità centrali superiori a 5.000 euro per progetti coerenti con regolamento e linee guida.",
-    "beneficiaries_excerpt": "Enti senza fine di lucro legalmente costituiti, iscritti in un registro pubblico e con sede in Italia.",
-    "requirements_excerpt": "Procedure contabili adeguate; verificare Regolamento e Linee guida; la valutazione considera impatto sociale. Le domande sono valutate durante l'anno e le disponibilità possono esaurirsi.",
+    "beneficiaries_excerpt": "Enti senza fini di lucro legalmente costituiti, con sede italiana, iscritti ad almeno un registro pubblico e dotati di atto costitutivo, statuto e procedure contabili. Le FAQ precisano che il RUNTS non è obbligatorio.",
+    "requirements_excerpt": "Iscrizione ad almeno un registro pubblico (non necessariamente RUNTS) da documentare; atto di costituzione, statuto e procedure contabili; progetto coerente con Linee guida e valutato per impatto sociale. Liberalità territoriali fino a 5.000 euro e centrali oltre 5.000 euro. Domande sociali durante l'anno, fondi soggetti a esaurimento.",
     "assessment_gaps": [
-      "Verificare se il progetto Opera+ soddisfa le priorità sociali della versione corrente delle Linee guida.",
-      "Verificare condizioni contabili dell'associazione e disponibilità residua dei fondi."
+      "Verificare se Opera+ è già iscritta ad almeno un registro pubblico idoneo; il codice fiscale da solo non basta e la richiesta RUNTS in corso non equivale a iscrizione.",
+      "Documentare statuto, atto costitutivo e procedure contabili; verificare le Linee guida 2025–2026 e il plafond disponibile.",
+      "Progettare un intervento di inclusione/accessibilità culturale con destinatari, risultati sociali e budget, non il solo corso online."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19"
   },
   {
     "public_id": 175,
@@ -207,17 +211,21 @@
     "public_id": 252,
     "source_id": "volto",
     "url": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27",
-    "evidence_url": "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/",
+    "evidence_url": "https://www.unamanoachisostiene.it/",
     "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_reason": "Il bando comprende educazione e cultura, ma richiede un impatto sociale concreto e un progetto per inclusione e fragilità; è adatto a Opera+ solo se il corso diventa un intervento verificabile per pubblici vulnerabili.",
+    "assessment_reason": "Il sito ufficiale di Fondazione Cattolica ammette, oltre agli ETS, anche enti privati senza scopo di lucro: il RUNTS in corso non esclude automaticamente Opera+. Tuttavia il bando sostiene progetti NUOVI con impatto sociale misurabile, inclusione e coesione territoriale; non è sufficiente il corso di opera già esistente. È previsto un contributo massimo di 20.000 euro, entro l'80% dei costi, erogato solo dopo realizzazione e rendicontazione; sono quindi necessarie risorse per anticipare i costi e coprire almeno il 20%.",
     "programme_objectives_excerpt": "Progetti non profit di coesione sociale, cultura del dono e inclusione.",
     "funded_activities_excerpt": "Progetti in educazione e cultura con impatto sociale; contributo massimo di 20.000 euro.",
-    "beneficiaries_excerpt": "Enti del Terzo Settore e soggetti privati senza fini di lucro.",
-    "requirements_excerpt": "Finanziamento massimo 80% dei costi; realizzazione entro 18 mesi; prima fase entro 16 febbraio 2027, poi selezione e voto pubblico.",
+    "beneficiaries_excerpt": "Enti del Terzo Settore, enti ecclesiastici civilmente riconosciuti e altri enti privati senza scopo di lucro, salve esclusioni specifiche del regolamento. Un solo progetto per ente.",
+    "requirements_excerpt": "Nuova iniziativa per inclusione e coesione sociale nelle aree cultura, educazione e solidarietà; impatto positivo misurabile. Domande dal 16/11/2026 al 16/02/2027; massimo 20.000 euro e non oltre l'80% dei costi; contributo liquidato dopo conclusione e rendicontazione. Avvio entro 6 mesi e conclusione entro 18 mesi dalla comunicazione di approvazione.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Verificare statuto e appartenenza alla categoria di ente privato senza scopo di lucro, senza considerare RUNTS obbligatorio per tutte le categorie.",
+      "Definire un progetto nuovo di inclusione culturale con destinatari territoriali e misurazione di risultati sociali.",
+      "Verificare disponibilità di almeno il 20% di risorse proprie/altre fonti e capacità di anticipare le spese, poiché la liquidazione avviene a consuntivo.",
+      "Valutare sostenibilità del voto pubblico dopo la selezione dei 100 progetti."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "catalog_title": "Una mano a chi sostiene – Fondazione Cattolica 2026/27"
   },
   {
     "public_id": 144,
