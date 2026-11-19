@@ -228,3 +228,10 @@ La scansione ricalcola `requirement_coverage_status` e `requirement_evidence_cou
 Le lacune restano lacune: **nessuna spunta inventata**, nessuna eliminazione di opportunità, nessuna modifica alle valutazioni editoriali. Solo un confronto con requisito esplicito e URL HTTPS può essere contato come documentato. Un blocco di candidatura diretta già motivato è rilevato separatamente. Il controllo integrità riconcilia i conteggi con tutti i record; la mancanza di informazioni di fonte non blocca la pubblicazione.
 
 Collaudo: suite qualità, scanner, conteggi coerenti, zero ID persi/duplicati, controllo della coda aperta senza requisiti confrontabili e dell'accordion nei casi con e senza evidenze. Il frontend già pubblicato legge il feed JSON GitHub, quindi non richiede nuovo SFTP.
+
+
+### Requisiti prioritari e pubblicazione del backfill (19 novembre 2026)
+
+Il workflow storico `history-backfill.yml` ora aggiunge al commit tutti i dati pubblici generati sotto `data/`: in precedenza il programma lasciava modifiche locali non salvate (in particolare il registro dei programmi) e `git rebase origin/main` falliva. Verificare con una nuova esecuzione e monitorare eventuali conflitti concorrenti.
+
+Per le schede MEDIA #8 (registro comunale), #33 (registrazione dell'ente, alloggio e spazi di lavoro per la residenza) e #146 (quota residua coperta con risorse proprie) sono stati aggiunti riconoscimenti specifici e prudenti delle clausole già presenti nelle fonti revisionate. Nuova categoria `capacita_operativa` per non confondere l'ospitalità artistica con un partenariato. I singoli confronti rimangono `da_verificare` in assenza di documenti del richiedente. Nessuna esclusione o spunta verde automatica.

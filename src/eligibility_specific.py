@@ -18,6 +18,9 @@ PATTERNS = (
         r"(?i)\b(?:(?:iscritt[ioe]|registrat[ioe])\s+(?:al|nel|alla|all')\s*(?:runts|registro|albo)|"
         r"(?:obbligatoria|richiesta)\s+l['’]iscrizione|"
         r"(?:iscritt[ioe]\s+ad\s+almeno\s+un\s+registro\s+pubblico)|"
+        r"(?:(?:iscrizione|iscritti|iscritte)\s+(?:nel|al)\s+registro\s+comunale)|"
+        r"(?:prova\s+della\s+registrazione\s+dell[\u0027’]ente)|"
+        r"(?:enti\s+legalmente\s+registrati)|"
         r"must\s+be\s+(?:registered|incorporated)|"
         r"legal\s+(?:status|form)\s+(?:required|must))\b")),
     ("anzianita", re.compile(
@@ -28,11 +31,15 @@ PATTERNS = (
         r"(?i)\b(?:cofinanziamento\s+(?:obbligatorio|richiesto|almeno|pari\s+al)|"
         r"(?:obbligo|quota\s+minima)\s+di\s+cofinanziamento|"
         r"(?:budget|fatturato|bilancio)\s+(?:minimo|di\s+almeno|non\s+inferiore)|"
+        r"(?:resto\s+da\s+coprire\s+con\s+risorse\s+proprie)|"
         r"(?:mandatory|minimum)\s+(?:co[ -]?funding|co[ -]?financing|turnover))\b")),
     ("esperienza_pregressa", re.compile(
         r"(?i)\b(?:esperienza\s+(?:pregressa|precedente)\s+(?:obbligatoria|richiesta)|"
         r"(?:almeno|minimo)\s+\d+\s+(?:progetti|iniziative|attivit[àa])\s+(?:realizzat[ie]|completat[ie])|"
         r"previous\s+(?:project\s+)?experience\s+(?:required|mandatory))\b")),
+    ("capacita_operativa", re.compile(
+        r"(?i)\b(?:alloggio\s+e\s+spazi\s+di\s+lavoro\s+idonei|"
+        r"almeno\s+un\s+mentor|capacità\s+di\s+ospitare\s+una\s+residenza)\b")),
     ("partenariato", re.compile(
         r"(?i)\b(?:partenariato\s+(?:obbligatorio|richiesto)|"
         r"(?:partner|partenariati)\s+obbligatori|"

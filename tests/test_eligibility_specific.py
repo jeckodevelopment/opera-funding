@@ -68,6 +68,25 @@ class SpecificRequirementTests(unittest.TestCase):
         self.assertEqual([x["category"] for x in row["eligibility_specific_requirements"]],
                          ["natura_giuridica"])
 
+    def test_medium_open_documented_requirements_are_never_auto_approved(self):
+        from applicant_comparison import compare_applicant_requirements
+        samples={
+            8:("Iniziative locali; verificare l'iscrizione nel registro comunale.",{"natura_giuridica"}),
+            33:("Enti legalmente registrati; alloggio e spazi di lavoro idonei; almeno un mentor.",
+                {"natura_giuridica","capacita_operativa"}),
+            146:("Contributo massimo 80%, resto da coprire con risorse proprie/altre fonti.",
+                 {"condizioni_economiche"}),
+        }
+        for number,(excerpt,expected) in samples.items():
+            with self.subTest(public_id=number):
+                row=annotate_specific_requirements({
+                    **BASE,"public_id":number,"requirements_excerpt":excerpt})
+                found=row["eligibility_specific_requirements"]
+                self.assertEqual({x["category"] for x in found},expected)
+                comparisons=compare_applicant_requirements(row,{"profile_fields":{}})
+                self.assertEqual(len(comparisons),len(found))
+                self.assertTrue(all(x["status"]=="da_verificare" for x in comparisons))
+
     def test_informational_records_not_assessed(self):
         row=annotate_specific_requirements({**BASE,"opportunity_type":"altro avviso",
             "requirements_excerpt":"Partenariato obbligatorio."})

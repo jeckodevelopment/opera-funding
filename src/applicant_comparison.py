@@ -10,7 +10,8 @@ from pathlib import Path
 
 DEFAULT_PROFILE = Path(__file__).resolve().parents[1] / "config/applicant_profile.json"
 CATEGORIES = ("territorio", "natura_giuridica", "anzianita",
-              "condizioni_economiche", "partenariato", "esperienza_pregressa")
+              "condizioni_economiche", "partenariato", "esperienza_pregressa",
+              "capacita_operativa")
 REGIONS = (
     "piemonte", "lombardia", "liguria", "valle d'aosta", "veneto",
     "emilia-romagna", "toscana", "lazio", "puglia", "campania", "sicilia",
