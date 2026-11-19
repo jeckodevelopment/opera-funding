@@ -289,7 +289,8 @@ function detailDisclosure(title,body,extraClass=""){
 const REQUIREMENT_NAMES={
  territorio:"Sede e territorio",natura_giuridica:"Forma giuridica e registri",
  anzianita:"Anzianità dell'ente",condizioni_economiche:"Condizioni economiche",
- partenariato:"Partenariato",esperienza_pregressa:"Esperienza pregressa"
+ partenariato:"Partenariato",esperienza_pregressa:"Esperienza pregressa",
+ capacita_operativa:"Capacità di ospitare il progetto"
 };
 function requirementChecklist(o){
  const raw=Array.isArray(o.applicant_requirement_comparison)?o.applicant_requirement_comparison:[];
