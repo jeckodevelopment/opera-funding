@@ -297,3 +297,29 @@ body.detail-view .primary-nav{display:none}
   .registry-table .registry-number{font-variant-numeric:tabular-nums}
   .registry-change{margin-top:3px}
 }
+
+/* Requirement evidence: compact, closed by default, before action buttons. */
+.requirements-checklist{margin:19px 0 15px;border:1px solid #dedbd3;border-radius:11px;background:#fff;overflow:hidden}
+.requirement-accordion>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;padding:15px 17px;list-style:none}
+.requirement-accordion>summary::-webkit-details-marker{display:none}
+.requirement-accordion>summary:after{content:"⌄";color:#6e746f;font-size:18px;line-height:1}
+.requirement-accordion[open]>summary:after{content:"⌃"}
+.requirement-heading{font-size:14px;font-weight:750;color:#283334}
+.requirement-counts{font-size:11px;font-weight:650;color:#677277;text-align:right}
+.requirement-body{padding:2px 17px 14px;border-top:1px solid #eee9e0}
+.requirement-item{display:flex;align-items:flex-start;gap:10px;padding:13px 0;border-bottom:1px solid #f0ece7}
+.requirement-mark{display:grid;place-items:center;flex:none;width:22px;height:22px;border-radius:50%;background:#eef0ee;color:#586269;font-size:13px;font-weight:800}
+.requirement-item.verified .requirement-mark{background:#e3f1e9;color:#246e4d}
+.requirement-item.risk .requirement-mark{background:#fbe9e4;color:#a04432}
+.requirement-description{min-width:0;flex:1;display:flex;flex-direction:column;gap:3px}
+.requirement-description strong{font-size:13px;color:#30383b}
+.requirement-status{font-size:11px;font-weight:700;color:#6a7476}
+.requirement-item.verified .requirement-status{color:#246e4d}
+.requirement-item.risk .requirement-status{color:#a04432}
+.requirement-clause,.requirement-reason,.requirement-caveat,.requirement-empty{font-size:12px;line-height:1.5;color:#5a676b;margin:0}
+.requirement-reason{font-weight:600}
+.requirement-source{font-size:12px;color:#80602e;font-weight:700;text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
+.requirement-caveat{margin-top:12px}
+.requirement-empty{padding:12px 0}
+.detail-primary-actions{margin-top:12px}
+@media(max-width:520px){.requirement-accordion>summary{align-items:flex-start;flex-wrap:wrap;padding:13px}.requirement-counts{text-align:left}.requirement-body{padding:2px 13px 13px}}
