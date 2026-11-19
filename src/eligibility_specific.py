@@ -17,6 +17,7 @@ PATTERNS = (
     ("natura_giuridica", re.compile(
         r"(?i)\b(?:(?:iscritt[ioe]|registrat[ioe])\s+(?:al|nel|alla|all')\s*(?:runts|registro|albo)|"
         r"(?:obbligatoria|richiesta)\s+l['’]iscrizione|"
+        r"(?:iscritt[ioe]\\s+ad\\s+almeno\\s+un\\s+registro\\s+pubblico)|"
         r"must\s+be\s+(?:registered|incorporated)|"
         r"legal\s+(?:status|form)\s+(?:required|must))\b")),
     ("anzianita", re.compile(
