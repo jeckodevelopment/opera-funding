@@ -49,9 +49,12 @@
     "requirements_excerpt": "Progetto in un paese estero, partner internazionale, CV e portfolio artistico, lettera di invito; finestre periodiche fino ad aprile 2027.",
     "assessment_gaps": [
       "Non candidabile direttamente da un'associazione in questa linea.",
-      "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso."
+      "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso.",
+      "Verificare l'eventuale interesse di singoli professionisti culturali e il partner estero; non presentare Opera+ come beneficiario diretto."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "La linea Culture Moves Europe per mobilità individuale ammette artisti e professionisti come persone fisiche, singolarmente o in gruppi fino a cinque; non finanzia una candidatura presentata direttamente dall'associazione Opera+.",
+    "evidence_url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility"
   },
   {
     "public_id": 18,
@@ -203,9 +206,11 @@
     "beneficiaries_excerpt": "Enti locali, soggetti pubblici e categorie di enti di rievocazione con finalità statutarie specifiche.",
     "requirements_excerpt": "Evento storico continuativo da almeno cinque anni; domanda telematica entro 31 gennaio 2027.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione.",
+      "Non usare un nuovo corso o evento lirico come prova di rievocazione storica continuativa quinquennale; valutare solo un eventuale ruolo distinto presso ente idoneo."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "Il Fondo 2027 finanzia esclusivamente manifestazioni di rievocazione storica svolte con continuità da almeno cinque anni, da soggetti pubblici o enti di rievocazione ammessi; Opera+ è nata nel 2026 e non ha manifestazioni quinquennali."
   },
   {
     "public_id": 252,
@@ -321,9 +326,11 @@
     "beneficiaries_excerpt": "Esclusivamente Ambiti Territoriali Sociali (ATS).",
     "requirements_excerpt": "Candidatura via PEC; termine 10 dicembre 2026.",
     "assessment_gaps": [
-      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione."
+      "Confrontare tutti i requisiti della versione vigente del bando con la situazione effettiva dell'associazione.",
+      "Candidatura diretta riservata agli ATS: verificare soltanto un eventuale ruolo esecutivo o partenariato formalmente ammesso."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "La Regione Piemonte ammette alla candidatura soltanto gli Ambiti Territoriali Sociali (ATS), mentre Opera+ è un'associazione culturale e non un ATS. Un eventuale contributo operativo a un progetto di un ATS richiede accordo e verifica distinta."
   },
   {
     "public_id": 189,
@@ -510,9 +517,11 @@
     "requirements_excerpt": "Edizione 2026: candidatura entro il 4 dicembre 2026; progetto già in fase operativa o concluso non prima di dicembre 2023 e risultati verificabili; candidatura in inglese; una domanda per team.",
     "assessment_gaps": [
       "Opera+ dichiara nessun progetto già realizzato: non presentare un progetto solo futuro come già completato.",
-      "Verificare la possibilità di partecipare come partner a un progetto preesistente condotto da altra organizzazione, nel rispetto delle regole del premio."
+      "Verificare la possibilità di partecipare come partner a un progetto preesistente condotto da altra organizzazione, nel rispetto delle regole del premio.",
+      "Non presentare un progetto ancora da avviare come se avesse già risultati misurabili; verificare solo eventuale progetto effettivamente esistente e documentato."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "Il Challenge 2026 ammette soltanto iniziative già realizzate o in corso con impatto concreto dimostrabile contro l'indifferenza alla discriminazione. Opera+ dichiara nessuna attività svolta e non risulta avere un progetto già attuato conforme."
   },
   {
     "public_id": 254,
@@ -527,9 +536,11 @@
     "requirements_excerpt": "Piattaforma DOS-Cultura fino alle ore 16:00 del 31 gennaio 2027; dimostrare manifestazioni continuative da almeno cinque anni, soggetto giuridico/forma ammessa e documentazione secondo D.M. 75/2025.",
     "assessment_gaps": [
       "Per Opera+ verificare solo un eventuale contributo progettuale non da capofila presso un ente idoneo con manifestazione quinquennale.",
-      "Non usare l'eventuale pertinenza di opera lirica storica per inferire automaticamente una rievocazione storica ammissibile."
+      "Non usare l'eventuale pertinenza di opera lirica storica per inferire automaticamente una rievocazione storica ammissibile.",
+      "La scheda del portale aggregatore non sostituisce il bando ministeriale; candidatura autonoma non praticabile sulla base dei requisiti documentati."
     ],
-    "reviewed_at": "2026-11-18"
+    "reviewed_at": "2026-11-19",
+    "direct_application_blocker": "Per il Fondo 2027 la fonte ministeriale richiede una manifestazione di rievocazione storica svolta con continuità da almeno cinque anni e una specifica categoria di richiedente. Opera+ non dispone di eventi quinquennali documentati."
   },
   {
     "public_id": 255,
