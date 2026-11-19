@@ -66,6 +66,12 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
+      - name: Sync with latest main before funding discovery
+        # Queued workflows may check out a SHA older than the completed
+        # history backfill or another scan in the shared funding-scan group.
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
       - run: pip install -r requirements.txt
       - name: Scan funding sources
         id: scan
