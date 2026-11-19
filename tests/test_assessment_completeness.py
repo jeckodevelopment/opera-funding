@@ -2,7 +2,8 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-from catalog_reconciliation import reconcile_catalog_assessments, validate_catalog_assessments
+from catalog_reconciliation import (reconcile_catalog_assessments, validate_catalog_assessments,
+                                    annotate_requirement_coverage, summarize_requirement_coverage)
 
 class AssessmentCompletenessTests(unittest.TestCase):
     def test_existing_judgement_is_preserved(self):
@@ -36,6 +37,30 @@ class AssessmentCompletenessTests(unittest.TestCase):
         self.assertEqual(reconcile_catalog_assessments(rows),1)
         self.assertEqual(len(rows),2)
         self.assertEqual([r["adequacy_label"] for r in rows],["BASSA","ALTA"])
+
+    def test_reconcile_full_catalog_without_inventing_requirements(self):
+        rows=[
+            {"public_id":1,"funding_status":"APERTO","adequacy_label":"MEDIA",
+             "applicant_requirement_comparison":[
+                 {"status":"da_verificare","requirement":"Sede in Piemonte",
+                  "source":"https://official.example/call"}]},
+            {"public_id":2,"funding_status":"APERTO","adequacy_label":"BASSA",
+             "requirements_excerpt":"Beneficiari da confermare",
+             "applicant_requirement_comparison":[]},
+            {"public_id":3,"funding_status":"CHIUSO","opportunity_type":"altro avviso"},
+            {"public_id":4,"funding_status":"APERTO","adequacy_label":"BASSA",
+             "direct_application_blocker":"Registro obbligatorio mancante"},
+        ]
+        for row in rows: annotate_requirement_coverage(row)
+        report=summarize_requirement_coverage(rows)
+        self.assertEqual(report["coverage"]["catalogo"]["total"],4)
+        self.assertEqual(sum(report["coverage"]["catalogo"]["coverage_status_counts"].values()),4)
+        self.assertEqual(report["coverage"]["aperte"]["requirements_compared"],1)
+        self.assertEqual(report["coverage"]["aperte_alta_media"]["total"],1)
+        self.assertEqual([r["public_id"] for r in report[
+            "open_without_comparable_requirements"]],[2])
+        self.assertEqual(rows[1]["requirement_coverage_status"],"senza_requisiti_confrontabili")
+        self.assertEqual(rows[3]["requirement_coverage_status"],"ostacolo_documentato")
 
     def test_unverified_eligibility_is_not_automatically_ineligible(self):
         row={"public_id":20,"eligibility":"da verificare"}
