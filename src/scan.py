@@ -36,6 +36,7 @@ from catalog_reconciliation import (summarize_catalog_reconciliation, reconcile_
                                     annotate_requirement_coverage, summarize_requirement_coverage)
 from catalog_audit import load_retired_sources, mark_retired_source, audit_catalog
 from catalog_quality import catalog_quality
+from catalog_admission import split_new_catalogue
 from funder_registry import load_registry, link_opportunities, public_monitoring
 from programme_monitor import check_programmes, load_programme_state, public_status
 from programme_ingest import ingest_programme_calls
@@ -153,10 +154,19 @@ def run():
     sources = json.loads(Path(args.sources).read_text(encoding="utf-8"))
     output = Path(args.output)
     existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else []
+    pending_path=ROOT / "data/pending-opportunities.json"
+    previous_pending=json.loads(pending_path.read_text(encoding="utf-8")) if pending_path.exists() else []
+    if not isinstance(previous_pending,list) or any(not isinstance(x,dict) or
+            not isinstance(x.get("id"),str) for x in previous_pending):
+        raise ValueError("Registro istruttorie invalido: non pubblicare senza ripristinare la coda")
+    public_identity={r["id"] for r in existing}
+    pending_identity={r["id"] for r in previous_pending}
+    if public_identity & pending_identity:
+        raise ValueError("Una scheda compare nel catalogo e nella coda istruttorie")
     retired_sources=load_retired_sources(ROOT / "config/retired_sources.json")
     # Preserve historic cards/IDs, but never carry an unverified old OPEN badge.
     indexed = {row["id"]: classify_informational_page(
-        mark_retired_source(row,retired_sources)) for row in existing}
+        mark_retired_source(row,retired_sources)) for row in existing+previous_pending}
     priority_pages = json.loads((ROOT / "config/priority_pages.json").read_text(encoding="utf-8"))
     issuer_checks = json.loads((ROOT / "config/issuer_checks.json").read_text(encoding="utf-8"))
     reviewed_facts = json.loads((ROOT / "config/reviewed_official_facts.json").read_text(encoding="utf-8"))
@@ -202,6 +212,9 @@ def run():
                 new_ids={item["id"] for item in found if item["id"] not in indexed}
                 review_ids=pick_for_review(found+backlog,indexed,review_limit)
                 review_ids.update(new_ids)
+                # Persistent incomplete records are retried in bounded batches.
+                pending_batch=[x["id"] for x in found+backlog if x["id"] in pending_identity]
+                review_ids.update(pending_batch[:12])
                 if source["id"]=="eufunding":
                     # The F&T Portal is a dynamic SPA. Drain every EU topic that
                     # has never been queried through the official per-topic API
@@ -350,18 +363,22 @@ def run():
         annotate_requirement_coverage(row)
         annotate_operational_assessment(row)
     rows=link_opportunities(rows, registry_funders)
+    rows,pending_rows,admission_report=split_new_catalogue(rows,public_identity)
     rows=track_changes(rows, existing, now)
     catalogue_audit=audit_catalog(rows,retired_sources)
     programme_state_path.write_text(json.dumps(programme_state,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
     output.parent.mkdir(parents=True, exist_ok=True)
     ids_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+    pending_path.write_text(json.dumps(pending_rows,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     output.write_text(json.dumps(sorted(rows, key=lambda o:(-o.get("relevance",0),o["title"])), ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     Path(args.report).write_text(json.dumps({"checked_at":now,"sources":statuses,"coverage":coverage(rows,statuses),"assessment_coverage":assessment_coverage(rows),
                                         "open_eligibility_review":build_open_review_queue(rows,now[:10]),
                                         "catalog_reconciliation":summarize_catalog_reconciliation(rows),
                                         "requirement_reconciliation":summarize_requirement_coverage(rows),
                                         "catalog_audit":catalogue_audit,
+                                        "catalog_admission":admission_report,
+                                        "catalog_quality":catalog_quality(rows),
                                         "funder_monitoring":public_monitoring(registry_funders,statuses,now,public_status(programme_state)),
                                         "programme_ingestion":programme_ingestion},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"Saved {len(rows)} opportunity links; sources OK {sum(s['ok'] for s in statuses)}/{len(statuses)}")
