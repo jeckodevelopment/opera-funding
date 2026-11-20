@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'src/scan.py'
+      - 'src/catalog_admission.py'
       - 'src/programme_monitor.py'
       - 'src/programme_ingest.py'
       - 'src/funder_registry.py'
@@ -103,7 +104,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/opportunities.json data/scan-status.json data/opportunity-ids.json data/programme-monitoring.json
+          git add data/opportunities.json data/scan-status.json data/opportunity-ids.json data/pending-opportunities.json data/programme-monitoring.json
           if [ -f data/notification-state.json ]; then git add data/notification-state.json; fi
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh funding discovery"
