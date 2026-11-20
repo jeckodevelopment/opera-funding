@@ -51,7 +51,11 @@ on:
   schedule:
     # Avoid the top-of-hour GitHub Actions scheduling congestion.
     # Daily discovery/review, including weekends: new calls never wait for Monday.
+    # Staggered retries reduce missed/delayed GitHub scheduled events.
+    # A freshness gate below prevents repeated daily scans.
+    - cron: '41 5 * * *'
     - cron: '23 6 * * *'
+    - cron: '11 7 * * *'
 permissions:
   contents: write
 concurrency:
@@ -72,15 +76,24 @@ jobs:
         run: |
           git fetch origin main
           git reset --hard origin/main
+      - name: Check daily scan freshness (Europe/Rome)
+        id: due
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: python src/scan_due.py >> "$GITHUB_OUTPUT"
       - run: pip install -r requirements.txt
+        if: steps.due.outputs.run_scan == 'true'
       - name: Scan funding sources
         id: scan
+        if: steps.due.outputs.run_scan == 'true'
         run: python src/scan.py
       - name: Verify scan integrity before notifications and publication
         id: integrity
+        if: steps.due.outputs.run_scan == 'true'
         run: python src/scan_integrity.py
       - name: Notify on newly open relevant calls
         id: notify
+        if: steps.due.outputs.run_scan == 'true'
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           FUNDING_ALERT_RECIPIENT: ${{ secrets.FUNDING_ALERT_RECIPIENT }}
