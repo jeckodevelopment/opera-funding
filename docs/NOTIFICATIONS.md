@@ -2,7 +2,7 @@
 
 ## Architettura
 
-Lo scanner è programmato **ogni giorno**, inclusi i fine settimana, con tre tentativi mattutini e un controllo di freschezza in orario Europe/Rome per evitare scansioni duplicate. Dopo la verifica d'integrità, `.github/workflows/scan.yml` **pubblica il JSON del catalogo**, poi esegue `python src/notify.py` e infine versiona il registro delle consegne. Il modulo invia un riepilogo separato per destinatario, senza esporre gli altri indirizzi. Sono candidabili alla notifica le nuove opportunità autentiche e catalogate negli stati APERTO, IN ARRIVO o DA VERIFICARE, con adeguatezza ALTA, MEDIA o BASSA. Le nuove schede non valutate restano nella coda d'istruttoria, fuori dal catalogo e dalle notifiche.
+Lo scanner è programmato **ogni giorno**, inclusi i fine settimana, con tre tentativi mattutini e un controllo di freschezza in orario Europe/Rome per evitare scansioni duplicate. Dopo la verifica d'integrità, `.github/workflows/scan.yml` **pubblica il JSON del catalogo**, poi esegue `python src/notify.py` e infine versiona il registro delle consegne. Il modulo invia un riepilogo separato per destinatario, senza esporre gli altri indirizzi. Sono candidabili alla notifica **solo** le opportunità negli stati APERTO o IN ARRIVO, con apertura/inizio documentati, finestra di candidatura verificata (scadenza con fonte oppure sportello attestato), requisiti e motivazione di adeguatezza completi e fonte raggiungibile. Le opportunità DA VERIFICARE non sono notificabili, anche se già presenti nello storico. Le nuove schede non valutate restano nella coda d'istruttoria, fuori dal catalogo e dalle notifiche.
 
 La prima esecuzione inizializza `data/notification-state.json` senza inviare tutte le opportunità storiche. Le esecuzioni successive confrontano lo stato delle schede con il registro, memorizzano gli identificativi già notificati e inviano le novità senza ripetizioni. Le informazioni pubblicate nel registro **non contengono indirizzi email, credenziali, token né dati personali dei destinatari**. Se un singolo invio fallisce, il registro tiene traccia dei destinatari già raggiunti (solo codici HMAC non reversibili senza chiave segreta), e nella scansione seguente riprova esclusivamente quelli non ancora raggiunti. La richiesta a Resend contiene una chiave di idempotenza per ridurre i doppi invii in caso di retry (garanzia del provider di 24 ore). Il registro deve restare sotto versionamento Git.
 
@@ -21,7 +21,7 @@ La prima esecuzione inizializza `data/notification-state.json` senza inviare tut
 
 ## Regole e collaudi
 
-- Invio per le **nuove opportunità pertinenti** già ammesse al catalogo (APERTO, IN ARRIVO e DA VERIFICARE), mantenendo sempre esplicito lo stato; mai per gli avvisi informativi o le schede ancora in istruttoria.
+- Invio per le **nuove opportunità con apertura e finestra comprovate** negli stati APERTO o IN ARRIVO, dopo applicazione degli stessi requisiti di ammissione preventiva, anche per schede storiche. Escludere sempre DA VERIFICARE, informativi, chiusi e schede ancora in istruttoria.
 - Nessuna email a ogni scansione in assenza di nuovi bandi. La rilevanza è una **stima**, non prova di ammissibilità; nell'email si rimanda alla fonte originale.
 - Ogni messaggio riepilogativo comprende fino a 12 schede; più opportunità vengono inviate con più batch entro le quote. Gli elementi ALTA/MEDIA sono ordinati prima dei BASSA. Nessuna email è inviata soltanto per cambiamenti editoriali.
 - In caso di errore del provider, non segnare le opportunità come inviate. I JSON pubblici vengono aggiornati anche se l'email fallisce: la failure del job deve essere visibile in Actions.
@@ -74,3 +74,26 @@ Collaudi: `tests/test_notify.py` verifica il contenuto a sportello,
 l'ordine dei passaggi pubblicazione/invio/registro, il doppio destinatario,
 la ripresa dopo invio parziale, le quote e i collegamenti alle schede.
 La CI completa (Python, JavaScript, JSON, build) resta obbligatoria.
+
+## Regola vincolante: vietate email con candidatura/scadenza non documentata
+
+Nel digest delle ore 21:05 circa del 20/11/2026 veniva presentato
+«Culture Moves Europe — Call for residency hosts 2026–2027» (#33) senza
+scadenza e con stato `DA VERIFICARE`. La scheda era già presente nello
+storico (il controllo dei nuovi ingressi non la elimina), ma la funzione
+`is_notifiable` includeva esplicitamente lo stato `DA VERIFICARE`.
+Questo comportamento non rispetta la regola concordata.
+
+**Correzione strutturale:** nessun record, nemmeno storico, entra in una
+nuova email finché `admission_reasons` non restituisce una valutazione
+completa e priva di blocchi e la procedura non sia APERTA o IN ARRIVO
+con apertura e finestra documentate. Per le opportunità future occorre
+anche una data finale verificata oppure uno sportello comprovato; non
+basta la data iniziale. Nessun PDF o data viene inventato.
+
+Un vecchio record DA VERIFICARE può rimanere nel catalogo a fini
+storici, ma è **escluso** dalle notifiche. Se emergono evidenze
+ufficiali sufficienti, può rientrare negli annunci successivi soltanto
+dopo nuova verifica, nel rispetto delle regole di deduplicazione.
+Test regressivi specifici su #33, scadenza assente, evidenza mancante,
+sportello e uscita dalla coda preventiva.
