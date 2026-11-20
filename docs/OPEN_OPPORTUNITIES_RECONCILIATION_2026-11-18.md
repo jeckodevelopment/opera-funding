@@ -288,3 +288,20 @@ Le categorie ALTA/MEDIA/BASSA sono l'unico giudizio grafico del prodotto. Le **m
 ## Prossima riconciliazione
 
 Dopo la scansione successiva confrontare esiti, nuove opportunità, modifiche agli avvisi e nuove prove documentali. Registrare le verifiche giuridiche solo quando fondate su fonti ufficiali integrali e dati documentati dell'associazione. Non usare questo snapshot come conferma automatica dell'apertura alla data di lettura.
+
+## Verifica operativa ravvicinata – 20 novembre 2026
+
+### Scheda #8 — Circoscrizione 7, Eventi culturali 2027 (scadenza 26/11/2026)
+Fonte primaria: https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4576/13_Avviso_Eventi_Culturali_2027.pdf ; servizio domanda https://www.comune.torino.it/servizi/istanza-contributo .
+- L'avviso ammette diverse categorie di richiedenti. Per la categoria associazione con sede/attività nel Comune richiede l'iscrizione all'apposito registro. Il profilo di Opera+ non contiene prova di iscrizione, né statuto verificato; NON indicare ammissibilità accertata. Verificare la fattispecie concreta dell'art. 2.
+- Finalità: divulgazione musicale, teatrale e artistica, integrazione e socialità nel territorio della Circoscrizione 7; attenzione particolare alle aree disagiate e ai giardini Madre Teresa di Calcutta. Il corso digitale non equivale automaticamente a un evento territoriale.
+- Domanda solo telematica, entro 26/11/2026. Nel titolo progetto inserire **EVENTI CULTURALI ANNO 2027** seguito dal titolo dell'iniziativa. Il servizio chiede SPID/CIE, progetto dettagliato, sintesi, preventivo costi diretti/indiretti, altre fonti e allegati. Verificare bollo/esenzioni nella procedura.
+- Sette criteri di valutazione, da 0 a 4 punti, massimo 28; sotto 7 punti non si accede al contributo. L'iniziativa è comunque da svolgere indipendentemente dall'esito. Nessuna candidatura inviata o finanziamento concesso.
+
+### Scheda #23 — comunicazione di manifestazioni turistiche in Piemonte (scadenza 24/11/2026 ore 12:00)
+Fonte ufficiale: https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni .
+- Beneficiari: anche associazioni senza scopo di lucro con sede legale in Piemonte; la sede dichiarata, da sola, non comprova tutti i requisiti.
+- Oggetto esclusivo: comunicazione/promo-pubblicità di eventi turistici organizzati in Piemonte nel 2026, con completamento fino al 10/01/2027 per eventi a cavallo d'anno; ricaduta turistica/economica.
+- Nel profilo non è documentata alcuna manifestazione pertinente. Non inventare un evento né avviare una domanda non sostenibile. Solo se un evento reale già esiste, presentazione FINDOM con Allegato B nel formato prescritto entro la scadenza.
+
+Le due revisioni in `config/assessment_reviews.json` sono aggiornate senza mutare artificialmente apertura, esito e valutazione di ammissibilità. Verificare dopo la scansione che la coda operativa dei due `public_id` riporti questi passi, e che `candidate_unverified=0`. Non pubblicare dati riservati del richiedente.

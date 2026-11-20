@@ -6,6 +6,18 @@ from assessment_reviews import apply_assessment_reviews
 from verification import pick_for_review
 
 class ReviewedAssessmentTests(unittest.TestCase):
+    def test_urgent_torino_and_piemonte_reviews_are_actionable(self):
+        import json
+        reviews=json.loads((Path(__file__).resolve().parents[1]/"config/assessment_reviews.json").read_text(encoding="utf-8"))
+        c7=next(x for x in reviews if x.get("public_id")==8)
+        region=next(x for x in reviews if x.get("public_id")==23)
+        self.assertIn("EVENTI CULTURALI ANNO 2027",c7["requirements_excerpt"])
+        self.assertIn("26/11/2026",c7["requirements_excerpt"])
+        self.assertIn("soglia minima",c7["assessment_gaps"][-1].lower())
+        self.assertTrue(any("registro" in gap for gap in c7["assessment_gaps"]))
+        self.assertTrue(any("FINDOM" in gap and "Allegato B" in gap for gap in region["assessment_gaps"]))
+        self.assertTrue(any("manifestazione" in gap and "non" in gap for gap in region["assessment_gaps"]))
+
     def test_persist_explicit_review_without_changing_open_state(self):
         url="https://example.org/opportunities/a"
         row={"url":url,"source_id":"issuer","title":"Progetto", "funding_status":"APERTO","assessment_label":"ALTA AFFINITÀ"}
@@ -154,7 +166,7 @@ class ReviewedAssessmentTests(unittest.TestCase):
         for number,label in expected.items():
             with self.subTest(public_id=number):
                 record=next(r for r in reviews if r.get("public_id")==number)
-                self.assertEqual(record["reviewed_at"],"2026-11-19")
+                self.assertGreaterEqual(record["reviewed_at"],"2026-11-19")
                 self.assertTrue(record.get("evidence_url","").startswith("https://"))
                 self.assertTrue(record.get("requirements_excerpt"))
                 self.assertTrue(record.get("assessment_gaps"))
