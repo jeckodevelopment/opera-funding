@@ -512,3 +512,15 @@ non generare false scadenze. Le segnalazioni storiche sono archiviate
 con decisione individuale, ma restano evidenziati gli eventuali limiti
 documentali veri. La manutenzione ordinaria prosegue con la scansione
 giornaliera, il report di integrità e il gate preventivo.
+
+### Regressione della prima scansione post-consolidamento (20/11/2026)
+
+La prima esecuzione di scansione dopo PR #166 ha superato il controllo
+d'integrità ma ha mostrato **22 casi erroneamente indicati da riesaminare**:
+la firma delle anomalie era confrontata con quella precedente prima che
+`annotate_assessment_coverage` rigenerasse le diagnostiche nuove.
+Correzione: la ricostruzione delle segnalazioni precede ora l'applicazione
+delle 39 decisioni individuali. Il test ricrea deliberatamente una firma
+precedente vuota e una diagnostica da differenza documentale aggiornata.
+La decisione resta valida solo se la nuova firma corrisponde alla fonte e
+al registro, non perché vengono ignorate modifiche reali ai PDF.
