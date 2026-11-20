@@ -10,7 +10,7 @@ from notify import run,candidates,make_message,is_open,MAX_DAILY,MAX_MONTHLY,par
 def item(key, status="APERTO", relevance=80, **kw):
     return {
         "id":key,"url":"https://example.org/call/"+key,
-        "title":"Bando "+key,"issuer":"Ente culturale",
+        "title":"Bando "+key+" per attività culturali","issuer":"Ente culturale",
         "funding_status":status,
         "opportunity_type":"finanziamento potenziale",
         "source_open_confirmed":status=="APERTO",
@@ -18,6 +18,18 @@ def item(key, status="APERTO", relevance=80, **kw):
         "relevance":relevance,
         "adequacy_label":"MEDIA",
         "deadline":"2027-01-15",
+        "deadline_source":"https://example.org/call/"+key,
+        "source_id":"piemonte",
+        "opening_date":"2026-11-01" if status=="IN ARRIVO" else None,
+        "opening_evidence":"https://example.org/call/"+key if status=="IN ARRIVO" else None,
+        "detail_checked":True,
+        "assessment_evidence_source":"https://example.org/call/"+key,
+        "programme_objectives_excerpt":"Sostenere la partecipazione culturale",
+        "funded_activities_excerpt":"Laboratori di musica e teatro",
+        "beneficiaries_excerpt":"Organizzazioni culturali ammissibili",
+        "requirements_excerpt":"Progetto e rendicontazione",
+        "assessment_reason":"Requisiti e finalità documentati",
+        "adequacy_reason":"Pertinenza agli obiettivi culturali",
         **kw,
     }
 
@@ -55,25 +67,65 @@ class NotifyTests(unittest.TestCase):
         self.assertEqual(self.check([item("x"),item("y")]),"no-news")
         self.assertEqual(len(self.sent),1)
 
-    def test_includes_all_new_grades_and_early_stage_without_inventing_opening(self):
+    def test_digest_includes_verified_open_and_upcoming_not_unverified(self):
         self.check([])
         rows=[item("info",opportunity_type="altro avviso"),
               item("low",relevance=40,adequacy_label="BASSA"),
               item("unconfirmed",source_open_confirmed=False),
               item("broken",link_status="non disponibile"),
               item("upcoming",status="IN ARRIVO",adequacy_label="ALTA"),
-              item("verify",status="DA VERIFICARE",adequacy_label="MEDIA"),
+              item("verify",status="DA VERIFICARE",adequacy_label="MEDIA",
+                   deadline=None,deadline_source=None,source_open_confirmed=False),
+              item("missing-date",deadline=None,deadline_source=None),
+              item("missing-requirements",requirements_excerpt=""),
               item("valid")]
         self.assertEqual(self.check(rows),"sent")
         self.assertEqual(len(self.sent),1)
         text_body=self.sent[0][4]
-        for expected in ("low","unconfirmed","upcoming","verify","valid"):
+        for expected in ("low","upcoming","valid"):
             self.assertIn("Bando "+expected,text_body)
-        for excluded in ("info","broken"):
+        for excluded in ("info","broken","unconfirmed","verify","missing-date",
+                         "missing-requirements"):
             self.assertNotIn("Bando "+excluded,text_body)
         self.assertIn("IN ARRIVO",text_body)
         self.assertIn("Adeguatezza: ALTA",text_body)
-        self.assertIn("DA VERIFICARE",text_body)
+        self.assertNotIn("Scadenza: Da verificare",text_body)
+
+    def test_legacy_residency_call_without_evidence_never_alerted(self):
+        # Reproduces public record #33, mistakenly included in 20 Nov digest.
+        legacy=item("residency",funding_status="DA VERIFICARE",
+                    deadline=None,deadline_source=None,
+                    source_open_confirmed=False,
+                    public_id=33,
+                    url="https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts")
+        self.check([])
+        self.assertEqual(self.check([legacy]),"no-news")
+        self.assertEqual(self.sent,[])
+        self.assertEqual(candidates([legacy],{},set()),[])
+        stored=json.loads(self.path.read_text())
+        self.assertEqual(stored["statuses"][legacy["id"]],"ALTRO")
+        # If the official source later confirms the window, send only then.
+        verified=item("residency",public_id=33,
+                      url=legacy["url"],source_open_confirmed=True)
+        self.assertEqual(self.check([verified]),"sent")
+        self.assertEqual(len(self.sent),1)
+        self.assertNotIn("Scadenza: Da verificare",self.sent[0][4])
+
+    def test_verified_rolling_call_without_fixed_deadline_is_notifiable(self):
+        self.check([])
+        rolling=item("rolling",deadline=None,deadline_source=None,
+                     rolling_confirmed=True,
+                     rolling_evidence="https://example.org/call/rolling")
+        self.assertEqual(self.check([rolling]),"sent")
+        self.assertIn("A sportello — senza scadenza fissa",self.sent[0][4])
+
+    def test_upcoming_without_end_or_rolling_window_stays_unnotified(self):
+        self.check([])
+        future=item("upcoming",status="IN ARRIVO",deadline=None,
+                    deadline_source=None,opening_date="2026-12-01",
+                    opening_evidence="https://example.org/call/upcoming")
+        self.assertEqual(self.check([future]),"no-news")
+        self.assertEqual(self.sent,[])
 
     def test_failure_never_marks_events_notified(self):
         self.check([])

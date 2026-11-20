@@ -12,6 +12,7 @@ import re
 from html import escape
 import json
 from email_template import make_message
+from catalog_admission import admission_reasons
 import os
 from pathlib import Path
 from urllib.parse import urlparse
@@ -24,7 +25,7 @@ DASHBOARD="https://jeckodevelopment.com/dev/funding/"
 MAX_DAILY=10
 MAX_MONTHLY=100
 MAX_ITEMS=12
-NOTIFIABLE_STATES={"APERTO","IN ARRIVO","DA VERIFICARE"}
+NOTIFIABLE_STATES={"APERTO","IN ARRIVO"}
 ADEQUACY={"ALTA":0,"MEDIA":1,"BASSA":2}
 
 def is_open(row):
@@ -33,15 +34,16 @@ def is_open(row):
             row.get("opportunity_type") in PROJECT_TYPES)
 
 def is_notifiable(row):
-    """Include all newly tracked genuine calls, including BASSA and upcoming.
+    """Fail closed: both the admission evidence and application window are required.
 
-    A notice with unconfirmed opening is clearly described as TO VERIFY,
-    never as an open call.
+    Legacy records are not exempt from this email policy. An unconfirmed call
+    may remain visible for historical review but must never generate a digest.
     """
     return (row.get("funding_status") in NOTIFIABLE_STATES and
             row.get("opportunity_type") in PROJECT_TYPES and
             row.get("adequacy_label") in ADEQUACY and
-            row.get("link_status")!="non disponibile")
+            row.get("link_status")=="raggiungibile" and
+            not admission_reasons(row))
 
 def identity(row):
     # Immutable canonical opportunity identity, independent of presentation ID.

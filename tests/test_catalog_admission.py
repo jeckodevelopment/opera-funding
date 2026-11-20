@@ -113,6 +113,18 @@ class AdmissionTests(unittest.TestCase):
         row.pop("type_reason")
         self.assertIn("natura_informativa_non_documentata",admission_reasons(row))
 
+    def test_upcoming_without_a_verified_end_date_remains_in_review(self):
+        row=complete(funding_status="IN ARRIVO",source_open_confirmed=False,
+                     opening_date="2026-12-15",
+                     opening_evidence="https://example.org/call",
+                     deadline=None,deadline_source=None)
+        self.assertIn("finestra_candidatura_non_documentata",admission_reasons(row))
+        published,pending,report=split_new_catalogue([row],set())
+        self.assertFalse(published)
+        self.assertEqual(report["in_review"],1)
+        row.update(rolling_confirmed=True,rolling_evidence="https://example.org/call")
+        self.assertEqual(admission_reasons(row),[])
+
     def test_unverified_state_must_not_be_published(self):
         row=complete(funding_status="DA VERIFICARE")
         self.assertIn("stato_candidatura_non_verificato",admission_reasons(row))
