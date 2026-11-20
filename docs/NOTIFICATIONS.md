@@ -53,7 +53,9 @@ Il catalogo viene pubblicato **prima** di avvisare i destinatari: il link
 sul titolo punta sempre alla scheda tramite l'ID numerico pubblico appena
 reso disponibile su GitHub. Dopo l'invio il registro
 `data/notification-state.json` è salvato in un commit **separato**.
-Questo secondo commit viene tentato anche in caso di invio parzialmente
+Il passo usa esplicitamente `always()` con guardie sulla pubblicazione,
+perché GitHub Actions altrimenti salterebbe automaticamente i passaggi
+successivi a un errore. Questo secondo commit viene tentato anche in caso di invio parzialmente
 fallito (senza inviare messaggi ulteriori): consente di preservare le
 ricevute dei destinatari già raggiunti e riprendere soltanto quelli
 rimasti in sospeso. In caso di errore della pubblicazione dati, il
