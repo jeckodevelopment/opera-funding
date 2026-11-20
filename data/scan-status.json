@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-20T19:45:54+00:00",
+  "checked_at": "2026-11-20T19:49:42+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,7 +7,7 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "crt",
@@ -15,7 +15,7 @@
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
       "discovered": 2,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 12,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "torino",
@@ -31,7 +31,7 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "culturatorino",
@@ -39,7 +39,7 @@
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "volto",
@@ -47,7 +47,7 @@
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "erasmus",
@@ -63,7 +63,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "eufunding",
@@ -71,7 +71,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "eucreative",
@@ -79,7 +79,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-20T19:45:54+00:00",
+      "checked_at": "2026-11-20T19:49:42+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-20T19:45:54+00:00"
+      "checked_at": "2026-11-20T19:49:42+00:00"
     }
   ],
   "coverage": {
@@ -997,7 +997,7 @@
         ]
       },
       {
-        "public_id": 146,
+        "public_id": 252,
         "title": "Bando Una mano a chi sostiene – nuova edizione 2026/27 Il bando mette a disposizione 500 mila euro per sostenere sul territorio italiano progetti in grado di generare impatto sociale duraturo attraverso la coesione socia",
         "deadline": "2027-02-16",
         "days_remaining": 88,
@@ -1020,7 +1020,7 @@
         ],
         "sources": [
           "https://www.unamanoachisostiene.it/",
-          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026"
+          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27"
         ]
       },
       {
@@ -1273,8 +1273,8 @@
         "adequacy_counts": {
           "ALTA": 11,
           "BASSA": 94,
-          "INFORMATIVA": 112,
-          "MEDIA": 56
+          "INFORMATIVA": 116,
+          "MEDIA": 52
         },
         "missing_documentation": {
           "finalita": 134,
@@ -1346,7 +1346,7 @@
       23,
       8,
       177,
-      146
+      252
     ],
     "notes": "I conteggi indicano copertura delle evidenze, non ammissibilità certificata."
   },
@@ -1357,8 +1357,8 @@
         "coverage_status_counts": {
           "confronti_documentati": 28,
           "ostacolo_documentato": 9,
-          "senza_requisiti_confrontabili": 124,
-          "avviso_informativo": 112
+          "senza_requisiti_confrontabili": 120,
+          "avviso_informativo": 116
         },
         "requirements_compared": 44,
         "comparison_status_counts": {
@@ -1430,8 +1430,8 @@
     "adequacy_counts": {
       "ALTA": 11,
       "BASSA": 94,
-      "INFORMATIVA": 112,
-      "MEDIA": 56
+      "INFORMATIVA": 116,
+      "MEDIA": 52
     },
     "unassessed_ids": [],
     "duplicate_public_ids": [],
@@ -1456,13 +1456,6 @@
         "document_issues": false
       },
       {
-        "public_id": 146,
-        "adequacy": "MEDIA",
-        "missing_evidence": [],
-        "unresolved_checks": 1,
-        "document_issues": false
-      },
-      {
         "public_id": 177,
         "adequacy": "MEDIA",
         "missing_evidence": [],
@@ -1471,6 +1464,13 @@
       },
       {
         "public_id": 183,
+        "adequacy": "MEDIA",
+        "missing_evidence": [],
+        "unresolved_checks": 1,
+        "document_issues": false
+      },
+      {
+        "public_id": 252,
         "adequacy": "MEDIA",
         "missing_evidence": [],
         "unresolved_checks": 1,
@@ -1614,8 +1614,10 @@
     "coverage_note": "Controllo automatico dell'intero catalogo: non certifica ammissibilità o contenuti non disponibili."
   },
   "catalog_admission": {
-    "new_published": 0,
-    "published_ids": [],
+    "new_published": 1,
+    "published_ids": [
+      252
+    ],
     "in_review": 0,
     "reasons": {},
     "pending_ids": [],
@@ -1625,9 +1627,8 @@
     "registry_total": 39,
     "matching_catalog_records": 39,
     "by_disposition": {
-      "bando_storico_con_limiti_documentali": 10,
-      "riesame_necessario": 22,
-      "riferimento_non_finanziamento": 7
+      "bando_storico_con_limiti_documentali": 14,
+      "riferimento_non_finanziamento": 25
     },
     "new_unreviewed_ids": [],
     "missing_registry_ids": [],
@@ -2291,7 +2292,7 @@
     "note": "Anomalie reali e lacune documentali: il report non inventa scadenze o requisiti e non certifica ammissibilità."
   },
   "funder_monitoring": {
-    "checked_at": "2026-11-20T19:45:54+00:00",
+    "checked_at": "2026-11-20T19:49:42+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -2798,7 +2799,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2810,7 +2811,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2823,7 +2824,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2836,7 +2837,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2849,7 +2850,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2862,7 +2863,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2875,7 +2876,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2888,7 +2889,7 @@
         "monitoring": "direct",
         "eligibility_note": "Bandi comunali, eleggibilità legata a sede o attività ad Alba",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -2901,7 +2902,7 @@
         "monitoring": "direct",
         "eligibility_note": "Contributi territoriali: verificare operatività a Bra e finestra annuale",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -2914,7 +2915,7 @@
         "monitoring": "direct",
         "eligibility_note": "Verificare l'edizione e la ricaduta sul territorio",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 11
       },
@@ -2927,7 +2928,7 @@
         "monitoring": "direct",
         "eligibility_note": "Avviso 2026; non presumerne la riapertura negli anni successivi",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -2940,7 +2941,7 @@
         "monitoring": "direct",
         "eligibility_note": "Richiesta spesso condizionata a albo e attività comunali",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -2966,7 +2967,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni bandi sono riservati ai Comuni: non presumere ammissibilità associazioni",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 10
       },
@@ -2992,7 +2993,7 @@
         "monitoring": "direct",
         "eligibility_note": "Finestre e bandi da verificare per edizione",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -3005,7 +3006,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni programmi rivolti a ricercatori o scuole: eleggibilità da verificare",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 2
       },
@@ -3148,7 +3149,7 @@
         "monitoring": "direct",
         "eligibility_note": "Monitorare nuove edizioni; bando eventi secondo semestre 2026 risulta scaduto",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -3174,7 +3175,7 @@
         "monitoring": "direct",
         "eligibility_note": "La candidatura non è automaticamente un bando; verificare singoli avvisi e possibilità per associazioni culturali",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -3187,7 +3188,7 @@
         "monitoring": "direct",
         "eligibility_note": "Monitorare avvisi e partecipazione, senza presumere contributi economici",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -3200,7 +3201,7 @@
         "monitoring": "direct",
         "eligibility_note": "Verificare appartenenza alla rete, natura del progetto e regole dell'edizione; non equiparare la pagina premi a call aperta",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -3213,7 +3214,7 @@
         "monitoring": "direct",
         "eligibility_note": "Rete e programmi di collaborazione, non contributo automatico a una associazione",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -3226,7 +3227,7 @@
         "monitoring": "direct",
         "eligibility_note": "Richiede partenariati fra festival di diversi Paesi; verificare ruolo del capofila e ammissibilità dell'opera",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -3239,7 +3240,7 @@
         "monitoring": "direct",
         "eligibility_note": "Ogni bando ha criteri e tematiche propri; non presumere apertura o accessibilità",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": 9
       },
@@ -3253,7 +3254,7 @@
         "monitoring": "existing-source",
         "eligibility_note": "Verificare requisiti di partenariato e inclusione della musica/opera nella specifica call",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T19:45:54+00:00",
+        "last_checked_at": "2026-11-20T19:49:42+00:00",
         "changed": false,
         "candidate_count": null
       }
@@ -3276,7 +3277,7 @@
       "program_id": "alba-cultura",
       "new": 0,
       "existing": 0,
-      "rejected": 8
+      "rejected": 7
     },
     {
       "program_id": "bra-associazioni",
@@ -3293,8 +3294,8 @@
     {
       "program_id": "rivoli-associazioni",
       "new": 0,
-      "existing": 1,
-      "rejected": 7
+      "existing": 2,
+      "rejected": 5
     },
     {
       "program_id": "moncalieri-eventi",

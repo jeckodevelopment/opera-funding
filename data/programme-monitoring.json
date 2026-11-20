@@ -24,10 +24,10 @@
       }
     ],
     "changed": false,
-    "cursor": 3,
+    "cursor": 0,
     "digest": "35075ab0ea434d11ffbe5ccbad36a7455aef48dfd892656778ed38b5490546f6",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "bra-associazioni": {
@@ -41,8 +41,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "386001ef98d52c4fb1dc34cda01f14122c5ed3a3eb20e5fa5299b35a47091835",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "cmtorino-giovani": {
@@ -90,10 +90,10 @@
       }
     ],
     "changed": false,
-    "cursor": 6,
+    "cursor": 4,
     "digest": "1fea2a6e332db4275031d9f5ca438294bfcba357ae3a59a356305ee781f0a210",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "culturatorino-2033": {
@@ -102,8 +102,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "73c999538a40c81c6f49ce8a3e06ef8f8690a55d450c585a0e671f595335ea68",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "ecf-open-calls": {
@@ -147,10 +147,10 @@
       }
     ],
     "changed": false,
-    "cursor": 8,
+    "cursor": 7,
     "digest": "6a634c9b4e66a7b582151287c9a8fc2104505c020214a2b2c016de6dfce85d4f",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "effea-calls": {
@@ -164,8 +164,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "665ab95586fb68193fd47f9a96a29f51b71c983775ddc6444b872227b04cc152",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "enelcuore-progetti": {
@@ -174,8 +174,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "6473a20b9fd4feb223c51f4f7169162cfe4a1cf29486ee0458e3282c2f4e6fbb",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "fedora-prizes": {
@@ -184,8 +184,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "dfa4399f339c07b5a4fa77dc7168ed6b259ae2e38ff3ca0332bcb1fd7426ae6b",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "isp-beneficenza": {
@@ -194,8 +194,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "1df7919d4bcfebf203903da8b8f3891fbd2f28254c8b08ddc50021230ea30c70",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "moncalieri-eventi": {
@@ -271,10 +271,10 @@
       }
     ],
     "changed": false,
-    "cursor": 12,
+    "cursor": 3,
     "digest": "44d533ab31028d0e536fb0bca66820d3202c6c971da8652ec615eedc79bad55b",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "operaeuropa-nextgen": {
@@ -283,8 +283,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "b92391ab459f73ad397bd3abdc98e06c6393d42ada088bb0c643a59113c98c0f",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "pinerolo-cultura": {
@@ -336,10 +336,10 @@
       }
     ],
     "changed": false,
-    "cursor": 7,
+    "cursor": 4,
     "digest": "bfb52e9122d5d32ba78b4b63d13fde05c1a8d5e7d687dc32daa690efbdd5aaba",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "rivoli-associazioni": {
@@ -367,10 +367,10 @@
       }
     ],
     "changed": false,
-    "cursor": 3,
+    "cursor": 0,
     "digest": "557d8a0278b9719b0417d9253462792f2f6fe9bdd4c0f2764badca8198255254",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "settimo-associazioni": {
@@ -384,8 +384,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "b68643675e010b539ce00a03151ed913e570f5128502bb36b46aa2f4fbd61aaa",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "tim-bandi": {
@@ -461,10 +461,10 @@
       }
     ],
     "changed": false,
-    "cursor": 12,
+    "cursor": 3,
     "digest": "bf626c7b73121d505a3fc3ee3faa77e3d282c81ff2a6099d8b30f595dc7951d5",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "torino2033-iniziative": {
@@ -473,8 +473,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "6d0d7746c815b6705c6bf46ce649b019643265999c7865541b48a12a1f0b2c25",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   },
   "unicredit-bandi": {
@@ -492,8 +492,8 @@
     "changed": false,
     "cursor": 0,
     "digest": "d69cc15bd3dbc705ca3952ef4def6183dfea32a5c047c622c0da2f7dbb473e6f",
-    "last_checked_at": "2026-11-20T19:45:54+00:00",
-    "last_success_at": "2026-11-20T19:45:54+00:00",
+    "last_checked_at": "2026-11-20T19:49:42+00:00",
+    "last_success_at": "2026-11-20T19:49:42+00:00",
     "status": "ok"
   }
 }
