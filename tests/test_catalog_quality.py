@@ -3,10 +3,27 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
-from catalog_quality import catalog_quality
+from catalog_quality import catalog_quality, diagnostic_review_class
 
 
 class CatalogQualityTests(unittest.TestCase):
+    def test_result_pdf_is_flagged_not_silently_cleared(self):
+        issue={"reason":"nessuna_evidenza_estratta",
+               "source":"https://example.org/Graduatoria-2026.pdf"}
+        self.assertEqual(diagnostic_review_class(issue),
+                         "verifica_allegato_potenzialmente_accessorio")
+        row={"public_id":20,"funding_status":"CHIUSO",
+             "assessment_document_issues":[issue]}
+        result=catalog_quality([row])["document_issues"]
+        self.assertEqual(result["total_records"],1)
+        self.assertEqual(result["review_classes"]["verifica_allegato_potenzialmente_accessorio"],1)
+
+    def test_different_texts_always_require_comparison(self):
+        item={"reason":"testi_diversi_da_verificare",
+              "source":"https://example.org/FAQ.pdf"}
+        self.assertEqual(diagnostic_review_class(item),
+                         "confrontare_documenti_e_priorita")
+
     def test_separates_source_backed_rolling_from_real_deadline_gap(self):
         rows=[
           {"public_id":1,"source_id":"sanpaolo","funding_status":"APERTO",

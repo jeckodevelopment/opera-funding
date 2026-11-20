@@ -135,6 +135,8 @@ def classify_informational_page(record):
         is_information=True
     if source=="piemonte":
         # Pre-information is an announcement, not an application that can be submitted.
+        is_information=is_information or (path.rstrip("/") in ("/avvisi-beni-regionali",)
+                        or path.rstrip("/").startswith("/avvisi-beni-regionali?page="))
         is_information=is_information or (path.rstrip("/") in ("/contributi-finanziamenti", "/crowdfunding")
                         or path.startswith("/pre-informazione-fondi-ue"))
         is_information=is_information or path.rstrip("/") in ("/web/bandi-pnrr-per-enti-locali", "/web/bandi-per-enti-locali")
