@@ -15,7 +15,7 @@ REQUIRED_REVIEW=("assessment_review_status","adequacy_label",
                  "eligibility_condition_status")
 REQUIRED_LISTS=("eligibility_specific_requirements",
                 "applicant_requirement_comparison")
-VALID_STATES={"APERTO","CHIUSO","IN ARRIVO","DA VERIFICARE"}
+VALID_STATES={"APERTO","CHIUSO","IN ARRIVO","DA VERIFICARE","INFORMATIVO"}
 
 
 def _integer(value):
@@ -152,8 +152,10 @@ def validate_scan(rows, report, now=None, max_age_minutes=30):
                         " record; esempi: "+", ".join(str(x) for x in incomplete[:5]))
 
     for label,state in (("open","APERTO"),("closed","CHIUSO"),
-                        ("upcoming","IN ARRIVO"),("unverified","DA VERIFICARE")):
+                        ("upcoming","IN ARRIVO"),("unverified","DA VERIFICARE"),("informational","INFORMATIVO")):
         count=coverage_totals.get(label)
+        if count is None and label=="informational" and state_totals.get(state,0)==0:
+            continue  # compatibility with historical reports with no information bucket
         if not _integer(count) or count!=state_totals.get(state,0):
             problems.append("coverage.totals."+label+" non coerente con le righe")
     if _integer(coverage_totals.get("all")) and sum(
