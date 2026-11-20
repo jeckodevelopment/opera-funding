@@ -1,9 +1,11 @@
 {
   "alerted_ids": [
+    "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-individuazione-soggetti-idonei-alle-direzioni-ssr",
     "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to",
     "https://infobandi.csvnet.it/bando-2027-otto-per-mille-valdese/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-otto-per-mille-valdese",
     "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026",
     "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27",
+    "https://volontariatotorino.it/bandi/contributi-a-sostegno-di-iniziative-rilevanti-ai-fini-della-promozione-delleconomia-provinciale-anno-2027",
     "https://www.cittametropolitana.torino.it/comunicazione/contributi-il-contrasto-delle-discriminazioni",
     "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico%20amare.pdf",
     "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico.pdf",
@@ -14,10 +16,11 @@
   ],
   "sent_days": {
     "2026-11-18": 8,
-    "2026-11-19": 2
+    "2026-11-19": 2,
+    "2026-11-20": 2
   },
   "sent_months": {
-    "2026-11": 10
+    "2026-11": 12
   },
   "statuses": {
     "https://bandi.comune.torino.it": "ALTRO",
@@ -34,6 +37,7 @@
     "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4352/all.2_scheda_progetto_0.docx": "ALTRO",
     "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4353/avviso_torino_ycaf.pdf": "ALTRO",
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali": "ALTRO",
+    "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-individuazione-soggetti-idonei-alle-direzioni-ssr": "APERTO",
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-manifestazione-interesse-provvista-bei-selezione-intermediari-bancari": "ALTRO",
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-pubblico-manifestazione-interesse-utile-allindividuazione-operatori-economici-invitare": "ALTRO",
     "https://bandi.regione.piemonte.it/concorsi-incarichi-stage/avviso-mobilita-esterna-aree-funzionari-eq-istruttori-avviso-12026": "ALTRO",
@@ -50,6 +54,7 @@
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/patrimonio-linguistico-dialettale-piemonte-avviso-pubblico-finanziamento-invito-alla-presentazione": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-invecchiamento-attivo-parte-ambiti-territoriali-sociali": "APERTO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-servizio-civile-regionale-volontario-quarta-edizione-annualita-2027": "ALTRO",
+    "https://bandi.regione.piemonte.it/contributi-finanziamenti/sostegno-progetti-bilinguismo-italiano-lis-2026-2027": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/sostegno-progetti-favore-dei-minori-vittime-violenza-assistita-azione-5": "ALTRO",
     "https://bandi.regione.piemonte.it/crowdfunding": "ALTRO",
     "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to": "ALTRO",
@@ -203,6 +208,7 @@
     "https://spettacolo.cultura.gov.it/fnsv-triennio-2025-2027-anno-2026-assegnazione-contributi-danza": "ALTRO",
     "https://spettacolo.cultura.gov.it/news-avvisi-contributi-fus": "ALTRO",
     "https://spettacolo.cultura.gov.it/progetti-speciali": "ALTRO",
+    "https://volontariatotorino.it/bandi/contributi-a-sostegno-di-iniziative-rilevanti-ai-fini-della-promozione-delleconomia-provinciale-anno-2027": "DA VERIFICARE",
     "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord": "APERTO",
     "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026": "APERTO",
     "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo": "APERTO",

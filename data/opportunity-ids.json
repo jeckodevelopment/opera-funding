@@ -14,6 +14,7 @@
     "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4352/all.2_scheda_progetto_0.docx": 12,
     "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4353/avviso_torino_ycaf.pdf": 13,
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali": 14,
+    "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-individuazione-soggetti-idonei-alle-direzioni-ssr": 272,
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-manifestazione-interesse-provvista-bei-selezione-intermediari-bancari": 267,
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-pubblico-manifestazione-interesse-utile-allindividuazione-operatori-economici-invitare": 15,
     "https://bandi.regione.piemonte.it/concorsi-incarichi-stage/avviso-mobilita-esterna-aree-funzionari-eq-istruttori-avviso-12026": 268,
@@ -30,6 +31,7 @@
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/patrimonio-linguistico-dialettale-piemonte-avviso-pubblico-finanziamento-invito-alla-presentazione": 24,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-invecchiamento-attivo-parte-ambiti-territoriali-sociali": 25,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-servizio-civile-regionale-volontario-quarta-edizione-annualita-2027": 26,
+    "https://bandi.regione.piemonte.it/contributi-finanziamenti/sostegno-progetti-bilinguismo-italiano-lis-2026-2027": 273,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/sostegno-progetti-favore-dei-minori-vittime-violenza-assistita-azione-5": 27,
     "https://bandi.regione.piemonte.it/crowdfunding": 28,
     "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to": 270,
@@ -185,6 +187,7 @@
     "https://spettacolo.cultura.gov.it/fnsv-triennio-2025-2027-anno-2026-assegnazione-contributi-danza": 172,
     "https://spettacolo.cultura.gov.it/news-avvisi-contributi-fus": 173,
     "https://spettacolo.cultura.gov.it/progetti-speciali": 174,
+    "https://volontariatotorino.it/bandi/contributi-a-sostegno-di-iniziative-rilevanti-ai-fini-della-promozione-delleconomia-provinciale-anno-2027": 274,
     "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord": 175,
     "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026": 176,
     "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo": 177,
@@ -272,6 +275,6 @@
     "https://www.fondazionecrt.it/vivomeglio-dalla-poesia-alleconomia-circolare-al-via-117-progetti-per-linclusione": 250,
     "https://www.regione.piemonte.it/web/bandi-per-enti-locali": 251
   },
-  "next_id": 272,
+  "next_id": 275,
   "version": 1
 }
