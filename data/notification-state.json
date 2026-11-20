@@ -1,6 +1,7 @@
 {
   "alerted_ids": [
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-individuazione-soggetti-idonei-alle-direzioni-ssr",
+    "https://bandi.regione.piemonte.it/contributi-finanziamenti/bando-contributi-alle-oovv-protezione-civile-anno-2026",
     "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to",
     "https://infobandi.csvnet.it/bando-2027-otto-per-mille-valdese/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-otto-per-mille-valdese",
     "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026",
@@ -17,10 +18,10 @@
   "sent_days": {
     "2026-11-18": 8,
     "2026-11-19": 2,
-    "2026-11-20": 2
+    "2026-11-20": 4
   },
   "sent_months": {
-    "2026-11": 12
+    "2026-11": 14
   },
   "statuses": {
     "https://bandi.comune.torino.it": "ALTRO",
@@ -45,6 +46,7 @@
     "https://bandi.regione.piemonte.it/contributi-finanziamenti": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/aiuti-allo-spettacolo-dal-vivo": "APERTO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/avviso-pubblico-finanziamento-alle-associazioni-turistiche-pro-loco-piemonte-anno-2026": "APERTO",
+    "https://bandi.regione.piemonte.it/contributi-finanziamenti/bando-contributi-alle-oovv-protezione-civile-anno-2026": "IN ARRIVO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-investimenti-produttivi-agricoli-competitivita-aziende-agricole-rivolto-agli": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-pagamento-compensativo-zone-forestali-natura-2000-src02-bando-campagna-2026": "ALTRO",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-reti-antigrandine-srd06-intervento-121-bando-2026": "APERTO",
@@ -179,7 +181,7 @@
     "https://infobandi.csvnet.it/bando-fabbrica-spazi-civici-per-la-gioventu/?utm_source=rss&utm_medium=rss&utm_campaign=bando-fabbrica-spazi-civici-per-la-gioventu": "APERTO",
     "https://infobandi.csvnet.it/bando-lo-sport-e-vita/?utm_source=rss&utm_medium=rss&utm_campaign=bando-lo-sport-e-vita": "APERTO",
     "https://infobandi.csvnet.it/bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia/?utm_source=rss&utm_medium=rss&utm_campaign=bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia": "APERTO",
-    "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026": "APERTO",
+    "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27": "APERTO",
     "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente": "APERTO",
     "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026": "APERTO",
     "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue": "APERTO",
@@ -208,20 +210,20 @@
     "https://spettacolo.cultura.gov.it/fnsv-triennio-2025-2027-anno-2026-assegnazione-contributi-danza": "ALTRO",
     "https://spettacolo.cultura.gov.it/news-avvisi-contributi-fus": "ALTRO",
     "https://spettacolo.cultura.gov.it/progetti-speciali": "ALTRO",
-    "https://volontariatotorino.it/bandi/contributi-a-sostegno-di-iniziative-rilevanti-ai-fini-della-promozione-delleconomia-provinciale-anno-2027": "DA VERIFICARE",
+    "https://volontariatotorino.it/bandi/contributi-a-sostegno-di-iniziative-rilevanti-ai-fini-della-promozione-delleconomia-provinciale-anno-2027": "APERTO",
     "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord": "APERTO",
     "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026": "APERTO",
     "https://volontariatotorino.it/bandi/linee-guida-2025-2026-per-le-richieste-di-contributo-al-fondo-di-beneficenza-di-intesa-sanpaolo": "APERTO",
     "https://volontariatotorino.it/progetti-servizio-civile": "ALTRO",
     "https://volontariatotorino.it/progetti-volto": "ALTRO",
-    "https://www.cittametropolitana.torino.it/comunicazione/contributi-il-contrasto-delle-discriminazioni": "DA VERIFICARE",
+    "https://www.cittametropolitana.torino.it/comunicazione/contributi-il-contrasto-delle-discriminazioni": "ALTRO",
     "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/servizio-civile/servizio-civile-bandi": "ALTRO",
-    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico%20amare.pdf": "DA VERIFICARE",
-    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico.pdf": "DA VERIFICARE",
-    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20amare.pdf": "DA VERIFICARE",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico%20amare.pdf": "ALTRO",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico.pdf": "ALTRO",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20amare.pdf": "ALTRO",
     "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20guida%20sicura.pdf": "ALTRO",
-    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/festival%20giovani/avviso%20di%20manifestazione%20di%20interesse%20festival%20giovani.pdf": "DA VERIFICARE",
-    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/guida%20sicura%2026/dd_363_2026%20-%20determina%20approvazione%20avviso.pdf": "DA VERIFICARE",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/festival%20giovani/avviso%20di%20manifestazione%20di%20interesse%20festival%20giovani.pdf": "ALTRO",
+    "https://www.cittametropolitana.torino.it/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/guida%20sicura%2026/dd_363_2026%20-%20determina%20approvazione%20avviso.pdf": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/contributi/bando-per-la-promozione-della-salute-mentale-delle-giovani-generazioni": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lattrattivita-e-la-professionalizzazione-di-artisti-e-creativi": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/contributi/bando-per-lo-sviluppo-di-strategie-e-percorsi-di-uso-responsabile-e-sicuro-dellintelligenza-artificiale-nelleconomia-sociale": "APERTO",
@@ -236,7 +238,7 @@
     "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-nuovi-spazi-di-partecipazione-attiva": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-cambiamento-sistemico": "ALTRO",
     "https://www.compagniadisanpaolo.it/it/i-progetti/progetti-di-sviluppo": "ALTRO",
-    "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/c8fede5d77292d746efa498315c98a33.pdf/file/avviso%2bcontributi.pdf": "DA VERIFICARE",
+    "https://www.comune.rivoli.to.it/ocmultibinary/download/5839/124709/5/c8fede5d77292d746efa498315c98a33.pdf/file/avviso%2bcontributi.pdf": "ALTRO",
     "https://www.erasmusplus.it/educazione_adulti/esiti": "ALTRO",
     "https://www.erasmusplus.it/istruzione_superiore/partenariati-strategici-ka2-3": "ALTRO",
     "https://www.erasmusplus.it/iv-3-erasmus-accreditation-ae-vet-se-assessment-guidelines-2025": "ALTRO",
