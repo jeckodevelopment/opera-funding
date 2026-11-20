@@ -134,6 +134,12 @@ def validate_scan(rows, report, now=None, max_age_minutes=30):
         if any(not isinstance(r.get("requirement_coverage_status"),str)
                for r in rows if isinstance(r,dict)):
             problems.append("Stato di copertura requisiti mancante")
+    quality=report.get("catalog_quality")
+    if quality is not None:
+        from catalog_quality import catalog_quality
+        expected_quality=catalog_quality(rows)
+        if quality!=expected_quality:
+            problems.append("Diagnostica qualità catalogo non coerente con le schede")
     audit=report.get("catalog_audit")
     if isinstance(audit,dict):
         if audit.get("records_checked")!=len(rows):

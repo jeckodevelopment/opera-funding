@@ -35,6 +35,7 @@ from operational_assessment import annotate_operational_assessment
 from catalog_reconciliation import (summarize_catalog_reconciliation, reconcile_catalog_assessments,
                                     annotate_requirement_coverage, summarize_requirement_coverage)
 from catalog_audit import load_retired_sources, mark_retired_source, audit_catalog
+from catalog_quality import catalog_quality
 from funder_registry import load_registry, link_opportunities, public_monitoring
 from programme_monitor import check_programmes, load_programme_state, public_status
 from programme_ingest import ingest_programme_calls

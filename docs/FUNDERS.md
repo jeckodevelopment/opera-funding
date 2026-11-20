@@ -333,3 +333,31 @@ pendenti; `priority_upcoming_ids` elenca gli identificativi pubblici da
 ricontrollare. Test in `tests/test_verification.py` e
 `tests/test_operational_assessment.py`. Dopo il merge, controllare la
 rigenerazione dei dati di scansione e le tre opportunità `IN ARRIVO`.
+
+## Diagnostica delle anomalie documentali e delle scadenze mancanti (20/11/2026)
+
+Il report baseline `data/scan-status.json` del 20/11/2026 alle 19:26 italiane
+mostra 273 schede, 35 aperte, 3 in arrivo, 39 schede con almeno una
+segnalazione documentale e 2 opportunità candidate prive di data di scadenza
+(fonti `sanpaolo` e `piemonte`). **Questi due ultimi casi non sono
+necessariamente errori:** i finanziamenti a sportello con apertura ufficialmente
+verificata possono essere attivi senza una scadenza fissa.
+
+Il nuovo blocco `catalog_quality` espone una coda riproducibile dei record con
+problemi documentali, ordinata per `APERTO`, `IN ARRIVO`, poi archivio:
+ID, fonte, stato, tipologia dei problemi, URL dei documenti e riepilogo delle
+cause. Non riscrive né cancella alcun diagnostico, quindi le anomalie irrisolte
+restano visibili. Il blocco `missing_deadline` distingue `sportello_verificato`
+(apertura a sportello e fonte ufficiale esplicita), `apertura_futura` (da
+ricontrollare), e `scadenza_da_documentare`. Solo quest'ultima è una lacuna
+fattuale, e non viene mai completata con date dedotte.
+
+`scan_integrity.py` confronta integralmente il rapporto di qualità con le
+schede prima di notificare e pubblicare il catalogo; una sintesi alterata
+fa fallire la scansione. Il report non dichiara recuperati PDF non letti e non
+tratta un bando a sportello come scheda errata solo per la mancanza di data.
+
+Collaudi: `tests/test_catalog_quality.py`, `tests/test_scan_integrity.py` e
+la suite Python/Node completa. Dopo il merge confermare nel nuovo
+`scan-status.json` le categorie, i 39 casi documentali (salvo nuove verifiche
+reali) e i due casi senza scadenza. Nessun deploy SFTP.
