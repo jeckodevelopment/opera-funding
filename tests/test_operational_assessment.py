@@ -63,6 +63,16 @@ class OperationalAssessmentTests(unittest.TestCase):
         self.assertEqual(result["application_path"],"non_attiva")
         self.assertFalse(result["application_eligibility_verified"])
 
+    def test_upcoming_opportunities_are_tracked_independently(self):
+        records=[row(public_id=1),
+                 row(public_id=2,funding_status="IN ARRIVO",requirements_excerpt=""),
+                 row(public_id=3,funding_status="CHIUSO")]
+        result=summarize_catalog_reconciliation(records)
+        self.assertEqual(result["coverage"]["in_arrivo"]["total"],1)
+        self.assertEqual(result["coverage"]["in_arrivo"]["missing_documentation"]["requisiti"],1)
+        self.assertEqual(result["priority_upcoming_ids"],[2])
+        self.assertEqual(result["priority_open_ids"],[1])
+
     def test_reconciliation_covers_every_record_and_focuses_on_open_high_medium(self):
         records=[
             row(public_id=1),
