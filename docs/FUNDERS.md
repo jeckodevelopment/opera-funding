@@ -425,3 +425,26 @@ con PR #162: se manca la valutazione completa, la scheda non entra in catalogo
 né nelle notifiche e resta nella coda persistente. Non retrodatare,
 non inventare importi, requisiti o scadenze e non dichiarare risolti i
 problemi dei PDF senza esame della fonte.
+
+## Filtro «A sportello» nel catalogo (20/11/2026)
+
+La modalità **a sportello** è indipendente dallo stato temporale del bando:
+non è un sesto stato APERTO/CHIUSO. Nel catalogo la scheda rimane sempre
+visibile nel filtro pertinente al suo stato, mentre la nuova scheda rapida
+`A sportello` raccoglie tutte le opportunità con
+`rolling_confirmed === true` e un `rolling_evidence` HTTPS verificabile.
+Nessun bando viene escluso perché manca una data di scadenza quando la
+procedura a sportello è confermata. Non inventare una data di fine.
+
+La tab «A sportello» mostra il conteggio e si nasconde se vuota, come le
+altre; la vista predefinita e «Azzera filtri» rimangono `Aperte`.
+I risultati conservano l'ordinamento consueto (aperti prima, poi gli altri
+stati). Ogni scheda interessata presenta l'etichetta «A sportello» e, senza
+una data, un calendario esplicitamente descrittivo in luogo del generico
+«Non indicata». La data effettiva resta visibile quando è pubblicata.
+
+Test: `tests/test_dashboard.cjs` verifica fonte confermata, mancata conferma,
+apertura, chiusura, esclusione degli avvisi informativi, scelta delle tab e
+cache bust frontend. La modifica del frontend richiede la sola ordinaria
+pubblicazione SFTP dell'applicazione, mentre il catalogo continua ad aggiornare
+i dati JSON autonomamente senza nuovi deploy.

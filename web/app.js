@@ -205,6 +205,18 @@ function makeAdequacy(o){
  surface.append(heading,track);
  return surface;
 }
+function isRolling(o){
+ // A rolling application is a verified application mode, not a temporal state.
+ return o.opportunity_type!=="altro avviso" &&
+        o.rolling_confirmed===true &&
+        typeof o.rolling_evidence==="string" &&
+        safeUrl(o.rolling_evidence)!==null;
+}
+function matchesCatalogStatus(o,selection){
+ if(selection==="sportello")return isRolling(o);
+ if(selection==="followed")return isFollowed(o);
+ return !selection||state(o)===selection;
+}
 function groupOrder(o){return {aperto:0,"in arrivo":1,"non verificato":2,chiuso:3,"altro contenuto":4}[state(o)];}
 function sortRows(rows,order){
  const difference=(a,b)=>affinityRank(b)-affinityRank(a);
@@ -246,7 +258,13 @@ function makeCalendar(o){
  const date=o.deadline;const calendar=el("div",undefined,"calendar"+(!validDate(date)?" unknown-date":""));
  calendar.setAttribute("role","img");
  calendar.setAttribute("aria-label",dateLabel(date));
- if(!validDate(date)){calendar.append(el("span","DATA","calendar-month"),el("span","—","calendar-day"),el("span","Non indicata","calendar-year"));return calendar;}
+ if(!validDate(date)){
+  if(isRolling(o)){
+   calendar.setAttribute("aria-label","Bando a sportello, senza scadenza fissa");
+   calendar.append(el("span","BANDO","calendar-month"),el("span","↻","calendar-day"),el("span","A sportello","calendar-year"));
+  }else calendar.append(el("span","DATA","calendar-month"),el("span","—","calendar-day"),el("span","Non indicata","calendar-year"));
+  return calendar;
+ }
  const [year,month,day]=date.split("-");
  const monthName=["GEN","FEB","MAR","APR","MAG","GIU","LUG","AGO","SET","OTT","NOV","DIC"][Number(month)-1];
  if(state(o)==="aperto"&&daysLeft(date)<=10)calendar.classList.add("urgent");
@@ -696,6 +714,7 @@ function makeCard(o){
  tags.append(el("span",statusLabel(st),"chip status "+(st==="aperto"?"open":st==="chiuso"?"closed":st==="in arrivo"?"upcoming":"unknown")));
  const change=changeBadge(o);
  if(change)tags.append(el("span",change.label,"chip change "+change.kind));
+ if(isRolling(o))tags.append(el("span","A sportello","chip rolling"));
  if(o.assessment_review_status && o.assessment_review_status!=="REVISIONE DOCUMENTALE"){
   tags.append(el("span",o.assessment_review_status==="EVIDENZE RACCOLTE"?"Evidenze raccolte":"Verifica documentale parziale","chip"));
  }
@@ -729,6 +748,7 @@ function updateStateCounts(){
   const current=state(opportunity);
   counts.set(current,(counts.get(current)||0)+1);
   if(isFollowed(opportunity))counts.set("followed",(counts.get("followed")||0)+1);
+  if(isRolling(opportunity))counts.set("sportello",(counts.get("sportello")||0)+1);
  }
  for(const tab of document.querySelectorAll(".quick-tab")){
   const key=tab.dataset.value;
