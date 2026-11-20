@@ -23,7 +23,8 @@ def apply_reviewed_facts(rows, facts, now):
             if deadline is None and not fact.get("rolling"):
                 continue
             # Preserve fresher live facts and do not overwrite contradictory dates.
-            if deadline and row.get("deadline") and row["deadline"]!=deadline.isoformat():
+            if (deadline and row.get("deadline") and row["deadline"]!=deadline.isoformat()
+                    and not fact.get("supersede_inferred_deadline")):
                 continue
             if deadline:
                 row["deadline"]=deadline.isoformat()
