@@ -119,7 +119,7 @@ jobs:
       # Persist per-recipient delivery receipts even on partial sender failure.
       # An interrupted digest must not resend successfully delivered messages.
       - name: Commit notification delivery ledger
-        if: ${{ !cancelled() && steps.publish.outcome == 'success' && steps.notify.outcome != 'skipped' }}
+        if: ${{ always() && !cancelled() && steps.publish.outcome == 'success' && steps.notify.outcome != 'skipped' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
