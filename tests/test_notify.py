@@ -10,7 +10,7 @@ from notify import run,candidates,make_message,is_open,MAX_DAILY,MAX_MONTHLY,par
 def item(key, status="APERTO", relevance=80, **kw):
     return {
         "id":key,"url":"https://example.org/call/"+key,
-        "title":"Bando "+key,"issuer":"Ente culturale",
+        "title":"Bando "+key+" per attività culturali","issuer":"Ente culturale",
         "funding_status":status,
         "opportunity_type":"finanziamento potenziale",
         "source_open_confirmed":status=="APERTO",
