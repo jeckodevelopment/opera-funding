@@ -99,6 +99,24 @@ class AdmissionTests(unittest.TestCase):
         row=complete(assessment_document_issues=[{"reason":"testi_diversi_da_verificare"}])
         self.assertIn("documenti_con_anomalie",admission_reasons(row))
 
+    def test_legacy_unverified_candidate_is_moved_to_pending_without_losing_id(self):
+        old=complete(id="https://example.org/old-unverified",
+                     url="https://example.org/old-unverified",
+                     public_id=33,funding_status="DA VERIFICARE",
+                     deadline=None,deadline_source=None,source_open_confirmed=False)
+        pub,pending,report=split_new_catalogue([old],{old["id"]})
+        self.assertEqual(pub,[])
+        self.assertEqual(report["in_review"],1)
+        self.assertEqual(pending[0]["public_id"],33)
+        self.assertIn("stato_candidatura_non_verificato",pending[0]["admission_reasons"])
+        old.update(funding_status="APERTO",source_open_confirmed=True,
+                   deadline="2027-01-01",
+                   deadline_source="https://example.org/old-unverified")
+        pub,pending,report=split_new_catalogue([old],set())
+        self.assertEqual(len(pub),1)
+        self.assertEqual(pending,[])
+        self.assertEqual(pub[0]["public_id"],33)
+
     def test_legacy_record_not_suppressed(self):
         row=complete(detail_checked=False,requirements_excerpt="")
         pub,pending,report=split_new_catalogue([row],{row["id"]})

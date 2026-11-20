@@ -96,12 +96,19 @@ def split_new_catalogue(rows, public_ids):
     failures=Counter()
     admitted=[]
     for row in rows:
-        if row.get("id") in public_ids:
+        # Historical cards with an unconfirmed application window are not
+        # exempt from the pre-publication gate. Preserve the same public_id
+        # in the persistent review queue for a future verified re-admission.
+        legacy=row.get("id") in public_ids
+        uncertain_legacy=(legacy and row.get("funding_status")=="DA VERIFICARE"
+                          and row.get("opportunity_type") in CANDIDATES)
+        if legacy and not uncertain_legacy:
             published.append(row)
             continue
         reasons=admission_reasons(row)
         if reasons:
             candidate=dict(row)
+            candidate.pop("catalog_admission_status",None)
             candidate["admission_reasons"]=reasons
             pending.append(candidate)
             failures.update(reasons)
