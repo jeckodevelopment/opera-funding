@@ -20,6 +20,14 @@ def _https(value):
     return parsed.scheme=="https" and bool(parsed.hostname) and not parsed.username and not parsed.password
 
 
+def has_verified_window(row):
+    """A deadline or confirmed rolling window, with official HTTPS evidence."""
+    return bool(
+        (row.get("deadline") and _https(row.get("deadline_source"))) or
+        (row.get("rolling_confirmed") is True and _https(row.get("rolling_evidence")))
+    )
+
+
 def admission_reasons(row):
     """Return explicit reasons, never a false attestation of legal eligibility."""
     reasons=[]
@@ -59,12 +67,13 @@ def admission_reasons(row):
     if row.get("funding_status")=="APERTO":
         if not row.get("source_open_confirmed"):
             reasons.append("apertura_non_confermata")
-        if not (row.get("deadline") and _https(row.get("deadline_source")) or
-                row.get("rolling_confirmed") is True and _https(row.get("rolling_evidence"))):
+        if not has_verified_window(row):
             reasons.append("finestra_candidatura_non_documentata")
     if row.get("funding_status")=="IN ARRIVO" and not (
             row.get("opening_date") and _https(row.get("opening_evidence"))):
         reasons.append("apertura_futura_non_documentata")
+    if row.get("funding_status")=="IN ARRIVO" and not has_verified_window(row):
+        reasons.append("finestra_candidatura_non_documentata")
     if row.get("funding_status")=="CHIUSO" and not (
             row.get("deadline") and _https(row.get("deadline_source")) or
             row.get("closure_confirmed") and _https(row.get("status_evidence"))):
