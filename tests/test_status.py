@@ -29,7 +29,16 @@ class FundingStatusTests(unittest.TestCase):
         entry={"opportunity_type":"altro avviso","status":"aperto",
                "source_open_confirmed":True,"deadline":"2027-03-01",
                "link_status":"raggiungibile"}
-        self.assertEqual(effective_status(entry,NOW),"DA VERIFICARE")
+        self.assertEqual(effective_status(entry,NOW),"INFORMATIVO")
+
+    def test_closed_historical_notice_stays_closed(self):
+        entry={"opportunity_type":"altro avviso","deadline":"2025-01-01"}
+        self.assertEqual(effective_status(entry,NOW),"CHIUSO")
+
+    def test_informative_is_not_open_even_with_issuer_flag(self):
+        entry={"opportunity_type":"altro avviso","source_open_confirmed":True,
+               "deadline":"2027-01-01","link_status":"raggiungibile"}
+        self.assertEqual(annotate(entry,NOW)["funding_status"],"INFORMATIVO")
 
     def test_no_eligibility_penalty(self):
         row={"source_open_confirmed":True,"deadline":"2027-01-01","link_status":"raggiungibile","eligibility":"partner da reperire","relevance":98}

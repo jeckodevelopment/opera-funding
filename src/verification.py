@@ -120,9 +120,12 @@ def classify_informational_page(record):
     if source=="sanpaolo":
         # Institutional project showcases do not accept new applications.
         is_information=path.startswith("/it/i-progetti/")
+    if source=="piemonte" and path.rstrip("/")=="/avvisi-beni-regionali/avviso-individuazione-soggetti-idonei-alle-direzioni-ssr":
+        # Recruitment/appointment to the regional health service: no grant.
+        is_information=True
     if source=="piemonte":
         # Pre-information is an announcement, not an application that can be submitted.
-        is_information=(path.rstrip("/") in ("/contributi-finanziamenti", "/crowdfunding")
+        is_information=is_information or (path.rstrip("/") in ("/contributi-finanziamenti", "/crowdfunding")
                         or path.startswith("/pre-informazione-fondi-ue"))
         is_information=is_information or path.rstrip("/") in ("/web/bandi-pnrr-per-enti-locali", "/web/bandi-per-enti-locali")
     if source=="eucreative":
@@ -189,18 +192,18 @@ def pick_for_review(found, existing, limit, now=None):
 def coverage(rows, sources):
     totals={"all":len(rows),"open":0,"closed":0,"upcoming":0,"unverified":0,
             "dated":0,"dated_with_source":0,"detail_checked":0,"reachable":0,
-            "candidate_unverified":0,"informational_unverified":0,
+            "candidate_unverified":0,"informational_unverified":0,"informational":0,
             "candidate_missing_deadline":0}
     by_source={}
     for row in rows:
         sid=row.get("source_id","unknown")
         entry=by_source.setdefault(sid,{"total":0,"open":0,"unverified":0,"dated":0,"dated_with_source":0,"detail_checked":0,
-                                        "candidate_unverified":0,"informational_unverified":0,"candidate_missing_deadline":0})
+                                        "candidate_unverified":0,"informational_unverified":0,"informational":0,"candidate_missing_deadline":0})
         entry["total"]+=1
         state=row.get("funding_status","DA VERIFICARE")
-        bucket={"APERTO":"open","CHIUSO":"closed","IN ARRIVO":"upcoming"}.get(state,"unverified")
+        bucket={"APERTO":"open","CHIUSO":"closed","IN ARRIVO":"upcoming","INFORMATIVO":"informational"}.get(state,"unverified")
         totals[bucket]+=1
-        if bucket in ("open","unverified"):entry[bucket]+=1
+        if bucket in ("open","unverified","informational"):entry[bucket]+=1
         candidate=row.get("opportunity_type") in PROJECT_TYPES
         if bucket=="unverified":
             key="candidate_unverified" if candidate else "informational_unverified"
