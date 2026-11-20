@@ -353,13 +353,15 @@ def run():
     rows=assign_public_ids(rows, registry)
     rows=attach_public_aliases(rows, registry)
     rows=apply_assessment_reviews(rows, assessment_reviews)
+    # Rebuild evidence diagnostics BEFORE comparing archival fingerprints:
+    # freshly enriched PDF fields may replace the previous scan's excerpts.
+    for row in rows:
+        annotate_assessment_coverage(row)
     rows=apply_archive_reviews(rows,archive_reviews,"2026-11-20")
+    applicant_profile = load_applicant_profile()
     for row in rows:
         if (row.get("archive_case_review") or {}).get("disposition")=="riferimento_non_finanziamento":
             explain(annotate(reconcile_status(row)))
-    applicant_profile = load_applicant_profile()
-    for row in rows:
-        annotate_assessment_coverage(row)
         annotate_conditions(row)
         annotate_specific_requirements(row)
         annotate_applicant_comparison(row, applicant_profile, now[:10])
