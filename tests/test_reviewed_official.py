@@ -35,7 +35,7 @@ class VerifiedFactsTests(unittest.TestCase):
 
     def test_new_issuer_verified_reconciliations(self):
         by_path={f["match_path"]:f for f in FACTS}
-        checked=[row(f) for f in FACTS[5:]]
+        checked=[row(f) for f in FACTS[5:15]]
         apply_reviewed_facts(checked,FACTS,"2026-11-18T20:00:00+00:00")
         states=[effective_status(r,date(2026,11,18)) for r in checked]
         self.assertEqual(states,["CHIUSO","APERTO","IN ARRIVO","APERTO","APERTO","APERTO","APERTO","APERTO","APERTO","APERTO"])
@@ -58,6 +58,41 @@ class VerifiedFactsTests(unittest.TestCase):
         self.assertTrue(rows[1]["rolling_confirmed"])
         self.assertIn("linkedin.com",rows[0]["status_evidence"])
         self.assertIn("intesasanpaolo.com",rows[1]["status_evidence"])
+
+
+    def test_eight_unverified_source_reconciliation(self):
+        from verification import classify_informational_page
+        expected={
+            "programme:cmtorino-giovani":3,
+            "programme:rivoli-associazioni":1,
+            "volto":1,
+        }
+        selected=[f for f in FACTS if f["source_id"] in expected and
+                  f["match_path"] in {
+                    "/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico%20amare.pdf",
+                    "/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico.pdf",
+                    "/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/festival%20giovani/avviso%20di%20manifestazione%20di%20interesse%20festival%20giovani.pdf",
+                    "/ocmultibinary/download/5839/124709/5/c8fede5d77292d746efa498315c98a33.pdf/file/avviso%2bcontributi.pdf",
+                    "/bandi/contributi-a-sostegno-di-iniziative-rilevanti-ai-fini-della-promozione-delleconomia-provinciale-anno-2027"
+                  }]
+        self.assertEqual(len(selected),5)
+        records=[row(f) for f in selected]
+        apply_reviewed_facts(records,FACTS,"2026-11-20T09:00:00+00:00")
+        states={f["match_path"]:effective_status(r,date(2026,11,20))
+                for f,r in zip(selected,records)}
+        self.assertEqual(list(states.values()).count("CHIUSO"),4)
+        self.assertEqual(list(states.values()).count("APERTO"),1)
+        for path in (
+            "/comunicazione/contributi-il-contrasto-delle-discriminazioni",
+            "/istruzione-e-sviluppo-sociale/servizio-civile/servizio-civile-bandi",
+            "/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20amare.pdf",
+            "/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/esito%20avviso%20pubblico%20guida%20sicura.pdf",
+            "/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/guida%20sicura%2026/dd_363_2026%20-%20determina%20approvazione%20avviso.pdf",
+        ):
+            info=classify_informational_page({"source_id":"programme:cmtorino-giovani",
+                "url":"https://www.cittametropolitana.torino.it"+path,
+                "opportunity_type":"finanziamento potenziale"})
+            self.assertEqual(info["opportunity_type"],"altro avviso",path)
 
     def test_no_broad_path_suffix_matching_for_unrelated_pages(self):
         r={"source_id":"volto","url":"https://volontariatotorino.it/archivio/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord",
