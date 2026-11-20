@@ -94,22 +94,38 @@ jobs:
         id: integrity
         if: steps.due.outputs.run_scan == 'true'
         run: python src/scan_integrity.py
-      - name: Notify on newly open relevant calls
-        id: notify
-        if: steps.due.outputs.run_scan == 'true'
-        env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          FUNDING_ALERT_RECIPIENT: ${{ secrets.FUNDING_ALERT_RECIPIENT }}
-        run: python src/notify.py
-      - name: Commit updated public data
+      # Publish the exact public catalogue before sending links to its details.
+      # The newsletter must never race the public JSON publication.
+      - name: Commit updated public catalogue before notifications
+        id: publish
         if: ${{ !cancelled() && steps.scan.outcome == 'success' && steps.integrity.outcome == 'success' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/opportunities.json data/scan-status.json data/opportunity-ids.json data/pending-opportunities.json data/programme-monitoring.json
-          if [ -f data/notification-state.json ]; then git add data/notification-state.json; fi
           if ! git diff --cached --quiet; then
             git commit -m "data: refresh funding discovery"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Notify on newly published relevant calls
+        id: notify
+        if: steps.publish.outcome == 'success'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          FUNDING_ALERT_RECIPIENT: ${{ secrets.FUNDING_ALERT_RECIPIENT }}
+        run: python src/notify.py
+      # Persist per-recipient delivery receipts even on partial sender failure.
+      # An interrupted digest must not resend successfully delivered messages.
+      - name: Commit notification delivery ledger
+        if: ${{ !cancelled() && steps.publish.outcome == 'success' && steps.notify.outcome != 'skipped' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/notification-state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: persist funding notification deliveries"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
