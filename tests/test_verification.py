@@ -11,6 +11,25 @@ def row(key, **props):
             "opportunity_type":"finanziamento potenziale",**props}
 
 class VerificationTests(unittest.TestCase):
+    def test_piemonte_avvisi_index_is_informational_not_grant(self):
+        item={"id":"https://bandi.regione.piemonte.it/avvisi-beni-regionali",
+              "source_id":"piemonte",
+              "url":"https://bandi.regione.piemonte.it/avvisi-beni-regionali",
+              "title":"Avvisi pubblici e per beni regionali",
+              "opportunity_type":"finanziamento potenziale"}
+        result=classify_informational_page(item)
+        self.assertEqual(result["opportunity_type"],"altro avviso")
+        self.assertIn("informativa",result["type_reason"].lower())
+
+    def test_piemonte_individual_calls_are_not_hidden(self):
+        item={"id":"https://bandi.regione.piemonte.it/avvisi-beni-regionali/grandi-eventi",
+              "source_id":"piemonte",
+              "url":"https://bandi.regione.piemonte.it/avvisi-beni-regionali/grandi-eventi",
+              "title":"Contributi per grandi eventi culturali",
+              "opportunity_type":"finanziamento potenziale"}
+        result=classify_informational_page(item)
+        self.assertEqual(result["opportunity_type"],"finanziamento potenziale")
+
     def test_unvisited_first_and_fair_rotation(self):
         found=[row("a"),row("b"),row("c")]
         initial=pick_for_review(found,{},1,NOW)
