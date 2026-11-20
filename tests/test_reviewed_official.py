@@ -94,6 +94,13 @@ class VerifiedFactsTests(unittest.TestCase):
                 "opportunity_type":"finanziamento potenziale"})
             self.assertEqual(info["opportunity_type"],"altro avviso",path)
 
+    def test_explicit_official_close_supersedes_inferred_pdf_date(self):
+        fact=next(f for f in FACTS if f["source_id"]=="programme:rivoli-associazioni")
+        rec=row(fact,"2026-12-31")
+        apply_reviewed_facts([rec],FACTS,"2026-11-20T09:00:00+00:00")
+        self.assertEqual(rec["deadline"],"2026-09-30")
+        self.assertEqual(effective_status(rec,date(2026,11,20)),"CHIUSO")
+
     def test_no_broad_path_suffix_matching_for_unrelated_pages(self):
         r={"source_id":"volto","url":"https://volontariatotorino.it/archivio/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord",
            "deadline":"2026-11-20","link_status":"raggiungibile"}
