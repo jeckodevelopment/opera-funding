@@ -97,3 +97,21 @@ ufficiali sufficienti, può rientrare negli annunci successivi soltanto
 dopo nuova verifica, nel rispetto delle regole di deduplicazione.
 Test regressivi specifici su #33, scadenza assente, evidenza mancante,
 sportello e uscita dalla coda preventiva.
+
+## Quarantena retroattiva delle schede storiche non verificate (20/11/2026)
+
+Il solo filtro delle notifiche non è sufficiente: una vecchia scheda
+ancora `DA VERIFICARE` resta altrimenti pubblica per l'esenzione dei
+record storici. Le candidature storiche in questo stato vengono ora
+spostate nella stessa coda persistente delle nuove opportunità prive
+di verifiche, senza perdere gli ID pubblici originari. Solo la conferma
+delle condizioni necessarie (`admission_reasons == []`) ne permette
+il ritorno al catalogo. I veri record informativi o i bandi storici
+chiusi rimangono nello storico ordinario, senza cancellazioni globali.
+
+Per la scheda #33, già notificata prematuramente, è stata eliminata
+**soltanto** la marcatura di notifica definitiva, non le ricevute di
+altre opportunità. In presenza di requisiti ufficiali confermati,
+potrà essere notificata correttamente in futuro, senza duplicati nella
+situazione attuale non verificata. Le vecchie email inviate non sono
+revocabili.
