@@ -117,6 +117,28 @@ class NotifyTests(unittest.TestCase):
         self.assertNotIn("<script>",html)
         self.assertEqual(candidates([item("bad",url="javascript:alert(1)")],{},set()),[])
 
+    def test_rolling_calls_show_true_continuous_window_not_unverified_deadline(self):
+        row=item("rolling",deadline=None,rolling_confirmed=True,
+                 rolling_evidence="https://example.org/call/rolling")
+        _,html,plain=make_message([row])
+        self.assertIn("A sportello — senza scadenza fissa",html)
+        self.assertIn("Scadenza: A sportello — senza scadenza fissa",plain)
+        _,html_unknown,plain_unknown=make_message([item("unknown",deadline=None)])
+        self.assertIn("Scadenza: Da verificare",plain_unknown)
+        self.assertNotIn("A sportello",html_unknown)
+
+    def test_workflow_commits_catalogue_before_sending_and_saves_partial_receipts(self):
+        yaml=(Path(__file__).resolve().parents[1]/".github/workflows/scan.yml").read_text()
+        publish=yaml.index("name: Commit updated public catalogue before notifications")
+        notify=yaml.index("name: Notify on newly published relevant calls")
+        ledger=yaml.index("name: Commit notification delivery ledger")
+        self.assertLess(publish,notify)
+        self.assertLess(notify,ledger)
+        self.assertIn("if: steps.publish.outcome == 'success'",yaml)
+        self.assertIn("steps.notify.outcome != 'skipped'",yaml)
+        self.assertNotIn("data/notification-state.json data/programme-monitoring.json",yaml)
+        self.assertIn("git add data/notification-state.json",yaml)
+
     def test_title_links_to_numeric_detail_and_preserves_official_source(self):
         entry=item("linked",public_id=143,
                    title='Progetto <Rigoletto> & laboratorio')
