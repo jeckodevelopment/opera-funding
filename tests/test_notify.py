@@ -18,6 +18,18 @@ def item(key, status="APERTO", relevance=80, **kw):
         "relevance":relevance,
         "adequacy_label":"MEDIA",
         "deadline":"2027-01-15",
+        "deadline_source":"https://example.org/call/"+key,
+        "source_id":"piemonte",
+        "opening_date":"2026-11-01" if status=="IN ARRIVO" else None,
+        "opening_evidence":"https://example.org/call/"+key if status=="IN ARRIVO" else None,
+        "detail_checked":True,
+        "assessment_evidence_source":"https://example.org/call/"+key,
+        "programme_objectives_excerpt":"Sostenere la partecipazione culturale",
+        "funded_activities_excerpt":"Laboratori di musica e teatro",
+        "beneficiaries_excerpt":"Organizzazioni culturali ammissibili",
+        "requirements_excerpt":"Progetto e rendicontazione",
+        "assessment_reason":"Requisiti e finalità documentati",
+        "adequacy_reason":"Pertinenza agli obiettivi culturali",
         **kw,
     }
 
