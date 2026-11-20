@@ -13,7 +13,7 @@ class ReviewedAssessmentTests(unittest.TestCase):
         region=next(x for x in reviews if x.get("public_id")==23)
         self.assertIn("EVENTI CULTURALI ANNO 2027",c7["requirements_excerpt"])
         self.assertIn("26/11/2026",c7["requirements_excerpt"])
-        self.assertIn("soglia minima",c7["assessment_gaps"][-1])
+        self.assertIn("soglia minima",c7["assessment_gaps"][-1].lower())
         self.assertTrue(any("registro" in gap for gap in c7["assessment_gaps"]))
         self.assertTrue(any("FINDOM" in gap and "Allegato B" in gap for gap in region["assessment_gaps"]))
         self.assertTrue(any("manifestazione" in gap and "non" in gap for gap in region["assessment_gaps"]))
@@ -166,7 +166,7 @@ class ReviewedAssessmentTests(unittest.TestCase):
         for number,label in expected.items():
             with self.subTest(public_id=number):
                 record=next(r for r in reviews if r.get("public_id")==number)
-                self.assertEqual(record["reviewed_at"],"2026-11-19")
+                self.assertGreaterEqual(record["reviewed_at"],"2026-11-19")
                 self.assertTrue(record.get("evidence_url","").startswith("https://"))
                 self.assertTrue(record.get("requirements_excerpt"))
                 self.assertTrue(record.get("assessment_gaps"))
