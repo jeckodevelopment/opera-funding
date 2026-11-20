@@ -159,8 +159,15 @@ def validate_scan(rows, report, now=None, max_age_minutes=30, pending_rows=None)
                 problems.append("Scheda completa trattenuta in istruttoria")
             if any(not r.get("admission_reasons") for r in pending_rows if isinstance(r,dict)):
                 problems.append("Istruttoria priva dei motivi espliciti")
-            for record in rows:
-                if record.get("catalog_admission_status")=="valutata_prima_pubblicazione" and admission_reasons(record):
+            ids=admission.get("published_ids")
+            if not isinstance(ids,list) or len(ids)!=admission.get("new_published"):
+                problems.append("Identificativi delle nuove schede non coerenti")
+            else:
+                just_published={x.get("public_id"):x for x in rows if isinstance(x,dict)
+                                and x.get("public_id") in ids}
+                if len(just_published)!=len(ids):
+                    problems.append("Nuove schede mancanti o duplicate")
+                if any(admission_reasons(record) for record in just_published.values()):
                     problems.append("Pubblicazione di nuova scheda priva di valutazione completa")
     audit=report.get("catalog_audit")
     if isinstance(audit,dict):
