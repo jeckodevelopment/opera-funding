@@ -66,15 +66,6 @@
     "approved": true
   },
   {
-    "id": "eucreative",
-    "name": "Creative Europe",
-    "url": "https://culture.ec.europa.eu/funding/calls",
-    "tier": "medium",
-    "region": "Europa",
-    "type": "europeo",
-    "approved": true
-  },
-  {
     "id": "erasmus",
     "name": "Erasmus+",
     "url": "https://erasmus-plus.ec.europa.eu/funding",
@@ -92,6 +83,16 @@
     "type": "europeo",
     "approved": true,
     "discovery_mode": "creative_europe_sedia_api"
+  },
+  {
+    "id": "eucreative",
+    "name": "Creative Europe",
+    "url": "https://culture.ec.europa.eu/funding/calls",
+    "tier": "medium",
+    "region": "Europa",
+    "type": "europeo",
+    "approved": true,
+    "rate_limit_alternative_source_id": "eufunding"
   },
   {
     "id": "creativeitalia",
