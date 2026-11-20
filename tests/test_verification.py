@@ -34,6 +34,34 @@ class VerificationTests(unittest.TestCase):
         previous={x["id"]:x for x in (older,urgent)}
         self.assertEqual(pick_for_review([row("routine"),row("urgent")],previous,1,NOW),{"urgent"})
 
+    def test_upcoming_opening_within_14_days_gets_review_priority(self):
+        past=(NOW-timedelta(days=4)).isoformat()
+        def old(key,**kw):
+            return row(key,detail_checked=True,detail_version=9,
+                       detail_checked_at=past,detail_attempted_at=past,**kw)
+        imminent=old("upcoming",funding_status="IN ARRIVO",
+                     opening_date="2026-11-22",
+                     funded_activities_excerpt="Attività",
+                     beneficiaries_excerpt="Associazioni",
+                     requirements_excerpt="Requisiti")
+        routine=old("open",funding_status="APERTO",deadline="2027-05-20",
+                    funded_activities_excerpt="Attività",
+                    beneficiaries_excerpt="Associazioni",
+                    requirements_excerpt="Requisiti")
+        previous={x["id"]:x for x in (imminent,routine)}
+        chosen=pick_for_review([row("open"),row("upcoming")],previous,1,NOW)
+        self.assertEqual(chosen,{"upcoming"})
+
+    def test_upcoming_is_rechecked_daily_even_with_complete_excerpts(self):
+        yesterday=(NOW-timedelta(hours=26)).isoformat()
+        entry=row("early",funding_status="IN ARRIVO",opening_date="2026-12-01",
+                  detail_checked=True,detail_version=9,detail_checked_at=yesterday,
+                  funded_activities_excerpt="Attività",
+                  beneficiaries_excerpt="Associazioni",
+                  requirements_excerpt="Requisiti")
+        self.assertTrue(needs_review(entry,NOW))
+        self.assertFalse(needs_review({**entry,"funding_status":"CHIUSO"},NOW))
+
     def test_open_incomplete_revisited_daily_not_complete(self):
         yesterday=(NOW-timedelta(hours=26)).isoformat()
         incomplete=row("incomplete",detail_checked=True,detail_version=9,

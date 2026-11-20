@@ -18,8 +18,10 @@ def summarize_catalog_reconciliation(rows):
     all_rows=list(rows)
     open_rows=[r for r in all_rows if r.get("funding_status")=="APERTO"]
     candidates=[r for r in open_rows if r.get("adequacy_label") in ("ALTA","MEDIA")]
+    upcoming_rows=[r for r in all_rows if r.get("funding_status")=="IN ARRIVO"]
     coverage={}
     for label,records in (("catalogo",all_rows),("aperte",open_rows),
+                          ("in_arrivo",upcoming_rows),
                           ("aperte_alta_media",candidates)):
         missing={name:sum(not isinstance(r.get(field),str) or not r[field].strip()
                           for r in records) for field,name in FIELD_LABELS}
@@ -37,6 +39,8 @@ def summarize_catalog_reconciliation(rows):
         }
     return {
         "coverage":coverage,
+        "priority_upcoming_ids":[r.get("public_id") for r in upcoming_rows
+                                 if isinstance(r.get("public_id"),int) and r["public_id"]>0],
         "priority_open_ids":[r.get("public_id") for r in candidates
                              if isinstance(r.get("public_id"),int) and r["public_id"]>0],
         "notes":"I conteggi indicano copertura delle evidenze, non ammissibilità certificata.",

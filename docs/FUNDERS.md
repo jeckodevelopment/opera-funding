@@ -310,3 +310,26 @@ Revisione delle opportunità ad adeguatezza MEDIA:
 - Scheda **#274**: bando della Camera di commercio di Torino per iniziative di promozione economica provinciale nel 2027, domande dal **09/11/2026** al **27/11/2026 ore 12:00**. Fonti ufficiali: https://www.to.camcom.it/richiesta-contributi-iniziative-di-promozione-economica-2027 e https://www.to.camcom.it/contributi-iniziative-di-terzi . Inserita revisione individuale, con finalità e attività ammissibili, distinguendo la disponibilità di un contributo dalla dimostrazione dei requisiti specifici dell'associazione.
 
 Le restanti sei schede aperte ad adeguatezza MEDIA risultavano già presenti in `config/assessment_reviews.json`: le verifiche su statuto, iscrizioni, cofinanziamento, capacità operativa e progetti concreti **non possono essere dichiarate superate senza documenti del richiedente**. Non forzare `compatibile` o `ammissione verificata` nel confronto con l'associazione. Test e dashboard devono conservare questa distinzione. Dopo merge controllare il nuovo JSON, la distribuzione dei cinque stati, la lista delle opportunità aperte e l'assenza di schede informative classificate APERTO.
+
+## Qualità del catalogo: scadenze in arrivo (20/11/2026)
+
+Il report di partenza censisce 273 schede: 35 `APERTO`, 3 `IN ARRIVO`,
+148 `CHIUSO`, 87 `INFORMATIVO`, 0 candidature con stato non verificato.
+Le 35 schede aperte hanno finalità, attività, beneficiari e requisiti presenti,
+senza incongruenze negli allegati. L'intero storico conserva 39 schede con
+diagnostiche documentali: non inventare dati per azzerarle. Nessun ID pubblico
+duplicato o URL di edizione duplicato è stato rilevato.
+
+Una lacuna tecnica era nella coda di verifica: `needs_review` accelerava le
+opportunità `APERTO` con evidenze incomplete, ma non dava a quelle `IN ARRIVO`
+una finestra di revisione giornaliera. Ora le schede `IN ARRIVO` sono
+ricontrollate ogni giorno, anche se hanno già estratti completi, e una finestra
+che inizia entro 14 giorni ha precedenza sulle revisioni ordinarie di pari
+categoria. Nessuna data o ammissibilità viene inferita.
+
+`catalog_reconciliation.coverage.in_arrivo` separa le metriche delle prossime
+aperture: documentazione incompleta, allegati, fonte attribuita e verifiche
+pendenti; `priority_upcoming_ids` elenca gli identificativi pubblici da
+ricontrollare. Test in `tests/test_verification.py` e
+`tests/test_operational_assessment.py`. Dopo il merge, controllare la
+rigenerazione dei dati di scansione e le tre opportunità `IN ARRIVO`.
