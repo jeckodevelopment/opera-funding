@@ -361,3 +361,34 @@ Collaudi: `tests/test_catalog_quality.py`, `tests/test_scan_integrity.py` e
 la suite Python/Node completa. Dopo il merge confermare nel nuovo
 `scan-status.json` le categorie, i 39 casi documentali (salvo nuove verifiche
 reali) e i due casi senza scadenza. Nessun deploy SFTP.
+
+## Ammissione preventiva delle nuove schede (20/11/2026)
+
+**Scoperta non significa pubblicazione.** Ogni nuova opportunità passa da
+estrazione, collegamento verificato, verifica delle finestre di candidatura,
+analisi documentale delle finalità, delle attività finanziabili, dei beneficiari
+e dei requisiti, attribuzione delle fonti, valutazione motivata di adeguatezza
+e controllo delle discrepanze. Le opportunità provenienti da aggregatori
+richiedono evidenze direttamente attribuibili all'ente erogatore.
+
+Solo quando il gate `src/catalog_admission.py` non rileva lacune la nuova
+scheda passa in `data/opportunities.json` e può generare notifiche. In caso
+contrario viene conservata in `data/pending-opportunities.json` con i motivi
+della sospensione e ripresa in revisione nei cicli successivi. **La coda è
+versionata in una repository pubblica**: non inserire segreti o documenti
+riservati. Lo storico già pubblicato rimane visibile e mantiene gli ID
+esistenti; il gate governa solo i nuovi ingressi, senza cancellazioni
+retroattive.
+
+Bandi a sportello possono essere ammessi senza data di fine solo se l'apertura
+a sportello è confermata e attribuita a una fonte ufficiale. Mancanza di un
+requisito non viene trasformata in una falsa valutazione BASSA né in
+un'ammissione certificata dell'associazione. La valutazione documentale non
+attesta la formale ammissibilità legale di un richiedente.
+
+Il report `catalog_admission` espone nuovi ingressi ammessi, numero di
+istruttorie e motivi. `scan_integrity.py` confronta il report con la coda e
+blocca nuove pubblicazioni non complete. Il workflow conserva la coda
+insieme ai dati di catalogo. Collaudi: test `catalog_admission`,
+`scan_integrity`, intera suite Python/JavaScript e conferma dopo la scansione
+che nessuna scheda incompleta passi nel catalogo o nelle notifiche.
