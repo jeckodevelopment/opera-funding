@@ -214,6 +214,21 @@ class NotifyTests(unittest.TestCase):
         self.assertNotIn("<script>",html)
         self.assertEqual(plain.count("Scheda: https://jeckodevelopment.com/dev/funding/"),3)
 
+    def test_idempotency_distinguishes_corrected_deadline_but_not_retry(self):
+        from notify import notification_idempotency
+        row=item("call")
+        subject,html,plain=make_message([row])
+        token="recipient-hmac"
+        first=notification_idempotency(token,[row["id"]],subject,html,plain)
+        self.assertEqual(first,notification_idempotency(
+            token,[row["id"]],subject,html,plain))
+        amended=item("call",deadline="2027-02-20")
+        second=make_message([amended])
+        corrected=notification_idempotency(token,[row["id"]],*second)
+        self.assertNotEqual(first,corrected)
+        self.assertTrue(first.startswith("opera-funding-"))
+        self.assertLessEqual(len(first),64)
+
     def test_multiple_recipients_each_get_private_email(self):
         self.check([])
         addresses="one@example.org, two@example.org; THREE@example.org\nOne@example.org"
