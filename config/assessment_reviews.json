@@ -813,5 +813,23 @@
       "Procedura di locazione agricola e non opportunità di finanziamento per Opera+: nessuna candidatura progettuale da preparare."
     ],
     "reviewed_at": "2026-11-19"
+  },
+  {
+    "public_id": 274,
+    "source_id": "volto",
+    "url": "https://volontariatotorino.it/bandi/contributi-a-sostegno-di-iniziative-rilevanti-ai-fini-della-promozione-delleconomia-provinciale-anno-2027",
+    "evidence_url": "https://www.to.camcom.it/richiesta-contributi-iniziative-di-promozione-economica-2027",
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_reason": "La Camera di commercio di Torino finanzia iniziative da avviare nel 2027 che promuovano e qualifichino l'economia provinciale. Una proposta culturale può essere pertinente soltanto con una concreta ricaduta economica o di attrattività territoriale, documentata e coerente con il regolamento. L'esistenza dell'associazione e del corso di divulgazione operistica non dimostra da sola il rispetto di tali finalità né la disponibilità di un progetto effettivamente candidabile.",
+    "programme_objectives_excerpt": "Sostenere iniziative rilevanti per la promozione, attrattività e qualificazione dell'economia della provincia di Torino, con avvio nel 2027.",
+    "funded_activities_excerpt": "Iniziative di promozione economica e territoriale presentate da soggetti terzi, da avviare nel 2027 e coerenti con il regolamento camerale. Non è un contributo generalizzato a qualunque attività culturale.",
+    "beneficiaries_excerpt": "Soggetti proponenti iniziative di promozione economica provinciale; tipologie, esclusioni, condizioni economiche e requisiti documentali vanno verificati nel regolamento e nell'invito pubblico dell'edizione 2027.",
+    "requirements_excerpt": "Domande presentabili dal 9 novembre 2026 al 27 novembre 2026 entro le ore 12:00 attraverso il portale indicato dalla Camera di commercio. Deve essere documentata una iniziativa da avviare nel 2027 con ricaduta effettiva sulla promozione dell'economia provinciale; verificare regolamento, modulistica, condizioni economiche e rendicontazione prima di procedere.",
+    "assessment_gaps": [
+      "Definire un evento o progetto territoriale da avviare nel 2027 con obiettivi e impatto economico misurabili, non solo un corso online.",
+      "Verificare nell'invito e nel regolamento i requisiti della specifica forma associativa, gli importi e le spese ammesse.",
+      "Predisporre budget, calendario, documenti e istanza entro il 27 novembre 2026 alle 12:00, solo se il progetto è già concretamente sostenibile."
+    ],
+    "reviewed_at": "2026-11-20"
   }
 ]
