@@ -26,6 +26,22 @@ def complete(**kw):
     return row
 
 class AdmissionTests(unittest.TestCase):
+    def test_end_to_end_publication_does_not_notify_pending_candidate(self):
+        # The same admitted set is used to write the public catalogue,
+        # and therefore supplies the notification snapshot.
+        from notify import candidates,snapshot
+        incomplete=complete(id="https://example.org/draft",
+                            url="https://example.org/draft",
+                            public_id=301,requirements_excerpt="")
+        ready=complete()
+        published,pending,result=split_new_catalogue([incomplete,ready],set())
+        self.assertEqual(result["in_review"],1)
+        self.assertEqual(result["published_ids"],[300])
+        alerts=candidates(published,{},set())
+        self.assertEqual([x["id"] for x in alerts],["https://example.org/call"])
+        self.assertNotIn(incomplete["id"],snapshot(published))
+        self.assertEqual(pending[0]["id"],incomplete["id"])
+
     def test_full_evidence_admitted_once(self):
         row=complete()
         published,pending,report=split_new_catalogue([row],set())
