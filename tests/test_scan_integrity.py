@@ -123,6 +123,27 @@ class ScanIntegrityTests(unittest.TestCase):
         report["catalog_quality"]["document_issues"]["total_records"]=0
         self.assertTrue(any("qualità catalogo" in p for p in self.check(rows,report)))
 
+    def test_admission_queue_integrity(self):
+        from catalog_admission import split_new_catalogue
+        rows,report=example()
+        pending_row={"id":"https://example.org/new","url":"https://example.org/new",
+                     "title":"Bando culturale da esaminare",
+                     "opportunity_type":"finanziamento potenziale"}
+        _,pending,entry=split_new_catalogue([pending_row],set())
+        report["catalog_admission"]=entry
+        self.assertEqual(validate_scan(rows,report,now=NOW,pending_rows=pending),[])
+        report["catalog_admission"]["in_review"]=0
+        errors=validate_scan(rows,report,now=NOW,pending_rows=pending)
+        self.assertTrue(any("Riepilogo istruttorie" in x for x in errors))
+
+    def test_historical_record_temporarily_unavailable_does_not_break_gate(self):
+        rows,report=example()
+        rows[0]["catalog_admission_status"]="valutata_prima_pubblicazione"
+        rows[0]["link_status"]="da verificare"
+        report["catalog_admission"]={
+            "new_published":0,"published_ids":[],"in_review":0,"pending_ids":[]}
+        self.assertEqual(validate_scan(rows,report,now=NOW,pending_rows=[]),[])
+
     def test_unknown_state_fails(self):
         rows,report=example()
         rows[1]["funding_status"]="BOH"

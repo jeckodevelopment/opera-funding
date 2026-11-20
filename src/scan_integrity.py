@@ -9,6 +9,7 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from catalog_admission import admission_reasons
 
 ROOT=Path(__file__).resolve().parents[1]
 REQUIRED_REVIEW=("assessment_review_status","adequacy_label",
@@ -22,7 +23,7 @@ def _integer(value):
     return isinstance(value,int) and not isinstance(value,bool)
 
 
-def validate_scan(rows, report, now=None, max_age_minutes=30):
+def validate_scan(rows, report, now=None, max_age_minutes=30, pending_rows=None):
     """Return actionable errors; no network and no mutation of source data."""
     problems=[]
     now=now or datetime.now(timezone.utc)
@@ -140,6 +141,34 @@ def validate_scan(rows, report, now=None, max_age_minutes=30):
         expected_quality=catalog_quality(rows)
         if quality!=expected_quality:
             problems.append("Diagnostica qualità catalogo non coerente con le schede")
+    admission=report.get("catalog_admission")
+    if admission is not None:
+        if not isinstance(pending_rows,list):
+            problems.append("Registro istruttorie mancante o non valido")
+        else:
+            public_identifiers={r.get("id") for r in rows if isinstance(r,dict)}
+            pending_identifiers=[r.get("id") for r in pending_rows if isinstance(r,dict)]
+            if (len(pending_identifiers)!=len(pending_rows)
+                    or len(pending_identifiers)!=len(set(pending_identifiers))
+                    or public_identifiers.intersection(pending_identifiers)):
+                problems.append("Schede istruttorie duplicate o già pubblicate")
+            if (admission.get("in_review")!=len(pending_rows)
+                    or admission.get("pending_ids")!=pending_identifiers):
+                problems.append("Riepilogo istruttorie non coerente")
+            if any(not admission_reasons(r) for r in pending_rows if isinstance(r,dict)):
+                problems.append("Scheda completa trattenuta in istruttoria")
+            if any(not r.get("admission_reasons") for r in pending_rows if isinstance(r,dict)):
+                problems.append("Istruttoria priva dei motivi espliciti")
+            ids=admission.get("published_ids")
+            if not isinstance(ids,list) or len(ids)!=admission.get("new_published"):
+                problems.append("Identificativi delle nuove schede non coerenti")
+            else:
+                just_published={x.get("public_id"):x for x in rows if isinstance(x,dict)
+                                and x.get("public_id") in ids}
+                if len(just_published)!=len(ids):
+                    problems.append("Nuove schede mancanti o duplicate")
+                if any(admission_reasons(record) for record in just_published.values()):
+                    problems.append("Pubblicazione di nuova scheda priva di valutazione completa")
     audit=report.get("catalog_audit")
     if isinstance(audit,dict):
         if audit.get("records_checked")!=len(rows):
@@ -202,7 +231,9 @@ def main():
     try:
         rows=json.loads(args.catalog.read_text(encoding="utf-8"))
         report=json.loads(args.report.read_text(encoding="utf-8"))
-        problems=validate_scan(rows,report,max_age_minutes=args.max_age_minutes)
+        pending_path=ROOT/"data/pending-opportunities.json"
+        pending_rows=json.loads(pending_path.read_text(encoding="utf-8")) if pending_path.exists() else []
+        problems=validate_scan(rows,report,max_age_minutes=args.max_age_minutes,pending_rows=pending_rows)
     except (OSError,UnicodeError,json.JSONDecodeError,ValueError) as exc:
         problems=["Impossibile leggere o validare i dati: "+str(exc)]
     if problems:
