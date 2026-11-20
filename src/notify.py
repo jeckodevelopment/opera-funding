@@ -74,6 +74,17 @@ def candidates(rows, previous, alerted):
         r.get("title") or ""))
 
 
+def notification_idempotency(token,event_ids,subject,html,text_body):
+    """Same payload/recipient is retry-safe; a corrected notice is distinct.
+
+    A prior email with an unknown deadline must not reuse its Resend key
+    when later re-issued with a verified application window (HTTP 409).
+    """
+    fingerprint=sha256((subject+"\\0"+html+"\\0"+text_body).encode("utf-8")).hexdigest()
+    canonical="|".join((token,*sorted(event_ids),fingerprint))
+    return "opera-funding-"+sha256(canonical.encode("utf-8")).hexdigest()[:40]
+
+
 def post_resend(key,recipient,subject,html,text_body,idempotency):
     payload=json.dumps({"from":FROM_ADDRESS,"to":[recipient],"subject":subject,
                         "html":html,"text":text_body},ensure_ascii=False).encode("utf-8")
@@ -179,8 +190,9 @@ def run(rows,state_path,now,api_key=None,recipient=None,sender=post_resend):
                 return "quota"
             subject,html,text_body=make_message(batch)
             event_ids=sorted(identity(r) for r in batch)
-            digest=sha256((token+"|"+",".join(event_ids)).encode("utf-8")).hexdigest()[:40]
-            sender(api_key,address,subject,html,text_body,"opera-funding-"+digest)
+            key_for_send=notification_idempotency(
+                token,event_ids,subject,html,text_body)
+            sender(api_key,address,subject,html,text_body,key_for_send)
             already.update(event_ids)
             delivered[token]=sorted(already)
             stored.setdefault("sent_days",{})[day]=stored.get("sent_days",{}).get(day,0)+1
