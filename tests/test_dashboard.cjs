@@ -200,7 +200,7 @@ assert.match(css,/overflow-wrap:anywhere/);
 assert.match(src,/registry\.funders/);
 assert.match(src,/not_configured/);
 assert.match(css,/\.registry-list/);
-assert.match(html,/app\.js\?v=20261118-11/);
+assert.match(html,/app\.js\?v=20261120-rolling/);
 assert.match(html,/styles\.css\?v=20261118-11/);
 assert.match(src,/function fetchWithDeadline/);
 assert.match(src,/loadSequence/);
