@@ -231,9 +231,7 @@ function sortRows(rows,order){
 function filteredRows(){
  const term=$("search").value.trim().toLocaleLowerCase("it"),stateFilter=$("status").value,issuer=$("issuer").value,kind=$("kind").value,minimum=Number($("level").value);
  return sortRows(all.filter(o=>{
-  const actual=state(o);
-  if(stateFilter==="followed"&&!isFollowed(o))return false;
-  if(stateFilter&&stateFilter!=="followed"&&actual!==stateFilter)return false;
+  if(!matchesCatalogStatus(o,stateFilter))return false;
   if(kind==="funding"&&!["finanziamento potenziale","call progettuale da verificare"].includes(o.opportunity_type))return false;
   if(kind&&kind!=="funding"&&kind!==o.opportunity_type)return false;
   if(issuer&&issuer!==o.issuer)return false;

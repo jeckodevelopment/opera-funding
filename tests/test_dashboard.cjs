@@ -22,6 +22,11 @@ assert.equal(isRolling({...sportello,rolling_evidence:"javascript:alert(1)"}),fa
 assert.equal(isRolling({...sportello,closure_confirmed:true}),true);
 assert.equal(matchesCatalogStatus({...sportello,closure_confirmed:true},"sportello"),true);
 assert.equal(matchesCatalogStatus({...sportello,closure_confirmed:true},"aperto"),false);
+assert.ok(src.includes('if(!matchesCatalogStatus(o,stateFilter))return false;'));
+assert.doesNotMatch(src,/stateFilter&&stateFilter!=="followed"&&actual!==stateFilter/);
+assert.deepEqual(["aperto","sportello","chiuso"].map(filter=>
+  matchesCatalogStatus(sportello,filter)),[true,true,false]);
+
 
 assert.equal(assessmentLabel({assessment_label:"ALTA AFFINITÀ"}),"ALTA AFFINITÀ");
 assert.equal(assessmentLabel({relevance:65,opportunity_type:"finanziamento potenziale"}),"MEDIA AFFINITÀ");
