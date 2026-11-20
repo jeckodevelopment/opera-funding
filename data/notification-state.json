@@ -3,6 +3,7 @@
     "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-individuazione-soggetti-idonei-alle-direzioni-ssr",
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/bando-contributi-alle-oovv-protezione-civile-anno-2026",
     "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to",
+    "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
     "https://infobandi.csvnet.it/bando-2027-otto-per-mille-valdese/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-otto-per-mille-valdese",
     "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026",
     "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27",
@@ -18,10 +19,10 @@
   "sent_days": {
     "2026-11-18": 8,
     "2026-11-19": 2,
-    "2026-11-20": 4
+    "2026-11-20": 6
   },
   "sent_months": {
-    "2026-11": 14
+    "2026-11": 16
   },
   "statuses": {
     "https://bandi.comune.torino.it": "ALTRO",
@@ -65,7 +66,7 @@
     "https://bandi.regione.piemonte.it/pre-informazione-fondi-ue/sistema-regionale-standard-formativi-contributo-funzionamento-commissioni-tecniche": "ALTRO",
     "https://culture.ec.europa.eu/cultural-heritage/funding-opportunities-for-cultural-heritage": "ALTRO",
     "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility": "APERTO",
-    "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts": "APERTO",
+    "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts": "DA VERIFICARE",
     "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5": "APERTO",
     "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2022-innovlab": "ALTRO",
     "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2022-jourpart": "ALTRO",
@@ -181,7 +182,7 @@
     "https://infobandi.csvnet.it/bando-fabbrica-spazi-civici-per-la-gioventu/?utm_source=rss&utm_medium=rss&utm_campaign=bando-fabbrica-spazi-civici-per-la-gioventu": "APERTO",
     "https://infobandi.csvnet.it/bando-lo-sport-e-vita/?utm_source=rss&utm_medium=rss&utm_campaign=bando-lo-sport-e-vita": "APERTO",
     "https://infobandi.csvnet.it/bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia/?utm_source=rss&utm_medium=rss&utm_campaign=bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia": "APERTO",
-    "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27": "APERTO",
+    "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026": "APERTO",
     "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente": "APERTO",
     "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026": "APERTO",
     "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue": "APERTO",
