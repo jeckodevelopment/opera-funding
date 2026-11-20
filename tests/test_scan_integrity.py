@@ -180,14 +180,18 @@ class ScanIntegrityTests(unittest.TestCase):
         # The one-off scan must not fire again on every ordinary src/scan.py edit.
         self.assertNotIn("      - 'src/scan.py'",workflow)
 
-    def test_gate_runs_before_notification_and_commit(self):
+    def test_gate_runs_before_publication_and_notification(self):
         workflow=(Path(__file__).resolve().parents[1]/".github/workflows/scan.yml").read_text()
         integrity=workflow.index("run: python src/scan_integrity.py")
+        publish=workflow.index("name: Commit updated public catalogue before notifications")
         notify=workflow.index("run: python src/notify.py")
-        commit=workflow.index("name: Commit updated public data")
-        self.assertLess(integrity,notify)
-        self.assertLess(integrity,commit)
+        ledger=workflow.index("name: Commit notification delivery ledger")
+        self.assertLess(integrity,publish)
+        self.assertLess(publish,notify)
+        self.assertLess(notify,ledger)
         self.assertIn("steps.integrity.outcome == 'success'",workflow)
+        self.assertIn("steps.publish.outcome == 'success'",workflow)
+        self.assertIn("always() && !cancelled()",workflow)
 
 if __name__=="__main__":
     unittest.main()

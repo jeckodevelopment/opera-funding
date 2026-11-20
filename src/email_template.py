@@ -48,7 +48,12 @@ def make_message(items):
     for item in shown:
         title=escape(str(item.get("title") or "Opportunità"))
         issuer=escape(str(item.get("issuer") or item.get("source_name") or "Ente da verificare"))
-        deadline=escape(_date_label(item.get("deadline")))
+        # Verified rolling calls have no fixed closing date by design.
+        rolling=(item.get("rolling_confirmed") is True and
+                 _safe_https(item.get("rolling_evidence"))!=DASHBOARD)
+        deadline=escape("A sportello — senza scadenza fissa" if
+                        not item.get("deadline") and rolling
+                        else _date_label(item.get("deadline")))
         url=escape(_safe_https(item.get("url")),quote=True)
         detail=escape(_detail_link(item),quote=True)
         adequacy=str(item.get("adequacy_label") or "DA VERIFICARE").upper()
@@ -95,7 +100,7 @@ def make_message(items):
         plain.append(f"  Scheda: {_detail_link(item)}")
         plain.append(f"  Ente: {item.get('issuer') or item.get('source_name') or 'Da verificare'}")
         plain.append(f"  Stato: {funding} | Adeguatezza: {adequacy}")
-        plain.append(f"  Scadenza: {_date_label(item.get('deadline'))}")
+        plain.append(f"  Scadenza: {deadline}")
         plain.append(f"  Fonte: {_safe_https(item.get('url'))}")
         plain.append("")
     extra=count-len(shown)
