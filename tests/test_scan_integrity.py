@@ -113,6 +113,16 @@ class ScanIntegrityTests(unittest.TestCase):
         report["coverage"]["totals"]["informational"]=1
         self.assertEqual(self.check(rows,report),[])
 
+    def test_catalog_quality_is_reconciled_against_real_rows(self):
+        from catalog_quality import catalog_quality
+        rows,report=example()
+        rows[1]["assessment_document_issues"]=[{"reason":"download_non_riuscito",
+                                                  "source":"https://example.org/bando.pdf"}]
+        report["catalog_quality"]=catalog_quality(rows)
+        self.assertEqual(self.check(rows,report),[])
+        report["catalog_quality"]["document_issues"]["total_records"]=0
+        self.assertTrue(any("qualità catalogo" in p for p in self.check(rows,report)))
+
     def test_unknown_state_fails(self):
         rows,report=example()
         rows[1]["funding_status"]="BOH"
