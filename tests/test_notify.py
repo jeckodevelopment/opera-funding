@@ -135,6 +135,7 @@ class NotifyTests(unittest.TestCase):
         self.assertLess(publish,notify)
         self.assertLess(notify,ledger)
         self.assertIn("if: steps.publish.outcome == 'success'",yaml)
+        self.assertIn("always() && !cancelled()",yaml)
         self.assertIn("steps.notify.outcome != 'skipped'",yaml)
         self.assertNotIn("data/notification-state.json data/programme-monitoring.json",yaml)
         self.assertIn("git add data/notification-state.json",yaml)
