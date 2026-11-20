@@ -130,6 +130,15 @@ def classify_informational_page(record):
         is_information=path.rstrip("/") in ("/cultural-heritage/funding-opportunities-for-cultural-heritage",)
     if source=="erasmusitalia" and path.rstrip("/") in ("/istruzione_superiore/partenariati-strategici-ka2-3",):
         is_information=True
+    if source=="programme:cmtorino-giovani":
+        # This official programme index links to navigation, press notices,
+        # grant outcomes and administrative approval documents. None of those
+        # are independently actionable applications.
+        is_information=(path in (
+            "/comunicazione/contributi-il-contrasto-delle-discriminazioni",
+            "/istruzione-e-sviluppo-sociale/servizio-civile/servizio-civile-bandi",
+        ) or "/esito%20avviso%20pubblico" in path
+          or "/dd_363_2026%20-%20determina%20approvazione%20avviso.pdf" in path)
     if source=="volto":
         is_information=(path.rstrip("/") in ("/progetti-volto","/progetti-servizio-civile"))
     if source=="erasmus":
