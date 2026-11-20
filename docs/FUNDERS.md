@@ -392,3 +392,36 @@ blocca nuove pubblicazioni non complete. Il workflow conserva la coda
 insieme ai dati di catalogo. Collaudi: test `catalog_admission`,
 `scan_integrity`, intera suite Python/JavaScript e conferma dopo la scansione
 che nessuna scheda incompleta passi nel catalogo o nelle notifiche.
+
+## Catalogo: distinzione degli avvisi regionali e triage dei 39 casi documentali (20/11/2026)
+
+La scheda #14 (`https://bandi.regione.piemonte.it/avvisi-beni-regionali`)
+è **l'indice generale**, non una singola candidatura e non possiede una
+scadenza propria. Verifica effettuata sulla pagina ufficiale: l'indice ospita
+numerosi avvisi specifici con schede individuali. L'indice viene classificato
+`altro avviso` e conservato per navigazione/storico; i link `/avvisi-beni-regionali/<slug>`
+continuano a essere valutati uno per uno. La sua mancanza di scadenza **non**
+è una lacuna documentale di candidatura. La #183 resta correttamente a
+sportello, con fonte ufficiale; non assegnare scadenze artificiali.
+
+Nell'ultima scansione i 39 casi con diagnostiche PDF sono tutti nello storico:
+31 chiusi, 8 informativi, zero aperti o in arrivo. I 57 rilievi originari
+(28 documenti leggibili senza paragrafi riconosciuti, 25 differenze testuali,
+4 file senza testo estraibile) rimangono tracciati. Non sono automaticamente
+57 errori semantici. Una graduatoria, un modulo o un esito può non contenere
+le stesse sezioni del bando originale; una FAQ può aggiungere dettagli anziché
+contraddire il testo principale.
+
+Il report `catalog_quality.document_issues.review_classes` aggiunge il
+percorso di verifica per ogni diagnostica, **senza cancellare l'anomalia**:
+confronto tra fonti, verifica di PDF senza testo, revisione dei paragrafi
+mancanti, oppure possibile allegato accessorio da controllare.
+L'ultima classificazione è una priorità di istruttoria basata sul nome del
+file, non una prova che l'allegato sia irrilevante. Test dedicati in
+`test_catalog_quality.py` e `test_verification.py`.
+
+Resta obbligatorio per i **nuovi ingressi** il gate documentale introdotto
+con PR #162: se manca la valutazione completa, la scheda non entra in catalogo
+né nelle notifiche e resta nella coda persistente. Non retrodatare,
+non inventare importi, requisiti o scadenze e non dichiarare risolti i
+problemi dei PDF senza esame della fonte.
