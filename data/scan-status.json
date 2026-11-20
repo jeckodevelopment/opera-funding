@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-20T18:51:27+00:00",
+  "checked_at": "2026-11-20T19:05:54+00:00",
   "sources": [
     {
       "source_id": "sanpaolo",
@@ -7,15 +7,15 @@
       "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
       "ok": true,
       "discovered": 9,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "crt",
       "source_name": "Fondazione CRT",
       "source_url": "https://www.fondazionecrt.it/progetti-e-bandi/",
       "ok": true,
-      "discovered": 3,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "discovered": 2,
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "piemonte",
@@ -23,7 +23,7 @@
       "source_url": "https://bandi.regione.piemonte.it/",
       "ok": true,
       "discovered": 12,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "torino",
@@ -31,7 +31,7 @@
       "source_url": "https://bandi.comune.torino.it/avvisi/contributi",
       "ok": true,
       "discovered": 13,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "culturatorino",
@@ -39,7 +39,7 @@
       "source_url": "https://fpct.it/bandi-avvisi/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "volto",
@@ -47,7 +47,7 @@
       "source_url": "https://volontariatotorino.it/bandi/",
       "ok": true,
       "discovered": 16,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "mic",
@@ -55,7 +55,7 @@
       "source_url": "https://spettacolo.cultura.gov.it/",
       "ok": true,
       "discovered": 18,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "erasmus",
@@ -63,7 +63,7 @@
       "source_url": "https://erasmus-plus.ec.europa.eu/funding",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "eufunding",
@@ -71,7 +71,7 @@
       "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "eucreative",
@@ -79,7 +79,7 @@
       "source_url": "https://culture.ec.europa.eu/funding/calls",
       "ok": true,
       "discovered": 1,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     },
     {
       "source_id": "creativeitalia",
@@ -87,7 +87,7 @@
       "source_url": "https://europacreativa.cultura.gov.it/",
       "ok": true,
       "discovered": 58,
-      "checked_at": "2026-11-20T18:51:27+00:00",
+      "checked_at": "2026-11-20T19:05:54+00:00",
       "coverage_mode": "official_alternative",
       "alternative_source_id": "eufunding",
       "alternative_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
@@ -99,7 +99,7 @@
       "source_url": "https://www.erasmusplus.it/programma/documenti-ufficiali/",
       "ok": true,
       "discovered": 21,
-      "checked_at": "2026-11-20T18:51:27+00:00"
+      "checked_at": "2026-11-20T19:05:54+00:00"
     }
   ],
   "coverage": {
@@ -997,7 +997,7 @@
         ]
       },
       {
-        "public_id": 252,
+        "public_id": 146,
         "title": "Bando Una mano a chi sostiene – nuova edizione 2026/27 Il bando mette a disposizione 500 mila euro per sostenere sul territorio italiano progetti in grado di generare impatto sociale duraturo attraverso la coesione socia",
         "deadline": "2027-02-16",
         "days_remaining": 88,
@@ -1020,7 +1020,7 @@
         ],
         "sources": [
           "https://www.unamanoachisostiene.it/",
-          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-nuova-edizione-2026-27"
+          "https://infobandi.csvnet.it/bando-una-mano-a-chi-sostiene-2026/?utm_source=rss&utm_medium=rss&utm_campaign=bando-una-mano-a-chi-sostiene-2026"
         ]
       },
       {
@@ -1284,7 +1284,7 @@
         },
         "with_document_issues": 39,
         "with_unresolved_applicant_checks": 28,
-        "source_not_attributed": 67
+        "source_not_attributed": 66
       },
       "aperte": {
         "total": 35,
@@ -1346,7 +1346,7 @@
       23,
       8,
       177,
-      252
+      146
     ],
     "notes": "I conteggi indicano copertura delle evidenze, non ammissibilità certificata."
   },
@@ -1456,6 +1456,13 @@
         "document_issues": false
       },
       {
+        "public_id": 146,
+        "adequacy": "MEDIA",
+        "missing_evidence": [],
+        "unresolved_checks": 1,
+        "document_issues": false
+      },
+      {
         "public_id": 177,
         "adequacy": "MEDIA",
         "missing_evidence": [],
@@ -1464,13 +1471,6 @@
       },
       {
         "public_id": 183,
-        "adequacy": "MEDIA",
-        "missing_evidence": [],
-        "unresolved_checks": 1,
-        "document_issues": false
-      },
-      {
-        "public_id": 252,
         "adequacy": "MEDIA",
         "missing_evidence": [],
         "unresolved_checks": 1,
@@ -1613,8 +1613,621 @@
     "priority_open_review_count": 24,
     "coverage_note": "Controllo automatico dell'intero catalogo: non certifica ammissibilità o contenuti non disponibili."
   },
+  "catalog_admission": {
+    "new_published": 1,
+    "published_ids": [
+      146
+    ],
+    "in_review": 0,
+    "reasons": {},
+    "pending_ids": [],
+    "note": "Nuove schede ammesse solo dopo verifica documentale; nessuna ammissibilità legale certificata."
+  },
+  "catalog_quality": {
+    "document_issues": {
+      "total_records": 39,
+      "total_diagnostics": 57,
+      "reasons": {
+        "nessuna_evidenza_estratta": 28,
+        "testi_diversi_da_verificare": 25,
+        "testo_non_estratto": 4
+      },
+      "by_state": {
+        "CHIUSO": 31,
+        "INFORMATIVO": 8
+      },
+      "cases": [
+        {
+          "public_id": 249,
+          "source_id": "crt",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://www.fondazionecrt.it/wp-content/uploads/2021/10/2022-tpc-elenco-40-selezionati-def.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 124,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/MANIFESTAZIONE-DI-INTERESSE-BOOKSHOP-BD-2025-3.pdf",
+              "field": null
+            },
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/All.1-MANIFESTAZIONE-DI-INTERESSE-BOOKSHOP-BD-2025-.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 125,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/Integrazione_AVVISO-DI-RICERCA-PER-IL-REPERIMENTO-DI-SPONSORIZZAZIONI-IN-MATERIA-DI-EVENTI-CULTURALI-E-MUSICALI-PER-LANNO-2024.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 126,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/AVVISO-DI-RICERCA-PER-IL-REPERIMENTO-DI-SPONSORIZZAZIONI-IN-MATERIA-DI-EVENTI-CULTURALI-E-MUSICALI-PER-LANNO-2025.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 128,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2026/03/Avviso_Lab-Dj-26-27.pdf",
+              "field": null
+            },
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2026/03/Modulo-di-candidatura-Lab-Dj-26-27.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 129,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/2026_call-risorsa-segreteria-ammnistrativa.docx.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 130,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-MANIFESTAZIONE-DINTERESSE.docx.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 131,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/Avviso-pubblico-per-lindividuazione-di-personale-amministrativo-–-mansione-di-cassiere-per-la-biglietteria-della-Fondazione-per-la-Cultura-di-Torino-.docx.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 132,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2026/03/Avviso_BrunoCaccia2026.pdf",
+              "field": null
+            },
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2026/02/Graduatoria_Bruno-Caccia-2026.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 133,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2026/02/0_Avviso-pubblico-CHE-BELLA-ESTATE2026-2027.pdf",
+              "field": null
+            },
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2026/02/Incontro-di-presentazione-mappatura-e-avvisi.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 134,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/Allegato-A-1.pdf",
+              "field": "requirements_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 138,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/Allegato-1_Domanda-di-candidatura_2025.docx.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 139,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/Manifestazione-interesse-ideazione-logo-candidatura-Torino-Capitale-Europea-dela-Cultura-2033.docx.pdf",
+              "field": null
+            },
+            {
+              "reason": "testo_non_estratto",
+              "source": "https://fpct.it/wp-content/uploads/2025/02/Prot.844.2025_Esiti_Manifestazione_Interesse_Logo_verso_Torino_2033.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 140,
+          "source_id": "culturatorino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/11/Determina_IMPEGNO_PER_PROCEDURA_EXPOSED_2026.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 194,
+          "source_id": "erasmusitalia",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://www.erasmusplus.it/wp-content/uploads/2026/10/PUB_PERVENUTI_120_1_2026_ADU_1791880507886.pdf",
+              "field": null
+            },
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://www.erasmusplus.it/wp-content/uploads/2026/08/PUB_Esiti_delle_candidature_121_1_ADU_2026_.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 15,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/DD-A17_494_2026%20-%20File%20primario%20-%20DD-A17-494-2026.pdf",
+              "field": "programme_objectives_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/DD-A17_494_2026%20-%20File%20primario%20-%20DD-A17-494-2026.pdf",
+              "field": "requirements_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 16,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/Domanda%20esterno_compilabile_0.pdf",
+              "field": "requirements_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 20,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%20677%20del%2007.07.2026%20Approvazione%20graduatoria%20provvisoria_0.pdf",
+              "field": "requirements_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%20677%20del%2007.07.2026%20Approvazione%20graduatoria%20provvisoria_0.pdf",
+              "field": "beneficiaries_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 24,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://bandi.regione.piemonte.it/system/files/Patrimonio%20Linguistico_Graduatoria%20Soggetti%20No%20Profit.pdf",
+              "field": null
+            },
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://bandi.regione.piemonte.it/system/files/Patrimonio%20Linguistico_Graduatoria%20Pubbliche%20Amministrazioni.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 253,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://bandi.regione.piemonte.it/system/files/DGR_3289_2026%20-%20Allegato%20N%C2%B0%201%20-%20DGR-3289-2026-All_1-amm_TTO_cda.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 256,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/FAQ_aggiornamento_febbraio_2026.pdf",
+              "field": "requirements_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 26,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/Bando%20Enti%20-%20All.%20A.pdf",
+              "field": "programme_objectives_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 267,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/Avviso_banche_REV9_rettifica.pdf",
+              "field": "requirements_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 268,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testo_non_estratto",
+              "source": "https://bandi.regione.piemonte.it/system/files/B3%20DD%20N.%20514_DEL%2002.11.2026.pdf",
+              "field": null
+            },
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://bandi.regione.piemonte.it/system/files/B4_DD_N_%20419_DEL_21.09.2026.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 269,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/D.D.%20n.%20354%20-%2027%20Luglio%202026.pdf",
+              "field": "beneficiaries_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/D.D.%20n.%20354%20-%2027%20Luglio%202026.pdf",
+              "field": "programme_objectives_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/D.D.%20n.%20354%20-%2027%20Luglio%202026.pdf",
+              "field": "requirements_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 27,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201636_A2202C_15.10.026%20Bando%20Piano%20strategico%202026_2.pdf",
+              "field": "requirements_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201636_A2202C_15.10.026%20Bando%20Piano%20strategico%202026_2.pdf",
+              "field": "programme_objectives_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201636_A2202C_15.10.026%20Bando%20Piano%20strategico%202026_2.pdf",
+              "field": "beneficiaries_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 184,
+          "source_id": "sanpaolo",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://www.compagniadisanpaolo.it/wp-content/uploads/Call-for-Partnership_-Mobilita-sostenibile-Allegato_-2026.pdf",
+              "field": "requirements_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://www.compagniadisanpaolo.it/wp-content/uploads/Call-for-Partnership_-Mobilita-sostenibile-Allegato_-2026.pdf",
+              "field": "programme_objectives_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 186,
+          "source_id": "sanpaolo",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://www.compagniadisanpaolo.it/wp-content/uploads/IMPULSO_Esiti-call-imprese-sociali_Allegato.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 187,
+          "source_id": "sanpaolo",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://www.compagniadisanpaolo.it/wp-content/uploads/Bando-csp-LBS26-.pdf",
+              "field": "programme_objectives_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 191,
+          "source_id": "sanpaolo",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://www.compagniadisanpaolo.it/wp-content/uploads/FAQ-LG-Nuovi-spazi-di-partecipazione-attiva.pdf",
+              "field": "requirements_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://www.compagniadisanpaolo.it/wp-content/uploads/FAQ-LG-Nuovi-spazi-di-partecipazione-attiva.pdf",
+              "field": "programme_objectives_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 11,
+          "source_id": "torino",
+          "funding_status": "CHIUSO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4519/TERZO_AVVISO_CONTRIBUTI_2026-signed.pdf",
+              "field": "programme_objectives_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 214,
+          "source_id": "crt",
+          "funding_status": "INFORMATIVO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://www.fondazionecrt.it/wp-content/uploads/2026/05/anci-invito-fondazione-crt.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 127,
+          "source_id": "culturatorino",
+          "funding_status": "INFORMATIVO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://fpct.it/wp-content/uploads/2025/12/AVVISO-DI-RICERCA-PER-IL-REPERIMENTO-DI-SPONSORIZZAZIONI-IN-MATERIA-DI-EVENTI-CULTURALI-E-MUSICALI-PER-LANNO-2026.docx.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 198,
+          "source_id": "erasmusitalia",
+          "funding_status": "INFORMATIVO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://www.erasmusplus.it/wp-content/uploads/2021/10/Guida-EU_Login_Tutorial_EN.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 270,
+          "source_id": "piemonte",
+          "funding_status": "INFORMATIVO",
+          "issues": [
+            {
+              "reason": "nessuna_evidenza_estratta",
+              "source": "https://bandi.regione.piemonte.it/system/files/ALLEGATO%2001_Scheda_tecnica_0.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 272,
+          "source_id": "piemonte",
+          "funding_status": "INFORMATIVO",
+          "issues": [
+            {
+              "reason": "testo_non_estratto",
+              "source": "https://bandi.regione.piemonte.it/system/files/AVVISO%20DSS.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 3,
+          "source_id": "torino",
+          "funding_status": "INFORMATIVO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4756/DEL-600-2026.pdf",
+              "field": "beneficiaries_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4756/DEL-600-2026.pdf",
+              "field": "programme_objectives_excerpt"
+            }
+          ]
+        },
+        {
+          "public_id": 7,
+          "source_id": "torino",
+          "funding_status": "INFORMATIVO",
+          "issues": [
+            {
+              "reason": "testo_non_estratto",
+              "source": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4718/alpini_-_3_novembre_2026_programma.pdf",
+              "field": null
+            }
+          ]
+        },
+        {
+          "public_id": 9,
+          "source_id": "torino",
+          "funding_status": "INFORMATIVO",
+          "issues": [
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4573/DELCI7-55-2026.pdf",
+              "field": "requirements_excerpt"
+            },
+            {
+              "reason": "testi_diversi_da_verificare",
+              "source": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4573/DELCI7-55-2026.pdf",
+              "field": "programme_objectives_excerpt"
+            }
+          ]
+        }
+      ]
+    },
+    "missing_deadline": {
+      "total": 2,
+      "by_classification": {
+        "scadenza_da_documentare": 1,
+        "sportello_verificato": 1
+      },
+      "cases": [
+        {
+          "public_id": 183,
+          "source_id": "sanpaolo",
+          "funding_status": "APERTO",
+          "classification": "sportello_verificato",
+          "rolling_evidence": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+          "opening_evidence": null,
+          "url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/"
+        },
+        {
+          "public_id": 14,
+          "source_id": "piemonte",
+          "funding_status": "CHIUSO",
+          "classification": "scadenza_da_documentare",
+          "rolling_evidence": null,
+          "opening_evidence": null,
+          "url": "https://bandi.regione.piemonte.it/avvisi-beni-regionali"
+        }
+      ]
+    },
+    "note": "Anomalie reali e lacune documentali: il report non inventa scadenze o requisiti e non certifica ammissibilità."
+  },
   "funder_monitoring": {
-    "checked_at": "2026-11-20T18:51:27+00:00",
+    "checked_at": "2026-11-20T19:05:54+00:00",
     "funders": [
       {
         "id": "sanpaolo",
@@ -2121,7 +2734,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2133,7 +2746,7 @@
         "submission": "da verificare",
         "monitoring": "direct",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2146,7 +2759,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2159,7 +2772,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2172,7 +2785,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2185,7 +2798,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2198,7 +2811,7 @@
         "submission": "bando",
         "monitoring": "existing-source",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": null
       },
@@ -2211,7 +2824,7 @@
         "monitoring": "direct",
         "eligibility_note": "Bandi comunali, eleggibilità legata a sede o attività ad Alba",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -2224,7 +2837,7 @@
         "monitoring": "direct",
         "eligibility_note": "Contributi territoriali: verificare operatività a Bra e finestra annuale",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -2237,7 +2850,7 @@
         "monitoring": "direct",
         "eligibility_note": "Verificare l'edizione e la ricaduta sul territorio",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 11
       },
@@ -2250,7 +2863,7 @@
         "monitoring": "direct",
         "eligibility_note": "Avviso 2026; non presumerne la riapertura negli anni successivi",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 5
       },
@@ -2263,7 +2876,7 @@
         "monitoring": "direct",
         "eligibility_note": "Richiesta spesso condizionata a albo e attività comunali",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -2289,7 +2902,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni bandi sono riservati ai Comuni: non presumere ammissibilità associazioni",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 10
       },
@@ -2315,7 +2928,7 @@
         "monitoring": "direct",
         "eligibility_note": "Finestre e bandi da verificare per edizione",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 17
       },
@@ -2328,7 +2941,7 @@
         "monitoring": "direct",
         "eligibility_note": "Alcuni programmi rivolti a ricercatori o scuole: eleggibilità da verificare",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 2
       },
@@ -2471,7 +3084,7 @@
         "monitoring": "direct",
         "eligibility_note": "Monitorare nuove edizioni; bando eventi secondo semestre 2026 risulta scaduto",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -2497,7 +3110,7 @@
         "monitoring": "direct",
         "eligibility_note": "La candidatura non è automaticamente un bando; verificare singoli avvisi e possibilità per associazioni culturali",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2510,7 +3123,7 @@
         "monitoring": "direct",
         "eligibility_note": "Monitorare avvisi e partecipazione, senza presumere contributi economici",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2523,7 +3136,7 @@
         "monitoring": "direct",
         "eligibility_note": "Verificare appartenenza alla rete, natura del progetto e regole dell'edizione; non equiparare la pagina premi a call aperta",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2536,7 +3149,7 @@
         "monitoring": "direct",
         "eligibility_note": "Rete e programmi di collaborazione, non contributo automatico a una associazione",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 0
       },
@@ -2549,7 +3162,7 @@
         "monitoring": "direct",
         "eligibility_note": "Richiede partenariati fra festival di diversi Paesi; verificare ruolo del capofila e ammissibilità dell'opera",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 1
       },
@@ -2562,7 +3175,7 @@
         "monitoring": "direct",
         "eligibility_note": "Ogni bando ha criteri e tematiche propri; non presumere apertura o accessibilità",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": 9
       },
@@ -2576,7 +3189,7 @@
         "monitoring": "existing-source",
         "eligibility_note": "Verificare requisiti di partenariato e inclusione della musica/opera nella specifica call",
         "monitoring_status": "ok",
-        "last_checked_at": "2026-11-20T18:51:27+00:00",
+        "last_checked_at": "2026-11-20T19:05:54+00:00",
         "changed": false,
         "candidate_count": null
       }
@@ -2599,7 +3212,7 @@
       "program_id": "alba-cultura",
       "new": 0,
       "existing": 0,
-      "rejected": 7
+      "rejected": 8
     },
     {
       "program_id": "bra-associazioni",
@@ -2616,8 +3229,8 @@
     {
       "program_id": "rivoli-associazioni",
       "new": 0,
-      "existing": 2,
-      "rejected": 5
+      "existing": 1,
+      "rejected": 7
     },
     {
       "program_id": "moncalieri-eventi",
