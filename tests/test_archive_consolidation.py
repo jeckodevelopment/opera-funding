@@ -17,6 +17,23 @@ class ArchiveConsolidationTests(unittest.TestCase):
         self.assertEqual(sum(x["disposition"]==NON_FUNDING for x in reviews),25)
         self.assertEqual(sum(x["disposition"]==HISTORICAL for x in reviews),14)
 
+    def test_rebuild_diagnostics_before_reviewing_archival_fingerprint(self):
+        from assessment_coverage import annotate_assessment_coverage
+        review=load_archive_reviews(ROOT/"config/archive_catalog_reviews.json")
+        entry=next(x for x in review if x["public_id"]==16)
+        reason,url,field=entry["observed_issue_signatures"][0].split("|")
+        self.assertEqual(reason,"testi_diversi_da_verificare")
+        row={"public_id":16,"url":entry["url"],"source_id":entry["source_id"],
+             "funding_status":"CHIUSO","opportunity_type":"finanziamento potenziale",
+             "assessment_document_issues":[],
+             "assessment_document_discrepancies":[
+                 {"other_source":url,"field":field}]}
+        annotate_assessment_coverage(row)
+        apply_archive_reviews([row],review,"2026-11-20")
+        self.assertEqual(row["archive_case_review"]["disposition"],NON_FUNDING)
+        self.assertEqual(len(row["assessment_document_issues"]),1)
+        self.assertEqual(row["opportunity_type"],"altro avviso")
+
     def test_real_archival_reference_is_not_funding_and_diagnostic_is_preserved(self):
         review=load_archive_reviews(ROOT/"config/archive_catalog_reviews.json")
         entry=next(x for x in review if x["public_id"]==16)
