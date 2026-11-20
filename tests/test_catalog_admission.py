@@ -1,5 +1,7 @@
 import sys
 import unittest
+import json
+import tempfile
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
 from catalog_admission import admission_reasons,split_new_catalogue
@@ -26,6 +28,32 @@ def complete(**kw):
     return row
 
 class AdmissionTests(unittest.TestCase):
+    def test_persistent_pending_is_reloaded_then_admitted_only_after_evidence(self):
+        from notify import snapshot
+        from verification import pick_for_review
+        from datetime import datetime,timezone
+        incomplete=complete(id="https://example.org/needs-review",
+                            url="https://example.org/needs-review",
+                            public_id=302,requirements_excerpt="",detail_checked=False,
+                            detail_version=0,detail_attempted_at="2026-11-18T00:00:00+00:00")
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/"pending.json"
+            public,pending,result=split_new_catalogue([incomplete],set())
+            self.assertFalse(public)
+            self.assertEqual(result["in_review"],1)
+            path.write_text(json.dumps(pending),encoding="utf-8")
+            restored=json.loads(path.read_text(encoding="utf-8"))
+            now=datetime(2026,11,20,tzinfo=timezone.utc)
+            selected=pick_for_review([restored[0]],{restored[0]["id"]:restored[0]},12,now)
+            self.assertEqual(selected,{incomplete["id"]})
+            self.assertNotIn(incomplete["id"],snapshot(public))
+            restored[0].update(detail_checked=True,detail_version=9,
+                               requirements_excerpt="Requisiti ufficiali estratti.")
+            accepted,waiting,final=split_new_catalogue(restored,set())
+            self.assertEqual(final["new_published"],1)
+            self.assertFalse(waiting)
+            self.assertIn(incomplete["id"],snapshot(accepted))
+
     def test_end_to_end_publication_does_not_notify_pending_candidate(self):
         # The same admitted set is used to write the public catalogue,
         # and therefore supplies the notification snapshot.
