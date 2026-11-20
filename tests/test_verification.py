@@ -123,6 +123,21 @@ class VerificationTests(unittest.TestCase):
                 self.assertEqual(classify_informational_page(row("doc",source_id="erasmusitalia",url=url,title=title))["opportunity_type"],"altro avviso")
         real=row("call",source_id="erasmusitalia",url="https://www.erasmusplus.it/educazione_adulti/bando-2027/",title="Bando Erasmus+ 2027")
         self.assertEqual(classify_informational_page(real)["opportunity_type"],"finanziamento potenziale")
+    def test_regional_health_appointments_are_not_grants(self):
+        record=row("health",source_id="piemonte",
+                   url="https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-individuazione-soggetti-idonei-alle-direzioni-ssr",
+                   title="Avviso per individuazione di soggetti idonei alle direzioni del SSR")
+        result=classify_informational_page(record)
+        self.assertEqual(result["opportunity_type"],"altro avviso")
+
+    def test_information_status_has_separate_coverage_bucket(self):
+        rows=[row("information",source_id="piemonte",opportunity_type="altro avviso",funding_status="INFORMATIVO"),
+              row("unverified",source_id="piemonte",funding_status="DA VERIFICARE")]
+        report=coverage(rows,[])
+        self.assertEqual(report["totals"]["informational"],1)
+        self.assertEqual(report["totals"]["unverified"],1)
+        self.assertEqual(report["totals"]["candidate_unverified"],1)
+
     def test_quality_report_separates_candidate_backlog_from_information(self):
         rows=[row("candidate",source_id="erasmusitalia",funding_status="DA VERIFICARE"),
               row("guide",source_id="erasmusitalia",opportunity_type="altro avviso",funding_status="DA VERIFICARE"),
