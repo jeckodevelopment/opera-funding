@@ -24,7 +24,15 @@ def open_evidence_gap(item):
 
 
 def _open_review_priority(item, now):
-    """Prioritize urgent OPEN records with evidence gaps within the existing tier."""
+    """Prioritize imminent openings and urgent OPEN evidence gaps."""
+    if item.get("funding_status") == "IN ARRIVO":
+        try:
+            opening=date.fromisoformat(str(item.get("opening_date") or "")[:10])
+            if now.date() <= opening <= now.date()+timedelta(days=14):
+                return 0
+        except ValueError:
+            pass
+        return 2
     if item.get("funding_status") != "APERTO":
         return 3
     if not open_evidence_gap(item):
@@ -43,7 +51,9 @@ def needs_review(item, now=None):
     if item.get("detail_version")!=SCHEMA_VERSION or not item.get("detail_checked"):
         return True
     last=_when(item.get("detail_checked_at"))
-    interval=timedelta(days=1 if open_evidence_gap(item) else 3)
+    # Upcoming windows change quickly: refresh even if current excerpts are complete.
+    interval=timedelta(days=1 if (open_evidence_gap(item) or
+                                  item.get("funding_status")=="IN ARRIVO") else 3)
     return last is None or last < now-interval
 
 def queue_key(item, now=None):
