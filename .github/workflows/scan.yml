@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'src/scan.py'
+      - 'src/archive_consolidation.py'
+      - 'config/archive_catalog_reviews.json'
       - 'src/catalog_admission.py'
       - 'src/programme_monitor.py'
       - 'src/programme_ingest.py'
