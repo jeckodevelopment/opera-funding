@@ -448,3 +448,15 @@ apertura, chiusura, esclusione degli avvisi informativi, scelta delle tab e
 cache bust frontend. La modifica del frontend richiede la sola ordinaria
 pubblicazione SFTP dell'applicazione, mentre il catalogo continua ad aggiornare
 i dati JSON autonomamente senza nuovi deploy.
+
+## Correzione della selezione «A sportello» (20/11/2026)
+
+Bug in PR #164: il contatore veniva calcolato tramite `isRolling`,
+mentre `filteredRows` applicava ancora il vecchio confronto diretto
+tra valore della tab e stato temporale; `sportello` non è uno stato
+temporale e quindi risultava sempre zero. Il filtro ora usa la stessa
+funzione `matchesCatalogStatus` dei controlli logici: una scheda a
+sportello aperta compare sia in «Aperte» sia in «A sportello»; una
+chiusa rimane visibile in «A sportello» ma non in «Aperte».
+Test contro la regressione nella suite dashboard; nessun dato di
+catalogo o valore di scadenza è stato modificato.
