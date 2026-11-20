@@ -1,0 +1,418 @@
+{
+  "version": 1,
+  "review_date": "2026-11-20",
+  "policy": "Classificazione puntuale basata su titolo, natura del procedimento e metadati della fonte. I PDF non letti non si dichiarano verificati. Conservare le diagnostiche originali.",
+  "cases": [
+    {
+      "public_id": 3,
+      "source_id": "torino",
+      "url": "https://bandi.comune.torino.it/avviso/approvazione-contributo-straordinario-euro-3000000-favore-della-federazione-italiana-rugby",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Contributo già assegnato a un beneficiario nominativo: delibera/esito, non domanda candidabile",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4756/DEL-600-2026.pdf|beneficiaries_excerpt",
+        "testi_diversi_da_verificare|https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4756/DEL-600-2026.pdf|programme_objectives_excerpt"
+      ]
+    },
+    {
+      "public_id": 7,
+      "source_id": "torino",
+      "url": "https://bandi.comune.torino.it/avviso/contributo-servizi-allassociazione-ana-associazione-nazionale-alpini-sezione-torino-0",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Contributo in servizi già assegnato ad associazione nominativa, non nuova call",
+      "observed_issue_signatures": [
+        "testo_non_estratto|https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4718/alpini_-_3_novembre_2026_programma.pdf|"
+      ]
+    },
+    {
+      "public_id": 9,
+      "source_id": "torino",
+      "url": "https://bandi.comune.torino.it/avviso/linee-guida-concessione-lerogazione-contributi-ordinari-altri-benefici-economici-lanno-2027",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Linee guida generali: documento regolatorio, non edizione candidabile",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4573/DELCI7-55-2026.pdf|programme_objectives_excerpt",
+        "testi_diversi_da_verificare|https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4573/DELCI7-55-2026.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 11,
+      "source_id": "torino",
+      "url": "https://bandi.comune.torino.it/avviso/terzo-avviso-pubblico-concessione-lerogazione-contributi-ordinari-altri-benefici-economici",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Bando comunale storico; differenza testuale fra atti amministrativi e avviso non equivale a contraddizione, richiede priorità documentale",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4519/TERZO_AVVISO_CONTRIBUTI_2026-signed.pdf|programme_objectives_excerpt"
+      ]
+    },
+    {
+      "public_id": 15,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-pubblico-manifestazione-interesse-utile-allindividuazione-operatori-economici-invitare",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Manifestazione per affidamento di componentistica ad operatori economici, non contributo culturale",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/DD-A17_494_2026%20-%20File%20primario%20-%20DD-A17-494-2026.pdf|programme_objectives_excerpt",
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/DD-A17_494_2026%20-%20File%20primario%20-%20DD-A17-494-2026.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 16,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/concorsi-incarichi-stage/avviso-selezione-pubblica-un-incarico-dirigenziale",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Selezione per incarico dirigenziale: reclutamento, non finanziamento",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/Domanda%20esterno_compilabile_0.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 20,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-investimenti-produttivi-agricoli-competitivita-aziende-agricole-rivolto-agli",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Bando per investimenti agricoli storicizzato; gli atti di graduatoria non definiscono da soli requisiti della call",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/DD%20n.%20677%20del%2007.07.2026%20Approvazione%20graduatoria%20provvisoria_0.pdf|beneficiaries_excerpt",
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/DD%20n.%20677%20del%2007.07.2026%20Approvazione%20graduatoria%20provvisoria_0.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 24,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/patrimonio-linguistico-dialettale-piemonte-avviso-pubblico-finanziamento-invito-alla-presentazione",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Bando contributi patrimonio linguistico: i PDF segnalati sono graduatorie, non il testo del bando originario",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://bandi.regione.piemonte.it/system/files/Patrimonio%20Linguistico_Graduatoria%20Pubbliche%20Amministrazioni.pdf|",
+        "nessuna_evidenza_estratta|https://bandi.regione.piemonte.it/system/files/Patrimonio%20Linguistico_Graduatoria%20Soggetti%20No%20Profit.pdf|"
+      ]
+    },
+    {
+      "public_id": 26,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-servizio-civile-regionale-volontario-quarta-edizione-annualita-2027",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Bando servizio civile regionale 2027: confronto fra approvazione e allegati, da preservare come limite storico",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/Bando%20Enti%20-%20All.%20A.pdf|programme_objectives_excerpt"
+      ]
+    },
+    {
+      "public_id": 27,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/sostegno-progetti-favore-dei-minori-vittime-violenza-assistita-azione-5",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Sostegno a progetti sui minori: atti di approvazione e testo del bando hanno sezioni diverse",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/DD%20n.%201636_A2202C_15.10.026%20Bando%20Piano%20strategico%202026_2.pdf|beneficiaries_excerpt",
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/DD%20n.%201636_A2202C_15.10.026%20Bando%20Piano%20strategico%202026_2.pdf|programme_objectives_excerpt",
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/DD%20n.%201636_A2202C_15.10.026%20Bando%20Piano%20strategico%202026_2.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 124,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-di-concessione-gratuita-di-spazi-destinati-alla-vendita-in-occasione-della-ix-edizione-di-biennale-democrazia/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Concessione di spazi commerciali in occasione di un evento, non finanziamento di progetti",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/11/All.1-MANIFESTAZIONE-DI-INTERESSE-BOOKSHOP-BD-2025-.pdf|",
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/11/MANIFESTAZIONE-DI-INTERESSE-BOOKSHOP-BD-2025-3.pdf|"
+      ]
+    },
+    {
+      "public_id": 125,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-di-ricerca-per-il-reperimento-di-sponsorizzazioni-in-materia-di-eventi-culturali-e-musicali-per-lanno-2024-integrazione-di-ottobre-2024/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Ricerca di sponsorizzazioni a favore di eventi dell'ente, non bando per contributi all'associazione",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/11/Integrazione_AVVISO-DI-RICERCA-PER-IL-REPERIMENTO-DI-SPONSORIZZAZIONI-IN-MATERIA-DI-EVENTI-CULTURALI-E-MUSICALI-PER-LANNO-2024.pdf|"
+      ]
+    },
+    {
+      "public_id": 126,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-di-ricerca-per-il-reperimento-di-sponsorizzazioni-in-materia-di-eventi-culturali-e-musicali-per-lanno-2025/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Ricerca di sponsorizzazioni a favore di eventi dell'ente, non bando per contributi all'associazione",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/11/AVVISO-DI-RICERCA-PER-IL-REPERIMENTO-DI-SPONSORIZZAZIONI-IN-MATERIA-DI-EVENTI-CULTURALI-E-MUSICALI-PER-LANNO-2025.pdf|"
+      ]
+    },
+    {
+      "public_id": 127,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-di-ricerca-per-il-reperimento-di-sponsorizzazioni-in-materia-di-eventi-culturali-e-musicali-per-lanno-2026/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Ricerca di sponsorizzazioni a favore di eventi dell'ente, non bando per contributi all'associazione",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/12/AVVISO-DI-RICERCA-PER-IL-REPERIMENTO-DI-SPONSORIZZAZIONI-IN-MATERIA-DI-EVENTI-CULTURALI-E-MUSICALI-PER-LANNO-2026.docx.pdf|"
+      ]
+    },
+    {
+      "public_id": 128,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-di-ricerca-personale/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Selezione docente DJ: incarico professionale, non contributo a progetti",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2026/03/Avviso_Lab-Dj-26-27.pdf|",
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2026/03/Modulo-di-candidatura-Lab-Dj-26-27.pdf|"
+      ]
+    },
+    {
+      "public_id": 129,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-di-selezione-per-lindividuazione-di-n-1-risorsa-con-mansioni-di-segreteria-amministrativa-della-fondazione-per-la-cultura-di-torino/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Selezione di personale di segreteria, non contributo a progetti",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/11/2026_call-risorsa-segreteria-ammnistrativa.docx.pdf|"
+      ]
+    },
+    {
+      "public_id": 130,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-esplorativo-per-lacquisizione-di-manifestazioni-di-interesse-per-la-stipulazione-di-un-contratto-di-licenza-duso-del-marchio-exposed-torino-foto-festival/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Licenza d'uso di un marchio, non contributo o finanziamento culturale",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-MANIFESTAZIONE-DINTERESSE.docx.pdf|"
+      ]
+    },
+    {
+      "public_id": 131,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-per-lindividuazione-di-personale-amministrativo-mansione-di-cassiere-per-la-biglietteria-della-fondazione-per-la-cultura-di-torino/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Selezione personale di biglietteria, non contributo a progetti",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/11/Avviso-pubblico-per-lindividuazione-di-personale-amministrativo-–-mansione-di-cassiere-per-la-biglietteria-della-Fondazione-per-la-Cultura-di-Torino-.docx.pdf|"
+      ]
+    },
+    {
+      "public_id": 132,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-pubblico-bruno-caccia-2026-promozione-della-legalita-iv-edizione/",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Avviso Bruno Caccia e graduatoria: la mancata estrazione del testo ufficiale non può essere sanata tramite l'esito",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2026/02/Graduatoria_Bruno-Caccia-2026.pdf|",
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2026/03/Avviso_BrunoCaccia2026.pdf|"
+      ]
+    },
+    {
+      "public_id": 133,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-pubblico-che-bella-estate-2026-2027/",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Avviso Che Bella Estate e documenti di presentazione: occorre privilegiare il testo ufficiale e le FAQ",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2026/02/0_Avviso-pubblico-CHE-BELLA-ESTATE2026-2027.pdf|",
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2026/02/Incontro-di-presentazione-mappatura-e-avvisi.pdf|"
+      ]
+    },
+    {
+      "public_id": 134,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/avviso-pubblico-di-indagine-di-mercato-per-laffidamento-del-servizio-di-ideazione-progettazione-produzione-e-gestione-di-exposed-torino-foto-festival-anno-2026/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Indagine di mercato per affidamento servizi: appalto, non bando di finanziamento",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://fpct.it/wp-content/uploads/2025/11/Allegato-A-1.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 138,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/bando-di-selezione-per-formazione-di-graduatorie-finalizzate-al-conferimento-di-incarichi-di-docenza-e-attivita-professionali-presso-il-centro-civico-di-formazione-musicale-della-citta-di-torino/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Graduatoria per incarichi di docenza e prestazioni professionali, non contributo",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/11/Allegato-1_Domanda-di-candidatura_2025.docx.pdf|"
+      ]
+    },
+    {
+      "public_id": 139,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/manifestazione-di-interesse-per-percorsi-creativi-con-le-scuole-finalizzati-alla-realizzazione-di-un-logo-per-il-dossier-di-candidatura-di-torino-a-capitale-europea-della-cultura-2033/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Manifestazione d'interesse per realizzare un logo su incarico, non contributo per progetti",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/11/Manifestazione-interesse-ideazione-logo-candidatura-Torino-Capitale-Europea-dela-Cultura-2033.docx.pdf|",
+        "testo_non_estratto|https://fpct.it/wp-content/uploads/2025/02/Prot.844.2025_Esiti_Manifestazione_Interesse_Logo_verso_Torino_2033.pdf|"
+      ]
+    },
+    {
+      "public_id": 140,
+      "source_id": "culturatorino",
+      "url": "https://fpct.it/bandi-avvisi/rdo-5562248-servizio-di-ideazione-progettazione-produzione-e-gestione-exposed-torino-in-qualita-di-centrale-di-committenza-per-fondazione-per-la-cultura/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "RDO per affidamento di servizi: procedura di acquisto, non finanziamento",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://fpct.it/wp-content/uploads/2025/11/Determina_IMPEGNO_PER_PROCEDURA_EXPOSED_2026.pdf|"
+      ]
+    },
+    {
+      "public_id": 184,
+      "source_id": "sanpaolo",
+      "url": "https://www.compagniadisanpaolo.it/it/contributi/call-for-partnership-_-mobilita-attiva-benessere-fisico-e-sicurezza-stradale/",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Call partnership: testo e allegato contengono passaggi diversi, verifica priorità fra documenti",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://www.compagniadisanpaolo.it/wp-content/uploads/Call-for-Partnership_-Mobilita-sostenibile-Allegato_-2026.pdf|programme_objectives_excerpt",
+        "testi_diversi_da_verificare|https://www.compagniadisanpaolo.it/wp-content/uploads/Call-for-Partnership_-Mobilita-sostenibile-Allegato_-2026.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 186,
+      "source_id": "sanpaolo",
+      "url": "https://www.compagniadisanpaolo.it/it/contributi/impulso-trasformare-le-imprese-con-una-filiera-sostenibile/",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Bando IMPULSO, con PDF di esiti che non sostituisce gli atti della candidatura",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://www.compagniadisanpaolo.it/wp-content/uploads/IMPULSO_Esiti-call-imprese-sociali_Allegato.pdf|"
+      ],
+      "catalog_title": "IMPULSO — Trasformare le imprese con una filiera sostenibile"
+    },
+    {
+      "public_id": 187,
+      "source_id": "sanpaolo",
+      "url": "https://www.compagniadisanpaolo.it/it/contributi/la-bella-stagione-2026/",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "La Bella Stagione 2026: testo del bando e PDF secondari contengono passaggi differenti",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://www.compagniadisanpaolo.it/wp-content/uploads/Bando-csp-LBS26-.pdf|programme_objectives_excerpt"
+      ],
+      "catalog_title": "La Bella Stagione 2026"
+    },
+    {
+      "public_id": 191,
+      "source_id": "sanpaolo",
+      "url": "https://www.compagniadisanpaolo.it/it/contributi/linee-guida-per-nuovi-spazi-di-partecipazione-attiva/",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Linee guida Nuovi Spazi: FAQ e linee guida possono integrare i requisiti; non attestare contraddizione senza comparazione",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://www.compagniadisanpaolo.it/wp-content/uploads/FAQ-LG-Nuovi-spazi-di-partecipazione-attiva.pdf|programme_objectives_excerpt",
+        "testi_diversi_da_verificare|https://www.compagniadisanpaolo.it/wp-content/uploads/FAQ-LG-Nuovi-spazi-di-partecipazione-attiva.pdf|requirements_excerpt"
+      ],
+      "catalog_title": "Linee guida per nuovi spazi di partecipazione attiva"
+    },
+    {
+      "public_id": 194,
+      "source_id": "erasmusitalia",
+      "url": "https://www.erasmusplus.it/educazione_adulti/esiti/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Pagina di esiti e candidature già presentate, non bando individuale",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://www.erasmusplus.it/wp-content/uploads/2026/08/PUB_Esiti_delle_candidature_121_1_ADU_2026_.pdf|",
+        "nessuna_evidenza_estratta|https://www.erasmusplus.it/wp-content/uploads/2026/10/PUB_PERVENUTI_120_1_2026_ADU_1791880507886.pdf|"
+      ]
+    },
+    {
+      "public_id": 198,
+      "source_id": "erasmusitalia",
+      "url": "https://www.erasmusplus.it/programma/per-partecipare/come-fare-domanda/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Archivio di moduli e istruzioni per la presentazione, non call",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://www.erasmusplus.it/wp-content/uploads/2021/10/Guida-EU_Login_Tutorial_EN.pdf|"
+      ]
+    },
+    {
+      "public_id": 214,
+      "source_id": "crt",
+      "url": "https://www.fondazionecrt.it/15-maggio-presentazione-percorsi-europei-la-progettazione-dei-comuni-piemontesi-in-europa/",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Percorso di formazione e informazione per amministrazioni, non bando di contributi",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://www.fondazionecrt.it/wp-content/uploads/2026/05/anci-invito-fondazione-crt.pdf|"
+      ]
+    },
+    {
+      "public_id": 249,
+      "source_id": "crt",
+      "url": "https://www.fondazionecrt.it/talenti-comunita-1-edizione/",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Talenti per la Comunità, storico: elenco selezionati è documento di esito, non requisiti del bando",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://www.fondazionecrt.it/wp-content/uploads/2021/10/2022-tpc-elenco-40-selezionati-def.pdf|"
+      ]
+    },
+    {
+      "public_id": 253,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/nomine/avviso-nomina-n-4-2026-agenzia-accoglienza-promozione-turistica-locale-turismo-torino-provincia-scrl",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Nomina di componenti di organi di agenzia turistica, non finanziamento",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://bandi.regione.piemonte.it/system/files/DGR_3289_2026%20-%20Allegato%20N%C2%B0%201%20-%20DGR-3289-2026-All_1-amm_TTO_cda.pdf|"
+      ]
+    },
+    {
+      "public_id": 256,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/formazione-individuale-continua-permanente-2023-2027-avviso-aggiornato",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Formazione continua: FAQ e note operative sono complementari e necessitano verifica gerarchia atti",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/FAQ_aggiornamento_febbraio_2026.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 267,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-manifestazione-interesse-provvista-bei-selezione-intermediari-bancari",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Selezione di intermediari bancari per provvista BEI, non contributo a progetti culturali",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/Avviso_banche_REV9_rettifica.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 268,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/concorsi-incarichi-stage/avviso-mobilita-esterna-aree-funzionari-eq-istruttori-avviso-12026",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Avviso di mobilità del personale pubblico, non finanziamento",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://bandi.regione.piemonte.it/system/files/B4_DD_N_%20419_DEL_21.09.2026.pdf|",
+        "testo_non_estratto|https://bandi.regione.piemonte.it/system/files/B3%20DD%20N.%20514_DEL%2002.11.2026.pdf|"
+      ]
+    },
+    {
+      "public_id": 269,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/mercati-rionali-concessione-contributi-sostegno-progetti-investimento",
+      "disposition": "bando_storico_con_limiti_documentali",
+      "motive": "Mercati rionali: documenti di graduatoria e atti originari descrivono fasi distinte",
+      "observed_issue_signatures": [
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/D.D.%20n.%20354%20-%2027%20Luglio%202026.pdf|beneficiaries_excerpt",
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/D.D.%20n.%20354%20-%2027%20Luglio%202026.pdf|programme_objectives_excerpt",
+        "testi_diversi_da_verificare|https://bandi.regione.piemonte.it/system/files/D.D.%20n.%20354%20-%2027%20Luglio%202026.pdf|requirements_excerpt"
+      ]
+    },
+    {
+      "public_id": 270,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Gara per affitto di fondi rustici, non contributo culturale",
+      "observed_issue_signatures": [
+        "nessuna_evidenza_estratta|https://bandi.regione.piemonte.it/system/files/ALLEGATO%2001_Scheda_tecnica_0.pdf|"
+      ]
+    },
+    {
+      "public_id": 272,
+      "source_id": "piemonte",
+      "url": "https://bandi.regione.piemonte.it/avvisi-beni-regionali/avviso-individuazione-soggetti-idonei-alle-direzioni-ssr",
+      "disposition": "riferimento_non_finanziamento",
+      "motive": "Selezione di soggetti idonei a dirigere strutture sanitarie, non contributo",
+      "observed_issue_signatures": [
+        "testo_non_estratto|https://bandi.regione.piemonte.it/system/files/AVVISO%20DSS.pdf|"
+      ]
+    }
+  ]
+}

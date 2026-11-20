@@ -460,3 +460,55 @@ sportello aperta compare sia in «Aperte» sia in «A sportello»; una
 chiusa rimane visibile in «A sportello» ma non in «Aperte».
 Test contro la regressione nella suite dashboard; nessun dato di
 catalogo o valore di scadenza è stato modificato.
+
+## Chiusura una tantum della revisione delle 39 schede storiche (20/11/2026)
+
+Le **39 schede e tutte le 57 diagnostiche** rilevate nel catalogo sono state
+ricondotte a 39 decisioni individuali, ciascuna fissata nel file
+`config/archive_catalog_reviews.json` con ID pubblico, URL, fonte, firme
+delle diagnostiche e motivazione. La classificazione è verificabile in ogni
+nuova scansione e non richiede più di avviare da capo una ricognizione
+indifferenziata di tutti i record storici.
+
+Sulla base dei titoli, dell'oggetto degli avvisi, della tipologia dei
+procedimenti e dei metadati degli allegati: **25** record sono indici,
+assegnazioni già effettuate, gare, ricerca di sponsorizzazioni, selezioni,
+incarichi o altri contenuti **non candidabili come contributo culturale**:
+si mantengono per lo storico, con tipo `altro avviso`, senza fingere
+beneficiari, requisiti e attività finanziabili. I restanti **14** sono
+bandi/call storici (fra cui patrimonio linguistico, terzo avviso Torino,
+Che Bella Estate, Bruno Caccia, iniziative della Compagnia di San Paolo):
+la relativa limitazione documentale viene conservata in modo esplicito.
+
+**Limite dichiarato:** queste decisioni derivano dall'oggetto dei
+procedimenti e dai metadati già acquisiti: NON equivalgono alla lettura
+integrale di 57 allegati PDF né alla risoluzione semantica delle differenze
+tra testi. Le diagnostiche raw non sono cancellate; la loro eventuale
+variazione fa decadere la decisione storica e richiede nuovo esame
+puntuale, non un audit globale. Non attestare che i PDF siano completi
+se non lo sono. I 14 bandi con lacune rimangono con tale indicazione
+e non vengono spacciati per pienamente verificati.
+
+`src/archive_consolidation.py` applica la decisione **solo se** coincidono
+ID, fonte, URL, stato storico e impronta delle diagnostiche. Un record
+riaperto o un allegato nuovo fa decadere la precedente disposizione;
+inoltre una nuova scheda non passa il gate se mancano requisiti o
+provenienza verificabile. Il report `archival_consolidation` mostra tutte
+le decisioni, i casi variati o non presenti e i nuovi difetti documentali
+senza nasconderli. Il test di regressione verifica 39 decisioni, 57
+segnalazioni, preservazione delle fonti e invalidazione delle decisioni
+superate. Nessun intervento su `jeckodevsite` o deploy SFTP è necessario
+per i dati JSON.
+
+### Collaudo conclusivo e condizioni per passaggio a manutenzione
+
+La suite CI deve verificare insieme l'assenza di regressioni sul catalogo
+pubblico, la corretta formazione della coda istruttorie, la mancata notifica
+dei record esclusi e l'immutabilità dei riferimenti storici. Ogni nuova
+scheda candidabile deve avere le quattro evidenze principali, fonte,
+motivazione dell'adeguatezza, verifica di stato e scadenza oppure sportello
+documentato. Gli avvisi non candidabili vanno classificati come tali;
+non generare false scadenze. Le segnalazioni storiche sono archiviate
+con decisione individuale, ma restano evidenziati gli eventuali limiti
+documentali veri. La manutenzione ordinaria prosegue con la scansione
+giornaliera, il report di integrità e il gate preventivo.

@@ -10,6 +10,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from catalog_admission import admission_reasons
+from archive_consolidation import load_archive_reviews,archive_review_summary
 
 ROOT=Path(__file__).resolve().parents[1]
 REQUIRED_REVIEW=("assessment_review_status","adequacy_label",
@@ -169,6 +170,11 @@ def validate_scan(rows, report, now=None, max_age_minutes=30, pending_rows=None)
                     problems.append("Nuove schede mancanti o duplicate")
                 if any(admission_reasons(record) for record in just_published.values()):
                     problems.append("Pubblicazione di nuova scheda priva di valutazione completa")
+    archive_report=report.get("archival_consolidation")
+    if archive_report is not None:
+        reviews=load_archive_reviews(ROOT/"config/archive_catalog_reviews.json")
+        if archive_report!=archive_review_summary(rows,reviews):
+            problems.append("Consolidamento archivio non coerente con 39 schede")
     audit=report.get("catalog_audit")
     if isinstance(audit,dict):
         if audit.get("records_checked")!=len(rows):

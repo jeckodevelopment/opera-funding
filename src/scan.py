@@ -36,6 +36,7 @@ from catalog_reconciliation import (summarize_catalog_reconciliation, reconcile_
                                     annotate_requirement_coverage, summarize_requirement_coverage)
 from catalog_audit import load_retired_sources, mark_retired_source, audit_catalog
 from catalog_quality import catalog_quality
+from archive_consolidation import load_archive_reviews,apply_archive_reviews,archive_review_summary
 from catalog_admission import split_new_catalogue
 from funder_registry import load_registry, link_opportunities, public_monitoring
 from programme_monitor import check_programmes, load_programme_state, public_status
@@ -171,6 +172,7 @@ def run():
     issuer_checks = json.loads((ROOT / "config/issuer_checks.json").read_text(encoding="utf-8"))
     reviewed_facts = json.loads((ROOT / "config/reviewed_official_facts.json").read_text(encoding="utf-8"))
     assessment_reviews = json.loads((ROOT / "config/assessment_reviews.json").read_text(encoding="utf-8"))
+    archive_reviews=load_archive_reviews(ROOT / "config/archive_catalog_reviews.json")
     statuses = []
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     previous_report_path=Path(args.report)
@@ -351,6 +353,10 @@ def run():
     rows=assign_public_ids(rows, registry)
     rows=attach_public_aliases(rows, registry)
     rows=apply_assessment_reviews(rows, assessment_reviews)
+    rows=apply_archive_reviews(rows,archive_reviews,"2026-11-20")
+    for row in rows:
+        if (row.get("archive_case_review") or {}).get("disposition")=="riferimento_non_finanziamento":
+            explain(annotate(reconcile_status(row)))
     applicant_profile = load_applicant_profile()
     for row in rows:
         annotate_assessment_coverage(row)
@@ -378,6 +384,7 @@ def run():
                                         "requirement_reconciliation":summarize_requirement_coverage(rows),
                                         "catalog_audit":catalogue_audit,
                                         "catalog_admission":admission_report,
+                                        "archival_consolidation":archive_review_summary(rows,archive_reviews),
                                         "catalog_quality":catalog_quality(rows),
                                         "funder_monitoring":public_monitoring(registry_funders,statuses,now,public_status(programme_state)),
                                         "programme_ingestion":programme_ingestion},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
