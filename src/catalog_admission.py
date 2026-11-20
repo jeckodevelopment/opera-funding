@@ -97,6 +97,7 @@ def split_new_catalogue(rows, public_ids):
             pending.append(candidate)
             failures.update(reasons)
         else:
+            row.pop("admission_reasons",None)
             row["catalog_admission_status"]="valutata_prima_pubblicazione"
             admitted.append(row.get("public_id"))
             published.append(row)
