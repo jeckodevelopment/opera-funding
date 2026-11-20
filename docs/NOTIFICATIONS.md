@@ -115,3 +115,22 @@ altre opportunità. In presenza di requisiti ufficiali confermati,
 potrà essere notificata correttamente in futuro, senza duplicati nella
 situazione attuale non verificata. Le vecchie email inviate non sono
 revocabili.
+
+## Resend HTTP 409 dopo correzione di una notifica (20/11/2026)
+
+Nella prima scansione dopo la correzione del controllo preventivo, la
+scheda Culture Moves Europe (#33) ha recuperato dalla **fonte ufficiale**
+la scadenza 18/01/2027. Il registro era stato intenzionalmente corretto
+per permettere una notifica valida in futuro; Resend ha però risposto
+**HTTP 409 Conflict**: l'identificativo idempotente precedente dipendeva
+soltanto da destinatario e ID della scheda, non dal contenuto corretto.
+Non si tratta di un nuovo problema di ammissione.
+
+Da ora l'identificativo combina **destinatario anonimizzato, insieme
+delle schede e impronta del contenuto effettivo** (oggetto + HTML +
+testo). Un nuovo tentativo della *stessa* comunicazione usa la stessa
+chiave; un messaggio corretto dopo una nuova verifica ha una chiave
+distinta e può essere recapitato, senza alterare la deduplicazione
+ordinaria `alerted_ids` o inviare indiscriminatamente duplicati.
+Se il provider non conferma l'invio, la consegna resta sospesa e
+visibile nei log fino a successivo esito positivo.
