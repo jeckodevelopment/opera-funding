@@ -19,7 +19,7 @@ from public_ids import assign_public_ids, attach_public_aliases
 from priority import check_priority
 from verification import pick_for_review, coverage, backlog_candidates, classify_crt_information, classify_informational_page
 from crt_windows import guidance_for_window
-from source_alternatives import delegated_source_status
+from source_alternatives import delegated_source_status, rate_limit_due, rate_limited_source_status
 from eu_api import fetch_creative_europe, fetch_topic_evidence
 from catalog import deduplicate_catalog, reconcile_official_equivalents
 from issuer_sources import apply_issuer_evidence
@@ -162,6 +162,12 @@ def run():
     assessment_reviews = json.loads((ROOT / "config/assessment_reviews.json").read_text(encoding="utf-8"))
     statuses = []
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    previous_report_path=Path(args.report)
+    try:
+        previous_statuses=json.loads(previous_report_path.read_text(encoding="utf-8")).get("sources",[])
+    except (OSError, ValueError, AttributeError):
+        previous_statuses=[]
+
     with requests.Session() as session:
         session.headers.update({"User-Agent":AGENT, "Accept":"text/html"})
         for source in sources:
@@ -170,6 +176,12 @@ def run():
             # not as a successful request to the inaccessible Italian website.
             if source.get("official_alternative_source_id"):
                 statuses.append(delegated_source_status(source,statuses,now))
+                continue
+            previous_source=next((entry for entry in previous_statuses if entry.get("source_id")==source["id"]),{})
+            if (source.get("rate_limit_alternative_source_id")
+                    and not rate_limit_due(previous_source,now)):
+                statuses.append(rate_limited_source_status(
+                    source,statuses,now,previous_source["direct_last_429_at"]))
                 continue
             try:
                 found = (fetch_creative_europe(session,source,now)
@@ -280,6 +292,11 @@ def run():
                             indexed[key]=verified
                 statuses.append({"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":True,"discovered":len(found),"checked_at":now})
             except (requests.RequestException, RuntimeError, ValueError) as exc:
+                if (source.get("rate_limit_alternative_source_id")
+                        and isinstance(exc,requests.HTTPError)
+                        and getattr(getattr(exc,"response",None),"status_code",None)==429):
+                    statuses.append(rate_limited_source_status(source,statuses,now,now))
+                    continue
                 failure={"source_id":source["id"],"source_name":source["name"],"source_url":source["url"],"ok":False,"discovered":0,"checked_at":now,"error":str(exc)[:240]}
                 if source.get("institutional_reference_url"):
                     failure["institutional_reference_url"]=source["institutional_reference_url"]
