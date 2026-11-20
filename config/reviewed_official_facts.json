@@ -139,5 +139,47 @@
     "deadline": "2027-02-24",
     "evidence": "official_active_application_window",
     "review_valid_until": "2026-11-25"
+  },
+  {
+    "source_id": "programme:cmtorino-giovani",
+    "match_host": "www.cittametropolitana.torino.it",
+    "match_path": "/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico%20amare.pdf",
+    "official_url": "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/politiche-giovanili/avvisi-e-bandi",
+    "deadline": "2025-07-14",
+    "evidence": "official_expired_application_deadline"
+  },
+  {
+    "source_id": "programme:cmtorino-giovani",
+    "match_host": "www.cittametropolitana.torino.it",
+    "match_path": "/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/avviso%20pubblico.pdf",
+    "official_url": "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/politiche-giovanili/avvisi-e-bandi",
+    "deadline": "2025-04-28",
+    "evidence": "official_expired_application_deadline"
+  },
+  {
+    "source_id": "programme:cmtorino-giovani",
+    "match_host": "www.cittametropolitana.torino.it",
+    "match_path": "/sites/default/files/pagina/ra6/documenti/politiche%20giovanili/festival%20giovani/avviso%20di%20manifestazione%20di%20interesse%20festival%20giovani.pdf",
+    "official_url": "https://www.cittametropolitana.torino.it/istruzione-e-sviluppo-sociale/politiche-giovanili/avvisi-e-bandi",
+    "deadline": "2026-02-09",
+    "evidence": "official_expired_application_deadline"
+  },
+  {
+    "source_id": "programme:rivoli-associazioni",
+    "match_host": "www.comune.rivoli.to.it",
+    "match_path": "/ocmultibinary/download/5839/124709/5/c8fede5d77292d746efa498315c98a33.pdf/file/avviso%2bcontributi.pdf",
+    "official_url": "https://www.comune.rivoli.to.it/Novita/Avvisi/Avviso-pubblico-per-la-concessione-di-contributi-economici-alle-associazioni-del-territorio",
+    "deadline": "2026-09-30",
+    "evidence": "official_expired_application_deadline"
+  },
+  {
+    "source_id": "volto",
+    "match_host": "volontariatotorino.it",
+    "match_path": "/bandi/contributi-a-sostegno-di-iniziative-rilevanti-ai-fini-della-promozione-delleconomia-provinciale-anno-2027",
+    "official_url": "https://contributipromozionali.to.camcom.it/",
+    "opening_date": "2026-11-09",
+    "deadline": "2026-11-27",
+    "evidence": "official_active_application_window",
+    "review_valid_until": "2026-11-27"
   }
 ]
