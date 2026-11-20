@@ -106,6 +106,13 @@ class ScanIntegrityTests(unittest.TestCase):
         report["coverage"]["totals"]["open"]=2
         self.assertTrue(any("coverage.totals.open" in x for x in self.check(rows,report)))
 
+    def test_information_bucket_is_accepted_and_reconciled(self):
+        rows,report=example()
+        rows[1]["funding_status"]="INFORMATIVO"
+        report["coverage"]["totals"]["closed"]=0
+        report["coverage"]["totals"]["informational"]=1
+        self.assertEqual(self.check(rows,report),[])
+
     def test_unknown_state_fails(self):
         rows,report=example()
         rows[1]["funding_status"]="BOH"
