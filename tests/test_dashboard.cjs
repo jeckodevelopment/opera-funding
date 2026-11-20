@@ -6,9 +6,23 @@ const context={
  document:{getElementById:()=>({addEventListener(){}}),querySelectorAll:()=>[]},
  URL,Date,console,window:{addEventListener(){}}
 };
-vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy,requirementChecklist};",context);
-const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy,requirementChecklist}=context.exposed;
+vm.runInNewContext(src+"\nglobalThis.exposed={state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy,requirementChecklist,isRolling,matchesCatalogStatus};",context);
+const {state,dateLabel,sortRows,sourceHealth,opportunitySummary,safeUrl,PAGE_SIZE,statusLabel,updateStateCounts,reviewSignals,changeBadge,evaluationData,opportunityRequirementFacts,opportunityUrl,requestedOpportunity,findOpportunity,readWatchlist,isFollowed,cleanWorkflow,assessmentLabel,adequacyLevel,adequacyLabel,makeAdequacy,requirementChecklist,isRolling,matchesCatalogStatus}=context.exposed;
 assert.equal(PAGE_SIZE,12);
+const sportello={opportunity_type:"finanziamento potenziale",rolling_confirmed:true,
+ rolling_evidence:"https://example.org/call",source_open_confirmed:true,link_status:"raggiungibile"};
+assert.equal(isRolling(sportello),true);
+assert.equal(state(sportello),"aperto");
+assert.equal(matchesCatalogStatus(sportello,"sportello"),true);
+assert.equal(matchesCatalogStatus(sportello,"aperto"),true);
+assert.equal(isRolling({...sportello,rolling_evidence:null}),false);
+assert.equal(isRolling({...sportello,rolling_confirmed:false}),false);
+assert.equal(isRolling({...sportello,opportunity_type:"altro avviso"}),false);
+assert.equal(isRolling({...sportello,rolling_evidence:"javascript:alert(1)"}),false);
+assert.equal(isRolling({...sportello,closure_confirmed:true}),true);
+assert.equal(matchesCatalogStatus({...sportello,closure_confirmed:true},"sportello"),true);
+assert.equal(matchesCatalogStatus({...sportello,closure_confirmed:true},"aperto"),false);
+
 assert.equal(assessmentLabel({assessment_label:"ALTA AFFINITÀ"}),"ALTA AFFINITÀ");
 assert.equal(assessmentLabel({relevance:65,opportunity_type:"finanziamento potenziale"}),"MEDIA AFFINITÀ");
 assert.equal(assessmentLabel({relevance:9,opportunity_type:"call progettuale da verificare"}),"BASSA AFFINITÀ");
