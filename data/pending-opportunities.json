@@ -1,271 +1,5 @@
 [
   {
-    "adequacy_basis": "Revisione documentale individuale",
-    "adequacy_label": "MEDIA",
-    "adequacy_level": 2,
-    "adequacy_reason": "La Commissione europea ammette espressamente anche enti di recente costituzione, purché legalmente registrati in un paese Europa Creativa e attivi in un settore culturale ammesso. Opera+ non è esclusa per l'anzianità: musica e performing arts sono ammesse. La candidatura richiede però una reale residenza internazionale, con 1–5 artisti/professionisti provenienti da altri paesi, alloggio e spazi di lavoro adeguati, almeno un mentor e portfolio artistico/promozionale dell'ente. Non sono documentati questi elementi; il semplice corso digitale non soddisfa il programma.",
-    "adequacy_verification_flags": [],
-    "admission_reasons": [
-      "stato_candidatura_non_verificato"
-    ],
-    "amount": null,
-    "applicant_comparison_counts": {
-      "compatibile": 0,
-      "da_verificare": 2,
-      "potenzialmente_incompatibile": 0
-    },
-    "applicant_requirement_comparison": [
-      {
-        "category": "capacita_operativa",
-        "reason": "Confronto non conclusivo: requisito, profilo o documentazione insufficienti",
-        "requirement": "alloggio e spazi di lavoro idonei;",
-        "source": "https://culture.ec.europa.eu/it/culture-moves-europe/call-for-residency-hosts",
-        "status": "da_verificare"
-      },
-      {
-        "category": "natura_giuridica",
-        "reason": "Forma giuridica dichiarata: associazione culturale non riconosciuta; verificare la categoria ammessa e gli eventuali registri",
-        "requirement": "prova della registrazione dell'ente, portfolio artistico/promozionale e CV del mentor.",
-        "source": "https://culture.ec.europa.eu/it/culture-moves-europe/call-for-residency-hosts",
-        "status": "da_verificare"
-      }
-    ],
-    "application_eligibility_verified": false,
-    "application_next_actions": [
-      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
-    ],
-    "application_path": "non_attiva",
-    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
-    "application_windows": [],
-    "assessment_basis": "Revisione documentale della fonte indicata nella scheda",
-    "assessment_checked_at": "2026-11-19",
-    "assessment_confidence": "documentale — fonte consultata; ammissibilità da verificare",
-    "assessment_document_issues": [],
-    "assessment_evidence_count": 4,
-    "assessment_evidence_source": "https://culture.ec.europa.eu/it/culture-moves-europe/call-for-residency-hosts",
-    "assessment_gaps": [
-      "Documentare sede e capacità concreta di alloggio/spazi di lavoro per una residenza internazionale, non semplicemente un corso online.",
-      "Identificare almeno un mentor con CV e predisporre portfolio artistico/promozionale dell'ente, oltre a dimostrare la registrazione legale.",
-      "Definire progetto con 1–5 residenti da altri paesi Europa Creativa e almeno due obiettivi previsti; prima fase entro il 18 gennaio 2027.",
-      "Non penalizzare l'ente per costituzione recente: la fonte ammette espressamente organizzazioni nuove."
-    ],
-    "assessment_label": "MEDIA AFFINITÀ",
-    "assessment_method": "revisione individuale della fonte",
-    "assessment_missing_fields": [],
-    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
-    "assessment_reason": "La Commissione europea ammette espressamente anche enti di recente costituzione, purché legalmente registrati in un paese Europa Creativa e attivi in un settore culturale ammesso. Opera+ non è esclusa per l'anzianità: musica e performing arts sono ammesse. La candidatura richiede però una reale residenza internazionale, con 1–5 artisti/professionisti provenienti da altri paesi, alloggio e spazi di lavoro adeguati, almeno un mentor e portfolio artistico/promozionale dell'ente. Non sono documentati questi elementi; il semplice corso digitale non soddisfa il programma.",
-    "assessment_review_status": "REVISIONE DOCUMENTALE",
-    "assessment_reviewed_at": "2026-11-19",
-    "assessment_source": "https://culture.ec.europa.eu/it/culture-moves-europe/call-for-residency-hosts",
-    "beneficiaries_excerpt": "Enti legalmente registrati e con sede in un paese aderente a Europa Creativa, anche di recente costituzione, attivi in musica, performing arts o altri settori culturali ammessi.",
-    "closure_confirmed": false,
-    "deadline": null,
-    "detail_attempted_at": "2026-11-21T13:43:37+00:00",
-    "detail_basis": "Pagina ufficiale e allegati disponibili consultati",
-    "detail_checked": true,
-    "detail_checked_at": "2026-11-21T13:43:37+00:00",
-    "detail_version": 9,
-    "documents": [
-      {
-        "label": "Pagina del bando",
-        "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts"
-      }
-    ],
-    "eligibility": "da verificare",
-    "eligibility_checks": [
-      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
-      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
-    ],
-    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
-    "eligibility_condition_sources": [
-      "https://culture.ec.europa.eu/it/culture-moves-europe/call-for-residency-hosts"
-    ],
-    "eligibility_condition_status": "informazioni_insufficienti",
-    "eligibility_specific_requirements": [
-      {
-        "category": "capacita_operativa",
-        "excerpt": "alloggio e spazi di lavoro idonei;",
-        "field": "requirements_excerpt",
-        "source": "https://culture.ec.europa.eu/it/culture-moves-europe/call-for-residency-hosts",
-        "status": "requisito_documentato_da_verificare"
-      },
-      {
-        "category": "natura_giuridica",
-        "excerpt": "prova della registrazione dell'ente, portfolio artistico/promozionale e CV del mentor.",
-        "field": "requirements_excerpt",
-        "source": "https://culture.ec.europa.eu/it/culture-moves-europe/call-for-residency-hosts",
-        "status": "requisito_documentato_da_verificare"
-      }
-    ],
-    "eligibility_specific_unchecked": 2,
-    "first_seen": "2026-11-16T20:36:36+00:00",
-    "funded_activities_excerpt": "Un progetto di residenza per 1–5 artisti, con contributi giornalieri all'ente ospitante e ai residenti.",
-    "funder_id": "eucreative",
-    "funding_status": "DA VERIFICARE",
-    "id": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
-    "issuer": "Creative Europe",
-    "last_seen": "2026-11-21T13:43:37+00:00",
-    "link_checked_at": "2026-11-21T13:43:37+00:00",
-    "link_http_status": 200,
-    "link_status": "raggiungibile",
-    "opportunity_type": "call progettuale da verificare",
-    "program_id": "creative-europe-culture",
-    "programme_objectives_excerpt": "Supporto a organizzazioni che ospitano artisti e professionisti culturali provenienti da altri paesi di Europa Creativa.",
-    "project_ideas": [
-      "Incontri e percorsi di divulgazione culturale per ampliare i pubblici",
-      "Eventi di divulgazione, laboratori partecipativi e progetti culturali inclusivi",
-      "Progetti culturali con scuole, teatri, enti locali o altri partner"
-    ],
-    "project_potential": "da valutare",
-    "public_id": 33,
-    "public_id_aliases": [],
-    "relevance": 55,
-    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
-    "requirement_coverage_status": "confronti_documentati",
-    "requirement_evidence_count": 2,
-    "requirements_excerpt": "Progetto di residenza con 1–5 artisti o professionisti culturali residenti in altri paesi Europa Creativa; almeno due degli obiettivi create/learn/explore/connect/transform; alloggio e spazi di lavoro idonei; almeno un mentor; prova della registrazione dell'ente, portfolio artistico/promozionale e CV del mentor. Candidatura in inglese tramite Goethe-Application Portal entro 18/01/2027; fase 2 per residenti selezionati.",
-    "resolved_url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
-    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
-    "score_explanation": "Coerenza con accesso e promozione della cultura (titolo); Coerenza con partecipazione territoriale e inclusione (contenuto della scheda); Possibilità progettuale in partenariato (titolo).",
-    "score_explanation_basis": "titolo e contenuti della scheda consultata",
-    "source_id": "eucreative",
-    "source_open_confirmed": false,
-    "source_url": "https://culture.ec.europa.eu/funding/calls",
-    "status": "non verificato",
-    "status_basis": "stato non confermato",
-    "summary": "How does the call for residency hosts work?The call for residency hosts provides financial support to legal entities wishing to host artists and cultural professionals for one residen",
-    "themes": [
-      "cultura e spettacolo"
-    ],
-    "title": "Call for residency hosts 2026–2027 – Culture Moves Europe",
-    "type_reason": "Possibile iniziativa progettuale; condizioni economiche da verificare",
-    "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-residency-hosts",
-    "verified": false
-  },
-  {
-    "adequacy_basis": "Revisione documentale individuale",
-    "adequacy_label": "BASSA",
-    "adequacy_level": 1,
-    "adequacy_reason": "Requisito documentato attualmente non soddisfatto per la candidatura diretta: La linea Culture Moves Europe per mobilità individuale ammette artisti e professionisti come persone fisiche, singolarmente o in gruppi fino a cinque; non finanzia una candidatura presentata direttamente dall'associazion",
-    "adequacy_verification_flags": [
-      "candidatura_diretta_non_dimostrata"
-    ],
-    "admission_reasons": [
-      "stato_candidatura_non_verificato"
-    ],
-    "amount": null,
-    "applicant_comparison_counts": {
-      "compatibile": 0,
-      "da_verificare": 0,
-      "potenzialmente_incompatibile": 0
-    },
-    "applicant_requirement_comparison": [],
-    "application_eligibility_verified": false,
-    "application_next_actions": [
-      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
-    ],
-    "application_path": "non_attiva",
-    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
-    "application_windows": [],
-    "assessment_basis": "Revisione documentale della fonte indicata nella scheda",
-    "assessment_checked_at": "2026-11-19",
-    "assessment_confidence": "documentale — fonte consultata; ammissibilità da verificare",
-    "assessment_document_issues": [],
-    "assessment_evidence_count": 4,
-    "assessment_evidence_source": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
-    "assessment_gaps": [
-      "Non candidabile direttamente da un'associazione in questa linea.",
-      "Eventuale applicabilità ai singoli collaboratori va verificata caso per caso.",
-      "Verificare l'eventuale interesse di singoli professionisti culturali e il partner estero; non presentare Opera+ come beneficiario diretto."
-    ],
-    "assessment_label": "BASSA AFFINITÀ",
-    "assessment_method": "revisione individuale della fonte",
-    "assessment_missing_fields": [],
-    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
-    "assessment_reason": "La misura sovvenziona la mobilità transfrontaliera di singoli artisti e professionisti culturali, o gruppi fino a cinque persone. Non è un finanziamento diretto all'associazione Opera+; potrebbe interessare eventualmente i suoi singoli collaboratori artistici.",
-    "assessment_review_status": "REVISIONE DOCUMENTALE",
-    "assessment_reviewed_at": "2026-11-19",
-    "assessment_source": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
-    "beneficiaries_excerpt": "Artisti e professionisti della cultura maggiorenni, candidati come individui o gruppi fino a cinque persone.",
-    "closure_confirmed": false,
-    "deadline": null,
-    "detail_attempted_at": "2026-11-21T13:43:37+00:00",
-    "detail_basis": "Pagina ufficiale e allegati disponibili consultati",
-    "detail_checked": true,
-    "detail_checked_at": "2026-11-21T13:43:37+00:00",
-    "detail_version": 9,
-    "direct_application_blocker": "La linea Culture Moves Europe per mobilità individuale ammette artisti e professionisti come persone fisiche, singolarmente o in gruppi fino a cinque; non finanzia una candidatura presentata direttamente dall'associazione Opera+.",
-    "documents": [
-      {
-        "label": "Pagina del bando",
-        "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility"
-      },
-      {
-        "label": "read the call document",
-        "url": "https://culture.ec.europa.eu/resources/document-library/call-document-for-individual-mobility-2026-2027"
-      },
-      {
-        "label": "Find a list of frequently asked questions about the call for individual mobility",
-        "url": "https://culture.ec.europa.eu/culture-moves-europe/faqs"
-      }
-    ],
-    "eligibility": "da verificare",
-    "eligibility_checks": [
-      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
-      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
-    ],
-    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
-    "eligibility_condition_sources": [
-      "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility"
-    ],
-    "eligibility_condition_status": "informazioni_insufficienti",
-    "eligibility_specific_requirements": [],
-    "eligibility_specific_unchecked": 0,
-    "first_seen": "2026-11-16T18:50:43+00:00",
-    "funded_activities_excerpt": "Diaria, viaggio e integrazioni per artisti e professionisti culturali che realizzano il progetto all'estero.",
-    "funder_id": "eucreative",
-    "funding_status": "DA VERIFICARE",
-    "id": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
-    "issuer": "Creative Europe",
-    "last_seen": "2026-11-21T13:43:37+00:00",
-    "link_checked_at": "2026-11-21T13:43:37+00:00",
-    "link_http_status": 200,
-    "link_status": "raggiungibile",
-    "opportunity_type": "non classificato",
-    "program_id": "creative-europe-culture",
-    "programme_objectives_excerpt": "Mobilità per realizzare un progetto artistico o culturale in un altro paese di Europa Creativa, con partner internazionale.",
-    "project_ideas": [
-      "Incontri e percorsi di divulgazione culturale per ampliare i pubblici",
-      "Eventi di divulgazione, laboratori partecipativi e progetti culturali inclusivi",
-      "Workshop, masterclass e preparazione all'opera in collaborazione con teatri"
-    ],
-    "project_potential": "da valutare",
-    "public_id": 32,
-    "public_id_aliases": [],
-    "relevance": 55,
-    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
-    "requirement_coverage_status": "ostacolo_documentato",
-    "requirement_evidence_count": 0,
-    "requirements_excerpt": "Progetto in un paese estero, partner internazionale, CV e portfolio artistico, lettera di invito; finestre periodiche fino ad aprile 2027.",
-    "resolved_url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
-    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
-    "score_explanation": "Coerenza con accesso e promozione della cultura (titolo); Coerenza con partecipazione territoriale e inclusione (contenuto della scheda); Coerenza con attività culturali e spettacolo dal vivo (contenuto della scheda).",
-    "score_explanation_basis": "titolo e contenuti della scheda consultata",
-    "source_id": "eucreative",
-    "source_open_confirmed": false,
-    "source_url": "https://culture.ec.europa.eu/funding/calls",
-    "status": "non verificato",
-    "status_basis": "stato non confermato",
-    "summary": "Culture Moves Europe’s new call for individual mobility targets artists and cultural professionals working in the music, literature, architecture, cultural heritage, design and fashion design, visual arts and performing arts sectors.",
-    "themes": [
-      "cultura e spettacolo"
-    ],
-    "title": "Culture Moves Europe – Mobilità individuale 2026–2027",
-    "type_reason": "Informazioni insufficienti per determinare la tipologia",
-    "url": "https://culture.ec.europa.eu/culture-moves-europe/call-for-individual-mobility",
-    "verified": false
-  },
-  {
     "adequacy_basis": "Evidenze di fonte",
     "adequacy_label": "MEDIA",
     "adequacy_level": 2,
@@ -273,8 +7,8 @@
     "adequacy_verification_flags": [],
     "admission_reasons": [
       "stato_candidatura_non_verificato",
-      "evidenza_mancante:programme_objectives_excerpt",
       "evidenza_mancante:funded_activities_excerpt",
+      "evidenza_mancante:requirements_excerpt",
       "fonte_ente_erogatore_non_verificata"
     ],
     "amount": null,
@@ -293,43 +27,44 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "application_windows": [],
-    "assessment_basis": "fonte ufficiale: destinatari, vincoli e condizioni",
-    "assessment_checked_at": "2026-11-21T13:43:37+00:00",
+    "assessment_basis": "fonte ufficiale: destinatari, finalità del bando",
+    "assessment_checked_at": "2026-11-22T13:36:51+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": null,
     "assessment_document_discrepancies": null,
     "assessment_document_issues": [],
     "assessment_evidence_count": 2,
-    "assessment_evidence_source": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "assessment_evidence_source": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026/",
     "assessment_field_sources": null,
     "assessment_gaps": [
-      "Attività finanziabili non documentate."
+      "Attività finanziabili non documentate.",
+      "Vincoli di candidatura non documentati."
     ],
     "assessment_label": "MEDIA AFFINITÀ",
     "assessment_method": "estrazione automatica di evidenze",
     "assessment_missing_fields": [
-      "Finalità del programma",
-      "Attività finanziabili"
+      "Attività finanziabili",
+      "Vincoli e requisiti"
     ],
     "assessment_opening_note": "L'affinità non implica ammissibilità; senza evidenza ufficiale lo stato di apertura non è confermato.",
-    "assessment_reason": "Dalla documentazione consultata emergono: promozione e accesso alla cultura, musica, teatro e spettacolo.",
+    "assessment_reason": "Dalla documentazione consultata emergono: comunità, inclusione e partecipazione.",
     "assessment_review_status": "PARZIALE",
-    "assessment_source": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
-    "beneficiaries_excerpt": "DESTINATARI — Artisti e professionisti della cultura , appartenenti ai settori architettura, patrimonio culturale, design, moda, traduzione letteraria, musica, arti visive e arti dello spettacolo. I candidati devono avere età superiore ai 18 anni, qualsiasi tipo di titolo di studio e livello di esperienza ed essere residenti in uno dei Paesi ammiss",
-    "beneficiaries_source": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "assessment_source": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026/",
+    "beneficiaries_excerpt": "Soggetti ammissibili — Possono presentare domanda di contributo:",
+    "beneficiaries_source": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026/",
     "closure_confirmed": false,
-    "deadline": "2027-04-30",
-    "deadline_source": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
-    "deadline_verified_at": "2026-11-21T13:44:15+00:00",
-    "detail_attempted_at": "2026-11-21T13:43:37+00:00",
+    "deadline": "2026-11-30",
+    "deadline_source": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026/",
+    "deadline_verified_at": "2026-11-22T13:40:50+00:00",
+    "detail_attempted_at": "2026-11-22T13:36:51+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-21T13:44:15+00:00",
+    "detail_checked_at": "2026-11-22T13:40:50+00:00",
     "detail_version": 9,
     "documents": [
       {
         "label": "Pagina del bando",
-        "url": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2"
+        "url": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026/"
       }
     ],
     "eligibility": "da verificare",
@@ -339,40 +74,38 @@
     ],
     "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
     "eligibility_condition_sources": [
-      "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2"
+      "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026/"
     ],
     "eligibility_condition_status": "informazioni_insufficienti",
     "eligibility_specific_requirements": [],
     "eligibility_specific_unchecked": 0,
-    "first_seen": "2026-11-21T13:43:37+00:00",
+    "first_seen": "2026-11-22T13:36:51+00:00",
     "funded_activities_excerpt": null,
     "funding_status": "DA VERIFICARE",
-    "id": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "id": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026",
     "issuer": "Vol.To",
-    "last_seen": "2026-11-21T13:43:37+00:00",
-    "link_checked_at": "2026-11-21T13:43:37+00:00",
+    "last_seen": "2026-11-22T13:36:51+00:00",
+    "link_checked_at": "2026-11-22T13:36:51+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
     "opportunity_type": "finanziamento potenziale",
-    "programme_objectives_excerpt": null,
+    "programme_objectives_excerpt": "L’Amministrazione comunale di Nichelino intende proseguire nell’impegno per la qualità inclusiva del sistema di welfare del territorio, sostenendo con un contributo economico le associazioni che agiscono senza alcun scopo di lucro per la realizzazione di attività e progetti di carattere esclusivamente sociale attraverso azioni di sostegno ai cittadini in stato di bisogno e fragilità, di promozione della solidarietà e dell’inclusione sociale, di aggregazione sociale e contrasto alla solitudine. Le iniziative ammesse a finanziamento sono:",
     "project_ideas": [
-      "Incontri e percorsi di divulgazione culturale per ampliare i pubblici",
-      "Workshop, masterclass e preparazione all'opera in collaborazione con teatri",
-      "Progetti culturali con scuole, teatri, enti locali o altri partner"
+      "Eventi di divulgazione, laboratori partecipativi e progetti culturali inclusivi"
     ],
     "project_potential": "valutazione al censimento",
-    "public_id": 147,
+    "public_id": 276,
     "public_id_aliases": [],
-    "relevance": 55,
+    "relevance": 40,
     "relevance_basis": "corrispondenza tematica preliminare sul titolo",
     "requirement_coverage_status": "senza_requisiti_confrontabili",
     "requirement_evidence_count": 0,
-    "requirements_excerpt": "I candidati devono aprire un account sull’ APPLICATION PORTAL del GOETHE-INSTITUT e da lì compilare la domanda online allegando i documenti richiesti.",
-    "resolved_url": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "requirements_excerpt": null,
+    "resolved_url": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026/",
     "rolling_guidance": null,
     "rolling_guidance_source": null,
     "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
-    "score_explanation": "Coerenza con accesso e promozione della cultura (titolo); Coerenza con attività culturali e spettacolo dal vivo (contenuto della scheda); Possibilità progettuale in partenariato (titolo).",
+    "score_explanation": "Coerenza con partecipazione territoriale e inclusione (titolo).",
     "score_explanation_basis": "titolo e contenuti della scheda consultata",
     "source_id": "volto",
     "source_open_confirmed": false,
@@ -380,11 +113,130 @@
     "status": "non verificato",
     "status_basis": "stato non confermato",
     "themes": [
-      "cultura e spettacolo"
+      "accessibilità e partecipazione"
     ],
-    "title": "Culture Moves Europe: bando per la mobilità individuale di artisti e professionisti della cultura Il nuovo bando nell’ambito di Culture Moves Europe, finanziato dal programma Europa Creativa e gestito dal Goethe Insitut,",
+    "title": "Bando comunale per la concessione di contributi economici alle associazioni per attività e progetti di inclusione sociale – Anno 2026 Scadenza: 30 Novembre 2026 Ente promotore: Città di Nichelino Territorio: Nichelino Am",
     "type_reason": "Il titolo contiene indicatori di contributo o finanziamento; verifica necessaria",
-    "url": "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2",
+    "url": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026/",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Evidenze di fonte",
+    "adequacy_label": "MEDIA",
+    "adequacy_level": 2,
+    "adequacy_reason": "Attività finanziabili o beneficiari non documentati in modo completo",
+    "adequacy_verification_flags": [],
+    "admission_reasons": [
+      "stato_candidatura_non_verificato",
+      "evidenza_mancante:funded_activities_excerpt",
+      "evidenza_mancante:requirements_excerpt",
+      "fonte_ente_erogatore_non_verificata"
+    ],
+    "amount": null,
+    "amount_kind": null,
+    "amount_source": null,
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 0,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "fonte ufficiale: destinatari, finalità del bando",
+    "assessment_checked_at": "2026-11-22T13:36:51+00:00",
+    "assessment_confidence": "limitata",
+    "assessment_document_diagnostics": null,
+    "assessment_document_discrepancies": null,
+    "assessment_document_issues": [],
+    "assessment_evidence_count": 2,
+    "assessment_evidence_source": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026/",
+    "assessment_field_sources": null,
+    "assessment_gaps": [
+      "Attività finanziabili non documentate.",
+      "Vincoli di candidatura non documentati."
+    ],
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_method": "estrazione automatica di evidenze",
+    "assessment_missing_fields": [
+      "Attività finanziabili",
+      "Vincoli e requisiti"
+    ],
+    "assessment_opening_note": "L'affinità non implica ammissibilità; senza evidenza ufficiale lo stato di apertura non è confermato.",
+    "assessment_reason": "Dalla documentazione consultata emergono: comunità, inclusione e partecipazione.",
+    "assessment_review_status": "PARZIALE",
+    "assessment_source": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026/",
+    "beneficiaries_excerpt": "Soggetti ammissibili — I beneficiari del contributo regionale sono le Organizzazioni di Volontariato di Protezione Civile, iscritte all’Elenco Territoriale della Regione Piemonte e nello specifico:",
+    "beneficiaries_source": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026/",
+    "closure_confirmed": false,
+    "deadline": "2026-12-20",
+    "deadline_source": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026/",
+    "deadline_verified_at": "2026-11-22T13:41:03+00:00",
+    "detail_attempted_at": "2026-11-22T13:36:51+00:00",
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-22T13:41:03+00:00",
+    "detail_version": 9,
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026/"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026/"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [],
+    "eligibility_specific_unchecked": 0,
+    "first_seen": "2026-11-22T13:36:51+00:00",
+    "funded_activities_excerpt": null,
+    "funding_status": "DA VERIFICARE",
+    "id": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026",
+    "issuer": "Vol.To",
+    "last_seen": "2026-11-22T13:36:51+00:00",
+    "link_checked_at": "2026-11-22T13:36:51+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opportunity_type": "finanziamento potenziale",
+    "programme_objectives_excerpt": "Il bando intende sostenere e incentivare le attività delle Associazioni di Volontariato di primo livello e dei Gruppi Comunali/intercomunali di protezione civile (questi ultimi per il tramite degli Enti Locali di appartenenza), iscritti all’Elenco Territoriale Regionale, con l’obiettivo di migliorarne l’operatività mediante l’acquisizione di materiali, mezzi e dotazioni, per la salvaguardia della popolazione, dei beni, degli animali, degli insediamenti e dell’ambiente dai danni o dal pericolo incombente derivanti da calamità naturali, catastrofi o altri eventi calamitosi. I progetti dovranno rientrare in uno dei tre assi:",
+    "project_ideas": [
+      "Eventi di divulgazione, laboratori partecipativi e progetti culturali inclusivi"
+    ],
+    "project_potential": "valutazione al censimento",
+    "public_id": 277,
+    "public_id_aliases": [],
+    "relevance": 20,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "senza_requisiti_confrontabili",
+    "requirement_evidence_count": 0,
+    "requirements_excerpt": null,
+    "resolved_url": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026/",
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Coerenza con partecipazione territoriale e inclusione (titolo).",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "volto",
+    "source_open_confirmed": false,
+    "source_url": "https://volontariatotorino.it/bandi/",
+    "status": "non verificato",
+    "status_basis": "stato non confermato",
+    "themes": [],
+    "title": "Bando contributi alle OO.VV. di Protezione Civile - Anno 2026 Scadenza: 20 Dicembre 2026 Ente promotore: Regione Piemonte Territorio: Piemonte Ambito: Protezione Civile",
+    "type_reason": "Il titolo contiene indicatori di contributo o finanziamento; verifica necessaria",
+    "url": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026/",
     "verified": false
   }
 ]
