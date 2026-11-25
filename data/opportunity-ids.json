@@ -41,7 +41,10 @@
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/sostegno-progetti-bilinguismo-italiano-lis-2026-2027": 273,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/sostegno-progetti-favore-dei-minori-vittime-violenza-assistita-azione-5": 27,
     "https://bandi.regione.piemonte.it/crowdfunding": 28,
+    "https://bandi.regione.piemonte.it/gare-appalto/avviso-consultazione-preliminare-mercato-verifica-infungibilita-inerente-al-servizio-gestione": 301,
     "https://bandi.regione.piemonte.it/gare-appalto/avviso-gara-lassegnazione-affitto-fondi-rustici-buttigliera-alta-rosta-to": 270,
+    "https://bandi.regione.piemonte.it/gare-appalto/lavori-interventi-sistemazione-idraulica-fiume-sesia-frazione-quare-comune-campertogno-vc-avviso": 302,
+    "https://bandi.regione.piemonte.it/gare-appalto/lavori-ripristino-difesa-spondale-movimentazione-materiale-lapideo-sul-torrente-elvo-nel-comune": 303,
     "https://bandi.regione.piemonte.it/nomine/avviso-nomina-n-4-2026-agenzia-accoglienza-promozione-turistica-locale-turismo-torino-provincia-scrl": 253,
     "https://bandi.regione.piemonte.it/pre-informazione-fondi-ue": 29,
     "https://bandi.regione.piemonte.it/pre-informazione-fondi-ue/sistema-regionale-standard-formativi-contributo-funzionamento-commissioni-tecniche": 30,
@@ -83,6 +86,7 @@
     "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2024-pece": 61,
     "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2025-coop": 62,
     "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2025-coop-ua": 63,
+    "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2025-lit": 304,
     "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2026-eu-heritage-label": 64,
     "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2026-perform-eu": 65,
     "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2021-codev": 66,
@@ -184,6 +188,7 @@
     "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente": 255,
     "https://infobandi.csvnet.it/culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2/?utm_source=rss&utm_medium=rss&utm_campaign=culture-moves-europe-bando-per-la-mobilita-individuale-di-artisti-e-professionisti-della-cultura-2": 147,
     "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026": 148,
+    "https://infobandi.csvnet.it/premio-edufin-index-2026-2027-donne-che-contano/?utm_source=rss&utm_medium=rss&utm_campaign=premio-edufin-index-2026-2027-donne-che-contano": 305,
     "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue": 149,
     "https://interreg-alcotra.eu/it/bandi": 150,
     "https://interreg-alcotra.eu/it/bando-la-selezione-dei-progetti-singoli-dei-piani-territoriali-integrati-piter-2021-2027": 151,
@@ -212,6 +217,7 @@
     "https://spettacolo.cultura.gov.it/progetti-speciali": 174,
     "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026": 276,
     "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026": 277,
+    "https://volontariatotorino.it/bandi/bando-per-luso-responsabile-e-sicuro-dellia-nelleconomia-sociale": 306,
     "https://volontariatotorino.it/bandi/contributi-a-sostegno-di-iniziative-rilevanti-ai-fini-della-promozione-delleconomia-provinciale-anno-2027": 274,
     "https://volontariatotorino.it/bandi/dora-in-avanti-bando-per-lo-sviluppo-delle-comunita-a-torino-nord": 175,
     "https://volontariatotorino.it/bandi/educazione-alla-cittadinanza-globale-per-la-sostenibilita-e-la-solidarieta-internazionale-bando-2026": 176,
@@ -301,6 +307,6 @@
     "https://www.fondazionecrt.it/vivomeglio-dalla-poesia-alleconomia-circolare-al-via-117-progetti-per-linclusione": 250,
     "https://www.regione.piemonte.it/web/bandi-per-enti-locali": 251
   },
-  "next_id": 301,
+  "next_id": 307,
   "version": 1
 }
