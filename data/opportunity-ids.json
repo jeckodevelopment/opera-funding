@@ -26,11 +26,13 @@
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/avviso-pubblico-finanziamento-alle-associazioni-turistiche-pro-loco-piemonte-anno-2026": 19,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/bando-contributi-alle-oovv-protezione-civile-anno-2026": 275,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/bando-educazione-alla-cittadinanza-globale-sostenibilita-solidarieta-internazionale-anno-2026": 299,
+    "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-insediamento-giovani-agricoltori-sre01-bando-2026": 307,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-investimenti-produttivi-agricoli-competitivita-aziende-agricole-rivolto-agli": 20,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-pagamento-compensativo-zone-forestali-natura-2000-src02-bando-campagna-2026": 21,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-reti-antigrandine-srd06-intervento-121-bando-2026": 22,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/formazione-individuale-continua-permanente-2023-2027-avviso-aggiornato": 256,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-142016-art-20-contributi-iniziative-comunicazione-promo-pubblicita-nellambito-manifestazioni": 23,
+    "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026": 308,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/mercati-rionali-concessione-contributi-sostegno-progetti-investimento": 269,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/patrimonio-linguistico-dialettale-piemonte-avviso-pubblico-finanziamento-invito-alla-presentazione": 24,
     "https://bandi.regione.piemonte.it/contributi-finanziamenti/presentazione-progetti-invecchiamento-attivo-parte-ambiti-territoriali-sociali": 25,
@@ -46,6 +48,7 @@
     "https://bandi.regione.piemonte.it/gare-appalto/lavori-interventi-sistemazione-idraulica-fiume-sesia-frazione-quare-comune-campertogno-vc-avviso": 302,
     "https://bandi.regione.piemonte.it/gare-appalto/lavori-ripristino-difesa-spondale-movimentazione-materiale-lapideo-sul-torrente-elvo-nel-comune": 303,
     "https://bandi.regione.piemonte.it/nomine/avviso-nomina-n-4-2026-agenzia-accoglienza-promozione-turistica-locale-turismo-torino-provincia-scrl": 253,
+    "https://bandi.regione.piemonte.it/nomine/osservatorio-regionale-lascolto-contrasto-allabbandono-sociale-nomina-otto-componenti": 309,
     "https://bandi.regione.piemonte.it/pre-informazione-fondi-ue": 29,
     "https://bandi.regione.piemonte.it/pre-informazione-fondi-ue/sistema-regionale-standard-formativi-contributo-funzionamento-commissioni-tecniche": 30,
     "https://culture.ec.europa.eu/cultural-heritage/funding-opportunities-for-cultural-heritage": 31,
@@ -201,6 +204,7 @@
     "https://interreg-alcotra.eu/it/quarto-bando-progetti-singoli-finestra-1-progetti-maturi": 158,
     "https://interreg-alcotra.eu/it/secondo-bando-la-selezione-di-microprogetti": 159,
     "https://interreg-alcotra.eu/it/terzo-bando-progetti-singoli": 160,
+    "https://spettacolo.cultura.gov.it/bando-carnevali-storici-2026-assegnazione-dei-contributi-di-cui-al-d-m-4-aprile-2025-n-111": 310,
     "https://spettacolo.cultura.gov.it/bando-festival-cori-e-bande-2026-assegnazione-dei-contributi": 161,
     "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo": 162,
     "https://spettacolo.cultura.gov.it/bando-per-la-promozione-della-musica-jazz-2027-assegnazione-contributi": 163,
@@ -307,6 +311,6 @@
     "https://www.fondazionecrt.it/vivomeglio-dalla-poesia-alleconomia-circolare-al-via-117-progetti-per-linclusione": 250,
     "https://www.regione.piemonte.it/web/bandi-per-enti-locali": 251
   },
-  "next_id": 307,
+  "next_id": 311,
   "version": 1
 }

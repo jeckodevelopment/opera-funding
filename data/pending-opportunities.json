@@ -3,6 +3,533 @@
     "adequacy_basis": "Revisione documentale individuale",
     "adequacy_label": "MEDIA",
     "adequacy_level": 2,
+    "adequacy_reason": "I documenti riportano formulazioni differenti su beneficiari o requisiti: confronto delle fonti necessario",
+    "adequacy_verification_flags": [
+      "fonti_requisiti_da_confrontare"
+    ],
+    "admission_reasons": [
+      "stato_candidatura_non_verificato",
+      "documenti_con_anomalie"
+    ],
+    "amount": null,
+    "amount_kind": null,
+    "amount_source": null,
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 1,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [
+      {
+        "category": "territorio",
+        "reason": "Sede dichiarata: Torino, Piemonte; verificare se la regola riguarda sede legale, operativa o sede del partner",
+        "requirement": "Enti non profit operanti nella cultura con sede legale o operativa in Piemonte, Liguria o Valle d'Aosta ed enti pubblici per propri servizi culturali.",
+        "source": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+        "status": "da_verificare"
+      }
+    ],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "Revisione documentale della fonte indicata nella scheda",
+    "assessment_checked_at": "2026-11-19",
+    "assessment_confidence": "documentale — fonte consultata; ammissibilità da verificare",
+    "assessment_document_diagnostics": [
+      {
+        "status": "evidenze_estratte",
+        "url": "https://www.compagniadisanpaolo.it/wp-content/uploads/CSP_Buoni-formazione-per-la-cultura_20_042026.pdf"
+      },
+      {
+        "status": "evidenze_estratte",
+        "url": "https://www.compagniadisanpaolo.it/wp-content/uploads/Allegato_A-1.pdf"
+      }
+    ],
+    "assessment_document_discrepancies": [
+      {
+        "field": "programme_objectives_excerpt",
+        "first_source": "https://www.compagniadisanpaolo.it/wp-content/uploads/CSP_Buoni-formazione-per-la-cultura_20_042026.pdf",
+        "other_source": "https://www.compagniadisanpaolo.it/wp-content/uploads/Allegato_A-1.pdf",
+        "status": "testi_diversi_da_verificare"
+      },
+      {
+        "field": "requirements_excerpt",
+        "first_source": "https://www.compagniadisanpaolo.it/wp-content/uploads/CSP_Buoni-formazione-per-la-cultura_20_042026.pdf",
+        "other_source": "https://www.compagniadisanpaolo.it/wp-content/uploads/Allegato_A-1.pdf",
+        "status": "testi_diversi_da_verificare"
+      },
+      {
+        "field": "beneficiaries_excerpt",
+        "first_source": "https://www.compagniadisanpaolo.it/wp-content/uploads/CSP_Buoni-formazione-per-la-cultura_20_042026.pdf",
+        "other_source": "https://www.compagniadisanpaolo.it/wp-content/uploads/Allegato_A-1.pdf",
+        "status": "testi_diversi_da_verificare"
+      }
+    ],
+    "assessment_document_issues": [
+      {
+        "field": "programme_objectives_excerpt",
+        "reason": "testi_diversi_da_verificare",
+        "source": "https://www.compagniadisanpaolo.it/wp-content/uploads/Allegato_A-1.pdf"
+      },
+      {
+        "field": "requirements_excerpt",
+        "reason": "testi_diversi_da_verificare",
+        "source": "https://www.compagniadisanpaolo.it/wp-content/uploads/Allegato_A-1.pdf"
+      },
+      {
+        "field": "beneficiaries_excerpt",
+        "reason": "testi_diversi_da_verificare",
+        "source": "https://www.compagniadisanpaolo.it/wp-content/uploads/Allegato_A-1.pdf"
+      }
+    ],
+    "assessment_evidence_count": 4,
+    "assessment_evidence_source": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "assessment_field_sources": {
+      "requirements_excerpt": "https://www.compagniadisanpaolo.it/wp-content/uploads/CSP_Buoni-formazione-per-la-cultura_20_042026.pdf"
+    },
+    "assessment_gaps": [
+      "Linea A non percorribile nel novembre 2026 per l'anzianità dell'associazione: nessuno può esservi attivo da almeno un anno.",
+      "Verificare l'esistenza effettiva di dipendenti neoassunti per linea B; non è documentata nel profilo.",
+      "Linea C ipotizzabile solo predisponendo un tirocinio extracurricolare regolare, con giovane eleggibile, promotore e budget aggiuntivo, non il rimborso obbligatorio.",
+      "Per candidarsi su ROL servono destinatari nominativi, analisi fabbisogni, relazione formativa dettagliata e piano economico; senza questi elementi il progetto non è operativo."
+    ],
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_method": "revisione individuale della fonte",
+    "assessment_missing_fields": [],
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
+    "assessment_reason": "Soggettivamente coerente come ente culturale non profit con sede piemontese, ma finanzia esclusivamente formazione professionale di lavoratori e collaboratori contrattualizzati o tirocini extracurricolari qualificati; Opera+ non ha documentato personale o tirocinanti idonei. Linea A richiede almeno un anno presso l'ente, temporalmente impossibile per un ente costituito nel 2026 alla data attuale. Linea B richiede neoassunti entro un anno; linea C tirocinanti con soggetto promotore. Giudizio MEDIA condizionato a un progetto concreto, senza considerare il corso Rigoletto rivolto al pubblico come attività finanziabile.",
+    "assessment_review_status": "REVISIONE DOCUMENTALE",
+    "assessment_reviewed_at": "2026-11-19",
+    "assessment_source": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "beneficiaries_excerpt": "Enti non profit operanti nella cultura con sede legale o operativa in Piemonte, Liguria o Valle d'Aosta ed enti pubblici per propri servizi culturali. I destinatari devono essere dipendenti, soci o collaboratori continuativi contrattualizzati dall'ente o giovani tirocinanti in percorsi previsti.",
+    "beneficiaries_source": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "catalog_fingerprint": "fd1a84d1d18c9c1fc430e809a5b3b2b50a43497b0c1ce256b41b87464640ab6c",
+    "catalog_tracking_version": 3,
+    "catalog_updated_at": "2026-11-18T20:19:28+00:00",
+    "closure_confirmed": false,
+    "deadline": null,
+    "deadline_verified_at": "2026-11-26T15:47:54+00:00",
+    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-25T16:05:43+00:00",
+    "detail_version": 9,
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/"
+      },
+      {
+        "label": "Scarica il documento",
+        "url": "https://www.compagniadisanpaolo.it/wp-content/uploads/CSP_Buoni-formazione-per-la-cultura_20_042026.pdf"
+      },
+      {
+        "label": "Scarica il documento",
+        "url": "https://www.compagniadisanpaolo.it/wp-content/uploads/Allegato_A-1.pdf"
+      },
+      {
+        "label": "Scarica il documento",
+        "url": "https://www.compagniadisanpaolo.it/wp-content/uploads/03-Learning-LAB_30-06.pdf"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Confrontare la categoria dei beneficiari con lo statuto e i requisiti di Opera+",
+      "Verificare la disponibilità attuale dei fondi e le condizioni della procedura a sportello",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+      "https://www.compagniadisanpaolo.it/wp-content/uploads/CSP_Buoni-formazione-per-la-cultura_20_042026.pdf"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [
+      {
+        "category": "territorio",
+        "excerpt": "Enti non profit operanti nella cultura con sede legale o operativa in Piemonte, Liguria o Valle d'Aosta ed enti pubblici per propri servizi culturali.",
+        "field": "beneficiaries_excerpt",
+        "source": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+        "status": "requisito_documentato_da_verificare"
+      }
+    ],
+    "eligibility_specific_unchecked": 1,
+    "first_seen": "2026-11-16T18:50:43+00:00",
+    "funded_activities_excerpt": "Voucher fino a 10.000 euro, con contributo fino al 100% per percorsi di formazione qualificante di dipendenti e collaboratori continuativi degli enti culturali e tirocini extracurricolari di giovani; non per formazione amatoriale o destinatari generici.",
+    "funder_id": "sanpaolo",
+    "funding_status": "DA VERIFICARE",
+    "id": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura",
+    "issuer": "Fondazione Compagnia di San Paolo",
+    "last_seen": "2026-11-16T19:29:54+00:00",
+    "link_checked_at": "2026-11-16T19:29:54+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opportunity_type": "non classificato",
+    "program_id": "sanpaolo-contributi",
+    "programme_objectives_excerpt": "Sviluppo delle competenze professionali dei lavoratori culturali e sostegno agli enti nella formazione del proprio personale e nell'avvio delle carriere dei giovani.",
+    "project_ideas": [
+      "Incontri e percorsi di divulgazione culturale per ampliare i pubblici",
+      "Laboratori nelle scuole, percorsi formativi e progetti educativi con partner",
+      "Workshop, masterclass e preparazione all'opera in collaborazione con teatri"
+    ],
+    "project_potential": "da valutare",
+    "public_id": 183,
+    "public_id_aliases": [],
+    "relevance": 20,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "confronti_documentati",
+    "requirement_evidence_count": 1,
+    "requirements_excerpt": "Strumento a sportello sino a esaurimento fondi, domanda ROL modulo 'Buoni formazione per la cultura', una per ente. Destinatari e posizioni individuati, fabbisogni, relazione descrittiva con programma e tempi e piano economico obbligatori. Linea A: lavoratori/collaboratori attivi da almeno un anno (impossibile oggi per un ente costituito nel 2026). Linea B: dipendenti neoassunti entro un anno. Linea C: tirocinio extracurricolare con promotore, giovani con studi terminati da non oltre 12 mesi; rimborso obbligatorio non finanziabile. Interventi dopo il 30/04/2026 e conclusi entro settembre 2027. Contributo 2.000-10.000 EUR, sino al 100% delle spese; cofinanziamento criterio preferenziale, non obbligo generale.",
+    "resolved_url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "reviewed_official_at": "2026-11-17",
+    "reviewed_official_basis": "official_rolling_application_process",
+    "rolling_confirmed": false,
+    "rolling_evidence": null,
+    "rolling_guidance": "Possibile candidatura a sportello; verificare nel bando ufficiale le condizioni di apertura e disponibilità dei fondi.",
+    "rolling_guidance_source": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Coerenza con accesso e promozione della cultura (titolo); Coerenza con didattica e attività culturali nelle scuole (titolo); Coerenza con attività culturali e spettacolo dal vivo (contenuto della scheda).",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "sanpaolo",
+    "source_open_confirmed": false,
+    "source_url": "https://www.compagniadisanpaolo.it/it/cosa-facciamo/contributi/",
+    "status": "non verificato",
+    "status_basis": "Richieste su base continuativa nel 2026; stato basato su verifica ufficiale datata",
+    "status_evidence": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "themes": [],
+    "title": "Buoni formazione per la cultura",
+    "type_reason": "Informazioni insufficienti per determinare la tipologia",
+    "url": "https://www.compagniadisanpaolo.it/it/contributi/buoni-formazione-per-la-cultura/",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Revisione documentale individuale",
+    "adequacy_label": "BASSA",
+    "adequacy_level": 1,
+    "adequacy_reason": "La call CULT finanzia traduzione, pubblicazione, distribuzione e promozione transnazionale di almeno cinque opere letterarie europee presso operatori del settore editoriale. La semplice riproduzione di libretti d'opera o la divulgazione del patrimonio lirico senza una catena editoriale, un piano di traduzione e distribuzione di opere letterarie non corrisponde al programma di finanziamento Opera+. Un progetto editoriale internazionale distinto richiederebbe partner e capacità specifiche.",
+    "adequacy_verification_flags": [],
+    "admission_reasons": [
+      "stato_candidatura_non_verificato"
+    ],
+    "amount": null,
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 2,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [
+      {
+        "category": "capacita_operativa",
+        "reason": "Confronto non conclusivo: requisito, profilo o documentazione insufficienti",
+        "requirement": "Progetto editoriale di traduzione, pubblicazione, distribuzione e promozione di opere letterarie europee in traduzione, non semplici dispense formative.",
+        "source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+        "status": "da_verificare"
+      },
+      {
+        "category": "natura_giuridica",
+        "reason": "Forma giuridica dichiarata: associazione culturale non riconosciuta; verificare la categoria ammessa e gli eventuali registri",
+        "requirement": "Capacità operativa documentabile nel settore editoriale e della filiera del libro.",
+        "source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+        "status": "da_verificare"
+      }
+    ],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "Revisione documentale della fonte indicata nella scheda",
+    "assessment_checked_at": "2026-11-19",
+    "assessment_confidence": "documentale — fonte consultata; ammissibilità da verificare",
+    "assessment_document_issues": [],
+    "assessment_evidence_count": 4,
+    "assessment_evidence_source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+    "assessment_gaps": [
+      "Verificare il documento della call 2027 prima di considerare un progetto editoriale completamente distinto dall'e-learning.",
+      "La produzione di PDF divulgativi dei libretti non dimostra attività editoriale di traduzione e distribuzione internazionale di almeno cinque opere."
+    ],
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_method": "revisione individuale della fonte",
+    "assessment_missing_fields": [],
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
+    "assessment_reason": "La call CULT finanzia traduzione, pubblicazione, distribuzione e promozione transnazionale di almeno cinque opere letterarie europee presso operatori del settore editoriale. La semplice riproduzione di libretti d'opera o la divulgazione del patrimonio lirico senza una catena editoriale, un piano di traduzione e distribuzione di opere letterarie non corrisponde al programma di finanziamento Opera+. Un progetto editoriale internazionale distinto richiederebbe partner e capacità specifiche.",
+    "assessment_review_status": "REVISIONE DOCUMENTALE",
+    "assessment_reviewed_at": "2026-11-19",
+    "assessment_source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+    "beneficiaries_excerpt": "Enti giuridici ammissibili nei paesi Creative Europe che operano nel settore della pubblicazione e del libro, singoli o consorzi.",
+    "closure_confirmed": false,
+    "deadline": "2027-01-27",
+    "deadline_source": "https://culture.ec.europa.eu/whats-new/news/creative-europe-opens-2027-call-for-literary-translation-and-promotion",
+    "deadline_verified_at": "2026-11-26T15:47:54+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
+    "detail_basis": "Pagina ufficiale e allegati disponibili consultati",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-26T15:47:54+00:00",
+    "detail_version": 9,
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5"
+      },
+      {
+        "label": "Fonte ufficiale della verifica",
+        "url": "https://culture.ec.europa.eu/whats-new/news/creative-europe-opens-2027-call-for-literary-translation-and-promotion"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Progetto editoriale di traduzione, pubblicazione, distribuzione e promozione di opere letterarie europee in traduzione, non semplici dispense formative.",
+        "field": "revisione_documentale",
+        "source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+        "status": "requisito_documentato_da_verificare"
+      },
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Capacità operativa documentabile nel settore editoriale e della filiera del libro.",
+        "field": "revisione_documentale",
+        "source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+        "status": "requisito_documentato_da_verificare"
+      }
+    ],
+    "eligibility_specific_unchecked": 2,
+    "first_seen": "2026-11-16T20:36:36+00:00",
+    "funded_activities_excerpt": "Traduzione, pubblicazione, distribuzione e promozione di almeno 5 opere letterarie europee all'interno di una strategia editoriale e distributiva.",
+    "funder_id": "eucreative",
+    "funding_status": "DA VERIFICARE",
+    "id": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+    "issuer": "Creative Europe",
+    "last_seen": "2026-11-26T15:47:54+00:00",
+    "link_checked_at": "2026-11-26T15:47:54+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opportunity_type": "non classificato",
+    "program_id": "creative-europe-culture",
+    "programme_objectives_excerpt": "Circolazione transnazionale e diversità della letteratura europea, promozione di opere letterarie e professionalizzazione della filiera della traduzione e dell'editoria.",
+    "project_ideas": [
+      "Progetti culturali con scuole, teatri, enti locali o altri partner"
+    ],
+    "project_potential": "da valutare",
+    "public_id": 34,
+    "public_id_aliases": [],
+    "relevance": 20,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "confronti_documentati",
+    "requirement_evidence_count": 2,
+    "requirements_excerpt": "CREA-CULT-2027-LIT: attività nel settore editoriale, almeno cinque opere letterarie europee da tradurre/pubblicare/promuovere, cofinanziamento europeo massimo 60% e documentazione della filiera editoriale.",
+    "resolved_url": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+    "reviewed_official_at": "2026-11-17",
+    "reviewed_official_basis": "official_active_application_window",
+    "reviewed_requirements": [
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Progetto editoriale di traduzione, pubblicazione, distribuzione e promozione di opere letterarie europee in traduzione, non semplici dispense formative.",
+        "source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5"
+      },
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Capacità operativa documentabile nel settore editoriale e della filiera del libro.",
+        "source": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5"
+      }
+    ],
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Possibilità progettuale in partenariato (titolo).",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "eucreative",
+    "source_open_confirmed": false,
+    "source_url": "https://culture.ec.europa.eu/funding/calls",
+    "status": "non verificato",
+    "status_basis": "Apertura dichiarata da ente o portale istituzionale; verifica valida per periodo limitato",
+    "status_evidence": "https://culture.ec.europa.eu/whats-new/news/creative-europe-opens-2027-call-for-literary-translation-and-promotion",
+    "summary": "The action will support around 40 projects to translate, publish, distribute and promote European literary works, implemented by a single entity or a consortium of organisations.",
+    "themes": [],
+    "title": "Call: Circulation of European literary works 2027",
+    "type_reason": "Informazioni insufficienti per determinare la tipologia",
+    "url": "https://culture.ec.europa.eu/funding/calls/circulation-of-european-literary-works-5",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Revisione documentale individuale",
+    "adequacy_label": "BASSA",
+    "adequacy_level": 1,
+    "adequacy_reason": "European Co-development finanzia la coproduzione e lo sviluppo di un'opera audiovisiva commerciale tra società europee di produzione indipendente di almeno due diversi Paesi MEDIA, con accordo di cosviluppo. Opera+ non è una società di produzione audiovisiva e non possiede tali accordi: lo sviluppo di un corso lirico non soddisfa il perimetro della call.",
+    "adequacy_verification_flags": [],
+    "admission_reasons": [
+      "stato_candidatura_non_verificato"
+    ],
+    "amount": null,
+    "amount_kind": null,
+    "amount_source": null,
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 2,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [
+      {
+        "category": "natura_giuridica",
+        "reason": "Forma giuridica dichiarata: associazione culturale non riconosciuta; verificare la categoria ammessa e gli eventuali registri",
+        "requirement": "Società europee indipendenti di produzione audiovisiva ammissibili, non generici produttori di video didattici.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+        "status": "da_verificare"
+      },
+      {
+        "category": "partenariato",
+        "reason": "Disponibilità dichiarata al partenariato, ma partner e accordi idonei non ancora confermati",
+        "requirement": "Accordo effettivo di cosviluppo con un'altra società di produzione indipendente di un diverso paese MEDIA.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+        "status": "da_verificare"
+      }
+    ],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "Revisione documentale della fonte indicata nella scheda",
+    "assessment_checked_at": "2026-11-19",
+    "assessment_confidence": "documentale — fonte consultata; ammissibilità da verificare",
+    "assessment_document_issues": [],
+    "assessment_evidence_count": 4,
+    "assessment_evidence_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "assessment_gaps": [
+      "Non ritenere ammissibile Opera+ sulla sola base del contenuto culturale dei corsi o della disponibilità a collaborare.",
+      "Verificare condizioni ufficiali solo nell'ipotesi di un progetto con imprese audiovisive effettivamente ammissibili."
+    ],
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_method": "revisione individuale della fonte",
+    "assessment_missing_fields": [],
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
+    "assessment_reason": "European Co-development finanzia la coproduzione e lo sviluppo di un'opera audiovisiva commerciale tra società europee di produzione indipendente di almeno due diversi Paesi MEDIA, con accordo di cosviluppo. Opera+ non è una società di produzione audiovisiva e non possiede tali accordi: lo sviluppo di un corso lirico non soddisfa il perimetro della call.",
+    "assessment_review_status": "REVISIONE DOCUMENTALE",
+    "assessment_reviewed_at": "2026-11-19",
+    "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "beneficiaries_excerpt": "Società europee indipendenti di produzione audiovisiva in consorzio di almeno due beneficiari di Paesi MEDIA differenti, con accordo di cosviluppo.",
+    "beneficiaries_source": null,
+    "catalog_fingerprint": "f48ff750dfe4b60eb2b5652688f786c10fa9d24a7e33b8b90e45ae13f033957d",
+    "catalog_tracking_version": 3,
+    "closure_confirmed": false,
+    "deadline": "2027-03-02",
+    "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "deadline_verified_at": "2026-11-26T15:47:54+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
+    "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
+    "detail_checked": false,
+    "detail_checked_at": "2026-11-18T11:46:53+00:00",
+    "detail_version": 8,
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Controllare se il partenariato è obbligatorio e con quali caratteristiche",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Società europee indipendenti di produzione audiovisiva ammissibili, non generici produttori di video didattici.",
+        "field": "revisione_documentale",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+        "status": "requisito_documentato_da_verificare"
+      },
+      {
+        "category": "partenariato",
+        "excerpt": "Accordo effettivo di cosviluppo con un'altra società di produzione indipendente di un diverso paese MEDIA.",
+        "field": "revisione_documentale",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+        "status": "requisito_documentato_da_verificare"
+      }
+    ],
+    "eligibility_specific_unchecked": 2,
+    "first_seen": "2026-11-16T21:56:03+00:00",
+    "funded_activities_excerpt": "Cosviluppo di un'opera di fiction, animazione o documentario creativo destinato a sale, televisione o piattaforme digitali.",
+    "funding_status": "DA VERIFICARE",
+    "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2027-codev",
+    "issuer": "European Commission – Creative Europe",
+    "last_seen": "2026-11-17T22:39:46+00:00",
+    "link_checked_at": "2026-11-16T23:29:11+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opening_date": "2026-09-30",
+    "opening_evidence": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "opportunity_type": "non classificato",
+    "programme_objectives_excerpt": "Sostenere la collaborazione tra società di produzione audiovisiva europee per lo sviluppo di opere con potenziale di sfruttamento commerciale internazionale.",
+    "project_ideas": [
+      "Progetti culturali con scuole, teatri, enti locali o altri partner"
+    ],
+    "project_potential": "da valutare",
+    "public_id": 114,
+    "public_id_aliases": [],
+    "relevance": 20,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "confronti_documentati",
+    "requirement_evidence_count": 2,
+    "requirements_excerpt": "CREA-MEDIA-2027-CODEV: consorzio di almeno due società di produzione indipendenti di Paesi diversi, accordo di cosviluppo firmato e opera audiovisiva commerciale ammissibile.",
+    "resolved_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "reviewed_official_at": "2026-11-17",
+    "reviewed_official_basis": "official_active_application_window",
+    "reviewed_requirements": [
+      {
+        "category": "natura_giuridica",
+        "excerpt": "Società europee indipendenti di produzione audiovisiva ammissibili, non generici produttori di video didattici.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV"
+      },
+      {
+        "category": "partenariato",
+        "excerpt": "Accordo effettivo di cosviluppo con un'altra società di produzione indipendente di un diverso paese MEDIA.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV"
+      }
+    ],
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "score_confidence": "bassa — analisi preliminare del titolo",
+    "score_explanation": "Possibilità progettuale in partenariato (titolo).",
+    "score_explanation_basis": "solo titolo",
+    "source_id": "eufunding",
+    "source_open_confirmed": false,
+    "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
+    "status": "aperto (metadati ufficiali UE)",
+    "status_basis": "Apertura dichiarata da ente o portale istituzionale; verifica valida per periodo limitato",
+    "status_evidence": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "summary": "The Funding and Tenders Portal is the single entry point (the Single Electronic Data Interchange Area) for applicants, contractors and experts in funding programmes and procurements managed by the European Commission.",
+    "themes": [],
+    "title": "European co-development",
+    "type_reason": "Informazioni insufficienti per determinare la tipologia",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2027-CODEV",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Revisione documentale individuale",
+    "adequacy_label": "MEDIA",
+    "adequacy_level": 2,
     "adequacy_reason": "Il Fondo di Beneficenza ammette enti senza fini di lucro legalmente costituiti, con sede in Italia e iscritti ad almeno un registro pubblico: il RUNTS non è obbligatorio in sé, secondo le FAQ ufficiali. Il codice fiscale di Opera+ non dimostra un'iscrizione a un registro pubblico; occorre verificare l'esistenza di un registro idoneo, statuto, atto costitutivo e procedure contabili. Sono pertinenti progetti con impatto sociale documentabile, non un corso di divulgazione privo di destinatari e risultati sociali definiti.",
     "adequacy_verification_flags": [],
     "admission_reasons": [
@@ -61,11 +588,11 @@
     "closure_confirmed": false,
     "deadline": "2026-12-31",
     "deadline_source": "https://group.intesasanpaolo.com/it/sociale/fondo-di-beneficenza/come-richiedere-un-contributo",
-    "deadline_verified_at": "2026-11-25T16:05:13+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:47:54+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:09:02+00:00",
+    "detail_checked_at": "2026-11-26T15:49:40+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -170,7 +697,7 @@
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: destinatari, finalità del bando",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": null,
     "assessment_document_discrepancies": null,
@@ -197,11 +724,11 @@
     "closure_confirmed": false,
     "deadline": "2026-11-30",
     "deadline_source": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026/",
-    "deadline_verified_at": "2026-11-25T16:08:29+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:49:07+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:08:29+00:00",
+    "detail_checked_at": "2026-11-26T15:49:07+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -226,7 +753,7 @@
     "funding_status": "DA VERIFICARE",
     "id": "https://volontariatotorino.it/bandi/bando-comunale-per-la-concessione-di-contributi-economici-alle-associazioni-per-attivita-e-progetti-di-inclusione-sociale-anno-2026",
     "issuer": "Vol.To",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-22T13:36:51+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -291,7 +818,7 @@
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: destinatari, finalità del bando",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": null,
     "assessment_document_discrepancies": null,
@@ -318,11 +845,11 @@
     "closure_confirmed": false,
     "deadline": "2026-12-20",
     "deadline_source": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026/",
-    "deadline_verified_at": "2026-11-25T16:08:47+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:49:19+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:08:47+00:00",
+    "detail_checked_at": "2026-11-26T15:49:19+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -347,7 +874,7 @@
     "funding_status": "DA VERIFICARE",
     "id": "https://volontariatotorino.it/bandi/bando-contributi-alle-oo-vv-di-protezione-civile-anno-2026",
     "issuer": "Vol.To",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-22T13:36:51+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -414,7 +941,7 @@
     "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: destinatari, finalità del bando, vincoli e condizioni",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": [
       {
@@ -477,11 +1004,11 @@
     "closure_confirmed": false,
     "deadline": "2027-01-07",
     "deadline_source": "https://bandi.comune.torino.it/avviso/avviso-pubblico-122026-linee-guida-concessione-ed-erogazione-contributi-ordinari",
-    "deadline_verified_at": "2026-11-25T16:07:16+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:48:53+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:07:16+00:00",
+    "detail_checked_at": "2026-11-26T15:48:53+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -515,7 +1042,7 @@
     "funding_status": "APERTO",
     "id": "https://bandi.comune.torino.it/avviso/avviso-pubblico-122026-linee-guida-concessione-ed-erogazione-contributi-ordinari",
     "issuer": "Città di Torino",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -583,7 +1110,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -605,7 +1132,7 @@
     "assessment_review_status": "FONTE NON SUFFICIENTE",
     "assessment_source": null,
     "deadline": null,
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_checked": false,
     "documents": [
       {
@@ -628,7 +1155,7 @@
     "funding_status": "DA VERIFICARE",
     "id": "https://www.comune.torino.it/servizi/istanza-contributo",
     "issuer": "Città di Torino",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -684,7 +1211,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -708,7 +1235,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2023-COOP",
     "deadline": "2023-03-09",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2023-COOP",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -731,7 +1258,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cult-2023-coop",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -762,7 +1289,7 @@
     "themes": [
       "cultura e spettacolo"
     ],
-    "title": "European Cooperation projects Small Scale",
+    "title": "European Cooperation projects Large Scale",
     "type_reason": "Informazioni insufficienti per determinare la tipologia",
     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2023-COOP",
     "verified": false
@@ -794,7 +1321,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-24T16:25:53+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -818,7 +1345,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2021-INNOVLAB",
     "deadline": "2021-10-05",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2021-INNOVLAB",
-    "detail_attempted_at": "2026-11-24T16:25:53+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -841,7 +1368,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2021-innovlab",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-24T16:25:53+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -903,7 +1430,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-24T16:25:53+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -927,7 +1454,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2022-MEDIALITERACY",
     "deadline": "2022-04-06",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2022-MEDIALITERACY",
-    "detail_attempted_at": "2026-11-24T16:25:53+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -950,7 +1477,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2022-medialiteracy",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-24T16:25:53+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -996,7 +1523,8 @@
       "evidenza_mancante:programme_objectives_excerpt",
       "evidenza_mancante:funded_activities_excerpt",
       "evidenza_mancante:beneficiaries_excerpt",
-      "evidenza_mancante:requirements_excerpt"
+      "evidenza_mancante:requirements_excerpt",
+      "provenienza_requisiti_mancante"
     ],
     "amount": null,
     "applicant_comparison_counts": {
@@ -1016,7 +1544,6 @@
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
-    "assessment_evidence_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-DEVVGIM",
     "assessment_gaps": [
       "Beneficiari ammessi non documentati.",
       "Attività finanziabili non documentate.",
@@ -1033,11 +1560,10 @@
     "assessment_opening_note": "L'affinità non implica ammissibilità; senza evidenza ufficiale lo stato di apertura non è confermato.",
     "assessment_reason": "Valutazione provvisoria basata soltanto sul titolo; il testo ufficiale non è ancora disponibile nel catalogo. La tipologia della procedura non è ancora accertata.",
     "assessment_review_status": "FONTE NON SUFFICIENTE",
-    "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-DEVVGIM",
+    "assessment_source": null,
     "deadline": "2023-03-01",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2023-DEVVGIM",
     "detail_attempted_at": "2026-11-25T16:05:13+00:00",
-    "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
       {
@@ -1059,7 +1585,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2023-devvgim",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -1121,7 +1647,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -1145,7 +1671,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-FILMDIST",
     "deadline": "2026-04-23",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-FILMDIST",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -1168,7 +1694,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2026-filmdist",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -1228,7 +1754,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-24T16:25:53+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -1252,7 +1778,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2021-JOURPART",
     "deadline": "2021-08-26",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CROSS-2021-JOURPART",
-    "detail_attempted_at": "2026-11-24T16:25:53+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -1276,7 +1802,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-cross-2021-jourpart",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-24T16:25:53+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -1336,7 +1862,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -1360,7 +1886,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-CINNET",
     "deadline": "2022-07-28",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-CINNET",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -1383,7 +1909,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2022-cinnet",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -1443,7 +1969,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -1467,7 +1993,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-MARKETNET",
     "deadline": "2022-06-28",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-MARKETNET",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -1490,7 +2016,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2022-marketnet",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -1550,7 +2076,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -1574,7 +2100,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-DEVMINISLATE",
     "deadline": "2026-09-22",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-DEVMINISLATE",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -1597,7 +2123,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2026-devminislate",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-24T16:25:53+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -1657,7 +2183,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -1681,7 +2207,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-CODEV",
     "deadline": "2026-02-25",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-CODEV",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -1704,7 +2230,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2026-codev",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-24T16:25:53+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -1764,7 +2290,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -1788,7 +2314,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-FILMOVE",
     "deadline": "2022-03-15",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-FILMOVE",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -1811,7 +2337,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2022-filmove",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-24T16:25:53+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -1869,7 +2395,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -1893,7 +2419,7 @@
     "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-FILMDIST",
     "deadline": "2022-04-05",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-FILMDIST",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
@@ -1916,7 +2442,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2022-filmdist",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-24T16:25:53+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -1960,8 +2486,7 @@
       "evidenza_mancante:programme_objectives_excerpt",
       "evidenza_mancante:funded_activities_excerpt",
       "evidenza_mancante:beneficiaries_excerpt",
-      "evidenza_mancante:requirements_excerpt",
-      "provenienza_requisiti_mancante"
+      "evidenza_mancante:requirements_excerpt"
     ],
     "amount": null,
     "applicant_comparison_counts": {
@@ -1977,10 +2502,11 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-24T16:25:53+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
+    "assessment_evidence_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-FILMSALES",
     "assessment_gaps": [
       "Beneficiari ammessi non documentati.",
       "Attività finanziabili non documentate.",
@@ -1997,10 +2523,11 @@
     "assessment_opening_note": "L'affinità non implica ammissibilità; senza evidenza ufficiale lo stato di apertura non è confermato.",
     "assessment_reason": "Valutazione provvisoria basata soltanto sul titolo; il testo ufficiale non è ancora disponibile nel catalogo. La tipologia della procedura non è ancora accertata.",
     "assessment_review_status": "FONTE NON SUFFICIENTE",
-    "assessment_source": null,
+    "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-FILMSALES",
     "deadline": "2022-06-14",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2022-FILMSALES",
-    "detail_attempted_at": "2026-11-24T16:25:53+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
+    "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
       {
@@ -2022,7 +2549,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2022-filmsales",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-24T16:25:53+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -2066,7 +2593,8 @@
       "evidenza_mancante:programme_objectives_excerpt",
       "evidenza_mancante:funded_activities_excerpt",
       "evidenza_mancante:beneficiaries_excerpt",
-      "evidenza_mancante:requirements_excerpt"
+      "evidenza_mancante:requirements_excerpt",
+      "provenienza_requisiti_mancante"
     ],
     "amount": null,
     "applicant_comparison_counts": {
@@ -2086,7 +2614,6 @@
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
-    "assessment_evidence_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-FILMDIST",
     "assessment_gaps": [
       "Beneficiari ammessi non documentati.",
       "Attività finanziabili non documentate.",
@@ -2103,11 +2630,10 @@
     "assessment_opening_note": "L'affinità non implica ammissibilità; senza evidenza ufficiale lo stato di apertura non è confermato.",
     "assessment_reason": "Valutazione provvisoria basata soltanto sul titolo; il testo ufficiale non è ancora disponibile nel catalogo. La tipologia della procedura non è ancora accertata.",
     "assessment_review_status": "FONTE NON SUFFICIENTE",
-    "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-FILMDIST",
+    "assessment_source": null,
     "deadline": "2025-04-24",
     "deadline_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2025-FILMDIST",
     "detail_attempted_at": "2026-11-25T16:05:13+00:00",
-    "detail_basis": "Topic non restituito dalla ricerca ufficiale UE",
     "detail_checked": false,
     "documents": [
       {
@@ -2129,7 +2655,7 @@
     "funding_status": "CHIUSO",
     "id": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/crea-media-2025-filmdist",
     "issuer": "European Commission – Creative Europe",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-24T16:25:53+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -2191,7 +2717,7 @@
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: destinatari, finalità del bando",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": [
       {
@@ -2243,11 +2769,11 @@
     "closure_confirmed": false,
     "deadline": "2027-01-11",
     "deadline_source": "https://bandi.comune.torino.it/sites/default/files/allegati/avvisi/2026/4817/Avviso.pdf",
-    "deadline_verified_at": "2026-11-25T16:07:13+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:48:50+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:07:13+00:00",
+    "detail_checked_at": "2026-11-26T15:48:50+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -2293,7 +2819,7 @@
     "funding_status": "DA VERIFICARE",
     "id": "https://bandi.comune.torino.it/avviso/primo-avviso-pubblico-linee-guida-concessione-ed-erogazione-contributi-ordinari",
     "issuer": "Città di Torino",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-24T16:25:53+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -2359,7 +2885,7 @@
     "application_path": "non_attiva",
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "assessment_basis": "solo titolo",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "bassa",
     "assessment_document_issues": [],
     "assessment_evidence_count": 0,
@@ -2381,7 +2907,7 @@
     "assessment_review_status": "FONTE NON SUFFICIENTE",
     "assessment_source": null,
     "deadline": null,
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_checked": false,
     "documents": [
       {
@@ -2404,7 +2930,7 @@
     "funding_status": "DA VERIFICARE",
     "id": "https://decentramento.comune.torino.it/circoscrizione8/servizi/istanza-contributo",
     "issuer": "Città di Torino",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-24T16:25:53+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -2467,7 +2993,7 @@
     "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: destinatari, contenuto della scheda",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": [
       {
@@ -2505,11 +3031,11 @@
     "closure_confirmed": false,
     "deadline": "2026-12-11",
     "deadline_source": "https://bandi.regione.piemonte.it/gare-appalto/avviso-consultazione-preliminare-mercato-verifica-infungibilita-inerente-al-servizio-gestione",
-    "deadline_verified_at": "2026-11-25T16:06:32+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:48:39+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:06:32+00:00",
+    "detail_checked_at": "2026-11-26T15:48:39+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -2604,7 +3130,7 @@
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: destinatari, vincoli e condizioni, contenuto della scheda",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": [
       {
@@ -2654,11 +3180,11 @@
     "closure_confirmed": true,
     "deadline": "2026-09-23",
     "deadline_source": "https://bandi.regione.piemonte.it/gare-appalto/lavori-interventi-sistemazione-idraulica-fiume-sesia-frazione-quare-comune-campertogno-vc-avviso",
-    "deadline_verified_at": "2026-11-25T16:06:35+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:48:23+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:06:35+00:00",
+    "detail_checked_at": "2026-11-26T15:48:23+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -2672,6 +3198,10 @@
       {
         "label": "Istanza di partecipazione alla manifestazione di interesse",
         "url": "https://bandi.regione.piemonte.it/system/files/Allegato%201%20istanza%20di%20partecipazione%20Campertogno.pdf"
+      },
+      {
+        "label": "D.D. 7 settembre 2026, n. 1707",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD-A18-1707-2026_timbrato.pdf"
       }
     ],
     "eligibility": "da verificare",
@@ -2693,7 +3223,7 @@
     "funding_status": "CHIUSO",
     "id": "https://bandi.regione.piemonte.it/gare-appalto/lavori-interventi-sistemazione-idraulica-fiume-sesia-frazione-quare-comune-campertogno-vc-avviso",
     "issuer": "Regione Piemonte",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-25T16:05:13+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -2761,7 +3291,7 @@
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: destinatari, vincoli e condizioni, contenuto della scheda",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": [
       {
@@ -2811,11 +3341,11 @@
     "closure_confirmed": true,
     "deadline": "2026-09-18",
     "deadline_source": "https://bandi.regione.piemonte.it/gare-appalto/lavori-ripristino-difesa-spondale-movimentazione-materiale-lapideo-sul-torrente-elvo-nel-comune",
-    "deadline_verified_at": "2026-11-25T16:06:39+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:48:21+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:06:39+00:00",
+    "detail_checked_at": "2026-11-26T15:48:21+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -2829,6 +3359,10 @@
       {
         "label": "Istanza di partecipazione alla manifestazione di interesse",
         "url": "https://bandi.regione.piemonte.it/system/files/Allegato%201%20istanza%20di%20partecipazione%20Cerrione.pdf"
+      },
+      {
+        "label": "D.D. 2 settembre 2026, n. 1681",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD-A18-1681-2026_timbrato_0.pdf"
       }
     ],
     "eligibility": "da verificare",
@@ -2850,7 +3384,7 @@
     "funding_status": "CHIUSO",
     "id": "https://bandi.regione.piemonte.it/gare-appalto/lavori-ripristino-difesa-spondale-movimentazione-materiale-lapideo-sul-torrente-elvo-nel-comune",
     "issuer": "Regione Piemonte",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-25T16:05:13+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -2917,7 +3451,7 @@
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: destinatari, finalità del bando",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": null,
     "assessment_document_discrepancies": null,
@@ -2944,11 +3478,11 @@
     "closure_confirmed": false,
     "deadline": "2026-12-18",
     "deadline_source": "https://volontariatotorino.it/bandi/bando-per-luso-responsabile-e-sicuro-dellia-nelleconomia-sociale/",
-    "deadline_verified_at": "2026-11-25T16:08:39+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:49:16+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:08:39+00:00",
+    "detail_checked_at": "2026-11-26T15:49:16+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -2973,7 +3507,7 @@
     "funding_status": "DA VERIFICARE",
     "id": "https://volontariatotorino.it/bandi/bando-per-luso-responsabile-e-sicuro-dellia-nelleconomia-sociale",
     "issuer": "Vol.To",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-25T16:05:13+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -3116,6 +3650,1107 @@
     "verified": false
   },
   {
+    "adequacy_basis": "Evidenze di fonte",
+    "adequacy_label": "MEDIA",
+    "adequacy_level": 2,
+    "adequacy_reason": "Attività finanziabili o beneficiari non documentati in modo completo; I documenti riportano formulazioni differenti su beneficiari o requisiti: confronto delle fonti necessario",
+    "adequacy_verification_flags": [
+      "fonti_requisiti_da_confrontare"
+    ],
+    "admission_reasons": [
+      "evidenza_mancante:funded_activities_excerpt",
+      "documenti_con_anomalie"
+    ],
+    "amount": "€ 500.000 (da verificare)",
+    "amount_kind": "dotazione finanziaria",
+    "amount_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026",
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 0,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "fonte ufficiale: destinatari, finalità del bando, vincoli e condizioni, contenuto della scheda",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
+    "assessment_confidence": "limitata",
+    "assessment_document_diagnostics": [
+      {
+        "status": "evidenze_estratte",
+        "url": "https://bandi.regione.piemonte.it/system/files/dda1900000530_10600_1.pdf"
+      },
+      {
+        "status": "evidenze_estratte",
+        "url": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A19_28_07_2026_0000338_I%20-%20File%20primario%20-%20DD-A19-338-2026.pdf"
+      }
+    ],
+    "assessment_document_discrepancies": [
+      {
+        "field": "requirements_excerpt",
+        "first_source": "https://bandi.regione.piemonte.it/system/files/dda1900000530_10600_1.pdf",
+        "other_source": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A19_28_07_2026_0000338_I%20-%20File%20primario%20-%20DD-A19-338-2026.pdf",
+        "status": "testi_diversi_da_verificare"
+      },
+      {
+        "field": "beneficiaries_excerpt",
+        "first_source": "https://bandi.regione.piemonte.it/system/files/dda1900000530_10600_1.pdf",
+        "other_source": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A19_28_07_2026_0000338_I%20-%20File%20primario%20-%20DD-A19-338-2026.pdf",
+        "status": "testi_diversi_da_verificare"
+      }
+    ],
+    "assessment_document_issues": [
+      {
+        "field": "requirements_excerpt",
+        "reason": "testi_diversi_da_verificare",
+        "source": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A19_28_07_2026_0000338_I%20-%20File%20primario%20-%20DD-A19-338-2026.pdf"
+      },
+      {
+        "field": "beneficiaries_excerpt",
+        "reason": "testi_diversi_da_verificare",
+        "source": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A19_28_07_2026_0000338_I%20-%20File%20primario%20-%20DD-A19-338-2026.pdf"
+      }
+    ],
+    "assessment_evidence_count": 3,
+    "assessment_evidence_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026",
+    "assessment_field_sources": {
+      "requirements_excerpt": "https://bandi.regione.piemonte.it/system/files/dda1900000530_10600_1.pdf"
+    },
+    "assessment_gaps": [
+      "Attività finanziabili non documentate."
+    ],
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_method": "estrazione automatica di evidenze",
+    "assessment_missing_fields": [
+      "Attività finanziabili"
+    ],
+    "assessment_opening_note": "L'affinità non implica ammissibilità; senza evidenza ufficiale lo stato di apertura non è confermato.",
+    "assessment_reason": "Dalla documentazione consultata emergono: educazione, scuole e giovani. La tipologia della procedura non è ancora accertata.",
+    "assessment_review_status": "PARZIALE",
+    "assessment_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026",
+    "beneficiaries_excerpt": "Rivolto a Imprese e liberi professionisti Risorse Risorse regionali Esito Stampa di informazione periodica locale. Bando anno 2026. Ammissione contributo. Documento PDF - 102.19 KB Procedura Bando L'obiettivo del Bando è favorire lo sviluppo del sistema delle imprese ed",
+    "beneficiaries_source": null,
+    "closure_confirmed": false,
+    "deadline": "2026-09-16",
+    "deadline_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026",
+    "deadline_verified_at": "2026-11-26T15:48:13+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-26T15:48:13+00:00",
+    "detail_version": 9,
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026"
+      },
+      {
+        "label": "Stampa di informazione periodica locale. Bando anno 2026. Ammissione contributo.",
+        "url": "https://bandi.regione.piemonte.it/system/files/dda1900000530_10600_1.pdf"
+      },
+      {
+        "label": "Determinazione Dirigenziale n. 338/A1905B del 28 luglio 2026",
+        "url": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A19_28_07_2026_0000338_I%20-%20File%20primario%20-%20DD-A19-338-2026.pdf"
+      },
+      {
+        "label": "Bando L.R. n. 18/2008 - Stampa di informazione periodica locale - 2026",
+        "url": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A19_28_07_2026_0000338_I%20-%20Allegato%20N%C2%B0%201%20-%20DD-A19-338-2026-All_1-Alleg_A_Editoria2026.pdf"
+      },
+      {
+        "label": "FAC SIMILE Modulo di domanda",
+        "url": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A19_28_07_2026_0000338_I%20-%20Allegato%20N%C2%B0%202%20-%20DD-A19-338-2026-All_2-All._B_MODULO_DOMANDA_Editoria_2026.pdf"
+      },
+      {
+        "label": "Dichiarazione sostitutiva di atto notorio",
+        "url": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A19_28_07_2026_0000338_I%20-%20Allegato%20N%C2%B0%203%20-%20DD-A19-338-2026-All_3-All_C__DICHIARAZIONE_SOSTITUTIVA_DI_ATTO_NOTORIO_CUP.pdf"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "La cifra indicata può essere la dotazione complessiva, non il contributo ottenibile dal singolo progetto",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026",
+      "https://bandi.regione.piemonte.it/system/files/dda1900000530_10600_1.pdf"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [],
+    "eligibility_specific_unchecked": 0,
+    "first_seen": "2026-11-26T15:47:54+00:00",
+    "funded_activities_excerpt": null,
+    "funder_id": "piemonte",
+    "funding_status": "CHIUSO",
+    "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026",
+    "issuer": "Regione Piemonte",
+    "last_seen": "2026-11-26T15:47:54+00:00",
+    "link_checked_at": "2026-11-26T15:47:54+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opening_date": "2026-07-30",
+    "opening_evidence": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026",
+    "opportunity_type": "non classificato",
+    "program_id": "regione-bandi",
+    "programme_objectives_excerpt": "L'obiettivo del Bando è favorire lo sviluppo del sistema delle imprese editoriali dell’informazione locale (della stampa periodica e delle testate giornalistiche online), così come previsto dalla legge regionale 18/2008 , mediante:",
+    "project_ideas": [
+      "Laboratori nelle scuole, percorsi formativi e progetti educativi con partner",
+      "Videolezioni, videopodcast e strumenti di accesso digitale alla cultura"
+    ],
+    "project_potential": "valutazione al censimento",
+    "public_id": 308,
+    "public_id_aliases": [],
+    "relevance": 45,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "senza_requisiti_confrontabili",
+    "requirement_evidence_count": 0,
+    "requirements_excerpt": "al rispetto delle condizioni previste dalla normati va europea per la concessione degli aiuti di Stato in esenzione o degli aiuti “ de minimis ”;  sono stati acquisiti e riportati nell’allegato A al la presente determinazione, i relativi codici COR",
+    "resolved_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026",
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Coerenza con didattica e attività culturali nelle scuole (titolo); Coerenza con contenuti culturali digitali (contenuto della scheda).",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "piemonte",
+    "source_open_confirmed": false,
+    "source_url": "https://bandi.regione.piemonte.it/",
+    "status": "chiuso",
+    "status_basis": "scadenza trascorsa",
+    "summary": "L'obiettivo del Bando è favorire lo sviluppo del sistema delle imprese editoriali dell’informazione locale (della stampa periodica e delle testate giornalistiche online), così come previsto dalla legge regionale 18/2008, mediante:A) Sostegno alle spese per l’a",
+    "themes": [
+      "formazione e giovani"
+    ],
+    "title": "Per saperne di più su L.R. n. 18 del 25 giugno 2008 - Interventi a sostegno della stampa di informazione periodica locale - Bando 2026",
+    "type_reason": "Informazioni insufficienti per determinare la tipologia",
+    "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/lr-n-18-25-giugno-2008-interventi-sostegno-stampa-informazione-periodica-locale-bando-2026",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Evidenze di fonte",
+    "adequacy_label": "MEDIA",
+    "adequacy_level": 2,
+    "adequacy_reason": "Attività finanziabili o beneficiari non documentati in modo completo; I documenti riportano formulazioni differenti su beneficiari o requisiti: confronto delle fonti necessario",
+    "adequacy_verification_flags": [
+      "fonti_requisiti_da_confrontare"
+    ],
+    "admission_reasons": [
+      "evidenza_mancante:funded_activities_excerpt",
+      "documenti_con_anomalie"
+    ],
+    "amount": "€ 20.0 (da verificare)",
+    "amount_kind": "dotazione finanziaria",
+    "amount_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-insediamento-giovani-agricoltori-sre01-bando-2026",
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 0,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "fonte ufficiale: destinatari, finalità del bando, vincoli e condizioni, contenuto della scheda",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
+    "assessment_confidence": "limitata",
+    "assessment_document_diagnostics": [
+      {
+        "status": "evidenze_estratte",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201027%20del%2002.11.2026%20Approvazione%20graduatoria%20provvisoria%20SRE01%202026.pdf"
+      },
+      {
+        "status": "evidenze_estratte",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201134%20del%2026.11.2026%20Proroga%20documentazione%20integrativa%20SRE01%202026.pdf"
+      }
+    ],
+    "assessment_document_discrepancies": [
+      {
+        "field": "requirements_excerpt",
+        "first_source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201027%20del%2002.11.2026%20Approvazione%20graduatoria%20provvisoria%20SRE01%202026.pdf",
+        "other_source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201134%20del%2026.11.2026%20Proroga%20documentazione%20integrativa%20SRE01%202026.pdf",
+        "status": "testi_diversi_da_verificare"
+      },
+      {
+        "field": "programme_objectives_excerpt",
+        "first_source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201027%20del%2002.11.2026%20Approvazione%20graduatoria%20provvisoria%20SRE01%202026.pdf",
+        "other_source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201134%20del%2026.11.2026%20Proroga%20documentazione%20integrativa%20SRE01%202026.pdf",
+        "status": "testi_diversi_da_verificare"
+      }
+    ],
+    "assessment_document_issues": [
+      {
+        "field": "requirements_excerpt",
+        "reason": "testi_diversi_da_verificare",
+        "source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201134%20del%2026.11.2026%20Proroga%20documentazione%20integrativa%20SRE01%202026.pdf"
+      },
+      {
+        "field": "programme_objectives_excerpt",
+        "reason": "testi_diversi_da_verificare",
+        "source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201134%20del%2026.11.2026%20Proroga%20documentazione%20integrativa%20SRE01%202026.pdf"
+      }
+    ],
+    "assessment_evidence_count": 3,
+    "assessment_evidence_source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201027%20del%2002.11.2026%20Approvazione%20graduatoria%20provvisoria%20SRE01%202026.pdf",
+    "assessment_field_sources": {
+      "programme_objectives_excerpt": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201027%20del%2002.11.2026%20Approvazione%20graduatoria%20provvisoria%20SRE01%202026.pdf",
+      "requirements_excerpt": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201027%20del%2002.11.2026%20Approvazione%20graduatoria%20provvisoria%20SRE01%202026.pdf"
+    },
+    "assessment_gaps": [
+      "Attività finanziabili non documentate."
+    ],
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_method": "estrazione automatica di evidenze",
+    "assessment_missing_fields": [
+      "Attività finanziabili"
+    ],
+    "assessment_opening_note": "L'affinità non implica ammissibilità; senza evidenza ufficiale lo stato di apertura non è confermato.",
+    "assessment_reason": "Dalla documentazione consultata emergono: educazione, scuole e giovani, comunità, inclusione e partecipazione, produzione audiovisiva e digitale. La tipologia della procedura non è ancora accertata.",
+    "assessment_review_status": "PARZIALE",
+    "assessment_source": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201027%20del%2002.11.2026%20Approvazione%20graduatoria%20provvisoria%20SRE01%202026.pdf",
+    "beneficiaries_excerpt": "Rivolto a Cittadini Enti pubblici Imprese e liberi professionisti Risorse FEASR/PSR/CSR Esito D.D. n. 1027 del 02.11.2026 - Approvazione graduatoria provvisoria SRE01/2026 Documento PDF - 747.64 KB Si ricorda che la Determinazione Dirigenziale di approvazione della grad",
+    "beneficiaries_source": null,
+    "closure_confirmed": false,
+    "deadline": "2026-10-02",
+    "deadline_source": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-insediamento-giovani-agricoltori-sre01-bando-2026",
+    "deadline_verified_at": "2026-11-26T15:48:17+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-26T15:48:17+00:00",
+    "detail_version": 9,
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-insediamento-giovani-agricoltori-sre01-bando-2026"
+      },
+      {
+        "label": "D.D. n. 1027 del 02.11.2026 - Approvazione graduatoria provvisoria SRE01/2026",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201027%20del%2002.11.2026%20Approvazione%20graduatoria%20provvisoria%20SRE01%202026.pdf"
+      },
+      {
+        "label": "D.D. n. 1134 del 26.11.2026 - Proroga documentazione integrativa SRE01 2026",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD%20n.%201134%20del%2026.11.2026%20Proroga%20documentazione%20integrativa%20SRE01%202026.pdf"
+      },
+      {
+        "label": "D.D. n. 768 del 27.07.2026 - Precisazioni spese non ammesse nel Piano Aziendale",
+        "url": "https://bandi.regione.piemonte.it/system/files/Rep__DD-A17_27_07_2026_0000768_I%20-%20File%20primario%20-%20DD-A17-768-2026_timbrato_0.pdf"
+      },
+      {
+        "label": "D.D. n. 787 del 30.07.2026 - Proroga presentazione domande",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD%20n.%20787%20del%2030.07.2026%20Proroga%20SRE01%202026.pdf"
+      },
+      {
+        "label": "Guida alla compilazione del Piano Aziendale",
+        "url": "https://bandi.regione.piemonte.it/system/files/Guida%20alla%20compilazione%20del%20Piano%20Aziendale_0.pdf"
+      },
+      {
+        "label": "D.D. n. 545 del 25.05.2026 - Approvazione bando SRE01 - 2026",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD%20n.%20545%20del%2025.05.2026%20Approvazione%20bando%20SRE01%202026.pdf"
+      },
+      {
+        "label": "ALLEGATO VIII compilabile - Business plan per domanda di acconto - Versione aggiornata",
+        "url": "https://bandi.regione.piemonte.it/system/files/Versione%20Agg_%20ALLEGATO%20VIII%20-%20Business%20plan%20per%20domanda%20di%20acconto.xlsx"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "La cifra indicata può essere la dotazione complessiva, non il contributo ottenibile dal singolo progetto",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://bandi.regione.piemonte.it/system/files/DD%20n.%201027%20del%2002.11.2026%20Approvazione%20graduatoria%20provvisoria%20SRE01%202026.pdf"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [],
+    "eligibility_specific_unchecked": 0,
+    "first_seen": "2026-11-26T15:47:54+00:00",
+    "funded_activities_excerpt": null,
+    "funder_id": "piemonte",
+    "funding_status": "CHIUSO",
+    "id": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-insediamento-giovani-agricoltori-sre01-bando-2026",
+    "issuer": "Regione Piemonte",
+    "last_seen": "2026-11-26T15:47:54+00:00",
+    "link_checked_at": "2026-11-26T15:47:54+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opening_date": "2026-05-25",
+    "opening_evidence": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-insediamento-giovani-agricoltori-sre01-bando-2026",
+    "opportunity_type": "non classificato",
+    "program_id": "regione-bandi",
+    "programme_objectives_excerpt": "n. 545 del 25.05.2026, n. 463 domande con punteggio di priorità pari o superiore al punteggio minimo previsto, pari a 8 punti (in base ai dati indicati nelle domande medesime e/o nel fascicolo aziendale e facendo riferimento ai punteggi ed al metodo di calcolo indicati al paragrafo B.6 “criteri di selezione e graduatoria” del bando);",
+    "project_ideas": [
+      "Laboratori nelle scuole, percorsi formativi e progetti educativi con partner",
+      "Eventi di divulgazione, laboratori partecipativi e progetti culturali inclusivi"
+    ],
+    "project_potential": "valutazione al censimento",
+    "public_id": 307,
+    "public_id_aliases": [],
+    "relevance": 45,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "senza_requisiti_confrontabili",
+    "requirement_evidence_count": 0,
+    "requirements_excerpt": "norma del regolamento (UE) 2021/2115 del Parlamento europeo e del Consiglio e ai requisiti in materia di informazione, pubblicità e visibilità inerenti al sostegno dell’Unione e ai piani strategici della PAC; Pag 1 di 19 r_piemon - Rep. DD-A17 02/11/2026.0001027.I Copia conforme dell'originale sottoscritto digitalmente da CLAUDIA GUASCO",
+    "resolved_url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-insediamento-giovani-agricoltori-sre01-bando-2026",
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Coerenza con didattica e attività culturali nelle scuole (titolo); Coerenza con partecipazione territoriale e inclusione (contenuto della scheda).",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "piemonte",
+    "source_open_confirmed": false,
+    "source_url": "https://bandi.regione.piemonte.it/",
+    "status": "chiuso",
+    "status_basis": "scadenza trascorsa",
+    "summary": "Approvazione del bando 2026 dell’Intervento SRE01 “Insediamento giovani agricoltori”.AVVISO: Nella sezione \"Chiarimenti\" è stato pubblicato il manuale per la compilazione del nuovo business plan. Inoltre, nella sezione \"Allegato testo procedura\" è stata pubbli",
+    "themes": [
+      "formazione e giovani"
+    ],
+    "title": "Per saperne di più su CSR 2023-2027. Insediamento giovani agricoltori (SRE01) - Bando 2026",
+    "type_reason": "Informazioni insufficienti per determinare la tipologia",
+    "url": "https://bandi.regione.piemonte.it/contributi-finanziamenti/csr-2023-2027-insediamento-giovani-agricoltori-sre01-bando-2026",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Evidenze di fonte",
+    "adequacy_label": "MEDIA",
+    "adequacy_level": 2,
+    "adequacy_reason": "Attività finanziabili o beneficiari non documentati in modo completo; I documenti riportano formulazioni differenti su beneficiari o requisiti: confronto delle fonti necessario",
+    "adequacy_verification_flags": [
+      "fonti_requisiti_da_confrontare"
+    ],
+    "admission_reasons": [
+      "evidenza_mancante:funded_activities_excerpt",
+      "documenti_con_anomalie"
+    ],
+    "amount": null,
+    "amount_kind": null,
+    "amount_source": null,
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 0,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Recuperare bando integrale e requisiti ufficiali di candidatura",
+      "Verificare le attività effettivamente finanziabili",
+      "Confrontare le fonti ufficiali che riportano requisiti differenti",
+      "Attività finanziabili non documentate."
+    ],
+    "application_path": "integrare_verifica_documentale",
+    "application_path_reason": "Prove insufficienti o condizioni non risolte: non è possibile stabilire in sicurezza la modalità di candidatura",
+    "application_windows": [],
+    "assessment_basis": "fonte ufficiale: destinatari, finalità del bando, vincoli e condizioni, contenuto della scheda",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
+    "assessment_confidence": "limitata",
+    "assessment_document_diagnostics": [
+      {
+        "status": "evidenze_estratte",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD_1833-2026_avviso_candidature.pdf"
+      },
+      {
+        "status": "evidenze_estratte",
+        "url": "https://bandi.regione.piemonte.it/system/files/Avviso_candidature_Osservatorio_LR14-2025_ETS.pdf"
+      }
+    ],
+    "assessment_document_discrepancies": [
+      {
+        "field": "requirements_excerpt",
+        "first_source": "https://bandi.regione.piemonte.it/system/files/DD_1833-2026_avviso_candidature.pdf",
+        "other_source": "https://bandi.regione.piemonte.it/system/files/Avviso_candidature_Osservatorio_LR14-2025_ETS.pdf",
+        "status": "testi_diversi_da_verificare"
+      }
+    ],
+    "assessment_document_issues": [
+      {
+        "field": "requirements_excerpt",
+        "reason": "testi_diversi_da_verificare",
+        "source": "https://bandi.regione.piemonte.it/system/files/Avviso_candidature_Osservatorio_LR14-2025_ETS.pdf"
+      }
+    ],
+    "assessment_evidence_count": 3,
+    "assessment_evidence_source": "https://bandi.regione.piemonte.it/system/files/DD_1833-2026_avviso_candidature.pdf",
+    "assessment_field_sources": {
+      "programme_objectives_excerpt": "https://bandi.regione.piemonte.it/system/files/DD_1833-2026_avviso_candidature.pdf",
+      "requirements_excerpt": "https://bandi.regione.piemonte.it/system/files/DD_1833-2026_avviso_candidature.pdf"
+    },
+    "assessment_gaps": [
+      "Attività finanziabili non documentate."
+    ],
+    "assessment_label": "MEDIA AFFINITÀ",
+    "assessment_method": "estrazione automatica di evidenze",
+    "assessment_missing_fields": [
+      "Attività finanziabili"
+    ],
+    "assessment_opening_note": "L'affinità non implica ammissibilità; senza evidenza ufficiale lo stato di apertura non è confermato.",
+    "assessment_reason": "Dalla documentazione consultata emergono: promozione e accesso alla cultura, comunità, inclusione e partecipazione. La tipologia della procedura non è ancora accertata.",
+    "assessment_review_status": "PARZIALE",
+    "assessment_source": "https://bandi.regione.piemonte.it/system/files/DD_1833-2026_avviso_candidature.pdf",
+    "beneficiaries_excerpt": "Rivolto a Terzo settore Procedura Avviso di nomina Le candidature devono essere presentate da parte di Enti del Terzo Settore. Il presente avviso costituisce la procedura per la selezione pubblica finalizzata alla raccolta delle candidature degli otto rappresentanti deg",
+    "beneficiaries_source": null,
+    "closure_confirmed": false,
+    "deadline": "2027-01-25",
+    "deadline_source": "https://bandi.regione.piemonte.it/nomine/osservatorio-regionale-lascolto-contrasto-allabbandono-sociale-nomina-otto-componenti",
+    "deadline_verified_at": "2026-11-26T15:48:26+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-26T15:48:26+00:00",
+    "detail_version": 9,
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://bandi.regione.piemonte.it/nomine/osservatorio-regionale-lascolto-contrasto-allabbandono-sociale-nomina-otto-componenti"
+      },
+      {
+        "label": "Atto di approvazione dell'avviso - D.D. n. 1833 del 19.11.2026",
+        "url": "https://bandi.regione.piemonte.it/system/files/DD_1833-2026_avviso_candidature.pdf"
+      },
+      {
+        "label": "Testo completo dell'avviso",
+        "url": "https://bandi.regione.piemonte.it/system/files/Avviso_candidature_Osservatorio_LR14-2025_ETS.pdf"
+      },
+      {
+        "label": "Informativa privacy",
+        "url": "https://bandi.regione.piemonte.it/system/files/Informativa_privacy.pdf"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Confrontare la categoria dei beneficiari con lo statuto e i requisiti di Opera+",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://bandi.regione.piemonte.it/system/files/DD_1833-2026_avviso_candidature.pdf"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [],
+    "eligibility_specific_unchecked": 0,
+    "first_seen": "2026-11-26T15:47:54+00:00",
+    "funded_activities_excerpt": null,
+    "funder_id": "piemonte",
+    "funding_status": "APERTO",
+    "id": "https://bandi.regione.piemonte.it/nomine/osservatorio-regionale-lascolto-contrasto-allabbandono-sociale-nomina-otto-componenti",
+    "issuer": "Regione Piemonte",
+    "last_seen": "2026-11-26T15:47:54+00:00",
+    "link_checked_at": "2026-11-26T15:47:54+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opening_date": "2026-11-26",
+    "opening_evidence": "https://bandi.regione.piemonte.it/nomine/osservatorio-regionale-lascolto-contrasto-allabbandono-sociale-nomina-otto-componenti",
+    "opportunity_type": "non classificato",
+    "program_id": "regione-bandi",
+    "programme_objectives_excerpt": "finalità di cui all’articolo 1; d) redigere una relazione annuale al settore regionale competente per materia sulle iniziative da intraprendere. il comma 2 del medesimo articolo prevede che l’osservatorio è composto, tra l’altro da “ otto",
+    "project_ideas": [],
+    "project_potential": "valutazione al censimento",
+    "public_id": 309,
+    "public_id_aliases": [],
+    "relevance": 20,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "senza_requisiti_confrontabili",
+    "requirement_evidence_count": 0,
+    "requirements_excerpt": "condizioni di abbandono sociale, di cui almeno uno individuato tra realtà specializzate in mediazione interculturale, in grado di intercettare forme di isolamento connesse a barriere linguistiche, culturali o migratorie; ai sensi dell’articolo 4, comma 4, i predetti rappresentanti sono individuati dalla Giunta regionale a seguito di",
+    "resolved_url": "https://bandi.regione.piemonte.it/nomine/osservatorio-regionale-lascolto-contrasto-allabbandono-sociale-nomina-otto-componenti",
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Non sono emerse corrispondenze tematiche esplicite nei contenuti analizzati; un punteggio basso non esclude opportunità progettuali.",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "piemonte",
+    "source_open_confirmed": true,
+    "source_url": "https://bandi.regione.piemonte.it/",
+    "status": "aperto (pagina ufficiale)",
+    "status_basis": "Stato aperto esplicito nella scheda ufficiale",
+    "status_evidence": "https://bandi.regione.piemonte.it/nomine/osservatorio-regionale-lascolto-contrasto-allabbandono-sociale-nomina-otto-componenti",
+    "summary": "Le candidature devono essere presentate da parte di Enti del Terzo Settore. Il presente avviso costituisce la procedura per la selezione pubblica finalizzata alla raccolta delle candidature degli otto rappresentanti degli Enti del Terzo Settore che svolgono at",
+    "themes": [],
+    "title": "Per saperne di più su Osservatorio regionale per l'ascolto e il contrasto all'abbandono sociale: nomina di otto componenti",
+    "type_reason": "Informazioni insufficienti per determinare la tipologia",
+    "url": "https://bandi.regione.piemonte.it/nomine/osservatorio-regionale-lascolto-contrasto-allabbandono-sociale-nomina-otto-componenti",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Revisione documentale individuale",
+    "adequacy_label": "BASSA",
+    "adequacy_level": 1,
+    "adequacy_reason": "Il testo ufficiale Allianz ammette enti non profit legalmente costituiti con sede italiana, anche in partenariato: non prevede un minimo generale esplicito di anni di costituzione. Tuttavia richiede esperienza diretta o adeguatamente documentata nel settore, capacità organizzativa ed economica e un progetto preciso per persone fragili. Opera+ dichiara nessuna attività pregressa: la candidatura come capofila non è dimostrata; si può valutare una collaborazione con ente esperto senza supporre che sia stata già concordata. Nessuna esclusione geografica comunale è prevista.",
+    "adequacy_verification_flags": [],
+    "admission_reasons": [
+      "stato_candidatura_non_verificato"
+    ],
+    "amount": null,
+    "amount_kind": null,
+    "amount_source": null,
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 1,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [
+      {
+        "category": "territorio",
+        "reason": "Sede dichiarata: Torino, Piemonte; verificare se la regola riguarda sede legale, operativa o sede del partner",
+        "requirement": "Enti Non Profit / ETS regolarmente costituiti con sede legale in Italia;",
+        "source": "https://umanamente.allianz.it/content/dam/onemarketing/azit/faum-it/call-for-ideas-2026/Call-for-Ideas-2026_FINAL2.pdf",
+        "status": "da_verificare"
+      }
+    ],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "Revisione documentale della fonte indicata nella scheda",
+    "assessment_checked_at": "2026-11-19",
+    "assessment_confidence": "documentale — fonte consultata; ammissibilità da verificare",
+    "assessment_document_diagnostics": null,
+    "assessment_document_discrepancies": null,
+    "assessment_document_issues": [],
+    "assessment_evidence_count": 4,
+    "assessment_evidence_source": "https://umanamente.allianz.it/content/dam/onemarketing/azit/faum-it/call-for-ideas-2026/Call-for-Ideas-2026_FINAL2.pdf",
+    "assessment_field_sources": null,
+    "assessment_gaps": [
+      "Documentare esperienza pertinente di responsabili e partner: l'associazione non dichiara attività pregresse.",
+      "Formulare intervento di inclusione culturale rivolto a destinatari fragili con obiettivi e budget credibili, anziché finanziare genericamente il corso d'opera.",
+      "Verificare capofila, responsabilità e partenariato prima di candidarsi."
+    ],
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_method": "revisione individuale della fonte",
+    "assessment_missing_fields": [],
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
+    "assessment_reason": "Il testo ufficiale Allianz ammette enti non profit legalmente costituiti con sede italiana, anche in partenariato: non prevede un minimo generale esplicito di anni di costituzione. Tuttavia richiede esperienza diretta o adeguatamente documentata nel settore, capacità organizzativa ed economica e un progetto preciso per persone fragili. Opera+ dichiara nessuna attività pregressa: la candidatura come capofila non è dimostrata; si può valutare una collaborazione con ente esperto senza supporre che sia stata già concordata. Nessuna esclusione geografica comunale è prevista.",
+    "assessment_review_status": "REVISIONE DOCUMENTALE",
+    "assessment_reviewed_at": "2026-11-19",
+    "assessment_source": "https://umanamente.allianz.it/content/dam/onemarketing/azit/faum-it/call-for-ideas-2026/Call-for-Ideas-2026_FINAL2.pdf",
+    "beneficiaries_excerpt": "Enti Non Profit / ETS regolarmente costituiti con sede legale in Italia; sono ammesse anche proposte in partenariato con capofila e ruoli chiaramente indicati.",
+    "beneficiaries_source": null,
+    "closure_confirmed": false,
+    "deadline": "2026-12-10",
+    "deadline_source": "https://umanamente.allianz.it/",
+    "deadline_verified_at": "2026-11-26T15:47:54+00:00",
+    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-25T16:08:31+00:00",
+    "detail_version": 9,
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente"
+      },
+      {
+        "label": "Fonte ufficiale della verifica",
+        "url": "https://umanamente.allianz.it/"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Controllare se il partenariato è obbligatorio e con quali caratteristiche",
+      "Confrontare la categoria dei beneficiari con lo statuto e i requisiti di Opera+",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://umanamente.allianz.it/content/dam/onemarketing/azit/faum-it/call-for-ideas-2026/Call-for-Ideas-2026_FINAL2.pdf"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [
+      {
+        "category": "territorio",
+        "excerpt": "Enti Non Profit / ETS regolarmente costituiti con sede legale in Italia;",
+        "field": "beneficiaries_excerpt",
+        "source": "https://umanamente.allianz.it/content/dam/onemarketing/azit/faum-it/call-for-ideas-2026/Call-for-Ideas-2026_FINAL2.pdf",
+        "status": "requisito_documentato_da_verificare"
+      }
+    ],
+    "eligibility_specific_unchecked": 1,
+    "first_seen": "2026-11-18T15:25:49+00:00",
+    "funded_activities_excerpt": "Progetti nazionali di uno o due anni: aiuti mirati, inserimento lavorativo, sport inclusivo e attività artistiche/culturali e di sensibilizzazione rivolte a persone fragili. Contributo massimo indicato 150.000 euro.",
+    "funding_status": "DA VERIFICARE",
+    "id": "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente",
+    "issuer": "Vol.To",
+    "last_seen": "2026-11-26T15:47:54+00:00",
+    "link_checked_at": "2026-11-18T15:25:49+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opening_date": "2026-11-11",
+    "opening_evidence": "https://umanamente.allianz.it/",
+    "opportunity_type": "finanziamento potenziale",
+    "programme_objectives_excerpt": "Sostegno a idee progettuali che aumentano inclusione, autonomia e partecipazione sociale di persone in condizioni di fragilità e svantaggio.",
+    "project_ideas": [
+      "Eventi di divulgazione, laboratori partecipativi e progetti culturali inclusivi",
+      "Progetti culturali con scuole, teatri, enti locali o altri partner"
+    ],
+    "project_potential": "valutazione al censimento",
+    "public_id": 255,
+    "public_id_aliases": [],
+    "relevance": 40,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "confronti_documentati",
+    "requirement_evidence_count": 1,
+    "requirements_excerpt": "Dimostrare missione coerente, esperienza diretta o adeguatamente documentata, capacità amministrativa e organizzativa, solidità economica e tutela dei beneficiari; destinatari persone fragili e specifico progetto inclusivo. Termine 10/12/2026 ore 12:00. Il testo ufficiale non indica un minimo generale di anzianità dell'ente.",
+    "resolved_url": "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente",
+    "reviewed_official_at": "2026-11-17",
+    "reviewed_official_basis": "official_active_application_window",
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Coerenza con partecipazione territoriale e inclusione (titolo); Possibilità progettuale in partenariato (contenuto della scheda).",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "volto",
+    "source_open_confirmed": false,
+    "source_url": "https://volontariatotorino.it/bandi/",
+    "status": "non verificato",
+    "status_basis": "Apertura dichiarata da ente o portale istituzionale; verifica valida per periodo limitato",
+    "status_evidence": "https://umanamente.allianz.it/",
+    "themes": [
+      "accessibilità e partecipazione"
+    ],
+    "title": "Call for ideas 2026 di Fondazione Allianz Umana Mente Sostegno a progetti promossi da enti non profit e del Terzo settore, da realizzare in Italia, per favorire l'inclusione di persone con disabilità e di bambini e giova",
+    "type_reason": "Il titolo contiene indicatori di contributo o finanziamento; verifica necessaria",
+    "url": "https://infobandi.csvnet.it/call-for-ideas-2026-di-fondazione-allianz-umanamente/?utm_source=rss&utm_medium=rss&utm_campaign=call-for-ideas-2026-di-fondazione-allianz-umanamente",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Revisione documentale individuale",
+    "adequacy_label": "BASSA",
+    "adequacy_level": 1,
+    "adequacy_reason": "Il bando CERV-2026-CITIZENS-VALUES NON finanzia direttamente un progetto didattico culturale di un piccolo ente: seleziona intermediari per assegnare e gestire sovvenzioni a terzi, con budget progettuale di 2,5–6 milioni di euro ed esperienza documentata di almeno tre anni nella formazione/capacity building delle OSC e gestione di contributi. Opera+ è stata costituita il 23/04/2026 e dichiara nessuna attività precedente: non ha i requisiti dichiarati per candidarsi come intermediario singolo. Possibile futura partecipazione a bandi a cascata indetti dagli intermediari selezionati, non equivalenti alla presente call.",
+    "adequacy_verification_flags": [],
+    "admission_reasons": [
+      "stato_candidatura_non_verificato"
+    ],
+    "amount": null,
+    "amount_kind": null,
+    "amount_source": null,
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 2,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [
+      {
+        "category": "esperienza_pregressa",
+        "reason": "Nessuna attività precedente dichiarata: verificare se il bando richiede progetti già realizzati o ammette nuovi enti",
+        "requirement": "Intermediario con almeno tre anni di esperienza documentata nel rafforzamento delle organizzazioni della società civile e nella gestione di sovvenzioni.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES",
+        "status": "da_verificare"
+      },
+      {
+        "category": "capacita_operativa",
+        "reason": "Confronto non conclusivo: requisito, profilo o documentazione insufficienti",
+        "requirement": "Capacità di finanziare e assistere organizzazioni terze, non semplice proposta di corso culturale diretto.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES",
+        "status": "da_verificare"
+      }
+    ],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "Revisione documentale della fonte indicata nella scheda",
+    "assessment_checked_at": "2026-11-19",
+    "assessment_confidence": "documentale — fonte consultata; ammissibilità da verificare",
+    "assessment_document_diagnostics": null,
+    "assessment_document_discrepancies": null,
+    "assessment_document_issues": [],
+    "assessment_evidence_count": 4,
+    "assessment_evidence_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES",
+    "assessment_field_sources": null,
+    "assessment_gaps": [
+      "Non considerare la presente call come sovvenzione diretta per corsi Opera+; monitorare eventuali futuri bandi a cascata degli intermediari finanziati.",
+      "Per consorzi: verificare separatamente requisiti di esperienza aggregata nel documento ufficiale e possibilità di partecipazione, senza assumerla."
+    ],
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_method": "revisione individuale della fonte",
+    "assessment_missing_fields": [],
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
+    "assessment_reason": "Il bando CERV-2026-CITIZENS-VALUES NON finanzia direttamente un progetto didattico culturale di un piccolo ente: seleziona intermediari per assegnare e gestire sovvenzioni a terzi, con budget progettuale di 2,5–6 milioni di euro ed esperienza documentata di almeno tre anni nella formazione/capacity building delle OSC e gestione di contributi. Opera+ è stata costituita il 23/04/2026 e dichiara nessuna attività precedente: non ha i requisiti dichiarati per candidarsi come intermediario singolo. Possibile futura partecipazione a bandi a cascata indetti dagli intermediari selezionati, non equivalenti alla presente call.",
+    "assessment_review_status": "REVISIONE DOCUMENTALE",
+    "assessment_reviewed_at": "2026-11-19",
+    "assessment_source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES",
+    "beneficiaries_excerpt": "Proponenti: organizzazioni della società civile legalmente costituite UE che operano da intermediari; devono dimostrare almeno 3 anni di esperienza comprovata nel capacity building delle OSC e esperienza recente nella gestione di sovvenzioni. Le OSC locali possono essere eventuali destinatarie di bandi a cascata successivi, non richiedenti diretti della presente call.",
+    "beneficiaries_source": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
+    "catalog_fingerprint": "7782d151e36f6cc3ad65250ee81fdc97e3f9b8ebbbb532ddefa50f86afd7b9f5",
+    "catalog_tracking_version": 3,
+    "catalog_updated_at": "2026-11-18T20:25:45+00:00",
+    "closure_confirmed": false,
+    "deadline": "2027-02-24",
+    "deadline_source": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/",
+    "deadline_verified_at": "2026-11-26T15:47:54+00:00",
+    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-25T16:08:57+00:00",
+    "detail_version": 9,
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue"
+      },
+      {
+        "label": "Fonte ufficiale della verifica",
+        "url": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [
+      {
+        "category": "esperienza_pregressa",
+        "excerpt": "Intermediario con almeno tre anni di esperienza documentata nel rafforzamento delle organizzazioni della società civile e nella gestione di sovvenzioni.",
+        "field": "revisione_documentale",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES",
+        "status": "requisito_documentato_da_verificare"
+      },
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Capacità di finanziare e assistere organizzazioni terze, non semplice proposta di corso culturale diretto.",
+        "field": "revisione_documentale",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES",
+        "status": "requisito_documentato_da_verificare"
+      }
+    ],
+    "eligibility_specific_unchecked": 2,
+    "first_seen": "2026-11-16T18:50:43+00:00",
+    "funded_activities_excerpt": "Obbligatori sia sostegno finanziario a terze OSC, con selezione/assegnazione/monitoraggio dei contributi, sia capacity building. Progetti intermediari da 2,5 a 6 milioni euro, durata 36–48 mesi.",
+    "funding_status": "DA VERIFICARE",
+    "id": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
+    "issuer": "Vol.To",
+    "last_seen": "2026-11-23T16:29:17+00:00",
+    "link_checked_at": "2026-11-16T19:29:54+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opening_date": "2026-10-27",
+    "opening_evidence": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/",
+    "opportunity_type": "non classificato",
+    "programme_objectives_excerpt": "Rafforzare organizzazioni della società civile a tutela dei valori UE attraverso intermediari che finanziano e accompagnano terzi.",
+    "project_ideas": [
+      "Workshop, masterclass e preparazione all'opera in collaborazione con teatri",
+      "Videolezioni, videopodcast e strumenti di accesso digitale alla cultura"
+    ],
+    "project_potential": "valutazione al censimento",
+    "public_id": 149,
+    "public_id_aliases": [],
+    "relevance": 40,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "confronti_documentati",
+    "requirement_evidence_count": 2,
+    "requirements_excerpt": "CERV-2026-CITIZENS-VALUES: esperienza recente di almeno 3 anni nella capacità di rafforzare OSC e dimostrata esperienza nella gestione e assegnazione di contributi; finanziamento 2,5–6 milioni euro; sostegno finanziario a terzi obbligatorio.",
+    "resolved_url": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
+    "reviewed_official_at": "2026-11-17",
+    "reviewed_official_basis": "official_active_application_window",
+    "reviewed_requirements": [
+      {
+        "category": "esperienza_pregressa",
+        "excerpt": "Intermediario con almeno tre anni di esperienza documentata nel rafforzamento delle organizzazioni della società civile e nella gestione di sovvenzioni.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES"
+      },
+      {
+        "category": "capacita_operativa",
+        "excerpt": "Capacità di finanziare e assistere organizzazioni terze, non semplice proposta di corso culturale diretto.",
+        "source": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CERV-2026-CITIZENS-VALUES"
+      }
+    ],
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Coerenza con attività culturali e spettacolo dal vivo (contenuto della scheda); Coerenza con contenuti culturali digitali (titolo).",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "volto",
+    "source_open_confirmed": false,
+    "source_url": "https://volontariatotorino.it/bandi/",
+    "status": "non verificato",
+    "status_basis": "Apertura dichiarata da ente o portale istituzionale; verifica valida per periodo limitato",
+    "status_evidence": "https://www.fundingprogrammesportal.gov.cy/en/call/cerv-2026-citizens-values-en-2026/",
+    "themes": [
+      "innovazione e contenuti digitali"
+    ],
+    "title": "Supporto a organizzazioni della società civile per promuovere i valori dell’UE Il bando intende selezionare un numero limitato di intermediari negli Stati membri dell’UE, in grado di rafforzare le capacità di un ampio nu",
+    "type_reason": "Informazioni insufficienti per determinare la tipologia",
+    "url": "https://infobandi.csvnet.it/supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue/?utm_source=rss&utm_medium=rss&utm_campaign=supporto-a-organizzazioni-della-societa-civile-per-promuovere-i-valori-dellue",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Revisione documentale individuale",
+    "adequacy_label": "BASSA",
+    "adequacy_level": 1,
+    "adequacy_reason": "Requisito documentato attualmente non soddisfatto per la candidatura diretta: Per il Fondo 2027 la fonte ministeriale richiede una manifestazione di rievocazione storica svolta con continuità da almeno cinque anni e una specifica categoria di richiedente. Opera+ non dispone di eventi quinquennali ",
+    "adequacy_verification_flags": [
+      "candidatura_diretta_non_dimostrata"
+    ],
+    "admission_reasons": [
+      "stato_candidatura_non_verificato"
+    ],
+    "amount": null,
+    "amount_kind": null,
+    "amount_source": null,
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 0,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "Revisione documentale della fonte indicata nella scheda",
+    "assessment_checked_at": "2026-11-19",
+    "assessment_confidence": "documentale — fonte consultata; ammissibilità da verificare",
+    "assessment_document_diagnostics": null,
+    "assessment_document_discrepancies": null,
+    "assessment_document_issues": [],
+    "assessment_evidence_count": 4,
+    "assessment_evidence_source": "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/",
+    "assessment_field_sources": null,
+    "assessment_gaps": [
+      "Per Opera+ verificare solo un eventuale contributo progettuale non da capofila presso un ente idoneo con manifestazione quinquennale.",
+      "Non usare l'eventuale pertinenza di opera lirica storica per inferire automaticamente una rievocazione storica ammissibile.",
+      "La scheda del portale aggregatore non sostituisce il bando ministeriale; candidatura autonoma non praticabile sulla base dei requisiti documentati."
+    ],
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_method": "revisione individuale della fonte",
+    "assessment_missing_fields": [],
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
+    "assessment_reason": "Il Fondo Nazionale per la Rievocazione Storica finanzia manifestazioni di rievocazione storica continuative da almeno cinque anni e specifici enti il cui scopo statutario sia la tutela e la trasmissione della memoria storica. Opera+ è nata nel 2026, senza eventi pregressi, e i corsi lirici non sono rievocazioni storiche quinquennali: la precedente MEDIA non era motivata. Un eventuale ruolo non principale in un evento organizzato da un ente idoneo richiederebbe verifica separata.",
+    "assessment_review_status": "REVISIONE DOCUMENTALE",
+    "assessment_reviewed_at": "2026-11-19",
+    "assessment_source": "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/",
+    "beneficiaries_excerpt": "Enti locali, soggetti pubblici e specifici enti di rievocazione storica, tra cui APS, ONLUS e fondazioni con finalità statutarie di tutela e trasmissione della memoria storica.",
+    "beneficiaries_source": "https://infobandi.csvnet.it/bando-2027-del-fondo-nazionale-per-la-rievocazione-storica/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-del-fondo-nazionale-per-la-rievocazione-storica",
+    "closure_confirmed": false,
+    "deadline": "2027-01-31",
+    "deadline_source": "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/",
+    "deadline_verified_at": "2026-11-26T15:47:54+00:00",
+    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-25T16:08:48+00:00",
+    "detail_version": 9,
+    "direct_application_blocker": "Per il Fondo 2027 la fonte ministeriale richiede una manifestazione di rievocazione storica svolta con continuità da almeno cinque anni e una specifica categoria di richiedente. Opera+ non dispone di eventi quinquennali documentati.",
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://infobandi.csvnet.it/bando-2027-del-fondo-nazionale-per-la-rievocazione-storica/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-del-fondo-nazionale-per-la-rievocazione-storica"
+      },
+      {
+        "label": "Fonte ufficiale della verifica",
+        "url": "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [],
+    "eligibility_specific_unchecked": 0,
+    "first_seen": "2026-11-18T15:25:49+00:00",
+    "funded_activities_excerpt": "Manifestazioni di rievocazione storica realizzate con continuità da almeno cinque anni.",
+    "funding_status": "DA VERIFICARE",
+    "id": "https://infobandi.csvnet.it/bando-2027-del-fondo-nazionale-per-la-rievocazione-storica/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-del-fondo-nazionale-per-la-rievocazione-storica",
+    "issuer": "Vol.To",
+    "last_seen": "2026-11-26T15:47:54+00:00",
+    "link_checked_at": "2026-11-18T15:25:49+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opening_date": "2026-11-03",
+    "opening_evidence": "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/",
+    "opportunity_type": "non classificato",
+    "programme_objectives_excerpt": "Sostegno al Fondo Nazionale per la Rievocazione Storica, disciplina del D.M. 20 marzo 2025 n. 75.",
+    "project_ideas": [],
+    "project_potential": "valutazione al censimento",
+    "public_id": 254,
+    "public_id_aliases": [],
+    "relevance": 20,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "ostacolo_documentato",
+    "requirement_evidence_count": 0,
+    "requirements_excerpt": "Piattaforma DOS-Cultura fino alle ore 16:00 del 31 gennaio 2027; dimostrare manifestazioni continuative da almeno cinque anni, soggetto giuridico/forma ammessa e documentazione secondo D.M. 75/2025.",
+    "resolved_url": "https://infobandi.csvnet.it/bando-2027-del-fondo-nazionale-per-la-rievocazione-storica/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-del-fondo-nazionale-per-la-rievocazione-storica",
+    "reviewed_official_at": "2026-11-17",
+    "reviewed_official_basis": "official_active_application_window",
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Non sono emerse corrispondenze tematiche esplicite nei contenuti analizzati; un punteggio basso non esclude opportunità progettuali.",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "volto",
+    "source_open_confirmed": false,
+    "source_url": "https://volontariatotorino.it/bandi/",
+    "status": "non verificato",
+    "status_basis": "Apertura dichiarata da ente o portale istituzionale; verifica valida per periodo limitato",
+    "status_evidence": "https://spettacolo.cultura.gov.it/bando-fondo-nazionale-rievocazione-storica-2027-attivazione-della-modulistica-online-per-la-presentazione-delle-domande-di-contributo/",
+    "themes": [],
+    "title": "Bando 2027 del “Fondo Nazionale per la rievocazione storica” Il Fondo, con una dotazione di 2 milioni di euro, finanzia manifestazioni che ricostruiscono eventi storici significativi presentati da enti locali, soggetti p",
+    "type_reason": "Informazioni insufficienti per determinare la tipologia",
+    "url": "https://infobandi.csvnet.it/bando-2027-del-fondo-nazionale-per-la-rievocazione-storica/?utm_source=rss&utm_medium=rss&utm_campaign=bando-2027-del-fondo-nazionale-per-la-rievocazione-storica",
+    "verified": false
+  },
+  {
+    "adequacy_basis": "Revisione documentale individuale",
+    "adequacy_label": "BASSA",
+    "adequacy_level": 1,
+    "adequacy_reason": "Requisito documentato attualmente non soddisfatto per la candidatura diretta: Il Challenge 2026 ammette soltanto iniziative già realizzate o in corso con impatto concreto dimostrabile contro l'indifferenza alla discriminazione. Opera+ dichiara nessuna attività svolta e non risulta avere un progett",
+    "adequacy_verification_flags": [
+      "candidatura_diretta_non_dimostrata"
+    ],
+    "admission_reasons": [
+      "stato_candidatura_non_verificato"
+    ],
+    "amount": null,
+    "amount_kind": null,
+    "amount_source": null,
+    "applicant_comparison_counts": {
+      "compatibile": 0,
+      "da_verificare": 0,
+      "potenzialmente_incompatibile": 0
+    },
+    "applicant_requirement_comparison": [],
+    "application_eligibility_verified": false,
+    "application_next_actions": [
+      "Verificare l'apertura effettiva sul sito ufficiale prima di qualsiasi candidatura"
+    ],
+    "application_path": "non_attiva",
+    "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
+    "application_windows": [],
+    "assessment_basis": "Revisione documentale della fonte indicata nella scheda",
+    "assessment_checked_at": "2026-11-19",
+    "assessment_confidence": "documentale — fonte consultata; ammissibilità da verificare",
+    "assessment_document_diagnostics": null,
+    "assessment_document_discrepancies": null,
+    "assessment_document_issues": [],
+    "assessment_evidence_count": 4,
+    "assessment_evidence_source": "https://www.eraseindifference.org/challenge/",
+    "assessment_field_sources": null,
+    "assessment_gaps": [
+      "Opera+ dichiara nessun progetto già realizzato: non presentare un progetto solo futuro come già completato.",
+      "Verificare la possibilità di partecipare come partner a un progetto preesistente condotto da altra organizzazione, nel rispetto delle regole del premio.",
+      "Non presentare un progetto ancora da avviare come se avesse già risultati misurabili; verificare solo eventuale progetto effettivamente esistente e documentato."
+    ],
+    "assessment_label": "BASSA AFFINITÀ",
+    "assessment_method": "revisione individuale della fonte",
+    "assessment_missing_fields": [],
+    "assessment_opening_note": "Valutazione di pertinenza indipendente dallo stato di apertura ufficiale.",
+    "assessment_reason": "Il Challenge premia iniziative già realizzate o in corso con risultati misurabili contro l'indifferenza verso discriminazioni; non finanzia un nuovo corso culturale da progettare. Opera+ dichiara nessuna attività precedente, dunque al momento non può presentare una sua iniziativa preesistente con impatto documentato. La disponibilità di candidature in partnership non elimina l'obbligo di un progetto realmente attuato.",
+    "assessment_review_status": "REVISIONE DOCUMENTALE",
+    "assessment_reviewed_at": "2026-11-19",
+    "assessment_source": "https://www.eraseindifference.org/challenge/",
+    "beneficiaries_excerpt": "NGO, startup, aziende ed enti pubblici internazionali; ammessi partenariati, con requisiti etici e organizzativi specifici.",
+    "beneficiaries_source": "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026",
+    "closure_confirmed": false,
+    "deadline": "2026-12-04",
+    "deadline_source": "https://www.eraseindifference.org/challenge/",
+    "deadline_verified_at": "2026-11-26T15:47:54+00:00",
+    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
+    "detail_checked": true,
+    "detail_checked_at": "2026-11-25T16:08:49+00:00",
+    "detail_version": 9,
+    "direct_application_blocker": "Il Challenge 2026 ammette soltanto iniziative già realizzate o in corso con impatto concreto dimostrabile contro l'indifferenza alla discriminazione. Opera+ dichiara nessuna attività svolta e non risulta avere un progetto già attuato conforme.",
+    "documents": [
+      {
+        "label": "Pagina del bando",
+        "url": "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026"
+      },
+      {
+        "label": "Fonte ufficiale della verifica",
+        "url": "https://www.eraseindifference.org/challenge/"
+      }
+    ],
+    "eligibility": "da verificare",
+    "eligibility_checks": [
+      "Verificare i beneficiari ammessi e la natura giuridica richiesta",
+      "Controllare se il partenariato è obbligatorio e con quali caratteristiche",
+      "Verificare eventuali cofinanziamenti, vincoli e scadenze nella documentazione ufficiale"
+    ],
+    "eligibility_condition_reason": "I documenti non consentono di determinare con certezza la categoria di partecipazione",
+    "eligibility_condition_sources": [
+      "https://www.eraseindifference.org/challenge/"
+    ],
+    "eligibility_condition_status": "informazioni_insufficienti",
+    "eligibility_specific_requirements": [],
+    "eligibility_specific_unchecked": 0,
+    "first_seen": "2026-11-16T18:50:43+00:00",
+    "funded_activities_excerpt": "Premi per progetti già realizzati o in corso con risultati concreti documentati; un premio di 20.000 euro e sette premi da 10.000 euro.",
+    "funding_status": "DA VERIFICARE",
+    "id": "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026",
+    "issuer": "Vol.To",
+    "last_seen": "2026-11-26T15:47:54+00:00",
+    "link_checked_at": "2026-11-16T19:13:14+00:00",
+    "link_http_status": 200,
+    "link_status": "raggiungibile",
+    "opportunity_type": "non classificato",
+    "programme_objectives_excerpt": "Riconoscere iniziative innovative che hanno già prodotto impatto osservabile nel contrastare l'indifferenza verso discriminazioni, razzismo, antisemitismo, misoginia o marginalizzazione.",
+    "project_ideas": [
+      "Progetti culturali con scuole, teatri, enti locali o altri partner"
+    ],
+    "project_potential": "valutazione al censimento",
+    "public_id": 148,
+    "public_id_aliases": [],
+    "relevance": 20,
+    "relevance_basis": "corrispondenza tematica preliminare sul titolo",
+    "requirement_coverage_status": "ostacolo_documentato",
+    "requirement_evidence_count": 0,
+    "requirements_excerpt": "Edizione 2026: candidatura entro il 4 dicembre 2026; progetto già in fase operativa o concluso non prima di dicembre 2023 e risultati verificabili; candidatura in inglese; una domanda per team.",
+    "resolved_url": "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026",
+    "reviewed_official_at": "2026-11-17",
+    "reviewed_official_basis": "official_active_application_window",
+    "rolling_guidance": null,
+    "rolling_guidance_source": null,
+    "score_confidence": "indicativa — temi presenti anche nella scheda consultata; punteggio calcolato in fase di scoperta",
+    "score_explanation": "Possibilità progettuale in partenariato (contenuto della scheda).",
+    "score_explanation_basis": "titolo e contenuti della scheda consultata",
+    "source_id": "volto",
+    "source_open_confirmed": false,
+    "source_url": "https://volontariatotorino.it/bandi/",
+    "status": "non verificato",
+    "status_basis": "Apertura dichiarata da ente o portale istituzionale; verifica valida per periodo limitato",
+    "status_evidence": "https://www.eraseindifference.org/challenge/",
+    "themes": [],
+    "title": "Erase Indifference Challenge 2026 Le candidature sono aperte a iniziative già realizzate che abbiano dimostrato risultati concreti nel contrastare l’indifferenza di fronte a diverse forme di discriminazione, tra cui razz",
+    "type_reason": "Informazioni insufficienti per determinare la tipologia",
+    "url": "https://infobandi.csvnet.it/erase-indifference-challenge-2026/?utm_source=rss&utm_medium=rss&utm_campaign=erase-indifference-challenge-2026",
+    "verified": false
+  },
+  {
     "adequacy_basis": "Revisione documentale individuale",
     "adequacy_label": "BASSA",
     "adequacy_level": 1,
@@ -3181,11 +4816,11 @@
     "closure_confirmed": false,
     "deadline": "2027-03-04",
     "deadline_source": "https://european-training-platform.e-justice.europa.eu/about-platform",
-    "deadline_verified_at": "2026-11-25T16:05:13+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:47:54+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:08:52+00:00",
+    "detail_checked_at": "2026-11-26T15:49:22+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -3230,7 +4865,7 @@
     "funding_status": "DA VERIFICARE",
     "id": "https://infobandi.csvnet.it/bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia/?utm_source=rss&utm_medium=rss&utm_campaign=bando-per-attivita-formative-rivolte-ai-professionisti-della-giustizia",
     "issuer": "Vol.To",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-16T19:13:14+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -3314,7 +4949,7 @@
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: finalità del bando, vincoli e condizioni",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": null,
     "assessment_document_discrepancies": null,
@@ -3341,11 +4976,11 @@
     "closure_confirmed": false,
     "deadline": "2026-12-23",
     "deadline_source": "https://infobandi.csvnet.it/bando-natura-di-prossimita/?utm_source=rss&utm_medium=rss&utm_campaign=bando-natura-di-prossimita",
-    "deadline_verified_at": "2026-11-25T16:08:51+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:49:22+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:08:51+00:00",
+    "detail_checked_at": "2026-11-26T15:49:22+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -3370,7 +5005,7 @@
     "funding_status": "DA VERIFICARE",
     "id": "https://infobandi.csvnet.it/bando-natura-di-prossimita/?utm_source=rss&utm_medium=rss&utm_campaign=bando-natura-di-prossimita",
     "issuer": "Vol.To",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-23T16:29:17+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
@@ -3444,7 +5079,7 @@
     "application_path_reason": "Opportunità non classificata APERTA: non avviare una candidatura sulla sola base della scheda",
     "application_windows": [],
     "assessment_basis": "fonte ufficiale: destinatari",
-    "assessment_checked_at": "2026-11-25T16:05:13+00:00",
+    "assessment_checked_at": "2026-11-26T15:47:54+00:00",
     "assessment_confidence": "limitata",
     "assessment_document_diagnostics": null,
     "assessment_document_discrepancies": null,
@@ -3472,11 +5107,11 @@
     "closure_confirmed": false,
     "deadline": "2026-12-20",
     "deadline_source": "https://infobandi.csvnet.it/premio-edufin-index-2026-2027-donne-che-contano/?utm_source=rss&utm_medium=rss&utm_campaign=premio-edufin-index-2026-2027-donne-che-contano",
-    "deadline_verified_at": "2026-11-25T16:08:26+00:00",
-    "detail_attempted_at": "2026-11-25T16:05:13+00:00",
+    "deadline_verified_at": "2026-11-26T15:49:03+00:00",
+    "detail_attempted_at": "2026-11-26T15:47:54+00:00",
     "detail_basis": "HTML della scheda; non include verifica di PDF o FAQ",
     "detail_checked": true,
-    "detail_checked_at": "2026-11-25T16:08:26+00:00",
+    "detail_checked_at": "2026-11-26T15:49:03+00:00",
     "detail_version": 9,
     "documents": [
       {
@@ -3509,7 +5144,7 @@
     "funding_status": "DA VERIFICARE",
     "id": "https://infobandi.csvnet.it/premio-edufin-index-2026-2027-donne-che-contano/?utm_source=rss&utm_medium=rss&utm_campaign=premio-edufin-index-2026-2027-donne-che-contano",
     "issuer": "Vol.To",
-    "last_seen": "2026-11-25T16:05:13+00:00",
+    "last_seen": "2026-11-26T15:47:54+00:00",
     "link_checked_at": "2026-11-25T16:05:13+00:00",
     "link_http_status": 200,
     "link_status": "raggiungibile",
